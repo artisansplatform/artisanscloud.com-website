@@ -1,0 +1,12 @@
+{
+  "name": "artisans-tailwind-css",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tailwindcss -i ./assets/style/input.css -o ./assets/style/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.0.0",
+    "@tailwindcss/cli": "^4.0.0"
+  }
+}

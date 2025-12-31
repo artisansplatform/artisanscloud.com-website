@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Distributed Order Management - Artisans Cloud</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- swiper css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/style/output.css">
+</head>
+<body>
+    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
+
+    <!----- Header ----->
+    <header id="siteHeader" class="fixed top-5 px-5 w-full z-[998] transition-all duration-200 ease-linear">
+        <div class="px-3 pt-3 header-inner transition-all duration-200 ease-linear">
+            <div class="relative w-full bg-white/70 sm:p-5 p-4 border border-[#E9F1FF] rounded-[10px] sm:rounded-[20px] flex items-center justify-between flex-nowrap transition-all duration-200 ease-linear">
+                <a href="index.html" class="transition-all duration-300"><img src="assets/image/logo.svg" alt="Logo" class="h-8 xl:h-10"></a>
+                
+                <button id="menuToggle" class="flex lg:hidden items-center justify-center w-10 h-10 rounded-full bg-white" aria-label="Open menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#000">
+                        <path d="M3 4H21V6H3V4ZM9 11H21V13H9V11ZM3 18H21V20H3V18Z"></path>
+                    </svg>
+                </button>
+
+                <div class="hidden lg:flex items-center gap-0 xl:gap-4">
+                    <a href="retail-platform.html" class="header-link cursor-pointer py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Retail Platform</a>
+                    <a href="data-intelligence.html" class="header-link cursor-pointer py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Data Intelligence</a>
+                    <a href="enterprise-ai.html" class="header-link cursor-pointer py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Enterprise AI</a>
+
+                    <div class="tw-dropdown">
+                        <button class="dropdown-toggle header-link active flex items-center gap-2 cursor-pointer py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">
+                            Solutions
+                            <svg class="dropdown-icon h-[5px] transition-transform duration-300" viewBox="0 0 9 5">
+                                <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+
+                        <div class="dropdown-menu absolute z-50 top-full mt-1 left-1/2 transform -translate-x-1/2 w-[96vw] rounded-3xl border border-light-sky bg-[#ffffff99] backdrop-blur-[30px] shadow-sm opacity-0 translate-y-3 pointer-events-none transition-all duration-300 ease-out">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 p-8">
+                                <div class="hidden lg:block max-w-[576px] order-3 xl:order-1 flex flex-col justify-around gap-5 lg:gap-[30px] w-full h-full p-5 rounded-[10px] overflow-hidden bg-light-sky bg-[url(../../assets/image/icon/strategicCard-left-BG.png)] bg-no-repeat bg-cover">
+                                    <div class="relative z-[1] bg-white pt-[30px] pe-[33px] pb-6 ps-[25px] rounded-[6px] h-full">
+                                        <svg class="lg:mb-5 mb-4 lg:h-[46px] h-8" width="54" height="46" viewBox="0 0 54 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_612_3023)">
+                                                <path d="M0 0.00683594H22.2275V23.8594C22.0191 27.7138 20.6319 34.6572 15.8633 39.7705C12.0066 43.904 6.67101 46 0 46V38.0186C4.4103 38.0186 7.68047 36.8116 9.99316 34.333C12.9377 31.173 13.7134 26.5789 13.9023 23.8535H0V0.00683594ZM53.9941 0.00683594V23.8594C53.7857 27.7137 52.3984 34.6573 47.6299 39.7705C43.7733 43.9039 38.4375 45.9999 31.7666 46V38.0186C36.1768 38.0185 39.4471 36.8117 41.7598 34.333C44.7043 31.173 45.48 26.5789 45.6689 23.8535H31.7666V0.00683594H53.9941ZM31.7666 0.00683594H31.7598L31.7666 0V0.00683594Z" fill="url(#paint0_linear_612_3023)"/>
+                                            </g>
+                                            <defs>
+                                                <linearGradient id="paint0_linear_612_3023" x1="26.9971" y1="0" x2="26.9971" y2="46" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#E9E3FF"/>
+                                                    <stop offset="1" stop-color="#E9D8FF"/>
+                                                </linearGradient>
+                                                <clipPath id="clip0_612_3023">
+                                                    <rect width="54" height="46" fill="white"/>
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <p class="lg:text-2xl text-lg font-medium font-primary text-heading leading-[130%]">Architects of the Intelligent Enterprise Beyond Digital Transformation - We Engineer Enterprise Intelligence.</p>
+                                    </div>
+                                </div>
+                                <div class="xl:ps-16 order-1 xl:order-2">
+                                    <h4 class="mb-4 lg:mb-5 lg:text-xl text-lg font-semibold text-heading">Supply Chain Planning</h4>
+                                    <div class="flex flex-col gap-3">
+                                        <a href="#" class="dropdown-item">Merchandise Planning</a>
+                                        <a href="#" class="dropdown-item">Assortment Planning</a>
+                                    </div>
+                                    <div class="mt-6 lg:mt-12 mb-4 lg:mb-5 lg:text-xl text-lg font-semibold text-heading">Browser POS</div>
+                                </div>
+                                <div class="order-2 xl:order-3">
+                                    <h4 class="mb-4 lg:mb-5 lg:text-xl text-lg font-semibold text-heading">Unified Commerce</h4>
+                                    <div class="flex flex-col gap-3">
+                                        <a href="overview.html" class="dropdown-item">Overview</a>
+                                        <a href="d2c-eCommerce.html" class="dropdown-item">D2C eCommerce</a>
+                                        <a href="distributed-order-management.html" class="dropdown-item active">Distributed Order Management</a>
+                                        <a href="customer-experience-management.html" class="dropdown-item">Customer Xperience Management</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <a href="about-us.html" class="header-link cursor-pointer py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">About Us</a>
+                </div>
+    
+                <a href="#" class="py-3 px-5 mt-auto lg:mt-0 w-fit h-fit rounded-[40px] hidden lg:flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm xl:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-heading text-white hover:bg-primary">
+                    <img src="assets/image/icon/talkTOUs-icon.svg" alt="">
+                    Talk to us
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- Mobile Menu -->
+    <div id="mainNav" class="block lg:hidden fixed top-0 end-0 w-full sm:w-[400px] h-screen bg-white transform translate-x-full transition-transform duration-300 z-[999]">
+        <div class="h-full p-5 flex flex-col justify-between">
+            <button id="menuClose" class="text-end text-xl pb-3">✕</button>
+            <div class="grow flex flex-col items-start gap-2 overflow-y-auto">
+                <a href="retail-platform.html" class="header-link cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Retail Platform</a>
+                <a href="data-intelligence.html" class="header-link cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Data Intelligence</a>
+                <a href="enterprise-ai.html" class="header-link cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Enterprise AI</a>
+
+                <div class="tw-dropdown relative w-full">
+                    <button class="dropdown-toggle header-link active w-full flex items-center gap-2 cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">
+                        Solutions
+                        <svg class="ms-auto dropdown-icon w-2 h-2 transition-transform duration-300" viewBox="0 0 9 5">
+                            <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+
+                    <div class="dropdown-menu static top-0 left-0 mt-1 p-3 w-full rounded-xl border border-light-sky bg-white opacity-0 hidden pointer-events-none transition-all duration-300 ease-out">
+                        <div class="">
+                            <h4 class="mb-2 text-base font-semibold text-heading font-primary">Supply Chain Planning</h4>
+                            <div class="flex flex-col gap-2">
+                                <a href="#" class="dropdown-item text-sm">Merchandise Planning</a>
+                                <a href="#" class="dropdown-item text-sm">Assortment Planning</a>
+                            </div>
+                            <div class="my-3 text-base font-semibold text-heading font-primary">Browser POS</div>
+                        </div>
+                        <div class="">
+                            <h4 class="mb-2 text-base font-semibold text-heading font-primary">Unified Commerce</h4>
+                            <div class="flex flex-col gap-2">
+                                <a href="overview.html" class="dropdown-item text-sm">Overview</a>
+                                <a href="d2c-eCommerce.html" class="dropdown-item text-sm">D2C eCommerce</a>
+                                <a href="distributed-order-management.html" class="dropdown-item active text-sm">Distributed Order Management</a>
+                                <a href="customer-experience-management.html" class="dropdown-item text-sm">Customer Xperience Management</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="about-us.html" class="header-link cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">About Us</a>
+            </div>
+
+            <div class="pt-3">
+                <a href="#" class="py-3 px-5 mt-auto lg:mt-0 w-full sm:w-fit h-fit rounded-[40px] flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-heading text-white hover:bg-primary">
+                    <img src="assets/image/icon/talkTOUs-icon.svg" alt="">
+                    Talk to us
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="menuOverlay" class="fixed inset-0 bg-black/40 opacity-0 invisible transition-all duration-300 z-[998]"></div>
+    <!----- End Header ----->
+
+
+    <!----- Banner Sec ----->
+    <section class="w-full h-full p-4 lg:p-5">
+        <div class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/distributed-order-management/bannerBG.webp')] bg-no-repeat bg-cover bg-bottom-right">
+            <div class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24">
+                <div class="fade-in max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+                    <div class="text-center lg:max-w-[990px] mx-auto">
+                        <div class="mb-6 lg:mb-[37px] font-primary font-semibold text-2xl sm:text-4xl lg:text-[44px] xl:text-[50px] text-heading leading-[120%]" id="heroHeading">Master the Art of Seamless Order Fulfillment and achieve Optimal Efficiency in Multi-Channel Commerce</div>
+                        <div id="heroDec">
+                            <p class="text-base lg:text-lg text-description font-primary font-normal leading-[150%]">We build modern data ecosystems that unify, automate, and activate <br class="hidden lg:block"> enterprise intelligence. Artisans transforms static reports into dynamic, <br class="hidden lg:block"> decision-ready foresight, connecting every layer of the business.</p>
+                            <a href="#" class="lg:mt-10 mt-6 mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Book 30 mins Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----- End Banner Sec ----->
+
+
+    <!----- unified power Sec ----->
+    <section class="lg:pt-[100px] lg:pb-10 md:py-16 py-10">
+        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+            <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
+                <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Unified Power: Streamlined <br class="hidden lg:block"> Orders, Inventory, & <br class="hidden lg:block"> Fulfillment in One <br class="hidden lg:block"> System</div>
+                <div class="">
+                    <p class="mb-4 lg:mb-6 text-description font-primary font-normal leading-[150%]">Navigating the intricate web of multi-channel sales can be daunting.</p>
+                    <p class="lg:pe-10 text-description font-primary font-normal leading-[150%]">artisans Distributed Order Management (DOM) platform provides real-time access to crucial inventory and order data – empowering retailers to manage, orchestrate and track orders with ease while delivering an exceptional end-to-end experience for each customer. With DOM, we empower retailers with unprecedented adaptability and responsiveness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----- End unified power Sec ----->
+
+
+    <!----- Achieve Optimal Efficiency Sec ----->
+    <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
+        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+            <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
+                <div class="lg:pe-10">
+                    <img src="assets/image/solutions/distributed-order-management/Achieve-Optimal-Efficiency.svg" alt="" class="max-w-full h-auto mx-auto lg:mx-0">
+                </div>
+                <div class="">
+                    <div class="lg:mb-10 mb-7 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]">Achieve Optimal Efficiency in Multi-Channel Commerce</div>
+
+                    <div class="flex flex-col lg:gap-5 gap-5">
+                        <div class="ps-8 relative">
+                            <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                            <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Complete Control</div>
+                            <p class="text-base text-description font-normal font-primary">Gain full visibility over every aspect of your orders – from placement to delivery – ensuring timely processing and accurate inventory tracking.</p>
+                        </div>
+                        <div class="ps-8 relative">
+                            <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                            <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Intelligent Orchestration</div>
+                            <p class="text-base text-description font-normal font-primary">Leverage smart routing algorithms that optimize shipping costs while maintaining fast delivery times. Effortlessly fulfill customer expectations at every step.</p>
+                        </div>
+                        <div class="ps-8 relative">
+                            <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                            <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Personalized Experiences.</div>
+                            <p class="text-base text-description font-normal font-primary">Customize offerings by managing pricing structures, promotions, taxes & duties dynamically across all channels as per regional preferences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----- End Achieve Optimal Efficiency Sec ----->
+
+
+    <!----- Infinite Scale, Limitless Flexibility Sec ----->
+    <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
+        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+            <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
+                <div class="lg:pe-10">
+                    <div class="lg:mb-10 mb-7 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]">Infinite Scale, Limitless Flexibility. Take your commerce further, faster</div>
+
+                    <div class="flex flex-col lg:gap-5 gap-5">
+                        <div class="ps-8 relative">
+                            <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                            <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Real-Time Insights</div>
+                            <p class="text-base text-description font-normal font-primary">Monitor performance metrics instantly through a centralized dashboard providing actionable insights critical for strategic decision-making.</p>
+                        </div>
+                        <div class="ps-8 relative">
+                            <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                            <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Effortless Integration</div>
+                            <p class="text-base text-description font-normal font-primary">Seamlessly connect with various eCommerce platforms, marketplaces, and ERP systems, eliminating manual entry errors and maximizing efficiency.</p>
+                        </div>
+                        <div class="ps-8 relative">
+                            <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                            <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Scalable Solutions</div>
+                            <p class="text-base text-description font-normal font-primary">Expand your operations effortlessly to accommodate new sales channels or markets. Our DOM platform grows with you, ensuring a future-proof solution.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <img src="assets/image/solutions/distributed-order-management/Infinite-Scale.svg" alt="" class="max-w-full h-auto mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----- End Infinite Scale, Limitless Flexibility Sec ----->
+
+
+    <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+    </div>
+
+
+    <!----- Why choose artisans DOM Sec ----->
+    <section class="lg:py-[100px] md:py-16 py-10">
+        <div class="fade-in max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+            <div class="text-center">
+                <h1 class="fade-in lg:mb-10 mb-5 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Why choose artisans DOM</h1>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
+                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
+                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                        <img src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="">
+                    </div>
+                    <div>
+                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Enhanced Customer Satisfaction</div>
+                        <p class="text-description font-primary font-normal leading-[150%]">Delight customers by providing prompt and accurate order delivery while maintaining transparent communication throughout their shopping journey.</p>
+                    </div>
+                </div>
+                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
+                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                        <img src="assets/image/icon/intelligentAutomation-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="">
+                    </div>
+                    <div>
+                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Streamlined Operations</div>
+                        <p class="text-description font-primary font-normal leading-[150%]">Optimize workflows and minimize manual tasks, allowing your team to focus on strategic initiatives that fuel business growth.</p>
+                    </div>
+                </div>
+                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
+                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                        <img src="assets/image/icon/metadata-LineageManagement-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="">
+                    </div>
+                    <div>
+                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Reduced Costs</div>
+                        <p class="text-description font-primary font-normal leading-[150%]">Utilize intelligent shipping algorithms that lower operational expenses without compromising on delivery efficiency or customer satisfaction.</p>
+                    </div>
+                </div>
+                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
+                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                        <img src="assets/image/icon/DataQuality-Trust-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="">
+                    </div>
+                    <div>
+                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Unified Data Management</div>
+                        <p class="text-description font-primary font-normal leading-[150%]">Access real-time inventory data across all channels. Making informed decisions for improved demand forecasting and stock replenishment.</p>
+                    </div>
+                </div>
+                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
+                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                        <img src="assets/image/icon/Cloud-hybridDeployments-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="">
+                    </div>
+                    <div>
+                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Be Future Ready</div>
+                        <p class="text-description font-primary font-normal leading-[150%]">Embrace a headless and modular platform and adapt quickly to changing business environments and stay ahead of the competition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----- End Why choose artisans DOM Sec ----->
+
+
+    <!----- Simplify Commerce, Elevate Customer Experiences CTA Sec ----->
+    <section class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-buildTogether-BG.webp)] bg-no-repeat bg-top-left bg-cover">
+        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto relative z-10">
+            <div class="fade-in lg:max-w-[800px] mx-auto w-full text-center">
+                <div class="lg:mb-[30px] mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">Simplify Commerce, Elevate Customer Experiences: Empower Your Retail Business with Ease</div>
+                <p class="text-white/80 font-primary font-normal leading-[150%]">AI That Delivers Measurable, Sustainable ROI. <br> That's why we've designed our product information management system to help you manage your product information more effectively, efficiently, and accurately. Contact us today to learn more about our platform and how we can help you manage your product information more effectively.</p>
+                <div class="lg:mt-11 mt-8 flex items-center flex-wrap gap-2.5 justify-center">
+                    <a href="#" class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Contact Us</a>
+                </div>
+            </div>
+        </div>
+
+        <img src="assets/image/icon/CTA-buildTogether-shape1.svg" class="animate-pulse absolute -top-[10%] start-0 pointer-none select-none" alt="">
+        <img src="assets/image/icon/CTA-buildTogether-shape2.svg" class="animate-pulse hidden md:block absolute top-0 -end-[10%] pointer-none select-none" alt="">
+    </section>
+    <!----- End Simplify Commerce, Elevate Customer Experiences CTA Sec ----->
+
+
+
+    <!----- Use Cases Sec ----->
+    <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+            <div class="fade-in lg:mb-10 mb-7 flex items-center gap-5 justify-between flex-nowrap">
+                <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Use Cases</div>
+                <div class="flex items-center justify-center gap-[clamp(0.5rem,1.111vw+0.167rem,1rem)]">
+                    <div class="swiper-button-prev swiper-button-prev-useCasesSlider after:hidden !static border border-heading rounded-full !w-8 !h-8  !m-0 transition-all duration-200 ease-linear cursor-pointer">
+                        <img src="assets/image/icon/rightArrowSwiper.svg" alt="" class="h-[70%] select-none rotate-180">
+                    </div>
+                    <div class="swiper-button-next swiper-button-next-useCasesSlider after:hidden !static border border-heading rounded-full !w-8 !h-8  !m-0 transition-all duration-200 ease-linear cursor-pointer">
+                        <img src="assets/image/icon/rightArrowSwiper.svg" alt="" class="h-[70%] select-none">
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper useCasesSlider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide !h-auto">
+                        <div class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group">
+                            <div class="w-full aspect-video overflow-hidden rounded-xl">
+                                <img src="assets/image/insightsLeadership-card-1.png" alt="" class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out">
+                            </div>
+                            <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
+                                <div class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3">The Enterprise AI Stack</div>
+                                <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
+                                    <p class="line-clamp-3 text-description font-primary font-normal leading-[150%]">From Data Foundation to Intelligent Action — explore how AI redefines enterprise decision-making.</p>
+                                    <a href="#" class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300 ease-in-out group-hover:rotate-45">
+                                            <g clip-path="url(#clip0_72_2743)">
+                                                <path d="M8 16L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M9 8H16V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide !h-auto">
+                        <div class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group">
+                            <div class="w-full aspect-video overflow-hidden rounded-xl">
+                                <img src="assets/image/insightsLeadership-card-2.png" alt="" class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out">
+                            </div>
+                            <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
+                                <div class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3">Reimagining Retail</div>
+                                <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
+                                    <p class="line-clamp-3 text-description font-primary font-normal leading-[150%]">The New Unified Commerce Model — discover how intelligent systems transform shopping experiences.</p>
+                                    <a href="#" class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300 ease-in-out group-hover:rotate-45">
+                                            <g clip-path="url(#clip0_72_2743)">
+                                                <path d="M8 16L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M9 8H16V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide !h-auto">
+                        <div class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group">
+                            <div class="w-full aspect-video overflow-hidden rounded-xl">
+                                <img src="assets/image/insightsLeadership-card-3.png" alt="" class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out">
+                            </div>
+                            <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
+                                <div class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3">Making Data Work</div>
+                                <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
+                                    <p class="line-clamp-3 text-description font-primary font-normal leading-[150%]">Learn how to architect Decision Intelligence at scale — empowering data to deliver outcomes.</p>
+                                    <a href="#" class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300 ease-in-out group-hover:rotate-45">
+                                            <g clip-path="url(#clip0_72_2743)">
+                                                <path d="M8 16L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M9 8H16V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide !h-auto">
+                        <div class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group">
+                            <div class="w-full aspect-video overflow-hidden rounded-xl">
+                                <img src="assets/image/insightsLeadership-card-1.png" alt="" class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out">
+                            </div>
+                            <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
+                                <div class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3">The Enterprise AI Stack</div>
+                                <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
+                                    <p class="line-clamp-3 text-description font-primary font-normal leading-[150%]">From Data Foundation to Intelligent Action — explore how AI redefines enterprise decision-making.</p>
+                                    <a href="#" class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300 ease-in-out group-hover:rotate-45">
+                                            <g clip-path="url(#clip0_72_2743)">
+                                                <path d="M8 16L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M9 8H16V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide !h-auto">
+                        <div class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group">
+                            <div class="w-full aspect-video overflow-hidden rounded-xl">
+                                <img src="assets/image/insightsLeadership-card-2.png" alt="" class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out">
+                            </div>
+                            <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
+                                <div class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3">Reimagining Retail</div>
+                                <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
+                                    <p class="line-clamp-3 text-description font-primary font-normal leading-[150%]">The New Unified Commerce Model — discover how intelligent systems transform shopping experiences.</p>
+                                    <a href="#" class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300 ease-in-out group-hover:rotate-45">
+                                            <g clip-path="url(#clip0_72_2743)">
+                                                <path d="M8 16L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M9 8H16V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide !h-auto">
+                        <div class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group">
+                            <div class="w-full aspect-video overflow-hidden rounded-xl">
+                                <img src="assets/image/insightsLeadership-card-3.png" alt="" class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out">
+                            </div>
+                            <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
+                                <div class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3">Making Data Work</div>
+                                <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
+                                    <p class="line-clamp-3 text-description font-primary font-normal leading-[150%]">Learn how to architect Decision Intelligence at scale — empowering data to deliver outcomes.</p>
+                                    <a href="#" class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300 ease-in-out group-hover:rotate-45">
+                                            <g clip-path="url(#clip0_72_2743)">
+                                                <path d="M8 16L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M9 8H16V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----- End Use Cases Sec ----->
+
+
+    <!-- Scale Inventory and Order Management Sec -->
+    <section class="lg:pb-[100px] sm:pb-16 pb-10">
+        <div class="max-w-[1280px] w-[100%] px-4 xl:px-0 mx-auto">
+            <div class="md:p-[30px] lg:ps-16 p-5 md:rounded-[20px] rounded-2xl overflow-hidden bg-[#DFF4FF] bg-[url(../../assets/image/solutions/distributed-order-management/Scale-Inventory-Order-BG.svg)] bg-no-repeat bg-bottom-left bg-contain">
+                <div class="grid lg:grid-cols-2 xl:gap-14 lg:gap-10 gap-7">
+                    <div class="lg:pt-8 pt-2 xl:pe-28">
+                        <div class="lg:mb-[30px] mb-6 lg:text-[38px] sm:text-3xl text-2xl font-primary font-medium text-heading lg:leading-[54px] leading-[120%]">Scale Inventory and Order Management with artisan’s Composable OMS</div>
+                        <p class="sm:mb-5 mb-4 text-description font-primary text-base font-normal">It's time to embrace digital transformation and unlock the full power of seamless order management. Take charge of your multi-channel commerce operations while delivering exceptional end-to-end experiences tailored for contemporary shoppers.</p>
+                        <p class="text-description font-primary text-base font-normal">Reach out now to learn more about how our DOM solution can boost efficiency, enhance customer experiences, and propel your business toward greater heights.</p>
+                    </div>
+                    <div class="bg-white lg:p-10 sm:p-7 p-5 md:rounded-[20px] rounded-xl">
+                        <form action="" class="w-full m-0">
+                            <div class="lg:mb-6 mb-5 grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">First Name</label>
+                                    <input type="text" name="" placeholder="Enter First Name" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                                </div>
+                                <div>
+                                    <label for="" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Last Name</label>
+                                    <input type="text" name="" placeholder="Enter Last Name" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                                </div>
+                            </div>
+                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                                <div>
+                                    <label for="" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Company Name</label>
+                                    <input type="text" name="" placeholder="Enter Company Name" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                                </div>
+                            </div>
+                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                                <div>
+                                    <label for="" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Email address</label>
+                                    <input type="email" name="" placeholder="Enter email address" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                                </div>
+                            </div>
+                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                                <div>
+                                    <label for="" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Phone Number</label>
+                                    <input type="number" name="" placeholder="Enter phone number" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                                </div>
+                            </div>
+
+                            <div class="mt-4 flex flex-wrap lg:flex-nowrap justify-between gap-6">
+                                <p class="text-sm text-description font-primary font-normal lg:leading-[26px] leading-[160%]">By submitting your information you agree with our <a href="#" class="font-semibold inline-block underline">Terms of Use</a> and <a href="#" class="font-semibold inline-block underline">Privacy Policy</a>.</p>
+                                <button type="submit" class="cursor-pointer w-fit h-fit rounded-[40px] sm:px-[40px] px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Scale Inventory and Order Management Sec -->
+
+
+    <!----- Footer Sec ----->
+    <footer class="w-full !pt-0 sm:p-5 p-3">
+        <div class="relative bg-[#F6F2FF] rounded-xl sm:rounded-[20px] lg:rounded-[30px] overflow-hidden">
+            <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+                <div class="pt-6 sm:pt-10 md:pt-12 lg:pt-[90px] pb-5 md:pb-7 lg:pb-14">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-14">
+                        <div class="grid grid-cols-2 gap-x-4">
+                            <div>
+                                <div class="mb-2 sm:mb-4 lg:mb-5 font-primary font-semibold text-lg md:text-xl">Company</div>
+                                <div class="flex flex-col sm:gap-3 gap-2">
+                                    <a href="retail-platform.html" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Retail Platform</a>
+                                    <a href="enterprise-ai.html" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Enterprise AI</a>
+                                    <a href="#" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Automation</a>
+                                    <a href="blog-list.html" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Resources</a>
+                                    <a href="#" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">About Artisans</a>
+                                    <a href="#" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Integrations</a>
+                                    <a href="contact-us.html" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Contact us</a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mb-2 sm:mb-4 lg:mb-5 font-primary font-semibold text-lg md:text-xl">Our Solutions</div>
+                                <div class="flex flex-col sm:gap-3 gap-2">
+                                    <a href="#" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Merchandise Planning</a>
+                                    <a href="#" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Assortment Planning</a>
+                                    <a href="#" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Unified Commerce</a>
+                                    <a href="distributed-order-management.html" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Distributed Order Management</a>
+                                    <a href="customer-experience-management.html" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Customer Xperience Management</a>
+                                    <a href="d2c-eCommerce.html" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">D2C eCommerce</a>
+                                    <a href="#" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Composable Commerce</a>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 md:mt-8 lg:mt-12 col-span-2 sm:col-span-1">
+                                <div class="mb-2 sm:mb-4 lg:mb-5 font-primary font-semibold text-lg md:text-xl">Address 1</div>
+                                <div class="inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">10-1, Menara Infiniti, Jalan SS 6/3, Kelana Jaya, 47301 Petaling Jaya, Selangor, Malaysia.</div>
+                            </div>
+                            <div class="mt-5 md:mt-8 lg:mt-12 col-span-2 sm:col-span-1">
+                                <div class="mb-2 sm:mb-4 lg:mb-5 font-primary font-semibold text-lg md:text-xl">Address 2</div>
+                                <div class="inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">1108-9, The Spire 2, BRTS,150 Feet Ring Rd, Near Shital Park, Opposite Plexus Med Care, Shastri Nagar, Rajkot, Gujarat 360006. India</div>
+                            </div>
+                        </div>
+    
+                        <div class="lg:ps-14">
+                            <div class="ftrGetStartCard w-full p-5 sm:p-7 lg:p-10 lg:pe-8 rounded-2xl sm:rounded-[20px] relative bg-[url(../../assets/image/ftrGetStart-BG.png)] bg-cover bg-no-repeat bg-top-right">
+                                <div class="relative z-10 text-heading font-primary font-semibold lg:text-[35px] sm:text-3xl text-xl leading-[120%] mb-4">Ready to Elevate Your Retail and Supply Chain Strategy?</div>
+                                <p class="relative z-10 lg:pe-16 text-description font-primary font-normal sm:text-base text-sm leading-[150%]">Let’s connect to explore how artisans Commerce Cloud can meet your unique business needs and fuel sustainable growth across sales channels.</p>
+                                <div class="relative z-10 mt-3 md:mt-5 lg:mt-7">
+                                    <a href="#" class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Get started</a>
+                                </div>
+                            </div>
+
+                            <div class="lg:mt-[55px] md:mt-9 sm:mt-7 mt-5 mb-3 flex gap-2.5 flex-nowrap">
+                                <img src="assets/image/icon/icon-mail.svg" alt="" class="max-w-full h-fit">
+                                <a href="#" class="inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">support@artisanscloud.com.my</a>
+                            </div>
+
+                            <div class="flex gap-2.5 flex-nowrap">
+                                <img src="assets/image/icon/icon-phone.svg" alt="" class="max-w-full h-fit">
+                                <div class="flex sm:items-center md:gap-x-4 md:gap-y-2 gap-x-2 gap-y-1 flex-wrap">
+                                    <a href="#" class="inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out"><span class="font-semibold">Malaysia</span> +60 (3) 6412 7632</a>
+                                    <div class="hidden sm:block max-w-1 min-w-1 h-1 rounded-full bg-description"></div>
+                                    <a href="#" class="inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out"><span class="font-semibold">India</span> +91 1234 557 890</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+    
+                <div class="lg:pt-[49px] md:pt-7 pt-5">
+                    <div class="flex items-center gap-4 flex-wrap justify-between">
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <a href="#" class="inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out underline">Terms & Conditions</a>
+                            <span class="inline-block text-description">|</span>
+                            <a href="#" class="inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out underline">Privacy Policy</a>
+                            <span class="hidden sm:inline-block text-description">|</span>
+                            <p class="w-full sm:w-auto flex items-center gap-2 !text-[#8C8C8C] text-sm sm:text-base font-primary font-normal leading-[150%]">
+                                Protected by:
+                                <img src="assets/image/icon/DMCA-logo.svg" alt="" class="max-w-full">
+                            </p>
+                        </div>
+                        <p class="text-xs sm:text-base text-description font-primary font-normal leading-[150%]">© 2025 artisans. All right reserved.</p>
+                    </div>
+    
+                    <div class="relative z-[1] mb-3 lg:mt-[14px] mt-3 flex items-center gap-3 flex-wrap-reverse lg:flex-nowrap justify-between">
+                        <a href="#" class="w-fit h-fit justify-center text-center md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:scale-95 focus-visible:bg-primary sm:py-2 sm:pe-[20px] sm:ps-3.5 py-1.5 ps-3 pe-3.5 rounded-full border border-[#d0e0eb] flex items-center gap-1.5 text-heading active:text-white focus-visible:text-white font-primary font-normal text-xs lg:text-sm">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_163_51)">
+                                    <path d="M8 11V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M8 8V8.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M12 16V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M16 16V13C16 12.4696 15.7893 11.9609 15.4142 11.5858C15.0391 11.2107 14.5304 11 14 11C13.4696 11 12.9609 11.2107 12.5858 11.5858C12.2107 11.9609 12 12.4696 12 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M3 7C3 5.93913 3.42143 4.92172 4.17157 4.17157C4.92172 3.42143 5.93913 3 7 3H17C18.0609 3 19.0783 3.42143 19.8284 4.17157C20.5786 4.92172 21 5.93913 21 7V17C21 18.0609 20.5786 19.0783 19.8284 19.8284C19.0783 20.5786 18.0609 21 17 21H7C5.93913 21 4.92172 20.5786 4.17157 19.8284C3.42143 19.0783 3 18.0609 3 17V7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                            </svg>
+                            Linked in
+                        </a>
+                        <p class="lg:max-w-[584px] max-h-full lg:text-end text-xs sm:text-sm text-[#8C8C8C] font-primary font-normal leading-[150%]">Disclaimer: All rights reserved. Designs and solutions showcased are proprietary work. Unauthorized reproduction or use is prohibited. Client work displayed with permission.</p>
+                    </div>
+    
+                    <div class="ftrBottomTitle w-full -mb-[2.5%] text-transparent text-[clamp(4.688rem,25.405vw_-_1.267rem,19.375rem)] text-center font-semibold leading-[0.9] font-primary tracking-[-0.04em]">artisans</div>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!----- End Footer Sec ----->
+
+
+    <!--+++++++ Script Start +++++++-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <script src='assets/script/main.js'></script>
+</body>
+</html>

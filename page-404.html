@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>404 Error - Artisans Cloud</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./assets/style/output.css">
+
+    <style>
+        @keyframes cloudMove {
+            0% {
+                transform: translateX(0vw);
+            }
+            100% {
+                transform: translateX(-110vw);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="p-5 h-full">
+        <div class="relative h-[calc(100svh_-_40px)] overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/404-error-bg.png)] bg-cover bg-bottom bg-no-repeat">
+            <div class="max-w-[1240px] w-[100%] px-4 xl:px-0 mx-auto relative z-10 h-full">
+                <div class="flex flex-col h-full justify-between pb-20">
+                    <div>
+                        <img src="assets/image/404-image.png" alt="" class="h-44 md:h-auto mx-auto mb-5 md:mb-7">
+                        <div class="text-center lg:max-w-[540px] mx-auto">
+                            <div class="mb-5 lg:text-[50px] md:text-5xl text-3xl text-heading font-primary font-semibold">Page Not Found</div>
+                            <p class="text-lg lg:text-xl text-description font-primary font-normal leading-[150%]">The page you’re looking for doesn’t exist or has been moved. Please check the URL or return to the homepage.</p>
+                            <a href="index.html" class="mx-auto lg:mt-10 sm:mt-8 mt-6 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Go Back</a>
+                        </div>
+                    </div>
+                    <div class="text-center mt-20">
+                        <a href="#" class="text-base font-semibold font-primary underline text-heading">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+
+            <img src="assets/image/icon/cloud-2.svg" alt="" class="absolute top-[10%] left-[20%] animate-[cloudMove_40s_linear_infinite] select-none pointer-events-none">
+            <img src="assets/image/icon/cloud-2.svg" alt="" class="absolute top-[12%] left-[100%] animate-[cloudMove_50s_linear_infinite] select-none pointer-events-none">
+            <img src="assets/image/icon/cloud-2.svg" alt="" class="h-[18px] absolute top-[20%] left-0 animate-[cloudMove_50s_linear_infinite] select-none pointer-events-none">
+            <img src="assets/image/icon/cloud-2.svg" alt="" class="h-[18px] absolute top-[18%] left-[110%] animate-[cloudMove_30s_linear_infinite] select-none pointer-events-none">
+            <img src="assets/image/icon/cloud-2.svg" alt="" class="h-3 absolute top-[30%] left-[25%] animate-[cloudMove_35s_linear_infinite] select-none pointer-events-none">
+            <img src="assets/image/icon/cloud-2.svg" alt="" class="h-3 absolute top-[30%] left-[110%] animate-[cloudMove_50s_linear_infinite] select-none pointer-events-none">
+            <img src="assets/image/icon/cloud-2.svg" alt="" class="h-[18px] absolute top-[8%] right-[0%] animate-[cloudMove_35s_linear_infinite] select-none pointer-events-none">
+            <img src="assets/image/icon/cloud-2.svg" alt="" class="h-[18px] absolute top-[8%] right-[110%] animate-[cloudMove_45s_linear_infinite] select-none pointer-events-none">
+            <img src="assets/image/icon/cloud-3.svg" alt="" class="h-3.5 absolute top-[15%] right-[25%] animate-[cloudMove_30s_linear_infinite] select-none pointer-events-none">
+            <img src="assets/image/icon/cloud-3.svg" alt="" class="h-3.5 absolute top-[15%] right-[110%] animate-[cloudMove_30s_linear_infinite] select-none pointer-events-none">
+            <img src="assets/image/icon/cloud-2.svg" alt="" class="h-5 absolute top-[30%] right-[5%] animate-[cloudMove_50s_linear_infinite] select-none pointer-events-none">
+            <img src="assets/image/icon/cloud-2.svg" alt="" class="h-5 absolute top-[30%] right-[110%] animate-[cloudMove_40s_linear_infinite] select-none pointer-events-none">
+        </div>
+    </div>
+</body>
+</html>

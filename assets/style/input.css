@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+    --color-heading: #051323;
+    --color-white: #fff;
+    --color-description: #686c71;
+
+    --color-primary: #8d68f6;
+    --color-primary-light: #7e54f0;
+
+    --color-sky: #13d9e4;
+    --color-sky-2: #00cad5;
+    --color-pink: #fc4bda;
+    --color-grey: #686c71;
+
+    --color-light-purple: #eae3ff;
+    --color-light-pink: #fff3fd;
+    --color-light-green: #eaf5f6;
+    --color-light-sky: #ddf1ff;
+    --color-light-green-box: #e7faf9;
+    --color-light-blue-box: #ecf4ff;
+
+    --color-light-border: #bdd8ff;
+
+    --font-primary: "Poppins", sans-serif;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-heading);
+}
+
+@layer components {
+    /* Buttons style */
+    .ripple {
+        display: block;
+        position: absolute;
+        background: rgba(192, 192, 192, 0.4);
+        border-radius: 100%;
+        transform: scale(0);
+        animation: ripple 0.65s linear;
+    }
+    @keyframes ripple { 100% { opacity: 0; transform: scale(2.5); } }
+    @-webkit-keyframes ripple { 100% { opacity: 0; transform: scale(2.5); } }
+
+
+    /* Header Link */
+    .header-link.active { @apply bg-pink/10! text-pink!; }
+    .header-scrolled { @apply !top-0 !p-0; }
+    .header-scrolled .header-inner { @apply !bg-white rounded-xl !px-0 !pt-0; }
+
+    /* Dropdown */
+    .tw-dropdown .dropdown-menu .dropdown-item.active { @apply text-pink; }
+    .tw-dropdown.show .dropdown-menu { @apply !opacity-100 !translate-y-0 !pointer-events-auto; }
+    .tw-dropdown.show .dropdown-icon { @apply rotate-180; }
+    .dropdown-item { @apply w-fit block text-heading font-primary hover:text-primary transition-colors; }
+    @media (max-width: 1024px) {
+        .tw-dropdown.show .dropdown-menu { @apply !opacity-100 !block !pointer-events-auto; }
+    }
+    
+    .ourClientMaruqee .swiper-wrapper {transition-timing-function: linear !important;}
+    
+    .unifiedCommerce_sec_imgBox::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 2px;
+        border-radius: 20px;
+        background: linear-gradient(180deg, #eeeeee 0%, rgba(255, 255, 255, 0) 100%);
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+    .unifiedCommerce_sec_imgBox::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40%;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 16.14%, #ffffff 68.66%, #ffffff 100%);
+        z-index: 1;
+        user-select: none;
+        pointer-events: none;
+    }
+
+    .unifiedCommerce_sec_imgBox.ourApprochImgeBox::before {
+        background: linear-gradient(90deg, #eeeeee 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    /* Footer */
+    .ftrBottomTitle {
+        /* background-image: linear-gradient(91.22deg, #d8cbff 1.04%, #dacdff 48.55%, #a0f0f5 99.83%); background-size: 100% 100%; background-position: 50% 50%; -webkit-background-clip: text; background-clip: text; will-change: background-position;  */
+        background-image: linear-gradient(93.32deg, #D9CCFF 1.4%, #A1EFF5 101.99%); background-size: 100% 100%; background-position: 50% 50%; -webkit-background-clip: text; background-clip: text; will-change: background-position; 
+    }
+    @media (max-width: 375px) {.ftrBottomTitle {font-size: 75px;}}
+
+    @media (hover: none) and (pointer: coarse) {
+        .ftrBottomTitle {
+            background: linear-gradient(93.32deg, #D9CCFF 1.4%, #A1EFF5 101.99%) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+        }
+    }
+
+    .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {@apply !border-0}
+}
