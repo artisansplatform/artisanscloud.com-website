@@ -22,9 +22,10 @@
     <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
 
     <!----- Header ----->
-    <header id="siteHeader" class="fixed top-0 sm:px-5 w-full z-[998] transition-all duration-200 ease-linear">
-        <div class="px-3 header-inner transition-all duration-200 ease-linear">
-            <div class="relative w-full bg-white sm:p-5 p-4 px-2 rounded-[10px] sm:rounded-[20px] flex items-center justify-between flex-nowrap transition-all duration-200 ease-linear">
+    <!----- Header ----->
+    <header id="siteHeader" class="fixed top-5 px-5 w-full z-[998] transition-all duration-200 ease-linear">
+        <div class="px-3 pt-3 header-inner transition-all duration-200 ease-linear">
+            <div class="relative w-full bg-white/70 sm:p-5 p-4 border border-[#E9F1FF] rounded-[10px] sm:rounded-[20px] flex items-center justify-between flex-nowrap transition-all duration-200 ease-linear">
                 <a href="/index" class="transition-all duration-300"><img src="assets/image/logo.svg" alt="Logo" class="h-8 xl:h-10"></a>
 
                 <button id="menuToggle" class="flex lg:hidden items-center justify-center w-10 h-10 rounded-full bg-white" aria-label="Open menu">
@@ -150,11 +151,19 @@
     <!----- End Header ----->
 
 
-    <div class="mt-[75px] sm:mt-[90px] py-4 sm:py-[18px] bg-[#F6F6F6]">
-        <div class="md:px-[60px] sm:px-5 px-4">
-            <div class="flex items-center gap-1">
-                <div class="sm:text-base text-sm text-description font-normal font-primary">Resources</div>
-                <div class="sm:text-base text-sm text-description font-normal font-primary">
+    
+
+
+    <!-- details sec -->
+     <section class="w-full h-full p-4 lg:p-5">
+        <div class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/blog-list/bloge-detail-banner.webp')] bg-no-repeat bg-cover">
+           <div class="max-w-[850px] w-[100%] mx-auto mt-[50px] pb-20 sm:pb-24 md:pb-[200px]">
+              
+       
+        <div class="mb-5">
+             <div class="flex items-center gap-1">
+                 <div class="sm:text-base text-sm text-description font-normal font-primary">Resources</div>
+                  <div class="sm:text-base text-sm text-description font-normal font-primary">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_653_18834)">
                         <path d="M13 8L17 12L13 16" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -166,25 +175,21 @@
                         </clipPath>
                         </defs>
                     </svg>
-                </div>
+                  </div>
                 <div class="sm:text-base text-sm text-heading font-normal font-primary">Retail Point of Sale Solution</div>
-            </div>
-        </div>
-    </div>
+                </div>
+         </div>
+        
 
-
-    <!-- details sec -->
-    <div class="lg:pt-[60px] lg:pb-[100px] py-10">
-        <div class="max-w-[850px] w-[100%] px-4 xl:px-0 mx-auto">
+            <div class="mb-3.5 font-primary font-semibold text-2xl sm:text-4xl lg:text-[44px] xl:text-[50px] text-heading leading-[120%]">Retail Point of Sale Solution</div>
+              
             <div class="mb-4 sm:mb-5 flex flex-wrap gap-2 items-center">
                 <div class="px-2.5 py-0.5 rounded-[50px] text-center w-fit h-fit bg-[#F5EEFE] text-[#9F7EFF] font-primary font-medium sm:text-base text-sm">E-Commerce</div>
                 <div class="relative ps-3 text-description/70 lg:text-base text-sm font-normal font-primary"><div class="absolute top-2.5 start-0 bg-description/70 h-1 w-1 rounded-full"></div> Published Nov 21, 2025</div>
             </div>
 
-            <div class="mb-3.5 font-primary font-semibold text-2xl sm:text-4xl lg:text-[44px] xl:text-[50px] text-heading leading-[120%]">Retail Point of Sale Solution</div>
-
             <div class="flex gap-2 sm:gap-3">
-                <div class="max-w-[53px] min-w-[53px] h-[53px] grid place-items-center bg-[#F4F5F8] rounded-full">
+                <div class="max-w-[53px] min-w-[53px] h-[53px] grid place-items-center bg-[#FFFFFF] rounded-full">
                     <svg class="" width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0.246094 19.6272L4.38087 17.2184L8.7895 14.7002V23.0219C8.7895 23.4051 8.5978 23.7336 8.26918 23.9253C7.94056 24.1169 7.55754 24.1169 7.22854 23.9253L4.38087 22.2823L0.903337 20.2846C0.629486 20.12 0.383019 19.8736 0.246094 19.6272Z" fill="#0D9EA6"/>
                         <path d="M12.7333 12.4002L7.72223 15.3017L1.64311 18.8059C1.01363 19.1888 0.848939 19.7637 1.39664 20.5576L0.903709 20.2838C0.630238 20.1196 0.383772 19.8732 0.246466 19.6268C0.0825358 19.353 0 19.0519 0 18.6964V5.06402C0 4.40699 0.329002 3.83208 0.903709 3.47619C1.50618 3.14767 2.16343 3.14767 2.73851 3.47619L7.72223 6.37771L12.7333 9.25225C13.3084 9.58038 13.6367 10.1553 13.6367 10.8397C13.6367 11.4967 13.3084 12.0716 12.7333 12.4002Z" fill="#12D9E3"/>
@@ -204,7 +209,7 @@
                 </div>
             </div>
 
-            <div class="lg:my-[30px] my-5 flex items-center lg:gap-10 sm:gap-7 gap-5 flex-wrap">
+            <div class="lg:my-[30px] mt-5 flex items-center lg:gap-10 sm:gap-7 gap-5 flex-wrap">
                 <div class="flex items-center gap-2.5 sm:text-base text-sm leading-[120%] font-primary font-normal text-description">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_653_18814)">
@@ -233,10 +238,18 @@
                 </div>
             </div>
 
-            <div class="aspect-video rounded-xl overflow-hidden">
-                <img src="assets/image/insightsLeadership-card-1.png" class="w-full h-full object-cover" alt="">
             </div>
+        </div>
+     </section>
 
+    <div class="fade-in relative z-[2] mx-auto mb-[50px]  -mt-[13%] sm:-mt-[14%] md:-mt-[150px] lg:-mt-[300px] w-[80%] max-w-[850px] after:absolute after:left-0 after:bottom-0 after:w-full after:bg-gradient-to-b after:from-transparent after:pointer-events-none after:select-none">
+        <img src="assets/image/insightsLeadership-card-1.png" alt="" class="h-full w-full object-cover object-top rounded-[12px]"/>
+    </div>
+  <div>
+
+    <div class="lg:pb-[100px] py-10 pt-0">
+        <div class="max-w-[850px] w-[100%] px-4 xl:px-0 mx-auto">
+                        
             <div class="lg:mt-10 sm:mt-7 mt-5">
                 <div class="mb-3 sm:text-xl text-lg text-heading font-primary font-semibold">Lorem ipsum dolor sit ame</div>
                 <div class="mb-3 sm:text-xl text-lg text-description font-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lorem lorem, euismod quis quam sed, feugiat rhoncus est. Maecenas id tincidunt ipsum, in semper ex. Mauris ligula nisl, convallis ac orci sit amet, suscipit luctus sem. Aliquam at turpis elit. Ut gravida et diam et interdum. Suspendisse potenti. Fusce arcu lectus, posuere sit amet dignissim et, aliquam quis nibh. Quisque ut magna at metus iaculis ornare eget a risus. congue augue id egestas</div>
@@ -257,9 +270,8 @@
             </div>
         </div>
     </div>
+
     <!-- End details sec -->
-
-
     <div class="max-w-[1240px] w-[100%] px-4 xl:px-0 mx-auto">
         <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
