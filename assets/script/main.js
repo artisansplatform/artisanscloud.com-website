@@ -136,7 +136,9 @@ document.addEventListener("DOMContentLoaded", () => {
             slidesPerView: "auto",
             spaceBetween: 0,
             speed: 3000,
-            allowTouchMove: false,
+            allowTouchMove: true,
+            simulateTouch: false,
+            touchStartPreventDefault: false,
             freeMode: true,
             freeModeMomentum: false,
             autoplay: {
@@ -146,6 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             loop: true,
         });
+
     }
     clientMarquee();
 
