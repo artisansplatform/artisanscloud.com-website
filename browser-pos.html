@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <title>TabsyPOS - AI-Powered Browser POS | Artisans Cloud</title>
+    <meta name="description"
+        content="TabsyPOS is a free, privacy-first browser POS that works 100% offline. No installation, no cloud storage—your data stays on your device with AI-powered search and complete control.">
+    <meta name="keywords"
+        content="TabsyPOS, Browser POS, Offline POS, Privacy-First POS, Free POS, AI-Powered POS, Cloud-Free Point of Sale, Local POS, Retail POS, Artisans Cloud">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="TabsyPOS - Free AI-Powered Browser POS | Artisans Cloud">
+    <meta property="og:description"
+        content="Experience a POS that works 100% offline with AI-powered search. TabsyPOS is free forever, privacy-first, and keeps your data on your device. No installation required.">
+    <meta property="og:type" content="website">
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/style/output.css">
+</head>
+<body>
+    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
+
+
+    <!----- Header ----->
+    <header id="siteHeader" class="fixed top-5 px-5 w-full z-[998] transition-all duration-200 ease-linear">
+        <div class="px-3 pt-3 header-inner transition-all duration-200 ease-linear">
+            <div class="relative w-full bg-white/70 sm:p-5 p-4 border border-[#E9F1FF] rounded-[10px] sm:rounded-[20px] flex items-center justify-between flex-nowrap transition-all duration-200 ease-linear">
+                <a href="/index" class="transition-all duration-300"><img src="assets/image/logo.svg" alt="Logo" class="h-8 xl:h-10"></a>
+
+                <button id="menuToggle" class="flex lg:hidden items-center justify-center w-10 h-10 rounded-full bg-white" aria-label="Open menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#000">
+                        <path d="M3 4H21V6H3V4ZM9 11H21V13H9V11ZM3 18H21V20H3V18Z"></path>
+                    </svg>
+                </button>
+
+                <div class="hidden lg:flex items-center gap-0 xl:gap-4">
+                    <a href="/retail-platform" class="header-link cursor-pointer py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Retail Platform</a>
+                    <a href="/data-intelligence" class="header-link cursor-pointer py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Data Intelligence</a>
+                    <a href="/enterprise-ai" class="header-link cursor-pointer py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Enterprise AI</a>
+
+                    <div class="tw-dropdown">
+                        <button class="dropdown-toggle header-link flex items-center gap-2 cursor-pointer py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">
+                            Solutions
+                            <svg class="dropdown-icon h-[5px] transition-transform duration-300" viewBox="0 0 9 5">
+                                <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+
+                        <div class="dropdown-menu absolute z-50 top-full mt-1 left-1/2 transform -translate-x-1/2 w-[96vw] rounded-3xl border border-light-sky bg-[#ffffff99] backdrop-blur-[30px] shadow-sm opacity-0 translate-y-3 pointer-events-none transition-all duration-300 ease-out">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 p-8">
+                                <div class="hidden lg:block max-w-[576px] order-3 xl:order-1 flex flex-col justify-around gap-5 lg:gap-[30px] w-full h-full p-5 rounded-[10px] overflow-hidden bg-light-sky bg-[url(../../assets/image/icon/strategicCard-left-BG.png)] bg-no-repeat bg-cover">
+                                    <div class="relative z-[1] bg-white pt-[30px] pe-[33px] pb-6 ps-[25px] rounded-[6px] h-full">
+                                        <svg class="lg:mb-5 mb-4 lg:h-[46px] h-8" width="54" height="46" viewBox="0 0 54 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_612_3023)">
+                                                <path d="M0 0.00683594H22.2275V23.8594C22.0191 27.7138 20.6319 34.6572 15.8633 39.7705C12.0066 43.904 6.67101 46 0 46V38.0186C4.4103 38.0186 7.68047 36.8116 9.99316 34.333C12.9377 31.173 13.7134 26.5789 13.9023 23.8535H0V0.00683594ZM53.9941 0.00683594V23.8594C53.7857 27.7137 52.3984 34.6573 47.6299 39.7705C43.7733 43.9039 38.4375 45.9999 31.7666 46V38.0186C36.1768 38.0185 39.4471 36.8117 41.7598 34.333C44.7043 31.173 45.48 26.5789 45.6689 23.8535H31.7666V0.00683594H53.9941ZM31.7666 0.00683594H31.7598L31.7666 0V0.00683594Z" fill="url(#paint0_linear_612_3023)"/>
+                                            </g>
+                                            <defs>
+                                                <linearGradient id="paint0_linear_612_3023" x1="26.9971" y1="0" x2="26.9971" y2="46" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#E9E3FF"/>
+                                                    <stop offset="1" stop-color="#E9D8FF"/>
+                                                </linearGradient>
+                                                <clipPath id="clip0_612_3023">
+                                                    <rect width="54" height="46" fill="white"/>
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <p class="lg:text-2xl text-lg font-medium font-primary text-heading leading-[130%]">Architects of the Intelligent Enterprise Beyond Digital Transformation - We Engineer Enterprise Intelligence.</p>
+                                    </div>
+                                </div>
+                                <div class="xl:ps-16 order-1 xl:order-2">
+                                    <h4 class="mb-4 lg:mb-5 lg:text-xl text-lg font-semibold text-heading">Supply Chain Planning</h4>
+                                    <div class="flex flex-col gap-3">
+                                        <a href="#" class="dropdown-item">Merchandise Planning</a>
+                                        <a href="#" class="dropdown-item">Assortment Planning</a>
+                                    </div>
+                                    <h4 class="mt-6 lg:mt-12 mb-4 lg:mb-5 lg:text-xl text-lg font-semibold text-heading">Browser POS</h4>
+                                    <div class="flex flex-col gap-3">
+                                        <a href="/browser-pos" class="dropdown-item">TabsyPOS</a>
+                                    </div>
+                                </div>
+                                <div class="order-2 xl:order-3">
+                                    <h4 class="mb-4 lg:mb-5 lg:text-xl text-lg font-semibold text-heading">Unified Commerce</h4>
+                                    <div class="flex flex-col gap-3">
+                                        <a href="/overview" class="dropdown-item">Overview</a>
+                                        <a href="/d2c-eCommerce" class="dropdown-item">D2C eCommerce</a>
+                                        <a href="/distributed-order-management" class="dropdown-item">Distributed Order Management</a>
+                                        <a href="/customer-experience-management" class="dropdown-item">Customer Xperience Management</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="/about-us" class="header-link cursor-pointer py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">About Us</a>
+                </div>
+
+                <a href="/contact-us" class="py-3 px-5 mt-auto lg:mt-0 w-fit h-fit rounded-[40px] hidden lg:flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm xl:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-heading text-white hover:bg-primary">
+                    <img src="assets/image/icon/talkTOUs-icon.svg" alt="">
+                    Talk to us
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- Mobile Menu -->
+    <div id="mainNav" class="block lg:hidden fixed top-0 end-0 w-full sm:w-[400px] h-screen bg-white transform translate-x-full transition-transform duration-300 z-[999]">
+        <div class="h-full p-5 flex flex-col justify-between">
+            <button id="menuClose" class="text-end text-xl pb-3">✕</button>
+            <div class="grow flex flex-col items-start gap-2 overflow-y-auto">
+                <a href="/retail-platform" class="header-link cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Retail Platform</a>
+                <a href="/data-intelligence" class="header-link cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Data Intelligence</a>
+                <a href="/enterprise-ai" class="header-link cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Enterprise AI</a>
+
+                <div class="tw-dropdown relative w-full">
+                    <button class="dropdown-toggle header-link w-full flex items-center gap-2 cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">
+                        Solutions
+                        <svg class="ms-auto dropdown-icon w-2 h-2 transition-transform duration-300" viewBox="0 0 9 5">
+                            <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+
+                    <div class="dropdown-menu static top-0 left-0 mt-1 p-3 w-full rounded-xl border border-light-sky bg-white opacity-0 hidden pointer-events-none transition-all duration-300 ease-out">
+                        <div class="">
+                            <h4 class="mb-2 text-base font-semibold text-heading font-primary">Supply Chain Planning</h4>
+                            <div class="flex flex-col gap-2">
+                                <a href="#" class="dropdown-item text-sm">Merchandise Planning</a>
+                                <a href="#" class="dropdown-item text-sm">Assortment Planning</a>
+                            </div>
+                            <h4 class="my-3 text-base font-semibold text-heading font-primary">Browser POS</h4>
+                            <div class="flex flex-col gap-2">
+                                <a href="/browser-pos" class="dropdown-item text-sm">TabsyPOS</a>
+                            </div>
+                        </div>
+                        <div class="">
+                            <h4 class="mb-2 text-base font-semibold text-heading font-primary">Unified Commerce</h4>
+                            <div class="flex flex-col gap-2">
+                                <a href="/overview" class="dropdown-item text-sm">Overview</a>
+                                <a href="/d2c-eCommerce" class="dropdown-item text-sm">D2C eCommerce</a>
+                                <a href="/distributed-order-management" class="dropdown-item text-sm">Distributed Order Management</a>
+                                <a href="/customer-experience-management" class="dropdown-item text-sm">Customer Xperience Management</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="/about-us" class="header-link cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">About Us</a>
+            </div>
+
+            <a href="/contact-us" class="py-3 px-5 mt-auto lg:mt-0 w-fit h-fit rounded-[40px] flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm xl:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-heading text-white hover:bg-primary">
+                <img src="assets/image/icon/talkTOUs-icon.svg" alt="">
+                Talk to us
+            </a>
+        </div>
+    </div>
+    <div id="menuBackdrop" class="fixed inset-0 bg-black/50 z-[998] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+
+    <!----- Main Content ----->
+    <main class="w-full">
+
+        <!----- Banner Sec ----->
+        <section class="w-full h-full p-4 lg:p-5">
+            <div class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/banner-BG.png')] bg-no-repeat bg-cover">
+                <div class="pt-5 lg:pt-[100px] pb-20 sm:pb-24 md:pb-[200px]">
+                    <div class="fade-in max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+                        <div class="fade-in grid lg:grid-cols-2 gap-5 lg:gap-0">
+                            <div class="">
+                                <div class="mb-3 sm:mb-6 font-primary font-semibold text-sm sm:text-base leading-[120%] uppercase text-primary" id="heroHeading">AI-POWERED BROWSER POS</div>
+                                <div class="font-primary font-semibold text-2xl sm:text-4xl lg:text-[44px] xl:text-[50px] text-heading leading-[120%]" id="heroDec">TabsyPOS</div>
+                            </div>
+                            <div id="heroDec" class="lg:ps-10">
+                                <p class="text-base lg:text-lg text-description font-primary font-normal leading-[150%]">A modern, privacy-first point of sale that works completely offline. No installation required, no cloud dependencies—just pure performance with AI-powered search and complete data ownership. Your sales data stays on your device, always accessible, always secure.</p>
+                                <a href="https://tabsy.artisanscloud.com.my/" target="_blank" rel="noopener noreferrer" class="lg:mt-[34px] mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Try TabsyPOS Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----- End Banner Sec ----->
+
+
+        <!----- USP Cards Sec ----->
+        <section class="lg:py-[90px] sm:py-16 py-10">
+            <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-[30px] gap-5">
+                    <div class="fade-in lg:py-6 py-5 lg:px-[30px] px-4 lg:rounded-[20px] rounded-2xl bg-[#f0f9f4] flex flex-col lg:gap-6 gap-4 w-full h-full">
+                        <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/icon-ai.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Privacy First">
+                        </div>
+                        <div>
+                            <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Privacy First</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Your data never leaves your device. No cloud storage, no external servers—complete privacy by design.</p>
+                        </div>
+                    </div>
+
+                    <div class="fade-in lg:py-6 py-5 lg:px-[30px] px-4 lg:rounded-[20px] rounded-2xl bg-[#fff4f6] flex flex-col lg:gap-6 gap-4 w-full h-full">
+                        <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/cloud-1.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Works 100% Offline">
+                        </div>
+                        <div>
+                            <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Works 100% Offline</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">No internet? No problem. TabsyPOS runs entirely in your browser with full functionality offline.</p>
+                        </div>
+                    </div>
+
+                    <div class="fade-in lg:py-6 py-5 lg:px-[30px] px-4 lg:rounded-[20px] rounded-2xl bg-[#fff9ed] flex flex-col lg:gap-6 gap-4 w-full h-full">
+                        <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/bulb-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="AI-Powered Search">
+                        </div>
+                        <div>
+                            <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">AI-Powered Search</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Find products instantly with intelligent search that understands your inventory and purchase history.</p>
+                        </div>
+                    </div>
+
+                    <div class="fade-in lg:py-6 py-5 lg:px-[30px] px-4 lg:rounded-[20px] rounded-2xl bg-[#f5f0ff] flex flex-col lg:gap-6 gap-4 w-full h-full">
+                        <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/layers-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Backup & Export">
+                        </div>
+                        <div>
+                            <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Backup & Export</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Export your data anytime in standard formats. Full control, full ownership, zero lock-in.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----- End USP Cards Sec ----->
+
+
+        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+            <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+        </div>
+
+
+        <!----- Why TabsyPOS Sec ----->
+        <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
+            <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+                <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
+                    <div class="lg:pe-10">
+                        <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Why TabsyPOS?</div>
+                    </div>
+                    <div class="">
+                        <div class="lg:mb-10 mb-7 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]">Built for Modern Retail Without the Complexity</div>
+
+                        <div class="flex flex-col lg:gap-5 gap-5">
+                            <div class="ps-8 relative">
+                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                                <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">No Installation Required</div>
+                                <p class="text-base text-description font-normal font-primary">Access TabsyPOS instantly from any modern browser. No downloads, no setup, no IT headaches—just open and sell.</p>
+                            </div>
+
+                            <div class="ps-8 relative">
+                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                                <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Lightweight & Fast</div>
+                                <p class="text-base text-description font-normal font-primary">Engineered for performance. TabsyPOS loads instantly and runs smoothly even on modest hardware.</p>
+                            </div>
+
+                            <div class="ps-8 relative">
+                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                                <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Blazing Fast Performance</div>
+                                <p class="text-base text-description font-normal font-primary">Process sales in milliseconds. Our optimized architecture ensures zero lag, even with thousands of products.</p>
+                            </div>
+
+                            <div class="ps-8 relative">
+                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                                <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Accessible Anywhere</div>
+                                <p class="text-base text-description font-normal font-primary">Works on desktop, tablet, or mobile. One URL, universal access—sell wherever your business takes you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----- End Why TabsyPOS Sec ----->
+
+
+        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+            <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+        </div>
+
+
+        <!----- Who Can Use Sec ----->
+        <section class="lg:py-[100px] sm:py-16 py-10">
+            <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+                <div class="fade-in text-center mb-10 lg:mb-16">
+                    <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4">Who Can Use TabsyPOS?</h2>
+                    <p class="max-w-[880px] mx-auto text-description font-primary font-normal leading-[150%]">TabsyPOS is best suited for single stores that want a simple, free, and reliable point-of-sale solution without extra complexity. It's also a great backup POS solution for larger retailers who want a ready-to-use system to stay operational during server downtime or network issues.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8">
+                    <div class="fade-in ps-8 relative">
+                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Independent Retail Shops & Pop-up Stores</div>
+                        <p class="text-base text-description font-normal font-primary">Perfect for small businesses that need a reliable, no-frills POS without monthly fees or complex setup requirements.</p>
+                    </div>
+
+                    <div class="fade-in ps-8 relative">
+                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Cafés, Bakeries, & Small Restaurants</div>
+                        <p class="text-base text-description font-normal font-primary">Quick transactions, simple menu management, and instant receipt printing—all in your browser.</p>
+                    </div>
+
+                    <div class="fade-in ps-8 relative">
+                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Boutiques, Salons, & Lifestyle Stores</div>
+                        <p class="text-base text-description font-normal font-primary">Manage customers, products, and sales effortlessly with a clean, intuitive interface designed for service businesses.</p>
+                    </div>
+
+                    <div class="fade-in ps-8 relative">
+                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Retailers Needing a Reliable Backup POS</div>
+                        <p class="text-base text-description font-normal font-primary">Keep selling during network outages or server downtime. TabsyPOS works offline and requires zero infrastructure.</p>
+                    </div>
+
+                    <div class="fade-in ps-8 relative">
+                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Local Businesses Seeking a Free Forever POS</div>
+                        <p class="text-base text-description font-normal font-primary">No subscriptions, no hidden fees, no vendor lock-in. Your data, your control, your business.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----- End Who Can Use Sec ----->
+
+
+        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+            <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+        </div>
+
+
+        <!----- Key Features Sec ----->
+        <section class="lg:py-[100px] sm:py-16 py-10">
+            <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+                <div class="fade-in text-center mb-10 lg:mb-16">
+                    <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4">Key Features</h2>
+                    <p class="max-w-[880px] mx-auto text-description font-primary font-normal leading-[150%]">All Essentials, Right Where You Need Them. From checkout to receipts, TabsyPOS gives you complete control.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-[30px] gap-5">
+                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col">
+                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/layers-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="">
+                        </div>
+                        <div>
+                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Products & Customers</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Add products and customers in bulk, search by typing or voice. Manage your inventory and customer database effortlessly.</p>
+                        </div>
+                    </div>
+
+                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col">
+                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/bulb-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="">
+                        </div>
+                        <div>
+                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Smart Cart</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Update item price & quantity, assign or switch customers seamlessly. Flexible cart management for complex transactions.</p>
+                        </div>
+                    </div>
+
+                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col">
+                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/target-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="">
+                        </div>
+                        <div>
+                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Flexible Payments</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Support for multiple payment methods, plus partial payment options. Accept cash, cards, or mixed payments with ease.</p>
+                        </div>
+                    </div>
+
+                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col">
+                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/intelligentCard-icon-1.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="">
+                        </div>
+                        <div>
+                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Sales History</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Stay on top of every transaction with easy-to-access records. View, filter, and export your complete sales history anytime.</p>
+                        </div>
+                    </div>
+
+                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#fff9ed] border border-[#f2f2f2] flex flex-col">
+                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/intelligentCard-icon-2.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="">
+                        </div>
+                        <div>
+                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Custom Receipts</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Print branded receipts with personalised header & footer text. Add your logo, contact details, or promotional messages.</p>
+                        </div>
+                    </div>
+
+                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#f0f9f4] border border-[#f2f2f2] flex flex-col">
+                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/artchitecHeightlight-card-setting.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="">
+                        </div>
+                        <div>
+                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Powerful Settings</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Set currency, language, AI models, keyboard shortcuts, and clear data when needed. Complete control over your POS experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----- End Key Features Sec ----->
+
+
+        <!----- Enterprise Upgrade Sec ----->
+        <section class="lg:py-[100px] sm:py-16 py-10">
+            <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+                <div class="fade-in grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="lg:pe-10">
+                        <div class="mb-4 lg:mb-6 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">When You're Ready to Grow, We're Ready with Enterprise POS</div>
+                        <div class="mb-4 lg:mb-5 text-heading font-primary font-semibold text-xl leading-[125%]">From Single-Tab Simplicity to Full Omnichannel Control</div>
+                        <p class="mb-6 text-description font-primary font-normal leading-[150%]">While TabsyPOS is built for quick, reliable in-store billing, our Enterprise POS Solution offers a complete retail ecosystem — with backend integration, multi-store management, and omnichannel capabilities.</p>
+
+                        <div class="flex flex-col gap-4 mb-6">
+                            <div class="ps-8 relative">
+                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                                <div class="text-base lg:text-lg text-heading font-semibold font-primary">Multi-store operations & franchise setups</div>
+                            </div>
+
+                            <div class="ps-8 relative">
+                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                                <div class="text-base lg:text-lg text-heading font-semibold font-primary">Centralized inventory & pricing control</div>
+                            </div>
+
+                            <div class="ps-8 relative">
+                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                                <div class="text-base lg:text-lg text-heading font-semibold font-primary">Integrated CRM, analytics, and reporting</div>
+                            </div>
+
+                            <div class="ps-8 relative">
+                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="">
+                                <div class="text-base lg:text-lg text-heading font-semibold font-primary">Unified omnichannel experience across web, store & app</div>
+                            </div>
+                        </div>
+
+                        <a href="/contact-us" class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Explore Enterprise POS</a>
+                    </div>
+                    <div class="lg:ps-10">
+                        <img src="assets/image/ourCore-unifiedCommerce.webp" alt="Enterprise POS" class="max-w-full h-auto mx-auto rounded-2xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----- End Enterprise Upgrade Sec ----->
+
+
+        <!----- Final CTA Sec ----->
+        <section class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover">
+            <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto relative z-10">
+                <div class="fade-in text-center max-w-[800px] mx-auto">
+                    <div class="mb-4 lg:mb-6 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">Start Selling Smarter with TabsyPOS</div>
+                    <p class="mb-6 lg:mb-8 text-white/80 font-primary font-normal text-base lg:text-lg leading-[150%]">Experience a POS that doesn't slow you down. TabsyPOS is fast to set up, easy to use, and built to help your business grow.</p>
+                    <a href="https://tabsy.artisanscloud.com.my/" target="_blank" rel="noopener noreferrer" class="w-fit h-fit rounded-[40px] sm:px-8 px-6 sm:py-4 py-3 inline-flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-white active:text-heading active:scale-95 focus-visible:bg-white focus-visible:text-heading bg-primary text-white hover:bg-white hover:text-heading">Try TabsyPOS Now - Free Forever</a>
+                </div>
+            </div>
+
+            <img src="assets/image/icon/ctaBanner-shape.png" class="animate-pulse absolute start-0 bottom-0 pointer-none select-none" alt="">
+            <img src="assets/image/icon/ctaBanner-shape2.png" class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none" alt="">
+        </section>
+        <!----- End Final CTA Sec ----->
+
+    </main>
+
+
+    <!----- Footer Sec ----->
+    <footer class="w-full !pt-0 sm:p-5 p-3">
+        <div class="relative bg-[#F6F2FF] rounded-xl sm:rounded-[20px] lg:rounded-[30px] overflow-hidden">
+            <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+                <div class="pt-6 sm:pt-10 md:pt-12 lg:pt-[90px] pb-5 md:pb-7 lg:pb-14">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-14">
+                        <div class="grid grid-cols-2 gap-x-4">
+                            <div>
+                                <div class="mb-2 sm:mb-4 lg:mb-5 font-primary font-semibold text-lg md:text-xl">Company</div>
+                                <div class="flex flex-col sm:gap-3 gap-2">
+                                    <a href="/retail-platform" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Retail Platform</a>
+                                    <a href="/enterprise-ai" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Enterprise AI</a>
+                                    <a href="#" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Automation</a>
+                                    <a href="/blog-list" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Resources</a>
+                                    <a href="/about-us" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">About Artisans</a>
+                                    <a href="#" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Integrations</a>
+                                    <a href="/contact-us" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Contact us</a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mb-2 sm:mb-4 lg:mb-5 font-primary font-semibold text-lg md:text-xl">Our Solutions</div>
+                                <div class="flex flex-col sm:gap-3 gap-2">
+                                    <a href="#" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Merchandise Planning</a>
+                                    <a href="#" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Assortment Planning</a>
+                                    <a href="/overview" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Unified Commerce</a>
+                                    <a href="/distributed-order-management" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Distributed Order Management</a>
+                                    <a href="/customer-experience-management" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Customer Xperience Management</a>
+                                    <a href="/d2c-eCommerce" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">D2C eCommerce</a>
+                                    <a href="#" class="w-fit inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">Composable Commerce</a>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 md:mt-8 lg:mt-12 col-span-2 sm:col-span-1">
+                                <div class="mb-2 sm:mb-4 lg:mb-5 font-primary font-semibold text-lg md:text-xl">Malaysia</div>
+                                <div class="inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">10-1, Menara Infiniti, Jalan SS 6/3, Kelana Jaya, 47301 Petaling Jaya, Selangor, Malaysia.</div>
+                            </div>
+                            <div class="mt-5 md:mt-8 lg:mt-12 col-span-2 sm:col-span-1">
+                                <div class="mb-2 sm:mb-4 lg:mb-5 font-primary font-semibold text-lg md:text-xl">India</div>
+                                <div class="inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">1108-9, The Spire 2, 150 Feet Ring Rd, Near Shital Park, Opposite Plexus Med Care, Shastri Nagar, Rajkot, Gujarat 360006. India</div>
+                            </div>
+                        </div>
+
+                        <div class="lg:ps-14">
+                            <div class="ftrGetStartCard w-full p-5 sm:p-7 lg:p-10 lg:pe-8 rounded-2xl sm:rounded-[20px] relative bg-[url(../../assets/image/ftrGetStart-BG.png)] bg-cover bg-no-repeat bg-top-right">
+                                <div class="relative z-10 text-heading font-primary font-semibold lg:text-[35px] sm:text-3xl text-xl leading-[120%] mb-4">Ready to Elevate Your Retail and Supply Chain Strategy?</div>
+                                <p class="relative z-10 lg:pe-16 text-description font-primary font-normal sm:text-base text-sm leading-[150%]">Let's connect to explore how Artisans Commerce Cloud can meet your unique business needs and fuel sustainable growth across sales channels.</p>
+                                <div class="relative z-10 mt-3 md:mt-5 lg:mt-7">
+                                    <a href="/contact-us" class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Get started</a>
+                                </div>
+                            </div>
+
+                            <div class="lg:mt-[55px] md:mt-9 sm:mt-7 mt-5 mb-3 flex gap-2.5 flex-nowrap">
+                                <img src="assets/image/icon/icon-mail.svg" alt="" class="max-w-full h-fit">
+                                <a href="#" class="inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out">support@artisanscloud.com.my</a>
+                            </div>
+
+                            <div class="flex gap-2.5 flex-nowrap">
+                                <img src="assets/image/icon/icon-phone.svg" alt="" class="max-w-full h-fit">
+                                <div class="flex sm:items-center md:gap-x-4 md:gap-y-2 gap-x-2 gap-y-1 flex-wrap">
+                                    <a href="#" class="inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out"><span class="font-semibold">Malaysia</span> +60 (3) 6412 7632</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+
+                <div class="lg:pt-[49px] md:pt-7 pt-5">
+                    <div class="flex items-center gap-4 flex-wrap justify-between">
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <a href="#" class="inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out underline">Terms & Conditions</a>
+                            <span class="inline-block text-description">|</span>
+                            <a href="#" class="inline-block font-primary text-description font-normal text-sm sm:text-base leading-[140%] lg:leading-[26px] hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out underline">Privacy Policy</a>
+                            <span class="hidden sm:inline-block text-description">|</span>
+                            <p class="w-full sm:w-auto flex items-center gap-2 !text-[#8C8C8C] text-sm sm:text-base font-primary font-normal leading-[150%]">
+                                Protected by:
+                                <img src="assets/image/icon/DMCA-logo.svg" alt="" class="max-w-full">
+                            </p>
+                        </div>
+                        <p class="text-xs sm:text-base text-description font-primary font-normal leading-[150%]">&copy; <script>document.write(new Date().getFullYear())</script> Artisans. All right reserved.</p>
+                    </div>
+
+                    <div class="relative z-[1] mb-3 lg:mt-[14px] mt-3 flex items-center gap-3 flex-wrap-reverse lg:flex-nowrap justify-between">
+                        <a href="https://www.linkedin.com/company/artisanscommercecloud/" target="_blank" class="w-fit h-fit justify-center text-center md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:scale-95 focus-visible:bg-primary sm:py-2 sm:pe-[20px] sm:ps-3.5 py-1.5 ps-3 pe-3.5 rounded-full border border-[#d0e0eb] flex items-center gap-1.5 text-heading active:text-white focus-visible:text-white font-primary font-normal text-xs lg:text-sm">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_163_51)">
+                                    <path d="M8 11V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M8 8V8.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M12 16V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M16 16V13C16 12.4696 15.7893 11.9609 15.4142 11.5858C15.0391 11.2107 14.5304 11 14 11C13.4696 11 12.9609 11.2107 12.5858 11.5858C12.2107 11.9609 12 12.4696 12 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M3 7C3 5.93913 3.42143 4.92172 4.17157 4.17157C4.92172 3.42143 5.93913 3 7 3H17C18.0609 3 19.0783 3.42143 19.8284 4.17157C20.5786 4.92172 21 5.93913 21 7V17C21 18.0609 20.5786 19.0783 19.8284 19.8284C19.0783 20.5786 18.0609 21 17 21H7C5.93913 21 4.92172 20.5786 4.17157 19.8284C3.42143 19.0783 3 18.0609 3 17V7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <p class="lg:max-w-[584px] max-h-full lg:text-end text-xs sm:text-sm text-[#8C8C8C] font-primary font-normal leading-[150%]">Disclaimer: All rights reserved. Designs and solutions showcased are proprietary work. Unauthorized reproduction or use is prohibited. Client work displayed with permission.</p>
+                    </div>
+
+                    <div class="ftrBottomTitle w-full -mb-[2.5%] text-transparent text-[clamp(4.688rem,25.405vw_-_1.267rem,19.375rem)] text-center font-semibold leading-[0.9] font-primary tracking-[-0.04em]">artisans</div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!----- End Footer Sec ----->
+
+
+    <!--+++++++ Script Start +++++++-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <script src='assets/script/main.js'></script>
+</body>
+</html>
