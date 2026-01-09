@@ -65,11 +65,14 @@ All HTML pages follow identical boilerplate:
 ### Local Development
 ```bash
 npm run dev
-# Watches assets/style/input.css → outputs to assets/style/output.css
-# Supports Tailwind class detection in HTML files (content: ["./index.html", "./assets/**/*.{html,js}"])
+# Starts Vite dev server at http://localhost:3000/ with auto-reload
+# Runs in parallel:
+#   - Vite dev server (watches HTML/JS files, auto-reloads browser)
+#   - Tailwind CSS watch (compiles assets/style/input.css → assets/style/output.css)
+# All changes trigger automatic browser reload—no manual refresh needed
 ```
 
-**Important**: Must run Tailwind watch before opening files in browser—otherwise compiled CSS is stale.
+**Auto-reload setup**: The dev server uses Vite for instant hot reload + Tailwind watch for CSS compilation. When working on tasks, always run `npm run dev` to see changes live in the browser at http://localhost:3000/.
 
 ### Deployment
 - **Platform**: Vercel
