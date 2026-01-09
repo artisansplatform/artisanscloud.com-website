@@ -8,7 +8,4 @@ export default defineConfig({
       usePolling: true, // Better compatibility for some file systems
     },
   },
-  build: {
-    outDir: 'dist',
-  },
 });
