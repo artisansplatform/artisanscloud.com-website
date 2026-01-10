@@ -74,6 +74,8 @@ npm run dev
 
 **Auto-reload setup**: The dev server uses Vite for instant hot reload + Tailwind watch for CSS compilation. When working on tasks, always run `npm run dev` to see changes live in the browser at http://localhost:3000/.
 
+Make sure to check how the respective pages look in the browser after making the changes.
+
 ### Deployment
 - **Platform**: Vercel
 - **Config**: [vercel.json](vercel.json) (minimal, just cleanUrls)
