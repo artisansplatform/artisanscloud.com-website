@@ -32,56 +32,6 @@
     <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
 
 
-    {{> header}}
-    <div id="mainNav" class="block lg:hidden fixed top-0 end-0 w-full sm:w-[400px] h-screen bg-white transform translate-x-full transition-transform duration-300 z-[999]">
-        <div class="h-full p-5 flex flex-col justify-between">
-            <button id="menuClose" class="text-end text-xl pb-3">✕</button>
-            <div class="grow flex flex-col items-start gap-2 overflow-y-auto">
-                <a href="/retail-platform" class="header-link cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Retail Platform</a>
-                <a href="/data-intelligence" class="header-link cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Data Intelligence</a>
-                <a href="/enterprise-ai" class="header-link cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Enterprise AI</a>
-
-                <div class="tw-dropdown relative w-full">
-                    <button class="dropdown-toggle header-link w-full flex items-center gap-2 cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">
-                        Solutions
-                        <svg class="ms-auto dropdown-icon w-2 h-2 transition-transform duration-300" viewBox="0 0 9 5">
-                            <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="currentColor"/>
-                        </svg>
-                    </button>
-
-                    <div class="dropdown-menu static top-0 left-0 mt-1 p-3 w-full rounded-xl border border-light-sky bg-white opacity-0 hidden pointer-events-none transition-all duration-300 ease-out">
-                        <div class="">
-                            <h4 class="mb-2 text-base font-semibold text-heading font-primary">Supply Chain Planning</h4>
-                            <div class="flex flex-col gap-2">
-                                <a href="#" class="dropdown-item text-sm">Merchandise Planning</a>
-                                <a href="#" class="dropdown-item text-sm">Assortment Planning</a>
-                            </div>
-                            <h4 class="mt-6 mb-2 text-base font-semibold text-heading font-primary">Browser POS</h4>
-                            <div class="flex flex-col gap-2">
-                                <a href="/browser-pos" class="dropdown-item text-sm">TabsyPOS</a>
-                            </div>
-                        </div>
-                        <div class="mt-6">
-                            <h4 class="mb-2 text-base font-semibold text-heading font-primary">Unified Commerce</h4>
-                            <div class="flex flex-col gap-2">
-                                <a href="/overview" class="dropdown-item text-sm">Overview</a>
-                                <a href="/d2c-eCommerce" class="dropdown-item text-sm">D2C eCommerce</a>
-                                <a href="/distributed-order-management" class="dropdown-item text-sm">Distributed Order Management</a>
-                                <a href="/customer-experience-management" class="dropdown-item text-sm">Customer Xperience Management</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="/about-us" class="header-link cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">About Us</a>
-            </div>
-
-            <a href="/contact-us" class="py-3 px-5 mt-auto lg:mt-0 w-fit h-fit rounded-[40px] flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm xl:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-heading text-white hover:bg-primary">
-                <img src="assets/image/icon/talkTOUs-icon.svg" alt="">
-                Talk to us
-            </a>
-        </div>
-    </div>
-    <div id="menuOverlay" class="fixed inset-0 bg-black/40 opacity-0 invisible transition-all duration-300 z-[998]"></div>
 
 
     <!----- Main Content ----->
