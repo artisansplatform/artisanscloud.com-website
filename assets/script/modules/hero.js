@@ -1,6 +1,7 @@
+import { gsap } from 'gsap';
+
 // Hero Section ========================
 export function initHeroAnimation() {
-    if (typeof gsap === "undefined") return;
 
     const heroHeading = document.getElementById('heroHeading');
     const heroDec = document.getElementById('heroDec');

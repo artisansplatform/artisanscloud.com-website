@@ -1,7 +1,9 @@
+import { gsap } from 'gsap';
+
 // Cursor Effects (Reusable) ========================
 export function initCursorEffects() {
     const cursor = document.getElementById("cursor");
-    if (!cursor || typeof gsap === "undefined") return;
+    if (!cursor) return;
 
     function attachCursorEffect(el, bg, scale = 1) {
         if (!el) return;

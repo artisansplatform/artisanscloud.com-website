@@ -1,6 +1,11 @@
+import Swiper from 'swiper';
+import { Autoplay, Navigation, FreeMode } from 'swiper/modules';
+
+// Configure Swiper to use modules
+Swiper.use([Autoplay, Navigation, FreeMode]);
+
 // Swiper Sliders ==========================================
 export function initSwipers() {
-    if (typeof Swiper === "undefined") return;
 
     // Our Client Marquee ========================
     const clientMarqueeEl = document.querySelector(".ourClientMaruqee");
