@@ -73,7 +73,7 @@ describe('Build Verification Tests', () => {
       expect(pagesWithUnprocessedPartials).toEqual([]);
     });
 
-    it('should contain actual <header and <footer HTML elements', () => {
+    it('should contain actual <header> and <footer> HTML elements', () => {
       const pagesWithoutElements = [];
       
       // The 404 page doesn't have header/footer by design, so we skip it
