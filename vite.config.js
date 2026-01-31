@@ -33,13 +33,22 @@ export default defineConfig({
             fs.mkdirSync(scriptTarget, { recursive: true });
           }
           
-          const files = fs.readdirSync(scriptSource);
-          files.forEach(file => {
-            const src = path.join(scriptSource, file);
-            const dest = path.join(scriptTarget, file);
-            fs.copyFileSync(src, dest);
-            console.log(`Copied ${file} to dist/assets/script/`);
-          });
+          const copyRecursively = (src, dest) => {
+            const stats = fs.statSync(src);
+            if (stats.isDirectory()) {
+              if (!fs.existsSync(dest)) {
+                fs.mkdirSync(dest, { recursive: true });
+              }
+              fs.readdirSync(src).forEach(file => {
+                copyRecursively(path.join(src, file), path.join(dest, file));
+              });
+            } else {
+              fs.copyFileSync(src, dest);
+              console.log(`Copied ${path.relative(__dirname, src)} to ${path.relative(__dirname, dest)}`);
+            }
+          };
+          
+          copyRecursively(scriptSource, scriptTarget);
         }
       }
     }
