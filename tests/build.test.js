@@ -10,7 +10,10 @@ const rootDir = path.resolve(__dirname, '..');
 const distDir = path.join(rootDir, 'dist');
 
 // Dynamically get all HTML pages from the root directory
-// This ensures tests automatically discover new pages without manual updates
+// This ensures tests automatically discover new pages without manual updates.
+// Note: This matches the behavior of vite.config.js (line 8) which also uses
+// glob.sync('*.html') to build all HTML files in the root directory.
+// Any HTML file in the root will be built and tested - this is intentional.
 const expectedPages = glob.sync('*.html', { cwd: rootDir });
 
 describe('Build Verification Tests', () => {
