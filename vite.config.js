@@ -17,6 +17,32 @@ export default defineConfig({
     handlebars({
       partialDirectory: path.resolve(__dirname, 'partials'),
     }),
+    {
+      name: 'copy-assets',
+      closeBundle() {
+        // Copy assets folder to dist
+        const assetsSource = path.resolve(__dirname, 'assets');
+        const assetsTarget = path.resolve(__dirname, 'dist/assets');
+        
+        // Copy script files
+        const scriptSource = path.join(assetsSource, 'script');
+        const scriptTarget = path.join(assetsTarget, 'script');
+        
+        if (fs.existsSync(scriptSource)) {
+          if (!fs.existsSync(scriptTarget)) {
+            fs.mkdirSync(scriptTarget, { recursive: true });
+          }
+          
+          const files = fs.readdirSync(scriptSource);
+          files.forEach(file => {
+            const src = path.join(scriptSource, file);
+            const dest = path.join(scriptTarget, file);
+            fs.copyFileSync(src, dest);
+            console.log(`Copied ${file} to dist/assets/script/`);
+          });
+        }
+      }
+    }
   ],
   build: {
     outDir: 'dist',
