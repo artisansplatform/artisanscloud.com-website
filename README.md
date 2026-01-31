@@ -68,6 +68,12 @@ Starts a local server to preview the production build.
 | `npm run build:css` | Compile Tailwind CSS only |
 | `npm run build:html` | Build HTML templates only |
 | `npm run preview` | Preview production build locally |
+| `npm test` | Run all unit tests (build + link validation) |
+| `npm run test:build` | Run build verification tests |
+| `npm run test:links` | Run link validation tests |
+| `npm run test:e2e` | Run Playwright E2E tests (headless) |
+| `npm run test:e2e:ui` | Open Playwright UI for debugging tests |
+| `npm run test:e2e:headed` | Run E2E tests with visible browser |
 
 ## 🎨 Development Patterns
 
@@ -216,6 +222,57 @@ For complete template example, see [DEVELOPMENT.md](DEVELOPMENT.md).
 **Pages not loading correctly?**
 - Verify all HTML files have `{{> header}}` and `{{> footer}}` placeholders
 - Run `npm run build` to regenerate the `dist/` folder
+
+**E2E tests failing?**
+- Run `npm run build` first to generate production files
+- Ensure all dependencies are installed: `npm install`
+- Check that Playwright browsers are installed: `npx playwright install`
+
+## 🧪 Testing
+
+The project includes comprehensive testing infrastructure:
+
+### Unit Tests (Vitest)
+- **Build verification**: Validates that all HTML pages are generated correctly
+- **Link validation**: Ensures all internal links point to existing pages
+- **Run**: `npm test` or `npm run test:build` / `npm run test:links`
+
+### E2E Tests (Playwright)
+Comprehensive browser-based tests covering:
+
+**Test Coverage (226 tests)**:
+- ✅ Page load tests for all 15 pages (index, about-us, blog pages, solution pages, etc.)
+- ✅ Console error detection on each page
+- ✅ Resource loading validation (CSS, JavaScript)
+- ✅ Header/footer visibility checks
+- ✅ Navigation interaction tests (desktop dropdowns, mobile menu)
+- ✅ Header scroll behavior
+- ✅ Responsive layout tests at multiple viewports (mobile, tablet, desktop)
+- ✅ Horizontal overflow detection
+
+**Test Projects**:
+- **Desktop Chrome**: 1280x800 viewport
+- **Mobile Chrome**: Pixel 5 viewport (393x851)
+
+**Commands**:
+```bash
+npm run test:e2e          # Run all E2E tests headlessly
+npm run test:e2e:ui       # Open Playwright UI for debugging
+npm run test:e2e:headed   # Run tests with visible browser
+```
+
+**Test Structure**:
+```
+tests/
+├── build.test.js          # Build verification
+├── links.test.js          # Link validation
+└── e2e/
+    ├── pages.spec.js      # Page load & resource tests
+    ├── navigation.spec.js # Interactive elements
+    └── responsive.spec.js # Viewport/responsive tests
+```
+
+**CI/CD**: Tests run automatically on every push/PR via GitHub Actions. Failed tests upload HTML reports as artifacts.
 
 ## 📄 License
 
