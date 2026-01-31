@@ -2,30 +2,16 @@ import { describe, it, expect, beforeAll } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { glob } from 'glob';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 const distDir = path.join(rootDir, 'dist');
 
-// Expected HTML pages that should be built
-const expectedPages = [
-  'index.html',
-  'about-us.html',
-  'blog-detail.html',
-  'blog-list.html',
-  'browser-pos.html',
-  'contact-us.html',
-  'customer-experience-management.html',
-  'd2c-eCommerce.html',
-  'data-intelligence.html',
-  'distributed-order-management.html',
-  'enterprise-ai.html',
-  'overview.html',
-  'page-404.html',
-  'retail-platform.html',
-  'thank-you.html',
-];
+// Dynamically get all HTML pages from the root directory
+// This ensures tests automatically discover new pages without manual updates
+const expectedPages = glob.sync('*.html', { cwd: rootDir });
 
 describe('Build Verification Tests', () => {
   beforeAll(() => {
