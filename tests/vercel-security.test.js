@@ -1,44 +1,34 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll } from 'vitest';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
 describe('Vercel Security Configuration', () => {
     let vercelConfig;
 
-    it('should have a valid vercel.json file', () => {
+    beforeAll(() => {
         const configPath = join(process.cwd(), 'vercel.json');
         const configContent = readFileSync(configPath, 'utf8');
-        
-        // Should parse without errors
-        expect(() => {
-            vercelConfig = JSON.parse(configContent);
-        }).not.toThrow();
-        
+        vercelConfig = JSON.parse(configContent);
+    });
+
+    it('should have a valid vercel.json file', () => {
         expect(vercelConfig).toBeDefined();
+        expect(vercelConfig).toBeTypeOf('object');
     });
 
     it('should have headers configuration', () => {
-        const configPath = join(process.cwd(), 'vercel.json');
-        vercelConfig = JSON.parse(readFileSync(configPath, 'utf8'));
-        
         expect(vercelConfig.headers).toBeDefined();
         expect(Array.isArray(vercelConfig.headers)).toBe(true);
         expect(vercelConfig.headers.length).toBeGreaterThan(0);
     });
 
     it('should apply security headers to all routes', () => {
-        const configPath = join(process.cwd(), 'vercel.json');
-        vercelConfig = JSON.parse(readFileSync(configPath, 'utf8'));
-        
         const headerConfig = vercelConfig.headers.find(h => h.source === '/(.*)');
         expect(headerConfig).toBeDefined();
         expect(headerConfig.headers).toBeDefined();
     });
 
     it('should have X-Content-Type-Options header set to nosniff', () => {
-        const configPath = join(process.cwd(), 'vercel.json');
-        vercelConfig = JSON.parse(readFileSync(configPath, 'utf8'));
-        
         const headerConfig = vercelConfig.headers[0];
         const xContentTypeOptions = headerConfig.headers.find(h => h.key === 'X-Content-Type-Options');
         
@@ -47,9 +37,6 @@ describe('Vercel Security Configuration', () => {
     });
 
     it('should have X-Frame-Options header set to DENY', () => {
-        const configPath = join(process.cwd(), 'vercel.json');
-        vercelConfig = JSON.parse(readFileSync(configPath, 'utf8'));
-        
         const headerConfig = vercelConfig.headers[0];
         const xFrameOptions = headerConfig.headers.find(h => h.key === 'X-Frame-Options');
         
@@ -58,9 +45,6 @@ describe('Vercel Security Configuration', () => {
     });
 
     it('should have X-XSS-Protection header enabled', () => {
-        const configPath = join(process.cwd(), 'vercel.json');
-        vercelConfig = JSON.parse(readFileSync(configPath, 'utf8'));
-        
         const headerConfig = vercelConfig.headers[0];
         const xssProtection = headerConfig.headers.find(h => h.key === 'X-XSS-Protection');
         
@@ -69,9 +53,6 @@ describe('Vercel Security Configuration', () => {
     });
 
     it('should have Referrer-Policy header configured', () => {
-        const configPath = join(process.cwd(), 'vercel.json');
-        vercelConfig = JSON.parse(readFileSync(configPath, 'utf8'));
-        
         const headerConfig = vercelConfig.headers[0];
         const referrerPolicy = headerConfig.headers.find(h => h.key === 'Referrer-Policy');
         
@@ -80,9 +61,6 @@ describe('Vercel Security Configuration', () => {
     });
 
     it('should have Permissions-Policy header configured', () => {
-        const configPath = join(process.cwd(), 'vercel.json');
-        vercelConfig = JSON.parse(readFileSync(configPath, 'utf8'));
-        
         const headerConfig = vercelConfig.headers[0];
         const permissionsPolicy = headerConfig.headers.find(h => h.key === 'Permissions-Policy');
         
@@ -91,9 +69,6 @@ describe('Vercel Security Configuration', () => {
     });
 
     it('should have Strict-Transport-Security header configured', () => {
-        const configPath = join(process.cwd(), 'vercel.json');
-        vercelConfig = JSON.parse(readFileSync(configPath, 'utf8'));
-        
         const headerConfig = vercelConfig.headers[0];
         const hsts = headerConfig.headers.find(h => h.key === 'Strict-Transport-Security');
         
@@ -102,9 +77,6 @@ describe('Vercel Security Configuration', () => {
     });
 
     it('should have all 6 essential security headers', () => {
-        const configPath = join(process.cwd(), 'vercel.json');
-        vercelConfig = JSON.parse(readFileSync(configPath, 'utf8'));
-        
         const headerConfig = vercelConfig.headers[0];
         const securityHeaders = [
             'X-Content-Type-Options',
