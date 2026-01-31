@@ -86,8 +86,8 @@ test.describe('Responsive Layout Tests', () => {
         test('header navigation should be expanded on desktop', async ({ page }) => {
             await page.goto('/');
             
-            // Desktop navigation links should be visible
-            const navLinks = page.locator('header nav a').first();
+            // Desktop navigation links should be visible (using header-link class)
+            const navLinks = page.locator('header .header-link').first();
             await expect(navLinks).toBeVisible();
         });
 
