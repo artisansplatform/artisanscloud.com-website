@@ -1,6 +1,10 @@
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 // element enter animation effect ========================
 export function initScrollAnimations() {
-    if (typeof gsap === "undefined") return;
 
     const mm = gsap.matchMedia();
     mm.add("(min-width: 768px)", () => {

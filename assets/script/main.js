@@ -1,3 +1,7 @@
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'lenis/dist/lenis.css';
+
 import { initSmoothScroll } from './modules/smooth-scroll.js';
 import { initHeader } from './modules/header.js';
 import { initDropdowns } from './modules/dropdown.js';

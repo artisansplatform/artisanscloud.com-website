@@ -1,6 +1,7 @@
+import { gsap } from 'gsap';
+
 // Footer Artisans Text =============
 export function initFooterEffects() {
-    if (typeof gsap === "undefined") return;
 
     const ftrTitles = document.querySelectorAll(".ftrBottomTitle");
     if (!ftrTitles.length) return;
