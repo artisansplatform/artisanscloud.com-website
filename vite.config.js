@@ -57,4 +57,8 @@ export default defineConfig({
       usePolling: true, // Better compatibility for some file systems
     },
   },
+  test: {
+    environment: 'jsdom',
+    globals: true,
+  },
 });
