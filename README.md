@@ -6,9 +6,10 @@ Static marketing website for **Artisans Cloud** - an enterprise intelligence pla
 
 - **HTML/CSS/JavaScript** - Vanilla implementation, no frameworks
 - **Tailwind CSS v4** - Utility-first styling with custom configuration
+- **Handlebars** - Template partials for shared components (header/footer)
 - **Swiper.js** - Touch-enabled carousels and sliders
 - **Lenis** - Smooth scroll library
-- **Vite** - Development server with hot module reload
+- **Vite** - Development server with hot module reload and build tool
 - **Vercel** - Deployment platform
 
 ## 📋 Prerequisites
@@ -42,7 +43,11 @@ Your browser will open automatically. Any changes to HTML, JavaScript, or CSS fi
 npm run build
 ```
 
-Compiles and minifies Tailwind CSS for production deployment.
+This compiles:
+- **Tailwind CSS** (minified) → `assets/style/output.css`
+- **HTML templates** (with partials) → `dist/` directory
+
+Output is ready for deployment in the `dist/` folder.
 
 ### 4. Preview Production Build
 
@@ -59,17 +64,41 @@ Starts a local server to preview the production build.
 | `npm run dev` | Start dev server + Tailwind watch (parallel) |
 | `npm run dev:tailwind` | Run Tailwind CSS watch only |
 | `npm run dev:server` | Run Vite dev server only |
-| `npm run build` | Compile Tailwind CSS for production |
+| `npm run build` | Build for production (CSS + HTML to `dist/`) |
+| `npm run build:css` | Compile Tailwind CSS only |
+| `npm run build:html` | Build HTML templates only |
 | `npm run preview` | Preview production build locally |
 
 ## 🎨 Development Patterns
 
+### Shared Components (NEW!)
+
+The site now uses **Handlebars partials** for shared components:
+
+- **Header**: `partials/header.html` (navigation, logo, mobile menu)
+- **Footer**: `partials/footer.html` (links, contact info, copyright)
+
+**Benefits**:
+- ✅ Edit header/footer once, updates all pages automatically
+- ✅ Guaranteed consistency across the site
+- ✅ No framework overhead - still generates static HTML
+
+**Usage in HTML files**:
+```html
+{{> header}}  <!-- Includes partials/header.html -->
+<!-- Your page content -->
+{{> footer}}  <!-- Includes partials/footer.html -->
+```
+
+For detailed instructions, see [DEVELOPMENT.md](DEVELOPMENT.md).
+
 ### Page Structure
 All HTML pages follow a consistent structure:
-1. **Fixed header** (`#siteHeader`) - Sticky navigation with dropdowns
-2. **Main content** - Page-specific sections
-3. **Footer** - Common footer across all pages
-4. **External scripts** - Lenis, Swiper, analytics
+1. **Head section** - Meta tags, title, stylesheets
+2. **Header partial** - `{{> header}}` placeholder
+3. **Main content** - Page-specific sections
+4. **Footer partial** - `{{> footer}}` placeholder
+5. **Scripts** - Lenis, Swiper, analytics
 
 ### Styling Conventions
 - **Tailwind classes** for all styling (no custom CSS files)
@@ -93,25 +122,60 @@ All HTML pages follow a consistent structure:
 
 The site is automatically deployed to Vercel on every push to `main` branch.
 
+**Build Process**:
+1. Vercel runs `npm install`
+2. Executes `npm run build` (compiles CSS and processes HTML)
+3. Deploys the `dist/` directory
+
 **Configuration**: [vercel.json](vercel.json)
+- Build output directory: `dist`
 - Clean URLs enabled (no `.html` extensions)
-- Static file serving (no build step required)
 
 ### Deployment Checklist
-- [ ] Run `npm run build` to compile production CSS
-- [ ] Test all pages locally with `npm run preview`
-- [ ] Commit `assets/style/output.css` (generated CSS must be committed)
+- [ ] Test locally: `npm run build && npm run preview`
+- [ ] Verify all pages work correctly
+- [ ] Check that header/footer changes appear on all pages
 - [ ] Push to `main` branch
 - [ ] Verify deployment on Vercel dashboard
 
 ## 🔧 Common Tasks
 
+### Updating Header or Footer (NEW!)
+1. Edit `partials/header.html` or `partials/footer.html`
+2. Save - changes apply to ALL pages automatically
+3. No need to update individual HTML files!
+
+**Example**: Adding a new navigation link
+```html
+<!-- In partials/header.html -->
+<a href="/new-page" class="header-link...">New Page</a>
+```
+
 ### Adding a New Page
-1. Create new `.html` file in root directory
-2. Copy header/footer from existing page
-3. Update navigation links in **ALL** HTML files
-4. Add `.active` class to new page's nav link
-5. Run `npm run dev` to test with auto-reload
+1. Create new `.html` file in root directory (e.g., `new-page.html`)
+2. Use this structure:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Head content -->
+    <link rel="stylesheet" href="./assets/style/output.css">
+</head>
+<body>
+    {{> header}}
+    
+    <!-- Your page content here -->
+    
+    {{> footer}}
+    
+    <!-- Scripts -->
+</body>
+</html>
+```
+3. The header and footer will be automatically included
+4. Run `npm run dev` to test with auto-reload
+
+For complete template example, see [DEVELOPMENT.md](DEVELOPMENT.md).
 
 ### Adding a Swiper Slider
 1. Add HTML structure (`.swiper`, `.swiper-wrapper`, `.swiper-slide`)
@@ -127,10 +191,12 @@ The site is automatically deployed to Vercel on every push to `main` branch.
 
 ## 📝 Notes
 
-- **Header/Footer duplication**: Currently copy-pasted across all pages (consider future refactor)
-- **CSS compilation**: `output.css` must be committed for Vercel deployment
+- **Shared Components**: Header and footer are now managed via Handlebars partials in `partials/` directory
+- **Build Output**: Production files are generated in `dist/` directory (not committed to git)
+- **CSS Compilation**: Tailwind CSS is compiled during build process
 - **External dependencies**: Swiper and Lenis loaded via CDN
 - **Browser support**: Modern browsers (ES6+ required for JavaScript)
+- **Template Engine**: Handlebars is only used at build time - final output is pure static HTML
 
 ## 🐛 Troubleshooting
 
@@ -145,6 +211,11 @@ The site is automatically deployed to Vercel on every push to `main` branch.
 **Build fails?**
 - Ensure Node.js v18.19+ is installed
 - Delete `node_modules` and run `npm install`
+- Check that `partials/header.html` and `partials/footer.html` exist
+
+**Pages not loading correctly?**
+- Verify all HTML files have `{{> header}}` and `{{> footer}}` placeholders
+- Run `npm run build` to regenerate the `dist/` folder
 
 ## 📄 License
 
@@ -152,4 +223,6 @@ Proprietary - © Artisans Cloud
 
 ---
 
-For detailed development guidelines and AI coding instructions, see [.github/copilot-instructions.md](.github/copilot-instructions.md).
+For detailed development guidelines, component architecture, and troubleshooting, see [DEVELOPMENT.md](DEVELOPMENT.md).
+
+For AI coding instructions, see [.github/copilot-instructions.md](.github/copilot-instructions.md).
