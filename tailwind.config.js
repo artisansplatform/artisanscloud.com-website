@@ -1,7 +1,8 @@
 export default {
   content: [
-    "./index.html",
-    "./assets/**/*.{html,js}",
+    "./*.html",                    // All root HTML files
+    "./partials/**/*.html",        // All Handlebars partials
+    "./assets/**/*.{html,js}",     // Assets (JS files may contain class names)
   ],
   theme: {
     extend: {},
