@@ -1,9 +1,10 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
 // All pages to test - matches the pages in the repository
 const pages = [
     { path: '/', title: 'Artisans Cloud', name: 'index.html' },
     { path: '/about-us', title: 'About Us', name: 'about-us.html' },
+    { path: '/automation', title: 'Automation', name: 'automation.html' },
     { path: '/blog-detail', title: 'Blog Detail', name: 'blog-detail.html' },
     { path: '/blog-list', title: 'Blog List', name: 'blog-list.html' },
     { path: '/browser-pos', title: 'Browser POS', name: 'browser-pos.html' },
@@ -34,8 +35,8 @@ test.describe('Page Load Tests', () => {
                     const text = msg.text();
                     // Ignore external CDN errors (expected in test environment)
                     // These are libraries that might not be available during testing
-                    if (!text.includes('cdn.jsdelivr.net') && 
-                        !text.includes('cdnjs.cloudflare.com') && 
+                    if (!text.includes('cdn.jsdelivr.net') &&
+                        !text.includes('cdnjs.cloudflare.com') &&
                         !text.includes('unpkg.com') &&
                         !text.includes('Failed to load resource') &&
                         !text.includes('net::ERR_')) {
@@ -45,10 +46,10 @@ test.describe('Page Load Tests', () => {
             });
 
             await browserPage.goto(page.path);
-            
+
             // Wait a bit for any async errors
             await browserPage.waitForTimeout(1000);
-            
+
             expect(errors).toEqual([]);
         });
 
@@ -56,10 +57,10 @@ test.describe('Page Load Tests', () => {
         if (page.path !== '/page-404') {
             test(`${page.name} should have header and footer visible`, async ({ page: browserPage }) => {
                 await browserPage.goto(page.path);
-                
+
                 const header = browserPage.locator('header');
                 const footer = browserPage.locator('footer');
-                
+
                 await expect(header).toBeVisible();
                 await expect(footer).toBeVisible();
             });
@@ -67,12 +68,12 @@ test.describe('Page Load Tests', () => {
 
         test(`${page.name} should have correct title`, async ({ page: browserPage }) => {
             await browserPage.goto(page.path);
-            
+
             const title = await browserPage.title();
-            
+
             // Title should not be empty
             expect(title.length).toBeGreaterThan(0);
-            
+
             // Title should contain some reference to Artisans or the page name
             // (This is a loose check - adjust based on actual title format)
             expect(title).toBeTruthy();
@@ -83,7 +84,7 @@ test.describe('Page Load Tests', () => {
 test.describe('Resource Loading', () => {
     test('index page should load CSS without errors', async ({ page }) => {
         const failedRequests = [];
-        
+
         page.on('requestfailed', (request) => {
             const url = request.url();
             // Ignore external CDN failures (expected in test environment)
@@ -93,13 +94,13 @@ test.describe('Resource Loading', () => {
         });
 
         await page.goto('/');
-        
+
         expect(failedRequests).toEqual([]);
     });
 
     test('index page should load JavaScript without errors', async ({ page }) => {
         const failedRequests = [];
-        
+
         page.on('requestfailed', (request) => {
             const url = request.url();
             // Ignore external CDN failures (expected in test environment)
@@ -109,7 +110,7 @@ test.describe('Resource Loading', () => {
         });
 
         await page.goto('/');
-        
+
         expect(failedRequests).toEqual([]);
     });
 });
