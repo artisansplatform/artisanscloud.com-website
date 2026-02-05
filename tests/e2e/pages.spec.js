@@ -4,6 +4,7 @@ import { test, expect } from '@playwright/test';
 const pages = [
     { path: '/', title: 'Artisans Cloud', name: 'index.html' },
     { path: '/about-us', title: 'About Us', name: 'about-us.html' },
+    { path: '/automation', title: 'Automation', name: 'automation.html' },
     { path: '/blog-detail', title: 'Blog Detail', name: 'blog-detail.html' },
     { path: '/blog-list', title: 'Blog List', name: 'blog-list.html' },
     { path: '/browser-pos', title: 'Browser POS', name: 'browser-pos.html' },

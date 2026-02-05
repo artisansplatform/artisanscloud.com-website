@@ -206,4 +206,90 @@ test.describe('Navigation Tests', () => {
             }
         });
     });
+
+    test.describe('Tabs Behavior', () => {
+        test.use({ viewport: { width: 1280, height: 800 } });
+
+        test('omni-channel tabs should switch content on click', async ({ page }) => {
+            await page.goto('/automation');
+            
+            // Find all tab buttons
+            const tabButtons = page.locator('[data-tab-btn]');
+            const tabButtonCount = await tabButtons.count();
+            
+            // Should have 3 tab buttons
+            expect(tabButtonCount).toBe(3);
+            
+            // First tab should be active by default
+            const firstTab = page.locator('[data-tab-btn="tailored"]');
+            const firstTabClasses = await firstTab.getAttribute('class');
+            expect(firstTabClasses).toContain('bg-primary');
+            
+            // First panel should be visible
+            const firstPanel = page.locator('[data-tab-panel="tailored"]');
+            await expect(firstPanel).toBeVisible();
+            
+            // Second panel should be hidden
+            const secondPanel = page.locator('[data-tab-panel="interactive-ai"]');
+            await expect(secondPanel).toBeHidden();
+            
+            // Click on second tab
+            const secondTab = page.locator('[data-tab-btn="interactive-ai"]');
+            await secondTab.click();
+            await page.waitForTimeout(300);
+            
+            // Second tab should now be active
+            const secondTabClasses = await secondTab.getAttribute('class');
+            expect(secondTabClasses).toContain('bg-primary');
+            
+            // First panel should be hidden
+            await expect(firstPanel).toBeHidden();
+            
+            // Second panel should be visible
+            await expect(secondPanel).toBeVisible();
+        });
+
+        test('omni-channel tabs should respond to keyboard navigation', async ({ page }) => {
+            await page.goto('/automation');
+            
+            // Focus on second tab
+            const secondTab = page.locator('[data-tab-btn="interactive-ai"]');
+            await secondTab.focus();
+            
+            // Press Enter to activate
+            await page.keyboard.press('Enter');
+            await page.waitForTimeout(300);
+            
+            // Second tab should be active
+            const secondTabClasses = await secondTab.getAttribute('class');
+            expect(secondTabClasses).toContain('bg-primary');
+            
+            // Second panel should be visible
+            const secondPanel = page.locator('[data-tab-panel="interactive-ai"]');
+            await expect(secondPanel).toBeVisible();
+        });
+
+        test('omni-channel tabs should have correct ARIA attributes', async ({ page }) => {
+            await page.goto('/automation');
+            
+            // Check tablist role
+            const tablist = page.locator('[role="tablist"]');
+            await expect(tablist).toBeVisible();
+            
+            // Check tab roles
+            const tabs = page.locator('[role="tab"]');
+            const tabCount = await tabs.count();
+            expect(tabCount).toBe(3);
+            
+            // Check tabpanel roles
+            const tabpanels = page.locator('[role="tabpanel"]');
+            const panelCount = await tabpanels.count();
+            expect(panelCount).toBe(3);
+            
+            // First tab should have aria-selected="true"
+            const firstTab = page.locator('[data-tab-btn="tailored"]');
+            const ariaSelected = await firstTab.getAttribute('aria-selected');
+            expect(ariaSelected).toBe('true');
+        });
+    });
 });

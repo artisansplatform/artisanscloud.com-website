@@ -14,6 +14,7 @@ import { initCursorEffects } from './modules/cursor.js';
 import { initHeroAnimation } from './modules/hero.js';
 import { initFooterEffects } from './modules/footer.js';
 import { initMultiSelect } from './modules/multi-select.js';
+import { initTabs } from './modules/tabs.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCursorEffects();
     initHeroAnimation();
     initFooterEffects();
+    initTabs();
 });
 
 // Multi-select runs immediately (outside DOMContentLoaded)
