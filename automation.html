@@ -221,20 +221,20 @@
 
     <!----- Omni-Channel Access Sec ----->
     <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto" data-tabs>
             <div class="fade-in text-center mb-10 lg:mb-[60px]">
                 <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Omni-Channel Access</h2>
             </div>
 
-            <!-- Omni-Channel Items List -->
-            <div class="fade-in flex flex-wrap justify-center gap-4 mb-10 lg:mb-[60px]">
-                <div class="px-5 py-3 rounded-full bg-[#f6f8fb] text-heading font-primary font-medium text-sm sm:text-base">Tailored Applications and Platforms</div>
-                <div class="px-5 py-3 rounded-full bg-[#f6f8fb] text-heading font-primary font-medium text-sm sm:text-base">Interactive AI</div>
-                <div class="px-5 py-3 rounded-full bg-[#f6f8fb] text-heading font-primary font-medium text-sm sm:text-base">Smart Recognition Technologies</div>
+            <!-- Omni-Channel Tab Buttons -->
+            <div class="fade-in flex flex-wrap justify-center gap-4 mb-10 lg:mb-[60px]" role="tablist">
+                <button data-tab-btn="tailored" role="tab" aria-selected="true" aria-controls="panel-tailored" class="px-5 py-3 rounded-full bg-primary text-white font-primary font-medium text-sm sm:text-base cursor-pointer transition-all duration-300 ease-in-out hover:opacity-90">Tailored Applications and Platforms</button>
+                <button data-tab-btn="interactive-ai" role="tab" aria-selected="false" aria-controls="panel-interactive-ai" class="px-5 py-3 rounded-full bg-[#f6f8fb] text-heading font-primary font-medium text-sm sm:text-base cursor-pointer transition-all duration-300 ease-in-out hover:opacity-90">Interactive AI</button>
+                <button data-tab-btn="smart-recognition" role="tab" aria-selected="false" aria-controls="panel-smart-recognition" class="px-5 py-3 rounded-full bg-[#f6f8fb] text-heading font-primary font-medium text-sm sm:text-base cursor-pointer transition-all duration-300 ease-in-out hover:opacity-90">Smart Recognition Technologies</button>
             </div>
 
-            <!-- Tailored Applications and Platforms -->
-            <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center mb-10 lg:mb-[60px]">
+            <!-- Tailored Applications and Platforms Panel -->
+            <div data-tab-panel="tailored" id="panel-tailored" role="tabpanel" aria-labelledby="tailored" class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center">
                 <div class="order-2 lg:order-1">
                     <img src="assets/image/enterprise-ai/StrategicPartnership.svg" alt="Tailored Applications and Platforms" width="500" height="400" loading="lazy" class="max-w-full h-auto mx-auto">
                 </div>
@@ -244,8 +244,8 @@
                 </div>
             </div>
 
-            <!-- Interactive AI -->
-            <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center mb-10 lg:mb-[60px]">
+            <!-- Interactive AI Panel -->
+            <div data-tab-panel="interactive-ai" id="panel-interactive-ai" role="tabpanel" aria-labelledby="interactive-ai" class="hidden fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center">
                 <div class="">
                     <h3 class="mb-4 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]">Interactive AI</h3>
                     <p class="text-description font-primary font-normal leading-[150%]">Create chatbots and voice assistants for immediate, personalized customer support and effective communication through channels like WhatsApp.</p>
@@ -255,8 +255,8 @@
                 </div>
             </div>
 
-            <!-- Smart Recognition Technologies -->
-            <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center">
+            <!-- Smart Recognition Technologies Panel -->
+            <div data-tab-panel="smart-recognition" id="panel-smart-recognition" role="tabpanel" aria-labelledby="smart-recognition" class="hidden fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center">
                 <div class="order-2 lg:order-1">
                     <img src="assets/image/enterprise-ai/whyArtisans.svg" alt="Smart Recognition Technologies" width="500" height="400" loading="lazy" class="max-w-full h-auto mx-auto">
                 </div>
