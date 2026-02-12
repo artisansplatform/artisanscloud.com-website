@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Point of Sale (POS) System | Artisans Cloud</title>
+    <meta name="description"
+        content="Manage offline and online businesses from a unified retail platform. Our intelligent point of sale software helps retailers improve operational excellence and deliver a better customer experience.">
+    <meta name="keywords"
+        content="POS system, point of sale, retail POS, offline POS, online POS, unified retail platform, inventory management, customer loyalty, omnichannel retailing">
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/style/output.css">
+</head>
+<body>
+    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
+
+    {{> header}}
+
+
+    <!----- Banner Sec ----->
+    <section class="w-full h-full p-4 lg:p-5">
+        <div
+            class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] flex items-center justify-center h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/retail-plateform/banner-bg.webp')] bg-no-repeat bg-cover">
+            <div class="pt-5 lg:pt-[64px] pb-[40px] lg:pb-[65px] w-full">
+                <div class="fade-in max-w-[1400px] w-[100%] mx-auto my-auto">
+                    <div class="fade-in flex flex-col lg:flex-row justify-center w-full">
+
+                        <div
+                            class="flex lg:flex-col items-center lg:items-start justify-between gap-x-4 w-full lg:w-fit mb-5 lg:mb-0 ">
+                            <div class="w-fit h-fit md:ms-[clamp(12px,5.7vw,20px)] ">
+                                <img src="/assets/image/retail-plateform/banner-subg-1.webp" alt="POS dashboard"
+                                    class="rounded-[10px] lg:rounded-[20px]" width="200" height="150">
+                            </div>
+
+                            <div class="w-fit h-fit md:ms-[clamp(12px,2.7vw,95px)] mb-2  hidden lg:block">
+                                <img src="/assets/image/retail-plateform/banner-subg-3.webp" alt="POS interface"
+                                    class="rounded-[10px] lg:rounded-[20px]" width="200" height="150">
+                            </div>
+                            <div class="w-fit h-fit md:me-[clamp(12px,2.7vw,66px)] block lg:hidden">
+                                <img src="/assets/image/retail-plateform/banner-subg-2.webp" alt="Retail management"
+                                    class="rounded-[10px] lg:rounded-[20px]" width="200" height="150">
+                            </div>
+                        </div>
+
+                        <div class="max-w-fit mx-auto lg:mx-0">
+                            <div class="lg:mt-[70px] mb-5 text-center w-full lg:w-auto">
+                                <div class="font-primary font-semibold text-[clamp(24px,3.6vw,40px)] text-heading leading-[120%] lg:leading-[61px] md:text-nowrap "
+                                    id="heroHeading">Connect Products, Inventory, Orders and Customers <br> <span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]">Across Sales Channels</span></div>
+                            </div>
+                            <div id="heroDec" class="lg:mb-[76px] w-full lg:w-auto">
+                                <div class="w-full">
+                                    <p
+                                        class="text-center max-w-[662px] mx-auto text-wrap px-2.5 lg:px-0 text-[clamp(14px,1.3vw,18px)] text-description font-primary font-normal leading-[150%]">
+                                        Our Point of Sales solution is agile and can cater to your specific business irrespective of whether you are a mid sized
+                                        retailer aiming to expand Sales channel or to handle demands of a large enterprise.</p>
+                                    <a href="/contact-us"
+                                        class="lg:mt-[25px] mt-4 w-fit h-fit mx-auto rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex lg:flex-col items-center lg:items-end justify-between w-full gap-x-4 lg:w-fit mt-5 lg:mt-0">
+                            <div class="w-fit h-fit md:me-[clamp(12px,2.7vw,66px)] hidden lg:block ">
+                                <img src="/assets/image/retail-plateform/banner-subg-2.webp" alt="Retail management"
+                                    class="rounded-[10px] lg:rounded-[20px]" width="200" height="150">
+                            </div>
+                            <div class="w-fit h-fit md:ms-[clamp(12px,2.7vw,95px)] block lg:hidden">
+                                <img src="/assets/image/retail-plateform/banner-subg-3.webp" alt="POS interface"
+                                    class="rounded-[10px] lg:rounded-[20px]" width="200" height="150">
+                            </div>
+                            <div class="w-fit h-fit md:me-[clamp(12px,2.7vw,89px)] ">
+                                <img src="/assets/image/retail-plateform/banner-subg-4.webp" alt="Sales analytics"
+                                    class="rounded-[10px] lg:rounded-[20px]" width="200" height="150">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----- End Banner Sec ----->
+
+
+    <!----- Banner Big Image Sec ----->
+    <div
+        class="fade-in relative z-[2] mx-auto mt-7.5 md:mt-[67px] mb-4 lg:mb-7.5 w-[80%] max-w-[1264px] p-[clamp(0.625rem,2.778vw-0.208rem,1.875rem)] rounded-[20px] border sm:border-[3px] border-[#F3F3F3] bg-white/25 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[30%] after:bg-gradient-to-b after:from-transparent after:to-white after:pointer-events-none after:select-none overflow-hidden">
+        <img src="assets/image/pos/point-of-sale-system.png" alt="Point of Sale Platform"
+            class="h-full w-full object-cover object-top rounded-[10px] border border-white" width="1200" height="600" loading="lazy" />
+    </div>
+    <!----- End Banner Big Image Sec ----->
+
+
+    <!----- Intro Text Sec ----->
+    <section class="py-10 md:py-16">
+        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+            <h1
+                class="fade-in mb-10 md:mb-16 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-extrabold leading-[120%] text-center">
+                Manage offline and online businesses from a Unified Retail Platform</h1>
+
+            <div class="fade-in text-center max-w-[900px] mx-auto">
+                <p class="text-description font-primary font-normal leading-[150%] text-base lg:text-lg">Our Intelligent & intuitive point of sale software help retailers improve operational excellence and deliver a better
+                customer experience, diversify revenue streams, and scale businesses with ease.</p>
+                <p class="mt-4 text-description font-primary font-normal leading-[150%] text-base lg:text-lg">You can confidently process orders and keep your business running, even if your connection goes down. The advanced, hybrid architecture enables our enterprise Point of Sale system to run uninterrupted offline or Online.</p>
+                <p class="mt-4 text-description font-primary font-normal leading-[150%] text-base lg:text-lg">Our Point of Sales solution is agile and can cater to your specific business irrespective of whether you are a mid sized retailer aiming to expand Sales channel or to handle demands of a large enterprise</p>
+            </div>
+        </div>
+    </section>
+    <!----- End Intro Text Sec ----->
+
+
+    <!----- Point of Sale Features Sec ----->
+    <section class="lg:py-[90px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+            <div class="fade-in lg:mb-11 mb-8 flex items-center gap-5 justify-between">
+                <h1 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-extrabold leading-[120%]">Point of Sale Features</h1>
+                <div class="flex items-center justify-center gap-[clamp(0.5rem,1.111vw+0.167rem,1rem)]">
+                    <div class="swiper-button-prev swiper-button-prev-pos-features after:hidden !static border border-heading rounded-full !w-8 !h-8  !m-0 transition-all duration-200 ease-linear cursor-pointer">
+                        <img src="assets/image/icon/rightArrowSwiper.svg" alt="Previous slide" class="h-[70%] select-none rotate-180" width="24" height="24" loading="lazy">
+                    </div>
+                    <div class="swiper-button-next swiper-button-next-pos-features after:hidden !static border border-heading rounded-full !w-8 !h-8  !m-0 transition-all duration-200 ease-linear cursor-pointer">
+                        <img src="assets/image/icon/rightArrowSwiper.svg" alt="Next slide" class="h-[70%] select-none" width="24" height="24" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper POSFeaturesSlider">
+                <div class="swiper-wrapper">
+                    <!-- Feature 1: Build Product Catalog -->
+                    <div class="swiper-slide !h-auto">
+                        <div class="fade-in grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 xl:gap-20 2xl:gap-[100px] items-center">
+                            <img src="assets/image/pos/build-product-catalog.png" class="max-w-full h-auto mx-auto 2xl:mx-0 rounded-2xl" alt="Product Catalog Management" width="540" height="350" loading="lazy">
+                            <div>
+                                <h2 class="mb-lg-4 mb-3 text-heading font-primary font-semibold text-2xl lg:text-3xl leading-[125%]">Build Product Catalog</h2>
+                                <ul class="ps-5 space-y-2">
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Configure attributes and workflow for product onboaring across sales channels</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Manage digital assets at a central location</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Manage price books</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Organise products with types and attributes</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Import & Export product information</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Group items together and sell as a Kit</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Generate & print barcode</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2: Manage inventory -->
+                    <div class="swiper-slide !h-auto">
+                        <div class="fade-in grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 xl:gap-20 2xl:gap-[100px] items-center">
+                            <img src="assets/image/retail-plateform/TheUnifiedCommerce-image.webp" class="max-w-full h-auto mx-auto 2xl:mx-0 rounded-2xl" alt="Inventory Management" width="500" height="400" loading="lazy">
+                            <div>
+                                <h2 class="mb-lg-4 mb-3 text-heading font-primary font-semibold text-2xl lg:text-3xl leading-[125%]">Manage inventory across Stores & Sales Channels</h2>
+                                <ul class="ps-5 space-y-2">
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Manage Purchase Orders</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Process Goods Received Note</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Track Inventory levels & SKU's across Stores and Sales Channels from a single backoffice</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Transfer stock between Stores and Sales Channels</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Fulfill orders from the nearest Store</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Generate & Print shipping labels</li>
+                                    <li class="list-disc marker:text-primary font-normal text-sm sm:text-base leading-[150%] text-description">Receive alerts when its time to restock</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Perform inventory adjustments whenever is needed</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Assortment & Seasonal Planning</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3: Discounts & Promotion -->
+                    <div class="swiper-slide !h-auto">
+                        <div class="fade-in grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 xl:gap-20 2xl:gap-[100px] items-center">
+                            <img src="assets/image/pos/discounts-and-promotion.png" class="max-w-full h-auto mx-auto 2xl:mx-0" alt="Discounts and Promotions" width="540" height="350" loading="lazy">
+                            <div>
+                                <h2 class="mb-lg-4 mb-3 text-heading font-primary font-semibold text-2xl lg:text-3xl leading-[125%]">Discounts & Promotion</h2>
+                                <p class="mb-4 text-description font-primary font-normal leading-[150%]">Manage promotions for offline and online sales channels centrally from a single back office system. We offer the flexibility to create and customise discounts that match your bsuiness needs</p>
+                                <ul class="ps-5 space-y-2">
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Configure Store based or Channel based campaigns</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Boost conversions with cart-level promotions</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Increase average order size by tragetting specific products or categories</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Build bundles to get rid of overstocked products</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Configure Buy One Get One (BOGO) deals in few clicks</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Price Markdowns</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Time-limted Promotions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4: Customer Data Management -->
+                    <div class="swiper-slide !h-auto">
+                        <div class="fade-in grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 xl:gap-20 2xl:gap-[100px] items-center">
+                            <img src="assets/image/pos/customer-data-management.png" class="max-w-full h-auto mx-auto 2xl:mx-0" alt="Customer Data Management" width="540" height="350" loading="lazy">
+                            <div>
+                                <h2 class="mb-lg-4 mb-3 text-heading font-primary font-semibold text-2xl lg:text-3xl leading-[125%]">Customer Data Management</h2>
+                                <ul class="ps-5 space-y-2">
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Customer Profile & Purchase history</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Tag and group customers</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Customer segmentation torun targetted campaigns</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 5: Loyalty & Rewards -->
+                    <div class="swiper-slide !h-auto">
+                        <div class="fade-in grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 xl:gap-20 2xl:gap-[100px] items-center">
+                            <img src="assets/image/pos/loyalty-and-rewards.png" class="max-w-full h-auto mx-auto 2xl:mx-0" alt="Loyalty and Rewards" width="540" height="350" loading="lazy">
+                            <div>
+                                <h2 class="mb-lg-4 mb-3 text-heading font-primary font-semibold text-2xl lg:text-3xl leading-[125%]">Loyalty & Rewards</h2>
+                                <ul class="ps-5 space-y-2">
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Configure tiered loyalty campaigns based on point thresholds</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Award loyalty points to encourage retention</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Allow seamless rewards and discounts redemption at Physical store, Online Store or from Mobile App</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Offer incentives to return and spend more</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Reward loyal customers with exclusive deals</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Define Earn and Burn rules across triggers and enable unique outcomes</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Automated marketing campaigns</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">QR based Sign up forms</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 6: Point of Sales -->
+                    <div class="swiper-slide !h-auto">
+                        <div class="fade-in grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 xl:gap-20 2xl:gap-[100px] items-center">
+                            <img src="assets/image/pos/point-of-sale.png" class="max-w-full h-auto mx-auto 2xl:mx-0 rounded-2xl" alt="Point of Sales Interface" width="540" height="350" loading="lazy">
+                            <div>
+                                <h2 class="mb-lg-4 mb-3 text-heading font-primary font-semibold text-2xl lg:text-3xl leading-[125%]">Point of Sales</h2>
+                                <ul class="ps-5 space-y-2">
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Regular Sales, Return & Exchange</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Deposits, Booking Payments</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Special orders</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Manual & Automatic discounts</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Group & Split Payments</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Vouchers & Giftcards</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Compatible with Computer & Tablet</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Online & Offline capability</li>
+                                    <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Shift Close & Day Close</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----- End Point of Sale Features Sec ----->
+
+
+    <!----- Seamless Integration Sec ----->
+    <section class="lg:py-[90px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+            <div class="fade-in grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 xl:gap-20 2xl:gap-[100px] items-center">
+                <img src="assets/image/data-intelligence/coBuiltIntel-robot.svg" class="max-w-full h-auto mx-auto 2xl:mx-0" alt="Seamless Integration" width="500" height="400" loading="lazy">
+                <div>
+                    <h2 class="mb-5 md:mb-8 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-extrabold leading-[120%]">Seamless Integration</h2>
+                    <ul class="ps-5 space-y-2">
+                        <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">WMS, ERP, Accounting Solutions to simplify and streamline Finance Operations</li>
+                        <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Shipping Carriers to offer last mile delivery services</li>
+                        <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Shopify, Magento or use artisans D2C Solution to sell Online</li>
+                        <li class="list-disc marker:text-primary font-primary font-normal text-sm sm:text-base leading-[150%] text-description">Marketplaces & Social Commerce to unifiy & manage Product, Stock & Order from a single backoffice system</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----- End Seamless Integration Sec ----->
+
+
+    <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+    </div>
+
+
+    <!----- Solutions Tailored to Business Needs Sec ----->
+    <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+            <h1 class="fade-in mb-10 md:mb-16 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-extrabold leading-[120%] text-center">Solutions Tailored to Business Needs</h1>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 lg:gap-10 gap-5">
+                <div class="fade-in text-center">
+                    <div class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-pink">
+                        <img src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg" class="h-1/2" alt="Fashion & Apparel icon" width="40" height="40" loading="lazy">
+                    </div>
+                    <p class="text-heading font-primary font-medium text-sm sm:text-base">Fashion & Apparel</p>
+                </div>
+
+                <div class="fade-in text-center">
+                    <div class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-green-box">
+                        <img src="assets/image/icon/intelligentAutomation-icon.svg" class="h-1/2" alt="Beauty & Cosmetics icon" width="40" height="40" loading="lazy">
+                    </div>
+                    <p class="text-heading font-primary font-medium text-sm sm:text-base">Beauty & Cosmetics</p>
+                </div>
+
+                <div class="fade-in text-center">
+                    <div class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-purple">
+                        <img src="assets/image/icon/bulb-icon.svg" class="h-1/2" alt="Consumer Electronics icon" width="40" height="40" loading="lazy">
+                    </div>
+                    <p class="text-heading font-primary font-medium text-sm sm:text-base">Consumer Electronics</p>
+                </div>
+
+                <div class="fade-in text-center">
+                    <div class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-blue-box">
+                        <img src="assets/image/icon/metadata-LineageManagement-icon.svg" class="h-1/2" alt="Pharmaceuticals icon" width="40" height="40" loading="lazy">
+                    </div>
+                    <p class="text-heading font-primary font-medium text-sm sm:text-base">Pharmaceuicals</p>
+                </div>
+
+                <div class="fade-in text-center col-span-2 sm:col-span-1">
+                    <div class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-sky">
+                        <img src="assets/image/icon/DataQuality-Trust-icon.svg" class="h-1/2" alt="FMCG icon" width="40" height="40" loading="lazy">
+                    </div>
+                    <p class="text-heading font-primary font-medium text-sm sm:text-base">FMCG</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----- End Solutions Tailored to Business Needs Sec ----->
+
+
+    <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+    </div>
+
+
+    <!----- Why retailers choose artisans Sec ----->
+    <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+            <h1 class="fade-in mb-10 md:mb-16 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-extrabold leading-[120%] text-center">Why retailers choose artisans</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:gap-[30px] gap-5">
+                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
+                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                        <img src="assets/image/icon/moduleCard-retailPLanning.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Digital Cart icon" width="40" height="40" loading="lazy">
+                    </div>
+                    <div>
+                        <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Digital Cart & Checkout</div>
+                        <p class="text-description font-primary font-normal leading-[150%]">Effortlessly implement smooth and protected checkout experiences for all customers and across various channels or marketplaces in no time.</p>
+                    </div>
+                </div>
+
+                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
+                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                        <img src="assets/image/icon/layers-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Intelligence icon" width="40" height="40" loading="lazy">
+                    </div>
+                    <div>
+                        <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Intelligence</div>
+                        <p class="text-description font-primary font-normal leading-[150%]">Insightful real-time insights on Product, Stock, Order, Customer and performance with customizable reports available anytime, anywhere.</p>
+                    </div>
+                </div>
+
+                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
+                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                        <img src="assets/image/icon/Predictive-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Sell Online icon" width="40" height="40" loading="lazy">
+                    </div>
+                    <div>
+                        <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Sell Online</div>
+                        <p class="text-description font-primary font-normal leading-[150%]">Set up a professional eCommerce site and customize it with design themes or integrate your existing website.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----- End Why retailers choose artisans Sec ----->
+
+
+    <!----- Omnichannel Retailing Sec ----->
+    <section class="lg:py-[100px] sm:py-16 py-10 bg-[#F8F9FC]">
+        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+            <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <div>
+                    <h1 class="mb-5 md:mb-8 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-extrabold leading-[120%]">Omnichannel Retailing</h1>
+                    <p class="mb-6 lg:mb-10 text-xl lg:text-2xl text-heading font-primary font-semibold">Sell Anywhere. Anytime.</p>
+
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="mb-2 text-heading font-primary font-semibold text-lg lg:text-xl">On Your Website</h3>
+                            <p class="text-description font-primary font-normal leading-[150%]">Develop a website that enhances your store's visibility and makes it easy for customers to find and engage with you.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="mb-2 text-heading font-primary font-semibold text-lg lg:text-xl">In-Store and Online</h3>
+                            <p class="text-description font-primary font-normal leading-[150%]">Give customers the freedom to shop the way they prefer—whether browsing in-store and purchasing online, or buying online and picking up in-store.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="mb-2 text-heading font-primary font-semibold text-lg lg:text-xl">Across All Channels</h3>
+                            <p class="text-description font-primary font-normal leading-[150%]">Expand your reach with omnichannel selling by leveraging social media, digital marketplaces, and other platforms, all seamlessly managed through artisans.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <img src="assets/image/solutions/distributed-order-management/Infinite-Scale.svg" class="max-w-full h-auto mx-auto lg:mx-0 rounded-2xl" alt="Omnichannel Retailing" width="600" height="500" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----- End Omnichannel Retailing Sec ----->
+
+
+    <!----- Enhance checkout Experience Sec ----->
+    <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto">
+            <h1 class="fade-in mb-5 md:mb-10 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-extrabold leading-[120%] text-center">Enhance the checkout Experience<br class="hidden lg:block"> with our Retail POS System</h1>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-[30px] gap-5 mt-10 lg:mt-16">
+                <div class="fade-in text-center">
+                    <div class="mb-5 mx-auto w-32 h-32 sm:w-36 sm:h-36 grid place-items-center rounded-2xl bg-light-sky">
+                        <img src="assets/image/icon/intelligentCard-icon-2.svg" class="h-1/2" alt="Faster Checkouts" width="60" height="60" loading="lazy">
+                    </div>
+                    <h3 class="mb-3 text-heading font-primary font-semibold text-lg lg:text-xl">Faster Checkouts</h3>
+                    <p class="text-description font-primary font-normal leading-[150%]">Enterprise point of sales system designed to reduce wait time and facilitate faster checkouts</p>
+                </div>
+
+                <div class="fade-in text-center">
+                    <div class="mb-5 mx-auto w-32 h-32 sm:w-36 sm:h-36 grid place-items-center rounded-2xl bg-light-green-box">
+                        <img src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg" class="h-1/2" alt="Streamlined Inventory Management" width="60" height="60" loading="lazy">
+                    </div>
+                    <h3 class="mb-3 text-heading font-primary font-semibold text-lg lg:text-xl">Streamlined Inventory Management</h3>
+                    <p class="text-description font-primary font-normal leading-[150%]">Real-time, accurate inventory visibility across channels and Stores</p>
+                </div>
+
+                <div class="fade-in text-center">
+                    <div class="mb-5 mx-auto w-32 h-32 sm:w-36 sm:h-36 grid place-items-center rounded-2xl bg-light-pink">
+                        <img src="assets/image/icon/intelligentAutomation-icon.svg" class="h-1/2" alt="Operational Excellence" width="60" height="60" loading="lazy">
+                    </div>
+                    <h3 class="mb-3 text-heading font-primary font-semibold text-lg lg:text-xl">Operational Excellence</h3>
+                    <p class="text-description font-primary font-normal leading-[150%]">Unifiy Product, Inventory, Order and Customer Data across channels & stores and generate real-time insights</p>
+                </div>
+
+                <div class="fade-in text-center">
+                    <div class="mb-5 mx-auto w-32 h-32 sm:w-36 sm:h-36 grid place-items-center rounded-2xl bg-light-purple">
+                        <img src="assets/image/icon/Integration-Scalability-image.svg" class="h-1/2" alt="Open API & Integrations" width="60" height="60" loading="lazy">
+                    </div>
+                    <h3 class="mb-3 text-heading font-primary font-semibold text-lg lg:text-xl">Open API & Integrations</h3>
+                    <p class="text-description font-primary font-normal leading-[150%]">Build highly customisable workflows</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----- End Enhance checkout Experience Sec ----->
+
+
+    <!----- Final CTA Sec ----->
+    <section class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover">
+        <div class="max-w-[1240px] w-[100%] px-5 xl:px-3 mx-auto relative z-10">
+            <div class="fade-in text-center max-w-[800px] mx-auto">
+                <h2 class="lg:mb-5 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">Simplify Commerce, Elevate Customer Experiences: Empower Your Retail Business with Ease</h2>
+                <a href="/contact-us" class="lg:mt-[30px] sm:mt-6 mt-4 mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-white active:text-primary active:scale-95 focus-visible:bg-white focus-visible:text-primary bg-white text-primary hover:bg-white/90">Contact Us</a>
+            </div>
+        </div>
+
+        <img src="assets/image/icon/ctaBanner-shape.png" class="animate-pulse absolute start-0 bottom-0 pointer-none select-none" alt="" width="150" height="150" loading="lazy">
+        <img src="assets/image/icon/ctaBanner-shape2.png" class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none" alt="" width="150" height="150" loading="lazy">
+    </section>
+    <!----- End Final CTA Sec ----->
+
+
+
+    {{> footer}}
+
+
+    <!--+++++++ Script Start +++++++-->
+
+    <script type='module' src='assets/script/main.js'></script>
+</body>
+</html>
