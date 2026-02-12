@@ -1,8 +1,8 @@
-import { describe, it, expect, beforeAll } from 'vitest';
 import fs from 'fs';
+import { glob } from 'glob';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { glob } from 'glob';
+import { beforeAll, describe, expect, it } from 'vitest';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -64,9 +64,9 @@ describe('Build Verification Tests', () => {
 
     it('should contain actual <header> and <footer> HTML elements', () => {
       const pagesWithoutElements = [];
-      
+
       // The 404 page doesn't have header/footer by design, so we skip it
-      const pagesToCheck = expectedPages.filter(page => page !== 'page-404.html');
+      const pagesToCheck = expectedPages.filter(page => page !== '404.html');
 
       pagesToCheck.forEach((page) => {
         const pagePath = path.join(distDir, page);
