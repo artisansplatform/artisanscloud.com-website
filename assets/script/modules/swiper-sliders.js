@@ -157,4 +157,32 @@ export function initSwipers() {
             },
         });
     }
+
+    // Benefits OTB Slider ========================
+    const benefitsOTBSliderEl = document.querySelector(".benefitsOTBSlider");
+    if (benefitsOTBSliderEl) {
+        new Swiper(".benefitsOTBSlider", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+            },
+            pagination: false,
+            navigation: {
+                nextEl: ".swiper-button-next-benefitsOTB",
+                prevEl: ".swiper-button-prev-benefitsOTB",
+            },
+        });
+    }
 }
