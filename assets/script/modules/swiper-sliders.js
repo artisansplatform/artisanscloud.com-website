@@ -141,4 +141,20 @@ export function initSwipers() {
             },
         });
     }
+
+    // POS Features Slider ========================
+    const posFeaturesSliderEl = document.querySelector(".POSFeaturesSlider");
+    if (posFeaturesSliderEl) {
+        new Swiper(".POSFeaturesSlider", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            speed: 700,
+            allowTouchMove: true,
+            pagination: false,
+            navigation: {
+                nextEl: ".swiper-button-next-pos-features",
+                prevEl: ".swiper-button-prev-pos-features",
+            },
+        });
+    }
 }
