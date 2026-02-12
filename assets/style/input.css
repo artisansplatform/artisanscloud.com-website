@@ -108,4 +108,12 @@ body {
     }
 
     .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {@apply !border-0}
+    
+    /* Fix for custom navigation arrows - hide Swiper's injected SVG icons and center custom images */
+    .swiper-button-prev, .swiper-button-next {
+        @apply flex items-center justify-center;
+    }
+    .swiper-navigation-icon {
+        @apply hidden;
+    }
 }
