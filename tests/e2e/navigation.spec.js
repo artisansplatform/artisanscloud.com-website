@@ -159,6 +159,50 @@ test.describe('Navigation Tests', () => {
         });
     });
 
+    test.describe('Active Navigation State', () => {
+        test.use({ viewport: { width: 1280, height: 800 } });
+
+        test('header link should be active on matching page', async ({ page }) => {
+            await page.goto('/retail-platform');
+
+            // The "Retail Platform" header link should have the active class
+            const activeLink = page.locator('header .header-link.active[href="/retail-platform"]');
+            await expect(activeLink).toHaveCount(1);
+        });
+
+        test('solutions dropdown toggle should be active on a solution sub-page', async ({ page }) => {
+            await page.goto('/d2c-eCommerce');
+
+            // The Solutions dropdown toggle should be active
+            const toggle = page.locator('header .dropdown-toggle.active');
+            await expect(toggle).toHaveCount(1);
+
+            // The matching dropdown item should also be active
+            const dropdownItem = page.locator('header .dropdown-item.active[href="/d2c-eCommerce"]');
+            await expect(dropdownItem).toHaveCount(1);
+        });
+
+        test('footer nav link should be active on matching page', async ({ page }) => {
+            await page.goto('/retail-platform');
+
+            // Footer "Retail Platform" link should have the active class
+            const footerActiveLink = page.locator('footer .flex.flex-col a.active[href="/retail-platform"]');
+            await expect(footerActiveLink).toHaveCount(1);
+        });
+
+        test('no header links should be active on non-matching page', async ({ page }) => {
+            await page.goto('/about-us');
+
+            // Retail Platform link should NOT be active
+            const inactiveLink = page.locator('header .header-link.active[href="/retail-platform"]');
+            await expect(inactiveLink).toHaveCount(0);
+
+            // About Us link should be active
+            const activeLink = page.locator('header .header-link.active[href="/about-us"]');
+            await expect(activeLink).toHaveCount(1);
+        });
+    });
+
     test.describe('Dropdown Behavior', () => {
         test.use({ viewport: { width: 1280, height: 800 } });
 

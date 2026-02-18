@@ -14,8 +14,10 @@ import { initHeroAnimation } from './modules/hero.js';
 import { initFooterEffects } from './modules/footer.js';
 import { initMultiSelect } from './modules/multi-select.js';
 import { initTabs } from './modules/tabs.js';
+import { initNavActive } from './modules/nav-active.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    initNavActive();
     initSmoothScroll();
     initHeader();
     initDropdowns();
