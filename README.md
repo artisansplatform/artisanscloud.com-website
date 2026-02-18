@@ -68,7 +68,7 @@ Starts a local server to preview the production build.
 | `npm run build:css` | Compile Tailwind CSS only |
 | `npm run build:html` | Build HTML templates only |
 | `npm run preview` | Preview production build locally |
-| `npm test` | Run all unit tests (build + link validation) |
+| `npm test` | Build the site and run all unit tests |
 | `npm run test:build` | Run build verification tests |
 | `npm run test:links` | Run link validation tests |
 | `npm run test:e2e` | Run Playwright E2E tests (headless) |
@@ -113,9 +113,9 @@ All HTML pages follow a consistent structure:
 - **Mobile breakpoint**: `lg:` (1024px) for desktop/mobile layouts
 
 ### JavaScript Architecture
-- **Single file**: [assets/script/main.js](assets/script/main.js)
-- **Event-driven**: All logic within `DOMContentLoaded`
-- **Features**: Header scroll effects, dropdown menus, mobile nav, ripple effects, Swiper sliders
+- **Modular structure**: Feature code is split into `assets/script/modules/*.js`
+- **Entrypoint**: [assets/script/main.js](assets/script/main.js) imports modules and initializes them
+- **Initialization pattern**: Most modules run from `DOMContentLoaded`; `multi-select` initializes immediately
 
 ### Navigation
 - **Clean URLs**: Pages accessible without `.html` extension
