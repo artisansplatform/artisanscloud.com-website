@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     permissions:
       contents: read
     steps:
@@ -20,7 +20,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm test
-      - name: Install Playwright Browsers
+      - name: Install Playwright browsers
         run: npx playwright install chromium
       - name: Run Playwright tests
         run: npm run test:e2e
