@@ -212,6 +212,7 @@ Make sure to check how the respective pages look in the browser after making the
 
 ### Performance Best Practices
 - **Lazy loading**: Images should use `loading="lazy"` attribute where appropriate
+- **Asset ownership**: For migrated/legacy pages, copy required images into this repository (for example under `assets/image/...`) and reference local paths; do not hotlink production page assets from external domains.
 - **Minification**: Production build automatically minifies CSS (`npm run build:css`)
 - **CDN usage**: External libraries (Swiper, GSAP, Lenis) loaded from CDN to leverage browser caching
 - **Asset optimization**: Use WebP format for images when possible
