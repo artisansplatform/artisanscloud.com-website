@@ -10,7 +10,7 @@
     "build:css": "tailwindcss -i ./assets/style/input.css -o ./assets/style/output.css --minify",
     "build:html": "vite build",
     "preview": "vite preview",
-    "test": "vitest run",
+    "test": "npm run build && vitest run",
     "test:watch": "vitest",
     "test:build": "npm run build && vitest run tests/build.test.js",
     "test:links": "vitest run tests/links.test.js",

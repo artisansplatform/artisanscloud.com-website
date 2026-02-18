@@ -88,7 +88,7 @@ body {
         pointer-events: none;
     }
 
-    .unifiedCommerce_sec_imgBox.ourApprochImgeBox::before {
+    .unifiedCommerce_sec_imgBox.ourApproachImageBox::before {
         background: linear-gradient(90deg, #eeeeee 0%, rgba(255, 255, 255, 0) 100%);
     }
 
