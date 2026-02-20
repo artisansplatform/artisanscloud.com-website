@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
-import fs from 'fs';
 import path from 'path';
 import { glob } from 'glob';
 
@@ -12,51 +11,23 @@ htmlFiles.forEach(file => {
   input[name] = path.resolve(__dirname, file);
 });
 
+// Add main.js as an explicit Rollup entry so Vite bundles and hashes it
+input['main'] = path.resolve(__dirname, 'assets/script/main.js');
+
 export default defineConfig({
   plugins: [
     handlebars({
       partialDirectory: path.resolve(__dirname, 'partials'),
     }),
-    {
-      name: 'copy-assets',
-      closeBundle() {
-        // Copy assets folder to dist
-        const assetsSource = path.resolve(__dirname, 'assets');
-        const assetsTarget = path.resolve(__dirname, 'dist/assets');
-        
-        // Copy script files
-        const scriptSource = path.join(assetsSource, 'script');
-        const scriptTarget = path.join(assetsTarget, 'script');
-        
-        if (fs.existsSync(scriptSource)) {
-          if (!fs.existsSync(scriptTarget)) {
-            fs.mkdirSync(scriptTarget, { recursive: true });
-          }
-          
-          const copyRecursively = (src, dest) => {
-            const stats = fs.statSync(src);
-            if (stats.isDirectory()) {
-              if (!fs.existsSync(dest)) {
-                fs.mkdirSync(dest, { recursive: true });
-              }
-              fs.readdirSync(src).forEach(file => {
-                copyRecursively(path.join(src, file), path.join(dest, file));
-              });
-            } else {
-              fs.copyFileSync(src, dest);
-              console.log(`Copied ${path.relative(__dirname, src)} to ${path.relative(__dirname, dest)}`);
-            }
-          };
-          
-          copyRecursively(scriptSource, scriptTarget);
-        }
-      }
-    }
   ],
   build: {
     outDir: 'dist',
     rollupOptions: {
       input,
+      output: {
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+      },
     },
   },
   server: {
