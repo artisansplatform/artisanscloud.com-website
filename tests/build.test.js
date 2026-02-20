@@ -118,4 +118,31 @@ describe('Build Verification Tests', () => {
       expect(content.length).toBeGreaterThan(0);
     });
   });
+
+  describe('JS Generation', () => {
+    it('should generate hashed JS file in dist/assets', () => {
+      const assetsDir = path.join(distDir, 'assets');
+      expect(fs.existsSync(assetsDir)).toBe(true);
+
+      // Vite outputs content-hashed filenames like main.a1b2c3d4.js
+      const files = fs.readdirSync(assetsDir);
+      const jsFiles = files.filter((file) => file.endsWith('.js'));
+
+      expect(jsFiles.length).toBeGreaterThan(0);
+    });
+
+    it('should have hashed JS file for main entry', () => {
+      const assetsDir = path.join(distDir, 'assets');
+      const files = fs.readdirSync(assetsDir);
+      // main.[hash].js — filename contains "main" and a hash segment
+      const mainJsFiles = files.filter((file) => /^main\.[A-Za-z0-9_-]+\.js$/.test(file));
+
+      expect(mainJsFiles.length).toBeGreaterThan(0);
+    });
+
+    it('should not contain unhashed main.js at old script path', () => {
+      const oldPath = path.join(distDir, 'assets', 'script', 'main.js');
+      expect(fs.existsSync(oldPath)).toBe(false);
+    });
+  });
 });
