@@ -449,9 +449,72 @@
                         <li class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description">High-reliability environments</li>
                     </ul>
                 </div>
-                <div class="unifiedCommerce_sec_imgBox ourApproachImageBox relative rounded-2xl md:rounded-[20px] bg-white/25 grid place-items-center sm:ps-[26px] ps-5 sm:pt-[26px] pt-5 p-4 sm:pb-[41px] pb-6 overflow-hidden after:h-[25%]">
-                    <img src="assets/image/data-intelligence/cta-section.webp" class="h-full w-full object-cover" alt="Enterprise training platform for customer-facing and sales teams" width="500" height="400" loading="lazy">
-                    <div class="absolute top-0 end-0 w-[20%] h-full bg-[linear-gradient(90deg,_rgba(255,255,255,0)_5%,_#FFFFFF_70%,_#FFFFFF_100%)] pointer-events-none select-none"></div>
+                <!-- Training Performance Dashboard Card -->
+                <div class="rounded-2xl md:rounded-[20px] bg-[#F6F3FF] p-6 sm:p-8 space-y-5">
+                    <!-- Header -->
+                    <div class="flex items-center justify-between">
+                        <span class="font-primary font-semibold text-heading text-base">Training Performance</span>
+                        <span class="text-xs font-primary font-medium text-primary bg-[#EDE8FF] rounded-full px-3 py-1">Live Dashboard</span>
+                    </div>
+                    <!-- Metric rows with progress bars -->
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-primary text-description">Scenario Completion</span>
+                                <span class="text-sm font-primary font-semibold text-heading">95%</span>
+                            </div>
+                            <div class="w-full h-2 rounded-full bg-white overflow-hidden">
+                                <div class="h-full rounded-full bg-primary" style="width:95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-primary text-description">Customer Satisfaction Score</span>
+                                <span class="text-sm font-primary font-semibold text-heading">97%</span>
+                            </div>
+                            <div class="w-full h-2 rounded-full bg-white overflow-hidden">
+                                <div class="h-full rounded-full bg-[#FFB5F4]" style="width:97%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-sm font-primary text-description">First-Call Resolution</span>
+                                <span class="text-sm font-primary font-semibold text-heading">+40%</span>
+                            </div>
+                            <div class="w-full h-2 rounded-full bg-white overflow-hidden">
+                                <div class="h-full rounded-full bg-[#85ADDE]" style="width:75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Stat callouts -->
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-white rounded-xl p-4 text-center">
+                            <div class="font-primary font-bold text-2xl text-primary leading-none mb-1">60%</div>
+                            <div class="text-xs font-primary text-description leading-[140%]">Reduction in Training Time</div>
+                        </div>
+                        <div class="bg-white rounded-xl p-4 text-center">
+                            <div class="font-primary font-bold text-2xl text-[#C5AAFF] leading-none mb-1">50%</div>
+                            <div class="text-xs font-primary text-description leading-[140%]">Improvement in New Hire Confidence</div>
+                        </div>
+                    </div>
+                    <!-- Scenario status list -->
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-3 bg-white rounded-lg px-4 py-2.5">
+                            <span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
+                            <span class="text-sm font-primary text-description flex-1">Sales Training</span>
+                            <span class="text-xs font-primary font-medium text-primary">Complete</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white rounded-lg px-4 py-2.5">
+                            <span class="w-2 h-2 rounded-full bg-[#FFB5F4] flex-shrink-0"></span>
+                            <span class="text-sm font-primary text-description flex-1">Customer Service</span>
+                            <span class="text-xs font-primary font-medium text-[#C5AAFF]">In Progress</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white rounded-lg px-4 py-2.5">
+                            <span class="w-2 h-2 rounded-full bg-[#85ADDE] flex-shrink-0"></span>
+                            <span class="text-sm font-primary text-description flex-1">Compliance Scenarios</span>
+                            <span class="text-xs font-primary font-medium text-[#85ADDE]">Scheduled</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
