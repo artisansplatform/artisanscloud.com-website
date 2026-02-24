@@ -134,7 +134,7 @@ describe('Build Verification Tests', () => {
     it('should have hashed JS file for main entry', () => {
       const assetsDir = path.join(distDir, 'assets');
       const files = fs.readdirSync(assetsDir);
-      // main.[hash].js — filename contains "main" and a hash segment
+      // main.[hash].js - filename contains "main" and a hash segment
       const mainJsFiles = files.filter((file) => /^main\.[A-Za-z0-9_-]+\.js$/.test(file));
 
       expect(mainJsFiles.length).toBeGreaterThan(0);
