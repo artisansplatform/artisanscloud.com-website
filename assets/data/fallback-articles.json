@@ -1,0 +1,83 @@
+[
+  {
+    "id": "fallback-1",
+    "title": "Retail Technology Trends",
+    "description": "Retail is entering a decisive phase. The question for 2026 is no longer \"Which new technologies should we try?\" It is \"Which technologies belong at the core of how retail operates?\"",
+    "url": "https://www.linkedin.com/pulse/retail-technology-trends-2026-from-tools-true-digital-8odhf/",
+    "thumbnail": "/assets/image/insightsLeadership-card-1.png",
+    "publishedAt": 1736899200000,
+    "category": "Retail Technology"
+  },
+  {
+    "id": "fallback-2",
+    "title": "Retail-as-a-Service (RaaS)",
+    "description": "Retail is changing faster than most organizations are built to respond. Consumers expect convenience, personalization, instant fulfillment and seamless cross-channel experiences.",
+    "url": "https://www.linkedin.com/pulse/why-retailers-must-prepare-retail-as-a-service-raas-jos5c/",
+    "thumbnail": "/assets/image/insightsLeadership-card-2.png",
+    "publishedAt": 1736467200000,
+    "category": "Retail Innovation"
+  },
+  {
+    "id": "fallback-3",
+    "title": "Commerce Data Lake",
+    "description": "The concept of a Commerce Data Lake has been associated with the largest retailers with expansive digital teams and multi-million-dollar tech budgets.",
+    "url": "https://www.linkedin.com/pulse/case-commerce-data-lake-mid-market-retail-artisanscommercecloud-qmflc/",
+    "thumbnail": "/assets/image/insightsLeadership-card-3.png",
+    "publishedAt": 1736035200000,
+    "category": "Data Analytics"
+  },
+  {
+    "id": "fallback-4",
+    "title": "Retail Point of Sale Solution",
+    "description": "In the dynamic landscape of omnichannel retail, having a robust point of sale solution is essential for success.",
+    "url": "https://www.linkedin.com/pulse/retail-point-sale-solution-artisanscommercecloud-wxphc/",
+    "thumbnail": "/assets/image/insightsLeadership-card-1.png",
+    "publishedAt": 1732147200000,
+    "category": "Retail POS"
+  },
+  {
+    "id": "fallback-5",
+    "title": "Assortment Planning: The Key to Retail Success",
+    "description": "In today's fast-paced retail environment, meeting customer expectations requires strategic assortment planning.",
+    "url": "https://www.linkedin.com/pulse/assortment-planning-key-retail-success-artisanscommercecloud-tx9gc/",
+    "thumbnail": "/assets/image/insightsLeadership-card-2.png",
+    "publishedAt": 1732060800000,
+    "category": "Assortment Planning"
+  },
+  {
+    "id": "fallback-6",
+    "title": "Optimize Inventory with Smart Merchandise Transfers",
+    "description": "Have you heard of smart merchandise transfer in retail? It can transform how you manage inventory across locations.",
+    "url": "https://www.linkedin.com/pulse/optimize-inventory-smart-merchandise-transfers-5yhmc/",
+    "thumbnail": "/assets/image/insightsLeadership-card-3.png",
+    "publishedAt": 1730419200000,
+    "category": "Merchandise Planning"
+  },
+  {
+    "id": "fallback-7",
+    "title": "Maximizing Sales with Product Lifecycle",
+    "description": "Understanding the Retail Product Lifecycle helps retailers optimize every stage from introduction to decline.",
+    "url": "https://www.linkedin.com/pulse/maximizing-sales-product-lifecycle-guide-retailers-lvxoc/",
+    "thumbnail": "/assets/image/insightsLeadership-card-4.png",
+    "publishedAt": 1727827200000,
+    "category": "Retail Product Lifecycle"
+  },
+  {
+    "id": "fallback-8",
+    "title": "What Does Data Analytics Really Do?",
+    "description": "Data analytics enables retailers to convert every data point into actionable insights that drive business growth.",
+    "url": "https://www.linkedin.com/pulse/what-does-data-analytics-really-do-retail-businesses-xokjc/",
+    "thumbnail": "/assets/image/insightsLeadership-card-5.png",
+    "publishedAt": 1721606400000,
+    "category": "Data Analytics"
+  },
+  {
+    "id": "fallback-9",
+    "title": "Merchandise Financial Planning",
+    "description": "Careful merchandising, financial planning, and retail strategy alignment are key to maximizing profitability.",
+    "url": "https://www.linkedin.com/pulse/merchandise-financial-planning-artisanscommercecloud-bq4xc/",
+    "thumbnail": "/assets/image/insightsLeadership-card-6.png",
+    "publishedAt": 1718064000000,
+    "category": "Merchandise Planning"
+  }
+]

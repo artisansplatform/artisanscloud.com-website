@@ -91,6 +91,22 @@ describe('Build Verification Tests', () => {
     });
   });
 
+  describe('Dynamic Blog Containers', () => {
+    it('should have #blog-grid container in blog-list.html', () => {
+      const pagePath = path.join(distDir, 'blog-list.html');
+      expect(fs.existsSync(pagePath)).toBe(true);
+      const content = fs.readFileSync(pagePath, 'utf-8');
+      expect(content).toMatch(/id=.blog-grid./);
+    });
+
+    it('should have #insights-grid container in index.html', () => {
+      const pagePath = path.join(distDir, 'index.html');
+      expect(fs.existsSync(pagePath)).toBe(true);
+      const content = fs.readFileSync(pagePath, 'utf-8');
+      expect(content).toMatch(/id=.insights-grid./);
+    });
+  });
+
   describe('CSS Generation', () => {
     it('should generate CSS file in dist/assets', () => {
       const assetsDir = path.join(distDir, 'assets');

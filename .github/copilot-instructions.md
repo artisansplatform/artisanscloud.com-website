@@ -33,6 +33,9 @@ npm run test:e2e:headed  # Run E2E tests with visible browser
 
 # Preview
 npm run preview          # Preview production build locally
+
+# Maintenance
+npm run update-fallback  # Update fallback blog articles from live deployment
 ```
 
 ### Pull Request Requirements
@@ -233,6 +236,73 @@ Make sure to check how the respective pages look in the browser after making the
 
 ---
 
+## Dynamic Blog Articles System
+
+### Architecture
+Blog articles on `blog-list.html` and `index.html` (Insights & Leadership section) are rendered dynamically by JavaScript. On Vercel, a daily cron job fetches articles from LinkedIn and caches them in Vercel Blob.
+
+```
+LinkedIn API  ──(daily cron)──>  Vercel Blob (articles.json)
+                                        │
+                                        ▼
+                              /api/articles endpoint
+                                        │
+                                        ▼
+                        Frontend JS renders blog cards
+                   (fallback data in JS renders immediately)
+```
+
+### Single Source of Truth
+- **Card HTML templates**: Defined ONLY in `assets/script/modules/blog-articles.js` — NOT in HTML pages
+- **Fallback article data**: Defined ONCE in `assets/data/fallback-articles.json` — shared by frontend JS and backend API
+- **HTML pages** (`blog-list.html`, `index.html`): Contain only empty `#blog-grid` and `#insights-grid` containers
+- **9 total articles** in fallback; blog-list shows all 9, homepage shows the 3 most recent
+
+### Key Files
+| File | Purpose |
+|------|---------|
+| `assets/data/fallback-articles.json` | Single source of fallback article data (shared by frontend + backend) |
+| `assets/script/modules/blog-articles.js` | Frontend: renders cards, fetches fallback JSON + API data |
+| `api/lib/fallback-articles.js` | Backend: reads fallback JSON for API fallback responses |
+| `api/lib/linkedin.js` | LinkedIn API client (fetch articles, refresh tokens) |
+| `api/cron/fetch-articles.js` | Cron function: fetch LinkedIn articles → store in Blob |
+| `api/articles.js` | API route: serve cached articles JSON to frontend |
+
+### How to Update Blog Articles
+- **To change card design**: Edit the `createBlogCardHTML()` / `createInsightsCardHTML()` functions in `blog-articles.js`
+- **To update fallback articles from live data**: Run `npm run update-fallback` (fetches latest from deployed API, downloads images locally)
+- **To update fallback articles manually**: Edit `assets/data/fallback-articles.json` (one file, used by both frontend and backend)
+- **To add articles**: New LinkedIn articles are fetched automatically by the daily cron — no manual updates needed
+
+### Update Fallback Script (`scripts/update-fallback-articles.js`)
+```bash
+npm run update-fallback                    # Fetch from production and update files
+npm run update-fallback -- --dry           # Preview changes without writing files
+npm run update-fallback -- --url https://preview.example.com  # Fetch from custom URL
+```
+- Fetches articles from the deployed `/api/articles` endpoint
+- Downloads thumbnail images locally to `assets/image/blog/`
+- Updates `assets/data/fallback-articles.json` with the latest 9 articles
+- After running: review with `git diff assets/`, then build, test, and commit
+
+### Environment Variables (Vercel Dashboard)
+```
+LINKEDIN_CLIENT_ID          # LinkedIn OAuth app client ID
+LINKEDIN_CLIENT_SECRET      # LinkedIn OAuth app secret
+LINKEDIN_ACCESS_TOKEN       # Initial access token (60-day expiry, auto-refreshed)
+LINKEDIN_REFRESH_TOKEN      # Refresh token (365-day expiry, manual re-auth when expired)
+LINKEDIN_ORG_ID             # LinkedIn organization ID
+BLOB_READ_WRITE_TOKEN       # Auto-created when Vercel Blob store is provisioned
+CRON_SECRET                 # Vercel cron authentication secret
+```
+
+### Token Expiration
+- Access token (60 days): auto-refreshed via refresh token, stored in Blob
+- Refresh token (365 days): requires manual re-authentication when expired
+- Cron logs errors when refresh fails
+
+---
+
 ## Quick Debugging Tips
 
 - **Dropdown not showing**: Check `.show` class is being toggled + z-index layers
@@ -243,6 +313,8 @@ Make sure to check how the respective pages look in the browser after making the
 - **Build fails**: Ensure `partials/header.html` and `partials/footer.html` exist, check for syntax errors in HTML
 - **Page not found in dev**: Ensure HTML file is in root directory, access without `.html` extension
 - **Console errors**: Check browser DevTools console for JavaScript errors, missing resources
+- **Blog cards empty**: Check `#blog-grid` / `#insights-grid` IDs exist in HTML, verify `blog-articles.js` is imported in `main.js`
+- **Blog cards not updating**: Verify cron job runs (`/api/cron/fetch-articles`), check Vercel Blob for `articles.json`, confirm LinkedIn env vars are set
 
 ---
 
@@ -253,10 +325,21 @@ artisanscloud.com-website/
 ├── .github/
 │   ├── copilot-instructions.md    # This file - AI coding guidelines
 │   └── workflows/                  # GitHub Actions CI/CD
+├── api/
+│   ├── articles.js                 # API route: serve cached articles JSON
+│   ├── cron/
+│   │   └── fetch-articles.js       # Daily cron: fetch LinkedIn articles → Blob
+│   └── lib/
+│       ├── fallback-articles.js    # Reads fallback JSON for API fallback responses
+│       └── linkedin.js             # LinkedIn API client + token management
 ├── assets/
+│   ├── data/
+│   │   └── fallback-articles.json # Single source of fallback article data (shared by frontend + backend)
 │   ├── image/                      # Website images and graphics
 │   ├── script/
-│   │   └── main.js                 # All JavaScript logic (DOMContentLoaded-based)
+│   │   ├── main.js                 # All JavaScript logic (DOMContentLoaded-based)
+│   │   └── modules/
+│   │       └── blog-articles.js    # Dynamic blog card rendering (single source of truth)
 │   └── style/
 │       ├── input.css               # Tailwind source (with @tailwind directives)
 │       └── output.css              # Compiled CSS (loaded by all pages)
@@ -266,16 +349,20 @@ artisanscloud.com-website/
 ├── tests/
 │   ├── build.test.js               # Build verification tests
 │   ├── links.test.js               # Link validation tests
+│   ├── vercel-security.test.js     # Vercel config & cron validation tests
 │   └── e2e/                        # Playwright E2E tests
 │       ├── pages.spec.js           # Page load & resource tests
 │       ├── navigation.spec.js      # Interactive element tests
-│       └── responsive.spec.js      # Viewport/responsive tests
+│       ├── responsive.spec.js      # Viewport/responsive tests
+│       └── blog-articles.spec.js   # Dynamic blog article rendering tests
+├── scripts/
+│   └── update-fallback-articles.js # Script to update fallback data from live deployment
 ├── *.html                          # Page templates (use {{> header}} / {{> footer}})
 ├── package.json                    # Dependencies and npm scripts
 ├── tailwind.config.js              # Tailwind CSS configuration
 ├── vite.config.js                  # Vite build configuration (Handlebars plugin)
 ├── playwright.config.js            # Playwright E2E test configuration
-├── vercel.json                     # Vercel deployment configuration
+├── vercel.json                     # Vercel deployment config (crons, headers, clean URLs)
 └── README.md                       # Project documentation
 ```
 

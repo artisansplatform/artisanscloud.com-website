@@ -96,3 +96,26 @@ describe('Vercel Security Configuration', () => {
         expect(headerConfig.headers.length).toBe(6);
     });
 });
+
+describe('Vercel Cron Configuration', () => {
+    let vercelConfig;
+
+    beforeAll(() => {
+        const configPath = join(process.cwd(), 'vercel.json');
+        const configContent = readFileSync(configPath, 'utf8');
+        vercelConfig = JSON.parse(configContent);
+    });
+
+    it('should have crons configuration', () => {
+        expect(vercelConfig.crons).toBeDefined();
+        expect(Array.isArray(vercelConfig.crons)).toBe(true);
+        expect(vercelConfig.crons.length).toBeGreaterThan(0);
+    });
+
+    it('should have fetch-articles cron job configured', () => {
+        const fetchArticlesCron = vercelConfig.crons.find(c => c.path === '/api/cron/fetch-articles');
+        expect(fetchArticlesCron).toBeDefined();
+        expect(fetchArticlesCron.schedule).toBeDefined();
+        expect(fetchArticlesCron.schedule).toMatch(/^[\d*/, -]+$/);
+    });
+});

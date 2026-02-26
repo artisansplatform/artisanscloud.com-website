@@ -15,9 +15,11 @@ import { initFooterEffects } from './modules/footer.js';
 import { initMultiSelect } from './modules/multi-select.js';
 import { initTabs } from './modules/tabs.js';
 import { initNavActive } from './modules/nav-active.js';
+import { initBlogArticles } from './modules/blog-articles.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavActive();
+    initBlogArticles();
     initSmoothScroll();
     initHeader();
     initDropdowns();
