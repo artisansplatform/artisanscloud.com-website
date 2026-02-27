@@ -96,6 +96,8 @@ export async function getValidAccessToken() {
 
 /**
  * Fetch LinkedIn articles for the configured organization.
+ * Uses the DMA OriginalArticles API (FindByAuthor) which works with
+ * the r_dma_admin_pages_content scope from the Pages Data Portability product.
  * Returns a normalized array of article objects.
  */
 export async function fetchLinkedInArticles(accessToken) {
@@ -103,14 +105,13 @@ export async function fetchLinkedInArticles(accessToken) {
   if (!orgId) throw new Error('LINKEDIN_ORG_ID not configured');
 
   const authorUrn = encodeURIComponent(`urn:li:organization:${orgId}`);
-  const url = `${LINKEDIN_API_BASE}/rest/posts?author=${authorUrn}&q=author&count=20&sortBy=LAST_MODIFIED`;
+  const url = `${LINKEDIN_API_BASE}/rest/dmaOriginalArticles?q=author&author=${authorUrn}&start=0&count=50&state=(value:PUBLISHED)`;
 
   const res = await fetch(url, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
       'LinkedIn-Version': '202601',
       'X-Restli-Protocol-Version': '2.0.0',
-      'X-RestLi-Method': 'FINDER',
     },
   });
 
@@ -131,24 +132,50 @@ export async function fetchLinkedInArticles(accessToken) {
   }
 
   const data = await res.json();
-  const posts = data.elements || [];
+  const articles = data.elements || [];
 
-  // Filter for article-type posts and normalize
-  return posts
-    .filter((post) => post.content && post.content.article)
-    .map((post) => {
-      const article = post.content.article;
+  // Normalize DMA OriginalArticles response to our standard format
+  return articles
+    .filter((article) => article.state === 'PUBLISHED')
+    .map((article) => {
+      // Build the LinkedIn article URL from the permlink
+      const articleUrl = article.permlink
+        ? `https://www.linkedin.com/pulse/${article.permlink}`
+        : '';
+
+      // Extract thumbnail from coverImage or displayImage
+      const thumbnail =
+        (article.coverImage && article.coverImage.originalImage && article.coverImage.originalImage.downloadUrl) ||
+        (article.displayImage && article.displayImage.downloadUrl) ||
+        null;
+
+      // Extract a description from contentHtml (strip tags, take first ~200 chars)
+      const description = extractDescription(article.contentHtml || '', article.title || '');
+
       return {
-        id: post.id,
+        id: article.linkedInArticleUrn || '',
         title: article.title || '',
-        description: article.description || '',
-        url: article.source || '',
-        thumbnail: (article.thumbnail && article.thumbnail !== '') ? article.thumbnail : null,
-        publishedAt: post.publishedAt || post.createdAt || Date.now(),
+        description,
+        url: articleUrl,
+        thumbnail,
+        publishedAt: article.publishedAt || article.createdAt || Date.now(),
         category: extractCategory(article.title || ''),
       };
     })
     .sort((a, b) => b.publishedAt - a.publishedAt);
+}
+
+/**
+ * Extract a plain-text description from article HTML content.
+ * Strips tags and returns the first ~200 characters.
+ */
+function extractDescription(html, title) {
+  // Strip HTML tags
+  const text = html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+  // Skip if it's just the title repeated
+  const cleaned = text.startsWith(title) ? text.slice(title.length).trim() : text;
+  if (!cleaned) return '';
+  return cleaned.length > 200 ? cleaned.slice(0, 200) + '...' : cleaned;
 }
 
 /**

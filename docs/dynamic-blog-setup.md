@@ -174,10 +174,10 @@ Check the **Vercel dashboard** → **Logs** for:
 
 ### LinkedIn API returns 403
 **Cause**: LinkedIn app doesn't have the required API permissions.
-**Fix**: In LinkedIn Developer Portal, ensure your app has access to the **Community Management API** (specifically the `r_organization_social` permission for reading organization posts).
+**Fix**: In LinkedIn Developer Portal, ensure your app has access to the **Pages Data Portability API** product (grants the `r_dma_admin_pages_content` scope). The authenticated user must have ADMINISTRATOR or CONTENT_ADMINISTRATOR role on the company page. Note: this product requires it to be the only product on the LinkedIn app — create a dedicated app if you have other products provisioned.
 
 ### No articles returned from LinkedIn
-**Cause**: The LinkedIn API filters for article-type posts (`content.article`). If all recent posts are regular shares/images/videos, the filtered result is empty.
+**Cause**: The DMA OriginalArticles API only returns LinkedIn Articles (long-form Pulse/Newsletter content). Regular posts, image shares, and video posts are not included.
 **Fix**: This is expected behavior — the existing cache is preserved. Publish a new LinkedIn Article (not a regular post) to see it appear.
 
 ### Images not loading on blog cards
