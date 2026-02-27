@@ -108,7 +108,7 @@ export async function fetchLinkedInArticles(accessToken) {
   const res = await fetch(url, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
-      'LinkedIn-Version': '202502',
+      'LinkedIn-Version': '202601',
       'X-Restli-Protocol-Version': '2.0.0',
     },
   });
