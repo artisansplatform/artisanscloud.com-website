@@ -15,6 +15,10 @@
 import fallbackArticles from '../../data/fallback-articles.json';
 
 const FALLBACK_IMAGE = '/assets/image/insightsLeadership-card-1.png';
+const ARTICLES_PER_PAGE = 9;
+
+let visibleCount = ARTICLES_PER_PAGE;
+let currentArticles = [];
 
 function formatDate(timestamp) {
   const date = new Date(timestamp);
@@ -91,9 +95,21 @@ function createInsightsCardHTML(article) {
 </div>`;
 }
 
+function updateLoadMoreBtn(articles) {
+  const btn = document.getElementById('load-more-btn');
+  if (!btn) return;
+  btn.style.display = visibleCount < articles.length ? '' : 'none';
+}
+
+function renderBlogGrid(articles, blogGrid) {
+  blogGrid.innerHTML = articles.slice(0, visibleCount).map(createBlogCardHTML).join('');
+  updateLoadMoreBtn(articles);
+}
+
 function renderArticles(articles, blogGrid, insightsGrid) {
+  currentArticles = articles;
   if (blogGrid) {
-    blogGrid.innerHTML = articles.map(createBlogCardHTML).join('');
+    renderBlogGrid(articles, blogGrid);
   }
   if (insightsGrid) {
     insightsGrid.innerHTML = articles.slice(0, 3).map(createInsightsCardHTML).join('');
@@ -108,6 +124,15 @@ export function initBlogArticles() {
 
   // Render fallback data immediately — bundled at build time, no network request
   renderArticles(fallbackArticles, blogGrid, insightsGrid);
+
+  // Wire up Load More button
+  const loadMoreBtn = document.getElementById('load-more-btn');
+  if (loadMoreBtn && blogGrid) {
+    loadMoreBtn.addEventListener('click', () => {
+      visibleCount += ARTICLES_PER_PAGE;
+      renderBlogGrid(currentArticles, blogGrid);
+    });
+  }
 
   // Then try to upgrade with live API data
   fetch('/api/articles')

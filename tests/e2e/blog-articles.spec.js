@@ -94,6 +94,72 @@ test.describe('Dynamic Blog Articles', () => {
         });
     });
 
+    test.describe('Load More', () => {
+        function makeMockArticles(count) {
+            return Array.from({ length: count }, (_, i) => ({
+                id: `article-${i}`,
+                title: `Test Article ${i + 1}`,
+                description: `Description for article ${i + 1}`,
+                url: 'https://www.linkedin.com/pulse/test',
+                thumbnail: null,
+                publishedAt: Date.now() - i * 86400000,
+                category: 'Retail Insights',
+            }));
+        }
+
+        test('Load More button is hidden when articles count is ≤ 9', async ({ page }) => {
+            await page.route('/api/articles', (route) => {
+                route.fulfill({
+                    status: 200,
+                    contentType: 'application/json',
+                    body: JSON.stringify(makeMockArticles(9)),
+                });
+            });
+            await page.goto('/blog-list');
+            await page.waitForTimeout(500);
+
+            const loadMoreBtn = page.locator('#load-more-btn');
+            await expect(loadMoreBtn).toBeHidden();
+        });
+
+        test('Load More button is visible when articles count is > 9', async ({ page }) => {
+            await page.route('/api/articles', (route) => {
+                route.fulfill({
+                    status: 200,
+                    contentType: 'application/json',
+                    body: JSON.stringify(makeMockArticles(12)),
+                });
+            });
+            await page.goto('/blog-list');
+
+            const loadMoreBtn = page.locator('#load-more-btn');
+            await expect(loadMoreBtn).toBeVisible({ timeout: 2000 });
+
+            const cards = page.locator('#blog-grid > div');
+            await expect(cards).toHaveCount(9, { timeout: 2000 });
+        });
+
+        test('clicking Load More shows additional cards', async ({ page }) => {
+            await page.route('/api/articles', (route) => {
+                route.fulfill({
+                    status: 200,
+                    contentType: 'application/json',
+                    body: JSON.stringify(makeMockArticles(12)),
+                });
+            });
+            await page.goto('/blog-list');
+
+            const loadMoreBtn = page.locator('#load-more-btn');
+            await expect(loadMoreBtn).toBeVisible({ timeout: 2000 });
+
+            await loadMoreBtn.click();
+
+            const cards = page.locator('#blog-grid > div');
+            await expect(cards).toHaveCount(12, { timeout: 2000 });
+            await expect(loadMoreBtn).toBeHidden();
+        });
+    });
+
     test.describe('Accessibility', () => {
         test('blog card links should have aria-labels', async ({ page }) => {
             await page.goto('/blog-list');

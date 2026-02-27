@@ -59,6 +59,14 @@ npm run dev
 - **To update fallback articles manually**: Edit `assets/data/fallback-articles.json` (one file, used by both frontend and backend)
 - **To add articles**: New LinkedIn articles are fetched automatically by the daily cron — no manual updates needed
 
+### Blog List Pagination (Load More)
+The blog list page shows articles in pages of 9. The "Load More" button (`#load-more-btn`) is controlled entirely by JS — it starts hidden and appears only when there are more than 9 articles to show. Clicking it reveals the next 9, until all are shown.
+
+- **Batch size**: `ARTICLES_PER_PAGE = 9` constant in `blog-articles.js`
+- **Fallback data** (9 articles) → button stays hidden — all fit on the first page
+- **Live API data** (>9 articles) → button appears after the API response renders
+- **Insights grid** (homepage) is unaffected — always shows the latest 3
+
 ### Update Fallback Script
 ```bash
 npm run update-fallback                    # Fetch from production and update files
