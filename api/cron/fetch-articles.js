@@ -22,6 +22,7 @@ async function downloadAndStoreImage(imageUrl, slug) {
   const { url } = await put(`images/${slug}.${ext}`, buffer, {
     access: 'public',
     addRandomSuffix: false,
+    allowOverwrite: true,
     contentType,
   });
 
@@ -67,6 +68,7 @@ export default async function handler(req, res) {
     await put(ARTICLES_BLOB_KEY, JSON.stringify(articlesWithImages), {
       access: 'public',
       addRandomSuffix: false,
+      allowOverwrite: true,
     });
 
     console.log(`Stored ${articlesWithImages.length} articles in Blob`);
