@@ -1,83 +1,83 @@
 [
   {
-    "id": "fallback-1",
-    "title": "Retail Technology Trends",
-    "description": "Retail is entering a decisive phase. The question for 2026 is no longer \"Which new technologies should we try?\" It is \"Which technologies belong at the core of how retail operates?\"",
-    "url": "https://www.linkedin.com/pulse/retail-technology-trends-2026-from-tools-true-digital-8odhf/",
-    "thumbnail": "/assets/image/insightsLeadership-card-1.png",
-    "publishedAt": 1736899200000,
+    "id": "urn:li:linkedInArticle:7431691307770626048",
+    "title": "AI starts with data: Why unified data and strong ETL pipelines matter more than algorithms",
+    "description": "Everyone wants AI. Very few organisations are ready for it. In most companies, the biggest barrier to AI isn’t talent, tools or budget but disconnected data. Different systems telling different storie...",
+    "url": "https://www.linkedin.com/pulse/ai-starts-data-why-unified-strong-etl-pipelines-afhjc",
+    "thumbnail": "/assets/image/blog/blog-ai-starts-with-data-why-unified-data-and-strong-etl-pipeline.png",
+    "publishedAt": 1771855813000,
+    "category": "AI & Analytics"
+  },
+  {
+    "id": "urn:li:linkedInArticle:7429401753147838465",
+    "title": "Agentic Retail - When AI moves from insights to autonomous execution",
+    "description": "Retailers have invested heavily in analytics, dashboards and predictive models. However, insight does not guarantee action While reports can inform what is happening and Predictions can highlight what...",
+    "url": "https://www.linkedin.com/pulse/agentic-retail-when-ai-moves-from-insights-autonomous-gcoac",
+    "thumbnail": "/assets/image/blog/blog-agentic-retail-when-ai-moves-from-insights-to-autonomous-exe.png",
+    "publishedAt": 1771309692000,
+    "category": "AI & Analytics"
+  },
+  {
+    "id": "urn:li:linkedInArticle:7426560463255126016",
+    "title": "Redesigning the Store for Omnichannel Retail",
+    "description": "The role of the store is changing but not in the way many expected. Stores are not becoming less important in omnichannel retail. They are becoming more central carrying responsibility for experience,...",
+    "url": "https://www.linkedin.com/pulse/redesigning-store-omnichannel-retail-artisanscommercecloud-6m4uc",
+    "thumbnail": "/assets/image/blog/blog-redesigning-the-store-for-omnichannel-retail.png",
+    "publishedAt": 1770643606000,
+    "category": "AI & Analytics"
+  },
+  {
+    "id": "urn:li:linkedInArticle:7423976926765109248",
+    "title": "When commerce works as ONE: Designing retail for SPEED and SCALE",
+    "description": "Retail has never struggled with ideas. It has struggled with execution. As channels multiply and customer expectations tighten, the real challenge for retailers is no longer what to do, but how quickl...",
+    "url": "https://www.linkedin.com/pulse/when-commerce-works-one-designing-retail-speed-scale-halac",
+    "thumbnail": "/assets/image/blog/blog-when-commerce-works-as-one-designing-retail-for-speed-and-sc.png",
+    "publishedAt": 1770015968000,
+    "category": "AI & Analytics"
+  },
+  {
+    "id": "urn:li:linkedInArticle:7422631375721259008",
+    "title": "From Customer-Centric to Customer-Led: Turning Understanding into Results",
+    "description": "Most retailers claim to be customer-centric. Very few are genuinely customer-led. The difference is subtle but decisive. Customer-centric organisations listen to customers. Customer-led organisations ...",
+    "url": "https://www.linkedin.com/pulse/from-customer-centric-customer-led-turning-understanding-btcuc",
+    "thumbnail": "/assets/image/blog/blog-from-customer-centric-to-customer-led-turning-understanding-.jpg",
+    "publishedAt": 1769695054000,
+    "category": "Retail Insights"
+  },
+  {
+    "id": "urn:li:linkedInArticle:7411366212984631296",
+    "title": "Retail Technology Trends for 2026: From Tools to a True Digital Core",
+    "description": "Retail is entering a decisive phase. The question for 2026 is no longer “Which new technologies should we try?” It is “Which technologies belong at the core of how retail operates?” After working clos...",
+    "url": "https://www.linkedin.com/pulse/retail-technology-trends-2026-from-tools-true-digital-8odhf",
+    "thumbnail": "/assets/image/blog/blog-retail-technology-trends-for-2026-from-tools-to-a-true-digit.png",
+    "publishedAt": 1767009552000,
     "category": "Retail Technology"
   },
   {
-    "id": "fallback-2",
-    "title": "Retail-as-a-Service (RaaS)",
-    "description": "Retail is changing faster than most organizations are built to respond. Consumers expect convenience, personalization, instant fulfillment and seamless cross-channel experiences.",
-    "url": "https://www.linkedin.com/pulse/why-retailers-must-prepare-retail-as-a-service-raas-jos5c/",
-    "thumbnail": "/assets/image/insightsLeadership-card-2.png",
-    "publishedAt": 1736467200000,
+    "id": "urn:li:linkedInArticle:7403810187742048256",
+    "title": "Why Retailers Must Prepare for Retail-as-a-Service ",
+    "description": "Retail is changing faster than most organizations are built to respond. Consumers expect convenience, personalization, instant fulfillment and seamless cross-channel experiences. Meanwhile, brands are...",
+    "url": "https://www.linkedin.com/pulse/why-retailers-must-prepare-retail-as-a-service-raas-jos5c",
+    "thumbnail": "/assets/image/blog/blog-why-retailers-must-prepare-for-retail-as-a-service.png",
+    "publishedAt": 1765208085000,
     "category": "Retail Innovation"
   },
   {
-    "id": "fallback-3",
-    "title": "Commerce Data Lake",
-    "description": "The concept of a Commerce Data Lake has been associated with the largest retailers with expansive digital teams and multi-million-dollar tech budgets.",
-    "url": "https://www.linkedin.com/pulse/case-commerce-data-lake-mid-market-retail-artisanscommercecloud-qmflc/",
-    "thumbnail": "/assets/image/insightsLeadership-card-3.png",
-    "publishedAt": 1736035200000,
+    "id": "urn:li:linkedInArticle:7402017072689700864",
+    "title": "The Case for a Commerce Data Lake in Mid-Market Retail",
+    "description": "The concept of a Commerce Data Lake has been associated with the largest retailers with expansive digital teams and multi-million-dollar tech budgets. But the reality of modern retail has shifted. Tod...",
+    "url": "https://www.linkedin.com/pulse/case-commerce-data-lake-mid-market-retail-artisanscommercecloud-qmflc",
+    "thumbnail": "/assets/image/blog/blog-the-case-for-a-commerce-data-lake-in-mid-market-retail.png",
+    "publishedAt": 1764779893000,
     "category": "Data Analytics"
   },
   {
-    "id": "fallback-4",
-    "title": "Retail Point of Sale Solution",
-    "description": "In the dynamic landscape of omnichannel retail, having a robust point of sale solution is essential for success.",
-    "url": "https://www.linkedin.com/pulse/retail-point-sale-solution-artisanscommercecloud-wxphc/",
-    "thumbnail": "/assets/image/insightsLeadership-card-1.png",
-    "publishedAt": 1732147200000,
-    "category": "Retail POS"
-  },
-  {
-    "id": "fallback-5",
-    "title": "Assortment Planning: The Key to Retail Success",
-    "description": "In today's fast-paced retail environment, meeting customer expectations requires strategic assortment planning.",
-    "url": "https://www.linkedin.com/pulse/assortment-planning-key-retail-success-artisanscommercecloud-tx9gc/",
-    "thumbnail": "/assets/image/insightsLeadership-card-2.png",
-    "publishedAt": 1732060800000,
-    "category": "Assortment Planning"
-  },
-  {
-    "id": "fallback-6",
-    "title": "Optimize Inventory with Smart Merchandise Transfers",
-    "description": "Have you heard of smart merchandise transfer in retail? It can transform how you manage inventory across locations.",
-    "url": "https://www.linkedin.com/pulse/optimize-inventory-smart-merchandise-transfers-5yhmc/",
-    "thumbnail": "/assets/image/insightsLeadership-card-3.png",
-    "publishedAt": 1730419200000,
-    "category": "Merchandise Planning"
-  },
-  {
-    "id": "fallback-7",
-    "title": "Maximizing Sales with Product Lifecycle",
-    "description": "Understanding the Retail Product Lifecycle helps retailers optimize every stage from introduction to decline.",
-    "url": "https://www.linkedin.com/pulse/maximizing-sales-product-lifecycle-guide-retailers-lvxoc/",
-    "thumbnail": "/assets/image/insightsLeadership-card-4.png",
-    "publishedAt": 1727827200000,
-    "category": "Retail Product Lifecycle"
-  },
-  {
-    "id": "fallback-8",
-    "title": "What Does Data Analytics Really Do?",
-    "description": "Data analytics enables retailers to convert every data point into actionable insights that drive business growth.",
-    "url": "https://www.linkedin.com/pulse/what-does-data-analytics-really-do-retail-businesses-xokjc/",
-    "thumbnail": "/assets/image/insightsLeadership-card-5.png",
-    "publishedAt": 1721606400000,
-    "category": "Data Analytics"
-  },
-  {
-    "id": "fallback-9",
-    "title": "Merchandise Financial Planning",
-    "description": "Careful merchandising, financial planning, and retail strategy alignment are key to maximizing profitability.",
-    "url": "https://www.linkedin.com/pulse/merchandise-financial-planning-artisanscommercecloud-bq4xc/",
-    "thumbnail": "/assets/image/insightsLeadership-card-6.png",
-    "publishedAt": 1718064000000,
-    "category": "Merchandise Planning"
+    "id": "urn:li:linkedInArticle:7399383885236723712",
+    "title": "The Case for Unified Intelligence - How Building a Digital Core Secures Future Retail Profitability",
+    "description": "In today’s retail landscape, the winners are no longer defined by store footprint or promotional strength. They are defined by their intelligence —how well they understand customers, how quickly they ...",
+    "url": "https://www.linkedin.com/pulse/case-unified-intelligence-how-building-digital-0okec",
+    "thumbnail": "/assets/image/blog/blog-the-case-for-unified-intelligence-how-building-a-digital-cor.png",
+    "publishedAt": 1764162715000,
+    "category": "AI & Analytics"
   }
 ]

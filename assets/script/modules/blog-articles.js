@@ -44,15 +44,15 @@ function createBlogCardHTML(article) {
   const dateStr = formatDate(article.publishedAt);
 
   return `<div class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group">
-    <div class="w-full aspect-video overflow-hidden rounded-xl">
+    <a href="${safeUrl}" target="_blank" rel="noopener noreferrer" aria-label="Read ${safeTitle} on LinkedIn" class="block w-full aspect-video overflow-hidden rounded-xl">
         <img src="${escapeHTML(thumbnail)}" alt="${safeTitle} blog post image" width="400" height="250" loading="lazy" class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out" onerror="this.onerror=null;this.src='${FALLBACK_IMAGE}';">
-    </div>
+    </a>
     <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
         <div class="mb-2.5 sm:mb-3.5 flex flex-wrap gap-2 items-center">
             <div class="px-2.5 py-0.5 rounded-[50px] text-center w-fit h-fit bg-[#F5EEFE] text-[#9F7EFF] font-primary font-medium sm:text-base text-sm">${safeCategory}</div>
             <div class="relative ps-3 text-description/70 lg:text-base text-sm font-normal font-primary"><div class="absolute top-2.5 start-0 bg-description/70 h-1 w-1 rounded-full"></div>${dateStr}</div>
         </div>
-        <div class="mb-2 line-clamp-1 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">${safeTitle}</div>
+        <a href="${safeUrl}" target="_blank" rel="noopener noreferrer" class="mb-2 block line-clamp-1 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] hover:underline">${safeTitle}</a>
         <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
             <p class="line-clamp-2 text-description font-primary font-normal leading-[150%]">${safeDescription}</p>
             <a href="${safeUrl}" target="_blank" rel="noopener noreferrer" class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group" aria-label="Read ${safeTitle} on LinkedIn">
@@ -72,14 +72,20 @@ function createInsightsCardHTML(article) {
   const thumbnail = article.thumbnail || FALLBACK_IMAGE;
   const safeTitle = escapeHTML(article.title);
   const safeDescription = escapeHTML(article.description);
+  const safeCategory = escapeHTML(article.category || 'Retail Insights');
   const safeUrl = escapeHTML(article.url);
+  const dateStr = formatDate(article.publishedAt);
 
   return `<div class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group">
-    <div class="w-full aspect-video overflow-hidden rounded-xl">
+    <a href="${safeUrl}" target="_blank" rel="noopener noreferrer" aria-label="Read ${safeTitle} on LinkedIn" class="block w-full aspect-video overflow-hidden rounded-xl">
         <img src="${escapeHTML(thumbnail)}" alt="${safeTitle}" class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out" width="400" height="225" loading="lazy" onerror="this.onerror=null;this.src='${FALLBACK_IMAGE}';">
-    </div>
+    </a>
     <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
-        <div class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3">${safeTitle}</div>
+        <div class="mb-2.5 sm:mb-3.5 flex flex-wrap gap-2 items-center">
+            <div class="px-2.5 py-0.5 rounded-[50px] text-center w-fit h-fit bg-[#F5EEFE] text-[#9F7EFF] font-primary font-medium sm:text-base text-sm">${safeCategory}</div>
+            <div class="relative ps-3 text-description/70 lg:text-base text-sm font-normal font-primary"><div class="absolute top-2.5 start-0 bg-description/70 h-1 w-1 rounded-full"></div>${dateStr}</div>
+        </div>
+        <a href="${safeUrl}" target="_blank" rel="noopener noreferrer" class="mb-3 block text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] hover:underline">${safeTitle}</a>
         <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
             <p class="line-clamp-3 text-description font-primary font-normal leading-[150%]">${safeDescription}</p>
             <a href="${safeUrl}" target="_blank" rel="noopener noreferrer" class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] aspect-square grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group" aria-label="Read ${safeTitle} on LinkedIn">

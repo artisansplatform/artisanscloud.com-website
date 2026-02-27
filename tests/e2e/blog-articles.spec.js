@@ -35,8 +35,8 @@ test.describe('Dynamic Blog Articles', () => {
             const titleText = await title.textContent();
             expect(titleText.length).toBeGreaterThan(0);
 
-            // Should have a LinkedIn link
-            const link = firstCard.locator('a[target="_blank"]');
+            // Should have a LinkedIn link (image, title, and arrow are all links now)
+            const link = firstCard.locator('a[target="_blank"]').first();
             await expect(link).toBeVisible();
             const href = await link.getAttribute('href');
             expect(href).toContain('linkedin.com');
@@ -86,8 +86,8 @@ test.describe('Dynamic Blog Articles', () => {
             const title = firstCard.locator('.text-heading.font-semibold');
             await expect(title).toBeVisible();
 
-            // Should have a LinkedIn link
-            const link = firstCard.locator('a[target="_blank"]');
+            // Should have a LinkedIn link (image, title, and arrow are all links now)
+            const link = firstCard.locator('a[target="_blank"]').first();
             await expect(link).toBeVisible();
             const href = await link.getAttribute('href');
             expect(href).toContain('linkedin.com');
@@ -167,7 +167,8 @@ test.describe('Dynamic Blog Articles', () => {
 
             const links = page.locator('#blog-grid a[aria-label]');
             const count = await links.count();
-            expect(count).toBe(9);
+            // 9 cards × 2 aria-label links each (image + arrow button)
+            expect(count).toBe(18);
         });
 
         test('external links should have rel="noopener noreferrer"', async ({ page }) => {
