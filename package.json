@@ -9,6 +9,7 @@
     "build": "npm-run-all build:*",
     "build:css": "tailwindcss -i ./assets/style/input.css -o ./assets/style/output.css --minify",
     "build:html": "vite build",
+    "build:sitemap": "node scripts/generate-sitemap.js",
     "preview": "vite preview",
     "test": "npm run build && vitest run",
     "test:watch": "vitest",

@@ -135,6 +135,65 @@ describe('Build Verification Tests', () => {
     });
   });
 
+  describe('Sitemap', () => {
+    it('should generate sitemap.xml in dist/', () => {
+      const sitemapPath = path.join(distDir, 'sitemap.xml');
+      expect(fs.existsSync(sitemapPath)).toBe(true);
+    });
+
+    it('sitemap.xml should be valid XML with urlset root element', () => {
+      const sitemapPath = path.join(distDir, 'sitemap.xml');
+      const content = fs.readFileSync(sitemapPath, 'utf-8');
+      expect(content).toMatch(/^<\?xml version="1\.0" encoding="UTF-8"\?>/);
+      expect(content).toContain('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">');
+      expect(content).toContain('</urlset>');
+    });
+
+    it('sitemap.xml should contain the homepage URL', () => {
+      const sitemapPath = path.join(distDir, 'sitemap.xml');
+      const content = fs.readFileSync(sitemapPath, 'utf-8');
+      expect(content).toContain('<loc>https://www.artisanscloud.com/</loc>');
+    });
+
+    it('sitemap.xml should contain at least one non-homepage URL', () => {
+      const sitemapPath = path.join(distDir, 'sitemap.xml');
+      const content = fs.readFileSync(sitemapPath, 'utf-8');
+      expect(content).toContain('<loc>https://www.artisanscloud.com/retail-platform</loc>');
+    });
+
+    it('sitemap.xml should not contain excluded pages', () => {
+      const sitemapPath = path.join(distDir, 'sitemap.xml');
+      const content = fs.readFileSync(sitemapPath, 'utf-8');
+      expect(content).not.toContain('/404');
+      expect(content).not.toContain('/thank-you');
+      expect(content).not.toContain('/blog-detail');
+    });
+
+    it('sitemap.xml should not contain .html extensions in URLs', () => {
+      const sitemapPath = path.join(distDir, 'sitemap.xml');
+      const content = fs.readFileSync(sitemapPath, 'utf-8');
+      // URLs inside <loc> tags should not end in .html (Vercel cleanUrls)
+      expect(content).not.toMatch(/<loc>[^<]+\.html<\/loc>/);
+    });
+
+    it('sitemap.xml should contain a lastmod date in YYYY-MM-DD format', () => {
+      const sitemapPath = path.join(distDir, 'sitemap.xml');
+      const content = fs.readFileSync(sitemapPath, 'utf-8');
+      expect(content).toMatch(/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
+    });
+
+    it('robots.txt should exist in dist/', () => {
+      const robotsPath = path.join(distDir, 'robots.txt');
+      expect(fs.existsSync(robotsPath)).toBe(true);
+    });
+
+    it('robots.txt should reference the sitemap', () => {
+      const robotsPath = path.join(distDir, 'robots.txt');
+      const content = fs.readFileSync(robotsPath, 'utf-8');
+      expect(content).toContain('Sitemap: https://www.artisanscloud.com/sitemap.xml');
+    });
+  });
+
   describe('JS Generation', () => {
     it('should generate hashed JS file in dist/assets', () => {
       const assetsDir = path.join(distDir, 'assets');

@@ -78,6 +78,34 @@ npm run update-fallback -- --url https://preview.example.com  # Fetch from custo
 - Updates `assets/data/fallback-articles.json` with the latest 9 articles
 - After running: review with `git diff assets/`, then build, test, and commit
 
+## Sitemap
+
+`dist/sitemap.xml` is generated automatically as part of every `npm run build` — no manual editing required.
+
+### How it works
+- `scripts/generate-sitemap.js` runs as `build:sitemap` (after Vite's `build:html`)
+- It uses `glob.sync('*.html')` — the same discovery pattern as `vite.config.js` — so every page in the root is included automatically
+- Excluded pages: `404.html`, `thank-you.html`, `blog-detail.html`
+- `public/robots.txt` is a static file (Vite passthrough); it references the sitemap URL and is deployed to `dist/robots.txt` unchanged
+
+### Customising per-page SEO hints
+Edit `PAGE_META` in `scripts/generate-sitemap.js` to override `priority` and `changefreq` for a specific page:
+
+```js
+'my-new-page.html': { priority: '0.8', changefreq: 'weekly' },
+```
+
+Pages not listed in `PAGE_META` get `{ priority: '0.6', changefreq: 'monthly' }`.
+
+### Adding a new page
+No sitemap action required. Just create the `*.html` file in the root — it will appear in the next build's sitemap automatically. To fine-tune its SEO weight, add it to `PAGE_META`.
+
+### Excluding a page
+Add its filename to the `EXCLUDED_PAGES` set at the top of `scripts/generate-sitemap.js`.
+
+### Submitting to Google
+After first deploying the sitemap, submit `https://www.artisanscloud.com/sitemap.xml` once in Google Search Console. Subsequent deploys are picked up automatically via recrawl.
+
 ## Common UI Conventions
 
 | Convention | Pattern |

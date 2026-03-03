@@ -21,6 +21,21 @@ npm run update-fallback  # Update fallback blog articles from live deployment
 - **Mobile breakpoint is `lg:` (1024px)** — this controls desktop vs mobile layout throughout the site.
 - **Swiper instances need unique names** — each slider gets a unique class (e.g., `.keyCapabilitySlider`). Reusing names breaks navigation.
 
+## Documentation Rule
+**After every code change, update the relevant docs.** This is mandatory, not optional.
+
+| What changed | What to update |
+|---|---|
+| New page added | `docs/development.md` (Adding a New Page), `docs/architecture.md` (Key files) |
+| New build script or `package.json` script | `docs/architecture.md` (Deployment / Build process), `docs/development.md` (Commands) |
+| New `scripts/` file | `docs/development.md` (describe purpose and usage) |
+| New API route or cron | `docs/architecture.md` (Dynamic Blog Articles or Deployment) |
+| New gotcha or footgun discovered | `AGENTS.md` and `CLAUDE.md` (Gotchas & Landmines) — keep both files in sync |
+| SEO / sitemap changes | `docs/development.md` (Sitemap section) |
+| Architecture change | `docs/architecture.md` |
+
+If a doc section doesn't exist yet, add it. Never leave a feature undocumented.
+
 ## PR Checklist
 - Pages use `{{> header}}` and `{{> footer}}` partials
 - `npm run build` succeeds
@@ -28,6 +43,7 @@ npm run update-fallback  # Update fallback blog articles from live deployment
 - No console errors on affected pages
 - Responsive at 393px, 768px, 1280px
 - New features have E2E tests in `tests/e2e/`
+- Relevant docs updated (see Documentation Rule above)
 
 ## Detailed Docs
 - [`docs/architecture.md`](docs/architecture.md) — page structure, styling, JS patterns, component reuse, routing

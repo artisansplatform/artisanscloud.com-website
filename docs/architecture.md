@@ -77,8 +77,36 @@ LinkedIn API  ──(daily cron)──>  Vercel Blob (articles.json)
 - **Fallback article data**: Defined ONCE in `assets/data/fallback-articles.json` — shared by frontend JS and backend API
 - **HTML pages** (`blog-list.html`, `index.html`): Contain only empty `#blog-grid` and `#insights-grid` containers
 
+## SEO & Sitemap
+
+`sitemap.xml` and `robots.txt` are generated/copied automatically on every build — no manual maintenance required.
+
+```
+Root *.html files  ──(glob.sync)──>  scripts/generate-sitemap.js
+                                              │
+                                              ▼
+                                    dist/sitemap.xml  (21 URLs, YYYY-MM-DD lastmod)
+
+public/robots.txt  ──(Vite passthrough)──>  dist/robots.txt
+```
+
+### Key files
+| File | Purpose |
+|------|---------|
+| `scripts/generate-sitemap.js` | Build script: discovers all `*.html` pages, excludes utility pages, writes `dist/sitemap.xml` |
+| `public/robots.txt` | Static file copied to `dist/robots.txt`; references the sitemap URL |
+
+### Excluded pages
+`404.html`, `thank-you.html`, `blog-detail.html` are excluded from the sitemap (no indexable canonical URL).
+
+### Adding a new page
+No action needed — `generate-sitemap.js` uses the same `glob.sync('*.html')` pattern as `vite.config.js`. New pages are included automatically. To override the default `priority`/`changefreq`, add an entry to `PAGE_META` in `scripts/generate-sitemap.js`.
+
+### Build order
+`npm-run-all build:*` runs alphabetically: `build:css` → `build:html` → `build:sitemap`. The sitemap script always runs after Vite has created `dist/`.
+
 ## Deployment
 - **Platform**: Vercel
 - **Config**: `vercel.json` - specifies `dist/` as output directory, clean URLs, security headers, cron jobs
-- **Build process**: `npm install` → `npm run build` (compiles CSS + processes Handlebars templates) → deploys `dist/`
+- **Build process**: `npm install` → `npm run build` (compiles CSS + processes Handlebars templates + generates sitemap) → deploys `dist/`
 - **Auto-deploy**: Main branch pushes trigger automatic deployment
