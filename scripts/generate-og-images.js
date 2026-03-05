@@ -32,7 +32,7 @@ const COLORS = {
   sky: '#13d9e4',
   pink: '#fc4bda',
   heading: '#222222',
-  darkBg: '#0D2544',
+  description: '#686c71',
 };
 
 // Page definitions: filename → { title, subtitle }
@@ -145,16 +145,9 @@ const PAGES = [
   },
 ];
 
-// Resize logo-light.png and encode as data URI for Satori
-// Original is 2000x694 — resize to ~200px wide for the OG card
-let logoDataUri;
-async function preparelogo() {
-  const logoPng = await sharp(join(ROOT, 'assets', 'image', 'logo-light.png'))
-    .resize(200, null, { fit: 'inside' })
-    .png()
-    .toBuffer();
-  logoDataUri = `data:image/png;base64,${logoPng.toString('base64')}`;
-}
+// Read the dark logo SVG (for light backgrounds) and encode as data URI
+const logoSvg = readFileSync(join(ROOT, 'assets', 'image', 'logo.svg'), 'utf-8');
+const logoDataUri = `data:image/svg+xml;base64,${Buffer.from(logoSvg).toString('base64')}`;
 
 async function loadFonts() {
   // Fetch Poppins font files from Google Fonts for Satori
@@ -199,107 +192,157 @@ function buildTemplate(page) {
         width: '100%',
         height: '100%',
         display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        padding: '60px 70px',
         fontFamily: 'Poppins',
-        background: `linear-gradient(135deg, ${COLORS.darkBg} 0%, #261650 50%, #0a3055 100%)`,
-        color: '#ffffff',
+        // Light lavender base matching website hero_bg
+        background: 'linear-gradient(135deg, #f5f0ff 0%, #ede6ff 40%, #f0f8ff 100%)',
+        color: COLORS.heading,
+        position: 'relative',
+        overflow: 'hidden',
       },
       children: [
-        // Top section: logo
-        {
-          type: 'div',
-          props: {
-            style: { display: 'flex', alignItems: 'center' },
-            children: [
-              {
-                type: 'img',
-                props: {
-                  src: logoDataUri,
-                  width: 200,
-                  height: 69,
-                  style: { objectFit: 'contain' },
-                },
-              },
-            ],
-          },
-        },
-        // Middle section: title + subtitle
+        // Decorative accent blob — top-right (purple, like website swirls)
         {
           type: 'div',
           props: {
             style: {
+              position: 'absolute',
+              top: '-80px',
+              right: '-60px',
+              width: '360px',
+              height: '360px',
+              borderRadius: '50%',
+              background: 'linear-gradient(135deg, rgba(141, 104, 246, 0.12), rgba(252, 77, 218, 0.08))',
+              filter: 'blur(2px)',
+            },
+          },
+        },
+        // Decorative accent blob — bottom-left (cyan, like website swirls)
+        {
+          type: 'div',
+          props: {
+            style: {
+              position: 'absolute',
+              bottom: '-100px',
+              left: '-80px',
+              width: '320px',
+              height: '320px',
+              borderRadius: '50%',
+              background: 'linear-gradient(135deg, rgba(19, 217, 228, 0.10), rgba(141, 104, 246, 0.08))',
+              filter: 'blur(2px)',
+            },
+          },
+        },
+        // Content container
+        {
+          type: 'div',
+          props: {
+            style: {
+              width: '100%',
+              height: '100%',
               display: 'flex',
               flexDirection: 'column',
-              gap: '16px',
-              flex: 1,
-              justifyContent: 'center',
+              justifyContent: 'space-between',
+              padding: '56px 70px',
+              position: 'relative',
             },
             children: [
+              // Top section: logo
+              {
+                type: 'div',
+                props: {
+                  style: { display: 'flex', alignItems: 'center' },
+                  children: [
+                    {
+                      type: 'img',
+                      props: {
+                        src: logoDataUri,
+                        width: 151,
+                        height: 40,
+                        style: { objectFit: 'contain' },
+                      },
+                    },
+                  ],
+                },
+              },
+              // Middle section: title + subtitle
               {
                 type: 'div',
                 props: {
                   style: {
-                    fontSize: titleLines.some(l => l.length > 20) ? '52px' : '58px',
-                    fontWeight: 600,
-                    lineHeight: 1.15,
-                    letterSpacing: '-0.02em',
                     display: 'flex',
                     flexDirection: 'column',
+                    gap: '16px',
+                    flex: 1,
+                    justifyContent: 'center',
                   },
-                  children: titleLines.map(line => ({
-                    type: 'span',
-                    props: { children: line },
-                  })),
+                  children: [
+                    {
+                      type: 'div',
+                      props: {
+                        style: {
+                          fontSize: titleLines.some(l => l.length > 20) ? '50px' : '56px',
+                          fontWeight: 600,
+                          lineHeight: 1.15,
+                          letterSpacing: '-0.02em',
+                          color: COLORS.heading,
+                          display: 'flex',
+                          flexDirection: 'column',
+                        },
+                        children: titleLines.map(line => ({
+                          type: 'span',
+                          props: { children: line },
+                        })),
+                      },
+                    },
+                    // Accent line — purple to cyan gradient
+                    {
+                      type: 'div',
+                      props: {
+                        style: {
+                          width: '80px',
+                          height: '4px',
+                          borderRadius: '2px',
+                          background: `linear-gradient(90deg, ${COLORS.primary}, ${COLORS.sky})`,
+                        },
+                      },
+                    },
+                    {
+                      type: 'div',
+                      props: {
+                        style: {
+                          fontSize: '22px',
+                          fontWeight: 400,
+                          color: COLORS.description,
+                          lineHeight: 1.4,
+                        },
+                        children: page.subtitle,
+                      },
+                    },
+                  ],
                 },
               },
-              // Accent line
+              // Bottom section: URL
               {
                 type: 'div',
                 props: {
                   style: {
-                    width: '80px',
-                    height: '4px',
-                    borderRadius: '2px',
-                    background: `linear-gradient(90deg, ${COLORS.primary}, ${COLORS.sky})`,
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                    alignItems: 'center',
                   },
-                },
-              },
-              {
-                type: 'div',
-                props: {
-                  style: {
-                    fontSize: '24px',
-                    fontWeight: 400,
-                    color: 'rgba(255, 255, 255, 0.7)',
-                    lineHeight: 1.4,
-                  },
-                  children: page.subtitle,
-                },
-              },
-            ],
-          },
-        },
-        // Bottom section: URL
-        {
-          type: 'div',
-          props: {
-            style: {
-              display: 'flex',
-              justifyContent: 'flex-end',
-              alignItems: 'center',
-            },
-            children: [
-              {
-                type: 'span',
-                props: {
-                  style: {
-                    fontSize: '18px',
-                    fontWeight: 400,
-                    color: 'rgba(255, 255, 255, 0.5)',
-                  },
-                  children: 'artisanscloud.com',
+                  children: [
+                    {
+                      type: 'span',
+                      props: {
+                        style: {
+                          fontSize: '16px',
+                          fontWeight: 400,
+                          color: COLORS.primary,
+                        },
+                        children: 'artisanscloud.com',
+                      },
+                    },
+                  ],
                 },
               },
             ],
@@ -315,7 +358,6 @@ async function main() {
 
   mkdirSync(OUT_DIR, { recursive: true });
 
-  await preparelogo();
   const fonts = await loadFonts();
 
   let generated = 0;
