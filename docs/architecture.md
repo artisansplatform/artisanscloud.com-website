@@ -77,6 +77,32 @@ LinkedIn API  ──(daily cron)──>  Vercel Blob (articles.json)
 - **Fallback article data**: Defined ONCE in `assets/data/fallback-articles.json` — shared by frontend JS and backend API
 - **HTML pages** (`blog-list.html`, `index.html`): Contain only empty `#blog-grid` and `#insights-grid` containers
 
+## Open Graph Images
+
+Each static page has an auto-generated OG image (1200x630 PNG) for social media previews.
+
+### Key files
+| File | Purpose |
+|------|---------|
+| `scripts/generate-og-images.js` | Build script: generates OG images using Satori + Sharp |
+| `assets/og/*.png` | Generated OG images (committed to repo) |
+
+### How it works
+- `scripts/generate-og-images.js` uses [Satori](https://github.com/vercel/satori) to render HTML/CSS to SVG, then [Sharp](https://sharp.pixelplumbing.com/) to convert to PNG
+- Each image has the Artisans Cloud logo, page title, subtitle, and brand gradient background
+- Images are committed to `assets/og/` and copied to `dist/assets/og/` during build (`build:static`)
+- Pages reference images via absolute URLs: `https://www.artisanscloud.com/assets/og/{page}.png`
+
+### Regenerating images
+```bash
+npm run generate:og    # Regenerate all OG images (requires network for font download)
+```
+
+### Adding a new page
+1. Add a new entry to the `PAGES` array in `scripts/generate-og-images.js`
+2. Run `npm run generate:og`
+3. Add `og:image`, `og:image:width`, `og:image:height` meta tags to the new HTML page
+
 ## SEO & Sitemap
 
 `sitemap.xml` and `robots.txt` are generated/copied automatically on every build — no manual maintenance required.
@@ -103,7 +129,7 @@ public/robots.txt  ──(Vite passthrough)──>  dist/robots.txt
 No action needed — `generate-sitemap.js` uses the same `glob.sync('*.html')` pattern as `vite.config.js`. New pages are included automatically. To override the default `priority`/`changefreq`, add an entry to `PAGE_META` in `scripts/generate-sitemap.js`.
 
 ### Build order
-`npm-run-all build:*` runs alphabetically: `build:css` → `build:html` → `build:sitemap`. The sitemap script always runs after Vite has created `dist/`.
+`npm-run-all build:*` runs alphabetically: `build:css` → `build:html` → `build:sitemap` → `build:static`. The sitemap script always runs after Vite has created `dist/`. The `build:static` step copies `assets/og/` (OG images) into `dist/assets/og/`.
 
 ## Security Headers
 
@@ -120,5 +146,5 @@ All responses are served with security headers defined in `vercel.json` under th
 ## Deployment
 - **Platform**: Vercel
 - **Config**: `vercel.json` - specifies `dist/` as output directory, clean URLs, security headers (including CSP), cron jobs
-- **Build process**: `npm install` → `npm run build` (compiles CSS + processes Handlebars templates + generates sitemap) → deploys `dist/`
+- **Build process**: `npm install` → `npm run build` (compiles CSS + processes Handlebars templates + generates sitemap + copies OG images) → deploys `dist/`
 - **Auto-deploy**: Main branch pushes trigger automatic deployment

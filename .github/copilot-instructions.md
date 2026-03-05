@@ -9,6 +9,7 @@ npm run build            # Production build (CSS + HTML to dist/)
 npm test                 # Unit tests (build + link validation)
 npm run test:e2e         # Playwright E2E tests (headless)
 npm run update-fallback  # Update fallback blog articles from live deployment
+npm run generate:og      # Regenerate OG images (requires network for font download)
 ```
 
 ## Gotchas & Landmines
@@ -20,6 +21,7 @@ npm run update-fallback  # Update fallback blog articles from live deployment
 - **No inline scripts** — all JS goes through `assets/script/main.js` modules for CSP compatibility.
 - **Mobile breakpoint is `lg:` (1024px)** — this controls desktop vs mobile layout throughout the site.
 - **Swiper instances need unique names** — each slider gets a unique class (e.g., `.keyCapabilitySlider`). Reusing names breaks navigation.
+- **OG images use absolute URLs** — `og:image` meta tags use `https://www.artisanscloud.com/assets/og/{page}.png`. Images are in `assets/og/` and copied to `dist/assets/og/` during build. When adding a new page, also add its entry to `scripts/generate-og-images.js` and run `npm run generate:og`.
 
 ## Documentation Rule
 **After every code change, update the relevant docs.** This is mandatory, not optional.

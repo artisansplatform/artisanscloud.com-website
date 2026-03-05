@@ -34,8 +34,9 @@ npm run dev
    ```
 3. **Update navigation**: Edit `partials/header.html` to add link to new page (applies to ALL pages)
 4. **Mark active state**: In new page's `<head>` or inline script, add logic to highlight active nav link
-5. **Test**: Run `npm run dev` and verify at http://localhost:3000/new-solution
-6. **Build**: Run `npm run build` to generate production files in `dist/`
+5. **Add OG image**: Add entry to `PAGES` array in `scripts/generate-og-images.js`, run `npm run generate:og`, add `og:image` meta tags (see [Architecture: Open Graph Images](architecture.md#open-graph-images))
+6. **Test**: Run `npm run dev` and verify at http://localhost:3000/new-solution
+7. **Build**: Run `npm run build` to generate production files in `dist/`
 
 ## Adding a Swiper Slider
 1. **HTML structure**: Use `.swiper`, `.swiper-wrapper`, `.swiper-slide`, navigation buttons
