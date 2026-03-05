@@ -20,8 +20,9 @@
 - **Color contrast**: Ensure text meets WCAG AA standards (4.5:1 for normal text)
 
 ## Security
-- **No inline scripts**: Avoid inline JavaScript for security (CSP compatibility)
+- **No inline scripts**: Avoid inline JavaScript for security. Use JS modules via `assets/script/main.js` instead.
+- **No inline event handlers**: Do not use `onclick=""`, `onload=""`, etc. in HTML — attach event listeners in JS modules instead.
 - **External links**: Add `rel="noopener noreferrer"` to external links opening in new tabs
-- **Form validation**: If forms added, validate on both client and server side
+- **Form validation**: Validate on client side with HTML5 `required` / `type` attributes. Backend validation is handled by the form processor (web3forms).
 - **Dependency updates**: Keep npm packages updated to avoid known vulnerabilities
 - **No secrets in code**: Never commit API keys, tokens, or sensitive data (use environment variables)

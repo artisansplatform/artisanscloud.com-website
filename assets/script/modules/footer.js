@@ -3,6 +3,9 @@ import { gsap } from 'gsap';
 // Footer Artisans Text =============
 export function initFooterEffects() {
 
+    const yearEl = document.getElementById('copyright-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
     const ftrTitles = document.querySelectorAll(".ftrBottomTitle");
     if (!ftrTitles.length) return;
 

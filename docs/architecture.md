@@ -105,8 +105,20 @@ No action needed — `generate-sitemap.js` uses the same `glob.sync('*.html')` p
 ### Build order
 `npm-run-all build:*` runs alphabetically: `build:css` → `build:html` → `build:sitemap`. The sitemap script always runs after Vite has created `dist/`.
 
+## Security Headers
+
+All responses are served with security headers defined in `vercel.json` under the `"source": "/(.*)"` rule.
+
+| Header | Value | Purpose |
+|---|---|---|
+| `X-Content-Type-Options` | `nosniff` | Prevent MIME sniffing |
+| `X-Frame-Options` | `DENY` | Prevent clickjacking |
+| `Strict-Transport-Security` | `max-age=31536000; includeSubDomains` | Force HTTPS |
+| `Referrer-Policy` | `strict-origin-when-cross-origin` | Limit referrer leakage |
+| `Permissions-Policy` | camera/mic/geo disabled | Restrict browser APIs |
+
 ## Deployment
 - **Platform**: Vercel
-- **Config**: `vercel.json` - specifies `dist/` as output directory, clean URLs, security headers, cron jobs
+- **Config**: `vercel.json` - specifies `dist/` as output directory, clean URLs, security headers (including CSP), cron jobs
 - **Build process**: `npm install` → `npm run build` (compiles CSS + processes Handlebars templates + generates sitemap) → deploys `dist/`
 - **Auto-deploy**: Main branch pushes trigger automatic deployment
