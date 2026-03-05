@@ -31,7 +31,7 @@
     <section class="w-full h-full p-4 lg:p-5">
         <div class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/blog-list/blog-list-banner.webp')] bg-no-repeat bg-cover">
             <div class="pt-5 lg:pt-[100px] pb-20 sm:pb-24 md:pb-[200px]">
-                <div class="fade-in max-w-[1240px] w-[100%] px-4 xl:px-0 mx-auto">
+                <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
                     <div class="text-center lg:max-w-[850px] mx-auto">
                         <h1 class="mb-6 lg:mb-[37px] font-primary font-semibold text-2xl sm:text-4xl lg:text-[44px] xl:text-[50px] text-heading leading-[120%]" id="heroHeading">Transform Your Retail Strategy with Expert Insights</h1>
                         <div id="heroDec">
@@ -48,7 +48,7 @@
 
     <!----- Blog List Sec ----->
     <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-[100%] px-4 xl:px-0 mx-auto">
+        <div class="max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
             <div id="blog-grid" class="grid lg:grid-cols-3 sm:grid-cols-2 lg:gap-[30px] sm:gap-5 gap-4">
                 <!-- Blog cards rendered dynamically by assets/script/modules/blog-articles.js -->
                 <!-- To update card content, edit api/lib/fallback-articles.js (single source of truth) -->
@@ -67,7 +67,7 @@
 
     <!-- Empower Your Retail Success with Artisans Commerce Cloud Sec -->
     <section class="lg:pb-[100px] sm:pb-16 pb-10">
-        <div class="max-w-[1280px] w-[100%] px-4 xl:px-0 mx-auto">
+        <div class="max-w-[1280px] w-full px-4 xl:px-0 mx-auto">
             <div class="md:p-[30px] lg:ps-16 p-5 md:rounded-[20px] rounded-2xl overflow-hidden bg-[#DFF4FF] bg-[url(../../assets/image/solutions/distributed-order-management/Scale-Inventory-Order-BG.svg)] bg-no-repeat bg-bottom-left bg-contain">
                 <div class="grid lg:grid-cols-2 xl:gap-14 lg:gap-10 gap-7">
                     <div class="lg:pt-8 pt-2 xl:pe-5">
@@ -79,30 +79,30 @@
                         <form action="" class="w-full m-0">
                             <div class="lg:mb-6 mb-5 grid sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label for="" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">First Name</label>
-                                    <input type="text" name="" placeholder="Enter First Name" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                                    <label for="first_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">First Name</label>
+                                    <input type="text" id="first_name" name="first_name" placeholder="Enter First Name" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
                                 </div>
                                 <div>
-                                    <label for="" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Last Name</label>
-                                    <input type="text" name="" placeholder="Enter Last Name" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
-                                <div>
-                                    <label for="" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Company Name</label>
-                                    <input type="text" name="" placeholder="Enter Company Name" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                                    <label for="last_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Last Name</label>
+                                    <input type="text" id="last_name" name="last_name" placeholder="Enter Last Name" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
                                 </div>
                             </div>
                             <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
                                 <div>
-                                    <label for="" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Email address</label>
-                                    <input type="email" name="" placeholder="Enter email address" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                                    <label for="company_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Company Name</label>
+                                    <input type="text" id="company_name" name="company_name" placeholder="Enter Company Name" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
                                 </div>
                             </div>
                             <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
                                 <div>
-                                    <label for="" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Phone Number</label>
-                                    <input type="number" name="" placeholder="Enter phone number" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                                    <label for="email" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Email address</label>
+                                    <input type="email" id="email" name="email" placeholder="Enter email address" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                                </div>
+                            </div>
+                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                                <div>
+                                    <label for="phone_number" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Phone Number</label>
+                                    <input type="tel" id="phone_number" name="phone_number" placeholder="Enter phone number" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
                                 </div>
                             </div>
 
