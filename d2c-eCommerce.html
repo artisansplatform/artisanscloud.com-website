@@ -336,11 +336,16 @@
                         <p class="text-description font-primary text-base font-normal">Contact us now to learn more about how our Artisans' D2C eCommerce solution can elevate your retail brand to new heights, delivering exceptional results and streamlining complex commerce experiences.</p>
                     </div>
                     <div class="bg-white lg:p-10 sm:p-7 p-5 md:rounded-[20px] rounded-xl">
-                        <form action="" class="w-full m-0">
+                        <form action="https://api.web3forms.com/submit" method="POST" class="w-full m-0">
+                            <input type="hidden" name="access_key" value="d082e756-9d9f-4750-bda0-10769f1253c6" />
+                            <input type="hidden" name="redirect" value="https://artisanscloud.com/thank-you" />
+                            <input type="checkbox" name="botcheck" style="display: none;" />
+                            <input type="hidden" name="subject" value="D2C eCommerce inquiry" />
+                            <input type="hidden" name="interest" value="D2C eCommerce" />
                             <div class="lg:mb-6 mb-5 grid sm:grid-cols-2 gap-4">
                                 <div>
                                     <label for="first_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">First Name</label>
-                                    <input type="text" id="first_name" name="first_name" placeholder="Enter First Name" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                                    <input type="text" id="first_name" name="first_name" placeholder="Enter First Name" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
                                 </div>
                                 <div>
                                     <label for="last_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Last Name</label>
@@ -350,13 +355,13 @@
                             <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
                                 <div>
                                     <label for="company_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Company Name</label>
-                                    <input type="text" id="company_name" name="company_name" placeholder="Enter Company Name" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                                    <input type="text" id="company_name" name="company_name" placeholder="Enter Company Name" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
                                 </div>
                             </div>
                             <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
                                 <div>
                                     <label for="email" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Email address</label>
-                                    <input type="email" id="email" name="email" placeholder="Enter email address" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                                    <input type="email" id="email" name="email" placeholder="Enter email address" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
                                 </div>
                             </div>
                             <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
@@ -367,7 +372,7 @@
                             </div>
 
                             <div class="mt-4 flex flex-wrap lg:flex-nowrap justify-between gap-6">
-                                <p class="text-sm text-description font-primary font-normal lg:leading-[26px] leading-[160%]">By submitting your information you agree with our <a href="#" class="font-semibold inline-block underline">Terms of Use</a> and <a href="#" class="font-semibold inline-block underline">Privacy Policy</a>.</p>
+                                <p class="text-sm text-description font-primary font-normal lg:leading-[26px] leading-[160%]">By submitting your information you agree with our <a href="/terms-and-conditions" class="font-semibold inline-block underline">Terms of Use</a> and <a href="/privacy-policy" class="font-semibold inline-block underline">Privacy Policy</a>.</p>
                                 <button type="submit" class="cursor-pointer w-fit h-fit rounded-[40px] sm:px-[40px] px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Submit</button>
                             </div>
                         </form>
