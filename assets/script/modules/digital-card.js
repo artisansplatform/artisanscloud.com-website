@@ -6,16 +6,29 @@ async function fetchPhotoBase64(photoPath) {
         const response = await fetch(url);
         if (!response.ok) return null;
         const blob = await response.blob();
+
+        // Convert to JPEG via canvas for maximum vCard compatibility.
+        // iOS and Android contacts apps often reject TYPE=PNG or oversized photos.
         return new Promise((resolve) => {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                const [header, base64] = reader.result.split(',');
-                const mimeType = header.match(/data:([^;]+)/)?.[1] || 'image/jpeg';
-                const typeStr = mimeType.includes('png') ? 'PNG' : 'JPEG';
-                resolve({ base64, typeStr });
+            const objectUrl = URL.createObjectURL(blob);
+            const img = new Image();
+            img.onload = () => {
+                // Cap at 300×300 — large embedded photos get silently dropped by some apps
+                const size = Math.min(img.naturalWidth, img.naturalHeight, 300);
+                const canvas = document.createElement('canvas');
+                canvas.width = size;
+                canvas.height = size;
+                const ctx = canvas.getContext('2d');
+                // Center-crop to square
+                const sx = (img.naturalWidth - size) / 2;
+                const sy = (img.naturalHeight - size) / 2;
+                ctx.drawImage(img, sx, sy, size, size, 0, 0, size, size);
+                URL.revokeObjectURL(objectUrl);
+                const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+                resolve({ base64: dataUrl.split(',')[1], typeStr: 'JPEG' });
             };
-            reader.onerror = () => resolve(null);
-            reader.readAsDataURL(blob);
+            img.onerror = () => { URL.revokeObjectURL(objectUrl); resolve(null); };
+            img.src = objectUrl;
         });
     } catch {
         return null;
@@ -108,19 +121,28 @@ function shareCard(url, name) {
     }
 }
 
-function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(() => {
-        showToast('Link copied to clipboard!');
-    }).catch(() => {
-        // Fallback for older browsers
-        const input = document.createElement('input');
-        input.value = text;
-        document.body.appendChild(input);
-        input.select();
-        document.execCommand('copy');
-        document.body.removeChild(input);
-        showToast('Link copied to clipboard!');
-    });
+async function copyToClipboard(text) {
+    // navigator.clipboard requires HTTPS and a user gesture — works on modern iOS/Android
+    if (navigator.clipboard?.writeText) {
+        try {
+            await navigator.clipboard.writeText(text);
+            showToast('Link copied to clipboard!');
+            return;
+        } catch {
+            // fall through to textarea fallback
+        }
+    }
+    // Fallback: textarea + setSelectionRange works on iOS Safari where execCommand
+    // requires a visible, focused, selected element (input.select() alone is not enough)
+    const el = document.createElement('textarea');
+    el.value = text;
+    el.style.cssText = 'position:fixed;top:0;left:0;opacity:0;font-size:16px';
+    document.body.appendChild(el);
+    el.focus();
+    el.setSelectionRange(0, text.length);
+    try { document.execCommand('copy'); } catch { /* silent */ }
+    document.body.removeChild(el);
+    showToast('Link copied to clipboard!');
 }
 
 function showToast(message) {
