@@ -16,10 +16,12 @@ import { initMultiSelect } from './modules/multi-select.js';
 import { initTabs } from './modules/tabs.js';
 import { initNavActive } from './modules/nav-active.js';
 import { initBlogArticles } from './modules/blog-articles.js';
+import { initDigitalCard } from './modules/digital-card.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavActive();
     initBlogArticles();
+    initDigitalCard();
     initSmoothScroll();
     initHeader();
     initDropdowns();

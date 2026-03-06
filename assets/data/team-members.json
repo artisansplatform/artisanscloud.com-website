@@ -1,0 +1,39 @@
+[
+  {
+    "slug": "gaurav-makhecha",
+    "name": "Gaurav Makhecha",
+    "firstName": "Gaurav",
+    "lastName": "Makhecha",
+    "title": "Co-Founder & COO",
+    "company": "Artisans Cloud",
+    "companyUrl": "https://www.artisanscloud.com",
+    "location": "Rajkot, India",
+    "bio": "Excited about the future. Building intelligent enterprise systems with AI.",
+    "email": "gaurav@artisanscloud.com",
+    "phone": "",
+    "photo": "/assets/image/team/gaurav-makhecha.png",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/gauravmakhecha",
+      "github": "https://github.com/gauravmak",
+      "twitter": "https://x.com/gauravmakhecha"
+    }
+  },
+  {
+    "slug": "dev-nair",
+    "name": "Dev Nair",
+    "firstName": "Dev",
+    "lastName": "Nair",
+    "title": "Co-Founder & CEO",
+    "company": "Artisans Cloud",
+    "companyUrl": "https://www.artisanscloud.com",
+    "location": "Kuala Lumpur, Malaysia",
+    "bio": "Leading Artisans Cloud to architect intelligent enterprise systems that drive measurable business transformation across retail, data intelligence, and AI-powered automation.",
+    "email": "dev@artisanscloud.com",
+    "phone": "",
+    "photo": "/assets/image/team/dev-nair.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/devnair",
+      "twitter": "https://x.com/Dev_Nair84"
+    }
+  }
+]

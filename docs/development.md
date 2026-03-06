@@ -38,6 +38,37 @@ npm run dev
 6. **Test**: Run `npm run dev` and verify at http://localhost:3000/new-solution
 7. **Build**: Run `npm run build` to generate production files in `dist/`
 
+## Adding a Digital Business Card
+
+Team members have standalone digital card pages at `/team/{slug}` with vCard download, QR code, and sharing options.
+
+1. **Add team member data** to `assets/data/team-members.json`
+2. **Add profile photo** to `assets/image/team/` (400x400 recommended)
+3. **Create card page** at `team/{slug}.html` — copy an existing card and update:
+   - All meta tags (title, description, OG)
+   - `data-digital-card` attribute with the slug
+   - `card-data` JSON block with member details
+   - Profile photo, name, title, social links, contact details
+4. **Card pages are standalone** — they do NOT use `{{> header}}` / `{{> footer}}`
+5. **Build**: `vite.config.js` automatically picks up `team/*.html` files
+6. **Test**: Visit `http://localhost:3000/team/{slug}.html` locally
+
+### Key files
+| File | Purpose |
+|------|---------|
+| `team/*.html` | Individual card pages (one per team member) |
+| `assets/data/team-members.json` | Team member data (shared reference) |
+| `assets/script/modules/digital-card.js` | vCard generation, QR code, sharing logic |
+| `assets/image/team/` | Profile photos |
+
+### Features
+- **Save Contact**: Downloads `.vcf` vCard file
+- **QR Code**: Rendered on-page via `qrcode` npm package
+- **Share**: Native Web Share API (falls back to clipboard copy)
+- **Copy Link**: Copies card URL to clipboard
+- **WhatsApp**: Opens WhatsApp share dialog
+- **Email**: Opens mailto with pre-filled subject/body
+
 ## Adding a Swiper Slider
 1. **HTML structure**: Use `.swiper`, `.swiper-wrapper`, `.swiper-slide`, navigation buttons
 2. **JavaScript**: Add config in `assets/script/main.js` (inside DOMContentLoaded)

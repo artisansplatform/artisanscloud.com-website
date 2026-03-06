@@ -3,11 +3,16 @@ import handlebars from 'vite-plugin-handlebars';
 import path from 'path';
 import { glob } from 'glob';
 
-// Get all HTML files in the root directory
+// Get all HTML files in the root directory and team/ subdirectory
 const htmlFiles = glob.sync('*.html', { cwd: __dirname });
+const teamFiles = glob.sync('team/*.html', { cwd: __dirname });
 const input = {};
 htmlFiles.forEach(file => {
   const name = file.replace('.html', '');
+  input[name] = path.resolve(__dirname, file);
+});
+teamFiles.forEach(file => {
+  const name = file.replace('.html', '').replace('/', '-');
   input[name] = path.resolve(__dirname, file);
 });
 
