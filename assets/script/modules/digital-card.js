@@ -1,30 +1,74 @@
 import QRCode from 'qrcode';
 
-function generateVCardString(data) {
+async function fetchPhotoBase64(photoPath) {
+    try {
+        const url = `${window.location.origin}${photoPath}`;
+        const response = await fetch(url);
+        if (!response.ok) return null;
+        const blob = await response.blob();
+        return new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                const [header, base64] = reader.result.split(',');
+                const mimeType = header.match(/data:([^;]+)/)?.[1] || 'image/jpeg';
+                const typeStr = mimeType.includes('png') ? 'PNG' : 'JPEG';
+                resolve({ base64, typeStr });
+            };
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+        });
+    } catch {
+        return null;
+    }
+}
+
+// Fold a vCard property value at 75 chars per line (CRLF + space continuation)
+function foldVCardLine(line) {
+    if (line.length <= 75) return line;
+    let result = line.substring(0, 75);
+    let i = 75;
+    while (i < line.length) {
+        result += '\r\n ' + line.substring(i, i + 74);
+        i += 74;
+    }
+    return result;
+}
+
+async function generateVCardString(data) {
     const lines = [
         'BEGIN:VCARD',
         'VERSION:3.0',
-        `N:${data.lastName};${data.firstName};;;`,
-        `FN:${data.name}`,
-        `ORG:${data.company}`,
-        `TITLE:${data.title}`,
+        foldVCardLine(`N:${data.lastName};${data.firstName};;;`),
+        foldVCardLine(`FN:${data.name}`),
+        foldVCardLine(`ORG:${data.company}`),
+        foldVCardLine(`TITLE:${data.title}`),
     ];
 
-    if (data.email) lines.push(`EMAIL;TYPE=WORK:${data.email}`);
-    if (data.phone) lines.push(`TEL;TYPE=WORK:${data.phone}`);
-    if (data.companyUrl) lines.push(`URL:${data.companyUrl}`);
-    if (data.social?.linkedin) lines.push(`X-SOCIALPROFILE;TYPE=linkedin:${data.social.linkedin}`);
-    if (data.social?.twitter) lines.push(`X-SOCIALPROFILE;TYPE=twitter:${data.social.twitter}`);
-    if (data.social?.github) lines.push(`X-SOCIALPROFILE;TYPE=github:${data.social.github}`);
-    if (data.photo) lines.push(`PHOTO;VALUE=URI:https://www.artisanscloud.com${data.photo}`);
-    if (data.location) lines.push(`ADR;TYPE=WORK:;;${data.location};;;;`);
+    if (data.email) lines.push(foldVCardLine(`EMAIL;TYPE=WORK:${data.email}`));
+    if (data.phone) lines.push(foldVCardLine(`TEL;TYPE=WORK:${data.phone}`));
+    if (data.companyUrl) lines.push(foldVCardLine(`URL:${data.companyUrl}`));
+    if (data.social?.linkedin) lines.push(foldVCardLine(`X-SOCIALPROFILE;TYPE=linkedin:${data.social.linkedin}`));
+    if (data.social?.twitter) lines.push(foldVCardLine(`X-SOCIALPROFILE;TYPE=twitter:${data.social.twitter}`));
+    if (data.social?.github) lines.push(foldVCardLine(`X-SOCIALPROFILE;TYPE=github:${data.social.github}`));
+    if (data.location) lines.push(foldVCardLine(`ADR;TYPE=WORK:;;${data.location};;;;`));
+
+    // Embed photo as base64 for offline contact saving
+    if (data.photo) {
+        const photo = await fetchPhotoBase64(data.photo);
+        if (photo) {
+            lines.push(foldVCardLine(`PHOTO;ENCODING=b;TYPE=${photo.typeStr}:${photo.base64}`));
+        } else {
+            // Fallback to URI reference if fetch fails
+            lines.push(foldVCardLine(`PHOTO;VALUE=URI:https://www.artisanscloud.com${data.photo}`));
+        }
+    }
 
     lines.push('END:VCARD');
     return lines.join('\r\n');
 }
 
-function downloadVCard(data) {
-    const vcf = generateVCardString(data);
+async function downloadVCard(data) {
+    const vcf = await generateVCardString(data);
     const blob = new Blob([vcf], { type: 'text/vcard;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -134,9 +178,11 @@ export function initDigitalCard() {
     // Save Contact button
     const saveBtn = document.querySelector('[data-action="save-contact"]');
     if (saveBtn) {
-        saveBtn.addEventListener('click', (e) => {
+        saveBtn.addEventListener('click', async (e) => {
             e.preventDefault();
-            downloadVCard(data);
+            saveBtn.disabled = true;
+            await downloadVCard(data);
+            saveBtn.disabled = false;
         });
     }
 

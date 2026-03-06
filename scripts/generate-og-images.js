@@ -15,8 +15,8 @@
 
 import satori from 'satori';
 import sharp from 'sharp';
-import { readFileSync, writeFileSync, mkdirSync } from 'fs';
-import { join, dirname } from 'path';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
+import { join, dirname, extname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -353,6 +353,162 @@ function buildTemplate(page) {
   };
 }
 
+// Team member OG image template — photo + name/title on brand gradient background
+function buildTeamTemplate(member, photoDataUri) {
+  return {
+    type: 'div',
+    props: {
+      style: {
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        fontFamily: 'Poppins',
+        background: 'linear-gradient(135deg, #f5f0ff 0%, #ede6ff 40%, #f0f8ff 100%)',
+        color: COLORS.heading,
+        position: 'relative',
+        overflow: 'hidden',
+      },
+      children: [
+        // Decorative blob — top-right
+        {
+          type: 'div',
+          props: {
+            style: {
+              position: 'absolute', top: '-80px', right: '-60px',
+              width: '360px', height: '360px', borderRadius: '50%',
+              background: 'linear-gradient(135deg, rgba(141,104,246,0.15), rgba(252,77,218,0.08))',
+              filter: 'blur(2px)',
+            },
+          },
+        },
+        // Decorative blob — bottom-left
+        {
+          type: 'div',
+          props: {
+            style: {
+              position: 'absolute', bottom: '-100px', left: '-80px',
+              width: '320px', height: '320px', borderRadius: '50%',
+              background: 'linear-gradient(135deg, rgba(19,217,228,0.10), rgba(141,104,246,0.08))',
+              filter: 'blur(2px)',
+            },
+          },
+        },
+        // Content container
+        {
+          type: 'div',
+          props: {
+            style: {
+              width: '100%', height: '100%', display: 'flex',
+              padding: '56px 70px', position: 'relative',
+              alignItems: 'center', gap: '64px',
+            },
+            children: [
+              // Circular photo — pre-masked to a circle by Sharp, so no overflow/clip needed.
+              // Purple outer div acts as the border ring; img is the masked photo inside.
+              {
+                type: 'div',
+                props: {
+                  style: {
+                    display: 'flex',
+                    width: '292px', height: '292px', borderRadius: '50%',
+                    background: COLORS.primary,
+                    alignItems: 'center', justifyContent: 'center',
+                    flexShrink: 0,
+                  },
+                  children: [
+                    {
+                      type: 'img',
+                      props: {
+                        src: photoDataUri,
+                        width: 280,
+                        height: 280,
+                        style: { borderRadius: '50%' },
+                      },
+                    },
+                  ],
+                },
+              },
+              // Right content
+              {
+                type: 'div',
+                props: {
+                  style: {
+                    display: 'flex', flexDirection: 'column',
+                    justifyContent: 'space-between', flex: 1,
+                    height: '100%', paddingTop: '8px', paddingBottom: '8px',
+                  },
+                  children: [
+                    // Logo
+                    {
+                      type: 'img',
+                      props: {
+                        src: logoDataUri, width: 151, height: 40,
+                        style: { objectFit: 'contain' },
+                      },
+                    },
+                    // Name, accent bar, title, company
+                    {
+                      type: 'div',
+                      props: {
+                        style: { display: 'flex', flexDirection: 'column', gap: '14px' },
+                        children: [
+                          {
+                            type: 'div',
+                            props: {
+                              style: {
+                                fontSize: member.name.length > 16 ? '46px' : '52px',
+                                fontWeight: 600, lineHeight: 1.1,
+                                letterSpacing: '-0.02em', color: COLORS.heading,
+                              },
+                              children: member.name,
+                            },
+                          },
+                          {
+                            type: 'div',
+                            props: {
+                              style: {
+                                display: 'flex',
+                                width: '72px', height: '4px', borderRadius: '2px',
+                                background: `linear-gradient(90deg, ${COLORS.primary}, ${COLORS.sky})`,
+                              },
+                            },
+                          },
+                          {
+                            type: 'div',
+                            props: {
+                              style: { fontSize: '24px', fontWeight: 400, color: COLORS.description },
+                              children: member.title,
+                            },
+                          },
+                          {
+                            type: 'div',
+                            props: {
+                              style: { fontSize: '18px', fontWeight: 400, color: COLORS.primary },
+                              children: member.company,
+                            },
+                          },
+                        ],
+                      },
+                    },
+                    // URL
+                    {
+                      type: 'span',
+                      props: {
+                        style: { fontSize: '16px', fontWeight: 400, color: COLORS.primary },
+                        children: 'artisanscloud.com',
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+          },
+        },
+      ],
+    },
+  };
+}
+
 async function main() {
   console.log('Generating OG images...');
 
@@ -361,6 +517,8 @@ async function main() {
   const fonts = await loadFonts();
 
   let generated = 0;
+
+  // Regular page OG images
   for (const page of PAGES) {
     const template = buildTemplate(page);
     const svg = await satori(template, { width: WIDTH, height: HEIGHT, fonts });
@@ -370,6 +528,68 @@ async function main() {
     writeFileSync(outPath, png);
     generated++;
     console.log(`  ${page.file}.png (${(png.length / 1024).toFixed(1)} KB)`);
+  }
+
+  // Team member card OG images
+  const teamOutDir = join(OUT_DIR, 'team');
+  mkdirSync(teamOutDir, { recursive: true });
+
+  const teamMembers = JSON.parse(readFileSync(join(ROOT, 'assets', 'data', 'team-members.json'), 'utf-8'));
+
+  for (const member of teamMembers) {
+    // Resolve photo path from the member's photo field (e.g. /assets/image/team/gaurav-makhecha.png)
+    const photoPath = join(ROOT, member.photo);
+    if (!existsSync(photoPath)) {
+      console.warn(`  Skipping ${member.slug}: photo not found at ${photoPath}`);
+      continue;
+    }
+
+    // Step 1: Crop 280×280 from the top-center of the source photo.
+    // Faces appear in the upper portion of portrait photos, anchoring to top
+    // gives better framing than a centered crop.
+    // An optional photoCropTop in team-members.json allows per-member fine-tuning.
+    const CIRCLE_SIZE = 280;
+    const rawBuffer = readFileSync(photoPath);
+    const meta = await sharp(rawBuffer).metadata();
+    let srcWidth = meta.width;
+    let srcHeight = meta.height;
+
+    // Ensure source is at least CIRCLE_SIZE before extracting
+    let srcSharp = sharp(rawBuffer);
+    if (srcWidth < CIRCLE_SIZE || srcHeight < CIRCLE_SIZE) {
+      const scale = Math.max(CIRCLE_SIZE / srcWidth, CIRCLE_SIZE / srcHeight);
+      srcWidth = Math.round(srcWidth * scale);
+      srcHeight = Math.round(srcHeight * scale);
+      srcSharp = srcSharp.resize(srcWidth, srcHeight, { fit: 'fill' });
+    }
+
+    const cropLeft = Math.floor((srcWidth - CIRCLE_SIZE) / 2);
+    const cropTop = member.photoCropTop ?? 0;
+
+    const croppedBuffer = await srcSharp
+      .extract({ left: cropLeft, top: cropTop, width: CIRCLE_SIZE, height: CIRCLE_SIZE })
+      .png()
+      .toBuffer();
+
+    // Step 2: Apply a circular mask directly with Sharp so Satori can use a plain
+    // <img> tag — avoids backgroundImage/backgroundPosition quirks in Satori.
+    const r = CIRCLE_SIZE / 2;
+    const circleMaskSvg = `<svg width="${CIRCLE_SIZE}" height="${CIRCLE_SIZE}"><circle cx="${r}" cy="${r}" r="${r}" fill="white"/></svg>`;
+    const circularPhotoBuffer = await sharp(croppedBuffer)
+      .composite([{ input: Buffer.from(circleMaskSvg), blend: 'dest-in' }])
+      .png()
+      .toBuffer();
+
+    const photoDataUri = `data:image/png;base64,${circularPhotoBuffer.toString('base64')}`;
+
+    const template = buildTeamTemplate(member, photoDataUri);
+    const svg = await satori(template, { width: WIDTH, height: HEIGHT, fonts });
+    const png = await sharp(Buffer.from(svg)).png({ quality: 90 }).toBuffer();
+
+    const outPath = join(teamOutDir, `${member.slug}.png`);
+    writeFileSync(outPath, png);
+    generated++;
+    console.log(`  team/${member.slug}.png (${(png.length / 1024).toFixed(1)} KB)`);
   }
 
   console.log(`OG images: ${generated} images generated → assets/og/`);

@@ -12,6 +12,8 @@
     "build:sitemap": "node scripts/generate-sitemap.js",
     "build:static": "cp -r assets/og dist/assets/og",
     "generate:og": "node scripts/generate-og-images.js",
+    "generate:cards": "node scripts/generate-team-cards.js",
+    "add:card": "npm run generate:cards && npm run generate:og",
     "preview": "vite preview",
     "test": "npm run build && vitest run",
     "test:watch": "vitest",

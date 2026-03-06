@@ -42,28 +42,64 @@ npm run dev
 
 Team members have standalone digital card pages at `/team/{slug}` with vCard download, QR code, and sharing options.
 
-1. **Add team member data** to `assets/data/team-members.json`
-2. **Add profile photo** to `assets/image/team/` (400x400 recommended)
-3. **Create card page** at `team/{slug}.html` — copy an existing card and update:
-   - All meta tags (title, description, OG)
-   - `data-digital-card` attribute with the slug
-   - `card-data` JSON block with member details
-   - Profile photo, name, title, social links, contact details
-4. **Card pages are standalone** — they do NOT use `{{> header}}` / `{{> footer}}`
-5. **Build**: `vite.config.js` automatically picks up `team/*.html` files
-6. **Test**: Visit `http://localhost:3000/team/{slug}.html` locally
+### Automated workflow (recommended)
+
+1. **Add profile photo** to `assets/image/team/[slug].[ext]` (400×400 recommended)
+2. **Add entry** to `assets/data/team-members.json` with all member details (see schema below)
+3. **Run** the combined command:
+   ```bash
+   npm run add:card
+   ```
+   This generates `team/[slug].html` **and** the 1200×630 OG image in one step.
+4. **Test**: Visit `http://localhost:3000/team/[slug]` locally
+5. **Commit**: `team/[slug].html`, `assets/og/team/[slug].png`, `assets/data/team-members.json`, and the photo
+
+To regenerate a single card (e.g. after editing their JSON entry):
+```bash
+npm run generate:cards -- --slug dev-nair
+npm run generate:og
+```
+
+### team-members.json schema
+
+```json
+{
+  "slug": "first-last",           // URL slug, also used for filenames
+  "name": "First Last",
+  "firstName": "First",
+  "lastName": "Last",
+  "title": "Job Title",
+  "company": "Artisans Cloud",
+  "companyUrl": "https://www.artisanscloud.com",
+  "location": "City, Country",    // optional
+  "bio": "Short bio text.",
+  "email": "first@artisanscloud.com",
+  "phone": "",                    // optional, include country code
+  "photo": "/assets/image/team/first-last.jpg",
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/...",   // optional
+    "github": "https://github.com/...",              // optional
+    "twitter": "https://x.com/..."                  // optional — also sets twitter:creator
+  },
+  "photoCropTop": 0               // optional — pixel offset from top for OG image crop
+}
+```
+
+> **Note**: `team/*.html` files are generated from JSON — don't hand-edit them. Re-run `npm run add:card` after any JSON change.
 
 ### Key files
 | File | Purpose |
 |------|---------|
-| `team/*.html` | Individual card pages (one per team member) |
-| `assets/data/team-members.json` | Team member data (shared reference) |
+| `assets/data/team-members.json` | **Source of truth** for all team member data |
+| `scripts/generate-team-cards.js` | Generates `team/[slug].html` from JSON |
+| `scripts/generate-og-images.js` | Generates OG images (includes team cards) |
+| `team/*.html` | Generated card pages — do not hand-edit |
 | `assets/script/modules/digital-card.js` | vCard generation, QR code, sharing logic |
 | `assets/image/team/` | Profile photos |
 
 ### Features
-- **Save Contact**: Downloads `.vcf` vCard file
-- **QR Code**: Rendered on-page via `qrcode` npm package
+- **Save Contact**: Downloads `.vcf` vCard file with embedded photo
+- **QR Code**: Rendered on-page via `qrcode` npm package (hidden on mobile)
 - **Share**: Native Web Share API (falls back to clipboard copy)
 - **Copy Link**: Copies card URL to clipboard
 - **WhatsApp**: Opens WhatsApp share dialog
