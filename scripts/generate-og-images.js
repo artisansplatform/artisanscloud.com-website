@@ -124,6 +124,11 @@ const PAGES = [
     subtitle: 'Intelligent warehouse orchestration',
   },
   {
+    file: 'dify-consulting',
+    title: 'Dify Consulting\nServices',
+    subtitle: 'Simplify, automate and optimise workflows',
+  },
+  {
     file: 'blog-list',
     title: 'Insights & Thought\nLeadership',
     subtitle: 'Latest from Artisans Cloud',
