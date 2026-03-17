@@ -119,6 +119,7 @@ npm run generate:og
   - Footer: Edit `partials/footer.html` only
   - Changes automatically apply to ALL pages during build
 - **No need to update individual HTML files** — the `{{> header}}` and `{{> footer}}` placeholders pull in the latest content
+- **Keep desktop and mobile nav in sync** — when adding or moving a header link, update both the desktop nav row and the mobile menu in `partials/header.html`
 - **Test changes**: Run `npm run dev` to see updates across all pages immediately
 
 ## Updating Blog Articles
