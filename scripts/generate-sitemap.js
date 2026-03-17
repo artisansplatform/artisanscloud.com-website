@@ -60,6 +60,7 @@ const PAGE_META = {
   'merchandise-and-assortment-planning.html':  { priority: '0.6', changefreq: 'monthly' },
   'role-play-agent.html':                      { priority: '0.6', changefreq: 'monthly' },
   'warehouse-management-system.html':          { priority: '0.6', changefreq: 'monthly' },
+  'smart-auto-completion.html':                { priority: '0.6', changefreq: 'monthly' },
   'dify-consulting.html':                      { priority: '0.8', changefreq: 'monthly' },
   'privacy-policy.html':                       { priority: '0.3', changefreq: 'yearly'  },
   'terms-and-conditions.html':                 { priority: '0.3', changefreq: 'yearly'  },

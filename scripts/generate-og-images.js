@@ -148,6 +148,11 @@ const PAGES = [
     title: 'Terms & Conditions',
     subtitle: 'Platform usage terms',
   },
+  {
+    file: 'smart-auto-completion',
+    title: 'Smart Auto-Completion',
+    subtitle: 'Find products before you finish typing',
+  },
 ];
 
 // Read the dark logo SVG (for light backgrounds) and encode as data URI
