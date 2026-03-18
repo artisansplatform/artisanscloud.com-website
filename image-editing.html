@@ -318,29 +318,91 @@
         <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
             <div class="fade-in text-center mb-8 lg:mb-[60px]">
                 <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">What Our Solution Can Do for You</h2>
-                <p class="mt-4 text-description font-primary font-normal leading-[150%] max-w-[700px] mx-auto">A visual showcase of Before/After transformations – coming soon.</p>
+                <p class="mt-4 text-description font-primary font-normal leading-[150%] max-w-[700px] mx-auto">See the transformation from raw product shots to polished campaign-ready visuals.</p>
             </div>
 
-            <!-- Placeholder grid for Before/After visual showcase -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-[30px]">
-                <div class="fade-in rounded-2xl md:rounded-[20px] bg-[#f6f8fb] overflow-hidden aspect-[4/3] grid place-items-center p-8">
-                    <div class="text-center">
-                        <svg class="w-12 h-12 mx-auto mb-4 text-primary/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <p class="text-description font-primary font-normal text-sm leading-[150%]">Before / After<br>Background Removal</p>
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 md:gap-[30px]">
+                <article class="fade-in rounded-[24px] md:rounded-[30px] border border-[#d9e4f2] bg-white p-4 md:p-6 shadow-[0_20px_60px_rgba(20,37,63,0.08)]">
+                    <div class="flex flex-col gap-3 md:gap-4 mb-5 md:mb-6">
+                        <div>
+                            <p class="text-xs font-primary font-semibold uppercase tracking-[0.24em] text-primary">Comparison Pair 01</p>
+                            <h3 class="mt-2 text-2xl md:text-[28px] text-heading font-primary font-semibold leading-[130%]">A Dress put on an American Model</h3>
+                        </div>
+                        <div class="group relative rounded-2xl border border-dashed border-[#c9d8ea] bg-[#f6f8fb] px-4 py-3 md:px-5 md:py-4 text-left">
+                            <p class="text-[11px] font-primary font-semibold uppercase tracking-[0.2em] text-description/70">Prompt</p>
+                            <p class="mt-2 truncate text-sm md:text-base text-description font-primary font-normal leading-[160%]">Can you try this dress on an American Model?</p>
+                            <div class="pointer-events-none absolute left-4 right-4 top-[calc(100%+10px)] z-20 rounded-2xl bg-heading px-4 py-3 opacity-0 shadow-[0_20px_50px_rgba(20,37,63,0.22)] transition-all duration-300 group-hover:pointer-events-auto group-hover:opacity-100 md:left-5 md:right-5">
+                                <p class="text-[11px] font-primary font-semibold uppercase tracking-[0.2em] text-white/60">Full Prompt</p>
+                                <p class="mt-2 text-sm md:text-base text-white font-primary font-normal leading-[160%]">Can you try this dress on an American Model?</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="fade-in rounded-2xl md:rounded-[20px] bg-[#f6f8fb] overflow-hidden aspect-[4/3] grid place-items-center p-8">
-                    <div class="text-center">
-                        <svg class="w-12 h-12 mx-auto mb-4 text-primary/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <p class="text-description font-primary font-normal text-sm leading-[150%]">Before / After<br>Seasonal Themes</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+                        <figure class="overflow-hidden rounded-[20px] border border-[#d9e4f2] bg-[#f8fbff]">
+                            <div class="flex items-center justify-between border-b border-[#d9e4f2] bg-white px-4 py-3">
+                                <span class="inline-flex rounded-full bg-heading px-3 py-1 text-xs font-primary font-semibold uppercase tracking-[0.12em] text-white">Before</span>
+                                <span class="text-xs text-right font-primary font-medium uppercase tracking-[0.16em] text-description/70">Raw Product Shot</span>
+                            </div>
+                            <div class="flex justify-center p-3 md:p-4">
+                                <img src="/assets/image/image-editing/before-01-display.webp" alt="Before image showing the original black dress product shot on a plain background" width="256" height="384" loading="lazy" decoding="async"
+                                    class="h-auto w-full max-w-[256px] rounded-2xl border border-[#e5edf6] bg-white shadow-[0_12px_30px_rgba(20,37,63,0.08)]">
+                            </div>
+                        </figure>
+
+                        <figure class="overflow-hidden rounded-[20px] border border-[#d9e4f2] bg-[#f8fbff]">
+                            <div class="flex items-center justify-between border-b border-[#d9e4f2] bg-white px-4 py-3">
+                                <span class="inline-flex rounded-full bg-primary px-3 py-1 text-xs font-primary font-semibold uppercase tracking-[0.12em] text-white">After</span>
+                                <span class="text-xs text-right font-primary font-medium uppercase tracking-[0.16em] text-description/70">Styled Lifestyle Image</span>
+                            </div>
+                            <div class="flex justify-center p-3 md:p-4">
+                                <img src="/assets/image/image-editing/after-01-display.webp" alt="After image showing the black dress placed on a model in a lifestyle setting" width="256" height="384" loading="lazy" decoding="async"
+                                    class="h-auto w-full max-w-[256px] rounded-2xl border border-[#e5edf6] bg-white shadow-[0_12px_30px_rgba(20,37,63,0.08)]">
+                            </div>
+                        </figure>
                     </div>
-                </div>
-                <div class="fade-in rounded-2xl md:rounded-[20px] bg-[#f6f8fb] overflow-hidden aspect-[4/3] grid place-items-center p-8">
-                    <div class="text-center">
-                        <svg class="w-12 h-12 mx-auto mb-4 text-primary/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <p class="text-description font-primary font-normal text-sm leading-[150%]">Before / After<br>Lighting & Color</p>
+                </article>
+
+                <article class="fade-in rounded-[24px] md:rounded-[30px] border border-[#d9e4f2] bg-white p-4 md:p-6 shadow-[0_20px_60px_rgba(20,37,63,0.08)]">
+                    <div class="flex flex-col gap-3 md:gap-4 mb-5 md:mb-6">
+                        <div>
+                            <p class="text-xs font-primary font-semibold uppercase tracking-[0.24em] text-primary">Comparison Pair 02</p>
+                            <h3 class="mt-2 text-2xl md:text-[28px] text-heading font-primary font-semibold leading-[130%]">Add text in background of any image</h3>
+                        </div>
+                        <div class="group relative rounded-2xl border border-dashed border-[#c9d8ea] bg-[#f6f8fb] px-4 py-3 md:px-5 md:py-4 text-left">
+                            <p class="text-[11px] font-primary font-semibold uppercase tracking-[0.2em] text-description/70">Prompt</p>
+                            <p class="mt-2 truncate text-sm md:text-base text-description font-primary font-normal leading-[160%]">Add the text "SUMMER VIBES" in large uppercase bold blue letters behind the person, positioned across the background just above the horizon. Keep the person exactly the same, do not alter them. Add a soft shadow and perspective so the text looks like it is behind the subject in natural depth.</p>
+                            <div class="pointer-events-none absolute left-4 right-4 top-[calc(100%+10px)] z-20 rounded-2xl bg-heading px-4 py-3 opacity-0 shadow-[0_20px_50px_rgba(20,37,63,0.22)] transition-all duration-300 group-hover:pointer-events-auto group-hover:opacity-100 md:left-5 md:right-5">
+                                <p class="text-[11px] font-primary font-semibold uppercase tracking-[0.2em] text-white/60">Full Prompt</p>
+                                <p class="mt-2 text-sm md:text-base text-white font-primary font-normal leading-[160%]">Add the text "SUMMER VIBES" in large uppercase bold blue letters behind the person, positioned across the background just above the horizon. Keep the person exactly the same, do not alter them. Add a soft shadow and perspective so the text looks like it is behind the subject in natural depth.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+                        <figure class="overflow-hidden rounded-[20px] border border-[#d9e4f2] bg-[#f8fbff]">
+                            <div class="flex items-center justify-between border-b border-[#d9e4f2] bg-white px-4 py-3">
+                                <span class="inline-flex rounded-full bg-heading px-3 py-1 text-xs font-primary font-semibold uppercase tracking-[0.12em] text-white">Before</span>
+                                <span class="text-xs text-right font-primary font-medium uppercase tracking-[0.16em] text-description/70">Studio Catalog View</span>
+                            </div>
+                            <div class="flex justify-center p-3 md:p-4">
+                                <img src="/assets/image/image-editing/before-03-display.webp" alt="Before image showing the model in a white dress photographed on a plain studio background" width="256" height="384" loading="lazy" decoding="async"
+                                    class="h-auto w-full max-w-[256px] rounded-2xl border border-[#e5edf6] bg-white shadow-[0_12px_30px_rgba(20,37,63,0.08)]">
+                            </div>
+                        </figure>
+
+                        <figure class="overflow-hidden rounded-[20px] border border-[#d9e4f2] bg-[#f8fbff]">
+                            <div class="flex items-center justify-between border-b border-[#d9e4f2] bg-white px-4 py-3">
+                                <span class="inline-flex rounded-full bg-primary px-3 py-1 text-xs font-primary font-semibold uppercase tracking-[0.12em] text-white">After</span>
+                                <span class="text-xs text-right font-primary font-medium uppercase tracking-[0.16em] text-description/70">Seasonal Campaign Scene</span>
+                            </div>
+                            <div class="flex justify-center p-3 md:p-4">
+                                <img src="/assets/image/image-editing/after-03-display.webp" alt="After image showing the model in a white dress placed in a bright summer beach campaign scene" width="256" height="384" loading="lazy" decoding="async"
+                                    class="h-auto w-full max-w-[256px] rounded-2xl border border-[#e5edf6] bg-white shadow-[0_12px_30px_rgba(20,37,63,0.08)]">
+                            </div>
+                        </figure>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
