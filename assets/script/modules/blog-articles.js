@@ -4,7 +4,7 @@
  * Single source of truth for blog card rendering:
  * - Card HTML templates live ONLY in this file (not duplicated in HTML pages)
  * - Fallback article data lives in /assets/data/fallback-articles.json
- *   (shared by this module and the API backend — one file, zero duplication)
+ *   (shared by this module and the API backend, one file, zero duplication)
  * - On page load: renders fallback data immediately from the bundled JSON
  * - Then fetches /api/articles and upgrades to live LinkedIn data if available
  *
@@ -128,7 +128,7 @@ export function initBlogArticles() {
 
   if (!blogGrid && !insightsGrid) return;
 
-  // Render fallback data immediately — bundled at build time, no network request
+  // Render fallback data immediately: bundled at build time, no network request
   renderArticles(fallbackArticles, blogGrid, insightsGrid);
 
   // Wire up Load More button
@@ -152,7 +152,7 @@ export function initBlogArticles() {
       }
     })
     .catch((err) => {
-      // Fallback data already rendered — nothing to do
+      // Fallback data already rendered, nothing to do
       console.warn('Failed to load dynamic blog articles:', err.message);
     });
 }

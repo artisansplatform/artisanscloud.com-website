@@ -116,7 +116,7 @@ export async function fetchLinkedInArticles(accessToken) {
   });
 
   if (res.status === 401) {
-    // Token expired — try refresh from env
+    // Token expired, try refresh from env
     const refreshToken = process.env.LINKEDIN_REFRESH_TOKEN;
     if (refreshToken) {
       console.warn('Access token expired, attempting refresh...');
