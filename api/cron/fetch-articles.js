@@ -30,7 +30,7 @@ async function downloadAndStoreImage(imageUrl, slug) {
 }
 
 export default async function handler(req, res) {
-  // Verify cron secret — Vercel sends this automatically for cron triggers
+  // Verify cron secret. Vercel sends this automatically for cron triggers
   const authHeader = req.headers.authorization;
   if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
     return res.status(401).json({ error: 'Unauthorized' });
@@ -42,7 +42,7 @@ export default async function handler(req, res) {
 
     // If fetch returns 0 articles, keep existing cache untouched
     if (articles.length === 0) {
-      console.warn('LinkedIn returned 0 articles — keeping existing cache');
+      console.warn('LinkedIn returned 0 articles, keeping existing cache');
       return res.status(200).json({
         message: 'No articles returned, cache unchanged',
         count: 0,

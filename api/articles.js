@@ -16,7 +16,7 @@ export default async function handler(req, res) {
       }
     }
 
-    // Blob empty or unavailable — return fallback
+    // Blob empty or unavailable, return fallback
     console.warn('No cached articles in Blob, returning fallback');
     res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=3600');
     return res.status(200).json(fallbackArticles);

@@ -210,7 +210,7 @@ function buildTemplate(page) {
         overflow: 'hidden',
       },
       children: [
-        // Decorative accent blob — top-right (purple, like website swirls)
+        // Decorative accent blob, top-right (purple, like website swirls)
         {
           type: 'div',
           props: {
@@ -226,7 +226,7 @@ function buildTemplate(page) {
             },
           },
         },
-        // Decorative accent blob — bottom-left (cyan, like website swirls)
+        // Decorative accent blob, bottom-left (cyan, like website swirls)
         {
           type: 'div',
           props: {
@@ -304,7 +304,7 @@ function buildTemplate(page) {
                         })),
                       },
                     },
-                    // Accent line — purple to cyan gradient
+                    // Accent line: purple to cyan gradient
                     {
                       type: 'div',
                       props: {
@@ -363,7 +363,7 @@ function buildTemplate(page) {
   };
 }
 
-// Team member OG image template — photo + name/title on brand gradient background
+// Team member OG image template: photo + name/title on brand gradient background
 function buildTeamTemplate(member, photoDataUri) {
   return {
     type: 'div',
@@ -379,7 +379,7 @@ function buildTeamTemplate(member, photoDataUri) {
         overflow: 'hidden',
       },
       children: [
-        // Decorative blob — top-right
+        // Decorative blob, top-right
         {
           type: 'div',
           props: {
@@ -391,7 +391,7 @@ function buildTeamTemplate(member, photoDataUri) {
             },
           },
         },
-        // Decorative blob — bottom-left
+        // Decorative blob, bottom-left
         {
           type: 'div',
           props: {
@@ -413,7 +413,7 @@ function buildTeamTemplate(member, photoDataUri) {
               alignItems: 'center', gap: '64px',
             },
             children: [
-              // Circular photo — pre-masked to a circle by Sharp, so no overflow/clip needed.
+              // Circular photo: pre-masked to a circle by Sharp, so no overflow/clip needed.
               // Purple outer div acts as the border ring; img is the masked photo inside.
               {
                 type: 'div',
@@ -582,7 +582,7 @@ async function main() {
       .toBuffer();
 
     // Step 2: Apply a circular mask directly with Sharp so Satori can use a plain
-    // <img> tag — avoids backgroundImage/backgroundPosition quirks in Satori.
+    // img tag: avoids backgroundImage/backgroundPosition quirks in Satori.
     const r = CIRCLE_SIZE / 2;
     const circleMaskSvg = `<svg width="${CIRCLE_SIZE}" height="${CIRCLE_SIZE}"><circle cx="${r}" cy="${r}" r="${r}" fill="white"/></svg>`;
     const circularPhotoBuffer = await sharp(croppedBuffer)

@@ -15,10 +15,10 @@
 ## Blog System Issues
 - **Blog cards empty**: Check `#blog-grid` / `#insights-grid` IDs exist in HTML, verify `blog-articles.js` is imported in `main.js`
 - **Blog cards not updating**: Verify cron job runs (`/api/cron/fetch-articles`), check Vercel Blob for `articles.json`, confirm LinkedIn env vars are set
-- **"Vercel Blob: No token found"**: Blob store not provisioned — see [dynamic-blog-setup.md](dynamic-blog-setup.md#step-1-create-the-vercel-blob-store)
-- **`/api/articles` returns fallback data**: Blob is empty (no cron run yet) or Blob read failed — trigger cron manually
+- **"Vercel Blob: No token found"**: Blob store not provisioned - see [dynamic-blog-setup.md](dynamic-blog-setup.md#step-1-create-the-vercel-blob-store)
+- **`/api/articles` returns fallback data**: Blob is empty (no cron run yet) or Blob read failed - trigger cron manually
 - **Cron returns 401**: `Authorization` header doesn't match `CRON_SECRET` env var
-- **LinkedIn API returns 401**: Access token expired and refresh failed — see [token lifecycle](dynamic-blog-setup.md#token-lifecycle)
+- **LinkedIn API returns 401**: Access token expired and refresh failed - see [token lifecycle](dynamic-blog-setup.md#token-lifecycle)
 - **LinkedIn API returns 403**: App needs the **Pages Data Portability API** product (grants `r_dma_admin_pages_content`). Auth user must be page ADMINISTRATOR. This product must be the only one on the LinkedIn app.
 - **No articles returned**: DMA OriginalArticles API only returns long-form LinkedIn Articles/Newsletters; regular posts/shares are excluded
 - **Images not loading**: LinkedIn thumbnail download may have failed; `onerror` fallback shows local placeholder

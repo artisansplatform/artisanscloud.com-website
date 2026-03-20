@@ -32,7 +32,7 @@ function parseArgs() {
   return opts;
 }
 
-// Pages to exclude — no SEO value, utility-only, or parameterised shell pages
+// Pages to exclude: no SEO value, utility-only, or parameterised shell pages
 const EXCLUDED_PAGES = new Set([
   '404.html',
   'thank-you.html',
@@ -70,7 +70,7 @@ const DEFAULT_META = { priority: '0.6', changefreq: 'monthly' };
 
 function pageToUrl(baseUrl, filename) {
   if (filename === 'index.html') return `${baseUrl}/`;
-  // Vercel cleanUrls: true — omit .html extension
+  // Vercel cleanUrls: true, omit .html extension
   const slug = filename.replace('.html', '');
   return `${baseUrl}/${slug}`;
 }
