@@ -10,7 +10,7 @@
  *   npm run generate:cards            # regenerate all cards
  *   npm run generate:cards -- --slug dev-nair   # one member only
  *
- * Existing HTML files are overwritten — team-members.json is the source of truth.
+ * Existing HTML files are overwritten. team-members.json is the source of truth.
  * After running this, also run: npm run generate:og
  * Or use the combined shortcut: npm run add:card
  */
@@ -141,7 +141,7 @@ function buildCardHtml(member) {
   const canonicalUrl = `https://www.artisanscloud.com/team/${member.slug}`;
   const ogImage = `https://www.artisanscloud.com/assets/og/team/${member.slug}.png`;
 
-  // card-data JSON — only include fields used by digital-card.js
+  // card-data JSON: only include fields used by digital-card.js
   const cardData = {
     slug: member.slug,
     name: member.name,
@@ -220,7 +220,7 @@ function buildCardHtml(member) {
                         <p class="text-white/70 font-primary text-xs">${member.company}</p>
 ${buildSocialIcons(member.social)}
 
-                        <!-- QR Code in left panel — hidden on mobile -->
+                        <!-- QR Code in left panel, hidden on mobile -->
                         <div class="hidden md:block mt-6 bg-white rounded-xl p-2">
                             <canvas id="qr-canvas"></canvas>
                         </div>

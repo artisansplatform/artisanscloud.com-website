@@ -32,7 +32,7 @@ function parseArgs() {
   return opts;
 }
 
-// Pages to exclude — no SEO value, utility-only, or parameterised shell pages
+// Pages to exclude: no SEO value, utility-only, or parameterised shell pages
 const EXCLUDED_PAGES = new Set([
   '404.html',
   'thank-you.html',
@@ -62,6 +62,7 @@ const PAGE_META = {
   'warehouse-management-system.html':          { priority: '0.6', changefreq: 'monthly' },
   'smart-auto-completion.html':                { priority: '0.6', changefreq: 'monthly' },
   'dify-consulting.html':                      { priority: '0.8', changefreq: 'monthly' },
+  'image-editing.html':                        { priority: '0.7', changefreq: 'monthly' },
   'privacy-policy.html':                       { priority: '0.3', changefreq: 'yearly'  },
   'terms-and-conditions.html':                 { priority: '0.3', changefreq: 'yearly'  },
 };
@@ -70,7 +71,7 @@ const DEFAULT_META = { priority: '0.6', changefreq: 'monthly' };
 
 function pageToUrl(baseUrl, filename) {
   if (filename === 'index.html') return `${baseUrl}/`;
-  // Vercel cleanUrls: true — omit .html extension
+  // Vercel cleanUrls: true, omit .html extension
   const slug = filename.replace('.html', '');
   return `${baseUrl}/${slug}`;
 }
