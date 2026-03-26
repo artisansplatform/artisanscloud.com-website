@@ -21,7 +21,7 @@
 
 ## Security
 - **No inline scripts**: Avoid inline JavaScript for security. Use JS modules via `assets/script/main.js` instead.
-- **No inline event handlers**: Do not use `onclick=""`, `onload=""`, etc. in HTML — attach event listeners in JS modules instead.
+- **No inline event handlers**: Do not use `onclick=""`, `onload=""`, etc. in HTML - attach event listeners in JS modules instead.
 - **External links**: Add `rel="noopener noreferrer"` to external links opening in new tabs
 - **Form validation**: Validate on client side with HTML5 `required` / `type` attributes. Backend validation is handled by the form processor (web3forms).
 - **Dependency updates**: Keep npm packages updated to avoid known vulnerabilities

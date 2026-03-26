@@ -7,7 +7,7 @@ npm run dev
 # Runs in parallel:
 #   - Vite dev server (watches HTML/JS files, auto-reloads browser)
 #   - Tailwind CSS watch (compiles assets/style/input.css → assets/style/output.css)
-# All changes trigger automatic browser reload — no manual refresh needed
+# All changes trigger automatic browser reload - no manual refresh needed
 ```
 
 ## Adding a New Page
@@ -79,13 +79,13 @@ npm run generate:og
   "social": {
     "linkedin": "https://www.linkedin.com/in/...",   // optional
     "github": "https://github.com/...",              // optional
-    "twitter": "https://x.com/..."                  // optional — also sets twitter:creator
+    "twitter": "https://x.com/..."                  // optional - also sets twitter:creator
   },
-  "photoCropTop": 0               // optional — pixel offset from top for OG image crop
+  "photoCropTop": 0               // optional - pixel offset from top for OG image crop
 }
 ```
 
-> **Note**: `team/*.html` files are generated from JSON — don't hand-edit them. Re-run `npm run add:card` after any JSON change.
+> **Note**: `team/*.html` files are generated from JSON - don't hand-edit them. Re-run `npm run add:card` after any JSON change.
 
 ### Key files
 | File | Purpose |
@@ -93,7 +93,7 @@ npm run generate:og
 | `assets/data/team-members.json` | **Source of truth** for all team member data |
 | `scripts/generate-team-cards.js` | Generates `team/[slug].html` from JSON |
 | `scripts/generate-og-images.js` | Generates OG images (includes team cards) |
-| `team/*.html` | Generated card pages — do not hand-edit |
+| `team/*.html` | Generated card pages - do not hand-edit |
 | `assets/script/modules/digital-card.js` | vCard generation, QR code, sharing logic |
 | `assets/image/team/` | Profile photos |
 
@@ -118,22 +118,23 @@ npm run generate:og
   - Header: Edit `partials/header.html` only
   - Footer: Edit `partials/footer.html` only
   - Changes automatically apply to ALL pages during build
-- **No need to update individual HTML files** — the `{{> header}}` and `{{> footer}}` placeholders pull in the latest content
+- **No need to update individual HTML files**: the `{{> header}}` and `{{> footer}}` placeholders pull in the latest content
+- **Keep desktop and mobile nav in sync**: when adding or moving a header link, update both the desktop nav row and the mobile menu in `partials/header.html`
 - **Test changes**: Run `npm run dev` to see updates across all pages immediately
 
 ## Updating Blog Articles
 - **To change card design**: Edit the `createBlogCardHTML()` / `createInsightsCardHTML()` functions in `blog-articles.js`
 - **To update fallback articles from live data**: Run `npm run update-fallback` (fetches latest from deployed API, downloads images locally)
 - **To update fallback articles manually**: Edit `assets/data/fallback-articles.json` (one file, used by both frontend and backend)
-- **To add articles**: New LinkedIn articles are fetched automatically by the daily cron — no manual updates needed
+- **To add articles**: New LinkedIn articles are fetched automatically by the daily cron - no manual updates needed
 
 ### Blog List Pagination (Load More)
-The blog list page shows articles in pages of 9. The "Load More" button (`#load-more-btn`) is controlled entirely by JS — it starts hidden and appears only when there are more than 9 articles to show. Clicking it reveals the next 9, until all are shown.
+The blog list page shows articles in pages of 9. The "Load More" button (`#load-more-btn`) is controlled entirely by JS - it starts hidden and appears only when there are more than 9 articles to show. Clicking it reveals the next 9, until all are shown.
 
 - **Batch size**: `ARTICLES_PER_PAGE = 9` constant in `blog-articles.js`
-- **Fallback data** (9 articles) → button stays hidden — all fit on the first page
+- **Fallback data** (9 articles) → button stays hidden - all fit on the first page
 - **Live API data** (>9 articles) → button appears after the API response renders
-- **Insights grid** (homepage) is unaffected — always shows the latest 3
+- **Insights grid** (homepage) is unaffected - always shows the latest 3
 
 ### Update Fallback Script
 ```bash
@@ -148,11 +149,11 @@ npm run update-fallback -- --url https://preview.example.com  # Fetch from custo
 
 ## Sitemap
 
-`dist/sitemap.xml` is generated automatically as part of every `npm run build` — no manual editing required.
+`dist/sitemap.xml` is generated automatically as part of every `npm run build` - no manual editing required.
 
 ### How it works
 - `scripts/generate-sitemap.js` runs as `build:sitemap` (after Vite's `build:html`)
-- It uses `glob.sync('*.html')` — the same discovery pattern as `vite.config.js` — so every page in the root is included automatically
+- It uses `glob.sync('*.html')` - the same discovery pattern as `vite.config.js` - so every page in the root is included automatically
 - Excluded pages: `404.html`, `thank-you.html`, `blog-detail.html`
 - `public/robots.txt` is a static file (Vite passthrough); it references the sitemap URL and is deployed to `dist/robots.txt` unchanged
 
@@ -166,7 +167,7 @@ Edit `PAGE_META` in `scripts/generate-sitemap.js` to override `priority` and `ch
 Pages not listed in `PAGE_META` get `{ priority: '0.6', changefreq: 'monthly' }`.
 
 ### Adding a new page
-No sitemap action required. Just create the `*.html` file in the root — it will appear in the next build's sitemap automatically. To fine-tune its SEO weight, add it to `PAGE_META`.
+No sitemap action required. Just create the `*.html` file in the root - it will appear in the next build's sitemap automatically. To fine-tune its SEO weight, add it to `PAGE_META`.
 
 ### Excluding a page
 Add its filename to the `EXCLUDED_PAGES` set at the top of `scripts/generate-sitemap.js`.
