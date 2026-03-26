@@ -129,6 +129,11 @@ const PAGES = [
     subtitle: 'Simplify, automate and optimise workflows',
   },
   {
+    file: 'image-editing',
+    title: 'AI Image Editing',
+    subtitle: 'Professional visuals for retail & e-commerce',
+  },
+  {
     file: 'blog-list',
     title: 'Insights & Thought\nLeadership',
     subtitle: 'Latest from Artisans Cloud',
