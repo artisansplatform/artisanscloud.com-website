@@ -27,12 +27,17 @@
     <!-- Font Family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="./assets/style/output.css">
 </head>
+
 <body>
-    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
+    <div id="cursor"
+        class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0">
+    </div>
 
     {{> header}}
 
@@ -40,15 +45,105 @@
 
         <!----- Banner Sec ----->
         <section class="w-full h-full p-4 lg:p-5">
-            <div class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/d2c-ecommerce/d2c-ecommerce-bg.webp')] bg-no-repeat bg-cover bg-bottom-right">
-                <div class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] xl:pb-44 lg:pb-36 sm:pb-24">
-                    <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                        <div class="text-center lg:max-w-[900px] mx-auto">
-                            <div class="mb-6 lg:mb-[37px] font-primary font-semibold text-2xl sm:text-4xl lg:text-[44px] xl:text-[50px] text-heading leading-[120%]" id="heroHeading">Smart Auto-Completion: Find Products Before You Finish Typing</div>
-                            <div id="heroDec">
-                                <p class="text-base lg:text-lg text-description font-primary font-normal leading-[150%]">Typing long search queries can slow shoppers down. Many customers start typing but aren&rsquo;t sure how to describe the product.</p>
-                                <p class="mt-4 text-base lg:text-lg text-description font-primary font-normal leading-[150%]">Smart Auto-Completion helps by predicting what shoppers are looking for and suggesting relevant searches instantly, making product discovery faster and easier.</p>
-                                <a href="/contact-us" class="lg:mt-10 mt-6 mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Schedule a Demo</a>
+            <div
+                class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] flex items-center justify-center h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/d2c-ecommerce/d2c-ecommerce-bg.webp')] bg-no-repeat bg-cover bg-bottom-right">
+                <div class="pt-5 md:pt-8 pb-8 md:pb-10 w-full">
+                    <div class="fade-in max-w-[1400px] w-full mx-auto">
+                        <div class="fade-in flex flex-col lg:flex-row justify-center w-full">
+                            <div class="flex lg:flex-col justify-between gap-x-4 w-full lg:w-fit lg:me-4 mb-5 lg:mb-0">
+                                <div
+                                    class="flex items-center gap-3 px-5 py-3 w-fit rounded-2xl bg-white/30 backdrop-blur-md border border-white/40 shadow-sm px-5 py-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-500" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="size-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round"
+                                            d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+                                    </svg>
+
+                                    <!-- Text -->
+                                    <span class="text-gray-700 font-semibold text-lg">
+                                        Find It Instantly
+                                    </span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-3 px-5 py-3 w-fit rounded-2xl bg-white/30 backdrop-blur-md border border-white/40 shadow-sm px-5 py-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-500" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-target-icon lucide-target">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <circle cx="12" cy="12" r="6" />
+                                        <circle cx="12" cy="12" r="2" />
+                                    </svg>
+
+                                    <!-- Text -->
+                                    <span class="text-gray-700 font-semibold text-lg">
+                                        Discover What You Need
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="max-w-fit mx-auto lg:mx-0">
+                                <div class="text-center w-full lg:w-auto lg:mt-[48px] mb-5">
+                                    <div
+                                        class="mb-3 sm:mb-6 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary">
+                                        AI-Powered Search Predictions</div>
+                                    <h1 id="heroHeading"
+                                        class="font-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] lg:leading-[61px]">
+                                        <span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]">Smart
+                                            Auto-Completion:</span><br>
+                                        Find Products Before You <br>
+                                        Finish Typing
+                                    </h1>
+                                </div>
+                                <div id="heroDec" class="w-full lg:w-auto">
+                                    <p
+                                        class="text-[clamp(14px,1.3vw,18px)] mx-auto px-2.5 lg:px-0 max-w-[613px] text-center text-description font-primary font-normal leading-[150%]">
+                                        Typing long search queries can slow shoppers down. Smart Auto-Completion
+                                        predicts what shoppers are looking for and suggests relevant searches instantly,
+                                        making product discovery faster and easier.</p>
+                                    <a href="/contact-us" id="heroBtn"
+                                        class="mt-7 mx-auto w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">
+                                        Schedule a Demo
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="flex lg:flex-col justify-between w-full gap-x-4 lg:w-fit lg:ms-4 mt-5 lg:mt-0">
+                                <div
+                                    class="flex items-center gap-3 px-5 py-3 w-fit rounded-2xl bg-white/30 backdrop-blur-md border border-white/40 shadow-sm px-5 py-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-500" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-search-check-icon lucide-search-check">
+                                        <path d="m8 11 2 2 4-4" />
+                                        <circle cx="11" cy="11" r="8" />
+                                        <path d="m21 21-4.3-4.3" />
+                                    </svg>
+                                    <!-- Text -->
+                                    <span class="text-gray-700 font-semibold text-lg">
+                                        Intelligent Product Search
+                                    </span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-3 px-5 py-3 w-fit rounded-2xl bg-white/30 backdrop-blur-md border border-white/40 shadow-sm px-5 py-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-500" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-bot-message-square-icon lucide-bot-message-square">
+                                        <path d="M12 6V2H8" />
+                                        <path d="M15 11v2" />
+                                        <path d="M2 12h2" />
+                                        <path d="M20 12h2" />
+                                        <path
+                                            d="M20 16a2 2 0 0 1-2 2H8.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 4 20.286V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z" />
+                                        <path d="M9 11v2" />
+                                    </svg>
+
+                                    <!-- Text -->
+                                    <span class="text-gray-700 font-semibold text-lg">
+                                        Your Smart Search Assistant
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -62,18 +157,34 @@
         <section class="lg:pt-[100px] lg:pb-10 md:py-16 py-10">
             <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
                 <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
-                    <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Why Search Can Slow Down Online Shopping</div>
+                    <div
+                        class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
+                        Why Search Can Slow Down Online Shopping</div>
                     <div class="">
-                        <p class="lg:pe-10 text-description font-primary font-normal leading-[150%]">Many online stores rely on basic search bars that only respond after the full query is typed.</p>
-                        <p class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]">This creates several problems:</p>
+                        <p class="lg:pe-10 text-description font-primary font-normal leading-[150%]">Many online stores
+                            rely on basic search bars that only respond after the full query is typed.</p>
+                        <p class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]">This creates
+                            several problems:</p>
                         <ul class="mt-4 ps-5">
-                            <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">Customers don&rsquo;t know the exact product name</li>
-                            <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">Typing long queries takes time</li>
-                            <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">Spelling mistakes lead to poor results</li>
-                            <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">Customers may abandon the search midway</li>
-                            <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">Product discovery becomes slow and frustrating</li>
+                            <li
+                                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
+                                Customers don&rsquo;t know the exact product name</li>
+                            <li
+                                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
+                                Typing long queries takes time</li>
+                            <li
+                                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
+                                Spelling mistakes lead to poor results</li>
+                            <li
+                                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
+                                Customers may abandon the search midway</li>
+                            <li
+                                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
+                                Product discovery becomes slow and frustrating</li>
                         </ul>
-                        <p class="mt-5 lg:pe-10 text-description font-primary font-normal leading-[150%]">If customers struggle to search, <strong class="text-heading">they may leave before finding what they want.</strong></p>
+                        <p class="mt-5 lg:pe-10 text-description font-primary font-normal leading-[150%]">If customers
+                            struggle to search, <strong class="text-heading">they may leave before finding what they
+                                want.</strong></p>
                     </div>
                 </div>
             </div>
@@ -91,49 +202,85 @@
             <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
                 <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
                     <div class="lg:pe-10">
-                        <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-10">A Smarter Way to Search with AI Auto-Completion</div>
+                        <div
+                            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-10">
+                            A Smarter Way to Search with AI Auto-Completion</div>
                         <!-- PLACEHOLDER IMAGE: Replace with a search/autocomplete UI illustration -->
-                        <img src="assets/image/solutions/overview/create-shopping-expr.svg" alt="AI-powered smart auto-completion search interface" class="max-w-full h-auto mx-auto lg:mx-0" width="500" height="400" loading="lazy">
+                        <img src="assets/image/solutions/overview/create-shopping-expr.svg"
+                            alt="AI-powered smart auto-completion search interface"
+                            class="max-w-full h-auto mx-auto lg:mx-0" width="500" height="400" loading="lazy">
                     </div>
                     <div class="">
-                        <div class="lg:mb-[30px] mb-6 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]">AI-powered Smart Auto-Completion predicts what shoppers are looking for while they type.</div>
+                        <div
+                            class="lg:mb-[30px] mb-6 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]">
+                            AI-powered Smart Auto-Completion predicts what shoppers are looking for while they type.
+                        </div>
 
-                        <p class="mb-6 text-description font-primary font-normal leading-[150%]">Instead of waiting for the full search query, the system provides helpful suggestions in real time.</p>
+                        <p class="mb-6 text-description font-primary font-normal leading-[150%]">Instead of waiting for
+                            the full search query, the system provides helpful suggestions in real time.</p>
 
-                        <p class="mb-4 text-heading font-primary font-semibold text-lg leading-[130%]">With Smart Auto-Completion, you can:</p>
+                        <p class="mb-4 text-heading font-primary font-semibold text-lg leading-[130%]">With Smart
+                            Auto-Completion, you can:</p>
 
                         <div class="flex flex-col lg:gap-5 gap-5">
                             <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong class="text-heading">Show search suggestions instantly</strong> as customers type</p>
+                                <img src="assets/image/icon/forward-arrow.svg"
+                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                                    width="16" height="16" loading="lazy">
+                                <p class="text-base text-description font-normal font-primary"><strong
+                                        class="text-heading">Show search suggestions instantly</strong> as customers
+                                    type</p>
                             </div>
                             <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong class="text-heading">Predict popular or relevant</strong> product searches</p>
+                                <img src="assets/image/icon/forward-arrow.svg"
+                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                                    width="16" height="16" loading="lazy">
+                                <p class="text-base text-description font-normal font-primary"><strong
+                                        class="text-heading">Predict popular or relevant</strong> product searches</p>
                             </div>
                             <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong class="text-heading">Handle spelling mistakes</strong> automatically</p>
+                                <img src="assets/image/icon/forward-arrow.svg"
+                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                                    width="16" height="16" loading="lazy">
+                                <p class="text-base text-description font-normal font-primary"><strong
+                                        class="text-heading">Handle spelling mistakes</strong> automatically</p>
                             </div>
                             <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong class="text-heading">Guide shoppers</strong> toward the right products faster</p>
+                                <img src="assets/image/icon/forward-arrow.svg"
+                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                                    width="16" height="16" loading="lazy">
+                                <p class="text-base text-description font-normal font-primary"><strong
+                                        class="text-heading">Guide shoppers</strong> toward the right products faster
+                                </p>
                             </div>
                             <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong class="text-heading">Highlight trending searches</strong> and popular products</p>
+                                <img src="assets/image/icon/forward-arrow.svg"
+                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                                    width="16" height="16" loading="lazy">
+                                <p class="text-base text-description font-normal font-primary"><strong
+                                        class="text-heading">Highlight trending searches</strong> and popular products
+                                </p>
                             </div>
                             <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong class="text-heading">Reduce typing effort</strong> for shoppers</p>
+                                <img src="assets/image/icon/forward-arrow.svg"
+                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                                    width="16" height="16" loading="lazy">
+                                <p class="text-base text-description font-normal font-primary"><strong
+                                        class="text-heading">Reduce typing effort</strong> for shoppers</p>
                             </div>
                             <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong class="text-heading">Improve product discovery</strong> across your store</p>
+                                <img src="assets/image/icon/forward-arrow.svg"
+                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                                    width="16" height="16" loading="lazy">
+                                <p class="text-base text-description font-normal font-primary"><strong
+                                        class="text-heading">Improve product discovery</strong> across your store</p>
                             </div>
                         </div>
 
-                        <p class="mt-6 text-description font-primary font-normal leading-[150%]"><strong class="text-heading">In short:</strong> Your search bar becomes <strong class="text-heading">a smart guide that helps customers reach the right products faster.</strong></p>
+                        <p class="mt-6 text-description font-primary font-normal leading-[150%]"><strong
+                                class="text-heading">In short:</strong> Your search bar becomes <strong
+                                class="text-heading">a smart guide that helps customers reach the right products
+                                faster.</strong></p>
                     </div>
                 </div>
             </div>
@@ -145,57 +292,94 @@
         <section class="lg:py-[90px] sm:py-16 py-10">
             <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
                 <div class="fade-in text-center mb-10 lg:mb-16">
-                    <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4">Benefits for Retailers &amp; E-commerce Businesses</h2>
+                    <h2
+                        class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4">
+                        Benefits for Retailers &amp; E-commerce Businesses</h2>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-[30px] gap-5">
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/target-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Faster search icon" width="40" height="40" loading="lazy">
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
+                        <div
+                            class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/target-icon.svg"
+                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                                alt="Faster search icon" width="40" height="40" loading="lazy">
                         </div>
                         <div>
-                            <div class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Faster Search Experience</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Customers find what they want quickly</p>
+                            <div
+                                class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">
+                                Faster Search Experience</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Customers find what they
+                                want quickly</p>
                         </div>
                     </div>
 
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/intelligentCard-icon-1.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Conversion rates icon" width="40" height="40" loading="lazy">
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
+                        <div
+                            class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/intelligentCard-icon-1.svg"
+                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                                alt="Conversion rates icon" width="40" height="40" loading="lazy">
                         </div>
                         <div>
-                            <div class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Higher Conversion Rates</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Faster discovery leads to more purchases</p>
+                            <div
+                                class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">
+                                Higher Conversion Rates</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Faster discovery leads
+                                to more purchases</p>
                         </div>
                     </div>
 
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/predictive-commerce-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Search abandonment icon" width="40" height="40" loading="lazy">
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
+                        <div
+                            class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/predictive-commerce-icon.svg"
+                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                                alt="Search abandonment icon" width="40" height="40" loading="lazy">
                         </div>
                         <div>
-                            <div class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Reduced Search Abandonment</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Customers don&rsquo;t leave midway</p>
+                            <div
+                                class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">
+                                Reduced Search Abandonment</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Customers don&rsquo;t
+                                leave midway</p>
                         </div>
                     </div>
 
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/vision-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Product visibility icon" width="40" height="40" loading="lazy">
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain">
+                        <div
+                            class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/vision-icon.svg"
+                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                                alt="Product visibility icon" width="40" height="40" loading="lazy">
                         </div>
                         <div>
-                            <div class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Better Product Visibility</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">More products get discovered</p>
+                            <div
+                                class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">
+                                Better Product Visibility</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">More products get
+                                discovered</p>
                         </div>
                     </div>
 
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/customer-copilots-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Shopping experience icon" width="40" height="40" loading="lazy">
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
+                        <div
+                            class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/customer-copilots-icon.svg"
+                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                                alt="Shopping experience icon" width="40" height="40" loading="lazy">
                         </div>
                         <div>
-                            <div class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Improved Shopping Experience</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Smooth and intuitive search journey</p>
+                            <div
+                                class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">
+                                Improved Shopping Experience</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Smooth and intuitive
+                                search journey</p>
                         </div>
                     </div>
                 </div>
@@ -214,27 +398,37 @@
                             <div
                                 class="lg:mb-8 mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">
                                 How AI Makes Smart Auto-Completion Possible</div>
-                            <p class="text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]">AI-powered auto-completion learns from multiple data signals to deliver intelligent suggestions in real time.</p>
-                            <p class="mt-4 text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]">By combining these signals, AI predicts what shoppers are searching for, even before they finish typing.</p>
+                            <p class="text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]">AI-powered
+                                auto-completion learns from multiple data signals to deliver intelligent suggestions in
+                                real time.</p>
+                            <p class="mt-4 text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]">By
+                                combining these signals, AI predicts what shoppers are searching for, even before they
+                                finish typing.</p>
                         </div>
                         <div class="fade-in">
-                            <p class="mb-5 text-white/80 font-primary font-normal leading-[150%]">The system considers:</p>
+                            <p class="mb-5 text-white/80 font-primary font-normal leading-[150%]">The system considers:
+                            </p>
                             <ul class="flex flex-col lg:gap-7 gap-6">
                                 <li class="ps-5 border-s-4 border-primary">
-                                    <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Popular Search Queries</div>
+                                    <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Popular
+                                        Search Queries</div>
                                     <p class="text-white/80 font-primary font-normal leading-[150%]">From your store</p>
                                 </li>
                                 <li class="ps-5 border-s-4 border-sky">
-                                    <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Customer Browsing and Search Behavior</div>
+                                    <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Customer
+                                        Browsing and Search Behavior</div>
                                 </li>
                                 <li class="ps-5 border-s-4 border-pink">
-                                    <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Product Catalog Attributes and Categories</div>
+                                    <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Product
+                                        Catalog Attributes and Categories</div>
                                 </li>
                                 <li class="ps-5 border-s-4 border-sky-2">
-                                    <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Trending and Seasonal Products</div>
+                                    <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Trending
+                                        and Seasonal Products</div>
                                 </li>
                                 <li class="ps-5 border-s-4 border-grey">
-                                    <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Spelling Correction and Language Variations</div>
+                                    <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Spelling
+                                        Correction and Language Variations</div>
                                 </li>
                             </ul>
                         </div>
@@ -244,7 +438,8 @@
                     class="absolute select-none pointer-events-none start-0 bottom-0" alt="" width="150" height="150"
                     loading="lazy">
                 <img src="assets/image/icon/strategicOutcomeBanner-shape-2.svg"
-                    class="absolute select-none pointer-events-none end-0 top-0" alt="" width="150" height="150" loading="lazy">
+                    class="absolute select-none pointer-events-none end-0 top-0" alt="" width="150" height="150"
+                    loading="lazy">
             </div>
         </section>
         <!----- End Section 4 ----->
@@ -254,43 +449,74 @@
         <section class="lg:py-[90px] sm:py-16 py-10">
             <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
                 <div class="fade-in text-center mb-10 lg:mb-16">
-                    <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Traditional Search vs Smart Auto-Completion</h2>
+                    <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
+                        Traditional Search vs Smart Auto-Completion</h2>
                 </div>
 
                 <div class="fade-in overflow-x-auto rounded-2xl lg:rounded-[20px] border border-[#f2f2f2]">
                     <table class="w-full min-w-[600px]">
                         <thead>
                             <tr class="bg-heading">
-                                <th class="py-5 px-6 lg:px-8 text-left font-primary font-semibold text-white text-base lg:text-lg">Traditional Search</th>
-                                <th class="py-5 px-6 lg:px-8 text-left font-primary font-semibold text-white text-base lg:text-lg">Smart Auto-Completion</th>
+                                <th
+                                    class="py-5 px-6 lg:px-8 text-left font-primary font-semibold text-white text-base lg:text-lg">
+                                    Traditional Search</th>
+                                <th
+                                    class="py-5 px-6 lg:px-8 text-left font-primary font-semibold text-white text-base lg:text-lg">
+                                    Smart Auto-Completion</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="border-b border-[#f2f2f2]">
-                                <td class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]">Suggestions appear only after full search</td>
-                                <td class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]"><strong class="text-heading">Suggestions appear while typing</strong></td>
+                                <td
+                                    class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]">
+                                    Suggestions appear only after full search</td>
+                                <td
+                                    class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]">
+                                    <strong class="text-heading">Suggestions appear while typing</strong>
+                                </td>
                             </tr>
                             <tr class="border-b border-[#f2f2f2] bg-[#f6f8fb]">
-                                <td class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]">Requires exact keywords</td>
-                                <td class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]"><strong class="text-heading">Predicts likely searches</strong></td>
+                                <td
+                                    class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]">
+                                    Requires exact keywords</td>
+                                <td
+                                    class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]">
+                                    <strong class="text-heading">Predicts likely searches</strong>
+                                </td>
                             </tr>
                             <tr class="border-b border-[#f2f2f2]">
-                                <td class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]">Sensitive to spelling errors</td>
-                                <td class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]"><strong class="text-heading">Corrects spelling automatically</strong></td>
+                                <td
+                                    class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]">
+                                    Sensitive to spelling errors</td>
+                                <td
+                                    class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]">
+                                    <strong class="text-heading">Corrects spelling automatically</strong>
+                                </td>
                             </tr>
                             <tr class="border-b border-[#f2f2f2] bg-[#f6f8fb]">
-                                <td class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]">Slower product discovery</td>
-                                <td class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]"><strong class="text-heading">Faster and smoother search</strong></td>
+                                <td
+                                    class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]">
+                                    Slower product discovery</td>
+                                <td
+                                    class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]">
+                                    <strong class="text-heading">Faster and smoother search</strong>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]">Limited product exposure</td>
-                                <td class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]"><strong class="text-heading">Helps customers discover more products</strong></td>
+                                <td
+                                    class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]">
+                                    Limited product exposure</td>
+                                <td
+                                    class="py-4 px-6 lg:px-8 font-primary font-normal text-description text-sm lg:text-base leading-[150%]">
+                                    <strong class="text-heading">Helps customers discover more products</strong>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <p class="fade-in mt-8 text-center text-heading font-primary font-semibold text-lg leading-[150%]">Result: A faster search experience that keeps shoppers engaged.</p>
+                <p class="fade-in mt-8 text-center text-heading font-primary font-semibold text-lg leading-[150%]">
+                    Result: A faster search experience that keeps shoppers engaged.</p>
             </div>
         </section>
         <!----- End Section 5 ----->
@@ -300,48 +526,79 @@
         <section class="lg:py-[100px] sm:py-16 py-10 bg-[#f6f8fb]">
             <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
                 <div class="fade-in text-center mb-8 lg:mb-[60px]">
-                    <h2 class="mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Smart Auto-Completion in Action</h2>
+                    <h2
+                        class="mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
+                        Smart Auto-Completion in Action</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 lg:gap-[30px] gap-5">
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-white border border-[#f2f2f2] flex flex-col">
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-white border border-[#f2f2f2] flex flex-col">
                         <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                            <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-light-pink">
-                                <img src="assets/image/icon/target-icon.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Sneakers search example" width="40" height="40" loading="lazy">
+                            <div
+                                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-light-pink">
+                                <img src="assets/image/icon/target-icon.svg"
+                                    class="h-1/2 transition-all ease-linear duration-300" alt="Sneakers search example"
+                                    width="40" height="40" loading="lazy">
                             </div>
                         </div>
                         <div>
-                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Sneakers</div>
-                            <p class="mb-3 text-description font-primary font-normal leading-[150%]">A shopper types <strong class="text-heading">&ldquo;snea&hellip;&rdquo;</strong> in the search bar.</p>
-                            <p class="text-description font-primary font-normal leading-[150%]">The system instantly suggests <strong class="text-heading">sneakers, running shoes, and casual sneakers</strong>.</p>
+                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Sneakers
+                            </div>
+                            <p class="mb-3 text-description font-primary font-normal leading-[150%]">A shopper types
+                                <strong class="text-heading">&ldquo;snea&hellip;&rdquo;</strong> in the search bar.
+                            </p>
+                            <p class="text-description font-primary font-normal leading-[150%]">The system instantly
+                                suggests <strong class="text-heading">sneakers, running shoes, and casual
+                                    sneakers</strong>.</p>
                         </div>
                     </div>
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-white border border-[#f2f2f2] flex flex-col">
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-white border border-[#f2f2f2] flex flex-col">
                         <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                            <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-light-green-box">
-                                <img src="assets/image/icon/moduleCard-productMgmt.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Laptop bags search example" width="40" height="40" loading="lazy">
+                            <div
+                                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-light-green-box">
+                                <img src="assets/image/icon/moduleCard-productMgmt.svg"
+                                    class="h-1/2 transition-all ease-linear duration-300"
+                                    alt="Laptop bags search example" width="40" height="40" loading="lazy">
                             </div>
                         </div>
                         <div>
-                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Laptop Bags</div>
-                            <p class="mb-3 text-description font-primary font-normal leading-[150%]">A customer types <strong class="text-heading">&ldquo;lapt&hellip;&rdquo;</strong>.</p>
-                            <p class="text-description font-primary font-normal leading-[150%]">The search suggests <strong class="text-heading">laptop bags, laptop sleeves, and laptop stands</strong>.</p>
+                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Laptop
+                                Bags</div>
+                            <p class="mb-3 text-description font-primary font-normal leading-[150%]">A customer types
+                                <strong class="text-heading">&ldquo;lapt&hellip;&rdquo;</strong>.
+                            </p>
+                            <p class="text-description font-primary font-normal leading-[150%]">The search suggests
+                                <strong class="text-heading">laptop bags, laptop sleeves, and laptop stands</strong>.
+                            </p>
                         </div>
                     </div>
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-white border border-[#f2f2f2] flex flex-col">
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-white border border-[#f2f2f2] flex flex-col">
                         <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                            <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-light-purple">
-                                <img src="assets/image/icon/customer-copilots-icon.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Kids winter wear search example" width="40" height="40" loading="lazy">
+                            <div
+                                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-light-purple">
+                                <img src="assets/image/icon/customer-copilots-icon.svg"
+                                    class="h-1/2 transition-all ease-linear duration-300"
+                                    alt="Kids winter wear search example" width="40" height="40" loading="lazy">
                             </div>
                         </div>
                         <div>
-                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Kids Winter Wear</div>
-                            <p class="mb-3 text-description font-primary font-normal leading-[150%]">A shopper types <strong class="text-heading">&ldquo;kid win&hellip;&rdquo;</strong>.</p>
-                            <p class="text-description font-primary font-normal leading-[150%]">The system suggests <strong class="text-heading">kids winter jackets, winter boots, and winter caps</strong>.</p>
+                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Kids
+                                Winter Wear</div>
+                            <p class="mb-3 text-description font-primary font-normal leading-[150%]">A shopper types
+                                <strong class="text-heading">&ldquo;kid win&hellip;&rdquo;</strong>.
+                            </p>
+                            <p class="text-description font-primary font-normal leading-[150%]">The system suggests
+                                <strong class="text-heading">kids winter jackets, winter boots, and winter
+                                    caps</strong>.
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <p class="fade-in mt-8 text-center text-heading font-primary font-semibold text-lg leading-[150%]">These suggestions help customers reach the right products faster with fewer clicks.</p>
+                <p class="fade-in mt-8 text-center text-heading font-primary font-semibold text-lg leading-[150%]">These
+                    suggestions help customers reach the right products faster with fewer clicks.</p>
             </div>
         </section>
         <!----- End Section 6 ----->
@@ -351,33 +608,49 @@
         <section class="lg:py-[90px] sm:py-16 py-10">
             <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
                 <div class="fade-in text-center mb-10 lg:mb-16">
-                    <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Perfect For</h2>
+                    <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
+                        Perfect For</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8">
                     <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="text-lg lg:text-xl text-heading font-semibold font-primary">Retailers with Large Product Catalogs</div>
+                        <img src="assets/image/icon/forward-arrow.svg"
+                            class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                            width="16" height="16" loading="lazy">
+                        <div class="text-lg lg:text-xl text-heading font-semibold font-primary">Retailers with Large
+                            Product Catalogs</div>
                     </div>
 
                     <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="text-lg lg:text-xl text-heading font-semibold font-primary">Fashion and Lifestyle Brands</div>
+                        <img src="assets/image/icon/forward-arrow.svg"
+                            class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                            width="16" height="16" loading="lazy">
+                        <div class="text-lg lg:text-xl text-heading font-semibold font-primary">Fashion and Lifestyle
+                            Brands</div>
                     </div>
 
                     <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="text-lg lg:text-xl text-heading font-semibold font-primary">Electronics and Accessories Stores</div>
+                        <img src="assets/image/icon/forward-arrow.svg"
+                            class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                            width="16" height="16" loading="lazy">
+                        <div class="text-lg lg:text-xl text-heading font-semibold font-primary">Electronics and
+                            Accessories Stores</div>
                     </div>
 
                     <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="text-lg lg:text-xl text-heading font-semibold font-primary">Marketplaces with Thousands of Products</div>
+                        <img src="assets/image/icon/forward-arrow.svg"
+                            class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                            width="16" height="16" loading="lazy">
+                        <div class="text-lg lg:text-xl text-heading font-semibold font-primary">Marketplaces with
+                            Thousands of Products</div>
                     </div>
 
                     <div class="fade-in ps-8 relative md:col-span-2 md:w-1/2 md:mx-auto">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="text-lg lg:text-xl text-heading font-semibold font-primary">E-commerce Platforms Focused on Fast Product Discovery</div>
+                        <img src="assets/image/icon/forward-arrow.svg"
+                            class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                            width="16" height="16" loading="lazy">
+                        <div class="text-lg lg:text-xl text-heading font-semibold font-primary">E-commerce Platforms
+                            Focused on Fast Product Discovery</div>
                     </div>
                 </div>
             </div>
@@ -390,9 +663,14 @@
             <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
                 <div class="fade-in grid lg:grid-cols-2 gap-8 lg:gap-[66px] items-center">
                     <div>
-                        <h2 class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Ready to Make Search<br class="hidden lg:block"> Faster and Smarter?</h2>
-                        <p class="lg:pe-10 text-description font-primary font-normal leading-[150%]">Every second counts in online shopping. When customers find products faster, they are more likely to buy.</p>
-                        <p class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]">Smart Auto-Completion transforms your search bar into an intelligent assistant that guides shoppers toward the right products instantly.</p>
+                        <h2
+                            class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
+                            Ready to Make Search<br class="hidden lg:block"> Faster and Smarter?</h2>
+                        <p class="lg:pe-10 text-description font-primary font-normal leading-[150%]">Every second counts
+                            in online shopping. When customers find products faster, they are more likely to buy.</p>
+                        <p class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]">Smart
+                            Auto-Completion transforms your search bar into an intelligent assistant that guides
+                            shoppers toward the right products instantly.</p>
                         <div class="mt-5 lg:mt-10 flex flex-wrap gap-3">
                             <a href="/contact-us"
                                 class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">
@@ -405,7 +683,9 @@
                         <!-- Header -->
                         <div class="flex items-center justify-between">
                             <span class="font-primary font-semibold text-heading text-base">Search Intelligence</span>
-                            <span class="text-xs font-primary font-medium text-primary bg-[#EDE8FF] rounded-full px-3 py-1">Live Dashboard</span>
+                            <span
+                                class="text-xs font-primary font-medium text-primary bg-[#EDE8FF] rounded-full px-3 py-1">Live
+                                Dashboard</span>
                         </div>
                         <!-- Metric rows with progress bars -->
                         <div class="space-y-4">
@@ -441,28 +721,33 @@
                         <div class="grid grid-cols-2 gap-3">
                             <div class="bg-white rounded-xl p-4 text-center">
                                 <div class="font-primary font-bold text-2xl text-primary leading-none mb-1">3x</div>
-                                <div class="text-xs font-primary text-description leading-[140%]">Faster Product Discovery</div>
+                                <div class="text-xs font-primary text-description leading-[140%]">Faster Product
+                                    Discovery</div>
                             </div>
                             <div class="bg-white rounded-xl p-4 text-center">
                                 <div class="font-primary font-bold text-2xl text-[#C5AAFF] leading-none mb-1">-40%</div>
-                                <div class="text-xs font-primary text-description leading-[140%]">Search Abandonment Reduced</div>
+                                <div class="text-xs font-primary text-description leading-[140%]">Search Abandonment
+                                    Reduced</div>
                             </div>
                         </div>
                         <!-- Status list -->
                         <div class="space-y-2">
                             <div class="flex items-center gap-3 bg-white rounded-lg px-4 py-2.5">
                                 <span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
-                                <span class="text-sm font-primary text-description flex-1">Real-time Suggestions Active</span>
+                                <span class="text-sm font-primary text-description flex-1">Real-time Suggestions
+                                    Active</span>
                                 <span class="text-xs font-primary font-medium text-primary">Live</span>
                             </div>
                             <div class="flex items-center gap-3 bg-white rounded-lg px-4 py-2.5">
                                 <span class="w-2 h-2 rounded-full bg-[#FFB5F4] flex-shrink-0"></span>
-                                <span class="text-sm font-primary text-description flex-1">Spell Correction Engine</span>
+                                <span class="text-sm font-primary text-description flex-1">Spell Correction
+                                    Engine</span>
                                 <span class="text-xs font-primary font-medium text-[#C5AAFF]">Active</span>
                             </div>
                             <div class="flex items-center gap-3 bg-white rounded-lg px-4 py-2.5">
                                 <span class="w-2 h-2 rounded-full bg-[#85ADDE] flex-shrink-0"></span>
-                                <span class="text-sm font-primary text-description flex-1">Trending Products Index</span>
+                                <span class="text-sm font-primary text-description flex-1">Trending Products
+                                    Index</span>
                                 <span class="text-xs font-primary font-medium text-[#85ADDE]">Updated</span>
                             </div>
                         </div>
@@ -474,23 +759,37 @@
 
 
         <!----- Section 9: Above Footer CTA ----->
-        <section class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover">
+        <section
+            class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover">
             <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
                 <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8 items-center">
                     <div class="lg:max-w-[530px] w-full">
-                        <div class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">The Right Smart Auto-Completion Solution</div>
-                        <p class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]">Makes searching effortless: predicting queries, correcting mistakes, and guiding customers toward the right products even before they finish typing.</p>
-                        <p class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]">Ready to deliver a faster and smarter search experience for your customers?</p>
-                        <a href="/contact-us" class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Contact Us</a>
+                        <div
+                            class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">
+                            The Right Smart Auto-Completion Solution</div>
+                        <p class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]">Makes searching
+                            effortless: predicting queries, correcting mistakes, and guiding customers toward the right
+                            products even before they finish typing.</p>
+                        <p class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]">Ready to deliver
+                            a faster and smarter search experience for your customers?</p>
+                        <a href="/contact-us"
+                            class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Contact
+                            Us</a>
                     </div>
                     <div class="rounded-[20px] overflow-hidden">
                         <!-- PLACEHOLDER IMAGE: Replace with a Smart Auto-Completion product screenshot -->
-                        <img src="assets/image/solutions/overview/Tailored-shopping-dashboard.svg" class="w-full h-full object-cover object-top rounded-2xl sm:rounded-[20px]" alt="Smart Auto-Completion in action" width="700" height="380" loading="lazy">
+                        <img src="assets/image/solutions/overview/Tailored-shopping-dashboard.svg"
+                            class="w-full h-full object-cover object-top rounded-2xl sm:rounded-[20px]"
+                            alt="Smart Auto-Completion in action" width="700" height="380" loading="lazy">
                     </div>
                 </div>
             </div>
-            <img src="assets/image/icon/ctaBanner-shape.png" class="animate-pulse absolute start-0 bottom-0 pointer-none select-none" alt="" width="150" height="150" loading="lazy">
-            <img src="assets/image/icon/ctaBanner-shape2.png" class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none" alt="" width="150" height="150" loading="lazy">
+            <img src="assets/image/icon/ctaBanner-shape.png"
+                class="animate-pulse absolute start-0 bottom-0 pointer-none select-none" alt="" width="150" height="150"
+                loading="lazy">
+            <img src="assets/image/icon/ctaBanner-shape2.png"
+                class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
+                alt="" width="150" height="150" loading="lazy">
         </section>
         <!----- End Section 9 ----->
     </main>
@@ -503,4 +802,5 @@
 
     <script type='module' src='assets/script/main.js'></script>
 </body>
+
 </html>
