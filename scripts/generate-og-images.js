@@ -124,6 +124,11 @@ const PAGES = [
     subtitle: 'Intelligent warehouse orchestration',
   },
   {
+    file: 'smart-product-search',
+    title: 'Smart Product Search',
+    subtitle: 'Help shoppers find exactly what they want',
+  },
+  {
     file: 'dify-consulting',
     title: 'Dify Consulting\nServices',
     subtitle: 'Simplify, automate and optimise workflows',
