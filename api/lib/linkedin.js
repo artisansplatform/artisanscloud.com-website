@@ -192,10 +192,6 @@ function extractTags(title, contentText) {
   const matchedTags = [];
 
   for (const def of tagDefinitions) {
-    // Exact word boundary matching where possible, but simpler to just use includes with spaces or regex to be more accurate.
-    // The prompt just says "keyword matches (case-insensitive)". Let's use word boundaries to avoid matching "retailer" to "retail"? Or maybe includes is enough. Let's use includes since it's simple, or regex with word boundaries for better accuracy.
-    // "ai" needs word boundaries, otherwise "detail" matches "ai".
-    // Let's use word boundaries.
     const isMatch = def.keywords.some(kw => {
       // Create a regex for the keyword with word boundaries
       const regex = new RegExp(`\\b${kw}\\b`, 'i');
@@ -204,7 +200,6 @@ function extractTags(title, contentText) {
 
     if (isMatch) {
       matchedTags.push(def.label);
-      if (matchedTags.length >= 3) break;
     }
   }
 
