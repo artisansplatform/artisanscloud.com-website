@@ -1,15 +1,15 @@
 import { expect, test } from '@playwright/test';
 
 test.describe('Dynamic Blog Articles', () => {
-    test.describe('Blog List Page', () => {
+    test.describe('Articles and Resources Page', () => {
         test('should have #blog-grid container', async ({ page }) => {
-            await page.goto('/blog-list');
+            await page.goto('/articles-and-resources');
             const blogGrid = page.locator('#blog-grid');
             await expect(blogGrid).toBeVisible();
         });
 
         test('should render blog cards from fallback data', async ({ page }) => {
-            await page.goto('/blog-list');
+            await page.goto('/articles-and-resources');
             await page.waitForTimeout(500);
 
             const blogGrid = page.locator('#blog-grid');
@@ -21,7 +21,7 @@ test.describe('Dynamic Blog Articles', () => {
         });
 
         test('blog cards should have correct structure', async ({ page }) => {
-            await page.goto('/blog-list');
+            await page.goto('/articles-and-resources');
             await page.waitForTimeout(500);
 
             const firstCard = page.locator('#blog-grid > div').first();
@@ -43,7 +43,7 @@ test.describe('Dynamic Blog Articles', () => {
         });
 
         test('blog cards should have category badges', async ({ page }) => {
-            await page.goto('/blog-list');
+            await page.goto('/articles-and-resources');
             await page.waitForTimeout(500);
 
             const firstCard = page.locator('#blog-grid > div').first();
@@ -115,7 +115,7 @@ test.describe('Dynamic Blog Articles', () => {
                     body: JSON.stringify(makeMockArticles(9)),
                 });
             });
-            await page.goto('/blog-list');
+            await page.goto('/articles-and-resources');
             await page.waitForTimeout(500);
 
             const loadMoreBtn = page.locator('#load-more-btn');
@@ -130,7 +130,7 @@ test.describe('Dynamic Blog Articles', () => {
                     body: JSON.stringify(makeMockArticles(12)),
                 });
             });
-            await page.goto('/blog-list');
+            await page.goto('/articles-and-resources');
 
             const loadMoreBtn = page.locator('#load-more-btn');
             await expect(loadMoreBtn).toBeVisible({ timeout: 2000 });
@@ -147,7 +147,7 @@ test.describe('Dynamic Blog Articles', () => {
                     body: JSON.stringify(makeMockArticles(12)),
                 });
             });
-            await page.goto('/blog-list');
+            await page.goto('/articles-and-resources');
 
             const loadMoreBtn = page.locator('#load-more-btn');
             await expect(loadMoreBtn).toBeVisible({ timeout: 2000 });
@@ -162,7 +162,7 @@ test.describe('Dynamic Blog Articles', () => {
 
     test.describe('Accessibility', () => {
         test('blog card links should have aria-labels', async ({ page }) => {
-            await page.goto('/blog-list');
+            await page.goto('/articles-and-resources');
             await page.waitForTimeout(500);
 
             const links = page.locator('#blog-grid a[aria-label]');
@@ -172,7 +172,7 @@ test.describe('Dynamic Blog Articles', () => {
         });
 
         test('external links should have rel="noopener noreferrer"', async ({ page }) => {
-            await page.goto('/blog-list');
+            await page.goto('/articles-and-resources');
             await page.waitForTimeout(500);
 
             const externalLinks = page.locator('#blog-grid a[target="_blank"]');

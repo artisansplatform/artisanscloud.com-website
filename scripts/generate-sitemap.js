@@ -47,7 +47,7 @@ const PAGE_META = {
   'data-intelligence.html':                    { priority: '0.9', changefreq: 'monthly' },
   'overview.html':                             { priority: '0.9', changefreq: 'monthly' },
   'about-us.html':                             { priority: '0.8', changefreq: 'monthly' },
-  'blog-list.html':                            { priority: '0.8', changefreq: 'weekly'  },
+  'articles-and-resources.html':                { priority: '0.8', changefreq: 'weekly'  },
   'contact-us.html':                           { priority: '0.7', changefreq: 'monthly' },
   'automation.html':                           { priority: '0.7', changefreq: 'monthly' },
   'integrations.html':                         { priority: '0.7', changefreq: 'monthly' },

@@ -6,7 +6,7 @@ const pages = [
     { path: '/about-us', title: 'About Us', name: 'about-us.html' },
     { path: '/automation', title: 'Automation', name: 'automation.html' },
     { path: '/blog-detail', title: 'Blog Detail', name: 'blog-detail.html' },
-    { path: '/blog-list', title: 'Blog List', name: 'blog-list.html' },
+    { path: '/articles-and-resources', title: 'Articles and Resources', name: 'articles-and-resources.html' },
     { path: '/browser-pos', title: 'Browser POS', name: 'browser-pos.html' },
     { path: '/contact-us', title: 'Contact Us', name: 'contact-us.html' },
     { path: '/customer-experience-management', title: 'Customer Experience Management', name: 'customer-experience-management.html' },

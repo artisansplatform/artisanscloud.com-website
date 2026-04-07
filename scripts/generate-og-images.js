@@ -129,7 +129,7 @@ const PAGES = [
     subtitle: 'Simplify, automate and optimise workflows',
   },
   {
-    file: 'blog-list',
+    file: 'articles-and-resources',
     title: 'Insights & Thought\nLeadership',
     subtitle: 'Latest from Artisans Cloud',
   },

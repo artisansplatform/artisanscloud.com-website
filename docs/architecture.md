@@ -51,7 +51,7 @@ All HTML pages follow identical boilerplate:
 
 ## Dynamic Blog Articles
 
-Blog articles on `blog-list.html` and `index.html` are rendered dynamically. See [`docs/dynamic-blog-setup.md`](dynamic-blog-setup.md) for full details.
+Blog articles on `articles-and-resources.html` and `index.html` are rendered dynamically. See [`docs/dynamic-blog-setup.md`](dynamic-blog-setup.md) for full details.
 
 ```
 LinkedIn API  ──(daily cron)──>  Vercel Blob (articles.json)
@@ -77,7 +77,7 @@ LinkedIn API  ──(daily cron)──>  Vercel Blob (articles.json)
 ### Single Source of Truth
 - **Card HTML templates**: Defined ONLY in `assets/script/modules/blog-articles.js` — NOT in HTML pages
 - **Fallback article data**: Defined ONCE in `assets/data/fallback-articles.json` — shared by frontend JS and backend API
-- **HTML pages** (`blog-list.html`, `index.html`): Contain only empty `#blog-grid` and `#insights-grid` containers
+- **HTML pages** (`articles-and-resources.html`, `index.html`): Contain only empty `#blog-grid` and `#insights-grid` containers
 
 ## Digital Business Cards
 

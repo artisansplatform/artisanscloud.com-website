@@ -1,6 +1,13 @@
 {
     "cleanUrls": true,
     "outputDirectory": "dist",
+    "redirects": [
+        {
+            "source": "/blog-list",
+            "destination": "/articles-and-resources",
+            "permanent": true
+        }
+    ],
     "crons": [
         {
             "path": "/api/cron/fetch-articles",

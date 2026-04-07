@@ -79,7 +79,7 @@ Expected response on success:
 ### Step 5: Verify
 
 1. Visit `https://your-domain.vercel.app/api/articles` — should return JSON with articles
-2. Visit the blog list page — cards should render dynamically
+2. Visit the Articles and Resources page — cards should render dynamically
 3. Visit the homepage — "Insights & Leadership" section should show latest 3 articles
 
 ---

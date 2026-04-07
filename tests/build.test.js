@@ -92,8 +92,8 @@ describe('Build Verification Tests', () => {
   });
 
   describe('Dynamic Blog Containers', () => {
-    it('should have #blog-grid container in blog-list.html', () => {
-      const pagePath = path.join(distDir, 'blog-list.html');
+    it('should have #blog-grid container in articles-and-resources.html', () => {
+      const pagePath = path.join(distDir, 'articles-and-resources.html');
       expect(fs.existsSync(pagePath)).toBe(true);
       const content = fs.readFileSync(pagePath, 'utf-8');
       expect(content).toMatch(/id=.blog-grid./);
