@@ -13,7 +13,7 @@ async function fetchPhotoBase64(photoPath) {
             const objectUrl = URL.createObjectURL(blob);
             const img = new Image();
             img.onload = () => {
-                // Cap at 300×300 — large embedded photos get silently dropped by some apps
+                // Cap at 300x300. Large embedded photos get silently dropped by some apps
                 const size = Math.min(img.naturalWidth, img.naturalHeight, 300);
                 const canvas = document.createElement('canvas');
                 canvas.width = size;
@@ -122,7 +122,7 @@ function shareCard(url, name) {
 }
 
 async function copyToClipboard(text) {
-    // navigator.clipboard requires HTTPS and a user gesture — works on modern iOS/Android
+    // navigator.clipboard requires HTTPS and a user gesture. Works on modern iOS/Android
     if (navigator.clipboard?.writeText) {
         try {
             await navigator.clipboard.writeText(text);

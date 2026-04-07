@@ -1,4 +1,4 @@
-# Dynamic Blog Articles — Setup & Operations Guide
+# Dynamic Blog Articles - Setup & Operations Guide
 
 This guide covers the complete setup, operation, and troubleshooting of the dynamic blog articles system that fetches LinkedIn articles and displays them on the website.
 
@@ -78,9 +78,9 @@ Expected response on success:
 
 ### Step 5: Verify
 
-1. Visit `https://your-domain.vercel.app/api/articles` — should return JSON with articles
-2. Visit the Articles and Resources page — cards should render dynamically
-3. Visit the homepage — "Insights & Leadership" section should show latest 3 articles
+1. Visit `https://your-domain.vercel.app/api/articles` - should return JSON with articles
+2. Visit the Articles and Resources page - cards should render dynamically
+3. Visit the homepage - "Insights & Leadership" section should show latest 3 articles
 
 ---
 
@@ -126,7 +126,7 @@ After running: review with `git diff assets/`, then build, test, and commit.
 | Token | Lifespan | Renewal |
 |-------|----------|---------|
 | Access Token | 60 days | Auto-refreshed by cron using refresh token; new token stored in Blob (`token-meta.json`) |
-| Refresh Token | 365 days | **Manual** — must re-authenticate via LinkedIn OAuth when expired |
+| Refresh Token | 365 days | **Manual** - must re-authenticate via LinkedIn OAuth when expired |
 
 When the refresh token expires:
 1. Go through the LinkedIn OAuth flow to get new tokens
@@ -136,10 +136,10 @@ When the refresh token expires:
 ### Monitoring
 
 Check the **Vercel dashboard** → **Logs** for:
-- `Stored X articles in Blob` — successful cron run
-- `LinkedIn token was refreshed` — access token auto-renewed (normal)
-- `Token refresh failed` — refresh token may be expired, manual action needed
-- `LinkedIn returned 0 articles` — no articles found (cache preserved)
+- `Stored X articles in Blob` - successful cron run
+- `LinkedIn token was refreshed` - access token auto-renewed (normal)
+- `Token refresh failed` - refresh token may be expired, manual action needed
+- `LinkedIn returned 0 articles` - no articles found (cache preserved)
 
 ---
 
@@ -162,7 +162,7 @@ Check the **Vercel dashboard** → **Logs** for:
 
 ### Cron returns 401 Unauthorized
 **Cause**: The `Authorization` header doesn't match `CRON_SECRET`.
-**Fix**: Verify you're sending `Bearer YOUR_CRON_SECRET_VALUE` with the exact value from Vercel env vars. Note: Vercel's built-in cron scheduler sends this automatically — this error typically only happens with manual `curl` calls.
+**Fix**: Verify you're sending `Bearer YOUR_CRON_SECRET_VALUE` with the exact value from Vercel env vars. Note: Vercel's built-in cron scheduler sends this automatically - this error typically only happens with manual `curl` calls.
 
 ### LinkedIn API returns 401
 **Cause**: Access token expired and refresh failed.
@@ -174,15 +174,15 @@ Check the **Vercel dashboard** → **Logs** for:
 
 ### LinkedIn API returns 403
 **Cause**: LinkedIn app doesn't have the required API permissions.
-**Fix**: In LinkedIn Developer Portal, ensure your app has access to the **Pages Data Portability API** product (grants the `r_dma_admin_pages_content` scope). The authenticated user must have ADMINISTRATOR or CONTENT_ADMINISTRATOR role on the company page. Note: this product requires it to be the only product on the LinkedIn app — create a dedicated app if you have other products provisioned.
+**Fix**: In LinkedIn Developer Portal, ensure your app has access to the **Pages Data Portability API** product (grants the `r_dma_admin_pages_content` scope). The authenticated user must have ADMINISTRATOR or CONTENT_ADMINISTRATOR role on the company page. Note: this product requires it to be the only product on the LinkedIn app - create a dedicated app if you have other products provisioned.
 
 ### No articles returned from LinkedIn
 **Cause**: The DMA OriginalArticles API only returns LinkedIn Articles (long-form Pulse/Newsletter content). Regular posts, image shares, and video posts are not included.
-**Fix**: This is expected behavior — the existing cache is preserved. Publish a new LinkedIn Article (not a regular post) to see it appear.
+**Fix**: This is expected behavior - the existing cache is preserved. Publish a new LinkedIn Article (not a regular post) to see it appear.
 
 ### Images not loading on blog cards
 **Cause**: LinkedIn thumbnail download to Blob may have failed for specific images.
-**Fix**: The system uses `onerror` fallback on `<img>` tags to show a local placeholder image. If persistent, trigger the cron again — image downloads are retried on each run.
+**Fix**: The system uses `onerror` fallback on `<img>` tags to show a local placeholder image. If persistent, trigger the cron again - image downloads are retried on each run.
 
 ---
 
