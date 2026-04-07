@@ -39,7 +39,7 @@ function createBlogCardHTML(article) {
   const thumbnail = article.thumbnail || FALLBACK_IMAGE;
   const safeTitle = escapeHTML(article.title);
   const safeDescription = escapeHTML(article.description);
-  const safeCategory = escapeHTML(article.category || 'Retail Insights');
+  const safeTags = (article.tags || [article.category || 'Retail']).map(escapeHTML);
   const safeUrl = escapeHTML(article.url);
   const dateStr = formatDate(article.publishedAt);
 
@@ -49,7 +49,7 @@ function createBlogCardHTML(article) {
     </a>
     <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
         <div class="mb-2.5 sm:mb-3.5 flex flex-wrap gap-2 items-center">
-            <div class="px-2.5 py-0.5 rounded-[50px] text-center w-fit h-fit bg-[#F5EEFE] text-[#9F7EFF] font-primary font-medium sm:text-base text-sm">${safeCategory}</div>
+            ${safeTags.map(tag => `<div class="px-2.5 py-0.5 rounded-[50px] text-center w-fit h-fit bg-[#F5EEFE] text-[#9F7EFF] font-primary font-medium sm:text-base text-sm">${tag}</div>`).join('')}
             <div class="relative ps-3 text-description/70 lg:text-base text-sm font-normal font-primary"><div class="absolute top-2.5 start-0 bg-description/70 h-1 w-1 rounded-full"></div>${dateStr}</div>
         </div>
         <a href="${safeUrl}" target="_blank" rel="noopener noreferrer" class="mb-2 block line-clamp-1 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] hover:underline">${safeTitle}</a>
@@ -72,7 +72,7 @@ function createInsightsCardHTML(article) {
   const thumbnail = article.thumbnail || FALLBACK_IMAGE;
   const safeTitle = escapeHTML(article.title);
   const safeDescription = escapeHTML(article.description);
-  const safeCategory = escapeHTML(article.category || 'Retail Insights');
+  const safeTags = (article.tags || [article.category || 'Retail']).map(escapeHTML);
   const safeUrl = escapeHTML(article.url);
   const dateStr = formatDate(article.publishedAt);
 
@@ -82,7 +82,7 @@ function createInsightsCardHTML(article) {
     </a>
     <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
         <div class="mb-2.5 sm:mb-3.5 flex flex-wrap gap-2 items-center">
-            <div class="px-2.5 py-0.5 rounded-[50px] text-center w-fit h-fit bg-[#F5EEFE] text-[#9F7EFF] font-primary font-medium sm:text-base text-sm">${safeCategory}</div>
+            ${safeTags.map(tag => `<div class="px-2.5 py-0.5 rounded-[50px] text-center w-fit h-fit bg-[#F5EEFE] text-[#9F7EFF] font-primary font-medium sm:text-base text-sm">${tag}</div>`).join('')}
             <div class="relative ps-3 text-description/70 lg:text-base text-sm font-normal font-primary"><div class="absolute top-2.5 start-0 bg-description/70 h-1 w-1 rounded-full"></div>${dateStr}</div>
         </div>
         <a href="${safeUrl}" target="_blank" rel="noopener noreferrer" class="mb-3 block text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] hover:underline">${safeTitle}</a>
