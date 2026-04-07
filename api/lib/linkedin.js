@@ -149,8 +149,9 @@ export async function fetchLinkedInArticles(accessToken) {
         (article.displayImage && article.displayImage.downloadUrl) ||
         null;
 
-      // Extract a description from contentHtml (strip tags, take first ~200 chars)
-      const description = extractDescription(article.contentHtml || '', article.title || '');
+      // Extract stripped content text from contentHtml
+      const contentText = (article.contentHtml || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+      const description = extractDescriptionFromText(contentText, article.title || '');
 
       return {
         id: article.linkedInArticleUrn || '',
@@ -159,19 +160,17 @@ export async function fetchLinkedInArticles(accessToken) {
         url: articleUrl,
         thumbnail,
         publishedAt: article.publishedAt || article.createdAt || Date.now(),
-        category: extractCategory(article.title || ''),
+        tags: extractTags(article.title || '', contentText),
       };
     })
     .sort((a, b) => b.publishedAt - a.publishedAt);
 }
 
 /**
- * Extract a plain-text description from article HTML content.
- * Strips tags and returns the first ~200 characters.
+ * Extract a plain-text description from stripped content text.
+ * Returns the first ~200 characters.
  */
-function extractDescription(html, title) {
-  // Strip HTML tags
-  const text = html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+function extractDescriptionFromText(text, title) {
   // Skip if it's just the title repeated
   const cleaned = text.startsWith(title) ? text.slice(title.length).trim() : text;
   if (!cleaned) return '';
@@ -179,32 +178,34 @@ function extractDescription(html, title) {
 }
 
 /**
- * Simple category extraction from article title keywords.
+ * Extract up to 3 tags based on keyword matching in both title and content.
  */
-function extractCategory(title) {
-  const lower = title.toLowerCase();
-  const categories = [
-    { keywords: ['pos', 'point of sale'], label: 'Retail POS' },
-    { keywords: ['assortment'], label: 'Assortment Planning' },
-    { keywords: ['merchandise transfer', 'inventory'], label: 'Merchandise Planning' },
-    { keywords: ['product lifecycle'], label: 'Retail Product Lifecycle' },
-    { keywords: ['data analytics', 'data lake'], label: 'Data Analytics' },
-    { keywords: ['merchandise financial', 'financial planning'], label: 'Merchandise Planning' },
-    { keywords: ['demand forecast'], label: 'Demand Forecasting' },
-    { keywords: ['markdown', 'price'], label: 'Price Markdown Optimization' },
-    { keywords: ['basket analysis'], label: 'Basket Analysis' },
-    { keywords: ['retail technology', 'retail trend'], label: 'Retail Technology' },
-    { keywords: ['retail-as-a-service', 'raas'], label: 'Retail Innovation' },
-    { keywords: ['ai', 'artificial intelligence', 'machine learning'], label: 'AI & Analytics' },
-    { keywords: ['supply chain'], label: 'Supply Chain' },
-    { keywords: ['ecommerce', 'e-commerce', 'd2c'], label: 'eCommerce' },
-    { keywords: ['customer experience', 'cem'], label: 'Customer Experience' },
+function extractTags(title, contentText) {
+  const textToSearch = (title + ' ' + contentText).toLowerCase();
+
+  const tagDefinitions = [
+    { label: 'AI', keywords: ['ai', 'artificial intelligence', 'machine learning', 'agentic', 'llm', 'deep learning', 'neural', 'generative'] },
+    { label: 'Data', keywords: ['data analytics', 'data lake', 'data engineering', 'etl', 'data pipeline', 'data warehouse', 'analytics platform', 'business intelligence'] },
+    { label: 'Retail', keywords: ['retail', 'store', 'omnichannel', 'merchandise', 'pos', 'point of sale', 'commerce'] }
   ];
 
-  for (const cat of categories) {
-    if (cat.keywords.some((kw) => lower.includes(kw))) {
-      return cat.label;
+  const matchedTags = [];
+
+  for (const def of tagDefinitions) {
+    const isMatch = def.keywords.some(kw => {
+      // Create a regex for the keyword with word boundaries
+      const regex = new RegExp(`\\b${kw}\\b`, 'i');
+      return regex.test(textToSearch);
+    });
+
+    if (isMatch) {
+      matchedTags.push(def.label);
     }
   }
-  return 'Retail Insights';
+
+  if (matchedTags.length === 0) {
+    return ['Retail'];
+  }
+
+  return matchedTags;
 }
