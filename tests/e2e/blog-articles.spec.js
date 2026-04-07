@@ -42,12 +42,12 @@ test.describe('Dynamic Blog Articles', () => {
             expect(href).toContain('linkedin.com');
         });
 
-        test('blog cards should have category badges', async ({ page }) => {
+        test('blog cards should have tag badges', async ({ page }) => {
             await page.goto('/articles-and-resources');
             await page.waitForTimeout(500);
 
             const firstCard = page.locator('#blog-grid > div').first();
-            const badge = firstCard.locator('.bg-\\[\\#F5EEFE\\]');
+            const badge = firstCard.locator('.bg-\\[\\#F5EEFE\\]').first();
             await expect(badge).toBeVisible();
 
             const badgeText = await badge.textContent();
@@ -103,7 +103,7 @@ test.describe('Dynamic Blog Articles', () => {
                 url: 'https://www.linkedin.com/pulse/test',
                 thumbnail: null,
                 publishedAt: Date.now() - i * 86400000,
-                category: 'Retail Insights',
+                tags: ['Retail'],
             }));
         }
 
