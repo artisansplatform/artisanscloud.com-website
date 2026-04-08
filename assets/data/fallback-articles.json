@@ -6,7 +6,7 @@
     "url": "https://www.linkedin.com/pulse/ai-starts-data-why-unified-strong-etl-pipelines-afhjc",
     "thumbnail": "/assets/image/blog/blog-ai-starts-with-data-why-unified-data-and-strong-etl-pipeline.png",
     "publishedAt": 1771855813000,
-    "category": "AI & Analytics"
+    "tags": ["AI", "Data"]
   },
   {
     "id": "urn:li:linkedInArticle:7429401753147838465",
@@ -15,7 +15,7 @@
     "url": "https://www.linkedin.com/pulse/agentic-retail-when-ai-moves-from-insights-autonomous-gcoac",
     "thumbnail": "/assets/image/blog/blog-agentic-retail-when-ai-moves-from-insights-to-autonomous-exe.png",
     "publishedAt": 1771309692000,
-    "category": "AI & Analytics"
+    "tags": ["AI", "Retail"]
   },
   {
     "id": "urn:li:linkedInArticle:7426560463255126016",
@@ -24,7 +24,7 @@
     "url": "https://www.linkedin.com/pulse/redesigning-store-omnichannel-retail-artisanscommercecloud-6m4uc",
     "thumbnail": "/assets/image/blog/blog-redesigning-the-store-for-omnichannel-retail.png",
     "publishedAt": 1770643606000,
-    "category": "AI & Analytics"
+    "tags": ["Retail"]
   },
   {
     "id": "urn:li:linkedInArticle:7423976926765109248",
@@ -33,7 +33,7 @@
     "url": "https://www.linkedin.com/pulse/when-commerce-works-one-designing-retail-speed-scale-halac",
     "thumbnail": "/assets/image/blog/blog-when-commerce-works-as-one-designing-retail-for-speed-and-sc.png",
     "publishedAt": 1770015968000,
-    "category": "AI & Analytics"
+    "tags": ["Retail"]
   },
   {
     "id": "urn:li:linkedInArticle:7422631375721259008",
@@ -42,7 +42,7 @@
     "url": "https://www.linkedin.com/pulse/from-customer-centric-customer-led-turning-understanding-btcuc",
     "thumbnail": "/assets/image/blog/blog-from-customer-centric-to-customer-led-turning-understanding-.jpg",
     "publishedAt": 1769695054000,
-    "category": "Retail Insights"
+    "tags": ["Retail"]
   },
   {
     "id": "urn:li:linkedInArticle:7411366212984631296",
@@ -51,7 +51,7 @@
     "url": "https://www.linkedin.com/pulse/retail-technology-trends-2026-from-tools-true-digital-8odhf",
     "thumbnail": "/assets/image/blog/blog-retail-technology-trends-for-2026-from-tools-to-a-true-digit.png",
     "publishedAt": 1767009552000,
-    "category": "Retail Technology"
+    "tags": ["Retail"]
   },
   {
     "id": "urn:li:linkedInArticle:7403810187742048256",
@@ -60,7 +60,7 @@
     "url": "https://www.linkedin.com/pulse/why-retailers-must-prepare-retail-as-a-service-raas-jos5c",
     "thumbnail": "/assets/image/blog/blog-why-retailers-must-prepare-for-retail-as-a-service.png",
     "publishedAt": 1765208085000,
-    "category": "Retail Innovation"
+    "tags": ["Retail"]
   },
   {
     "id": "urn:li:linkedInArticle:7402017072689700864",
@@ -69,7 +69,7 @@
     "url": "https://www.linkedin.com/pulse/case-commerce-data-lake-mid-market-retail-artisanscommercecloud-qmflc",
     "thumbnail": "/assets/image/blog/blog-the-case-for-a-commerce-data-lake-in-mid-market-retail.png",
     "publishedAt": 1764779893000,
-    "category": "Data Analytics"
+    "tags": ["Data", "Retail"]
   },
   {
     "id": "urn:li:linkedInArticle:7399383885236723712",
@@ -78,6 +78,6 @@
     "url": "https://www.linkedin.com/pulse/case-unified-intelligence-how-building-digital-0okec",
     "thumbnail": "/assets/image/blog/blog-the-case-for-unified-intelligence-how-building-a-digital-cor.png",
     "publishedAt": 1764162715000,
-    "category": "AI & Analytics"
+    "tags": ["AI", "Data", "Retail"]
   }
 ]

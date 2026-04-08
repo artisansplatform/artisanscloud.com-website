@@ -125,8 +125,14 @@ npm run generate:og
 ## Updating Blog Articles
 - **To change card design**: Edit the `createBlogCardHTML()` / `createInsightsCardHTML()` functions in `blog-articles.js`
 - **To update fallback articles from live data**: Run `npm run update-fallback` (fetches latest from deployed API, downloads images locally)
-- **To update fallback articles manually**: Edit `assets/data/fallback-articles.json` (one file, used by both frontend and backend)
+- **To update fallback articles manually**: Edit `assets/data/fallback-articles.json` (one file, used by both frontend and backend). Fallback articles use a `tags` array (e.g. `["AI", "Retail"]`).
 - **To add articles**: New LinkedIn articles are fetched automatically by the daily cron - no manual updates needed
+- **Tag extraction logic**: Tags are auto-assigned by checking both the article **title** and **content** (stripped of HTML).
+  - There are currently three tags:
+    - **AI**: Matches keywords like `ai`, `artificial intelligence`, `machine learning`, `llm`, etc.
+    - **Data**: Matches keywords like `data analytics`, `data pipeline`, `business intelligence`, etc.
+    - **Retail**: Matches keywords like `retail`, `store`, `omnichannel`, `pos`, etc.
+  - The extractor (`extractTags` in `api/lib/linkedin.js`) assigns up to 3 tags. If no matches are found, it defaults to `['Retail']`.
 
 ### Articles and Resources Pagination (Load More)
 The Articles and Resources page shows articles in pages of 9. The "Load More" button (`#load-more-btn`) is controlled entirely by JS - it starts hidden and appears only when there are more than 9 articles to show. Clicking it reveals the next 9, until all are shown.
