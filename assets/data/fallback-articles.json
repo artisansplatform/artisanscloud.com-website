@@ -1,12 +1,97 @@
 [
   {
+    "id": "urn:li:linkedInArticle:7446927663614803968",
+    "title": "The best commerce transaction of the next decade is the one no one had to initiate",
+    "description": "Commerce isn't disappearing. Its interfaces are. And most enterprise architectures aren't built for what comes next. Think about the last time you manually reordered office supplies, triggered a price...",
+    "url": "https://www.linkedin.com/pulse/best-commerce-transaction-next-decade-one-had-initiate-mhdpc",
+    "thumbnail": "/assets/image/blog/blog-the-best-commerce-transaction-of-the-next-decade-is-the-one-.png",
+    "publishedAt": 1775488400000,
+    "tags": [
+      "AI",
+      "Retail"
+    ]
+  },
+  {
+    "id": "urn:li:linkedInArticle:7444267556326141952",
+    "title": "The Knowledge Crisis no one is talking about - and Why It’s Costing Enterprises Millions",
+    "description": "In boardrooms across the world, organizations are investing aggressively in AI, automation and digital transformation. Yet, beneath these advancements lies a critical risk one that rarely appears in s...",
+    "url": "https://www.linkedin.com/pulse/knowledge-crisis-one-talking-why-its-costing-enterprises-ejvwe",
+    "thumbnail": "/assets/image/blog/blog-the-knowledge-crisis-no-one-is-talking-about-and-why-it-s-co.png",
+    "publishedAt": 1774853756000,
+    "tags": [
+      "AI"
+    ]
+  },
+  {
+    "id": "urn:li:linkedInArticle:7442825958765813760",
+    "title": "SaaS is not Dead. But it’s no longer the Advantage.",
+    "description": "SaaS Is not Dead. But something fundamental is changing Over the past few weeks, conversations around AI-generated software have intensified. A single discussion around AI coding tools was enough to t...",
+    "url": "https://www.linkedin.com/pulse/saas-dead-its-longer-advantage-artisanscommercecloud-hiw6c",
+    "thumbnail": "/assets/image/blog/blog-saas-is-not-dead-but-it-s-no-longer-the-advantage.png",
+    "publishedAt": 1774509608000,
+    "tags": [
+      "AI",
+      "Retail"
+    ]
+  },
+  {
+    "id": "urn:li:linkedInArticle:7441708954113716224",
+    "title": "BOPIS, BORIS and Beyond - The new store Operating Model",
+    "description": "Retail stores are no longer just places where transactions happen. They are becoming something much more powerful. From Storefront to Fulfillment Hub A few years ago, stores had a simple role which is...",
+    "url": "https://www.linkedin.com/pulse/bopis-boris-beyond-new-store-operating-model-euczc",
+    "thumbnail": "/assets/image/blog/blog-bopis-boris-and-beyond-the-new-store-operating-model.png",
+    "publishedAt": 1774244045000,
+    "tags": [
+      "Retail"
+    ]
+  },
+  {
+    "id": "urn:li:linkedInArticle:7439523750011858944",
+    "title": "Your next Customer is not Human but an AI Agent",
+    "description": "Your next customer will not browse your website. It will query your systems. AI agents are starting to act on behalf of consumers to search, compare, select and even purchase products based on goals, ...",
+    "url": "https://www.linkedin.com/pulse/your-next-customer-human-ai-agent-artisanscommercecloud-zdfsc",
+    "thumbnail": "/assets/image/blog/blog-your-next-customer-is-not-human-but-an-ai-agent.png",
+    "publishedAt": 1773722183000,
+    "tags": [
+      "AI",
+      "Retail"
+    ]
+  },
+  {
+    "id": "urn:li:linkedInArticle:7436791244879446017",
+    "title": "Why auto stock replenishment is a core capability in modern retail",
+    "description": "One of the most common challenges in retail is surprisingly simple which is empty shelves. A customer walks into a store ready to buy a product, only to discover it is out of stock. At the same time, ...",
+    "url": "https://www.linkedin.com/pulse/why-auto-stock-replenishment-core-capability-modern-pg6hc",
+    "thumbnail": "/assets/image/blog/blog-why-auto-stock-replenishment-is-a-core-capability-in-modern-.png",
+    "publishedAt": 1773070597000,
+    "tags": [
+      "AI",
+      "Retail"
+    ]
+  },
+  {
+    "id": "urn:li:linkedInArticle:7434258292803035137",
+    "title": "Shipping at the speed of change. Why feature velocity is becoming a core capability",
+    "description": "Technology is evolving at a pace that traditional delivery cycles can no longer match. New platforms, AI capabilities, customer expectations, regulatory changes and competitive pressures are reshaping...",
+    "url": "https://www.linkedin.com/pulse/shipping-speed-change-why-feature-velocity-becoming-7ay8c",
+    "thumbnail": "/assets/image/blog/blog-shipping-at-the-speed-of-change-why-feature-velocity-is-beco.png",
+    "publishedAt": 1772466944000,
+    "tags": [
+      "AI"
+    ]
+  },
+  {
     "id": "urn:li:linkedInArticle:7431691307770626048",
     "title": "AI starts with data: Why unified data and strong ETL pipelines matter more than algorithms",
     "description": "Everyone wants AI. Very few organisations are ready for it. In most companies, the biggest barrier to AI isn’t talent, tools or budget but disconnected data. Different systems telling different storie...",
     "url": "https://www.linkedin.com/pulse/ai-starts-data-why-unified-strong-etl-pipelines-afhjc",
     "thumbnail": "/assets/image/blog/blog-ai-starts-with-data-why-unified-data-and-strong-etl-pipeline.png",
     "publishedAt": 1771855813000,
-    "tags": ["AI", "Data"]
+    "tags": [
+      "AI",
+      "Data",
+      "Retail"
+    ]
   },
   {
     "id": "urn:li:linkedInArticle:7429401753147838465",
@@ -15,69 +100,9 @@
     "url": "https://www.linkedin.com/pulse/agentic-retail-when-ai-moves-from-insights-autonomous-gcoac",
     "thumbnail": "/assets/image/blog/blog-agentic-retail-when-ai-moves-from-insights-to-autonomous-exe.png",
     "publishedAt": 1771309692000,
-    "tags": ["AI", "Retail"]
-  },
-  {
-    "id": "urn:li:linkedInArticle:7426560463255126016",
-    "title": "Redesigning the Store for Omnichannel Retail",
-    "description": "The role of the store is changing but not in the way many expected. Stores are not becoming less important in omnichannel retail. They are becoming more central carrying responsibility for experience,...",
-    "url": "https://www.linkedin.com/pulse/redesigning-store-omnichannel-retail-artisanscommercecloud-6m4uc",
-    "thumbnail": "/assets/image/blog/blog-redesigning-the-store-for-omnichannel-retail.png",
-    "publishedAt": 1770643606000,
-    "tags": ["Retail"]
-  },
-  {
-    "id": "urn:li:linkedInArticle:7423976926765109248",
-    "title": "When commerce works as ONE: Designing retail for SPEED and SCALE",
-    "description": "Retail has never struggled with ideas. It has struggled with execution. As channels multiply and customer expectations tighten, the real challenge for retailers is no longer what to do, but how quickl...",
-    "url": "https://www.linkedin.com/pulse/when-commerce-works-one-designing-retail-speed-scale-halac",
-    "thumbnail": "/assets/image/blog/blog-when-commerce-works-as-one-designing-retail-for-speed-and-sc.png",
-    "publishedAt": 1770015968000,
-    "tags": ["Retail"]
-  },
-  {
-    "id": "urn:li:linkedInArticle:7422631375721259008",
-    "title": "From Customer-Centric to Customer-Led: Turning Understanding into Results",
-    "description": "Most retailers claim to be customer-centric. Very few are genuinely customer-led. The difference is subtle but decisive. Customer-centric organisations listen to customers. Customer-led organisations ...",
-    "url": "https://www.linkedin.com/pulse/from-customer-centric-customer-led-turning-understanding-btcuc",
-    "thumbnail": "/assets/image/blog/blog-from-customer-centric-to-customer-led-turning-understanding-.jpg",
-    "publishedAt": 1769695054000,
-    "tags": ["Retail"]
-  },
-  {
-    "id": "urn:li:linkedInArticle:7411366212984631296",
-    "title": "Retail Technology Trends for 2026: From Tools to a True Digital Core",
-    "description": "Retail is entering a decisive phase. The question for 2026 is no longer “Which new technologies should we try?” It is “Which technologies belong at the core of how retail operates?” After working clos...",
-    "url": "https://www.linkedin.com/pulse/retail-technology-trends-2026-from-tools-true-digital-8odhf",
-    "thumbnail": "/assets/image/blog/blog-retail-technology-trends-for-2026-from-tools-to-a-true-digit.png",
-    "publishedAt": 1767009552000,
-    "tags": ["Retail"]
-  },
-  {
-    "id": "urn:li:linkedInArticle:7403810187742048256",
-    "title": "Why Retailers Must Prepare for Retail-as-a-Service ",
-    "description": "Retail is changing faster than most organizations are built to respond. Consumers expect convenience, personalization, instant fulfillment and seamless cross-channel experiences. Meanwhile, brands are...",
-    "url": "https://www.linkedin.com/pulse/why-retailers-must-prepare-retail-as-a-service-raas-jos5c",
-    "thumbnail": "/assets/image/blog/blog-why-retailers-must-prepare-for-retail-as-a-service.png",
-    "publishedAt": 1765208085000,
-    "tags": ["Retail"]
-  },
-  {
-    "id": "urn:li:linkedInArticle:7402017072689700864",
-    "title": "The Case for a Commerce Data Lake in Mid-Market Retail",
-    "description": "The concept of a Commerce Data Lake has been associated with the largest retailers with expansive digital teams and multi-million-dollar tech budgets. But the reality of modern retail has shifted. Tod...",
-    "url": "https://www.linkedin.com/pulse/case-commerce-data-lake-mid-market-retail-artisanscommercecloud-qmflc",
-    "thumbnail": "/assets/image/blog/blog-the-case-for-a-commerce-data-lake-in-mid-market-retail.png",
-    "publishedAt": 1764779893000,
-    "tags": ["Data", "Retail"]
-  },
-  {
-    "id": "urn:li:linkedInArticle:7399383885236723712",
-    "title": "The Case for Unified Intelligence - How Building a Digital Core Secures Future Retail Profitability",
-    "description": "In today’s retail landscape, the winners are no longer defined by store footprint or promotional strength. They are defined by their intelligence how well they understand customers, how quickly they ...",
-    "url": "https://www.linkedin.com/pulse/case-unified-intelligence-how-building-digital-0okec",
-    "thumbnail": "/assets/image/blog/blog-the-case-for-unified-intelligence-how-building-a-digital-cor.png",
-    "publishedAt": 1764162715000,
-    "tags": ["AI", "Data", "Retail"]
+    "tags": [
+      "AI",
+      "Retail"
+    ]
   }
 ]

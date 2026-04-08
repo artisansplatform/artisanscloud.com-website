@@ -126,7 +126,7 @@ async function main() {
       url: article.url,
       thumbnail: localThumb,
       publishedAt: article.publishedAt,
-      category: article.category,
+      tags: article.tags || (article.category ? [article.category] : ['Retail']),
     });
   }
 
