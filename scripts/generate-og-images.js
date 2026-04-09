@@ -163,6 +163,11 @@ const PAGES = [
     title: 'Smart Auto-Completion',
     subtitle: 'Find products before you finish typing',
   },
+  {
+    file: 'personalized-recommendations',
+    title: 'Personalized\nRecommendations',
+    subtitle: 'Show every shopper something they\'ll love',
+  },
 ];
 
 // Read the dark logo SVG (for light backgrounds) and encode as data URI
