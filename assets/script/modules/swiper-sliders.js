@@ -185,4 +185,33 @@ export function initSwipers() {
             },
         });
     }
+
+    // Personalized Recommendations Slider ========================
+    const personalizedRecsSliderEl = document.querySelector(".PersonalizedRecsSlider");
+    if (personalizedRecsSliderEl) {
+        new Swiper(".PersonalizedRecsSlider", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            speed: 700,
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 15,
+                },
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+            },
+            pagination: false,
+            navigation: {
+                nextEl: ".swiper-button-next-personalizedRecs",
+                prevEl: ".swiper-button-prev-personalizedRecs",
+            },
+        });
+    }
 }
