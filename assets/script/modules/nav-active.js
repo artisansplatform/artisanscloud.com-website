@@ -36,6 +36,15 @@ export function initNavActive() {
         }
     });
 
+    // Retail AI panel links – highlight the link and the Solutions toggle
+    const solutionsToggle = document.querySelector('#solutionsDropdown .dropdown-toggle');
+    document.querySelectorAll('#retailAiPanel .dropdown-item[href]').forEach(item => {
+        if (normalizePath(item.href) === currentPath) {
+            item.classList.add('active');
+            if (solutionsToggle) solutionsToggle.classList.add('active');
+        }
+    });
+
     // Footer navigation links (Company / Our Solutions columns)
     document.querySelectorAll('footer .flex.flex-col a[href]').forEach(link => {
         if (normalizePath(link.href) === currentPath) {
