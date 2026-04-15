@@ -168,6 +168,11 @@ const PAGES = [
     title: 'Personalized\nRecommendations',
     subtitle: 'Show every shopper something they\'ll love',
   },
+  {
+    file: 'chatbots-for-quick-support',
+    title: 'Chatbots for Quick\nSupport',
+    subtitle: 'Instant answers, anytime',
+  },
 ];
 
 // Read the dark logo SVG (for light backgrounds) and encode as data URI

@@ -44,6 +44,7 @@ npm run add:card         # Add/update a team card: generates HTML + OG image (ru
 - **Swiper instances need unique names** - each slider gets a unique class (e.g., `.keyCapabilitySlider`). Reusing names breaks navigation.
 - **OG images use absolute URLs** - `og:image` meta tags use `https://www.artisanscloud.com/assets/og/{page}.png`. Images are in `assets/og/` and copied to `dist/assets/og/` during build. When adding a new page, also add its entry to `scripts/generate-og-images.js` and run `npm run generate:og`.
 - **Team card HTML is generated** - `team/*.html` files are produced by `scripts/generate-team-cards.js` from `assets/data/team-members.json`. Do NOT hand-edit them. To add a new team member: add photo + JSON entry, then run `npm run add:card` (generates HTML + OG image). Re-run after any JSON change.
+- **Centering 5-card grids** - standard Tailwind `grid` doesn't easily center the last 2 cards in a 3-column layout. Use `flex flex-wrap justify-center` with calculated widths (`w-[calc(50%-10px)]` for 2-column on tablet, `w-[calc(33.333%-20px)]` for 3-column on desktop) combined with a matching `gap-` to center remaining items in the last row.
 
 ## Documentation Rule
 **After every code change, update the relevant docs.** This is mandatory, not optional.

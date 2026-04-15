@@ -9,6 +9,7 @@ const pages = [
     { path: '/articles-and-resources', title: 'Articles and Resources', name: 'articles-and-resources.html' },
     { path: '/browser-pos', title: 'Browser POS', name: 'browser-pos.html' },
     { path: '/contact-us', title: 'Contact Us', name: 'contact-us.html' },
+    { path: '/chatbots-for-quick-support', title: 'Chatbots for Quick Support', name: 'chatbots-for-quick-support.html' },
     { path: '/customer-experience-management', title: 'Customer Experience Management', name: 'customer-experience-management.html' },
     { path: '/d2c-eCommerce', title: 'D2C eCommerce', name: 'd2c-eCommerce.html' },
     { path: '/data-intelligence', title: 'Data Intelligence', name: 'data-intelligence.html' },
