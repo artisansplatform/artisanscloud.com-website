@@ -22,7 +22,7 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const FALLBACK_JSON = join(ROOT, 'assets', 'data', 'fallback-articles.json');
-const IMAGE_DIR = join(ROOT, 'assets', 'image', 'blog');
+const IMAGE_DIR = join(ROOT, 'public', 'assets', 'image', 'blog');
 const MAX_ARTICLES = 9;
 
 function parseArgs() {

@@ -149,9 +149,9 @@ npm run update-fallback -- --dry           # Preview changes without writing fil
 npm run update-fallback -- --url https://preview.example.com  # Fetch from custom URL
 ```
 - Fetches articles from the deployed `/api/articles` endpoint
-- Downloads thumbnail images locally to `assets/image/blog/`
+- Downloads thumbnail images locally to `public/assets/image/blog/` (served as `/assets/image/blog/...` via Vite's public directory)
 - Updates `assets/data/fallback-articles.json` with the latest 9 articles
-- After running: review with `git diff assets/`, then build, test, and commit
+- After running: review with `git diff assets/ public/`, then build, test, and commit
 
 ## Sitemap
 
