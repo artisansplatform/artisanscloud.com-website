@@ -173,6 +173,11 @@ const PAGES = [
     title: 'Chatbots for Quick\nSupport',
     subtitle: 'Instant answers, anytime',
   },
+  {
+    file: 'nearme-intelligence',
+    title: 'NearMe Intelligence',
+    subtitle: 'Strengthening local discovery for retail networks',
+  },
 ];
 
 // Read the dark logo SVG (for light backgrounds) and encode as data URI
