@@ -41,7 +41,7 @@ const EXCLUDED_PAGES = new Set([
 
 // Per-page SEO hints (anything not listed gets DEFAULT_META)
 const PAGE_META = {
-    'index.html':                                { priority: '1.0', changefreq: 'weekly'  },
+  'index.html':                                { priority: '1.0', changefreq: 'weekly'  },
   'retail-platform.html':                      { priority: '0.9', changefreq: 'monthly' },
   'enterprise-ai.html':                        { priority: '0.9', changefreq: 'monthly' },
   'data-intelligence.html':                    { priority: '0.9', changefreq: 'monthly' },
