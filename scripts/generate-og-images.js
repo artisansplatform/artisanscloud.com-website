@@ -174,8 +174,8 @@ const PAGES = [
     subtitle: 'Instant answers, anytime',
   },
   {
-    file: 'nearme-intelligence',
-    title: 'NearMe Intelligence',
+    file: 'demand-flow',
+    title: 'Demand Flow',
     subtitle: 'Strengthening local discovery for retail networks',
   },
 ];
