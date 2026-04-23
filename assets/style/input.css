@@ -54,7 +54,8 @@ body {
     .tw-dropdown.show .dropdown-menu { @apply !opacity-100 !translate-y-0 !pointer-events-auto; }
     .tw-dropdown.show .dropdown-icon { @apply rotate-180; }
     .dropdown-item { @apply w-fit block text-heading font-primary hover:text-primary transition-colors; }
-    .retail-ai-extra { overflow: hidden; max-height: 0; transition: max-height 0.45s ease-out; }
+    .dropdown-extra { overflow: hidden; max-height: 0; transition: max-height 0.45s ease-out; }
+
     @media (max-width: 1024px) {
         .tw-dropdown.show .dropdown-menu { @apply !opacity-100 !block !pointer-events-auto; }
     }
