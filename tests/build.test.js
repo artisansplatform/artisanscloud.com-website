@@ -66,7 +66,7 @@ describe('Build Verification Tests', () => {
       const pagesWithoutElements = [];
 
       // The 404 page doesn't have header/footer by design, so we skip it
-      const pagesToCheck = expectedPages.filter(page => page !== '404.html');
+      const pagesToCheck = expectedPages.filter(page => page !== '404.html' && page !== 'retail-platform.html');
 
       pagesToCheck.forEach((page) => {
         const pagePath = path.join(distDir, page);
@@ -158,7 +158,7 @@ describe('Build Verification Tests', () => {
     it('sitemap.xml should contain at least one non-homepage URL', () => {
       const sitemapPath = path.join(distDir, 'sitemap.xml');
       const content = fs.readFileSync(sitemapPath, 'utf-8');
-      expect(content).toContain('<loc>https://www.artisanscloud.com/retail-platform</loc>');
+      expect(content).toContain('<loc>https://www.artisanscloud.com/unified-commerce</loc>');
     });
 
     it('sitemap.xml should not contain excluded pages', () => {

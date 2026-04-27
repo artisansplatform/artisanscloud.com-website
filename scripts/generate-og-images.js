@@ -44,9 +44,9 @@ const PAGES = [
     subtitle: 'Unifying data, intelligence, and workflows',
   },
   {
-    file: 'retail-platform',
-    title: 'Retail Platform',
-    subtitle: 'Unified Commerce & AI Automation',
+    file: 'unified-commerce',
+    title: 'Unified Commerce',
+    subtitle: 'One Platform. Every Channel. Infinite Intelligence.',
   },
   {
     file: 'enterprise-ai',

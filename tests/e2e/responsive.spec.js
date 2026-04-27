@@ -10,7 +10,7 @@ const viewports = [
 // Sample pages to test responsiveness
 const pagesToTest = [
     { path: '/', name: 'Home' },
-    { path: '/retail-platform', name: 'Retail Platform' },
+    { path: '/unified-commerce', name: 'Unified Commerce' },
     { path: '/data-intelligence', name: 'Data Intelligence' },
     { path: '/about-us', name: 'About Us' },
 ];

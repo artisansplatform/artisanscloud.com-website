@@ -163,10 +163,10 @@ test.describe('Navigation Tests', () => {
         test.use({ viewport: { width: 1280, height: 800 } });
 
         test('header link should be active on matching page', async ({ page }) => {
-            await page.goto('/retail-platform');
+            await page.goto('/unified-commerce');
 
-            // The "Retail Platform" header link should have the active class
-            const activeLink = page.locator('header .header-link.active[href="/retail-platform"]');
+            // The "Unified Commerce" header link should have the active class
+            const activeLink = page.locator('header .header-link.active[href="/unified-commerce"]');
             await expect(activeLink).toHaveCount(1);
         });
 
@@ -183,18 +183,18 @@ test.describe('Navigation Tests', () => {
         });
 
         test('footer nav link should be active on matching page', async ({ page }) => {
-            await page.goto('/retail-platform');
+            await page.goto('/unified-commerce');
 
-            // Footer "Retail Platform" link should have the active class
-            const footerActiveLink = page.locator('footer .flex.flex-col a.active[href="/retail-platform"]');
+            // Footer "Unified Commerce" link should have the active class
+            const footerActiveLink = page.locator('footer .flex.flex-col a.active[href="/unified-commerce"]');
             await expect(footerActiveLink).toHaveCount(1);
         });
 
         test('no header links should be active on non-matching page', async ({ page }) => {
             await page.goto('/about-us');
 
-            // Retail Platform link should NOT be active
-            const inactiveLink = page.locator('header .header-link.active[href="/retail-platform"]');
+            // Unified Commerce link should NOT be active
+            const inactiveLink = page.locator('header .header-link.active[href="/unified-commerce"]');
             await expect(inactiveLink).toHaveCount(0);
 
             // About Us link should be active
@@ -334,6 +334,19 @@ test.describe('Navigation Tests', () => {
             const firstTab = page.locator('[data-tab-btn="tailored"]');
             const ariaSelected = await firstTab.getAttribute('aria-selected');
             expect(ariaSelected).toBe('true');
+        });
+    });
+    
+    test.describe('Redirects', () => {
+        test('retail-platform should redirect to unified-commerce', async ({ page }) => {
+            await page.goto('/retail-platform');
+            
+            // Wait for URL to change to /unified-commerce
+            await expect(page).toHaveURL(/\/unified-commerce/);
+            
+            // Check that the page loaded successfully
+            const heading = page.locator('#heroHeading');
+            await expect(heading).toBeVisible();
         });
     });
 });
