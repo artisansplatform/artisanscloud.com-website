@@ -67,6 +67,7 @@ const PAGE_META = {
   'personalized-recommendations.html':         { priority: '0.9', changefreq: 'monthly' },
   'chatbots-for-quick-support.html':           { priority: '0.7', changefreq: 'monthly' },
   'demand-flow.html':                          { priority: '0.9', changefreq: 'monthly' },
+  'smarter-inventory-alerts.html':             { priority: '0.6', changefreq: 'monthly' },
   'privacy-policy.html':                       { priority: '0.3', changefreq: 'yearly'  },
   'terms-and-conditions.html':                 { priority: '0.3', changefreq: 'yearly'  },
 };

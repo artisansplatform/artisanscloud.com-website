@@ -19,6 +19,7 @@ const pages = [
     { path: '/merchandise-and-assortment-planning', title: 'Merchandise & Assortment Planning', name: 'merchandise-and-assortment-planning.html' },
     { path: '/overview', title: 'Overview', name: 'overview.html' },
     { path: '/POS', title: 'Point of Sale', name: 'POS.html' },
+    { path: '/smarter-inventory-alerts', title: 'Smarter Inventory Alerts', name: 'smarter-inventory-alerts.html' },
     { path: '/404', title: '404', name: '404.html' },
     { path: '/retail-platform', title: 'Retail Platform', name: 'retail-platform.html' },
     { path: '/thank-you', title: 'Thank You', name: 'thank-you.html' },

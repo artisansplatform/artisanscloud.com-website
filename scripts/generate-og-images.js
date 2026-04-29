@@ -178,6 +178,11 @@ const PAGES = [
     title: 'Demand Flow',
     subtitle: 'Strengthening local discovery for retail networks',
   },
+  {
+    file: 'smarter-inventory-alerts',
+    title: 'Smarter Inventory\nAlerts',
+    subtitle: 'AI-powered stock monitoring',
+  },
 ];
 
 // Read the dark logo SVG (for light backgrounds) and encode as data URI
