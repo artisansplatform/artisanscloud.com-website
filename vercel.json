@@ -11,6 +11,11 @@
             "source": "/retail-platform",
             "destination": "/unified-commerce",
             "permanent": true
+        },
+        {
+            "source": "/overview",
+            "destination": "/unified-commerce",
+            "permanent": true
         }
     ],
     "crons": [

@@ -17,7 +17,6 @@ const pages = [
     { path: '/distributed-order-management', title: 'Distributed Order Management', name: 'distributed-order-management.html' },
     { path: '/enterprise-ai', title: 'Enterprise AI', name: 'enterprise-ai.html' },
     { path: '/merchandise-and-assortment-planning', title: 'Merchandise & Assortment Planning', name: 'merchandise-and-assortment-planning.html' },
-    { path: '/overview', title: 'Overview', name: 'overview.html' },
     { path: '/POS', title: 'Point of Sale', name: 'POS.html' },
     { path: '/404', title: '404', name: '404.html' },
     { path: '/unified-commerce', title: 'Unified Commerce', name: 'unified-commerce.html' },
