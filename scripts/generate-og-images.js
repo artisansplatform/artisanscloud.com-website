@@ -45,8 +45,8 @@ const PAGES = [
   },
   {
     file: 'unified-commerce',
-    title: 'Unified Commerce',
-    subtitle: 'One Platform. Every Channel. Infinite Intelligence.',
+    title: 'Unified Commerce\nPlatform',
+    subtitle: 'Omnichannel Commerce Platform for Modern Retail',
   },
   {
     file: 'enterprise-ai',
@@ -57,11 +57,6 @@ const PAGES = [
     file: 'data-intelligence',
     title: 'Data Intelligence',
     subtitle: 'Transform data into intelligent action',
-  },
-  {
-    file: 'overview',
-    title: 'Unified Commerce',
-    subtitle: 'All aspects of commerce, unified',
   },
   {
     file: 'about-us',

@@ -45,7 +45,6 @@ const PAGE_META = {
   'unified-commerce.html':                     { priority: '0.9', changefreq: 'monthly' },
   'enterprise-ai.html':                        { priority: '0.9', changefreq: 'monthly' },
   'data-intelligence.html':                    { priority: '0.9', changefreq: 'monthly' },
-  'overview.html':                             { priority: '0.9', changefreq: 'monthly' },
   'about-us.html':                             { priority: '0.8', changefreq: 'monthly' },
   'articles-and-resources.html':                { priority: '0.8', changefreq: 'weekly'  },
   'contact-us.html':                           { priority: '0.7', changefreq: 'monthly' },
