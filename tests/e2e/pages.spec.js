@@ -20,7 +20,7 @@ const pages = [
     { path: '/overview', title: 'Overview', name: 'overview.html' },
     { path: '/POS', title: 'Point of Sale', name: 'POS.html' },
     { path: '/404', title: '404', name: '404.html' },
-    { path: '/retail-platform', title: 'Retail Platform', name: 'retail-platform.html' },
+    { path: '/unified-commerce', title: 'Unified Commerce', name: 'unified-commerce.html' },
     { path: '/thank-you', title: 'Thank You', name: 'thank-you.html' },
 ];
 

@@ -6,6 +6,11 @@
             "source": "/blog-list",
             "destination": "/articles-and-resources",
             "permanent": true
+        },
+        {
+            "source": "/retail-platform",
+            "destination": "/unified-commerce",
+            "permanent": true
         }
     ],
     "crons": [

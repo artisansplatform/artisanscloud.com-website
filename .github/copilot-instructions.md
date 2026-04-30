@@ -36,7 +36,7 @@ npm run add:card         # Add/update a team card: generates HTML + OG image (ru
 ## Gotchas & Landmines
 
 - **Header/Footer are Handlebars partials** - edit `partials/header.html` or `partials/footer.html` ONLY. Never duplicate header/footer HTML into individual pages. `{{> header}}` and `{{> footer}}` are replaced at build time.
-- **Clean URLs** - Vercel serves pages without `.html`. Use root-relative paths in links: `/retail-platform`, not `/retail-platform.html`.
+- **Clean URLs** - Vercel serves pages without `.html`. Use root-relative paths in links: `/unified-commerce`, not `/unified-commerce.html`.
 - **Blog cards are JS-rendered** - `articles-and-resources.html` and `index.html` have empty `#blog-grid` / `#insights-grid` containers. Card HTML lives ONLY in `assets/script/modules/blog-articles.js`. Do NOT put card markup in HTML pages.
 - **Fallback articles** - `assets/data/fallback-articles.json` is the single source shared by both frontend JS and backend API (`api/lib/fallback-articles.js`). Keep them in sync.
 - **No inline scripts** - all JS goes through `assets/script/main.js` modules for CSP compatibility.
