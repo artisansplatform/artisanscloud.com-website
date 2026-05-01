@@ -4,7 +4,11 @@ This is the proposed content for `index.html` once Step 5 (Reposition the homepa
 
 Per the writing rules in `CLAUDE.md`: no em dashes, no emojis, straight quotes, plain language.
 
-Word count target: kept tight (~500 words visible) since homepages rank on brand and links rather than content depth. Credibility elements (logos, metrics, blog cards) carry the rest of the weight.
+Word count target: kept tight (~450 words visible) since homepages rank on brand and links rather than content depth. Credibility elements (logos, metrics, blog cards) carry the rest of the weight.
+
+Revision history:
+- **Initial draft:** prepared from the source docx and existing index.html.
+- **Revision after colleague feedback:** collapsed the separate "Three Platform Cards" tile section into the per-Platform sections so each Platform appears in one place rather than two. Removed the "How This Helps" section because its outcome bullets duplicated the work of the Strategic Impact Snapshot below it.
 
 ---
 
@@ -29,7 +33,7 @@ Suggested JSON-LD: `Organization` schema with the three Platforms as `hasOfferCa
 
 **CTAs (two buttons side-by-side):**
 - Primary: **Request a Demo** (links to `/request-demo` once it exists; until Step 3 ships, link to `/contact-us`)
-- Secondary: **Explore Platforms** (anchor link to `#platforms`, scrolling to the three-card section below)
+- Secondary: **Explore Platforms** (anchor link to `#platforms`, scrolling to Section 3)
 
 **Visual:** Reuse the existing hero floating-cards layout, but rebalance the four cards to one per Platform plus one cross-cutting concept. Suggested labels: Unified Commerce, Enterprise AI, Data Intelligence, Predictive Operations. Replace assets where needed.
 
@@ -51,33 +55,15 @@ Artisans Cloud delivers systems across three areas, each designed to solve a spe
 
 The focus is on reducing the gap between decision and execution so teams can act immediately, without waiting on systems to sync.
 
-**Anchor target:** Add `id="platforms"` to this section's container so the hero "Explore Platforms" CTA scrolls here.
+**Anchor target:** Add `id="platforms"` to this section's container so the hero "Explore Platforms" CTA scrolls here. The three Platform sections that follow (Sections 4 to 6) sit under this anchor.
 
 ---
 
-## Section 4: Three Platform Cards
+## Section 4: Unified Commerce Platform
 
-Render as a three-card grid (existing pattern from "Our Core Verticals" can be reused with new content).
+**Heading:** Unified Commerce Platform
 
-**Card 1: Unified Commerce Platform**
-A full-stack system for managing inventory, orders, customers, and omnichannel operations across stores and digital channels.
-CTA: **Explore Unified Commerce Platform** → `/unified-commerce`
-
-**Card 2: Enterprise AI Platform**
-AI systems built for production workflows, supporting training, knowledge activation, and decision-making across teams.
-CTA: **Explore Enterprise AI Platform** → `/enterprise-ai`
-
-**Card 3: Data Intelligence**
-A structured data foundation that enables visibility, reporting, and real-time decision-making across enterprise systems.
-CTA: **Explore Data Intelligence** → `/data-intelligence`
-
----
-
-## Section 5: Unified Commerce for Retail Operations
-
-**Heading:** Unified Commerce for Retail Operations
-
-**Body:** Manage inventory, orders, and customer experience across all channels in a system designed for multi-location retail.
+**Tagline:** A full-stack system for managing inventory, orders, customers, and omnichannel operations across stores and digital channels.
 
 **Bullets:**
 - Real-time inventory visibility across stores and warehouses
@@ -85,15 +71,15 @@ CTA: **Explore Data Intelligence** → `/data-intelligence`
 - Consistent customer experience across online and offline
 - Integrated promotions, loyalty, and customer data
 
-**Optional inline link:** "Learn more about the Unified Commerce Platform" linking to `/unified-commerce`.
+**CTA:** **Explore Unified Commerce Platform** → `/unified-commerce`
 
 ---
 
-## Section 6: AI for Enterprise Workflows
+## Section 5: Enterprise AI Platform
 
-**Heading:** AI for Enterprise Workflows
+**Heading:** Enterprise AI Platform
 
-**Body:** Apply AI directly to everyday operational workflows.
+**Tagline:** AI systems built for production workflows, supporting training, knowledge activation, and decision-making across teams.
 
 **Bullets:**
 - Role-based training through simulation
@@ -101,13 +87,15 @@ CTA: **Explore Data Intelligence** → `/data-intelligence`
 - Interact with data using natural language
 - Support decisions with AI systems, with human control
 
-**Optional inline link:** "Learn more about the Enterprise AI Platform" linking to `/enterprise-ai`.
+**CTA:** **Explore Enterprise AI Platform** → `/enterprise-ai`
 
 ---
 
-## Section 7: Data Intelligence That Supports Decisions
+## Section 6: Data Intelligence
 
-**Heading:** Data Intelligence That Supports Decisions
+**Heading:** Data Intelligence
+
+**Tagline:** A structured data foundation that enables visibility, reporting, and real-time decision-making across enterprise systems.
 
 **Body:**
 
@@ -120,11 +108,11 @@ Artisans Cloud brings data together so teams can act on what is happening now, n
 - Real-time visibility into operations
 - Support for planning, forecasting, and reporting
 
-**Optional inline link:** "Learn more about Data Intelligence" linking to `/data-intelligence`.
+**CTA:** **Explore Data Intelligence** → `/data-intelligence`
 
 ---
 
-## Section 8: Built for Real-World Enterprise Environments
+## Section 7: Built for Real-World Enterprise Environments
 
 **Heading:** Built for Real-World Enterprise Environments
 
@@ -144,19 +132,7 @@ Artisans Cloud brings data together so teams can act on what is happening now, n
 
 ---
 
-## Section 9: How This Helps
-
-**Heading:** How This Helps
-
-**Bullets:**
-- Improve visibility across operations
-- Enable faster and more reliable decisions
-- Reduce delays between insight and execution
-- Improve coordination across systems and teams
-
----
-
-## Section 10: Strategic Impact Snapshot (preserved from existing)
+## Section 8: Strategic Impact Snapshot (preserved from existing)
 
 Keep the existing Strategic Impact Snapshot section as-is. It includes:
 
@@ -170,11 +146,11 @@ Keep the existing Strategic Impact Snapshot section as-is. It includes:
 - **Significant cost avoidance** achieved through AI-driven cognitive automation
 - **Cross-enterprise data unification** enabling faster, evidence-based action
 
-The numbers and framing already align with the new positioning. No rewrite needed for this section.
+The numbers and framing already align with the new positioning. No rewrite needed for this section. With the "How This Helps" section removed, this section now carries the full outcomes story.
 
 ---
 
-## Section 11: Closing CTA
+## Section 9: Closing CTA
 
 **Heading:** Explore the Right System for Your Business
 
@@ -184,7 +160,7 @@ The numbers and framing already align with the new positioning. No rewrite neede
 
 ---
 
-## Section 12: Insights and Leadership (preserved from existing)
+## Section 10: Insights and Leadership (preserved from existing)
 
 Keep the existing Insights and Leadership section. It auto-loads blog article cards via `assets/script/modules/blog-articles.js` and the empty `#insights-grid` container. No content change needed.
 
@@ -194,8 +170,9 @@ Keep the existing Insights and Leadership section. It auto-loads blog article ca
 
 Replaced or rendered redundant by the new structure. Remove during implementation.
 
-- **The Partner for Intelligent Enterprise Transformation** (the "three strengths" section: Predictive Intelligence, Sector Expertise, Execution at Scale). Replaced by Sections 8 (industries) and 9 (outcomes).
-- **Drive Sales, Reduce Costs, and Minimize Waste** CTA section (retail-narrow). Replaced by Section 11.
+- **Our Core Verticals** (the three vertical cards on the existing homepage). Replaced by Sections 4 to 6 (the three Platform sections).
+- **The Partner for Intelligent Enterprise Transformation** (the "three strengths" section: Predictive Intelligence, Sector Expertise, Execution at Scale). Replaced by Section 7 (industries and scale) plus Section 8 (Strategic Impact metrics).
+- **Drive Sales, Reduce Costs, and Minimize Waste** CTA section (retail-narrow). Replaced by Section 9.
 
 ---
 
@@ -204,16 +181,15 @@ Replaced or rendered redundant by the new structure. Remove during implementatio
 1. Header partial
 2. Hero (Section 1)
 3. Our Clients and Partners (Section 2)
-4. What We Offer + three Platform cards (Sections 3 and 4)
-5. Unified Commerce for Retail Operations (Section 5)
-6. AI for Enterprise Workflows (Section 6)
-7. Data Intelligence That Supports Decisions (Section 7)
-8. Built for Real-World Enterprise Environments (Section 8)
-9. How This Helps (Section 9)
-10. Strategic Impact Snapshot (Section 10, existing)
-11. Closing CTA (Section 11)
-12. Insights and Leadership (Section 12, existing)
-13. Footer partial
+4. What We Offer intro (Section 3, carries `id="platforms"` anchor)
+5. Unified Commerce Platform (Section 4)
+6. Enterprise AI Platform (Section 5)
+7. Data Intelligence (Section 6)
+8. Built for Real-World Enterprise Environments (Section 7)
+9. Strategic Impact Snapshot (Section 8, existing)
+10. Closing CTA (Section 9)
+11. Insights and Leadership (Section 10, existing)
+12. Footer partial
 
 ---
 
@@ -221,30 +197,34 @@ Replaced or rendered redundant by the new structure. Remove during implementatio
 
 Visual assets:
 - Hero floating cards: replace assets to match the four labels (Unified Commerce, Enterprise AI, Data Intelligence, Predictive Operations).
-- Optional: source one supporting image per Platform card if the existing `ourCore-*.webp` assets are not appropriate.
+- Optional: source one supporting image per Platform section if the existing `ourCore-*.webp` assets are not appropriate.
+
+Each Platform section (4 to 6) should have its own visual treatment so they read as distinct sections rather than three copies of the same component. Suggested patterns:
+- A two-column layout per Platform (text on one side, image or icon cluster on the other).
+- Or three full-width sections with alternating image alignment.
 
 Schema markup to add:
 - `Organization` JSON-LD with `hasOfferCatalog` listing the three Platforms.
 
 CTA destinations:
 - Hero "Request a Demo" → `/contact-us` (interim) until Step 3 ships `/request-demo`.
-- Hero "Explore Platforms" → anchor link `#platforms`.
-- Three Platform card CTAs → `/unified-commerce`, `/enterprise-ai`, `/data-intelligence`.
+- Hero "Explore Platforms" → anchor link `#platforms` (lands on Section 3).
+- Three Platform CTAs → `/unified-commerce`, `/enterprise-ai`, `/data-intelligence`.
 - Closing "Request a Demo" → same as hero (interim `/contact-us`, switch to `/request-demo` later).
 
 Step 3 should include an audit pass that switches all "Request a Demo" link destinations across the site to the new page in one go.
 
 Cleanup tasks (carried from the Step 5 task list in the roadmap):
 - Remove the `meta name="keywords"` tag (Google has ignored it for over a decade and it tips targeting to competitors).
-- Replace the hyphen-as-dash on the Core Verticals description ("foundation - designed to deliver") if that section is being dropped. If kept, fix the hyphen.
+- Replace the hyphen-as-dash on the Core Verticals description ("foundation - designed to deliver") if that section is being dropped. (The Core Verticals section IS being dropped per the list above, so the hyphen issue resolves automatically.)
 
 Brand naming:
 - This draft uses "Artisans Cloud" consistently per the resolved brand decision. No legacy "Artisans Commerce Cloud" or bare "Artisans" references.
 
 Writing-rule fixes already applied compared to the source `~/Downloads/Home Page.docx`:
-- Em dash in the Enterprise AI Platform card ("real-world use—supporting") replaced with phrasing that does not need a dash ("built for production workflows, supporting").
+- Em dash in the Enterprise AI Platform description ("real-world use—supporting") replaced with phrasing that does not need a dash ("built for production workflows, supporting").
 - Five `👉` emojis removed.
-- Smart apostrophe in the closing CTA ("you’re") replaced with "you are" to avoid the curly-quote issue entirely.
-- "real-world" repetition reduced (Enterprise AI Platform card now reads "production workflows" instead).
+- Smart apostrophe in the closing CTA ("you're") replaced with "you are" to avoid the curly-quote issue entirely.
+- "real-world" repetition reduced (Enterprise AI section now reads "production workflows" instead).
 - "What We Offer" redundancy trimmed: the "When combined ..." sentence merged into the existing paragraph.
 - Closing CTA wording made consistent with Platform names ("deploying enterprise AI" rather than "developing enterprise AI workflows").
