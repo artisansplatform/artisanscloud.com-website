@@ -16,6 +16,66 @@
             "source": "/overview",
             "destination": "/unified-commerce",
             "permanent": true
+        },
+        {
+            "source": "/merchandise-planning",
+            "destination": "/merchandise-and-assortment-planning",
+            "permanent": true
+        },
+        {
+            "source": "/assortment-planning",
+            "destination": "/merchandise-and-assortment-planning",
+            "permanent": true
+        },
+        {
+            "source": "/d2c-ecommerce",
+            "destination": "/d2c-eCommerce",
+            "permanent": true
+        },
+        {
+            "source": "/customer-xperience-management",
+            "destination": "/customer-experience-management",
+            "permanent": true
+        },
+        {
+            "source": "/product-xperience-management",
+            "destination": "/customer-experience-management",
+            "permanent": true
+        },
+        {
+            "source": "/Integrations",
+            "destination": "/integrations",
+            "permanent": true
+        },
+        {
+            "source": "/about",
+            "destination": "/about-us",
+            "permanent": true
+        },
+        {
+            "source": "/artificial-intelligence",
+            "destination": "/enterprise-ai",
+            "permanent": true
+        },
+        {
+            "source": "/business-intelligence",
+            "destination": "/data-intelligence",
+            "permanent": true
+        },
+        {
+            "source": "/headless-commerce",
+            "destination": "/d2c-eCommerce",
+            "permanent": true
+        },
+        {
+            "source": "/solution",
+            "destination": "/unified-commerce",
+            "permanent": true
+        },
+        {
+            "source": "/artisans-commerce-cloud",
+            "destination": "/unified-commerce",
+            "permanent": true
         }
     ],
     "crons": [
