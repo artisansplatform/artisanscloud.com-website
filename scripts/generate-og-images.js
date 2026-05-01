@@ -144,6 +144,11 @@ const PAGES = [
     subtitle: 'Let\'s build something together',
   },
   {
+    file: 'request-demo',
+    title: 'Request a Demo',
+    subtitle: 'See Artisans Cloud in action',
+  },
+  {
     file: 'privacy-policy',
     title: 'Privacy Policy',
     subtitle: 'How we protect your data',

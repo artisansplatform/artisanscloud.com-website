@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Request a Demo | Artisans Cloud</title>
+    <link rel="canonical" href="https://www.artisanscloud.com/request-demo" />
+
+    <meta name="robots" content="noindex">
+    <meta name="description" content="Request a demo of Artisans Cloud to see how our unified commerce and AI solutions can transform your business.">
+
+    <meta property="og:url" content="https://artisanscloud.com/request-demo">
+    <meta property="og:title" content="Request a Demo | Artisans Cloud">
+    <meta property="og:description" content="Request a demo of Artisans Cloud to see how our unified commerce and AI solutions can transform your business.">
+    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/request-demo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/style/output.css">
+</head>
+
+<body>
+    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
+
+    {{> header}}
+
+    <section class="lg:py-[120px] sm:py-20 py-16 pt-[120px] lg:pt-[150px] relative overflow-hidden bg-white">
+        <!-- Decorative blobs -->
+        <div class="absolute top-0 right-0 w-96 h-96 rounded-full bg-primary/5 blur-3xl -z-10 transform translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-sky/5 blur-3xl -z-10 transform -translate-x-1/2 translate-y-1/2"></div>
+
+        <div class="max-w-[700px] w-full px-5 mx-auto relative z-10">
+            <div class="text-center mb-10">
+                <h1 class="lg:mb-[22px] mb-4 lg:text-5xl md:text-4xl text-3xl font-primary font-semibold leading-[120%] text-heading">Request a Demo</h1>
+                <p class="text-base leading-[135%] text-description font-primary font-normal">See how Artisans Cloud can unify your commerce operations and accelerate your growth. Fill out the form below and our team will be in touch shortly.</p>
+            </div>
+
+            <div class="bg-white md:border-2 border border-light-border lg:p-10 sm:p-7 p-5 md:rounded-[20px] rounded-xl shadow-sm relative">
+                <form action="https://api.web3forms.com/submit" method="POST" class="w-full m-0">
+                    <input type="hidden" name="access_key" value="d082e756-9d9f-4750-bda0-10769f1253c6" />
+                    <input type="hidden" name="redirect" value="https://artisanscloud.com/thank-you" />
+                    <input type="checkbox" name="botcheck" style="display: none;" />
+                    <input type="hidden" name="subject" value="Artisans Cloud Demo Request" />
+                    
+                    <div class="lg:mb-6 mb-5 grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="first_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">First Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="first_name" name="first_name" placeholder="Enter First Name" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                        </div>
+                        <div>
+                            <label for="last_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Last Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="last_name" name="last_name" placeholder="Enter Last Name" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                        </div>
+                    </div>
+                    
+                    <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                        <div>
+                            <label for="email" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Work Email <span class="text-red-500">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="Enter work email address" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                        </div>
+                    </div>
+
+                    <div class="lg:mb-6 mb-5 grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="company_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Company <span class="text-red-500">*</span></label>
+                            <input type="text" id="company_name" name="company_name" placeholder="Enter Company Name" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                        </div>
+                        <div>
+                            <label for="role" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Role / Title <span class="text-red-500">*</span></label>
+                            <input type="text" id="role" name="role" placeholder="Enter your role" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                        </div>
+                    </div>
+
+                    <div class="lg:mb-6 mb-5 grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="company_size" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Company Size <span class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <div class="absolute end-4 top-1/2 transform -translate-y-1/2 select-none pointer-events-none">
+                                    <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="#8D68F6"/>
+                                    </svg>
+                                </div>
+                                <select id="company_size" name="company_size" required class="appearance-none w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary bg-transparent">
+                                    <option value="" disabled selected>Select size</option>
+                                    <option value="1-50">1-50 employees</option>
+                                    <option value="51-200">51-200 employees</option>
+                                    <option value="201-500">201-500 employees</option>
+                                    <option value="501-1000">501-1000 employees</option>
+                                    <option value="1000+">1000+ employees</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="timeline" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Timeline <span class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <div class="absolute end-4 top-1/2 transform -translate-y-1/2 select-none pointer-events-none">
+                                    <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="#8D68F6"/>
+                                    </svg>
+                                </div>
+                                <select id="timeline" name="timeline" required class="appearance-none w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary bg-transparent">
+                                    <option value="" disabled selected>Select timeline</option>
+                                    <option value="Immediately">Immediately</option>
+                                    <option value="1-3 months">1-3 months</option>
+                                    <option value="3-6 months">3-6 months</option>
+                                    <option value="6+ months">6+ months</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                        <div>
+                            <label for="current_systems" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Current Systems</label>
+                            <input type="text" id="current_systems" name="current_systems" placeholder="e.g. Shopify, SAP, Salesforce" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                        </div>
+                    </div>
+
+                    <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                        <div>
+                            <label for="message" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Message (Optional)</label>
+                            <textarea id="message" name="message" rows="3" placeholder="Tell us about your project or specific requirements" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary resize-y"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 flex flex-col items-center gap-6">
+                        <button type="submit" class="w-full cursor-pointer rounded-[40px] px-8 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Request Demo</button>
+                        <p class="text-sm text-center text-description font-primary font-normal lg:leading-[26px] leading-[160%]">By submitting your information you agree with our <a href="/terms-and-conditions" class="font-semibold inline-block underline">Terms of Use</a> and <a href="/privacy-policy" class="font-semibold inline-block underline">Privacy Policy</a>.</p>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <p class="text-sm text-description font-primary">Looking for general inquiries or support? <a href="/contact-us" class="text-primary font-semibold hover:underline">Contact us</a></p>
+            </div>
+        </div>
+    </section>
+
+    {{> footer}}
+
+    <!--+++++++ Script Start +++++++-->
+    <script type='module' src='assets/script/main.js'></script>
+
+</body>
+</html>
