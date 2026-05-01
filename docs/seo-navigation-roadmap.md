@@ -121,30 +121,49 @@ Tasks:
 2. Write the IA reference (the locked structure above plus rules for module nesting) into `docs/information-architecture.md`.
 3. Fill in the page-to-URL map below. Action options per page: keep at current URL, move with 301, fold into another page with 301, delete.
 
-| Current URL | New URL | Action |
-|---|---|---|
-| /retail-platform | /unified-commerce | done (PR #48) |
-| /overview | /unified-commerce | done (PR #50) |
-| /POS | TBD | |
-| /browser-pos | TBD | |
-| /warehouse-management-system | TBD | |
-| /distributed-order-management | TBD | |
-| /d2c-eCommerce | TBD | |
-| /customer-experience-management | TBD | |
-| /merchandise-and-assortment-planning | TBD | |
-| /automation | TBD | |
-| /image-editing | TBD | |
-| /smart-auto-completion | TBD | |
-| /smart-product-search | TBD | |
-| /personalized-recommendations | TBD | |
-| /chatbots-for-quick-support | TBD | |
-| /role-play-agent | TBD | |
-| /knowledge-harvester | TBD | |
-| /demand-flow | TBD | |
-| /enterprise-ai | TBD | |
-| /data-intelligence | TBD | |
-| /dify-consulting | TBD | |
-| /integrations | TBD | |
+All URLs are decided. Action options used: **keep** (no change), **delete file** (URL redirected at edge, file is unused), **rename + 301** (move file, add redirect from old URL), **redirect** (no file, redirect rule in vercel.json).
+
+| Current URL | Disposition | New URL | Notes |
+|---|---|---|---|
+| /retail-platform | delete file | /unified-commerce | Redirect already in `vercel.json` (PR #48). The 10-line stub file is unused; delete it during Step 6 cleanup. |
+| /overview | done | /unified-commerce | Redirect and file deletion shipped in PR #50. |
+| / (homepage) | rewrite | / | Content rewrite shipped in Step 5; URL unchanged. Draft at `docs/homepage-content.md`. |
+| /unified-commerce | keep | /unified-commerce | Platform page. Already rewritten (PR #50). |
+| /enterprise-ai | keep | /enterprise-ai | Platform page. |
+| /data-intelligence | keep | /data-intelligence | Platform page (standalone, not folded into Unified Commerce). |
+| /POS | keep | /POS | Module under Unified Commerce. Note URL is uppercase; case sensitivity flagged below. |
+| /browser-pos | keep | /browser-pos | TabsyPOS variant. Kept separate from /POS based on traffic. |
+| /warehouse-management-system | keep | /warehouse-management-system | Module under Unified Commerce. |
+| /distributed-order-management | keep | /distributed-order-management | OMS module under Unified Commerce. |
+| /d2c-eCommerce | keep | /d2c-eCommerce | D2C module. Mixed-case URL; case sensitivity flagged below. |
+| /customer-experience-management | keep | /customer-experience-management | CXM module under Unified Commerce. |
+| /merchandise-and-assortment-planning | keep | /merchandise-and-assortment-planning | Module under Unified Commerce. |
+| /automation | keep | /automation | Intelligent Automation module under Unified Commerce. |
+| /demand-flow | keep | /demand-flow | Nested under Unified Commerce in nav. Decision made: GSC shows no branded search demand. |
+| /role-play-agent | keep | /role-play-agent | App under Enterprise AI Platform. |
+| /knowledge-harvester | keep | /knowledge-harvester | App under Enterprise AI Platform. |
+| /image-editing | keep | /image-editing | Retail AI subsection under Enterprise AI Platform. |
+| /smart-auto-completion | keep | /smart-auto-completion | Retail AI subsection. |
+| /smart-product-search | keep | /smart-product-search | Retail AI subsection. |
+| /personalized-recommendations | keep | /personalized-recommendations | Retail AI subsection. |
+| /chatbots-for-quick-support | keep | /chatbots-for-quick-support | Retail AI subsection. |
+| /articles-and-resources | rename + 301 | /blog | Verbose URL, near-zero traffic. Move and 301. Implement in Step 8. |
+| /blog-detail | keep | /blog-detail | Blog post template. Stays at current URL. |
+| /about-us | keep | /about-us | Company > About. |
+| /contact-us | keep | /contact-us | Company > Contact. Also interim destination for "Request Demo" CTA until Step 3 ships. |
+| /integrations | keep | /integrations | Footer link plus contextual mentions on Platform pages. |
+| /dify-consulting | keep | /dify-consulting | Niche services page. Kept, omitted from main nav. |
+| /privacy-policy | keep | /privacy-policy | Footer link. |
+| /terms-and-conditions | keep | /terms-and-conditions | Footer link. |
+| /thank-you | keep | /thank-you | System page (form thank-you). |
+| /404 | keep | /404 | System page. |
+| /team/dev-nair | keep | /team/dev-nair | Auto-generated team page. |
+| /team/gaurav-makhecha | keep | /team/gaurav-makhecha | Auto-generated team page. |
+
+### Sub-decisions surfaced during mapping
+
+- **URL case sensitivity.** Vercel routing is case-sensitive (verified with `curl -I`). `/d2c-eCommerce` and `/POS` work; their lowercase variants 404. Lowercase redirects were added in PR #52 to recover SEO equity. Long-term recommendation: rename the files to lowercase (`d2c-ecommerce.html`, `pos.html`) with 301s from the current casing. Worth doing during Step 6 (page audit and redirect map) since it touches multiple files.
+- **Blog URL pattern: `/blog`.** Resolved to flat `/blog` rather than `/resources/blog/`. Rationale in `docs/information-architecture.md`. Step 8 implements the move.
 
 Done when:
 - `docs/information-architecture.md` exists with the locked IA and module nesting rules.
