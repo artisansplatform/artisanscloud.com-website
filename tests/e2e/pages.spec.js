@@ -77,7 +77,7 @@ test.describe('Page Load Tests', () => {
             // Title should not be empty
             expect(title.length).toBeGreaterThan(0);
 
-            // Title should contain some reference to Artisans or the page name
+            // Title should contain some reference to Artisans Cloud or the page name
             // (This is a loose check - adjust based on actual title format)
             expect(title).toBeTruthy();
         });

@@ -1,6 +1,6 @@
 import { gsap } from 'gsap';
 
-// Footer Artisans Text =============
+// Footer Artisans Cloud Text =============
 export function initFooterEffects() {
 
     const yearEl = document.getElementById('copyright-year');
