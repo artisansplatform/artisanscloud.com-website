@@ -62,6 +62,6 @@ test.describe('Request Demo Page', () => {
 
     test('shows contact-us link for non-sales inquiries', async ({ page }) => {
         await page.goto('/request-demo');
-        await expect(page.locator('a[href="/contact-us"]')).toBeVisible();
+        await expect(page.locator('section a[href="/contact-us"]')).toBeVisible();
     });
 });
