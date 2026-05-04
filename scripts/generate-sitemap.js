@@ -37,6 +37,7 @@ const EXCLUDED_PAGES = new Set([
   '404.html',
   'thank-you.html',
   'blog-detail.html', // JS-rendered shell; no stable canonical URL
+  'request-demo.html', // Destination page, not indexed
 ]);
 
 // Per-page SEO hints (anything not listed gets DEFAULT_META)
