@@ -57,44 +57,55 @@
 
 
 
-    <!----- request demo Sec ----->
+    <!----- Contact Sec ----->
     <section class="lg:py-[90px] sm:py-16 py-10">
         <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="grid lg:grid-cols-2 lg:gap-10 gap-8">
+            <div class="grid lg:grid-cols-2 lg:gap-10 gap-8 items-start">
+
+                <!-- Left: Contact Info -->
                 <div class="pt-4 lg:pe-8">
-                    <div class="lg:mb-[22px] mb-4 lg:text-5xl md:text-4xl text-3xl font-primary font-semibold leading-[120%]">Request demo</div>
-                    <div class="lg:mb-5 mb-4 text-base leading-[135%] text-description font-primary font-normal">Streamline delivery of customized product data and content to ensure that every touchpoint receives tailored information, allowing to launch products faster than ever before.</div>
-                    <div class="lg:mb-5 mb-4 text-base leading-[135%] text-description font-primary font-normal">Master the Art of Seamless Order Fulfillment and achieve Optimal Efficiency in Multi-Channel Commerce</div>
-                    <div class="lg:mb-5 mb-4 text-base leading-[135%] text-description font-primary font-normal">Unlock the Potential of Unified Customer Data and FosterGrowth Centered Around Customers</div>
-                    <div class="lg:mb-5 mb-4 text-base leading-[135%] text-description font-primary font-normal">Unlock the Potential of Unified Customer Data and FosterGrowth Centered Around Customers.</div>
+                    <h2 class="lg:mb-5 mb-4 lg:text-5xl md:text-4xl text-3xl font-primary font-semibold leading-[120%] text-heading">Get in Touch</h2>
+                    <p class="mb-8 text-base leading-[150%] text-description font-primary font-normal">Have a question about our platform, a partnership idea, or anything else? Send us a message and our team will get back to you shortly.</p>
+
+                    <div class="flex flex-col gap-5 mb-8">
+                        <div class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-light-purple flex items-center justify-center">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="#8D68F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-primary font-semibold text-heading mb-1">Email us</div>
+                                <a href="mailto:support@artisanscloud.com.my" class="text-sm text-primary font-primary hover:underline">support@artisanscloud.com.my</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Demo CTA Card -->
+                    <div class="p-6 rounded-2xl bg-light-purple">
+                        <div class="font-primary font-semibold text-heading mb-2">Want to see the platform in action?</div>
+                        <p class="text-sm text-description font-primary leading-[150%] mb-4">Our dedicated demo page walks you through a personalized product walkthrough tailored to your business.</p>
+                        <a href="/request-demo" class="w-fit h-fit rounded-[40px] px-6 py-3 flex items-center gap-2 font-primary font-bold text-sm leading-[100%] text-white bg-primary hover:bg-primary-light transition-all duration-300 ease-in-out active:scale-95">
+                            Request a Demo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Right: General Inquiry Form -->
                 <div>
                     <div class="bg-white md:border-2 border border-light-border lg:p-10 sm:p-7 p-5 md:rounded-[20px] rounded-xl">
                         <form action="https://api.web3forms.com/submit" method="POST" class="w-full m-0">
-                            <input
-                                type="hidden"
-                                name="access_key"
-                                value="d082e756-9d9f-4750-bda0-10769f1253c6"
-                            />
-                            <input
-                                type="hidden"
-                                name="redirect"
-                                value="https://artisanscloud.com/thank-you"
-                            />
-                            <input
-                                type="checkbox"
-                                name="botcheck"
-                                id=""
-                                style="display: none;"
-                            />
-                            <input
-                                type="hidden"
-                                name="subject"
-                                value="artisans Commerce Cloud inquiry"
-                            />
+                            <input type="hidden" name="access_key" value="d082e756-9d9f-4750-bda0-10769f1253c6" />
+                            <input type="hidden" name="redirect" value="https://artisanscloud.com/thank-you" />
+                            <input type="checkbox" name="botcheck" style="display: none;" />
+                            <input type="hidden" name="subject" value="Artisans Cloud General Inquiry" />
+
                             <div class="lg:mb-6 mb-5 grid sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label for="first_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">First Name</label>
+                                    <label for="first_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">First Name <span class="text-red-500">*</span></label>
                                     <input type="text" id="first_name" name="first_name" placeholder="Enter First Name" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
                                 </div>
                                 <div>
@@ -102,35 +113,36 @@
                                     <input type="text" id="last_name" name="last_name" placeholder="Enter Last Name" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
                                 </div>
                             </div>
+
                             <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
                                 <div>
-                                    <label for="company_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Company Name</label>
-                                    <input type="text" id="company_name" name="company_name" placeholder="Enter Company Name" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
-                                <div>
-                                    <label for="email" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Email address</label>
+                                    <label for="email" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Email Address <span class="text-red-500">*</span></label>
                                     <input type="email" id="email" name="email" placeholder="Enter email address" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
                                 </div>
                             </div>
-                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+
+                            <div class="lg:mb-6 mb-5 grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="company_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Company</label>
+                                    <input type="text" id="company_name" name="company_name" placeholder="Enter Company Name" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
+                                </div>
                                 <div>
                                     <label for="phone_number" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Phone Number</label>
                                     <input type="tel" id="phone_number" name="phone_number" placeholder="Enter phone number" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
                                 </div>
                             </div>
+
                             <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
                                 <div>
-                                    <label for="interest" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Interest</label>
+                                    <label for="interest" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Area of Interest</label>
                                     <div class="relative">
                                         <div class="absolute end-4 top-1/2 transform -translate-y-1/2 select-none pointer-events-none">
                                             <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="#8D68F6"/>
                                             </svg>
                                         </div>
-                                        <select multiple name="interest" class="js-multi-select pe-7 appearance-none w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                            <option selected disabled>Select</option>
+                                        <select name="interest" class="appearance-none w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary bg-transparent">
+                                            <option value="" disabled selected>Select an area</option>
                                             <option>Artificial Intelligence</option>
                                             <option>Data Intelligence</option>
                                             <option>Commerce Cloud</option>
@@ -142,22 +154,31 @@
                                             <option>D2C eCommerce</option>
                                             <option>Unified Commerce</option>
                                             <option>Omnichannel Retailing</option>
+                                            <option>General Inquiry</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
 
+                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                                <div>
+                                    <label for="message" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Message <span class="text-red-500">*</span></label>
+                                    <textarea id="message" name="message" rows="4" placeholder="Tell us how we can help" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary resize-y"></textarea>
+                                </div>
+                            </div>
+
                             <div class="mt-4 flex flex-wrap lg:flex-nowrap justify-between gap-6">
                                 <p class="text-sm text-description font-primary font-normal lg:leading-[26px] leading-[160%]">By submitting your information you agree with our <a href="/terms-and-conditions" class="font-semibold inline-block underline">Terms of Use</a> and <a href="/privacy-policy" class="font-semibold inline-block underline">Privacy Policy</a>.</p>
-                                <button type="submit" class="cursor-pointer w-fit h-fit rounded-[40px] sm:px-[40px] px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Submit</button>
+                                <button type="submit" class="cursor-pointer w-fit h-fit rounded-[40px] sm:px-[40px] px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Send Message</button>
                             </div>
                         </form>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
-    <!----- End request demo Sec ----->
+    <!----- End Contact Sec ----->
 
 
 
