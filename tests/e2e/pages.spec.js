@@ -17,11 +17,10 @@ const pages = [
     { path: '/distributed-order-management', title: 'Distributed Order Management', name: 'distributed-order-management.html' },
     { path: '/enterprise-ai', title: 'Enterprise AI', name: 'enterprise-ai.html' },
     { path: '/merchandise-and-assortment-planning', title: 'Merchandise & Assortment Planning', name: 'merchandise-and-assortment-planning.html' },
-    { path: '/overview', title: 'Overview', name: 'overview.html' },
     { path: '/POS', title: 'Point of Sale', name: 'POS.html' },
     { path: '/smarter-inventory-alerts', title: 'Smarter Inventory Alerts', name: 'smarter-inventory-alerts.html' },
     { path: '/404', title: '404', name: '404.html' },
-    { path: '/retail-platform', title: 'Retail Platform', name: 'retail-platform.html' },
+    { path: '/unified-commerce', title: 'Unified Commerce', name: 'unified-commerce.html' },
     { path: '/thank-you', title: 'Thank You', name: 'thank-you.html' },
 ];
 
@@ -79,7 +78,7 @@ test.describe('Page Load Tests', () => {
             // Title should not be empty
             expect(title.length).toBeGreaterThan(0);
 
-            // Title should contain some reference to Artisans or the page name
+            // Title should contain some reference to Artisans Cloud or the page name
             // (This is a loose check - adjust based on actual title format)
             expect(title).toBeTruthy();
         });

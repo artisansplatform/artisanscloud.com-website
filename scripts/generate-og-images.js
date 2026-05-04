@@ -44,9 +44,9 @@ const PAGES = [
     subtitle: 'Unifying data, intelligence, and workflows',
   },
   {
-    file: 'retail-platform',
-    title: 'Retail Platform',
-    subtitle: 'Unified Commerce & AI Automation',
+    file: 'unified-commerce',
+    title: 'Unified Commerce\nPlatform',
+    subtitle: 'Omnichannel Commerce Platform for Modern Retail',
   },
   {
     file: 'enterprise-ai',
@@ -57,11 +57,6 @@ const PAGES = [
     file: 'data-intelligence',
     title: 'Data Intelligence',
     subtitle: 'Transform data into intelligent action',
-  },
-  {
-    file: 'overview',
-    title: 'Unified Commerce',
-    subtitle: 'All aspects of commerce, unified',
   },
   {
     file: 'about-us',
