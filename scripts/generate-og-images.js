@@ -111,7 +111,7 @@ const PAGES = [
   {
     file: 'role-play-agent',
     title: 'Role Play Agent',
-    subtitle: 'AI-powered training simulations',
+    subtitle: 'AI-powered readiness simulations',
   },
   {
     file: 'warehouse-management-system',
