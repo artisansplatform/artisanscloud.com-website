@@ -22,6 +22,7 @@ const pages = [
     { path: '/unified-commerce', title: 'Unified Commerce', name: 'unified-commerce.html' },
     { path: '/thank-you', title: 'Thank You', name: 'thank-you.html' },
     { path: '/request-demo', title: 'Request a Demo', name: 'request-demo.html' },
+    { path: '/role-play-agent', title: 'Role Play Agent', name: 'role-play-agent.html' },
 ];
 
 test.describe('Page Load Tests', () => {
