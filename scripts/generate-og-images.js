@@ -129,6 +129,11 @@ const PAGES = [
     subtitle: 'Simplify, automate and optimise workflows',
   },
   {
+    file: 'lumen',
+    title: 'Lumen',
+    subtitle: 'Enterprise intelligence layer for connected execution',
+  },
+  {
     file: 'image-editing',
     title: 'AI Image Editing',
     subtitle: 'Professional visuals for retail & e-commerce',
