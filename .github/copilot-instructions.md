@@ -31,6 +31,8 @@ npm run update-fallback  # Update fallback blog articles from live deployment
 npm run generate:og      # Regenerate OG images (requires network for font download)
 npm run generate:cards   # Regenerate all team card HTML pages from team-members.json
 npm run add:card         # Add/update a team card: generates HTML + OG image (run after editing JSON)
+npm run check:images     # Flag staged or all assets/ images that exceed size thresholds
+npm run optimize:images  # Re-encode raster images in place via sharp (pass paths after --)
 ```
 
 ## Gotchas & Landmines
@@ -45,6 +47,7 @@ npm run add:card         # Add/update a team card: generates HTML + OG image (ru
 - **OG images use absolute URLs** - `og:image` meta tags use `https://www.artisanscloud.com/assets/og/{page}.png`. Images are in `assets/og/` and copied to `dist/assets/og/` during build. When adding a new page, also add its entry to `scripts/generate-og-images.js` and run `npm run generate:og`.
 - **Team card HTML is generated** - `team/*.html` files are produced by `scripts/generate-team-cards.js` from `assets/data/team-members.json`. Do NOT hand-edit them. To add a new team member: add photo + JSON entry, then run `npm run add:card` (generates HTML + OG image). Re-run after any JSON change.
 - **Centering 5-card grids** - standard Tailwind `grid` doesn't easily center the last 2 cards in a 3-column layout. Use `flex flex-wrap justify-center` with calculated widths (`w-[calc(50%-10px)]` for 2-column on tablet, `w-[calc(33.333%-20px)]` for 3-column on desktop) combined with a matching `gap-` to center remaining items in the last row.
+- **Image size limits enforced at commit** - a pre-commit hook (`.githooks/pre-commit`) flags staged images over per-type thresholds: PNG/JPG 300 KB, WebP 400 KB, SVG 50 KB. It only warns; nothing is modified. Run `npm run optimize:images -- <path>` to fix rasters via `sharp`. SVGs need manual cleanup (svgomg). Hook is wired up by `npm install` (the `prepare` script sets `core.hooksPath` to `.githooks`); if a clone predates this, run `npm install` again. Bypass with `git commit --no-verify` only when intentional.
 
 ## Documentation Rule
 **After every code change, update the relevant docs.** This is mandatory, not optional.

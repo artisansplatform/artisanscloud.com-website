@@ -181,6 +181,38 @@ Add its filename to the `EXCLUDED_PAGES` set at the top of `scripts/generate-sit
 ### Submitting to Google
 After first deploying the sitemap, submit `https://www.artisanscloud.com/sitemap.xml` once in Google Search Console. Subsequent deploys are picked up automatically via recrawl.
 
+## Image Optimization
+
+The repo ships oversized banners and SVGs occasionally, so a pre-commit hook checks staged images and refuses the commit if any exceed per-type size limits. The hook only warns: it does not rewrite files.
+
+### Size thresholds
+| Type | Limit |
+|------|------|
+| PNG, JPG, JPEG | 300 KB |
+| WebP | 400 KB |
+| SVG | 50 KB |
+
+These are conservative defaults intended for marketing imagery. Tune them in `scripts/check-images.js` if a legitimate asset needs more headroom.
+
+### How it works
+- `.githooks/pre-commit` collects staged image paths and pipes them to `node scripts/check-images.js --staged`.
+- The check reads the size of the *staged blob* via `git cat-file -s :path`, not the working tree, so it always reflects what is actually about to be committed. After running `optimize:images`, you must `git add` the file again for the new version to be picked up.
+- IDE "commit all" flows (VSCode Stage All, JetBrains default commit) auto-stage modified tracked files before invoking commit, so the hook covers those too. Truly untracked files are ignored, but they aren't being committed either.
+- `npm install` runs the `prepare` script, which sets `core.hooksPath` to `.githooks`. New clones get the hook automatically; existing clones need to run `npm install` once after pulling.
+- A failed check prints the offending paths, the size, and an exact `npm run optimize:images` command to fix the raster files.
+
+### Commands
+```bash
+npm run check:images                          # Scan every asset under assets/ (no args)
+npm run check:images -- path/to/img.webp      # Scan specific files
+npm run optimize:images -- path/to/img.webp   # Re-encode in place via sharp
+```
+
+The optimizer writes a `.tmp` sibling, compares sizes, and only replaces the original if smaller. PNGs use palette + compression level 9, JPGs use mozjpeg at q=82, WebPs use q=80 + effort 6. SVGs are skipped; clean them up by hand (svgomg) or strip embedded raster data.
+
+### Bypass
+For exceptional cases (e.g., a banner that genuinely needs to be large), commit with `git commit --no-verify`. Do not normalize the bypass into a habit.
+
 ## Common UI Conventions
 
 | Convention | Pattern |
