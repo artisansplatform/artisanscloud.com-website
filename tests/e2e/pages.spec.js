@@ -16,6 +16,7 @@ const pages = [
     { path: '/data-intelligence', title: 'Data Intelligence', name: 'data-intelligence.html' },
     { path: '/distributed-order-management', title: 'Distributed Order Management', name: 'distributed-order-management.html' },
     { path: '/enterprise-ai', title: 'Enterprise AI', name: 'enterprise-ai.html' },
+    { path: '/lumen', title: 'Lumen', name: 'lumen.html' },
     { path: '/merchandise-and-assortment-planning', title: 'Merchandise & Assortment Planning', name: 'merchandise-and-assortment-planning.html' },
     { path: '/POS', title: 'Point of Sale', name: 'POS.html' },
     { path: '/404', title: '404', name: '404.html' },

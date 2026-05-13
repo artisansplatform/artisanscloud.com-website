@@ -63,6 +63,7 @@ const PAGE_META = {
   'smart-auto-completion.html':                { priority: '0.6', changefreq: 'monthly' },
   'smart-product-search.html':                 { priority: '0.6', changefreq: 'monthly' },
   'dify-consulting.html':                      { priority: '0.8', changefreq: 'monthly' },
+  'lumen.html':                                { priority: '0.8', changefreq: 'monthly' },
   'image-editing.html':                        { priority: '0.7', changefreq: 'monthly' },
   'personalized-recommendations.html':         { priority: '0.9', changefreq: 'monthly' },
   'chatbots-for-quick-support.html':           { priority: '0.7', changefreq: 'monthly' },
