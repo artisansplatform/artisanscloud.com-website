@@ -35,6 +35,7 @@ All HTML pages follow identical boilerplate:
 - **Lenis smooth scroll**: Auto-initialized if library available
 - **Blog articles**: Dynamic rendering from API/fallback data (`blog-articles.js`)
 - **Digital cards**: vCard generation, QR code rendering, sharing actions (`digital-card.js`)
+- **Analytics**: Vercel Web Analytics (`vercel-analytics.js`) and LinkedIn Insight Tag (`linkedin-insight.js`) loaded on every page
 
 ## Component Reuse
 - **Header/Footer**: Managed via Handlebars partials (`partials/header.html`, `partials/footer.html`)
@@ -96,6 +97,27 @@ Standalone card pages for team members at `/team/{slug}`. These pages do NOT use
 - `digital-card.js` reads this data on page load to render QR codes and wire up sharing buttons
 - vCard (`.vcf`) files are generated client-side on demand - no build-time generation needed
 - `vite.config.js` globs `team/*.html` alongside root `*.html` for the build
+
+## Analytics & Ad Attribution
+
+Two tracking scripts load on every page via `assets/script/main.js`.
+
+### Key files
+| File | Purpose |
+|------|---------|
+| `assets/script/modules/vercel-analytics.js` | Initializes Vercel Web Analytics (`@vercel/analytics` `inject()`) |
+| `assets/script/modules/linkedin-insight.js` | Loads the LinkedIn Insight Tag for ad attribution, conversion tracking, and audience retargeting |
+
+### Vercel Web Analytics
+- Cookieless page view + UTM tracking. No consent banner required.
+- Must be enabled in the Vercel project dashboard (Project, Analytics, Enable). Free tier covers typical marketing traffic.
+- No code changes needed beyond `initVercelAnalytics()` in `main.js`.
+
+### LinkedIn Insight Tag
+- Set the `LINKEDIN_PARTNER_ID` constant at the top of `assets/script/modules/linkedin-insight.js`. Find the ID in LinkedIn Campaign Manager under Account Assets, Insight Tag.
+- The module is a no-op when the constant is empty, so it is safe to commit unconfigured.
+- After setting the ID, define conversions in Campaign Manager (page-URL match for `/lumen`, `/thank-you`, etc.) to track ad outcomes.
+- For ad URLs, tag the destination with UTM params (e.g., `https://www.artisanscloud.com/lumen?utm_source=linkedin&utm_medium=cpc&utm_campaign=lumen_launch`) so the same traffic shows up in Vercel Analytics.
 
 ## Open Graph Images
 

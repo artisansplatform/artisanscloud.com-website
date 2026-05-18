@@ -17,6 +17,8 @@ import { initTabs } from './modules/tabs.js';
 import { initNavActive } from './modules/nav-active.js';
 import { initBlogArticles } from './modules/blog-articles.js';
 import { initDigitalCard } from './modules/digital-card.js';
+import { initVercelAnalytics } from './modules/vercel-analytics.js';
+import { initLinkedInInsight } from './modules/linkedin-insight.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavActive();
@@ -34,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeroAnimation();
     initFooterEffects();
     initTabs();
+    initVercelAnalytics();
+    initLinkedInInsight();
 });
 
 // Multi-select runs immediately (outside DOMContentLoaded)
