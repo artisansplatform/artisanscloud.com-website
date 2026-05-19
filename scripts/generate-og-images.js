@@ -40,8 +40,8 @@ const COLORS = {
 const PAGES = [
   {
     file: 'index',
-    title: 'Intelligent Enterprise\nTransformation',
-    subtitle: 'Unifying data, intelligence, and workflows',
+    title: 'Connected Enterprise\nSystems',
+    subtitle: 'For Modern Operations',
   },
   {
     file: 'unified-commerce',
