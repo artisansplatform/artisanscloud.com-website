@@ -109,8 +109,15 @@ test.describe('Resource Loading', () => {
 
         page.on('requestfailed', (request) => {
             const url = request.url();
-            // Ignore external CDN failures and Vercel-injected scripts (expected in test environment)
-            if (url.includes('.js') && !url.includes('cdn.jsdelivr.net') && !url.includes('cdnjs.cloudflare.com') && !url.includes('unpkg.com') && !url.includes('/_vercel/')) {
+            // Ignore external CDN failures (expected in test environment)
+            // Ignore Vercel Analytics endpoint, only served by Vercel edge in production
+            if (
+                url.includes('.js') &&
+                !url.includes('cdn.jsdelivr.net') &&
+                !url.includes('cdnjs.cloudflare.com') &&
+                !url.includes('unpkg.com') &&
+                !url.includes('/_vercel/insights/')
+            ) {
                 failedRequests.push(url);
             }
         });
