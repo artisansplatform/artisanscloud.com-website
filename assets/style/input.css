@@ -121,4 +121,28 @@ body {
     .swiper-navigation-icon {
         @apply hidden;
     }
+
+    /* Floating keyframe animations for hero image cards */
+    @keyframes float-slow {
+        0%, 100% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-8px) rotate(0.5deg);
+        }
+    }
+    @keyframes float-slower {
+        0%, 100% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(8px) rotate(-0.5deg);
+        }
+    }
+    .animate-float-slow {
+        animation: float-slow 7s ease-in-out infinite;
+    }
+    .animate-float-slower {
+        animation: float-slower 9s ease-in-out infinite;
+    }
 }
