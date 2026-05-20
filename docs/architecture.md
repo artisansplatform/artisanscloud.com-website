@@ -35,7 +35,7 @@ All HTML pages follow identical boilerplate:
 - **Lenis smooth scroll**: Auto-initialized if library available
 - **Blog articles**: Dynamic rendering from API/fallback data (`blog-articles.js`)
 - **Digital cards**: vCard generation, QR code rendering, sharing actions (`digital-card.js`)
-- **Analytics**: Vercel Web Analytics (`vercel-analytics.js`) and LinkedIn Insight Tag (`linkedin-insight.js`) loaded on every page
+- **Analytics**: Vercel Web Analytics (`vercel-analytics.js`), LinkedIn Insight Tag (`linkedin-insight.js`), and Umami (`umami.js`) loaded on every page
 
 ## Component Reuse
 - **Header/Footer**: Managed via Handlebars partials (`partials/header.html`, `partials/footer.html`)
@@ -107,6 +107,7 @@ Two tracking scripts load on every page via `assets/script/main.js`.
 |------|---------|
 | `assets/script/modules/vercel-analytics.js` | Initializes Vercel Web Analytics (`@vercel/analytics` `inject()`) |
 | `assets/script/modules/linkedin-insight.js` | Loads the LinkedIn Insight Tag for ad attribution, conversion tracking, and audience retargeting |
+| `assets/script/modules/umami.js` | Loads Umami Cloud tracking script for UTM-level campaign reporting (free tier feature gap in Vercel) |
 
 ### Vercel Web Analytics
 - Cookieless page view + UTM tracking. No consent banner required.
@@ -117,7 +118,12 @@ Two tracking scripts load on every page via `assets/script/main.js`.
 - Set the `LINKEDIN_PARTNER_ID` constant at the top of `assets/script/modules/linkedin-insight.js`. Find the ID in LinkedIn Campaign Manager under Account Assets, Insight Tag.
 - The module is a no-op when the constant is empty, so it is safe to commit unconfigured.
 - After setting the ID, define conversions in Campaign Manager (page-URL match for `/lumen`, `/thank-you`, etc.) to track ad outcomes.
-- For ad URLs, tag the destination with UTM params (e.g., `https://www.artisanscloud.com/lumen?utm_source=linkedin&utm_medium=cpc&utm_campaign=lumen_launch`) so the same traffic shows up in Vercel Analytics.
+- For ad URLs, tag the destination with UTM params (e.g., `https://www.artisanscloud.com/lumen?utm_source=linkedin&utm_medium=paid_social&utm_campaign=lumen_launch`) so the same traffic shows up in Umami.
+
+### Umami
+- Cloudless, cookieless analytics that captures the UTM dimensions Vercel free tier omits (campaign, source, medium, content).
+- Website ID is set as `UMAMI_WEBSITE_ID` in `assets/script/modules/umami.js`. The dashboard is at https://cloud.umami.is.
+- Free tier covers 10,000 events/month. Upgrade if launch traffic exceeds this.
 
 ## Open Graph Images
 
