@@ -277,11 +277,7 @@
 
 
         <!----- Section 3: Benefits for Retailers ----->
-        <!--
-            Design source: personalized-recommendations.html Section 3 (lines 209-323)
-            Three-column feature card grid with icon, title, and short description per card.
-        -->
-        <section class="lg:py-[90px] sm:py-16 py-10">
+        <section class="lg:py-[50px] sm:py-16 py-10">
             <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
                 <div class="fade-in text-center mb-10 lg:mb-16">
                     <h2
@@ -399,52 +395,105 @@
 
         <!----- Section 4: Smarter Inventory Alerts in Action ----->
         <!--
-            Design source: smart-product-search.html Section 7 "Smart Search in Action" (lines 700-751)
-            Two-column layout: heading and description on the left, a vertical stack of
-            bordered example cards on the right.
+            Design source: demand-flow.html "How Demand Flow Works" section (lines 203-296)
+            Centered heading and description, then a 2x2 grid of colored cards each pairing
+            an icon with a large transparent step number, followed by title and description.
+            Decorative BG pattern SVGs add visual depth per card.
         -->
         <section class="lg:py-[100px] sm:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-5">
-                    <div class="lg:pe-10 lg:pt-[22px]">
-                        <h2
-                            class="fade-in lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] lg:mb-10 mb-5">
-                            Smarter Inventory Alerts in Action</h2>
-                        <p class="text-description font-primary font-normal leading-[150%]">See how AI-powered alerts
-                            handle real inventory challenges to keep your business running smoothly.</p>
-                    </div>
-                    <div class="grid grid-cols-1 gap-4">
-                        <div
-                            class="fade-in lg:py-5 py-4 lg:px-6 px-4 lg:rounded-[20px] rounded-2xl bg-light-pink border border-[#f2f2f2]">
+            <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+                <div class="fade-in text-center mb-8 lg:mb-[60px]">
+                    <h2
+                        class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
+                        Smarter Inventory Alerts in Action</h2>
+                    <p
+                        class="mt-4 text-description font-primary font-normal leading-[150%] max-w-[700px] mx-auto">
+                        See how AI-powered alerts handle real inventory challenges to keep your business running
+                        smoothly.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-5">
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
+                        <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
                             <div
-                                class="mb-3 text-heading font-primary font-semibold sm:text-lg text-base leading-[120%]">
+                                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                                <img src="assets/image/icon/predictive-commerce-icon.svg"
+                                    class="h-1/2 transition-all ease-linear duration-300"
+                                    alt="Fast-selling product icon" width="40" height="40" loading="lazy">
+                            </div>
+                            <div
+                                class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">
+                                01</div>
+                        </div>
+                        <div>
+                            <div
+                                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">
                                 Fast-Selling Product</div>
                             <p class="text-description font-primary font-normal leading-[150%]">A skincare product
                                 starts selling faster than usual. AI alerts the team to <strong
                                     class="text-heading">reorder before stock runs out</strong>.</p>
                         </div>
-                        <div
-                            class="fade-in lg:py-5 py-4 lg:px-6 px-4 lg:rounded-[20px] rounded-2xl bg-light-green-box border border-[#f2f2f2]">
+                    </div>
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
+                        <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
                             <div
-                                class="mb-3 text-heading font-primary font-semibold sm:text-lg text-base leading-[120%]">
-                                Slow-Moving Inventory</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">A seasonal item is not
-                                selling as expected. AI notifies the team to <strong class="text-heading">adjust
-                                    promotions or reduce future orders</strong>.</p>
+                                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                                <img src="assets/image/icon/intelligentAutomation-icon.svg"
+                                    class="h-1/2 transition-all ease-linear duration-300"
+                                    alt="Slow-moving inventory icon" width="40" height="40" loading="lazy">
+                            </div>
+                            <div
+                                class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">
+                                02</div>
                         </div>
-                        <div
-                            class="fade-in lg:py-5 py-4 lg:px-6 px-4 lg:rounded-[20px] rounded-2xl bg-light-purple border border-[#f2f2f2]">
+                        <div>
                             <div
-                                class="mb-3 text-heading font-primary font-semibold sm:text-lg text-base leading-[120%]">
+                                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">
+                                Slow-Moving Inventory</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">A seasonal item is
+                                not selling as expected. AI notifies the team to <strong
+                                    class="text-heading">adjust promotions or reduce future orders</strong>.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
+                        <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                            <div
+                                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                                <img src="assets/image/icon/Predictive-icon.svg"
+                                    class="h-1/2 transition-all ease-linear duration-300"
+                                    alt="Sudden demand spike icon" width="40" height="40" loading="lazy">
+                            </div>
+                            <div
+                                class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">
+                                03</div>
+                        </div>
+                        <div>
+                            <div
+                                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">
                                 Sudden Demand Spike</div>
                             <p class="text-description font-primary font-normal leading-[150%]">A product gains
                                 popularity after a promotion. AI detects the trend and <strong
                                     class="text-heading">suggests replenishment</strong>.</p>
                         </div>
-                        <div
-                            class="fade-in lg:py-5 py-4 lg:px-6 px-4 lg:rounded-[20px] rounded-2xl bg-light-blue-box border border-[#f2f2f2]">
+                    </div>
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain">
+                        <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
                             <div
-                                class="mb-3 text-heading font-primary font-semibold sm:text-lg text-base leading-[120%]">
+                                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                                <img src="assets/image/icon/Cloud-hybridDeployments-icon.svg"
+                                    class="h-1/2 transition-all ease-linear duration-300"
+                                    alt="Multi-store monitoring icon" width="40" height="40" loading="lazy">
+                            </div>
+                            <div
+                                class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">
+                                04</div>
+                        </div>
+                        <div>
+                            <div
+                                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">
                                 Multi-Store Monitoring</div>
                             <p class="text-description font-primary font-normal leading-[150%]">One store is running
                                 low on a popular item while another has excess. AI recommends <strong
@@ -463,11 +512,7 @@
 
 
         <!----- Section 5: Where Smarter Inventory Alerts Help Most ----->
-        <!--
-            Design source: smart-auto-completion.html "Perfect For" section (lines 567-627)
-            Horizontal five-icon grid with rounded icon tiles and short label below each.
-        -->
-        <section class="lg:py-[100px] sm:py-16 py-10">
+        <section class="lg:py-[50px] sm:py-16 py-10">
             <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
                 <h2
                     class="fade-in mb-10 md:mb-16 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] text-center">
@@ -530,11 +575,7 @@
 
 
         <!----- Section 6: Ready to Prevent Stock Issues Before They Happen? ----->
-        <!--
-            Design source: personalized-recommendations.html Section 6 (lines 631-654)
-            Centered single-column layout with heading, supporting text, and a Schedule a Demo CTA.
-        -->
-        <section class="lg:py-[100px] sm:py-16 py-10">
+        <section class="lg:py-[100px] sm:py-16 pb-10">
             <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
                 <div class="fade-in grid lg:grid-cols-1 gap-8 lg:gap-[66px] items-center text-center">
                     <div>
