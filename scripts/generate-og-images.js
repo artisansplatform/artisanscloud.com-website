@@ -179,6 +179,11 @@ const PAGES = [
     subtitle: 'Instant answers, anytime',
   },
   {
+    file: 'customer-feedback-insights',
+    title: 'Customer Feedback\nInsights',
+    subtitle: 'Turn reviews into actionable insights',
+  },
+  {
     file: 'demand-flow',
     title: 'Demand Flow',
     subtitle: 'Strengthening local discovery for retail networks',
