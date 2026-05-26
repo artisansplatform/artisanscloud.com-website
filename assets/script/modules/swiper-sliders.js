@@ -186,6 +186,35 @@ export function initSwipers() {
         });
     }
 
+    // Dynamic Pricing Slider ========================
+    const dynamicPricingSliderEl = document.querySelector(".DynamicPricingSlider");
+    if (dynamicPricingSliderEl) {
+        new Swiper(".DynamicPricingSlider", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            speed: 700,
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 15,
+                },
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+            },
+            pagination: false,
+            navigation: {
+                nextEl: ".swiper-button-next-dynamicPricing",
+                prevEl: ".swiper-button-prev-dynamicPricing",
+            },
+        });
+    }
+
     // Personalized Recommendations Slider ========================
     const personalizedRecsSliderEl = document.querySelector(".PersonalizedRecsSlider");
     if (personalizedRecsSliderEl) {
