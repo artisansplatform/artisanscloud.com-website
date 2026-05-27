@@ -188,6 +188,11 @@ const PAGES = [
     title: 'Demand Flow',
     subtitle: 'Strengthening local discovery for retail networks',
   },
+  {
+    file: 'dynamic-pricing',
+    title: 'Dynamic Pricing',
+    subtitle: 'Set the Right Price at the Right Time',
+  },
 ];
 
 // Read the dark logo SVG (for light backgrounds) and encode as data URI
