@@ -10,6 +10,7 @@ const pages = [
     { path: '/browser-pos', title: 'Browser POS', name: 'browser-pos.html' },
     { path: '/contact-us', title: 'Contact Us', name: 'contact-us.html' },
     { path: '/chatbots-for-quick-support', title: 'Chatbots for Quick Support', name: 'chatbots-for-quick-support.html' },
+    { path: '/customer-feedback-insights', title: 'Customer Feedback Insights', name: 'customer-feedback-insights.html' },
     { path: '/demand-flow', title: 'Demand Flow', name: 'demand-flow.html' },
     { path: '/customer-experience-management', title: 'Customer Experience Management', name: 'customer-experience-management.html' },
     { path: '/d2c-eCommerce', title: 'D2C eCommerce', name: 'd2c-eCommerce.html' },

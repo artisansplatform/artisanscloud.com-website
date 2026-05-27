@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Customer Feedback Insights | Artisans Cloud</title>
+    <link rel="canonical" href="https://www.artisanscloud.com/customer-feedback-insights" />
+    <meta name="description"
+        content="AI-powered Customer Feedback Insights analyses customer reviews at scale, identifies trends, and highlights actionable improvements to help retailers enhance products and build customer trust.">
+    <meta name="keywords"
+        content="customer feedback insights, AI feedback analysis, review analysis, sentiment analysis, retail feedback, customer reviews, feedback analytics, Artisans Cloud">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:url" content="https://artisanscloud.com/customer-feedback-insights">
+    <meta property="og:title" content="Customer Feedback Insights | Artisans Cloud">
+    <meta property="og:description"
+        content="Turn customer reviews into actionable insights. AI-powered Customer Feedback Insights analyses feedback at scale and highlights what customers truly think.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/customer-feedback-insights.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/style/output.css">
+</head>
+
+<body>
+    <div id="cursor"
+        class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0">
+    </div>
+
+    {{> header}}
+
+    <main class="w-full">
+
+        <!----- Banner Sec ----->
+        <section class="w-full h-full p-4 lg:p-5">
+            <div
+                class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/distributed-order-management/bannerBG.webp')] bg-no-repeat bg-cover">
+                <div class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24">
+                    <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
+                        <div class="text-center lg:max-w-[850px] mx-auto">
+                            <h1 id="heroHeading"
+                                class="font-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] lg:leading-[61px]">
+                                <span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]">Customer Feedback
+                                    Insights:</span><br>
+                                Turn Reviews into
+                                Actionable Insights
+                            </h1>
+                            <div id="heroDec">
+                                <p
+                                    class="text-base lg:text-[20px] text-description font-primary font-normal leading-[150%]">
+                                    Retailers receive feedback from multiple channels, such as reviews, surveys, social
+                                    media, and support conversations. Manually reading everything takes time and makes
+                                    it hard to spot trends. AI-powered Customer Feedback Insights analyses feedback at
+                                    scale and highlights what customers truly think.</p>
+                                <div id="heroBtn" class="mt-7 mx-auto w-full flex justify-center">
+                                    <a href="/request-demo"
+                                        class="mx-auto w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">
+                                        Schedule a Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----- End Banner Sec ----->
+
+
+        <!----- Section 1: Why Understanding Customer Feedback is Difficult ----->
+        <section class="lg:pt-[100px] lg:pb-10 md:py-16 py-10">
+            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+                <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
+                    <div
+                        class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
+                        Why Understanding Customer Feedback is Difficult</div>
+                    <div class="">
+                        <p class="lg:pe-10 text-description font-primary font-normal leading-[150%]">Retailers often
+                            receive large volumes of customer feedback, making it challenging to identify key insights
+                            quickly.</p>
+                        <p class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]">Common
+                            challenges include:</p>
+                        <ul class="mt-4 ps-5">
+                            <li
+                                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
+                                Too many reviews to read manually</li>
+                            <li
+                                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
+                                Feedback scattered across multiple channels</li>
+                            <li
+                                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
+                                Difficulty identifying recurring issues</li>
+                            <li
+                                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
+                                Missing positive insights and opportunities</li>
+                            <li
+                                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
+                                Slow response to customer concerns</li>
+                        </ul>
+                        <p class="mt-5 lg:pe-10 text-description font-primary font-normal leading-[150%]">When feedback
+                            isn&rsquo;t analyzed effectively, <strong class="text-heading">valuable insights can be
+                                overlooked.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----- End Section 1 ----->
+
+
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+            <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+        </div>
+
+
+        <!----- Section 2: A Smarter Way to Analyze Customer Feedback ----->
+        <section class="py-10 lg:py-16">
+            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+                <div class="grid lg:grid-cols-2 lg:gap-12 gap-8 items-center">
+                    <div class="lg:pe-10">
+                        <div
+                            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-10">
+                            A Smarter Way to Analyze Customer Feedback</div>
+                        <img src="assets/image/chatbot/customers-supports.webp"
+                            alt="AI analyzing customer feedback across channels"
+                            class="max-w-full h-auto mx-auto lg:mx-0 rounded-md" width="500" height="400"
+                            loading="lazy">
+                    </div>
+                    <div class="">
+                        <div
+                            class="lg:mb-[30px] mb-6 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]">
+                            AI-powered Customer Feedback Insights automatically scan reviews and comments to identify
+                            patterns and trends.
+                        </div>
+
+                        <p class="mb-6 text-description font-primary font-normal leading-[150%]">With AI-driven
+                            analysis, you can:</p>
+
+                        <div class="flex flex-col lg:gap-5 gap-5">
+                            <div class="ps-8 relative">
+                                <img src="assets/image/icon/forward-arrow.svg"
+                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                                    width="16" height="16" loading="lazy">
+                                <p class="text-base text-description font-normal font-primary"><strong
+                                        class="text-heading">Analyze thousands of reviews in seconds</strong> across
+                                    all channels</p>
+                            </div>
+                            <div class="ps-8 relative">
+                                <img src="assets/image/icon/forward-arrow.svg"
+                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                                    width="16" height="16" loading="lazy">
+                                <p class="text-base text-description font-normal font-primary"><strong
+                                        class="text-heading">Identify common customer complaints</strong> before they
+                                    escalate</p>
+                            </div>
+                            <div class="ps-8 relative">
+                                <img src="assets/image/icon/forward-arrow.svg"
+                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                                    width="16" height="16" loading="lazy">
+                                <p class="text-base text-description font-normal font-primary"><strong
+                                        class="text-heading">Highlight positive product features</strong> customers
+                                    love</p>
+                            </div>
+                            <div class="ps-8 relative">
+                                <img src="assets/image/icon/forward-arrow.svg"
+                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                                    width="16" height="16" loading="lazy">
+                                <p class="text-base text-description font-normal font-primary"><strong
+                                        class="text-heading">Detect sentiment</strong> across positive, neutral, and
+                                    negative feedback</p>
+                            </div>
+                            <div class="ps-8 relative">
+                                <img src="assets/image/icon/forward-arrow.svg"
+                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                                    width="16" height="16" loading="lazy">
+                                <p class="text-base text-description font-normal font-primary"><strong
+                                        class="text-heading">Track feedback across multiple channels</strong> in one
+                                    place</p>
+                            </div>
+                            <div class="ps-8 relative">
+                                <img src="assets/image/icon/forward-arrow.svg"
+                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                                    width="16" height="16" loading="lazy">
+                                <p class="text-base text-description font-normal font-primary"><strong
+                                        class="text-heading">Spot emerging issues early</strong> and act before they
+                                    grow</p>
+                            </div>
+                            <div class="ps-8 relative">
+                                <img src="assets/image/icon/forward-arrow.svg"
+                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
+                                    width="16" height="16" loading="lazy">
+                                <p class="text-base text-description font-normal font-primary"><strong
+                                        class="text-heading">Prioritize improvements</strong> based on customer
+                                    impact</p>
+                            </div>
+                        </div>
+
+                        <p class="mt-6 text-description font-primary font-normal leading-[150%]"><strong
+                                class="text-heading">In short:</strong> AI helps you <strong class="text-heading">listen
+                                to customers at scale.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----- End Section 2 ----->
+
+
+        <!----- Section 3: Benefits for Retailers ----->
+        <section class="lg:py-[50px] sm:py-16 py-10">
+            <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+                <div class="fade-in text-center mb-8 lg:mb-[60px]">
+                    <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
+                        Benefits for Retailers</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-5">
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
+                        <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                            <div
+                                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                                <img src="assets/image/icon/intelligentCard-icon-1.svg"
+                                    class="h-1/2 transition-all ease-linear duration-300"
+                                    alt="Quick issue spotting icon" width="40" height="40" loading="lazy">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Quick Way
+                                to Spot Issues</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Identify problems fast
+                                before they impact customer satisfaction</p>
+                        </div>
+                    </div>
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
+                        <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                            <div
+                                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                                <img src="assets/image/icon/icon-StrategicAlignment.svg"
+                                    class="h-1/2 transition-all ease-linear duration-300" alt="Improve products icon"
+                                    width="40" height="40" loading="lazy">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Improve
+                                Products and Services</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Use real customer
+                                feedback to guide product and service improvements</p>
+                        </div>
+                    </div>
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
+                        <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                            <div
+                                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                                <img src="assets/image/icon/customer-copilots-icon.svg"
+                                    class="h-1/2 transition-all ease-linear duration-300"
+                                    alt="Build customer trust icon" width="40" height="40" loading="lazy">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Builds
+                                Customer Trust</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Responding to feedback
+                                shows customers you are listening and care</p>
+                        </div>
+                    </div>
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-right">
+                        <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                            <div
+                                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                                <img src="assets/image/icon/predictive-commerce-icon.svg"
+                                    class="h-1/2 transition-all ease-linear duration-300" alt="Faster decisions icon"
+                                    width="40" height="40" loading="lazy">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Faster
+                                Decision-Making</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">AI surfaces the most
+                                important signals so teams can act quickly</p>
+                        </div>
+                    </div>
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#FFEFEF] border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
+                        <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                            <div
+                                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                                <img src="assets/image/icon/target-icon.svg"
+                                    class="h-1/2 transition-all ease-linear duration-300"
+                                    alt="Better customer experience icon" width="40" height="40" loading="lazy">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Better
+                                Customer Experience</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Continuous improvement
+                                driven by real feedback leads to happier customers</p>
+                        </div>
+                    </div>
+                    <div
+                        class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#EEF4FF] border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
+                        <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                            <div
+                                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
+                                <img src="assets/image/icon/vision-icon.svg"
+                                    class="h-1/2 transition-all ease-linear duration-300"
+                                    alt="Innovation opportunities icon" width="40" height="40" loading="lazy">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Identify
+                                Innovation Opportunities</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Discover unmet customer
+                                needs that can inspire new products and features</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----- End Section 3 ----->
+
+
+        <!----- Section 4: Customer Feedback Insights in Action ----->
+        <section class="py-10 lg:py-16">
+            <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+                <div class="fade-in text-center mb-8 lg:mb-[60px]">
+                    <h2
+                        class="mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
+                        Customer Feedback Insights in Action</h2>
+                    <p class="max-w-[700px] w-full mx-auto text-description font-primary font-normal leading-[150%]">
+                        Real examples of how AI identifies patterns and surfaces actionable insights from customer
+                        feedback.</p>
+                </div>
+                <div class="flex flex-wrap justify-center lg:gap-[30px] gap-5">
+                    <div
+                        class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
+                        <div
+                            class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/moduleCard-productMgmt.svg"
+                                class="h-1/2 transition-all ease-linear duration-300" alt="Product quality icon"
+                                width="32" height="32" loading="lazy">
+                        </div>
+                        <div>
+                            <div class="mb-2 text-lg text-heading font-primary font-semibold">Product Quality Feedback
+                            </div>
+                            <p class="text-sm text-description font-primary font-normal leading-[150%]">AI reviews
+                                <strong class="text-heading">1,000 online comments</strong> and finds customers
+                                <strong class="text-heading">love the fabric quality</strong> but <strong
+                                    class="text-heading">complain about sizing</strong> issues.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
+                        <div
+                            class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/intelligentAutomation-icon.svg"
+                                class="h-1/2 transition-all ease-linear duration-300" alt="Delivery experience icon"
+                                width="32" height="32" loading="lazy">
+                        </div>
+                        <div>
+                            <div class="mb-2 text-lg text-heading font-primary font-semibold">Delivery Experience</div>
+                            <p class="text-sm text-description font-primary font-normal leading-[150%]">Multiple
+                                customers mention <strong class="text-heading">slow delivery</strong> in reviews. AI
+                                highlights this trend so the team can <strong class="text-heading">improve
+                                    logistics</strong>.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
+                        <div
+                            class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/layers-icon.svg"
+                                class="h-1/2 transition-all ease-linear duration-300" alt="Feature requests icon"
+                                width="32" height="32" loading="lazy">
+                        </div>
+                        <div>
+                            <div class="mb-2 text-lg text-heading font-primary font-semibold">Feature Requests</div>
+                            <p class="text-sm text-description font-primary font-normal leading-[150%]">Customers
+                                repeatedly ask for <strong class="text-heading">more color options</strong>. AI
+                                identifies this pattern and suggests <strong class="text-heading">expanding product
+                                    variants</strong>.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain">
+                        <div
+                            class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white">
+                            <img src="assets/image/icon/vision-icon.svg"
+                                class="h-1/2 transition-all ease-linear duration-300" alt="Positive insights icon"
+                                width="32" height="32" loading="lazy">
+                        </div>
+                        <div>
+                            <div class="mb-2 text-lg text-heading font-primary font-semibold">Positive Insights</div>
+                            <p class="text-sm text-description font-primary font-normal leading-[150%]">Customers praise
+                                <strong class="text-heading">comfort and durability</strong>. AI surfaces these
+                                strengths to <strong class="text-heading">use in marketing campaigns</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="fade-in mt-8 text-center text-heading font-primary font-semibold text-lg leading-[150%]">
+                    These insights help retailers act faster, improve products, and build stronger customer
+                    relationships.</p>
+            </div>
+        </section>
+        <!----- End Section 4 ----->
+
+
+        <!----- Section 5: Where Customer Feedback Insights Help Most ----->
+        <section class="py-10 md:py-20 bg-[#f6f8fb]">
+            <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+                <div class="fade-in text-center mb-8 lg:mb-[60px]">
+                    <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
+                        Where Customer Feedback Insights Help Most</h2>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
+                    <div
+                        class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full">
+                        <div
+                            class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0">
+                            <img src="assets/image/icon/moduleCard-productMgmt.svg"
+                                class="h-1/2 transition-all ease-linear duration-300"
+                                alt="Product development teams icon" width="40" height="40" loading="lazy">
+                        </div>
+                        <div>
+                            <div
+                                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">
+                                Product Development Teams</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Use customer feedback to
+                                guide product improvements and new feature decisions</p>
+                        </div>
+                    </div>
+                    <div
+                        class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full">
+                        <div
+                            class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0">
+                            <img src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg"
+                                class="h-1/2 transition-all ease-linear duration-300"
+                                alt="Merchandising and buying teams icon" width="40" height="40" loading="lazy">
+                        </div>
+                        <div>
+                            <div
+                                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">
+                                Merchandising and Buying Teams</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Understand which
+                                products resonate with customers and which need attention</p>
+                        </div>
+                    </div>
+                    <div
+                        class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full">
+                        <div
+                            class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0">
+                            <img src="assets/image/icon/customer-copilots-icon.svg"
+                                class="h-1/2 transition-all ease-linear duration-300"
+                                alt="Customer experience teams icon" width="40" height="40" loading="lazy">
+                        </div>
+                        <div>
+                            <div
+                                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">
+                                Customer Experience Teams</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Track sentiment and
+                                respond to concerns before they affect loyalty</p>
+                        </div>
+                    </div>
+                    <div
+                        class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full">
+                        <div
+                            class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0">
+                            <img src="assets/image/icon/icon-StrategicAlignment.svg"
+                                class="h-1/2 transition-all ease-linear duration-300"
+                                alt="Marketing and brand teams icon" width="40" height="40" loading="lazy">
+                        </div>
+                        <div>
+                            <div
+                                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">
+                                Marketing and Brand Teams</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Surface positive
+                                feedback and strengths to use in campaigns and messaging</p>
+                        </div>
+                    </div>
+                    <div
+                        class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full">
+                        <div
+                            class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0">
+                            <img src="assets/image/icon/predictive-commerce-icon.svg"
+                                class="h-1/2 transition-all ease-linear duration-300" alt="E-commerce retailers icon"
+                                width="40" height="40" loading="lazy">
+                        </div>
+                        <div>
+                            <div
+                                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">
+                                E-commerce Retailers</div>
+                            <p class="text-description font-primary font-normal leading-[150%]">Scale feedback analysis
+                                across large review volumes without manual effort</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----- End Section 5 ----->
+
+        <!----- Section 6 (Above Footer): The Right Solution ----->
+        <section
+            class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover">
+            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+                <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8 items-center">
+                    <div class="lg:max-w-[530px] w-full">
+                        <div
+                            class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">
+                            The Right Customer Feedback Insights Solution</div>
+                        <p class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]">Analyses
+                            reviews at scale, identifies trends, and highlights actionable improvements, helping
+                            retailers enhance products and build customer trust.</p>
+                        <p class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]">Ready to
+                            unlock insights from your customer feedback?</p>
+                        <a href="/contact-us"
+                            class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Contact
+                            Us</a>
+                    </div>
+                    <div class="rounded-[20px] overflow-hidden">
+                        <div
+                            class="w-full h-fit p-3 sm:p-5 bg-white/45 border border-white rounded-[20px] overflow-hidden">
+                            <img src="assets/image/customer-feedback-insights/artisanscloud-customer-feedback-insights.webp"
+                                class="w-full h-full object-cover object-top rounded-2xl sm:rounded-[20px] border border-white"
+                                alt="Customer Feedback Insights solution" width="700" height="380" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="assets/image/icon/ctaBanner-shape.png"
+                class="animate-pulse absolute start-0 bottom-0 pointer-none select-none" alt="" width="150" height="150"
+                loading="lazy">
+            <img src="assets/image/icon/ctaBanner-shape2.png"
+                class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
+                alt="" width="150" height="150" loading="lazy">
+        </section>
+        <!----- End Section 6 ----->
+
+
+        <!----- Section 7: Ready to Turn Customer Feedback into Action? ----->
+        <section class="py-10 lg:py-20">
+            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+                <div class="fade-in lg:max-w-[800px] mx-auto w-full text-center">
+                    <div
+                        class="lg:mb-[30px] mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-heading">
+                        Ready to Turn Customer Feedback into Action?</div>
+                    <p class="text-description font-primary font-normal leading-[150%]">Understanding what customers
+                        like
+                        and dislike helps you improve faster and build stronger relationships. AI-powered insights make
+                        it easy to act on feedback and deliver better experiences.</p>
+                    <div class="lg:mt-11 mt-8 flex items-center flex-wrap gap-2.5 justify-center">
+                        <a href="/request-demo"
+                            class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Schedule
+                            a Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----- End Section 7 ----->
+    </main>
+
+    {{> footer}}
+
+    <!--+++++++ Script Start +++++++-->
+    <script type='module' src='assets/script/main.js'></script>
+</body>
+
+</html>
