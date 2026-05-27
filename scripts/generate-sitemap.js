@@ -68,6 +68,7 @@ const PAGE_META = {
   'image-editing.html':                        { priority: '0.7', changefreq: 'monthly' },
   'personalized-recommendations.html':         { priority: '0.9', changefreq: 'monthly' },
   'chatbots-for-quick-support.html':           { priority: '0.7', changefreq: 'monthly' },
+  'customer-feedback-insights.html':           { priority: '0.7', changefreq: 'monthly' },
   'demand-flow.html':                          { priority: '0.9', changefreq: 'monthly' },
   'privacy-policy.html':                       { priority: '0.3', changefreq: 'yearly'  },
   'terms-and-conditions.html':                 { priority: '0.3', changefreq: 'yearly'  },
