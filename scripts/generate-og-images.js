@@ -189,6 +189,11 @@ const PAGES = [
     subtitle: 'Strengthening local discovery for retail networks',
   },
   {
+    file: 'smarter-inventory-alerts',
+    title: 'Smarter Inventory\nAlerts',
+    subtitle: 'Stay stocked, stay ahead with AI',
+  },
+  {
     file: 'dynamic-pricing',
     title: 'Dynamic Pricing',
     subtitle: 'Set the Right Price at the Right Time',
