@@ -193,6 +193,11 @@ const PAGES = [
     title: 'Smarter Inventory\nAlerts',
     subtitle: 'Stay stocked, stay ahead with AI',
   },
+  {
+    file: 'dynamic-pricing',
+    title: 'Dynamic Pricing',
+    subtitle: 'Set the Right Price at the Right Time',
+  },
 ];
 
 // Read the dark logo SVG (for light backgrounds) and encode as data URI

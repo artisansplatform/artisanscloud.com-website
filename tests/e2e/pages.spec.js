@@ -26,6 +26,7 @@ const pages = [
     { path: '/request-demo', title: 'Request a Demo', name: 'request-demo.html' },
     { path: '/role-play-agent', title: 'Role Play Agent', name: 'role-play-agent.html' },
     { path: '/smarter-inventory-alerts', title: 'Smarter Inventory Alerts', name: 'smarter-inventory-alerts.html' },
+    { path: '/dynamic-pricing', title: 'Dynamic Pricing', name: 'dynamic-pricing.html' },
 ];
 
 test.describe('Page Load Tests', () => {
