@@ -1,503 +1,1229 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <title>TabsyPOS - AI-Powered Browser POS | Artisans Cloud</title>
     <link rel="canonical" href="https://www.artisanscloud.com/browser-pos" />
-    <meta name="description"
-        content="TabsyPOS is a free, privacy-first browser POS that works 100% offline. No installation, no cloud storage. Your data stays on your device. Perfect as a primary POS or backup solution when your main system goes down.">
-    <meta name="keywords"
-        content="TabsyPOS, Browser POS, Offline POS, Privacy-First POS, Free POS, AI-Powered POS, Cloud-Free Point of Sale, Local POS, Retail POS, Backup POS, POS Downtime Solution, Emergency POS, Artisans Cloud">
+    <meta
+      name="description"
+      content="TabsyPOS is a free, privacy-first browser POS that works 100% offline. No installation, no cloud storage. Your data stays on your device. Perfect as a primary POS or backup solution when your main system goes down."
+    />
+    <meta
+      name="keywords"
+      content="TabsyPOS, Browser POS, Offline POS, Privacy-First POS, Free POS, AI-Powered POS, Cloud-Free Point of Sale, Local POS, Retail POS, Backup POS, POS Downtime Solution, Emergency POS, Artisans Cloud"
+    />
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:url" content="https://artisanscloud.com/browser-pos">
-    <meta property="og:title" content="TabsyPOS - Free AI-Powered Browser POS | Artisans Cloud">
-    <meta property="og:description"
-        content="Experience a POS that works 100% offline with AI-powered search. TabsyPOS is free forever, privacy-first, and keeps your data on your device. No installation required.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/browser-pos.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://artisanscloud.com/browser-pos" />
+    <meta
+      property="og:title"
+      content="TabsyPOS - Free AI-Powered Browser POS | Artisans Cloud"
+    />
+    <meta
+      property="og:description"
+      content="Experience a POS that works 100% offline with AI-powered search. TabsyPOS is free forever, privacy-first, and keeps your data on your device. No installation required."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://www.artisanscloud.com/assets/og/browser-pos.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Font Family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="./assets/style/output.css">
-</head>
-<body>
-    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
+    <link rel="stylesheet" href="./assets/style/output.css" />
+  </head>
+
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
 
     {{> header}}
 
     <!----- Main Content ----->
     <main class="w-full">
-
-        <!----- Banner Sec ----->
-        <section class="w-full h-full p-4 lg:p-5">
-            <div class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/enterprise-ai/enterprise-ai-bannerBG.webp')] bg-no-repeat bg-cover">
-                <div class="pt-5 lg:pt-[100px] pb-20 sm:pb-24 md:pb-[200px]">
-                    <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                        <div class="fade-in grid lg:grid-cols-2 gap-5 lg:gap-0">
-                            <div class="">
-                                <div class="mb-3 sm:mb-6 font-primary font-semibold text-sm sm:text-base leading-[120%] uppercase text-primary" id="heroHeading">AI-POWERED BROWSER POS</div>
-                                <h1 class="font-primary font-semibold text-2xl sm:text-4xl lg:text-[44px] xl:text-[50px] text-heading leading-[120%]" id="heroDec">TabsyPOS</h1>
-                            </div>
-                            <div id="heroDec" class="lg:ps-10">
-                                <p class="text-base lg:text-lg text-description font-primary font-normal leading-[150%]">A modern, privacy-first point of sale that works completely offline. No installation required, no cloud dependencies-just pure performance with AI-powered search and complete data ownership. Your sales data stays on your device, always accessible, always secure.</p>
-                                <a href="https://tabsy.artisanscloud.com.my/" target="_blank" rel="noopener noreferrer" class="lg:mt-[34px] mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Try TabsyPOS Now</a>
-                            </div>
-                        </div>
-                    </div>
+      <!----- Banner Sec ----->
+      <section class="w-full h-full p-4 lg:p-5">
+        <div
+          class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/enterprise-ai/enterprise-ai-bannerBG.webp')] bg-no-repeat bg-cover"
+        >
+          <div class="pt-5 lg:pt-[100px] pb-20 sm:pb-24 md:pb-[200px]">
+            <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+              <div class="fade-in grid lg:grid-cols-2 gap-5 lg:gap-0">
+                <div class="">
+                  <div
+                    class="mb-3 sm:mb-6 font-primary font-semibold text-sm sm:text-base leading-[120%] uppercase text-primary"
+                    id="heroHeading"
+                  >
+                    AI-POWERED BROWSER POS
+                  </div>
+                  <h1
+                    class="font-primary font-semibold text-2xl sm:text-4xl lg:text-[44px] xl:text-[50px] text-heading leading-[120%]"
+                    id="heroDec"
+                  >
+                    TabsyPOS
+                  </h1>
                 </div>
+                <div id="heroDec" class="lg:ps-10">
+                  <p
+                    class="text-base lg:text-lg text-description font-primary font-normal leading-[150%]"
+                  >
+                    A modern, privacy-first point of sale that works completely
+                    offline. No installation required, no cloud
+                    dependencies-just pure performance with AI-powered search
+                    and complete data ownership. Your sales data stays on your
+                    device, always accessible, always secure.
+                  </p>
+                  <a
+                    href="https://tabsy.artisanscloud.com.my/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="lg:mt-[34px] mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                    >Try TabsyPOS Now</a
+                  >
+                </div>
+              </div>
             </div>
-        </section>
-        <!----- End Banner Sec ----->
-
-
-        <!----- Banner Big Image Sec ----->
-        <div class="fade-in relative z-[2] mx-auto mb-0 -mt-[12%] md:mt-[-13%] w-[80%] max-w-[1264px] p-[clamp(0.625rem,2.778vw-0.208rem,1.875rem)] rounded-[20px] border sm:border-[3px] border-white bg-white/25 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[40%] after:bg-gradient-to-b after:from-transparent after:to-white after:pointer-events-none after:select-none">
-            <img src="assets/image/browser-pos/tabsy-pos-banner.webp" alt="TabsyPOS Dashboard Interface" class="h-full w-full object-cover object-top rounded-[10px] border border-white" width="1200" height="600" loading="lazy"/>
+          </div>
         </div>
-        <!----- End Banner Big Image Sec ----->
+      </section>
 
+      <!----- Banner Big Image Sec ----->
+      <div
+        class="fade-in relative z-[2] mx-auto mb-0 -mt-[12%] md:mt-[-13%] w-[80%] max-w-[1264px] p-[clamp(0.625rem,2.778vw-0.208rem,1.875rem)] rounded-[20px] border sm:border-[3px] border-white bg-white/25 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[40%] after:bg-gradient-to-b after:from-transparent after:to-white after:pointer-events-none after:select-none"
+      >
+        <img
+          src="assets/image/browser-pos/tabsy-pos-banner.webp"
+          alt="TabsyPOS Dashboard Interface"
+          class="h-full w-full object-cover object-top rounded-[10px] border border-white"
+          width="1200"
+          height="600"
+          loading="lazy"
+        />
+      </div>
 
-        <!----- USP Cards Sec ----->
-        <section class="lg:py-[90px] sm:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-[30px] gap-5">
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/icon-ai.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="AI-Powered icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Privacy First</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Your data never leaves your device. No cloud storage, no external servers-complete privacy by design.</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/offline-cloud.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Offline capability icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Works 100% Offline</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">No internet? No problem. TabsyPOS runs entirely in your browser with full functionality offline.</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/bulb-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="AI Search icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">AI-Powered Search</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Find products instantly with intelligent search that understands your inventory and purchase history.</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/layers-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Backup and Export icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Backup & Export</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Export your data anytime in standard formats. Full control, full ownership, zero lock-in.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!----- End USP Cards Sec ----->
-
-
+      <!----- USP Cards Sec ----->
+      <section class="lg:py-[90px] sm:py-16 py-10">
         <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
-        </div>
-
-
-        <!----- Why TabsyPOS Sec ----->
-        <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
-                    <div class="lg:pe-10">
-                        <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-10">Why TabsyPOS?</div>
-                        <img src="assets/image/enterprise-ai/whyArtisans.svg" alt="Why TabsyPOS infographic" class="max-w-full h-auto mx-auto lg:mx-0" width="500" height="400" loading="lazy">
-                    </div>
-                    <div class="">
-                        <div class="lg:mb-10 mb-7 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]">Built for Modern Retail Without the Complexity</div>
-
-                        <div class="flex flex-col lg:gap-5 gap-5">
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">No Installation Required</div>
-                                <p class="text-base text-description font-normal font-primary">Access TabsyPOS instantly from any modern browser. No downloads, no setup, no IT headaches-just open and sell.</p>
-                            </div>
-
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Lightweight & Fast</div>
-                                <p class="text-base text-description font-normal font-primary">Engineered for performance. TabsyPOS loads instantly and runs smoothly even on modest hardware.</p>
-                            </div>
-
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Blazing Fast Performance</div>
-                                <p class="text-base text-description font-normal font-primary">Process sales in milliseconds. Our optimized architecture ensures zero lag, even with thousands of products.</p>
-                            </div>
-
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Accessible Anywhere</div>
-                                <p class="text-base text-description font-normal font-primary">Works on desktop, tablet, or mobile. One URL, universal access-sell wherever your business takes you.</p>
-                            </div>
-                        </div>
-                    </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-[30px] gap-5"
+          >
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/icon-ai.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="AI-Powered icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Privacy First
                 </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Your data never leaves your device. No cloud storage, no
+                  external servers-complete privacy by design.
+                </p>
+              </div>
             </div>
-        </section>
-        <!----- End Why TabsyPOS Sec ----->
 
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/offline-cloud.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Offline capability icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Works 100% Offline
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  No internet? No problem. TabsyPOS runs entirely in your
+                  browser with full functionality offline.
+                </p>
+              </div>
+            </div>
 
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/bulb-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="AI Search icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  AI-Powered Search
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Find products instantly with intelligent search that
+                  understands your inventory and purchase history.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/layers-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Backup and Export icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Backup & Export
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Export your data anytime in standard formats. Full control,
+                  full ownership, zero lock-in.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Why TabsyPOS Sec ----->
+      <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
         <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
-        </div>
-
-
-        <!----- Who Can Use Sec ----->
-        <section class="lg:py-[100px] sm:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="fade-in text-center mb-10 lg:mb-16">
-                    <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4">Who Can Use TabsyPOS?</h2>
-                    <p class="max-w-[880px] mx-auto text-description font-primary font-normal leading-[150%]">TabsyPOS is best suited for single stores that want a simple, free, and reliable point-of-sale solution without extra complexity. It's also a great backup POS solution for larger retailers who want a ready-to-use system to stay operational during server downtime or network issues.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8">
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Independent Retail Shops & Pop-up Stores</div>
-                        <p class="text-base text-description font-normal font-primary">Perfect for small businesses that need a reliable, no-frills POS without monthly fees or complex setup requirements.</p>
-                    </div>
-
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Cafés, Bakeries, & Small Restaurants</div>
-                        <p class="text-base text-description font-normal font-primary">Quick transactions, simple menu management, and instant receipt printing-all in your browser.</p>
-                    </div>
-
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Boutiques, Salons, & Lifestyle Stores</div>
-                        <p class="text-base text-description font-normal font-primary">Manage customers, products, and sales effortlessly with a clean, intuitive interface designed for service businesses.</p>
-                    </div>
-
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Retailers Needing a Reliable Backup POS</div>
-                        <p class="text-base text-description font-normal font-primary">Keep selling during network outages or server downtime. TabsyPOS works offline and requires zero infrastructure.</p>
-                    </div>
-
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Local Businesses Seeking a Free Forever POS</div>
-                        <p class="text-base text-description font-normal font-primary">No subscriptions, no hidden fees, no vendor lock-in. Your data, your control, your business.</p>
-                    </div>
-                </div>
+          <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
+            <div class="lg:pe-10">
+              <div
+                class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-10"
+              >
+                Why TabsyPOS?
+              </div>
+              <img
+                src="assets/image/enterprise-ai/whyArtisans.svg"
+                alt="Why TabsyPOS infographic"
+                class="max-w-full h-auto mx-auto lg:mx-0"
+                width="500"
+                height="400"
+                loading="lazy"
+              />
             </div>
-        </section>
-        <!----- End Who Can Use Sec ----->
+            <div class="">
+              <div
+                class="lg:mb-10 mb-7 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Built for Modern Retail Without the Complexity
+              </div>
 
+              <div class="flex flex-col lg:gap-5 gap-5">
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <div
+                    class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary"
+                  >
+                    No Installation Required
+                  </div>
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Access TabsyPOS instantly from any modern browser. No
+                    downloads, no setup, no IT headaches-just open and sell.
+                  </p>
+                </div>
 
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <div
+                    class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary"
+                  >
+                    Lightweight & Fast
+                  </div>
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Engineered for performance. TabsyPOS loads instantly and
+                    runs smoothly even on modest hardware.
+                  </p>
+                </div>
+
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <div
+                    class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary"
+                  >
+                    Blazing Fast Performance
+                  </div>
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Process sales in milliseconds. Our optimized architecture
+                    ensures zero lag, even with thousands of products.
+                  </p>
+                </div>
+
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <div
+                    class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary"
+                  >
+                    Accessible Anywhere
+                  </div>
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Works on desktop, tablet, or mobile. One URL, universal
+                    access-sell wherever your business takes you.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Who Can Use Sec ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
         <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
-        </div>
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              Who Can Use TabsyPOS?
+            </h2>
+            <p
+              class="max-w-[880px] mx-auto text-description font-primary font-normal leading-[150%]"
+            >
+              TabsyPOS is best suited for single stores that want a simple,
+              free, and reliable point-of-sale solution without extra
+              complexity. It's also a great backup POS solution for larger
+              retailers who want a ready-to-use system to stay operational
+              during server downtime or network issues.
+            </p>
+          </div>
 
-
-        <!----- Key Features Sec ----->
-        <section class="lg:py-[100px] sm:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="fade-in text-center mb-10 lg:mb-16">
-                    <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4">Key Features</h2>
-                    <p class="max-w-[880px] mx-auto text-description font-primary font-normal leading-[150%]">All Essentials, Right Where You Need Them. From checkout to receipts, TabsyPOS gives you complete control.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-[30px] gap-5">
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/layers-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Products and Customers icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Products & Customers</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Add products and customers in bulk, search by typing or voice. Manage your inventory and customer database effortlessly.</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/bulb-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Smart Cart icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Smart Cart</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Update item price & quantity, assign or switch customers seamlessly. Flexible cart management for complex transactions.</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/target-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Flexible Payments icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Flexible Payments</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Support for multiple payment methods, plus partial payment options. Accept cash, cards, or mixed payments with ease.</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/intelligentCard-icon-1.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Sales History icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Sales History</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Stay on top of every transaction with easy-to-access records. View, filter, and export your complete sales history anytime.</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#fff9ed] border border-[#f2f2f2] flex flex-col">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/intelligentCard-icon-2.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Custom Receipts icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Custom Receipts</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Print branded receipts with personalised header & footer text. Add your logo, contact details, or promotional messages.</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#f0f9f4] border border-[#f2f2f2] flex flex-col">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/artchitecHeightlight-card-setting.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Settings icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Powerful Settings</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Set currency, language, AI models, keyboard shortcuts, and clear data when needed. Complete control over your POS experience.</p>
-                        </div>
-                    </div>
-                </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8">
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Independent Retail Shops & Pop-up Stores
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                Perfect for small businesses that need a reliable, no-frills POS
+                without monthly fees or complex setup requirements.
+              </p>
             </div>
-        </section>
-        <!----- End Key Features Sec ----->
 
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Cafés, Bakeries, & Small Restaurants
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                Quick transactions, simple menu management, and instant receipt
+                printing-all in your browser.
+              </p>
+            </div>
 
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Boutiques, Salons, & Lifestyle Stores
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                Manage customers, products, and sales effortlessly with a clean,
+                intuitive interface designed for service businesses.
+              </p>
+            </div>
+
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Retailers Needing a Reliable Backup POS
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                Keep selling during network outages or server downtime. TabsyPOS
+                works offline and requires zero infrastructure.
+              </p>
+            </div>
+
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Local Businesses Seeking a Free Forever POS
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                No subscriptions, no hidden fees, no vendor lock-in. Your data,
+                your control, your business.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Key Features Sec ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
         <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
-        </div>
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              Key Features
+            </h2>
+            <p
+              class="max-w-[880px] mx-auto text-description font-primary font-normal leading-[150%]"
+            >
+              All Essentials, Right Where You Need Them. From checkout to
+              receipts, TabsyPOS gives you complete control.
+            </p>
+          </div>
 
-
-        <!----- How to Use Sec ----->
-        <section class="lg:py-[100px] sm:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="fade-in text-center mb-10 lg:mb-16">
-                    <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4">How to Use TabsyPOS as Your Backup POS</h2>
-                    <p class="max-w-[880px] mx-auto text-description font-primary font-normal leading-[150%]">When your primary POS goes down, TabsyPOS gets you back up and running in seconds. Here's how.</p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-[30px] gap-5"
+          >
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/layers-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Products and Customers icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Products & Customers
                 </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-[30px] gap-5">
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                            <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                                <img src="assets/image/icon/offline-cloud.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Open TabsyPOS icon" width="40" height="40" loading="lazy">
-                            </div>
-                            <div class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">01</div>
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Open TabsyPOS Instantly</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">No login. No installation. Just open any modern browser and start immediately. No account creation or complex setup required.</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                            <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                                <img src="assets/image/icon/layers-icon.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Add products and customers icon" width="40" height="40" loading="lazy">
-                            </div>
-                            <div class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">02</div>
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Add Products & Customers</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Set up your data in seconds. Upload products and customers in bulk or add them manually using quick-add options.</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                            <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                                <img src="assets/image/icon/target-icon.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Start billing icon" width="40" height="40" loading="lazy">
-                            </div>
-                            <div class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">03</div>
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Start Billing Immediately</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Add items, update prices and quantities, assign customers, and process payments. All from one smooth checkout screen.</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                            <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                                <img src="assets/image/icon/intelligentCard-icon-2.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Print receipts icon" width="40" height="40" loading="lazy">
-                            </div>
-                            <div class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">04</div>
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Print Receipts</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Hand customers a proper, professional receipt every single time. No more handwritten slips, even during downtime.</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#fff9ed] border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                            <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                                <img src="assets/image/icon/artchitecHeightlight-card-setting.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Export data icon" width="40" height="40" loading="lazy">
-                            </div>
-                            <div class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">05</div>
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Export Your Data</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Once your main POS is back online, export all your sales and customer data with one click. Transactions stay organised and portable.</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#f0f9f4] border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                            <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                                <img src="assets/image/icon/intelligentCard-icon-1.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Import back to main POS icon" width="40" height="40" loading="lazy">
-                            </div>
-                            <div class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">06</div>
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Import Back to Main POS</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Reconcile transactions seamlessly by importing the exported data into your primary POS system. Zero data loss, full continuity.</p>
-                        </div>
-                    </div>
-                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Add products and customers in bulk, search by typing or voice.
+                  Manage your inventory and customer database effortlessly.
+                </p>
+              </div>
             </div>
-        </section>
-        <!----- End How to Use Sec ----->
 
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/bulb-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Smart Cart icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Smart Cart
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Update item price & quantity, assign or switch customers
+                  seamlessly. Flexible cart management for complex transactions.
+                </p>
+              </div>
+            </div>
 
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/target-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Flexible Payments icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Flexible Payments
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Support for multiple payment methods, plus partial payment
+                  options. Accept cash, cards, or mixed payments with ease.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-1.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Sales History icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Sales History
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Stay on top of every transaction with easy-to-access records.
+                  View, filter, and export your complete sales history anytime.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#fff9ed] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-2.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Custom Receipts icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Custom Receipts
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Print branded receipts with personalised header & footer text.
+                  Add your logo, contact details, or promotional messages.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#f0f9f4] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-setting.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Settings icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Powerful Settings
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Set currency, language, AI models, keyboard shortcuts, and
+                  clear data when needed. Complete control over your POS
+                  experience.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- How to Use Sec ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
         <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              How to Use TabsyPOS as Your Backup POS
+            </h2>
+            <p
+              class="max-w-[880px] mx-auto text-description font-primary font-normal leading-[150%]"
+            >
+              When your primary POS goes down, TabsyPOS gets you back up and
+              running in seconds. Here's how.
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-[30px] gap-5"
+          >
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/offline-cloud.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Open TabsyPOS icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+                >
+                  01
+                </div>
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Open TabsyPOS Instantly
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  No login. No installation. Just open any modern browser and
+                  start immediately. No account creation or complex setup
+                  required.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/layers-icon.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Add products and customers icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+                >
+                  02
+                </div>
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Add Products & Customers
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Set up your data in seconds. Upload products and customers in
+                  bulk or add them manually using quick-add options.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/target-icon.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Start billing icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+                >
+                  03
+                </div>
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Start Billing Immediately
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Add items, update prices and quantities, assign customers, and
+                  process payments. All from one smooth checkout screen.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/intelligentCard-icon-2.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Print receipts icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+                >
+                  04
+                </div>
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Print Receipts
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Hand customers a proper, professional receipt every single
+                  time. No more handwritten slips, even during downtime.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#fff9ed] border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/artchitecHeightlight-card-setting.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Export data icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+                >
+                  05
+                </div>
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Export Your Data
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Once your main POS is back online, export all your sales and
+                  customer data with one click. Transactions stay organised and
+                  portable.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#f0f9f4] border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/intelligentCard-icon-1.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Import back to main POS icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+                >
+                  06
+                </div>
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Import Back to Main POS
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Reconcile transactions seamlessly by importing the exported
+                  data into your primary POS system. Zero data loss, full
+                  continuity.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- When to Use Sec ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              When to Use TabsyPOS as a Backup
+            </h2>
+            <p
+              class="max-w-[880px] mx-auto text-description font-primary font-normal leading-[150%]"
+            >
+              TabsyPOS is built for the moments when your primary system can't
+              deliver. Here are the scenarios where it shines.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8">
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Network or Server Outage
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                When your network goes down or servers fail, TabsyPOS operates
+                fully offline so your business keeps running without
+                interruption.
+              </p>
+            </div>
+
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Cloud POS Downtime
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                During scheduled maintenance or unexpected technical issues with
+                your cloud POS provider, switch instantly to TabsyPOS in any
+                browser.
+              </p>
+            </div>
+
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Device Replacement or Maintenance
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                While your POS terminals are being repaired or replaced, use any
+                available computer or tablet to keep processing sales with
+                TabsyPOS.
+              </p>
+            </div>
+
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Pop-Up Stalls & Outdoor Events
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                For temporary sales setups, exhibitions, or outdoor counters,
+                TabsyPOS gives you a full POS without any infrastructure or
+                internet requirements.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Enterprise Upgrade Sec ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div class="lg:pe-10">
+              <div
+                class="mb-4 lg:mb-6 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                When You're Ready to Grow, We're Ready with Enterprise POS
+              </div>
+              <div
+                class="mb-4 lg:mb-5 text-heading font-primary font-semibold text-xl leading-[125%]"
+              >
+                From Single-Tab Simplicity to Full Omnichannel Control
+              </div>
+              <p
+                class="mb-6 text-description font-primary font-normal leading-[150%]"
+              >
+                While TabsyPOS is built for quick, reliable in-store billing,
+                our Enterprise POS Solution offers a complete retail ecosystem -
+                with backend integration, multi-store management, and
+                omnichannel capabilities.
+              </p>
+
+              <div class="flex flex-col gap-4 mb-6">
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <div
+                    class="text-base lg:text-lg text-heading font-semibold font-primary"
+                  >
+                    Multi-store operations & franchise setups
+                  </div>
+                </div>
+
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <div
+                    class="text-base lg:text-lg text-heading font-semibold font-primary"
+                  >
+                    Centralized inventory & pricing control
+                  </div>
+                </div>
+
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <div
+                    class="text-base lg:text-lg text-heading font-semibold font-primary"
+                  >
+                    Integrated CRM, analytics, and reporting
+                  </div>
+                </div>
+
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <div
+                    class="text-base lg:text-lg text-heading font-semibold font-primary"
+                  >
+                    Unified omnichannel experience across web, store & app
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href="/contact-us"
+                class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >Explore Enterprise POS</a
+              >
+            </div>
+            <div class="lg:ps-10">
+              <img
+                src="assets/image/ourCore-unifiedCommerce.webp"
+                alt="Enterprise POS Platform"
+                class="max-w-full h-auto mx-auto rounded-2xl"
+                width="600"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Final CTA Sec ----->
+      <section
+        class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover"
+      >
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+          <div class="fade-in text-center max-w-[800px] mx-auto">
+            <div
+              class="mb-4 lg:mb-6 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+            >
+              Start Selling Smarter with TabsyPOS
+            </div>
+            <p
+              class="mb-6 lg:mb-8 text-white/80 font-primary font-normal text-base lg:text-lg leading-[150%]"
+            >
+              Experience a POS that doesn't slow you down. TabsyPOS is fast to
+              set up, easy to use, and built to help your business grow.
+            </p>
+            <a
+              href="https://tabsy.artisanscloud.com.my/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-fit h-fit rounded-[40px] sm:px-8 px-6 sm:py-4 py-3 inline-flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-white active:text-heading active:scale-95 focus-visible:bg-white focus-visible:text-heading bg-primary text-white hover:bg-white hover:text-heading"
+              >Try TabsyPOS Now - Free Forever</a
+            >
+          </div>
         </div>
 
-
-        <!----- When to Use Sec ----->
-        <section class="lg:py-[100px] sm:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="fade-in text-center mb-10 lg:mb-16">
-                    <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4">When to Use TabsyPOS as a Backup</h2>
-                    <p class="max-w-[880px] mx-auto text-description font-primary font-normal leading-[150%]">TabsyPOS is built for the moments when your primary system can't deliver. Here are the scenarios where it shines.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8">
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Network or Server Outage</div>
-                        <p class="text-base text-description font-normal font-primary">When your network goes down or servers fail, TabsyPOS operates fully offline so your business keeps running without interruption.</p>
-                    </div>
-
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Cloud POS Downtime</div>
-                        <p class="text-base text-description font-normal font-primary">During scheduled maintenance or unexpected technical issues with your cloud POS provider, switch instantly to TabsyPOS in any browser.</p>
-                    </div>
-
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Device Replacement or Maintenance</div>
-                        <p class="text-base text-description font-normal font-primary">While your POS terminals are being repaired or replaced, use any available computer or tablet to keep processing sales with TabsyPOS.</p>
-                    </div>
-
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Pop-Up Stalls & Outdoor Events</div>
-                        <p class="text-base text-description font-normal font-primary">For temporary sales setups, exhibitions, or outdoor counters, TabsyPOS gives you a full POS without any infrastructure or internet requirements.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!----- End When to Use Sec ----->
-
-
-        <!----- Enterprise Upgrade Sec ----->
-        <section class="lg:py-[100px] sm:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="fade-in grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                    <div class="lg:pe-10">
-                        <div class="mb-4 lg:mb-6 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">When You're Ready to Grow, We're Ready with Enterprise POS</div>
-                        <div class="mb-4 lg:mb-5 text-heading font-primary font-semibold text-xl leading-[125%]">From Single-Tab Simplicity to Full Omnichannel Control</div>
-                        <p class="mb-6 text-description font-primary font-normal leading-[150%]">While TabsyPOS is built for quick, reliable in-store billing, our Enterprise POS Solution offers a complete retail ecosystem - with backend integration, multi-store management, and omnichannel capabilities.</p>
-
-                        <div class="flex flex-col gap-4 mb-6">
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <div class="text-base lg:text-lg text-heading font-semibold font-primary">Multi-store operations & franchise setups</div>
-                            </div>
-
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <div class="text-base lg:text-lg text-heading font-semibold font-primary">Centralized inventory & pricing control</div>
-                            </div>
-
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <div class="text-base lg:text-lg text-heading font-semibold font-primary">Integrated CRM, analytics, and reporting</div>
-                            </div>
-
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <div class="text-base lg:text-lg text-heading font-semibold font-primary">Unified omnichannel experience across web, store & app</div>
-                            </div>
-                        </div>
-
-                        <a href="/contact-us" class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Explore Enterprise POS</a>
-                    </div>
-                    <div class="lg:ps-10">
-                        <img src="assets/image/ourCore-unifiedCommerce.webp" alt="Enterprise POS Platform" class="max-w-full h-auto mx-auto rounded-2xl" width="600" height="400" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!----- End Enterprise Upgrade Sec ----->
-
-
-        <!----- Final CTA Sec ----->
-        <section class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-                <div class="fade-in text-center max-w-[800px] mx-auto">
-                    <div class="mb-4 lg:mb-6 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">Start Selling Smarter with TabsyPOS</div>
-                    <p class="mb-6 lg:mb-8 text-white/80 font-primary font-normal text-base lg:text-lg leading-[150%]">Experience a POS that doesn't slow you down. TabsyPOS is fast to set up, easy to use, and built to help your business grow.</p>
-                    <a href="https://tabsy.artisanscloud.com.my/" target="_blank" rel="noopener noreferrer" class="w-fit h-fit rounded-[40px] sm:px-8 px-6 sm:py-4 py-3 inline-flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-white active:text-heading active:scale-95 focus-visible:bg-white focus-visible:text-heading bg-primary text-white hover:bg-white hover:text-heading">Try TabsyPOS Now - Free Forever</a>
-                </div>
-            </div>
-
-            <img src="assets/image/icon/ctaBanner-shape.png" class="animate-pulse absolute start-0 bottom-0 pointer-none select-none" alt="" width="150" height="150" loading="lazy">
-            <img src="assets/image/icon/ctaBanner-shape2.png" class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none" alt="" width="150" height="150" loading="lazy">
-        </section>
-        <!----- End Final CTA Sec ----->
-
+        <img
+          src="assets/image/icon/ctaBanner-shape.png"
+          class="animate-pulse absolute start-0 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <img
+          src="assets/image/icon/ctaBanner-shape2.png"
+          class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+      </section>
     </main>
-
 
     {{> footer}}
 
-
-    <!--+++++++ Script Start +++++++-->
-
-    <script type='module' src='assets/script/main.js'></script>
-</body>
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
 </html>

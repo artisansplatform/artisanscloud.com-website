@@ -1,402 +1,880 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <title>Automation | Artisans Cloud</title>
     <link rel="canonical" href="https://www.artisanscloud.com/automation" />
-    <meta name="description"
-        content="Discover Artisans Cloud's low-code automation platform designed to simplify retail operations. Streamline app development, integrate systems, and enhance customer service with workflow automation, RPA, and AI.">
-    <meta name="keywords"
-        content="automation, low-code platform, retail automation, workflow automation, RPA, robotic process automation, business intelligence, AI automation, inventory management, Artisans Cloud">
+    <meta
+      name="description"
+      content="Discover Artisans Cloud's low-code automation platform designed to simplify retail operations. Streamline app development, integrate systems, and enhance customer service with workflow automation, RPA, and AI."
+    />
+    <meta
+      name="keywords"
+      content="automation, low-code platform, retail automation, workflow automation, RPA, robotic process automation, business intelligence, AI automation, inventory management, Artisans Cloud"
+    />
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:url" content="https://artisanscloud.com/automation">
-    <meta property="og:title" content="Automation Platform | Artisans Cloud">
-    <meta property="og:description"
-        content="Simplify retail operations with Artisans Cloud's low-code automation platform. Automate workflows, integrate systems, and enhance customer experiences.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/automation.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://artisanscloud.com/automation" />
+    <meta property="og:title" content="Automation Platform | Artisans Cloud" />
+    <meta
+      property="og:description"
+      content="Simplify retail operations with Artisans Cloud's low-code automation platform. Automate workflows, integrate systems, and enhance customer experiences."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://www.artisanscloud.com/assets/og/automation.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Font Family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="./assets/style/output.css">
-</head>
-<body>
-    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
+    <link rel="stylesheet" href="./assets/style/output.css" />
+  </head>
 
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
 
     {{> header}}
 
-
     <!----- Banner Sec ----->
     <section class="w-full h-full p-4 lg:p-5">
-        <div
-            class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] flex items-center justify-center h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/data-intelligence/banner-BG.webp')] bg-no-repeat bg-cover">
-            <div class="pt-5 md:pt-8 pb-8 md:pb-10 w-full">
-                <div class="fade-in max-w-[1400px] w-full mx-auto">
-                    <div class="fade-in flex flex-col lg:flex-row justify-center w-full">
-                        <div class="flex lg:flex-col justify-between gap-x-4 w-full lg:w-fit lg:me-4 mb-5 lg:mb-0">
-                            <div class="w-fit h-fit md:mt-[32px] lg:ms-auto my-auto lg:my-0">
-                                <img src="/assets/image/enterprise-ai/enterprise-ai-subg-1.webp" alt="Workflow automation interface" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                            <div class="w-fit h-fit lg:ms-auto hidden lg:block">
-                                <img src="/assets/image/enterprise-ai/enterprise-ai-subg-3.webp" alt="Automation dashboard" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                            <div class="w-fit h-fit lg:ms-auto block lg:hidden">
-                                <img src="/assets/image/enterprise-ai/enterprise-ai-subg-2.webp" alt="Process automation visualization" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                        </div>
-                        <div class="max-w-fit mx-auto lg:mx-0">
-                            <div class="text-center w-full lg:w-auto lg:mt-[48px] mb-5">
-                                <div class="font-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] lg:leading-[61px]"
-                                    id="heroDec"><span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]"><span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]"> Retail Automation </span><br></span>Low-Code Solution</div>
-                            </div>
-                            <div id="heroDec" class="w-full lg:w-auto">
-                                <p
-                                    class="text-[clamp(14px,1.3vw,18px)] mx-auto px-2.5 lg:px-0 max-w-[613px] text-center text-description font-primary font-normal leading-[150%]">
-                                    Accelerate retail processes, improve security, and simplify operations with our flexible and powerful low-code solution.</p>
-                                <a href="/contact-us"
-                                    class="mt-7 mx-auto w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">
-                                    Explore Automation Solutions
-                                </a>
-                            </div>
-                        </div>
-                        <div class="flex lg:flex-col justify-between w-full gap-x-4 lg:w-fit lg:ms-4 mt-5 lg:mt-0">
-                            <div class="w-fit h-fit lg:me-auto hidden lg:block">
-                                <img src="/assets/image/enterprise-ai/enterprise-ai-subg-2.webp" alt="Process automation visualization" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                            <div class="w-fit h-fit lg:me-auto lg:hidden">
-                                <img src="/assets/image/enterprise-ai/enterprise-ai-subg-3.webp" alt="Automation dashboard" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                            <div class="w-fit h-fit mb-[14px] lg:me-auto my-auto lg:my-0">
-                                <img src="/assets/image/enterprise-ai/enterprise-ai-subg-4.webp" alt="Intelligent automation system" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                        </div>
-                    </div>
+      <div
+        class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] flex items-center justify-center h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/data-intelligence/banner-BG.webp')] bg-no-repeat bg-cover"
+      >
+        <div class="pt-5 md:pt-8 pb-8 md:pb-10 w-full">
+          <div class="fade-in max-w-[1400px] w-full mx-auto">
+            <div
+              class="fade-in flex flex-col lg:flex-row justify-center w-full"
+            >
+              <div
+                class="flex lg:flex-col justify-between gap-x-4 w-full lg:w-fit lg:me-4 mb-5 lg:mb-0"
+              >
+                <div
+                  class="w-fit h-fit md:mt-[32px] lg:ms-auto my-auto lg:my-0"
+                >
+                  <img
+                    src="/assets/image/enterprise-ai/enterprise-ai-subg-1.webp"
+                    alt="Workflow automation interface"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                  />
                 </div>
+                <div class="w-fit h-fit lg:ms-auto hidden lg:block">
+                  <img
+                    src="/assets/image/enterprise-ai/enterprise-ai-subg-3.webp"
+                    alt="Automation dashboard"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                  />
+                </div>
+                <div class="w-fit h-fit lg:ms-auto block lg:hidden">
+                  <img
+                    src="/assets/image/enterprise-ai/enterprise-ai-subg-2.webp"
+                    alt="Process automation visualization"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                  />
+                </div>
+              </div>
+              <div class="max-w-fit mx-auto lg:mx-0">
+                <div class="text-center w-full lg:w-auto lg:mt-[48px] mb-5">
+                  <div
+                    class="font-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] lg:leading-[61px]"
+                    id="heroDec"
+                  >
+                    <span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]"
+                      ><span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]">
+                        Retail Automation </span
+                      ><br /></span
+                    >Low-Code Solution
+                  </div>
+                </div>
+                <div id="heroDec" class="w-full lg:w-auto">
+                  <p
+                    class="text-[clamp(14px,1.3vw,18px)] mx-auto px-2.5 lg:px-0 max-w-[613px] text-center text-description font-primary font-normal leading-[150%]"
+                  >
+                    Accelerate retail processes, improve security, and simplify
+                    operations with our flexible and powerful low-code solution.
+                  </p>
+                  <a
+                    href="/contact-us"
+                    class="mt-7 mx-auto w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                  >
+                    Explore Automation Solutions
+                  </a>
+                </div>
+              </div>
+              <div
+                class="flex lg:flex-col justify-between w-full gap-x-4 lg:w-fit lg:ms-4 mt-5 lg:mt-0"
+              >
+                <div class="w-fit h-fit lg:me-auto hidden lg:block">
+                  <img
+                    src="/assets/image/enterprise-ai/enterprise-ai-subg-2.webp"
+                    alt="Process automation visualization"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                  />
+                </div>
+                <div class="w-fit h-fit lg:me-auto lg:hidden">
+                  <img
+                    src="/assets/image/enterprise-ai/enterprise-ai-subg-3.webp"
+                    alt="Automation dashboard"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                  />
+                </div>
+                <div class="w-fit h-fit mb-[14px] lg:me-auto my-auto lg:my-0">
+                  <img
+                    src="/assets/image/enterprise-ai/enterprise-ai-subg-4.webp"
+                    alt="Intelligent automation system"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                  />
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!----- End Banner Sec ----->
-
 
     <!----- Banner Big Image Sec ----->
     <div
-        class="fade-in relative z-[2] mx-auto mt-7.5 md:mt-20 w-[80%] max-w-[1264px] p-[clamp(0.625rem,2.778vw-0.208rem,1.875rem)] rounded-[20px] border sm:border-[3px] border-[#F3F3F3] bg-white/25 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[40%] after:bg-gradient-to-b after:from-transparent after:to-white after:pointer-events-none after:select-none overflow-hidden">
-        <img src="assets/image/enterprise-ai/enterpriseAi-banner.webp" alt="Automation platform dashboard showcasing workflow capabilities" width="1200" height="600" loading="lazy"
-            class="h-full w-full object-cover object-top rounded-[10px] border border-white" />
+      class="fade-in relative z-[2] mx-auto mt-7.5 md:mt-20 w-[80%] max-w-[1264px] p-[clamp(0.625rem,2.778vw-0.208rem,1.875rem)] rounded-[20px] border sm:border-[3px] border-[#F3F3F3] bg-white/25 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[40%] after:bg-gradient-to-b after:from-transparent after:to-white after:pointer-events-none after:select-none overflow-hidden"
+    >
+      <img
+        src="assets/image/enterprise-ai/enterpriseAi-banner.webp"
+        alt="Automation platform dashboard showcasing workflow capabilities"
+        width="1200"
+        height="600"
+        loading="lazy"
+        class="h-full w-full object-cover object-top rounded-[10px] border border-white"
+      />
     </div>
-    <!----- End Banner Big Image Sec ----->
-
 
     <!----- Core Capabilities Sec ----->
     <section class="py-10 md:py-20">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="text-center">
-                <h1 class="fade-in lg:mb-10 mb-7 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Core Capabilities</h1>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-[30px] gap-5">
-                <div class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/moduleCard-productMgmt.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Product management icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Product and Product Manager</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Easily define and manage product data, helping you keep track of sales and inventory efficiently.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/intelligentAutomation-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Workflow icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Workflow</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Automate and improve retail tasks like inventory management and order processing to simplify operations and enhance customer service.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/DataQuality-Trust-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Data governance icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Data Governance</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Manage different types of data securely, ensuring data accuracy and compliance with retail regulations for effective customer service.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="text-center">
+          <h1
+            class="fade-in lg:mb-10 mb-7 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Core Capabilities
+          </h1>
         </div>
-    </section>
-    <!----- End Core Capabilities Sec ----->
 
+        <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-[30px] gap-5">
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/moduleCard-productMgmt.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Product management icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Product and Product Manager
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Easily define and manage product data, helping you keep track of
+                sales and inventory efficiently.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/intelligentAutomation-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Workflow icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Workflow
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Automate and improve retail tasks like inventory management and
+                order processing to simplify operations and enhance customer
+                service.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/DataQuality-Trust-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Data governance icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Data Governance
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Manage different types of data securely, ensuring data accuracy
+                and compliance with retail regulations for effective customer
+                service.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
-
 
     <!----- Advanced Automation Sec ----->
     <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in text-center mb-10 lg:mb-[60px]">
-                <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Advanced Automation</h2>
-            </div>
-
-            <div class="fade-in grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-[30px] gap-4">
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/artchitecHeightlight-card-setting.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="RPA icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Robotic Process Automation (RPA)</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Streamline routine tasks like billing and order handling to cut down on errors and give staff more time to assist customers.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/layers-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Business Intelligence icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Business Intelligence (BI)</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Analyze retail data using integrated BI tools to generate insights, enhance decision-making, and optimize resource allocation.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/customer-copilots-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Customer Interaction icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Customer Interaction Automation</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Utilize chatbots and automated responses for customer inquiries, enhancing service efficiency and satisfaction.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/Predictive-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Sales Data Analysis icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Sales Data Analysis</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Automatically gather and analyze sales data to identify trends, forecast demand, and inform purchasing decisions.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#F2EEFF] border border-[#f2f2f2] flex flex-col">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/artchitecHeightlight-card-congitiveIntelligent.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Generative AI icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Generative AI</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Use AI to streamline product descriptions, personalize shopping experiences, and monitor consumer behaviour trends, enhancing customer loyalty and increasing sales.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#E7FAF9] border border-[#f2f2f2] flex flex-col">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Inventory Management icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Automated Inventory Management</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Streamline stock tracking and replenishment processes to ensure optimal inventory levels and reduce stockouts.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in text-center mb-10 lg:mb-[60px]">
+          <h2
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Advanced Automation
+          </h2>
         </div>
-    </section>
-    <!----- End Advanced Automation Sec ----->
 
+        <div
+          class="fade-in grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-[30px] gap-4"
+        >
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+          >
+            <div
+              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/artchitecHeightlight-card-setting.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="RPA icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Robotic Process Automation (RPA)
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Streamline routine tasks like billing and order handling to cut
+                down on errors and give staff more time to assist customers.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+          >
+            <div
+              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/layers-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Business Intelligence icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Business Intelligence (BI)
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Analyze retail data using integrated BI tools to generate
+                insights, enhance decision-making, and optimize resource
+                allocation.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+          >
+            <div
+              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/customer-copilots-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Customer Interaction icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Customer Interaction Automation
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Utilize chatbots and automated responses for customer inquiries,
+                enhancing service efficiency and satisfaction.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+          >
+            <div
+              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/Predictive-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Sales Data Analysis icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Sales Data Analysis
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Automatically gather and analyze sales data to identify trends,
+                forecast demand, and inform purchasing decisions.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#F2EEFF] border border-[#f2f2f2] flex flex-col"
+          >
+            <div
+              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/artchitecHeightlight-card-congitiveIntelligent.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Generative AI icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Generative AI
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Use AI to streamline product descriptions, personalize shopping
+                experiences, and monitor consumer behaviour trends, enhancing
+                customer loyalty and increasing sales.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#E7FAF9] border border-[#f2f2f2] flex flex-col"
+          >
+            <div
+              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Inventory Management icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Automated Inventory Management
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Streamline stock tracking and replenishment processes to ensure
+                optimal inventory levels and reduce stockouts.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
-
 
     <!----- Omni-Channel Access Sec ----->
     <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto" data-tabs>
-            <div class="fade-in text-center mb-10 lg:mb-[60px]">
-                <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Omni-Channel Access</h2>
-            </div>
-
-            <!-- Omni-Channel Tab Buttons -->
-            <div class="fade-in flex flex-wrap justify-center gap-4 mb-10 lg:mb-[60px]" role="tablist">
-                <button data-tab-btn="tailored" role="tab" aria-selected="true" aria-controls="panel-tailored" class="px-5 py-3 rounded-full bg-primary text-white font-primary font-medium text-sm sm:text-base cursor-pointer transition-all duration-300 ease-in-out hover:opacity-90">Tailored Applications and Platforms</button>
-                <button data-tab-btn="interactive-ai" role="tab" aria-selected="false" aria-controls="panel-interactive-ai" class="px-5 py-3 rounded-full bg-[#f6f8fb] text-heading font-primary font-medium text-sm sm:text-base cursor-pointer transition-all duration-300 ease-in-out hover:opacity-90">Interactive AI</button>
-                <button data-tab-btn="smart-recognition" role="tab" aria-selected="false" aria-controls="panel-smart-recognition" class="px-5 py-3 rounded-full bg-[#f6f8fb] text-heading font-primary font-medium text-sm sm:text-base cursor-pointer transition-all duration-300 ease-in-out hover:opacity-90">Smart Recognition Technologies</button>
-            </div>
-
-            <!-- Tailored Applications and Platforms Panel -->
-            <div data-tab-panel="tailored" id="panel-tailored" role="tabpanel" aria-labelledby="tailored" class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center">
-                <div class="order-2 lg:order-1">
-                    <img src="assets/image/enterprise-ai/StrategicPartnership.svg" alt="Tailored Applications and Platforms" width="500" height="400" loading="lazy" class="max-w-full h-auto mx-auto">
-                </div>
-                <div class="order-1 lg:order-2">
-                    <h3 class="mb-4 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]">Tailored Applications and Platforms</h3>
-                    <p class="text-description font-primary font-normal leading-[150%]">Create web and mobile applications designed for retail needs, offering a seamless experience for customers, sales associates, and store managers.</p>
-                </div>
-            </div>
-
-            <!-- Interactive AI Panel -->
-            <div data-tab-panel="interactive-ai" id="panel-interactive-ai" role="tabpanel" aria-labelledby="interactive-ai" class="hidden fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center">
-                <div class="">
-                    <h3 class="mb-4 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]">Interactive AI</h3>
-                    <p class="text-description font-primary font-normal leading-[150%]">Create chatbots and voice assistants for immediate, personalized customer support and effective communication through channels like WhatsApp.</p>
-                </div>
-                <div class="">
-                    <img src="assets/image/data-intelligence/coBuiltIntel-robot.svg" alt="Interactive AI" width="500" height="400" loading="lazy" class="max-w-full h-auto mx-auto">
-                </div>
-            </div>
-
-            <!-- Smart Recognition Technologies Panel -->
-            <div data-tab-panel="smart-recognition" id="panel-smart-recognition" role="tabpanel" aria-labelledby="smart-recognition" class="hidden fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center">
-                <div class="order-2 lg:order-1">
-                    <img src="assets/image/enterprise-ai/whyArtisans.svg" alt="Smart Recognition Technologies" width="500" height="400" loading="lazy" class="max-w-full h-auto mx-auto">
-                </div>
-                <div class="order-1 lg:order-2">
-                    <h3 class="mb-4 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]">Smart Recognition Technologies</h3>
-                    <p class="text-description font-primary font-normal leading-[150%]">Implement QR codes, barcodes, OCR, and RFID for accurate data capture and automation in areas like product identification and inventory management.</p>
-                </div>
-            </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto" data-tabs>
+        <div class="fade-in text-center mb-10 lg:mb-[60px]">
+          <h2
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Omni-Channel Access
+          </h2>
         </div>
+
+        <!-- Omni-Channel Tab Buttons -->
+        <div
+          class="fade-in flex flex-wrap justify-center gap-4 mb-10 lg:mb-[60px]"
+          role="tablist"
+        >
+          <button
+            data-tab-btn="tailored"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-tailored"
+            class="px-5 py-3 rounded-full bg-primary text-white font-primary font-medium text-sm sm:text-base cursor-pointer transition-all duration-300 ease-in-out hover:opacity-90"
+          >
+            Tailored Applications and Platforms
+          </button>
+          <button
+            data-tab-btn="interactive-ai"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-interactive-ai"
+            class="px-5 py-3 rounded-full bg-[#f6f8fb] text-heading font-primary font-medium text-sm sm:text-base cursor-pointer transition-all duration-300 ease-in-out hover:opacity-90"
+          >
+            Interactive AI
+          </button>
+          <button
+            data-tab-btn="smart-recognition"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-smart-recognition"
+            class="px-5 py-3 rounded-full bg-[#f6f8fb] text-heading font-primary font-medium text-sm sm:text-base cursor-pointer transition-all duration-300 ease-in-out hover:opacity-90"
+          >
+            Smart Recognition Technologies
+          </button>
+        </div>
+
+        <!-- Tailored Applications and Platforms Panel -->
+        <div
+          data-tab-panel="tailored"
+          id="panel-tailored"
+          role="tabpanel"
+          aria-labelledby="tailored"
+          class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center"
+        >
+          <div class="order-2 lg:order-1">
+            <img
+              src="assets/image/enterprise-ai/StrategicPartnership.svg"
+              alt="Tailored Applications and Platforms"
+              width="500"
+              height="400"
+              loading="lazy"
+              class="max-w-full h-auto mx-auto"
+            />
+          </div>
+          <div class="order-1 lg:order-2">
+            <h3
+              class="mb-4 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Tailored Applications and Platforms
+            </h3>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              Create web and mobile applications designed for retail needs,
+              offering a seamless experience for customers, sales associates,
+              and store managers.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive AI Panel -->
+        <div
+          data-tab-panel="interactive-ai"
+          id="panel-interactive-ai"
+          role="tabpanel"
+          aria-labelledby="interactive-ai"
+          class="hidden fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center"
+        >
+          <div class="">
+            <h3
+              class="mb-4 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Interactive AI
+            </h3>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              Create chatbots and voice assistants for immediate, personalized
+              customer support and effective communication through channels like
+              WhatsApp.
+            </p>
+          </div>
+          <div class="">
+            <img
+              src="assets/image/data-intelligence/coBuiltIntel-robot.svg"
+              alt="Interactive AI"
+              width="500"
+              height="400"
+              loading="lazy"
+              class="max-w-full h-auto mx-auto"
+            />
+          </div>
+        </div>
+
+        <!-- Smart Recognition Technologies Panel -->
+        <div
+          data-tab-panel="smart-recognition"
+          id="panel-smart-recognition"
+          role="tabpanel"
+          aria-labelledby="smart-recognition"
+          class="hidden fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center"
+        >
+          <div class="order-2 lg:order-1">
+            <img
+              src="assets/image/enterprise-ai/whyArtisans.svg"
+              alt="Smart Recognition Technologies"
+              width="500"
+              height="400"
+              loading="lazy"
+              class="max-w-full h-auto mx-auto"
+            />
+          </div>
+          <div class="order-1 lg:order-2">
+            <h3
+              class="mb-4 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Smart Recognition Technologies
+            </h3>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              Implement QR codes, barcodes, OCR, and RFID for accurate data
+              capture and automation in areas like product identification and
+              inventory management.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
-    <!----- End Omni-Channel Access Sec -----><!------ Reliable and Scalable Platform sec ------>
+
+    <!------ Reliable and Scalable Platform sec ------>
     <section
-        class="impactFrameworkCTA max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-            <div class="fade-in mb-8 lg:mb-12 text-center">
-                <h2 class="xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">
-                    Reliable and Scalable Platform</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="fade-in bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
-                    <div class="mb-4 font-primary font-extrabold lg:text-xl text-lg text-white">Security and Regulatory
-                        Standards</div>
-                    <p class="text-white/80 font-primary font-normal leading-[150%]">Protect customer data with encryption,
-                        detailed access controls, and comprehensive audit logs to ensure compliance with regulations like
-                        PCI DSS and GDPR.</p>
-                </div>
-                <div class="fade-in bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
-                    <div class="mb-4 font-primary font-extrabold lg:text-xl text-lg text-white">Growth and Efficiency</div>
-                    <p class="text-white/80 font-primary font-normal leading-[150%]">Deploy on private or public clouds with
-                        a microservices architecture that supports both horizontal and vertical scaling, optimizing
-                        performance while minimizing resource usage.</p>
-                </div>
-                <div class="fade-in bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
-                    <div class="mb-4 font-primary font-extrabold lg:text-xl text-lg text-white">Personalized UI Creator
-                    </div>
-                    <p class="text-white/80 font-primary font-normal leading-[150%]">Design custom user interfaces for
-                        retail applications, improving the shopping experience for both customers and store associates.</p>
-                </div>
-                <div class="fade-in bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
-                    <div class="mb-4 font-primary font-extrabold lg:text-xl text-lg text-white">Low-Code Configurations
-                    </div>
-                    <p class="text-white/80 font-primary font-normal leading-[150%]">Modify application features and
-                        workflows using low-code configurations, allowing for rapid adjustments to changing retail demands.
-                    </p>
-                </div>
-                <div class="fade-in bg-white/10 rounded-2xl p-6 backdrop-blur-sm md:col-span-2">
-                    <div class="mb-4 font-primary font-extrabold lg:text-xl text-lg text-white">Support for Custom Code
-                    </div>
-                    <p class="text-white/80 font-primary font-normal leading-[150%]">Expand platform capabilities with
-                        custom code to address specific retail needs and enhance functionality.</p>
-                </div>
-            </div>
+      class="impactFrameworkCTA max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]"
+    >
+      <div
+        class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10"
+      >
+        <div class="fade-in mb-8 lg:mb-12 text-center">
+          <h2
+            class="xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+          >
+            Reliable and Scalable Platform
+          </h2>
         </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="fade-in bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
+            <div
+              class="mb-4 font-primary font-extrabold lg:text-xl text-lg text-white"
+            >
+              Security and Regulatory Standards
+            </div>
+            <p class="text-white/80 font-primary font-normal leading-[150%]">
+              Protect customer data with encryption, detailed access controls,
+              and comprehensive audit logs to ensure compliance with regulations
+              like PCI DSS and GDPR.
+            </p>
+          </div>
+          <div class="fade-in bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
+            <div
+              class="mb-4 font-primary font-extrabold lg:text-xl text-lg text-white"
+            >
+              Growth and Efficiency
+            </div>
+            <p class="text-white/80 font-primary font-normal leading-[150%]">
+              Deploy on private or public clouds with a microservices
+              architecture that supports both horizontal and vertical scaling,
+              optimizing performance while minimizing resource usage.
+            </p>
+          </div>
+          <div class="fade-in bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
+            <div
+              class="mb-4 font-primary font-extrabold lg:text-xl text-lg text-white"
+            >
+              Personalized UI Creator
+            </div>
+            <p class="text-white/80 font-primary font-normal leading-[150%]">
+              Design custom user interfaces for retail applications, improving
+              the shopping experience for both customers and store associates.
+            </p>
+          </div>
+          <div class="fade-in bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
+            <div
+              class="mb-4 font-primary font-extrabold lg:text-xl text-lg text-white"
+            >
+              Low-Code Configurations
+            </div>
+            <p class="text-white/80 font-primary font-normal leading-[150%]">
+              Modify application features and workflows using low-code
+              configurations, allowing for rapid adjustments to changing retail
+              demands.
+            </p>
+          </div>
+          <div
+            class="fade-in bg-white/10 rounded-2xl p-6 backdrop-blur-sm md:col-span-2"
+          >
+            <div
+              class="mb-4 font-primary font-extrabold lg:text-xl text-lg text-white"
+            >
+              Support for Custom Code
+            </div>
+            <p class="text-white/80 font-primary font-normal leading-[150%]">
+              Expand platform capabilities with custom code to address specific
+              retail needs and enhance functionality.
+            </p>
+          </div>
+        </div>
+      </div>
 
-        <img src="assets/image/icon/strategicOutcomeBanner-shape-1.svg"
-            class="absolute select-none pointer-events-none start-0 bottom-0" alt="Decorative shape element" width="150"
-            height="150" loading="lazy">
-        <img src="assets/image/icon/strategicOutcomeBanner-shape-2.svg"
-            class="absolute select-none pointer-events-none end-0 top-0" alt="Decorative shape element" width="150"
-            height="150" loading="lazy">
+      <img
+        src="assets/image/icon/strategicOutcomeBanner-shape-1.svg"
+        class="absolute select-none pointer-events-none start-0 bottom-0"
+        alt="Decorative shape element"
+        width="150"
+        height="150"
+        loading="lazy"
+      />
+      <img
+        src="assets/image/icon/strategicOutcomeBanner-shape-2.svg"
+        class="absolute select-none pointer-events-none end-0 top-0"
+        alt="Decorative shape element"
+        width="150"
+        height="150"
+        loading="lazy"
+      />
     </section>
-    <!------ End Reliable and Scalable Platform sec ------>
-
 
     <!----- Integration Platform Sec ----->
     <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-start">
-                <div class="">
-                    <img src="assets/image/data-intelligence/dataintelligent-ourApproch-image.svg" alt="Integration Platform" width="500" height="400" loading="lazy" class="max-w-full h-auto mx-auto lg:mx-0">
-                </div>
-                <div class="">
-                    <h2 class="fade-in lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-8 lg:mb-10">Integration Platform</h2>
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-start"
+        >
+          <div class="">
+            <img
+              src="assets/image/data-intelligence/dataintelligent-ourApproch-image.svg"
+              alt="Integration Platform"
+              width="500"
+              height="400"
+              loading="lazy"
+              class="max-w-full h-auto mx-auto lg:mx-0"
+            />
+          </div>
+          <div class="">
+            <h2
+              class="fade-in lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-8 lg:mb-10"
+            >
+              Integration Platform
+            </h2>
 
-                    <div class="space-y-6">
-                        <div>
-                            <div class="mb-2 text-heading font-primary font-semibold text-xl leading-[125%]">Seamless POS System Integration</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Integrate with POS systems to provide a comprehensive view of customer data, enhancing sales decision-making and improving the overall shopping experience.</p>
-                        </div>
-                        <div>
-                            <div class="mb-2 text-heading font-primary font-semibold text-xl leading-[125%]">Customizable Integration Builder</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Develop tailored integrations using a user-friendly visual interface to connect diverse retail technologies and standards.</p>
-                        </div>
-                        <div>
-                            <div class="mb-2 text-heading font-primary font-semibold text-xl leading-[125%]">Smart Retail Connectors</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Improve your retail operations with our user-friendly connectors that work with various IoT technologies. Stay competitive in the fast-changing retail world.</p>
-                        </div>
-                    </div>
+            <div class="space-y-6">
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold text-xl leading-[125%]"
+                >
+                  Seamless POS System Integration
                 </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Integrate with POS systems to provide a comprehensive view of
+                  customer data, enhancing sales decision-making and improving
+                  the overall shopping experience.
+                </p>
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold text-xl leading-[125%]"
+                >
+                  Customizable Integration Builder
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Develop tailored integrations using a user-friendly visual
+                  interface to connect diverse retail technologies and
+                  standards.
+                </p>
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold text-xl leading-[125%]"
+                >
+                  Smart Retail Connectors
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Improve your retail operations with our user-friendly
+                  connectors that work with various IoT technologies. Stay
+                  competitive in the fast-changing retail world.
+                </p>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!----- End Integration Platform Sec ----->
-
 
     <!------ Enhance Your Retail Operations sec ------>
-    <section class="CTA_sec max-w-[1400px] w-[95%] mx-auto my-10 lg:my-20 px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-            <div class="fade-in text-center max-w-[800px] mx-auto">
-                <h2 class="mb-4 lg:mb-6 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">Enhance Your Retail Operations Transform your Retail Experience with our powerful low-code platform.</h2>
-                <p class="text-white/80 font-primary font-normal text-base lg:text-lg leading-[150%]">Use our strong tools for building apps, automating tasks, and managing data to improve and streamline your retail operations.</p>
-            </div>
+    <section
+      class="CTA_sec max-w-[1400px] w-[95%] mx-auto my-10 lg:my-20 px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover"
+    >
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+        <div class="fade-in text-center max-w-[800px] mx-auto">
+          <h2
+            class="mb-4 lg:mb-6 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+          >
+            Enhance Your Retail Operations Transform your Retail Experience with
+            our powerful low-code platform.
+          </h2>
+          <p
+            class="text-white/80 font-primary font-normal text-base lg:text-lg leading-[150%]"
+          >
+            Use our strong tools for building apps, automating tasks, and
+            managing data to improve and streamline your retail operations.
+          </p>
         </div>
+      </div>
 
-        <img src="assets/image/icon/ctaBanner-shape.png" class="animate-pulse absolute start-0 bottom-0 pointer-none select-none" alt="" width="150" height="150" loading="lazy">
-        <img src="assets/image/icon/ctaBanner-shape2.png" class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none" alt="" width="150" height="150" loading="lazy">
+      <img
+        src="assets/image/icon/ctaBanner-shape.png"
+        class="animate-pulse absolute start-0 bottom-0 pointer-none select-none"
+        alt=""
+        width="150"
+        height="150"
+        loading="lazy"
+      />
+      <img
+        src="assets/image/icon/ctaBanner-shape2.png"
+        class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
+        alt=""
+        width="150"
+        height="150"
+        loading="lazy"
+      />
     </section>
-    <!------ End Enhance Your Retail Operations sec ------>
-
 
     <!------ Workflow automation drives retail efficiency sec ------>
     <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in grid lg:grid-cols-2 gap-8 lg:gap-[66px] items-center">
-                <div class="">
-                    <h2 class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Workflow automation drives retail efficiency.</h2>
-                    <p class="lg:pe-10 text-description font-primary font-normal leading-[150%]">Get in touch to schedule a demo and see how retail workflow automation can simplify your operations and enhance efficiency.</p>
-                    <a href="/contact-us" class="mt-5 lg:mt-10 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Contact Us</a>
-                </div>
-                <div class="unifiedCommerce_sec_imgBox ourApproachImageBox relative rounded-2xl md:rounded-[20px] bg-white/25 grid place-items-center sm:ps-[26px] ps-5 sm:pt-[26px] pt-5 p-4 sm:pb-[41px] pb-6 overflow-hidden after:h-[25%]">
-                    <img src="assets/image/enterprise-ai/startDataJourney.png" class="h-full w-full object-cover" alt="Workflow automation for retail" width="500" height="400" loading="lazy">
-                    <div class="absolute top-0 end-0 w-[20%] h-full bg-[linear-gradient(90deg,_rgba(255,255,255,0)_5%,_#FFFFFF_70%,_#FFFFFF_100%)] pointer-events-none select-none"></div>
-                </div>
-            </div>
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="fade-in grid lg:grid-cols-2 gap-8 lg:gap-[66px] items-center"
+        >
+          <div class="">
+            <h2
+              class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Workflow automation drives retail efficiency.
+            </h2>
+            <p
+              class="lg:pe-10 text-description font-primary font-normal leading-[150%]"
+            >
+              Get in touch to schedule a demo and see how retail workflow
+              automation can simplify your operations and enhance efficiency.
+            </p>
+            <a
+              href="/contact-us"
+              class="mt-5 lg:mt-10 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+              >Contact Us</a
+            >
+          </div>
+          <div
+            class="unifiedCommerce_sec_imgBox ourApproachImageBox relative rounded-2xl md:rounded-[20px] bg-white/25 grid place-items-center sm:ps-[26px] ps-5 sm:pt-[26px] pt-5 p-4 sm:pb-[41px] pb-6 overflow-hidden after:h-[25%]"
+          >
+            <img
+              src="assets/image/enterprise-ai/startDataJourney.png"
+              class="h-full w-full object-cover"
+              alt="Workflow automation for retail"
+              width="500"
+              height="400"
+              loading="lazy"
+            />
+            <div
+              class="absolute top-0 end-0 w-[20%] h-full bg-[linear-gradient(90deg,_rgba(255,255,255,0)_5%,_#FFFFFF_70%,_#FFFFFF_100%)] pointer-events-none select-none"
+            ></div>
+          </div>
         </div>
+      </div>
     </section>
-    <!------ End Workflow automation drives retail efficiency sec ------>
-
-
 
     {{> footer}}
 
-
-    <!--+++++++ Script Start +++++++-->
-
-    <script type='module' src='assets/script/main.js'></script>
-</body>
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
 </html>

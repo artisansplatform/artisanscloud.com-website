@@ -1,523 +1,1255 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <title>Merchandise & Assortment Planning | Artisans Cloud</title>
-    <link rel="canonical" href="https://www.artisanscloud.com/merchandise-and-assortment-planning" />
-    <meta name="description"
-        content="Transform retail with precision assortment and merchandise planning. Deliver the right products, drive growth, and enhance customer experience with data-driven insights and intelligent Open-to-Buy planning.">
-    <meta name="keywords"
-        content="Merchandise Planning, Assortment Planning, Open-to-Buy, OTB Planning, Retail Planning, Inventory Management, Product Mix Optimization, Supply Chain Planning, Artisans Cloud">
+    <link
+      rel="canonical"
+      href="https://www.artisanscloud.com/merchandise-and-assortment-planning"
+    />
+    <meta
+      name="description"
+      content="Transform retail with precision assortment and merchandise planning. Deliver the right products, drive growth, and enhance customer experience with data-driven insights and intelligent Open-to-Buy planning."
+    />
+    <meta
+      name="keywords"
+      content="Merchandise Planning, Assortment Planning, Open-to-Buy, OTB Planning, Retail Planning, Inventory Management, Product Mix Optimization, Supply Chain Planning, Artisans Cloud"
+    />
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:url" content="https://artisanscloud.com/merchandise-and-assortment-planning">
-    <meta property="og:title" content="Merchandise & Assortment Planning | Artisans Cloud">
-    <meta property="og:description"
-        content="Transform retail with precision assortment and merchandise planning. Data-driven insights to help retailers curate the perfect product mix and manage inventory levels efficiently.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/merchandise-and-assortment-planning.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta
+      property="og:url"
+      content="https://artisanscloud.com/merchandise-and-assortment-planning"
+    />
+    <meta
+      property="og:title"
+      content="Merchandise & Assortment Planning | Artisans Cloud"
+    />
+    <meta
+      property="og:description"
+      content="Transform retail with precision assortment and merchandise planning. Data-driven insights to help retailers curate the perfect product mix and manage inventory levels efficiently."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://www.artisanscloud.com/assets/og/merchandise-and-assortment-planning.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Font Family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="./assets/style/output.css">
-</head>
-<body>
-    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
+    <link rel="stylesheet" href="./assets/style/output.css" />
+  </head>
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
 
     {{> header}}
 
     <!----- Main Content ----->
     <main class="w-full">
-
-        <!----- Banner Sec ----->
-        <section class="w-full h-full p-4 lg:p-5">
-            <div class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/distributed-order-management/bannerBG.webp')] bg-no-repeat bg-cover bg-bottom-right">
-                <div class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] xl:pb-44 lg:pb-36 sm:pb-24">
-                    <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                        <div class="text-center lg:max-w-[900px] mx-auto">
-                            <h1 class="mb-6 lg:mb-[37px] font-primary font-semibold text-2xl sm:text-4xl lg:text-[44px] xl:text-[50px] text-heading leading-[120%]" id="heroHeading">Know What to Buy. How Much to Buy. Where to Place It.</h1>
-                            <div id="heroDec">
-                                <p class="text-base lg:text-lg text-description font-primary font-normal leading-[150%]">Integrate merchandise planning and assortment execution to maximize sell-through, reduce overstock, and drive profitable
-                                growth.</p>
-                                <a href="/contact-us" class="lg:mt-10 mt-6 mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Learn How</a>
-                            </div>
-                        </div>
-                    </div>
+      
+      <!----- Banner Sec ----->
+      <section class="w-full h-full p-4 lg:p-5">
+        <div
+          class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/distributed-order-management/bannerBG.webp')] bg-no-repeat bg-cover bg-bottom-right"
+        >
+          <div
+            class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] xl:pb-44 lg:pb-36 sm:pb-24"
+          >
+            <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+              <div class="text-center lg:max-w-[900px] mx-auto">
+                <h1
+                  class="mb-6 lg:mb-[37px] font-primary font-semibold text-2xl sm:text-4xl lg:text-[44px] xl:text-[50px] text-heading leading-[120%]"
+                  id="heroHeading"
+                >
+                  Know What to Buy. How Much to Buy. Where to Place It.
+                </h1>
+                <div id="heroDec">
+                  <p
+                    class="text-base lg:text-lg text-description font-primary font-normal leading-[150%]"
+                  >
+                    Integrate merchandise planning and assortment execution to
+                    maximize sell-through, reduce overstock, and drive
+                    profitable growth.
+                  </p>
+                  <a
+                    href="/contact-us"
+                    class="lg:mt-10 mt-6 mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                    >Learn How</a
+                  >
                 </div>
+              </div>
             </div>
-        </section>
-        <!----- End Banner Sec ----->
-
-        <!----- Comprehensive Merchandise Planning Sec ----->
-        <section class="lg:pt-[100px] lg:pb-10 md:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
-                    <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Comprehensive Merchandise Planning for Complex Retail Operations</div>
-                    <div class="">
-                        <p class="lg:pe-10 text-description font-primary font-normal leading-[150%]">Transform top-level goals into detailed, actionable merchandise plans. Any changes made at the store, department, promotion, or purchasing levels are automatically reflected in overall merchandise and financial plans. This gives a unified view with unmatched clarity. Our Open-to-Buy plan serves as a strategic guide for purchasing decisions, helping you manage inventory levels efficiently across all sales channels to maximize both profitability and inventory turnover.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!----- End Comprehensive Merchandise Planning Sec ----->
-
-
-        <!----- Stats Cards Sec ----->
-        <section class="lg:py-[90px] sm:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:gap-[30px] gap-5">
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/target-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Sales Performance icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Sales Performance Improvement</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Increase Sales by up to 25% with Optimized Assortments</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/intelligentCard-icon-1.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Inventory Turnover icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Inventory Turnover</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Reduce Overstock by 30% with Intelligent Assortment Planning</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/icon-ai.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Customer Satisfaction icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Customer Satisfaction</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Enhance Customer Satisfaction by 20% with the Right Product Mix</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/moduleCard-retailPLanning.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Reduction in Stockouts icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Reduction in Stockouts</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Reduce Stockouts by 40%</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/layers-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Product Availability icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Product Availability</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Ensure 98% Product Availability</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!----- End Stats Cards Sec ----->
-
-
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+          </div>
         </div>
-
-
-        <!----- Why Assortment Planning Sec ----->
-        <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
-                    <div class="lg:pe-10">
-                        <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-10">Why Assortment Planning is Key to Retail Success</div>
-                        <img src="assets/image/solutions/d2c-ecommerce/Supercharge-Your-Brand.svg" alt="Assortment Planning illustration showing retail optimization" class="max-w-full h-auto mx-auto lg:mx-0" width="500" height="400" loading="lazy">
-                    </div>
-                    <div class="">
-                        <div class="flex flex-col lg:gap-5 gap-5">
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Drive Revenue Growth</div>
-                                <p class="text-base text-description font-normal font-primary">Strategic assortment planning ensures that product mix aligns with customer preferences and purchasing trends. By offering right products at the right time, you boost sales, increase average transaction values, and drive overall revenue growth.</p>
-                            </div>
-
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Drive Strategic Decision-Making</div>
-                                <p class="text-base text-description font-normal font-primary">Leverage data-driven insights to make smarter business decisions. Assortment planning provides critical information about sales patterns, consumer behavior, and market trends, helping you make informed choices about product selections and promotional strategies.</p>
-                            </div>
-
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Focus on High-Performing Products</div>
-                                <p class="text-base text-description font-normal font-primary">Assortment planning allows you to identify and prioritize high-performing products. By optimizing your inventory based on sales performance, you can enhance sales efficiency and focus on items that drive revenue.</p>
-                            </div>
-
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Optimize Store Performance</div>
-                                <p class="text-base text-description font-normal font-primary">Tailored assortments for each store based on local market needs and demographics can significantly enhance store performance. By aligning product offerings with the specific preferences of customers in each location, you improve sales efficiency and boost store profitability.</p>
-                            </div>
-
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Reduce Wastage and Costs</div>
-                                <p class="text-base text-description font-normal font-primary">By optimizing your product mix and aligning inventory with actual demand, you can significantly reduce wastage and associated costs. Efficient assortment planning minimizes the risk of unsold stock and markdowns, contributing to a more sustainable and cost-effective retail operation.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!----- End Why Assortment Planning Sec ----->
-
-
+      </section>
+      
+      <!----- Comprehensive Merchandise Planning Sec ----->
+      <section class="lg:pt-[100px] lg:pb-10 md:py-16 py-10">
         <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+          <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
+            <div
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Comprehensive Merchandise Planning for Complex Retail Operations
+            </div>
+            <div class="">
+              <p
+                class="lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                Transform top-level goals into detailed, actionable merchandise
+                plans. Any changes made at the store, department, promotion, or
+                purchasing levels are automatically reflected in overall
+                merchandise and financial plans. This gives a unified view with
+                unmatched clarity. Our Open-to-Buy plan serves as a strategic
+                guide for purchasing decisions, helping you manage inventory
+                levels efficiently across all sales channels to maximize both
+                profitability and inventory turnover.
+              </p>
+            </div>
+          </div>
         </div>
+      </section>
 
-
-        <!----- Data-Driven Planning Sec ----->
-        <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="grid lg:grid-cols-2 lg:gap-12 gap-8 items-center">
-                    <div class="lg:pe-10">
-                        <div class="mb-4 lg:mb-6 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Drive Success in Every Category with Data-Driven Planning</div>
-                        <div class="flex flex-col gap-4">
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong class="text-heading">Review past performance and align it with strategic direction.</strong> Create a detailed open-to-buy plan by channel, ensuring transparency at every hierarchy level.</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong class="text-heading">Spot opportunities within categories to scale up or scale down,</strong> driven by trends and forecasts.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="assets/image/solutions/distributed-order-management/Achieve-Optimal-Efficiency.svg" alt="Data-Driven Planning illustration" class="max-w-full h-auto mx-auto lg:mx-0" width="500" height="400" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!----- End Data-Driven Planning Sec ----->
-
-
-        <!----- Enhance Purchasing Decisions Sec ----->
-        <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="grid lg:grid-cols-2 lg:gap-12 gap-8 items-center">
-                    <div class="order-2 lg:order-1">
-                        <img src="assets/image/solutions/customer-experience-management/unified-customoer-profile.svg" alt="Enhance Purchasing Decisions illustration" class="max-w-full h-auto mx-auto lg:mx-0" width="500" height="400" loading="lazy">
-                    </div>
-                    <div class="order-1 lg:order-2">
-                        <div class="mb-4 lg:mb-6 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Enhance Purchasing Decisions</div>
-                        <div class="flex flex-col gap-4">
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong class="text-heading">Integrate inventory strategy with sales objectives,</strong> whether for individual channels or across your entire retail operation, for enhanced flexibility and insight.</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong class="text-heading">Factor in markdowns and reductions directly</strong> into your inventory and purchasing plans.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!----- End Enhance Purchasing Decisions Sec ----->
-
-
+      <!----- Stats Cards Sec ----->
+      <section class="lg:py-[90px] sm:py-16 py-10">
         <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
-        </div>
-
-
-        <!----- Enhance Retail Success Sec ----->
-        <section class="lg:py-[100px] sm:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="fade-in text-center mb-10 lg:mb-16">
-                    <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4">Enhance Retail Success with Precision Assortment Planning</h2>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:gap-[30px] gap-5"
+          >
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/target-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Sales Performance icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Sales Performance Improvement
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8">
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Intelligent Demand Forecasting</div>
-                        <p class="text-base text-description font-normal font-primary">Accurately predict product demand.</p>
-                    </div>
-
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Flexible Store Clustering</div>
-                        <p class="text-base text-description font-normal font-primary">Group stores by performance, size, or location and more.</p>
-                    </div>
-
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Customizable Assortment Plans</div>
-                        <p class="text-base text-description font-normal font-primary">Create and adjust plans based on real-time data.</p>
-                    </div>
-
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Seamless Integration</div>
-                        <p class="text-base text-description font-normal font-primary">Works with existing retail systems and OTB plans.</p>
-                    </div>
-
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Data-Driven Decision Making</div>
-                        <p class="text-base text-description font-normal font-primary">Get insights to optimize inventory.</p>
-                    </div>
-                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Increase Sales by up to 25% with Optimized Assortments
+                </p>
+              </div>
             </div>
-        </section>
-        <!----- End Enhance Retail Success Sec ----->
 
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-1.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Inventory Turnover icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Inventory Turnover
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Reduce Overstock by 30% with Intelligent Assortment Planning
+                </p>
+              </div>
+            </div>
 
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/icon-ai.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Customer Satisfaction icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Customer Satisfaction
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Enhance Customer Satisfaction by 20% with the Right Product
+                  Mix
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/moduleCard-retailPLanning.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Reduction in Stockouts icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Reduction in Stockouts
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Reduce Stockouts by 40%
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/layers-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Product Availability icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Product Availability
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Ensure 98% Product Availability
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Why Assortment Planning Sec ----->
+      <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
         <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+          <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
+            <div class="lg:pe-10">
+              <div
+                class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-10"
+              >
+                Why Assortment Planning is Key to Retail Success
+              </div>
+              <img
+                src="assets/image/solutions/d2c-ecommerce/Supercharge-Your-Brand.svg"
+                alt="Assortment Planning illustration showing retail optimization"
+                class="max-w-full h-auto mx-auto lg:mx-0"
+                width="500"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+            <div class="">
+              <div class="flex flex-col lg:gap-5 gap-5">
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <div
+                    class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary"
+                  >
+                    Drive Revenue Growth
+                  </div>
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Strategic assortment planning ensures that product mix
+                    aligns with customer preferences and purchasing trends. By
+                    offering right products at the right time, you boost sales,
+                    increase average transaction values, and drive overall
+                    revenue growth.
+                  </p>
+                </div>
+
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <div
+                    class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary"
+                  >
+                    Drive Strategic Decision-Making
+                  </div>
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Leverage data-driven insights to make smarter business
+                    decisions. Assortment planning provides critical information
+                    about sales patterns, consumer behavior, and market trends,
+                    helping you make informed choices about product selections
+                    and promotional strategies.
+                  </p>
+                </div>
+
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <div
+                    class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary"
+                  >
+                    Focus on High-Performing Products
+                  </div>
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Assortment planning allows you to identify and prioritize
+                    high-performing products. By optimizing your inventory based
+                    on sales performance, you can enhance sales efficiency and
+                    focus on items that drive revenue.
+                  </p>
+                </div>
+
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <div
+                    class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary"
+                  >
+                    Optimize Store Performance
+                  </div>
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Tailored assortments for each store based on local market
+                    needs and demographics can significantly enhance store
+                    performance. By aligning product offerings with the specific
+                    preferences of customers in each location, you improve sales
+                    efficiency and boost store profitability.
+                  </p>
+                </div>
+
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <div
+                    class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary"
+                  >
+                    Reduce Wastage and Costs
+                  </div>
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    By optimizing your product mix and aligning inventory with
+                    actual demand, you can significantly reduce wastage and
+                    associated costs. Efficient assortment planning minimizes
+                    the risk of unsold stock and markdowns, contributing to a
+                    more sustainable and cost-effective retail operation.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
 
-        <!----- Increase Margins Sec ----->
-        <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="grid lg:grid-cols-2 lg:gap-12 gap-8 items-center">
-                    <div class="lg:pe-10">
-                        <div class="mb-4 lg:mb-6 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Increase Margins</div>
-                        <div class="flex flex-col gap-4">
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong class="text-heading">Maintain real-time visibility into key margin metrics</strong> for each channel and the entire business, ensuring your merchandise strategy aligns with profitability targets.</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong class="text-heading">Build detailed plans for promotional and permanent markdowns</strong> to sustain profitability.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="assets/image/solutions/customer-experience-management/Personalized-Omnichannel.svg" alt="Increase Margins illustration" class="max-w-full h-auto mx-auto lg:mx-0" width="500" height="400" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!----- End Increase Margins Sec ----->
-
-
-        <!----- Pre-season and In-Season Planning Sec ----->
-        <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="grid lg:grid-cols-2 lg:gap-12 gap-8 items-center">
-                    <div class="order-2 lg:order-1">
-                        <img src="assets/image/solutions/distributed-order-management/Infinite-Scale.svg" alt="Pre-season and In-Season Planning illustration" class="max-w-full h-auto mx-auto lg:mx-0" width="500" height="400" loading="lazy">
-                    </div>
-                    <div class="order-1 lg:order-2">
-                        <div class="mb-4 lg:mb-6 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Pre-season and In-Season Planning</div>
-                        <div class="flex flex-col gap-4">
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong class="text-heading">Streamline your planning process with powerful plan seeding tools</strong> and effortless integration with in-season data, minimizing manual intervention.</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong class="text-heading">Adapt your in-season open-to-buy strategy with ease,</strong> responding swiftly to evolving business conditions.</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong class="text-heading">Enterprise-level approval workflows:</strong> Multiple users, managers, and an efficient approval process.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!----- End Pre-season and In-Season Planning Sec ----->
-
-
+      <!----- Data-Driven Planning Sec ----->
+      <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
         <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+          <div class="grid lg:grid-cols-2 lg:gap-12 gap-8 items-center">
+            <div class="lg:pe-10">
+              <div
+                class="mb-4 lg:mb-6 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Drive Success in Every Category with Data-Driven Planning
+              </div>
+              <div class="flex flex-col gap-4">
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Review past performance and align it with strategic
+                      direction.</strong
+                    >
+                    Create a detailed open-to-buy plan by channel, ensuring
+                    transparency at every hierarchy level.
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Spot opportunities within categories to scale up or scale
+                      down,</strong
+                    >
+                    driven by trends and forecasts.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <img
+                src="assets/image/solutions/distributed-order-management/Achieve-Optimal-Efficiency.svg"
+                alt="Data-Driven Planning illustration"
+                class="max-w-full h-auto mx-auto lg:mx-0"
+                width="500"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
+      </section>
 
-
-        <!----- Impact Framework Sec ----->
-        <section class="lg:py-[100px] sm:py-16 py-10">
-            <div class="max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]">
-                <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-8">
-                        <div class="fade-in">
-                            <div class="lg:mb-8 mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">The right assortment planning tool helps with product selection, optimize inventory, and align with market trends for superior retail performance.</div>
-                            <p class="text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]">Reach out to explore how tailored assortment planning can refine your product mix and maximize your retail efficiency.</p>
-                        </div>
-                        <div class="fade-in">
-                            <ul class="flex flex-col lg:gap-7 gap-6">
-                                <li class="ps-5 border-s-4 border-primary">
-                                    <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">99.9% In-Stock Percentage</div>
-                                </li>
-                                <li class="ps-5 border-s-4 border-sky">
-                                    <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">50% Reduction in Lost Sales</div>
-                                </li>
-                                <li class="ps-5 border-s-4 border-pink">
-                                    <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">30% Reduction in Inventory Cost</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <img src="assets/image/icon/strategicOutcomeBanner-shape-1.svg" class="absolute select-none pointer-events-none start-0 bottom-0" alt="" width="150" height="150" loading="lazy">
-                <img src="assets/image/icon/strategicOutcomeBanner-shape-2.svg" class="absolute select-none pointer-events-none end-0 top-0" alt="" width="150" height="150" loading="lazy">
+      <!----- Enhance Purchasing Decisions Sec ----->
+      <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="grid lg:grid-cols-2 lg:gap-12 gap-8 items-center">
+            <div class="order-2 lg:order-1">
+              <img
+                src="assets/image/solutions/customer-experience-management/unified-customoer-profile.svg"
+                alt="Enhance Purchasing Decisions illustration"
+                class="max-w-full h-auto mx-auto lg:mx-0"
+                width="500"
+                height="400"
+                loading="lazy"
+              />
             </div>
-        </section>
-        <!----- End Impact Framework Sec ----->
-
-
-        <!----- Benefits Cards Sec ----->
-        <section class="lg:py-[90px] sm:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="fade-in lg:mb-10 mb-7 flex items-center gap-5 justify-between flex-nowrap">
-                    <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Benefits of Merchandise &amp; OTB Planning</h2>
-                    <div class="flex items-center justify-center gap-[clamp(0.5rem,1.111vw+0.167rem,1rem)]">
-                        <div class="swiper-button-prev swiper-button-prev-benefitsOTB after:hidden !static border border-heading rounded-full !w-8 !h-8  !m-0 transition-all duration-200 ease-linear cursor-pointer">
-                            <img src="assets/image/icon/rightArrowSwiper.svg" alt="Previous slide" width="24" height="24" loading="lazy" class="h-[70%] select-none rotate-180">
-                        </div>
-                        <div class="swiper-button-next swiper-button-next-benefitsOTB after:hidden !static border border-heading rounded-full !w-8 !h-8  !m-0 transition-all duration-200 ease-linear cursor-pointer">
-                            <img src="assets/image/icon/rightArrowSwiper.svg" alt="Next slide" width="24" height="24" loading="lazy" class="h-[70%] select-none">
-                        </div>
-                    </div>
+            <div class="order-1 lg:order-2">
+              <div
+                class="mb-4 lg:mb-6 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Enhance Purchasing Decisions
+              </div>
+              <div class="flex flex-col gap-4">
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Integrate inventory strategy with sales
+                      objectives,</strong
+                    >
+                    whether for individual channels or across your entire retail
+                    operation, for enhanced flexibility and insight.
+                  </p>
                 </div>
-
-                <div class="swiper benefitsOTBSlider">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide !h-auto">
-                            <div class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col">
-                                <div class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                                    <img src="assets/image/icon/layers-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Flexibility icon" width="40" height="40" loading="lazy">
-                                </div>
-                                <div>
-                                    <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Flexibility</div>
-                                    <p class="text-description font-primary font-normal leading-[150%]">Open-to-Buy planning empowers retailers to carefully manage inventory levels, striking the right balance between overstock and shortages. Achieving this equilibrium minimizes markdowns and ensures retailers can capitalize on sales opportunities.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide !h-auto">
-                            <div class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col">
-                                <div class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                                    <img src="assets/image/icon/intelligentCard-icon-1.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Enhanced Cash Flow icon" width="40" height="40" loading="lazy">
-                                </div>
-                                <div>
-                                    <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Enhanced Cash Flow</div>
-                                    <p class="text-description font-primary font-normal leading-[150%]">By optimizing Open-to-Buy planning, businesses avoid locking up capital in excess inventory. This allows retailers to reallocate financial resources to other vital areas like marketing and business expansion.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide !h-auto">
-                            <div class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col">
-                                <div class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                                    <img src="assets/image/icon/target-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Increased Customer Satisfaction icon" width="40" height="40" loading="lazy">
-                                </div>
-                                <div>
-                                    <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Increased Customer Satisfaction</div>
-                                    <p class="text-description font-primary font-normal leading-[150%]">Open-to-Buy planning helps retailers consistently meet customer demand by ensuring products are readily available. This reliability strengthens customer loyalty and promotes repeat purchases, which are critical for growth in today's competitive retail environment.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide !h-auto">
-                            <div class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col">
-                                <div class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                                    <img src="assets/image/icon/bulb-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Enhanced Decision-Making icon" width="40" height="40" loading="lazy">
-                                </div>
-                                <div>
-                                    <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Enhanced Decision-Making</div>
-                                    <p class="text-description font-primary font-normal leading-[150%]">OTB provides retailers with a structured framework for inventory planning and purchasing decisions. This allows retailers to focus on products that align with sales targets, allowing for data-driven and informed choices.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide !h-auto">
-                            <div class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col">
-                                <div class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                                    <img src="assets/image/icon/intelligentCard-icon-2.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Increased Profitability icon" width="40" height="40" loading="lazy">
-                                </div>
-                                <div>
-                                    <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Increased Profitability</div>
-                                    <p class="text-description font-primary font-normal leading-[150%]">By optimizing inventory and reducing markdowns, retailers can improve profit margins. Proper use of OTB contributes to more efficient inventory turnover, which ultimately drives profitability.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Factor in markdowns and reductions directly</strong
+                    >
+                    into your inventory and purchasing plans.
+                  </p>
                 </div>
+              </div>
             </div>
-        </section>
-        <!----- End Benefits Cards Sec ----->
+          </div>
+        </div>
+      </section>
 
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
 
-        <!----- Transform Retail Sec ----->
-        <section class="lg:py-[90px] sm:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="grid grid-cols-1 max-w-[933px] w-full mx-auto text-center">
-                    <h4 class="fade-in mb-2.5 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Transform Retail with Precision Assortment Planning</h4>
-                    <h4 class="fade-in lg:mb-5 mb-4 text-heading font-primary font-semibold text-xl leading-[125%]">Deliver the Right Products, Drive Growth, and Enhance Customer Experience.</h4>
-                    <p class="fade-in font-primary font-normal text-base leading-[150%] text-description">Assortment Planning ensures that the right products are available at the right time and place. Our solution offers data-driven insights to help retailers curate the perfect product mix for every store, improving customer satisfaction and boosting profitability.</p>
-                </div>
+      <!----- Enhance Retail Success Sec ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              Enhance Retail Success with Precision Assortment Planning
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8">
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Intelligent Demand Forecasting
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                Accurately predict product demand.
+              </p>
             </div>
-        </section>
-        <!----- End Transform Retail Sec ----->
 
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Flexible Store Clustering
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                Group stores by performance, size, or location and more.
+              </p>
+            </div>
 
-        <!----- CTA Sec ----->
-        <section class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-                <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8 items-center">
-                    <div class="lg:max-w-[530px] w-full">
-                        <div class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">Schedule Live Demo and see how we can help you to Perfect Product Curation</div>
-                        <p class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]">Explore how data-driven insights and smart curation lead to exceptional product mixes tailored just for your needs. Don't just imagine the possibilities - experience them firsthand!</p>
-                        <p class="text-white/80 font-primary font-normal text-base leading-[150%]">Book a free demo. Learn how to increase efficiency, elevate productivity, and expand your business with smarter merchandise planning.</p>
-                        <a href="/request-demo" class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Book a 30 minutes Demo</a>
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Customizable Assortment Plans
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                Create and adjust plans based on real-time data.
+              </p>
+            </div>
+
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Seamless Integration
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                Works with existing retail systems and OTB plans.
+              </p>
+            </div>
+
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Data-Driven Decision Making
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                Get insights to optimize inventory.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Increase Margins Sec ----->
+      <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="grid lg:grid-cols-2 lg:gap-12 gap-8 items-center">
+            <div class="lg:pe-10">
+              <div
+                class="mb-4 lg:mb-6 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Increase Margins
+              </div>
+              <div class="flex flex-col gap-4">
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Maintain real-time visibility into key margin
+                      metrics</strong
+                    >
+                    for each channel and the entire business, ensuring your
+                    merchandise strategy aligns with profitability targets.
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Build detailed plans for promotional and permanent
+                      markdowns</strong
+                    >
+                    to sustain profitability.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <img
+                src="assets/image/solutions/customer-experience-management/Personalized-Omnichannel.svg"
+                alt="Increase Margins illustration"
+                class="max-w-full h-auto mx-auto lg:mx-0"
+                width="500"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Pre-season and In-Season Planning Sec ----->
+      <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="grid lg:grid-cols-2 lg:gap-12 gap-8 items-center">
+            <div class="order-2 lg:order-1">
+              <img
+                src="assets/image/solutions/distributed-order-management/Infinite-Scale.svg"
+                alt="Pre-season and In-Season Planning illustration"
+                class="max-w-full h-auto mx-auto lg:mx-0"
+                width="500"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+            <div class="order-1 lg:order-2">
+              <div
+                class="mb-4 lg:mb-6 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Pre-season and In-Season Planning
+              </div>
+              <div class="flex flex-col gap-4">
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Streamline your planning process with powerful plan
+                      seeding tools</strong
+                    >
+                    and effortless integration with in-season data, minimizing
+                    manual intervention.
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Adapt your in-season open-to-buy strategy with
+                      ease,</strong
+                    >
+                    responding swiftly to evolving business conditions.
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Enterprise-level approval workflows:</strong
+                    >
+                    Multiple users, managers, and an efficient approval process.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Impact Framework Sec ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div
+          class="max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]"
+        >
+          <div
+            class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10"
+          >
+            <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-8">
+              <div class="fade-in">
+                <div
+                  class="lg:mb-8 mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+                >
+                  The right assortment planning tool helps with product
+                  selection, optimize inventory, and align with market trends
+                  for superior retail performance.
+                </div>
+                <p
+                  class="text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]"
+                >
+                  Reach out to explore how tailored assortment planning can
+                  refine your product mix and maximize your retail efficiency.
+                </p>
+              </div>
+              <div class="fade-in">
+                <ul class="flex flex-col lg:gap-7 gap-6">
+                  <li class="ps-5 border-s-4 border-primary">
+                    <div
+                      class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1"
+                    >
+                      99.9% In-Stock Percentage
                     </div>
-                    <div class="rounded-[20px] overflow-hidden">
-                        <img src="assets/image/cta-driveSale.webp" class="w-full h-full object-cover object-top rounded-2xl sm:rounded-[20px]" alt="Merchandise Planning Demo" width="600" height="400" loading="lazy">
+                  </li>
+                  <li class="ps-5 border-s-4 border-sky">
+                    <div
+                      class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1"
+                    >
+                      50% Reduction in Lost Sales
                     </div>
-                </div>
+                  </li>
+                  <li class="ps-5 border-s-4 border-pink">
+                    <div
+                      class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1"
+                    >
+                      30% Reduction in Inventory Cost
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <img src="assets/image/icon/ctaBanner-shape.png" class="animate-pulse absolute start-0 bottom-0 pointer-none select-none" alt="" width="150" height="150" loading="lazy">
-            <img src="assets/image/icon/ctaBanner-shape2.png" class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none" alt="" width="150" height="150" loading="lazy">
-        </section>
-        <!----- End CTA Sec ----->
+          </div>
+          <img
+            src="assets/image/icon/strategicOutcomeBanner-shape-1.svg"
+            class="absolute select-none pointer-events-none start-0 bottom-0"
+            alt=""
+            width="150"
+            height="150"
+            loading="lazy"
+          />
+          <img
+            src="assets/image/icon/strategicOutcomeBanner-shape-2.svg"
+            class="absolute select-none pointer-events-none end-0 top-0"
+            alt=""
+            width="150"
+            height="150"
+            loading="lazy"
+          />
+        </div>
+      </section>
 
-
-        <!----- Bottom Text Sec ----->
-        <section class="lg:py-[100px] sm:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="fade-in text-center max-w-[900px] mx-auto">
-                    <div class="mb-4 lg:mb-6 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">The right open-to-buy solution can help to measure productivity, keep stock, provide recommendations, factor in market trends, trigger notifications and guide purchasing and markdown decisions.</div>
-                    <p class="mb-6 lg:mb-8 text-description font-primary font-normal text-base lg:text-lg leading-[150%]">Contact us to learn more about open-to-buy planning and how it can transform retail operations.</p>
-                    <a href="/contact-us" class="mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Contact Us</a>
-                </div>
+      <!----- Benefits Cards Sec ----->
+      <section class="lg:py-[90px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div
+            class="fade-in lg:mb-10 mb-7 flex items-center gap-5 justify-between flex-nowrap"
+          >
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Benefits of Merchandise &amp; OTB Planning
+            </h2>
+            <div
+              class="flex items-center justify-center gap-[clamp(0.5rem,1.111vw+0.167rem,1rem)]"
+            >
+              <div
+                class="swiper-button-prev swiper-button-prev-benefitsOTB after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer"
+              >
+                <img
+                  src="assets/image/icon/rightArrowSwiper.svg"
+                  alt="Previous slide"
+                  width="24"
+                  height="24"
+                  loading="lazy"
+                  class="h-[70%] select-none rotate-180"
+                />
+              </div>
+              <div
+                class="swiper-button-next swiper-button-next-benefitsOTB after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer"
+              >
+                <img
+                  src="assets/image/icon/rightArrowSwiper.svg"
+                  alt="Next slide"
+                  width="24"
+                  height="24"
+                  loading="lazy"
+                  class="h-[70%] select-none"
+                />
+              </div>
             </div>
-        </section>
-        <!----- End Bottom Text Sec ----->
+          </div>
 
+          <div class="swiper benefitsOTBSlider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide !h-auto">
+                <div
+                  class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col"
+                >
+                  <div
+                    class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                  >
+                    <img
+                      src="assets/image/icon/layers-icon.svg"
+                      class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                      alt="Flexibility icon"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                    >
+                      Flexibility
+                    </div>
+                    <p
+                      class="text-description font-primary font-normal leading-[150%]"
+                    >
+                      Open-to-Buy planning empowers retailers to carefully
+                      manage inventory levels, striking the right balance
+                      between overstock and shortages. Achieving this
+                      equilibrium minimizes markdowns and ensures retailers can
+                      capitalize on sales opportunities.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide !h-auto">
+                <div
+                  class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col"
+                >
+                  <div
+                    class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                  >
+                    <img
+                      src="assets/image/icon/intelligentCard-icon-1.svg"
+                      class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                      alt="Enhanced Cash Flow icon"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                    >
+                      Enhanced Cash Flow
+                    </div>
+                    <p
+                      class="text-description font-primary font-normal leading-[150%]"
+                    >
+                      By optimizing Open-to-Buy planning, businesses avoid
+                      locking up capital in excess inventory. This allows
+                      retailers to reallocate financial resources to other vital
+                      areas like marketing and business expansion.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide !h-auto">
+                <div
+                  class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col"
+                >
+                  <div
+                    class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                  >
+                    <img
+                      src="assets/image/icon/target-icon.svg"
+                      class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                      alt="Increased Customer Satisfaction icon"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                    >
+                      Increased Customer Satisfaction
+                    </div>
+                    <p
+                      class="text-description font-primary font-normal leading-[150%]"
+                    >
+                      Open-to-Buy planning helps retailers consistently meet
+                      customer demand by ensuring products are readily
+                      available. This reliability strengthens customer loyalty
+                      and promotes repeat purchases, which are critical for
+                      growth in today's competitive retail environment.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide !h-auto">
+                <div
+                  class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col"
+                >
+                  <div
+                    class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                  >
+                    <img
+                      src="assets/image/icon/bulb-icon.svg"
+                      class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                      alt="Enhanced Decision-Making icon"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                    >
+                      Enhanced Decision-Making
+                    </div>
+                    <p
+                      class="text-description font-primary font-normal leading-[150%]"
+                    >
+                      OTB provides retailers with a structured framework for
+                      inventory planning and purchasing decisions. This allows
+                      retailers to focus on products that align with sales
+                      targets, allowing for data-driven and informed choices.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide !h-auto">
+                <div
+                  class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col"
+                >
+                  <div
+                    class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                  >
+                    <img
+                      src="assets/image/icon/intelligentCard-icon-2.svg"
+                      class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                      alt="Increased Profitability icon"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                    >
+                      Increased Profitability
+                    </div>
+                    <p
+                      class="text-description font-primary font-normal leading-[150%]"
+                    >
+                      By optimizing inventory and reducing markdowns, retailers
+                      can improve profit margins. Proper use of OTB contributes
+                      to more efficient inventory turnover, which ultimately
+                      drives profitability.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Transform Retail Sec ----->
+      <section class="lg:py-[90px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div
+            class="grid grid-cols-1 max-w-[933px] w-full mx-auto text-center"
+          >
+            <h4
+              class="fade-in mb-2.5 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Transform Retail with Precision Assortment Planning
+            </h4>
+            <h4
+              class="fade-in lg:mb-5 mb-4 text-heading font-primary font-semibold text-xl leading-[125%]"
+            >
+              Deliver the Right Products, Drive Growth, and Enhance Customer
+              Experience.
+            </h4>
+            <p
+              class="fade-in font-primary font-normal text-base leading-[150%] text-description"
+            >
+              Assortment Planning ensures that the right products are available
+              at the right time and place. Our solution offers data-driven
+              insights to help retailers curate the perfect product mix for
+              every store, improving customer satisfaction and boosting
+              profitability.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!----- CTA Sec ----->
+      <section
+        class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover"
+      >
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+          <div
+            class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8 items-center"
+          >
+            <div class="lg:max-w-[530px] w-full">
+              <div
+                class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+              >
+                Schedule Live Demo and see how we can help you to Perfect
+                Product Curation
+              </div>
+              <p
+                class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]"
+              >
+                Explore how data-driven insights and smart curation lead to
+                exceptional product mixes tailored just for your needs. Don't
+                just imagine the possibilities - experience them firsthand!
+              </p>
+              <p
+                class="text-white/80 font-primary font-normal text-base leading-[150%]"
+              >
+                Book a free demo. Learn how to increase efficiency, elevate
+                productivity, and expand your business with smarter merchandise
+                planning.
+              </p>
+              <a
+                href="/request-demo"
+                class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >Book a 30 minutes Demo</a
+              >
+            </div>
+            <div class="rounded-[20px] overflow-hidden">
+              <img
+                src="assets/image/cta-driveSale.webp"
+                class="w-full h-full object-cover object-top rounded-2xl sm:rounded-[20px]"
+                alt="Merchandise Planning Demo"
+                width="600"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+        <img
+          src="assets/image/icon/ctaBanner-shape.png"
+          class="animate-pulse absolute start-0 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <img
+          src="assets/image/icon/ctaBanner-shape2.png"
+          class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+      </section>
+
+      <!----- Bottom Text Sec ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center max-w-[900px] mx-auto">
+            <div
+              class="mb-4 lg:mb-6 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              The right open-to-buy solution can help to measure productivity,
+              keep stock, provide recommendations, factor in market trends,
+              trigger notifications and guide purchasing and markdown decisions.
+            </div>
+            <p
+              class="mb-6 lg:mb-8 text-description font-primary font-normal text-base lg:text-lg leading-[150%]"
+            >
+              Contact us to learn more about open-to-buy planning and how it can
+              transform retail operations.
+            </p>
+            <a
+              href="/contact-us"
+              class="mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </section>
     </main>
-
 
     {{> footer}}
 
-
-    <!--+++++++ Script Start +++++++-->
-
-    <script type='module' src='assets/script/main.js'></script>
-</body>
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
 </html>
