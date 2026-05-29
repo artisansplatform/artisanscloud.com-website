@@ -198,6 +198,11 @@ const PAGES = [
     title: 'Dynamic Pricing',
     subtitle: 'Set the Right Price at the Right Time',
   },
+  {
+    file: 'store-layout-optimization',
+    title: 'Store Layout\nOptimization',
+    subtitle: 'Place products where they sell best',
+  },
 ];
 
 // Read the dark logo SVG (for light backgrounds) and encode as data URI
