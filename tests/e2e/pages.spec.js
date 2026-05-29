@@ -79,6 +79,11 @@ const pages = [
     title: "Dynamic Pricing",
     name: "dynamic-pricing.html",
   },
+  {
+    path: "/store-layout-optimization",
+    title: "Store Layout Optimization",
+    name: "store-layout-optimization.html",
+  },
 ];
 
 test.describe("Page Load Tests", () => {
