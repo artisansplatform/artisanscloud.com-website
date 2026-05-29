@@ -1,664 +1,1062 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <title>AI Image Editing for Retail & E-commerce | Artisans Cloud</title>
     <link rel="canonical" href="https://www.artisanscloud.com/image-editing" />
-    <meta name="description"
-        content="Turn your products into visual masterpieces with AI-powered image editing. Remove backgrounds, add text, apply seasonal themes, and create stunning visuals in just a few clicks.">
-    <meta name="keywords"
-        content="AI image editing, product photography, e-commerce images, retail visuals, background removal, image enhancement, brand consistency, product image editing, Artisans Cloud">
+    <meta
+      name="description"
+      content="Turn your products into visual masterpieces with AI-powered image editing. Remove backgrounds, add text, apply seasonal themes, and create stunning visuals in just a few clicks."
+    />
+    <meta
+      name="keywords"
+      content="AI image editing, product photography, e-commerce images, retail visuals, background removal, image enhancement, brand consistency, product image editing, Artisans Cloud"
+    />
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:url" content="https://artisanscloud.com/image-editing">
-    <meta property="og:title" content="AI Image Editing for Retail & E-commerce | Artisans Cloud">
-    <meta property="og:description"
-        content="Turn your products into visual masterpieces with AI-powered image editing. Create professional visuals in just a few clicks.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/image-editing.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://artisanscloud.com/image-editing" />
+    <meta
+      property="og:title"
+      content="AI Image Editing for Retail & E-commerce | Artisans Cloud"
+    />
+    <meta
+      property="og:description"
+      content="Turn your products into visual masterpieces with AI-powered image editing. Create professional visuals in just a few clicks."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://www.artisanscloud.com/assets/og/image-editing.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Font Family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="./assets/style/output.css">
-</head>
+    <link rel="stylesheet" href="./assets/style/output.css" />
+  </head>
 
-<body>
-    <div id="cursor"
-        class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0">
-    </div>
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
 
     {{> header}}
 
     <!----- Banner Sec ----->
     <section class="w-full h-full p-4 lg:p-5">
-        <div
-            class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/data-intelligence/banner-BG.webp')] bg-no-repeat bg-cover">
-            <div class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24">
-                <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
-                    <div class="text-center lg:max-w-[850px] mx-auto">
-                        <h1
-                            class="font-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] lg:leading-[61px]">
-                            <span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]">Turn Your Products
-                                into</span><br>
-                            Visual Masterpieces -<br>
-                            Quick, Easy & Hassle-Free!
-                        </h1>
-                        <div id="heroDec">
-                            <p
-                                class="text-base lg:text-[20px] text-description font-primary font-normal leading-[150%]">
-                                Retail moves fast. Don't waste hours on complex tools or expensive agencies. Our
-                                image creation and editing solution helps you design professional visuals in just a
-                                few clicks - keeping your brand sharp and consistent.</p>
-                            <a href="/customer-experience-management"
-                                class="lg:mt-10 mt-6 mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Learn
-                                How</a>
-                        </div>
-                    </div>
-                </div>
+      <div
+        class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/data-intelligence/banner-BG.webp')] bg-no-repeat bg-cover"
+      >
+        <div class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24">
+          <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
+            <div class="text-center lg:max-w-[850px] mx-auto">
+              <h1
+                class="font-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] lg:leading-[61px]"
+              >
+                <span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]"
+                  >Turn Your Products into</span
+                ><br />
+                Visual Masterpieces -<br />
+                Quick, Easy & Hassle-Free!
+              </h1>
+              <div id="heroDec">
+                <p
+                  class="text-base lg:text-[20px] text-description font-primary font-normal leading-[150%]"
+                >
+                  Retail moves fast. Don't waste hours on complex tools or
+                  expensive agencies. Our image creation and editing solution
+                  helps you design professional visuals in just a few clicks -
+                  keeping your brand sharp and consistent.
+                </p>
+                <a
+                  href="/customer-experience-management"
+                  class="lg:mt-10 mt-6 mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                  >Learn How</a
+                >
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!----- End Banner Sec ----->
-
 
     <!----- Why Image Editing is a Headache Sec ----->
     <section class="py-10 md:py-20">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="text-center">
-                <h2
-                    class="fade-in lg:mb-5 mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
-                    Why Image Editing is a Headache for Retailers & E-commerce Owners</h2>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5 mt-8 lg:mt-[50px]">
-                <div
-                    class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div
-                        class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0">
-                        <img src="assets/image/icon/intelligentCard-icon-1.svg"
-                            class="h-1/2 transition-all ease-linear duration-300" alt="Multiple platforms icon"
-                            width="40" height="40" loading="lazy">
-                    </div>
-                    <div class="my-auto">
-                        <p class="text-heading font-primary font-normal leading-[150%]">Juggling multiple platforms for
-                            design</p>
-                    </div>
-                </div>
-                <div
-                    class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div
-                        class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0">
-                        <img src="assets/image/icon/intelligentCard-icon-2.svg"
-                            class="h-1/2 transition-all ease-linear duration-300" alt="No design team icon" width="40"
-                            height="40" loading="lazy">
-                    </div>
-                    <div class="my-auto">
-                        <p class="text-heading font-primary font-normal leading-[150%]">Lack of design expertise or a
-                            dedicated team</p>
-                    </div>
-                </div>
-                <div
-                    class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div
-                        class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0">
-                        <img src="assets/image/icon/intelligentCard-icon-3.svg"
-                            class="h-1/2 transition-all ease-linear duration-300" alt="Consistency icon" width="40"
-                            height="40" loading="lazy">
-                    </div>
-                    <div class="my-auto">
-                        <p class="text-heading font-primary font-normal leading-[150%]">Maintaining consistency across
-                            campaigns</p>
-                    </div>
-                </div>
-                <div
-                    class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div
-                        class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0">
-                        <img src="assets/image/icon/Predictive-icon.svg"
-                            class="h-1/2 transition-all ease-linear duration-300" alt="Compliance icon" width="40"
-                            height="40" loading="lazy">
-                    </div>
-                    <div class="my-auto">
-                        <p class="text-heading font-primary font-normal leading-[150%]">Compliance with marketplace
-                            image guidelines</p>
-                    </div>
-                </div>
-                <div
-                    class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div
-                        class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0">
-                        <img src="assets/image/icon/embeddedFramework-icon.svg"
-                            class="h-1/2 transition-all ease-linear duration-300" alt="Seasonal promotions icon"
-                            width="40" height="40" loading="lazy">
-                    </div>
-                    <div class="my-auto">
-                        <p class="text-heading font-primary font-normal leading-[150%]">Urgent seasonal and festive
-                            promotions</p>
-                    </div>
-                </div>
-            </div>
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="text-center">
+          <h2
+            class="fade-in lg:mb-5 mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Why Image Editing is a Headache for Retailers & E-commerce Owners
+          </h2>
         </div>
-    </section>
-    <!----- End Why Image Editing is a Headache Sec ----->
 
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5 mt-8 lg:mt-[50px]"
+        >
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/intelligentCard-icon-1.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Multiple platforms icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div class="my-auto">
+              <p class="text-heading font-primary font-normal leading-[150%]">
+                Juggling multiple platforms for design
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/intelligentCard-icon-2.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="No design team icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div class="my-auto">
+              <p class="text-heading font-primary font-normal leading-[150%]">
+                Lack of design expertise or a dedicated team
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/intelligentCard-icon-3.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Consistency icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div class="my-auto">
+              <p class="text-heading font-primary font-normal leading-[150%]">
+                Maintaining consistency across campaigns
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/Predictive-icon.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Compliance icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div class="my-auto">
+              <p class="text-heading font-primary font-normal leading-[150%]">
+                Compliance with marketplace image guidelines
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/embeddedFramework-icon.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Seasonal promotions icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div class="my-auto">
+              <p class="text-heading font-primary font-normal leading-[150%]">
+                Urgent seasonal and festive promotions
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
-
 
     <!----- One Tool Endless Possibilities Sec ----->
     <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in text-center mb-8 lg:mb-[60px]">
-                <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">One
-                    Tool. Endless Possibilities.</h2>
-                <p class="mt-4 text-description font-primary font-normal leading-[150%] max-w-[700px] mx-auto">With our
-                    AI-powered platform, you can:</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-[30px]">
-                <div
-                    class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                    <div
-                        class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/icon-ai.svg" class="h-1/2 transition-all ease-linear duration-300"
-                            alt="Background removal icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Remove or
-                            Replace Backgrounds</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Instantly remove or replace
-                            backgrounds for clean, professional product shots.</p>
-                    </div>
-                </div>
-                <div
-                    class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-                    <div
-                        class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/icon-conversational.svg"
-                            class="h-1/2 transition-all ease-linear duration-300" alt="Text overlay icon" width="40"
-                            height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Add Text Behind
-                            or Around Products</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Create professional depth
-                            with text overlays behind or around your products.</p>
-                    </div>
-                </div>
-                <div
-                    class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                    <div
-                        class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/artchitecHeightlight-card-setting.svg"
-                            class="h-1/2 transition-all ease-linear duration-300" alt="Seasonal themes icon" width="40"
-                            height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Apply Seasonal
-                            & Festive Themes</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Transform product images
-                            with seasonal and festive themes in seconds.</p>
-                    </div>
-                </div>
-                <div
-                    class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-right">
-                    <div
-                        class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/bulb-icon.svg" class="h-1/2 transition-all ease-linear duration-300"
-                            alt="Lighting adjustments icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Shadows,
-                            Lighting & Color Corrections</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Add shadows, adjust lighting
-                            and correct colors for picture-perfect results.</p>
-                    </div>
-                </div>
-                <div
-                    class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                    <div
-                        class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/Predictive-icon.svg"
-                            class="h-1/2 transition-all ease-linear duration-300" alt="A/B testing icon" width="40"
-                            height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Generate
-                            Multiple Variations</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Create multiple image
-                            variations for effective A/B testing across campaigns.</p>
-                    </div>
-                </div>
-                <div
-                    class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-                    <div
-                        class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/icon-StrategicAlignment.svg"
-                            class="h-1/2 transition-all ease-linear duration-300" alt="Banner creation icon" width="40"
-                            height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Create Banners,
-                            Social Posts & Graphics</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Design banner ads, social
-                            media posts, and promotional graphics effortlessly.</p>
-                    </div>
-                </div>
-                <div
-                    class="fade-in sm:col-span-2 lg:col-span-3 lg:max-w-[calc(33.333%-10px)] sm:max-w-[calc(50%-10px)] mx-auto w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                    <div
-                        class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/icon-ProductionFirstMindset.svg"
-                            class="h-1/2 transition-all ease-linear duration-300" alt="Brand consistency icon"
-                            width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Maintain Brand
-                            Consistency</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Keep your brand identity
-                            uniform and consistent across every image.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="fade-in mt-8 lg:mt-[50px] text-center">
-                <p
-                    class="text-heading font-primary font-semibold text-lg lg:text-xl leading-[150%] max-w-[800px] mx-auto">
-                    <span class="text-primary">In short:</span> If it's about making your product images look stunning,
-                    we can pretty much do everything!
-                </p>
-            </div>
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in text-center mb-8 lg:mb-[60px]">
+          <h2
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            One Tool. Endless Possibilities.
+          </h2>
+          <p
+            class="mt-4 text-description font-primary font-normal leading-[150%] max-w-[700px] mx-auto"
+          >
+            With our AI-powered platform, you can:
+          </p>
         </div>
-    </section>
-    <!----- End One Tool Endless Possibilities Sec ----->
 
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-[30px]"
+        >
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+          >
+            <div
+              class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/icon-ai.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Background removal icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Remove or Replace Backgrounds
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Instantly remove or replace backgrounds for clean, professional
+                product shots.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+          >
+            <div
+              class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/icon-conversational.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Text overlay icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Add Text Behind or Around Products
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Create professional depth with text overlays behind or around
+                your products.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+          >
+            <div
+              class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/artchitecHeightlight-card-setting.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Seasonal themes icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Apply Seasonal & Festive Themes
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Transform product images with seasonal and festive themes in
+                seconds.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-right"
+          >
+            <div
+              class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/bulb-icon.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Lighting adjustments icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Shadows, Lighting & Color Corrections
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Add shadows, adjust lighting and correct colors for
+                picture-perfect results.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+          >
+            <div
+              class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/Predictive-icon.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="A/B testing icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Generate Multiple Variations
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Create multiple image variations for effective A/B testing
+                across campaigns.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+          >
+            <div
+              class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/icon-StrategicAlignment.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Banner creation icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Create Banners, Social Posts & Graphics
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Design banner ads, social media posts, and promotional graphics
+                effortlessly.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in sm:col-span-2 lg:col-span-3 lg:max-w-[calc(33.333%-10px)] sm:max-w-[calc(50%-10px)] mx-auto w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+          >
+            <div
+              class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/icon-ProductionFirstMindset.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Brand consistency icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Maintain Brand Consistency
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Keep your brand identity uniform and consistent across every
+                image.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in mt-8 lg:mt-[50px] text-center">
+          <p
+            class="text-heading font-primary font-semibold text-lg lg:text-xl leading-[150%] max-w-[800px] mx-auto"
+          >
+            <span class="text-primary">In short:</span> If it's about making
+            your product images look stunning, we can pretty much do everything!
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!----- Ready to Create CTA Sec ----->
     <section
-        class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-buildTogether-BG.webp)] bg-no-repeat bg-top-left bg-cover">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-            <div class="fade-in lg:max-w-[800px] mx-auto w-full text-center">
-                <div
-                    class="lg:mb-[30px] mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">
-                    Ready to Create Stunning Product Images Instantly?</div>
-                <p class="text-white/80 font-primary font-normal leading-[150%]">Better images mean more sales. Start
-                    creating stunning visuals that boost conversions today.</p>
-                <div class="lg:mt-11 mt-8 flex items-center flex-wrap gap-2.5 justify-center">
-                    <a href="/contact-us"
-                        class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Schedule
-                        a Demo</a>
-                </div>
-            </div>
+      class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-buildTogether-BG.webp)] bg-no-repeat bg-top-left bg-cover"
+    >
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+        <div class="fade-in lg:max-w-[800px] mx-auto w-full text-center">
+          <div
+            class="lg:mb-[30px] mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+          >
+            Ready to Create Stunning Product Images Instantly?
+          </div>
+          <p class="text-white/80 font-primary font-normal leading-[150%]">
+            Better images mean more sales. Start creating stunning visuals that
+            boost conversions today.
+          </p>
+          <div
+            class="lg:mt-11 mt-8 flex items-center flex-wrap gap-2.5 justify-center"
+          >
+            <a
+              href="/contact-us"
+              class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+              >Schedule a Demo</a
+            >
+          </div>
         </div>
+      </div>
 
-        <img src="assets/image/icon/CTA-buildTogether-shape1.svg"
-            class="animate-pulse absolute -top-[10%] start-0 pointer-none select-none" alt="Decorative shape"
-            width="150" height="150" loading="lazy">
-        <img src="assets/image/icon/CTA-buildTogether-shape2.svg"
-            class="animate-pulse hidden md:block absolute top-0 -end-[10%] pointer-none select-none"
-            alt="Decorative shape" width="150" height="150" loading="lazy">
+      <img
+        src="assets/image/icon/CTA-buildTogether-shape1.svg"
+        class="animate-pulse absolute -top-[10%] start-0 pointer-none select-none"
+        alt="Decorative shape"
+        width="150"
+        height="150"
+        loading="lazy"
+      />
+      <img
+        src="assets/image/icon/CTA-buildTogether-shape2.svg"
+        class="animate-pulse hidden md:block absolute top-0 -end-[10%] pointer-none select-none"
+        alt="Decorative shape"
+        width="150"
+        height="150"
+        loading="lazy"
+      />
     </section>
-    <!----- End Ready to Create CTA Sec ----->
-
     <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
-
 
     <!----- Benefits Sec ----->
     <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in text-center mb-8 lg:mb-[60px]">
-                <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
-                    Benefits for Retailers & E-commerce Owners</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-5">
-                <div
-                    class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                        <div
-                            class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/intelligentAutomation-icon.svg"
-                                class="h-1/2 transition-all ease-linear duration-300" alt="Save time icon" width="40"
-                                height="40" loading="lazy">
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Save Time
-                        </div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Create ready-to-publish
-                            images in minutes</p>
-                    </div>
-                </div>
-                <div
-                    class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                        <div
-                            class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/icon-StrategicAlignment.svg"
-                                class="h-1/2 transition-all ease-linear duration-300" alt="Consistency icon" width="40"
-                                height="40" loading="lazy">
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Consistency
-                        </div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Maintain a uniform brand
-                            identity across all channels</p>
-                    </div>
-                </div>
-                <div
-                    class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                        <div
-                            class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/icon-AIEngineering.svg"
-                                class="h-1/2 transition-all ease-linear duration-300" alt="No design team needed icon"
-                                width="40" height="40" loading="lazy">
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">No Design
-                            Team Needed</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Easy for anyone to use</p>
-                    </div>
-                </div>
-                <div
-                    class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-right">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                        <div
-                            class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/predictive-commerce-icon.svg"
-                                class="h-1/2 transition-all ease-linear duration-300" alt="Sales boost icon" width="40"
-                                height="40" loading="lazy">
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Sales Boost
-                        </div>
-                        <p class="text-description font-primary font-normal leading-[150%]">High-quality visuals
-                            increase conversion rates</p>
-                    </div>
-                </div>
-            </div>
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in text-center mb-8 lg:mb-[60px]">
+          <h2
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Benefits for Retailers & E-commerce Owners
+          </h2>
         </div>
-    </section>
-    <!----- End Benefits Sec ----->
 
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-5">
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+          >
+            <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentAutomation-icon.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Save time icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div>
+              <div
+                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Save Time
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Create ready-to-publish images in minutes
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+          >
+            <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/icon-StrategicAlignment.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Consistency icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div>
+              <div
+                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Consistency
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Maintain a uniform brand identity across all channels
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+          >
+            <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/icon-AIEngineering.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="No design team needed icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div>
+              <div
+                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                No Design Team Needed
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Easy for anyone to use
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-right"
+          >
+            <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/predictive-commerce-icon.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Sales boost icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div>
+              <div
+                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Sales Boost
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                High-quality visuals increase conversion rates
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
-
 
     <!----- What Our Solution Can Do Sec ----->
     <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in text-center mb-8 lg:mb-[60px]">
-                <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">What
-                    Our Solution Can Do for You</h2>
-                <p class="mt-4 text-description font-primary font-normal leading-[150%] max-w-[700px] mx-auto">See the
-                    transformation from raw product shots to polished campaign-ready visuals.</p>
-            </div>
-
-            <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 md:gap-[30px]">
-                <article
-                    class="fade-in rounded-[24px] md:rounded-[30px] border border-[#d9e4f2] bg-white p-4 md:p-6 shadow-[0_20px_60px_rgba(20,37,63,0.08)]">
-                    <div class="flex flex-col gap-3 md:gap-4 mb-5 md:mb-6">
-                        <div>
-                            <p class="text-xs font-primary font-semibold uppercase tracking-[0.24em] text-primary">
-                                Comparison Pair 01</p>
-                            <h3
-                                class="mt-2 text-2xl md:text-[28px] text-heading font-primary font-semibold leading-[130%]">
-                                A Dress put on an American Model</h3>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-                        <figure class="overflow-hidden rounded-[20px] border border-[#d9e4f2] bg-[#f8fbff]">
-                            <div class="flex items-center justify-center border-b border-[#d9e4f2] bg-white px-4 py-3">
-                                <span
-                                    class="inline-flex rounded-full bg-heading px-3 py-1 text-xs font-primary font-semibold uppercase tracking-[0.12em] text-white">Before</span>
-                            </div>
-                            <div class="flex justify-center p-3 md:p-4">
-                                <img src="/assets/image/image-editing/before-01-display.webp"
-                                    alt="Before image showing the original black dress product shot on a plain background"
-                                    width="256" height="384" loading="lazy" decoding="async"
-                                    class="h-auto w-full max-w-[256px] rounded-2xl border border-[#e5edf6] bg-white shadow-[0_12px_30px_rgba(20,37,63,0.08)]">
-                            </div>
-                        </figure>
-
-                        <figure class="overflow-hidden rounded-[20px] border border-[#d9e4f2] bg-[#f8fbff]">
-                            <div class="flex items-center justify-center border-b border-[#d9e4f2] bg-white px-4 py-3">
-                                <span
-                                    class="inline-flex rounded-full bg-primary px-3 py-1 text-xs font-primary font-semibold uppercase tracking-[0.12em] text-white">After</span>
-                            </div>
-                            <div class="flex justify-center p-3 md:p-4">
-                                <img src="/assets/image/image-editing/after-01-display.webp"
-                                    alt="After image showing the black dress placed on a model in a lifestyle setting"
-                                    width="256" height="384" loading="lazy" decoding="async"
-                                    class="h-auto w-full max-w-[256px] rounded-2xl border border-[#e5edf6] bg-white shadow-[0_12px_30px_rgba(20,37,63,0.08)]">
-                            </div>
-                        </figure>
-                    </div>
-                </article>
-
-                <article
-                    class="fade-in rounded-[24px] md:rounded-[30px] border border-[#d9e4f2] bg-white p-4 md:p-6 shadow-[0_20px_60px_rgba(20,37,63,0.08)]">
-                    <div class="flex flex-col gap-3 md:gap-4 mb-5 md:mb-6">
-                        <div>
-                            <p class="text-xs font-primary font-semibold uppercase tracking-[0.24em] text-primary">
-                                Comparison Pair 02</p>
-                            <h3
-                                class="mt-2 text-2xl md:text-[28px] text-heading font-primary font-semibold leading-[130%]">
-                                Add text in background of any image</h3>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-                        <figure class="overflow-hidden rounded-[20px] border border-[#d9e4f2] bg-[#f8fbff]">
-                            <div class="flex items-center justify-center border-b border-[#d9e4f2] bg-white px-4 py-3">
-                                <span
-                                    class="inline-flex rounded-full bg-heading px-3 py-1 text-xs font-primary font-semibold uppercase tracking-[0.12em] text-white">Before</span>
-                            </div>
-                            <div class="flex justify-center p-3 md:p-4">
-                                <img src="/assets/image/image-editing/before-03-display.webp"
-                                    alt="Before image showing the model in a white dress photographed on a plain studio background"
-                                    width="256" height="384" loading="lazy" decoding="async"
-                                    class="h-auto w-full max-w-[256px] rounded-2xl border border-[#e5edf6] bg-white shadow-[0_12px_30px_rgba(20,37,63,0.08)]">
-                            </div>
-                        </figure>
-
-                        <figure class="overflow-hidden rounded-[20px] border border-[#d9e4f2] bg-[#f8fbff]">
-                            <div class="flex items-center justify-center border-b border-[#d9e4f2] bg-white px-4 py-3">
-                                <span
-                                    class="inline-flex rounded-full bg-primary px-3 py-1 text-xs font-primary font-semibold uppercase tracking-[0.12em] text-white">After</span>
-                            </div>
-                            <div class="flex justify-center p-3 md:p-4">
-                                <img src="/assets/image/image-editing/after-03-display.webp"
-                                    alt="After image showing the model in a white dress placed in a bright summer beach campaign scene"
-                                    width="256" height="384" loading="lazy" decoding="async"
-                                    class="h-auto w-full max-w-[256px] rounded-2xl border border-[#e5edf6] bg-white shadow-[0_12px_30px_rgba(20,37,63,0.08)]">
-                            </div>
-                        </figure>
-                    </div>
-                </article>
-            </div>
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in text-center mb-8 lg:mb-[60px]">
+          <h2
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            What Our Solution Can Do for You
+          </h2>
+          <p
+            class="mt-4 text-description font-primary font-normal leading-[150%] max-w-[700px] mx-auto"
+          >
+            See the transformation from raw product shots to polished
+            campaign-ready visuals.
+          </p>
         </div>
-    </section>
-    <!----- End What Our Solution Can Do Sec ----->
 
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 md:gap-[30px]">
+          <article
+            class="fade-in rounded-[24px] md:rounded-[30px] border border-[#d9e4f2] bg-white p-4 md:p-6 shadow-[0_20px_60px_rgba(20,37,63,0.08)]"
+          >
+            <div class="flex flex-col gap-3 md:gap-4 mb-5 md:mb-6">
+              <div>
+                <p
+                  class="text-xs font-primary font-semibold uppercase tracking-[0.24em] text-primary"
+                >
+                  Comparison Pair 01
+                </p>
+                <h3
+                  class="mt-2 text-2xl md:text-[28px] text-heading font-primary font-semibold leading-[130%]"
+                >
+                  A Dress put on an American Model
+                </h3>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+              <figure
+                class="overflow-hidden rounded-[20px] border border-[#d9e4f2] bg-[#f8fbff]"
+              >
+                <div
+                  class="flex items-center justify-center border-b border-[#d9e4f2] bg-white px-4 py-3"
+                >
+                  <span
+                    class="inline-flex rounded-full bg-heading px-3 py-1 text-xs font-primary font-semibold uppercase tracking-[0.12em] text-white"
+                    >Before</span
+                  >
+                </div>
+                <div class="flex justify-center p-3 md:p-4">
+                  <img
+                    src="/assets/image/image-editing/before-01-display.webp"
+                    alt="Before image showing the original black dress product shot on a plain background"
+                    width="256"
+                    height="384"
+                    loading="lazy"
+                    decoding="async"
+                    class="h-auto w-full max-w-[256px] rounded-2xl border border-[#e5edf6] bg-white shadow-[0_12px_30px_rgba(20,37,63,0.08)]"
+                  />
+                </div>
+              </figure>
+
+              <figure
+                class="overflow-hidden rounded-[20px] border border-[#d9e4f2] bg-[#f8fbff]"
+              >
+                <div
+                  class="flex items-center justify-center border-b border-[#d9e4f2] bg-white px-4 py-3"
+                >
+                  <span
+                    class="inline-flex rounded-full bg-primary px-3 py-1 text-xs font-primary font-semibold uppercase tracking-[0.12em] text-white"
+                    >After</span
+                  >
+                </div>
+                <div class="flex justify-center p-3 md:p-4">
+                  <img
+                    src="/assets/image/image-editing/after-01-display.webp"
+                    alt="After image showing the black dress placed on a model in a lifestyle setting"
+                    width="256"
+                    height="384"
+                    loading="lazy"
+                    decoding="async"
+                    class="h-auto w-full max-w-[256px] rounded-2xl border border-[#e5edf6] bg-white shadow-[0_12px_30px_rgba(20,37,63,0.08)]"
+                  />
+                </div>
+              </figure>
+            </div>
+          </article>
+
+          <article
+            class="fade-in rounded-[24px] md:rounded-[30px] border border-[#d9e4f2] bg-white p-4 md:p-6 shadow-[0_20px_60px_rgba(20,37,63,0.08)]"
+          >
+            <div class="flex flex-col gap-3 md:gap-4 mb-5 md:mb-6">
+              <div>
+                <p
+                  class="text-xs font-primary font-semibold uppercase tracking-[0.24em] text-primary"
+                >
+                  Comparison Pair 02
+                </p>
+                <h3
+                  class="mt-2 text-2xl md:text-[28px] text-heading font-primary font-semibold leading-[130%]"
+                >
+                  Add text in background of any image
+                </h3>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+              <figure
+                class="overflow-hidden rounded-[20px] border border-[#d9e4f2] bg-[#f8fbff]"
+              >
+                <div
+                  class="flex items-center justify-center border-b border-[#d9e4f2] bg-white px-4 py-3"
+                >
+                  <span
+                    class="inline-flex rounded-full bg-heading px-3 py-1 text-xs font-primary font-semibold uppercase tracking-[0.12em] text-white"
+                    >Before</span
+                  >
+                </div>
+                <div class="flex justify-center p-3 md:p-4">
+                  <img
+                    src="/assets/image/image-editing/before-03-display.webp"
+                    alt="Before image showing the model in a white dress photographed on a plain studio background"
+                    width="256"
+                    height="384"
+                    loading="lazy"
+                    decoding="async"
+                    class="h-auto w-full max-w-[256px] rounded-2xl border border-[#e5edf6] bg-white shadow-[0_12px_30px_rgba(20,37,63,0.08)]"
+                  />
+                </div>
+              </figure>
+
+              <figure
+                class="overflow-hidden rounded-[20px] border border-[#d9e4f2] bg-[#f8fbff]"
+              >
+                <div
+                  class="flex items-center justify-center border-b border-[#d9e4f2] bg-white px-4 py-3"
+                >
+                  <span
+                    class="inline-flex rounded-full bg-primary px-3 py-1 text-xs font-primary font-semibold uppercase tracking-[0.12em] text-white"
+                    >After</span
+                  >
+                </div>
+                <div class="flex justify-center p-3 md:p-4">
+                  <img
+                    src="/assets/image/image-editing/after-03-display.webp"
+                    alt="After image showing the model in a white dress placed in a bright summer beach campaign scene"
+                    width="256"
+                    height="384"
+                    loading="lazy"
+                    decoding="async"
+                    class="h-auto w-full max-w-[256px] rounded-2xl border border-[#e5edf6] bg-white shadow-[0_12px_30px_rgba(20,37,63,0.08)]"
+                  />
+                </div>
+              </figure>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
-
 
     <!----- Perfect For Sec ----->
     <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in text-center mb-8 lg:mb-[60px]">
-                <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
-                    Perfect For</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:gap-[30px] gap-5">
-                <div
-                    class="fade-in lg:py-8 py-6 lg:px-8 px-5 lg:rounded-[20px] rounded-2xl bg-light-pink border border-[#f2f2f2] text-center">
-                    <div
-                        class="mb-5 mx-auto max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/target-icon.svg"
-                            class="h-1/2 transition-all ease-linear duration-300" alt="Festive collections icon"
-                            width="40" height="40" loading="lazy">
-                    </div>
-                    <div class="text-heading font-primary font-semibold text-lg sm:text-xl leading-[125%]">Retailers
-                        promoting festive collections</div>
-                </div>
-                <div
-                    class="fade-in lg:py-8 py-6 lg:px-8 px-5 lg:rounded-[20px] rounded-2xl bg-light-green-box border border-[#f2f2f2] text-center">
-                    <div
-                        class="mb-5 mx-auto max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/layers-icon.svg"
-                            class="h-1/2 transition-all ease-linear duration-300" alt="Marketplaces icon" width="40"
-                            height="40" loading="lazy">
-                    </div>
-                    <div class="text-heading font-primary font-semibold text-lg sm:text-xl leading-[125%]">E-commerce
-                        sellers listing on multiple marketplaces</div>
-                </div>
-                <div
-                    class="fade-in lg:py-8 py-6 lg:px-8 px-5 lg:rounded-[20px] rounded-2xl bg-light-purple border border-[#f2f2f2] text-center">
-                    <div
-                        class="mb-5 mx-auto max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/customer-copilots-icon.svg"
-                            class="h-1/2 transition-all ease-linear duration-300" alt="D2C brands icon" width="40"
-                            height="40" loading="lazy">
-                    </div>
-                    <div class="text-heading font-primary font-semibold text-lg sm:text-xl leading-[125%]">D2C brands
-                        creating Instagram ads and stories</div>
-                </div>
-            </div>
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in text-center mb-8 lg:mb-[60px]">
+          <h2
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Perfect For
+          </h2>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:gap-[30px] gap-5">
+          <div
+            class="fade-in lg:py-8 py-6 lg:px-8 px-5 lg:rounded-[20px] rounded-2xl bg-light-pink border border-[#f2f2f2] text-center"
+          >
+            <div
+              class="mb-5 mx-auto max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/target-icon.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Festive collections icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="text-heading font-primary font-semibold text-lg sm:text-xl leading-[125%]"
+            >
+              Retailers promoting festive collections
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-8 py-6 lg:px-8 px-5 lg:rounded-[20px] rounded-2xl bg-light-green-box border border-[#f2f2f2] text-center"
+          >
+            <div
+              class="mb-5 mx-auto max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/layers-icon.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Marketplaces icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="text-heading font-primary font-semibold text-lg sm:text-xl leading-[125%]"
+            >
+              E-commerce sellers listing on multiple marketplaces
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-8 py-6 lg:px-8 px-5 lg:rounded-[20px] rounded-2xl bg-light-purple border border-[#f2f2f2] text-center"
+          >
+            <div
+              class="mb-5 mx-auto max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/customer-copilots-icon.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="D2C brands icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="text-heading font-primary font-semibold text-lg sm:text-xl leading-[125%]"
+            >
+              D2C brands creating Instagram ads and stories
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <!----- End Perfect For Sec ----->
-
-
-
-
 
     <!----- Above Footer Contact Sec ----->
     <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="max-w-[1280px] w-full px-4 xl:px-0 mx-auto">
-            <div
-                class="md:p-[30px] lg:ps-16 p-5 md:rounded-[20px] rounded-2xl overflow-hidden bg-[#DFF4FF] bg-[url(../../assets/image/solutions/distributed-order-management/Scale-Inventory-Order-BG.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                <div class="grid lg:grid-cols-2 xl:gap-14 lg:gap-10 gap-7">
-                    <div class="lg:pt-8 pt-2 xl:pe-20">
-                        <div
-                            class="lg:mb-[30px] mb-6 lg:text-[38px] sm:text-3xl text-2xl font-primary font-medium text-heading lg:leading-[54px] leading-[120%]">
-                            Transform Your <br class="hidden lg:block"> Product Images & <br class="hidden lg:block">
-                            Boost Your Brand</div>
-                        <p class="sm:mb-5 mb-4 text-description font-primary text-base font-normal"><span
-                                class="font-semibold text-heading">The right image editing solution</span> turns
-                            ordinary photos into extraordinary visuals - remove distractions, add creative text, apply
-                            seasonal themes, enhance lighting and colors, and make every image shine in just a few
-                            clicks.</p>
-                        <p class="text-description font-primary text-base font-normal">Ready to transform your product
-                            images and boost your brand presence? Talk to us now!</p>
-                    </div>
-                    <div class="bg-white lg:p-10 sm:p-7 p-5 md:rounded-[20px] rounded-xl">
-                        <form action="https://api.web3forms.com/submit" method="POST" class="w-full m-0">
-                            <input type="hidden" name="access_key" value="d082e756-9d9f-4750-bda0-10769f1253c6" />
-                            <input type="hidden" name="redirect" value="https://artisanscloud.com/thank-you" />
-                            <input type="checkbox" name="botcheck" style="display: none;" />
-                            <input type="hidden" name="subject" value="Image Editing AI inquiry" />
-                            <input type="hidden" name="interest" value="Image Editing AI" />
-                            <div class="lg:mb-6 mb-5 grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="first_name"
-                                        class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">First
-                                        Name</label>
-                                    <input type="text" id="first_name" name="first_name" placeholder="Enter First Name"
-                                        required
-                                        class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                                <div>
-                                    <label for="last_name"
-                                        class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Last
-                                        Name</label>
-                                    <input type="text" id="last_name" name="last_name" placeholder="Enter Last Name"
-                                        class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
-                                <div>
-                                    <label for="company_name"
-                                        class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Company
-                                        Name</label>
-                                    <input type="text" id="company_name" name="company_name"
-                                        placeholder="Enter Company Name" required
-                                        class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
-                                <div>
-                                    <label for="email"
-                                        class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Email
-                                        address</label>
-                                    <input type="email" id="email" name="email" placeholder="Enter email address"
-                                        required
-                                        class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
-                                <div>
-                                    <label for="phone_number"
-                                        class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Phone
-                                        Number</label>
-                                    <input type="tel" id="phone_number" name="phone_number"
-                                        placeholder="Enter phone number"
-                                        class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-
-                            <div class="mt-4 flex flex-wrap lg:flex-nowrap justify-between gap-6">
-                                <p
-                                    class="text-sm text-description font-primary font-normal lg:leading-[26px] leading-[160%]">
-                                    By submitting your information you agree with our <a href="/terms-and-conditions"
-                                        class="font-semibold inline-block underline">Terms of Use</a> and <a
-                                        href="/privacy-policy" class="font-semibold inline-block underline">Privacy
-                                        Policy</a>.</p>
-                                <button type="submit"
-                                    class="cursor-pointer w-fit h-fit rounded-[40px] sm:px-[40px] px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Contact
-                                    Us</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+      <div class="max-w-[1280px] w-full px-4 xl:px-0 mx-auto">
+        <div
+          class="md:p-[30px] lg:ps-16 p-5 md:rounded-[20px] rounded-2xl overflow-hidden bg-[#DFF4FF] bg-[url(../../assets/image/solutions/distributed-order-management/Scale-Inventory-Order-BG.svg)] bg-no-repeat bg-bottom-left bg-contain"
+        >
+          <div class="grid lg:grid-cols-2 xl:gap-14 lg:gap-10 gap-7">
+            <div class="lg:pt-8 pt-2 xl:pe-20">
+              <div
+                class="lg:mb-[30px] mb-6 lg:text-[38px] sm:text-3xl text-2xl font-primary font-medium text-heading lg:leading-[54px] leading-[120%]"
+              >
+                Transform Your <br class="hidden lg:block" />
+                Product Images & <br class="hidden lg:block" />
+                Boost Your Brand
+              </div>
+              <p
+                class="sm:mb-5 mb-4 text-description font-primary text-base font-normal"
+              >
+                <span class="font-semibold text-heading"
+                  >The right image editing solution</span
+                >
+                turns ordinary photos into extraordinary visuals - remove
+                distractions, add creative text, apply seasonal themes, enhance
+                lighting and colors, and make every image shine in just a few
+                clicks.
+              </p>
+              <p class="text-description font-primary text-base font-normal">
+                Ready to transform your product images and boost your brand
+                presence? Talk to us now!
+              </p>
             </div>
-        </div>
-    </section>
-    <!----- End Above Footer Contact Sec ----->
+            <div
+              class="bg-white lg:p-10 sm:p-7 p-5 md:rounded-[20px] rounded-xl"
+            >
+              <form
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                class="w-full m-0"
+              >
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="d082e756-9d9f-4750-bda0-10769f1253c6"
+                />
+                <input
+                  type="hidden"
+                  name="redirect"
+                  value="https://artisanscloud.com/thank-you"
+                />
+                <input type="checkbox" name="botcheck" style="display: none" />
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="Image Editing AI inquiry"
+                />
+                <input type="hidden" name="interest" value="Image Editing AI" />
+                <div class="lg:mb-6 mb-5 grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      for="first_name"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >First Name</label
+                    >
+                    <input
+                      type="text"
+                      id="first_name"
+                      name="first_name"
+                      placeholder="Enter First Name"
+                      required
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="last_name"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >Last Name</label
+                    >
+                    <input
+                      type="text"
+                      id="last_name"
+                      name="last_name"
+                      placeholder="Enter Last Name"
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                </div>
+                <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                  <div>
+                    <label
+                      for="company_name"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >Company Name</label
+                    >
+                    <input
+                      type="text"
+                      id="company_name"
+                      name="company_name"
+                      placeholder="Enter Company Name"
+                      required
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                </div>
+                <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                  <div>
+                    <label
+                      for="email"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >Email address</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Enter email address"
+                      required
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                </div>
+                <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                  <div>
+                    <label
+                      for="phone_number"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >Phone Number</label
+                    >
+                    <input
+                      type="tel"
+                      id="phone_number"
+                      name="phone_number"
+                      placeholder="Enter phone number"
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                </div>
 
+                <div
+                  class="mt-4 flex flex-wrap lg:flex-nowrap justify-between gap-6"
+                >
+                  <p
+                    class="text-sm text-description font-primary font-normal lg:leading-[26px] leading-[160%]"
+                  >
+                    By submitting your information you agree with our
+                    <a
+                      href="/terms-and-conditions"
+                      class="font-semibold inline-block underline"
+                      >Terms of Use</a
+                    >
+                    and
+                    <a
+                      href="/privacy-policy"
+                      class="font-semibold inline-block underline"
+                      >Privacy Policy</a
+                    >.
+                  </p>
+                  <button
+                    type="submit"
+                    class="cursor-pointer w-fit h-fit rounded-[40px] sm:px-[40px] px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                  >
+                    Contact Us
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     {{> footer}}
 
-
-    <!--+++++++ Script Start +++++++-->
-    <script type='module' src='assets/script/main.js'></script>
-</body>
-
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
 </html>
