@@ -72,6 +72,7 @@ const PAGE_META = {
   'demand-flow.html':                          { priority: '0.9', changefreq: 'monthly' },
   'dynamic-pricing.html':                      { priority: '0.7', changefreq: 'monthly' },
   'store-layout-optimization.html':            { priority: '0.7', changefreq: 'monthly' },
+  'fraud-detection.html':                      { priority: '0.7', changefreq: 'monthly' },
   'privacy-policy.html':                       { priority: '0.3', changefreq: 'yearly'  },
   'terms-and-conditions.html':                 { priority: '0.3', changefreq: 'yearly'  },
 };
