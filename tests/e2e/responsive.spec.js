@@ -15,6 +15,11 @@ const pagesToTest = [
   { path: "/about-us", name: "About Us" },
 ];
 
+async function waitForPageReady(page) {
+  await page.waitForLoadState("load");
+  await expect(page.locator("body")).toBeVisible();
+}
+
 test.describe("Responsive Layout Tests", () => {
   for (const viewport of viewports) {
     test.describe(`${viewport.name} Viewport (${viewport.width}x${viewport.height})`, () => {
@@ -36,6 +41,7 @@ test.describe("Responsive Layout Tests", () => {
           page: browserPage,
         }) => {
           await browserPage.goto(page.path);
+          await waitForPageReady(browserPage);
 
           // Check if page has horizontal scrollbar
           const hasHorizontalScroll = await browserPage.evaluate(() => {
@@ -53,8 +59,11 @@ test.describe("Responsive Layout Tests", () => {
         }) => {
           await browserPage.goto(page.path);
 
-          // Wait for page to be fully loaded
-          await browserPage.waitForLoadState("networkidle");
+          // Wait for page to be ready instead of relying on networkidle
+          await waitForPageReady(browserPage);
+
+          // Wait for critical headings to be visible
+          await expect(browserPage.locator("h1, h2").first()).toBeVisible();
 
           // Check that body has content
           const bodyText = await browserPage.locator("body").textContent();
