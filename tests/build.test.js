@@ -170,6 +170,14 @@ describe("Build Verification Tests", () => {
       );
     });
 
+    it("sitemap.xml should contain the fraud-detection page URL", () => {
+      const sitemapPath = path.join(distDir, "sitemap.xml");
+      const content = fs.readFileSync(sitemapPath, "utf-8");
+      expect(content).toContain(
+        "<loc>https://www.artisanscloud.com/fraud-detection</loc>",
+      );
+    });
+
     it("sitemap.xml should not contain excluded pages", () => {
       const sitemapPath = path.join(distDir, "sitemap.xml");
       const content = fs.readFileSync(sitemapPath, "utf-8");

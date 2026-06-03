@@ -1,0 +1,1009 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <title>Fraud Detection | Artisans Cloud</title>
+    <link
+      rel="canonical"
+      href="https://www.artisanscloud.com/fraud-detection"
+    />
+    <meta
+      name="description"
+      content="Fraudulent transactions can lead to financial losses, chargebacks, and customer trust issues. AI-powered Fraud Detection helps retailers identify unusual payment activity in real time."
+    />
+    <meta
+      name="keywords"
+      content="fraud detection, AI payment fraud, secure transactions, retail payment security, fraud prevention, Artisans Cloud"
+    />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:url"
+      content="https://artisanscloud.com/fraud-detection"
+    />
+    <meta property="og:title" content="Fraud Detection | Artisans Cloud" />
+    <meta
+      property="og:description"
+      content="Fraudulent transactions can lead to financial losses, chargebacks, and customer trust issues. AI-powered Fraud Detection helps retailers identify unusual payment activity in real time."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://www.artisanscloud.com/assets/og/fraud-detection.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/style/output.css" />
+  </head>
+
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
+
+    {{> header}}
+
+    <main class="w-full">
+      <!----- Banner Sec ----->
+      <section class="w-full h-full p-4 lg:p-5">
+        <div
+          class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/distributed-order-management/bannerBG.webp')] bg-no-repeat bg-cover"
+        >
+          <div
+            class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24"
+          >
+            <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
+              <div class="text-center lg:max-w-[850px] mx-auto">
+                <h1
+                  id="heroHeading"
+                  class="font-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] lg:leading-[61px]"
+                >
+                  <span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]"
+                    >Fraud Detection in Payments</span
+                  ><br />
+                  Spot Suspicious Transactions Before Losses Happen
+                </h1>
+                <div id="heroDec">
+                  <p
+                    class="text-base lg:text-[20px] text-description font-primary font-normal leading-[150%] mt-4"
+                  >
+                    Fraudulent transactions can lead to financial losses,
+                    chargebacks, and customer trust issues. AI-powered Fraud
+                    Detection helps retailers identify unusual payment activity
+                    in real time, reducing risk while keeping genuine
+                    transactions smooth and secure.
+                  </p>
+                  <div
+                    id="heroBtn"
+                    class="mt-7 mx-auto w-full flex justify-center"
+                  >
+                    <a
+                      href="/request-demo"
+                      class="mx-auto w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                    >
+                      Schedule a Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 1 ----->
+      <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="grid lg:grid-cols-2 lg:gap-12 gap-8 items-center">
+            <div class="lg:pe-10">
+              <img
+                src="assets/image/fraud-detection/artisanscloud-payment-fraud.webp"
+                alt="Fraud detection challenges illustration"
+                class="w-full h-auto mx-auto lg:mx-0"
+              />
+            </div>
+            <div class="">
+              <div
+                class="lg:mb-6 mb-4 lg:text-[36px] text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Why Payment Fraud is a Growing Challenge
+              </div>
+              <p
+                class="mb-6 lg:mb-8 text-description font-primary font-normal leading-[150%] text-lg"
+              >
+                Retailers process thousands of transactions every day, making it
+                difficult to manually identify suspicious activity.
+              </p>
+
+              <div
+                class="mb-4 text-xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Common challenges include:
+              </div>
+
+              <div class="flex flex-col lg:gap-4 gap-4 mb-6 lg:mb-8">
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt="Forward arrow icon"
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Stolen credit card transactions
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt="Forward arrow icon"
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Fake returns and refund fraud
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt="Forward arrow icon"
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Unusual high-value purchases
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt="Forward arrow icon"
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Multiple failed payment attempts
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt="Forward arrow icon"
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Fraudsters using compromised customer accounts
+                  </p>
+                </div>
+              </div>
+
+              <p
+                class="text-description font-primary font-normal leading-[150%] text-lg"
+              >
+                Without proactive monitoring,
+                <strong class="text-heading font-semibold"
+                  >fraudulent activity can lead to major financial and
+                  reputational losses.</strong
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Section 2 ----->
+      <section class="lg:py-[100px] sm:py-16 py-10 bg-[#f6f8fb]">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="text-center mb-8 lg:mb-10">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              A Smarter Way to Detect Fraud
+            </h2>
+            <p
+              class="text-description font-primary font-normal leading-[150%] max-w-[800px] mx-auto text-lg"
+            >
+              AI-powered Fraud Detection continuously analyzes transaction
+              patterns to identify suspicious behavior instantly.
+            </p>
+          </div>
+
+          <div
+            class="mb-6 lg:mb-8 text-heading font-primary font-semibold text-xl text-center"
+          >
+            With AI-driven monitoring, you can:
+          </div>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 max-w-[900px] mx-auto"
+          >
+            <div
+              class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <p class="text-heading font-primary font-medium text-base">
+                Detect unusual purchasing behavior in real time
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <p class="text-heading font-primary font-medium text-base">
+                Identify suspicious payment patterns automatically
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <p class="text-heading font-primary font-medium text-base">
+                Flag high-risk transactions instantly
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <p class="text-heading font-primary font-medium text-base">
+                Reduce fake returns and refund abuse
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <p class="text-heading font-primary font-medium text-base">
+                Prevent fraudulent high-value purchases
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <p class="text-heading font-primary font-medium text-base">
+                Minimize chargebacks and payment disputes
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300 md:col-span-2 mx-auto w-full md:w-[calc(50%-0.75rem)]"
+            >
+              <div
+                class="min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <p class="text-heading font-primary font-medium text-base">
+                Improve payment security without slowing genuine customers
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-10 lg:mt-14 text-center">
+            <p
+              class="text-description font-primary font-normal leading-[150%] text-lg bg-white inline-block px-8 py-4 rounded-full border border-[#e5e7eb] shadow-sm"
+            >
+              <strong class="text-heading font-semibold">In short:</strong> AI
+              helps retailers
+              <strong class="text-heading font-semibold"
+                >detect fraud early and protect both revenue and
+                customers.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 3 ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              Benefits for Retailers
+            </h2>
+          </div>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-[30px] gap-5"
+          >
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col justify-center items-center text-center"
+            >
+              <div
+                class="mb-4 sm:mb-6 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/target-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Revenue protection icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]"
+              >
+                Protects revenue from fraudulent transactions
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col justify-center items-center text-center"
+            >
+              <div
+                class="mb-4 sm:mb-6 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-1.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Reduce chargebacks icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]"
+              >
+                Reduces chargebacks and financial losses
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col justify-center items-center text-center"
+            >
+              <div
+                class="mb-4 sm:mb-6 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/bulb-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Secure accounts icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]"
+              >
+                Keeps customer accounts and payments secure
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col justify-center items-center text-center"
+            >
+              <div
+                class="mb-4 sm:mb-6 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/icon-ai.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Faster detection icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]"
+              >
+                Detects suspicious activity faster
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#fff9ed] border border-[#f2f2f2] flex flex-col justify-center items-center text-center"
+            >
+              <div
+                class="mb-4 sm:mb-6 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/layers-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Reduce manual effort icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]"
+              >
+                Reduces manual fraud review effort
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#f0f9f4] border border-[#f2f2f2] flex flex-col justify-center items-center text-center"
+            >
+              <div
+                class="mb-4 sm:mb-6 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-setting.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Build trust icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]"
+              >
+                Builds customer trust and confidence
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Section 4 ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-8 lg:mb-[60px]">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Fraud Detection in Action
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-5">
+            <!-- Example 1 -->
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/intelligentCard-icon-1.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Stolen card icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Stolen Card Activity
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  A stolen card is suddenly used to purchase
+                  <strong class="text-heading"
+                    >20 high-value electronics items</strong
+                  >.
+                </p>
+                <p
+                  class="text-description font-primary font-normal leading-[150%] mt-2"
+                >
+                  AI flags and blocks the transaction immediately.
+                </p>
+              </div>
+            </div>
+
+            <!-- Example 2 -->
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/vision-icon.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Unusual purchase icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Unusual Purchase Pattern
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  A customer account that usually buys low-cost items suddenly
+                  places a large luxury order.
+                </p>
+                <p
+                  class="text-description font-primary font-normal leading-[150%] mt-2"
+                >
+                  AI detects the unusual behavior and triggers a verification
+                  step.
+                </p>
+              </div>
+            </div>
+
+            <!-- Example 3 -->
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/target-icon.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Failed payment icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Multiple Failed Payment Attempts
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  A user repeatedly enters different card details within
+                  minutes.
+                </p>
+                <p
+                  class="text-description font-primary font-normal leading-[150%] mt-2"
+                >
+                  AI identifies the suspicious pattern and temporarily blocks
+                  the activity.
+                </p>
+              </div>
+            </div>
+
+            <!-- Example 4 -->
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/moduleCard-productMgmt.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Fake return icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Fake Return Detection
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  A customer repeatedly requests refunds for expensive products.
+                </p>
+                <p
+                  class="text-description font-primary font-normal leading-[150%] mt-2"
+                >
+                  AI recognizes the abnormal return behavior and alerts the
+                  fraud team.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Section 5 ----->
+      <section class="lg:py-[50px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <h2
+            class="fade-in mb-10 md:mb-16 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] text-center"
+          >
+            Where Fraud Detection Helps Most
+          </h2>
+
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 lg:gap-10 gap-5"
+          >
+            <div class="fade-in text-center">
+              <div
+                class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-pink"
+              >
+                <img
+                  src="assets/image/icon/moduleCard-productMgmt.svg"
+                  class="h-1/2"
+                  alt="E-commerce retailers icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <p
+                class="text-heading font-primary font-medium text-sm sm:text-base"
+              >
+                E-commerce retailers
+              </p>
+            </div>
+
+            <div class="fade-in text-center">
+              <div
+                class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-green-box"
+              >
+                <img
+                  src="assets/image/icon/layers-icon.svg"
+                  class="h-1/2"
+                  alt="Online marketplaces icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <p
+                class="text-heading font-primary font-medium text-sm sm:text-base"
+              >
+                Online marketplaces
+              </p>
+            </div>
+
+            <div class="fade-in text-center">
+              <div
+                class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-purple"
+              >
+                <img
+                  src="assets/image/icon/Predictive-icon.svg"
+                  class="h-1/2"
+                  alt="High-value electronics retailers icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <p
+                class="text-heading font-primary font-medium text-sm sm:text-base"
+              >
+                High-value electronics retailers
+              </p>
+            </div>
+
+            <div class="fade-in text-center">
+              <div
+                class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-blue-box"
+              >
+                <img
+                  src="assets/image/icon/Cloud-hybridDeployments-icon.svg"
+                  class="h-1/2"
+                  alt="Fashion and luxury brands icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <p
+                class="text-heading font-primary font-medium text-sm sm:text-base"
+              >
+                Fashion and luxury brands
+              </p>
+            </div>
+
+            <div class="fade-in text-center col-span-2 sm:col-span-1">
+              <div
+                class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-sky"
+              >
+                <img
+                  src="assets/image/icon/customer-copilots-icon.svg"
+                  class="h-1/2"
+                  alt="Retailers handling large payment volumes icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <p
+                class="text-heading font-primary font-medium text-sm sm:text-base"
+              >
+                Retailers handling large payment volumes
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 6 ----->
+      <section
+        class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-16 mb-10 lg:mb-16 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover"
+      >
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+          <div
+            class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8 items-center"
+          >
+            <div class="lg:max-w-[530px] w-full">
+              <div
+                class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+              >
+                Ready to Make Payments Safer and Smarter?
+              </div>
+              <p
+                class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]"
+              >
+                AI-powered Fraud Detection helps retailers reduce financial
+                risk, prevent suspicious activity, and protect customer trust,
+                without disrupting the shopping experience.
+              </p>
+              <a
+                href="/request-demo"
+                class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+              >
+                Schedule a Demo
+              </a>
+            </div>
+            <div class="rounded-[20px] overflow-hidden hidden lg:block">
+              <div
+                class="w-full h-fit p-3 sm:p-5 bg-white/45 border border-white rounded-[20px] overflow-hidden"
+              >
+                <img
+                  src="assets/image/fraud-detection/artisanscloud-payments-safer-smarter.webp"
+                  class="w-full h-full object-cover object-top rounded-2xl sm:rounded-[20px] border border-white"
+                  alt="Fraud Detection Platform"
+                  width="700"
+                  height="380"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          src="assets/image/icon/ctaBanner-shape.png"
+          class="animate-pulse absolute start-0 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <img
+          src="assets/image/icon/ctaBanner-shape2.png"
+          class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+      </section>
+
+      <!----- Section 7 ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="fade-in max-w-[1240px] w-1/2 px-5 xl:px-3 mx-auto">
+          <div
+            class="fade-in grid lg:grid-cols-1 gap-8 lg:gap-[66px] items-center text-center"
+          >
+            <div>
+              <h2
+                class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                The Right Fraud Detection Solution
+              </h2>
+              <p
+                class="lg:pe-10 mb-4 text-description font-primary font-normal leading-[150%]"
+              >
+                <strong class="text-heading"
+                  >The right Fraud Detection solution</strong
+                >
+                monitors payment activity in real time, identifies suspicious
+                patterns, and helps retailers prevent fraud before losses occur,
+                creating safer and more secure shopping experiences.
+              </p>
+              <p
+                class="lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                Ready to strengthen your payment security with AI?
+              </p>
+              <div class="mt-5 lg:mt-10 flex flex-wrap justify-center gap-3">
+                <a
+                  href="/contact-us"
+                  class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >
+                  Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {{> footer}}
+
+    <!-- Scripts -->
+    <script type="module" src="./assets/script/main.js"></script>
+  </body>
+</html>
