@@ -1,602 +1,1093 @@
 <!doctype html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>Personalized Promotions | Artisans Cloud</title>
+    <link
+      rel="canonical"
+      href="https://www.artisanscloud.com/personalized-promotions"
+    />
+    <meta
+      name="description"
+      content="AI-powered Personalized Promotions help retailers deliver tailored offers based on customer preferences, behavior, and purchase history, boosting engagement while reducing unnecessary discounts."
+    />
+    <meta
+      name="keywords"
+      content="personalized promotions, AI promotions, targeted offers, retail promotions, customer engagement, discount optimization, loyalty marketing, Artisans Cloud"
+    />
 
-  <title>Personalized Promotions | Artisans Cloud</title>
-  <link rel="canonical" href="https://www.artisanscloud.com/personalized-promotions" />
-  <meta name="description"
-    content="AI-powered Personalized Promotions help retailers deliver tailored offers based on customer preferences, behavior, and purchase history, boosting engagement while reducing unnecessary discounts." />
-  <meta name="keywords"
-    content="personalized promotions, AI promotions, targeted offers, retail promotions, customer engagement, discount optimization, loyalty marketing, Artisans Cloud" />
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:url"
+      content="https://artisanscloud.com/personalized-promotions"
+    />
+    <meta
+      property="og:title"
+      content="Personalized Promotions | Artisans Cloud"
+    />
+    <meta
+      property="og:description"
+      content="Send the right offer to the right customer. AI-powered Personalized Promotions deliver tailored discounts based on customer preferences, behavior, and purchase history."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://www.artisanscloud.com/assets/og/personalized-promotions.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:url" content="https://artisanscloud.com/personalized-promotions" />
-  <meta property="og:title" content="Personalized Promotions | Artisans Cloud" />
-  <meta property="og:description"
-    content="Send the right offer to the right customer. AI-powered Personalized Promotions deliver tailored discounts based on customer preferences, behavior, and purchase history." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.artisanscloud.com/assets/og/personalized-promotions.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Font Family -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/style/output.css" />
+  </head>
 
-  <link rel="stylesheet" href="./assets/style/output.css" />
-</head>
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
 
-<body>
-  <div id="cursor"
-    class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
+    {{> header}}
 
-  {{> header}}
-
-  <main class="w-full">
-    <!----- Banner Sec ----->
-    <section class="w-full h-full p-4 lg:p-5">
-      <div
-        class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/distributed-order-management/bannerBG.webp')] bg-no-repeat bg-cover">
-        <div class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24">
-          <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
-            <div class="text-center lg:max-w-[850px] mx-auto">
-              <h1 id="heroHeading"
-                class="font-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] lg:leading-[61px]">
-                <span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]">Personalized Promotions:</span><br />
-                Send the Right Offer to the Right Customer
-              </h1>
-              <div id="heroDec">
-                <p class="text-base lg:text-[20px] text-description font-primary font-normal leading-[150%] mt-4">
-                  Not every customer responds to the same promotion. Generic
-                  discounts often fail to create excitement and can reduce
-                  profit margins. AI-powered Personalized Promotions help
-                  retailers deliver tailored offers based on customer
-                  preferences, behavior, and purchase history.
-                </p>
-                <div id="heroBtn" class="mt-7 mx-auto w-full flex justify-center">
-                  <a href="/request-demo"
-                    class="mx-auto w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">
-                    Schedule a Demo
-                  </a>
+    <main class="w-full">
+      <!----- Banner Sec ----->
+      <section class="w-full h-full p-4 lg:p-5">
+        <div
+          class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/distributed-order-management/bannerBG.webp')] bg-no-repeat bg-cover"
+        >
+          <div
+            class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24"
+          >
+            <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
+              <div class="text-center lg:max-w-[850px] mx-auto">
+                <h1
+                  id="heroHeading"
+                  class="font-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] lg:leading-[61px]"
+                >
+                  <span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]"
+                    >Personalized Promotions:</span
+                  ><br />
+                  Send the Right Offer to the Right Customer
+                </h1>
+                <div id="heroDec">
+                  <p
+                    class="text-base lg:text-[20px] text-description font-primary font-normal leading-[150%] mt-4"
+                  >
+                    Not every customer responds to the same promotion. Generic
+                    discounts often fail to create excitement and can reduce
+                    profit margins. AI-powered Personalized Promotions help
+                    retailers deliver tailored offers based on customer
+                    preferences, behavior, and purchase history.
+                  </p>
+                  <div
+                    id="heroBtn"
+                    class="mt-7 mx-auto w-full flex justify-center"
+                  >
+                    <a
+                      href="/request-demo"
+                      class="mx-auto w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                    >
+                      Schedule a Demo
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!----- Section 1: Why Generic Promotions Don't Always Work ----->
-    <!-- Design: personalized-recommendations.html Section 1 (2-col: large heading left, intro + bullets right) -->
-    <section class="lg:pt-[100px] lg:pb-10 md:py-16 py-10">
-      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
-          <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
-            Why Generic Promotions Don&rsquo;t Always Work
-          </div>
-          <div>
-            <p class="lg:pe-10 text-description font-primary font-normal leading-[150%]">
-              Many retailers send the same discounts to everyone, regardless
-              of customer interests or shopping habits.
-            </p>
-            <p class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]">
-              Common challenges include:
-            </p>
-            <ul class="mt-4 ps-5">
-              <li
-                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
-                Low engagement with broad promotions
-              </li>
-              <li
-                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
-                Discounts reaching uninterested customers
-              </li>
-              <li
-                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
-                Reduced profit margins from unnecessary offers
-              </li>
-              <li
-                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
-                Missed opportunities for targeted marketing
-              </li>
-              <li
-                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
-                Customers ignoring repetitive campaigns
-              </li>
-            </ul>
-            <p class="mt-5 lg:pe-10 text-description font-primary font-normal leading-[150%]">
-              Without personalization,
-              <strong class="text-heading">promotions may feel irrelevant and ineffective.</strong>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
-    </div>
-
-    <!----- Section 2: A Smarter Way to Engage Customers with Promotions ----->
-    <!-- Design: fraud-detection.html Section 2 (bg-[#f6f8fb], centered heading, white checkmark cards grid) -->
-    <section class="lg:py-[100px] sm:py-16 py-10 bg-[#f6f8fb]">
-      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="text-center mb-8 lg:mb-10">
-          <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4">
-            A Smarter Way to Engage Customers with Promotions
-          </h2>
-          <p class="text-description font-primary font-normal leading-[150%] max-w-[800px] mx-auto text-lg">
-            AI-powered Personalized Promotions analyze customer behavior and
-            shopping patterns to create targeted offers.
-          </p>
-        </div>
-
-        <div class="mb-6 lg:mb-8 text-heading font-primary font-semibold text-xl text-center">
-          With AI-driven promotions, you can:
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 max-w-[900px] mx-auto">
-          <div
-            class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300">
-            <div class="min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.6666 5.83337L7.49992 15L3.33325 10.8334" stroke="#8D68F6" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <p class="text-heading font-primary font-medium text-base">
-              Send personalized discounts based on purchase history
-            </p>
-          </div>
-          <div
-            class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300">
-            <div class="min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.6666 5.83337L7.49992 15L3.33325 10.8334" stroke="#8D68F6" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <p class="text-heading font-primary font-medium text-base">
-              Recommend offers tailored to customer preferences
-            </p>
-          </div>
-          <div
-            class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300">
-            <div class="min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.6666 5.83337L7.49992 15L3.33325 10.8334" stroke="#8D68F6" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <p class="text-heading font-primary font-medium text-base">
-              Target promotions by product interests
-            </p>
-          </div>
-          <div
-            class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300">
-            <div class="min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.6666 5.83337L7.49992 15L3.33325 10.8334" stroke="#8D68F6" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <p class="text-heading font-primary font-medium text-base">
-              Create location-based or seasonal offers
-            </p>
-          </div>
-          <div
-            class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300">
-            <div class="min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.6666 5.83337L7.49992 15L3.33325 10.8334" stroke="#8D68F6" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <p class="text-heading font-primary font-medium text-base">
-              Deliver timely promotions at the right moment
-            </p>
-          </div>
-          <div
-            class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300">
-            <div class="min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.6666 5.83337L7.49992 15L3.33325 10.8334" stroke="#8D68F6" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <p class="text-heading font-primary font-medium text-base">
-              Increase engagement with smarter campaigns
-            </p>
-          </div>
-          <div
-            class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300 md:col-span-2 mx-auto w-full md:w-[calc(50%-0.75rem)]">
-            <div class="min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.6666 5.83337L7.49992 15L3.33325 10.8334" stroke="#8D68F6" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <p class="text-heading font-primary font-medium text-base">
-              Reduce unnecessary blanket discounts
-            </p>
-          </div>
-        </div>
-
-        <div class="mt-10 lg:mt-14 text-center">
-          <p
-            class="text-description font-primary font-normal leading-[150%] text-lg bg-white inline-block px-8 py-4 rounded-full border border-[#e5e7eb] shadow-sm">
-            <strong class="text-heading font-semibold">In short:</strong> AI
-            helps retailers create
-            <strong class="text-heading font-semibold">offers customers actually want to use.</strong>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!----- Section 3: Benefits for Retailers ----->
-    <!-- Design: fraud-detection.html Section 3 (centered icon + title cards, 3-col grid, no description text) -->
-    <section class="lg:py-[100px] sm:py-16 py-10">
-      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="fade-in text-center mb-10 lg:mb-16">
-          <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4">
-            Benefits for Retailers
-          </h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-[30px] gap-5">
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col justify-center items-center text-center">
+      <!----- Section 1: Why Generic Promotions Don't Always Work ----->
+      <section class="lg:pt-[100px] lg:pb-10 md:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
             <div
-              class="mb-4 sm:mb-6 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-              <img src="assets/image/icon/target-icon.svg" class="h-1/2 transition-all ease-linear duration-300"
-                alt="Offer redemption icon" width="40" height="40" loading="lazy" />
-            </div>
-            <div class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]">
-              Increases offer redemption rates
-            </div>
-          </div>
-
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col justify-center items-center text-center">
-            <div
-              class="mb-4 sm:mb-6 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-              <img src="assets/image/icon/customer-copilots-icon.svg"
-                class="h-1/2 transition-all ease-linear duration-300" alt="Customer loyalty icon" width="40" height="40"
-                loading="lazy" />
-            </div>
-            <div class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]">
-              Builds customer loyalty
-            </div>
-          </div>
-
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col justify-center items-center text-center">
-            <div
-              class="mb-4 sm:mb-6 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-              <img src="assets/image/icon/intelligentCard-icon-1.svg"
-                class="h-1/2 transition-all ease-linear duration-300" alt="Avoid unnecessary discounts icon" width="40"
-                height="40" loading="lazy" />
-            </div>
-            <div class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]">
-              Avoids unnecessary discounts
-            </div>
-          </div>
-
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col justify-center items-center text-center">
-            <div
-              class="mb-4 sm:mb-6 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-              <img src="assets/image/icon/predictive-commerce-icon.svg"
-                class="h-1/2 transition-all ease-linear duration-300" alt="Campaign performance icon" width="40"
-                height="40" loading="lazy" />
-            </div>
-            <div class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]">
-              Improves campaign performance
-            </div>
-          </div>
-
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#fff9ed] border border-[#f2f2f2] flex flex-col justify-center items-center text-center">
-            <div
-              class="mb-4 sm:mb-6 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-              <img src="assets/image/icon/Predictive-icon.svg" class="h-1/2 transition-all ease-linear duration-300"
-                alt="Repeat purchases icon" width="40" height="40" loading="lazy" />
-            </div>
-            <div class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]">
-              Encourages repeat purchases
-            </div>
-          </div>
-
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#f0f9f4] border border-[#f2f2f2] flex flex-col justify-center items-center text-center">
-            <div
-              class="mb-4 sm:mb-6 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-              <img src="assets/image/icon/vision-icon.svg" class="h-1/2 transition-all ease-linear duration-300"
-                alt="Personalized shopping icon" width="40" height="40" loading="lazy" />
-            </div>
-            <div class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]">
-              Creates more personalized shopping experiences
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
-    </div>
-
-    <!----- Section 4: Personalized Promotions in Action ----->
-    <!-- Design: smarter-inventory-alerts.html Section 4 (numbered 2x2 colored cards with icon + number + title + description) -->
-    <section class="lg:py-[100px] sm:py-16 py-10">
-      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="fade-in text-center mb-8 lg:mb-[60px]">
-          <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
-            Personalized Promotions in Action
-          </h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-5">
-          <!-- Example 1: Favorite Drink Offer -->
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-            <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-              <div
-                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                <img src="assets/image/icon/customer-copilots-icon.svg"
-                  class="h-1/2 transition-all ease-linear duration-300" alt="Favorite drink offer icon" width="40"
-                  height="40" loading="lazy" />
-              </div>
-              <div
-                class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">
-                01
-              </div>
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Why Generic Promotions Don&rsquo;t Always Work
             </div>
             <div>
-              <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">
-                Favorite Drink Offer
-              </div>
-              <p class="text-description font-primary font-normal leading-[150%]">
-                A coffee shop identifies customers who regularly order
-                flavored drinks. AI sends a personalized coupon for an
-                <strong class="text-heading">&ldquo;extra caramel latte.&rdquo;</strong>
+              <p
+                class="lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                Many retailers send the same discounts to everyone, regardless
+                of customer interests or shopping habits.
               </p>
-            </div>
-          </div>
-
-          <!-- Example 2: Fashion Preferences -->
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-            <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-              <div
-                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                <img src="assets/image/icon/Cloud-hybridDeployments-icon.svg"
-                  class="h-1/2 transition-all ease-linear duration-300" alt="Fashion preferences icon" width="40"
-                  height="40" loading="lazy" />
-              </div>
-              <div
-                class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">
-                02
-              </div>
-            </div>
-            <div>
-              <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">
-                Fashion Preferences
-              </div>
-              <p class="text-description font-primary font-normal leading-[150%]">
-                A shopper frequently buys sportswear. AI sends a promotion
-                for
-                <strong class="text-heading">new activewear arrivals and running shoes.</strong>
+              <p
+                class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                Common challenges include:
               </p>
-            </div>
-          </div>
-
-          <!-- Example 3: Location-Based Promotions -->
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
-            <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-              <div
-                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                <img src="assets/image/icon/Predictive-icon.svg" class="h-1/2 transition-all ease-linear duration-300"
-                  alt="Location-based promotions icon" width="40" height="40" loading="lazy" />
-              </div>
-              <div
-                class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">
-                03
-              </div>
-            </div>
-            <div>
-              <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">
-                Location-Based Promotions
-              </div>
-              <p class="text-description font-primary font-normal leading-[150%]">
-                Customers in colder regions receive discounts on
-                <strong class="text-heading">winter jackets and boots</strong>,
-                while warmer regions see promotions for
-                <strong class="text-heading">light seasonal wear.</strong>
-              </p>
-            </div>
-          </div>
-
-          <!-- Example 4: Repeat Purchase Reminder -->
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain">
-            <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-              <div
-                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                <img src="assets/image/icon/intelligentCard-icon-1.svg"
-                  class="h-1/2 transition-all ease-linear duration-300" alt="Repeat purchase reminder icon" width="40"
-                  height="40" loading="lazy" />
-              </div>
-              <div
-                class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">
-                04
-              </div>
-            </div>
-            <div>
-              <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">
-                Repeat Purchase Reminder
-              </div>
-              <p class="text-description font-primary font-normal leading-[150%]">
-                A customer who regularly buys skincare products receives a
-                personalized offer when it&rsquo;s likely time to restock.
+              <ul class="mt-4 ps-5">
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Low engagement with broad promotions
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Discounts reaching uninterested customers
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Reduced profit margins from unnecessary offers
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Missed opportunities for targeted marketing
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Customers ignoring repetitive campaigns
+                </li>
+              </ul>
+              <p
+                class="mt-5 lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                Without personalization,
+                <strong class="text-heading"
+                  >promotions may feel irrelevant and ineffective.</strong
+                >
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
-    </div>
-
-    <!----- Section 5: Where Personalized Promotions Help Most ----->
-    <!-- Design: fraud-detection.html Section 5 (5-col grid of colored icon boxes with text below) -->
-    <section class="lg:py-[50px] sm:py-16 py-10">
       <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <h2
-          class="fade-in mb-10 md:mb-16 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] text-center">
-          Where Personalized Promotions Help Most
-        </h2>
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 lg:gap-10 gap-5">
-          <div class="fade-in text-center">
-            <div
-              class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-pink">
-              <img src="assets/image/icon/Cloud-hybridDeployments-icon.svg" class="h-1/2"
-                alt="Fashion and apparel retailers icon" width="40" height="40" loading="lazy" />
-            </div>
-            <p class="text-heading font-primary font-medium text-sm sm:text-base">
-              Fashion and apparel retailers
-            </p>
-          </div>
-
-          <div class="fade-in text-center">
-            <div
-              class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-green-box">
-              <img src="assets/image/icon/customer-copilots-icon.svg" class="h-1/2"
-                alt="Coffee shops and food chains icon" width="40" height="40" loading="lazy" />
-            </div>
-            <p class="text-heading font-primary font-medium text-sm sm:text-base">
-              Coffee shops and food chains
-            </p>
-          </div>
-
-          <div class="fade-in text-center">
-            <div
-              class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-purple">
-              <img src="assets/image/icon/vision-icon.svg" class="h-1/2" alt="Beauty and skincare brands icon"
-                width="40" height="40" loading="lazy" />
-            </div>
-            <p class="text-heading font-primary font-medium text-sm sm:text-base">
-              Beauty and skincare brands
-            </p>
-          </div>
-
-          <div class="fade-in text-center">
-            <div
-              class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-blue-box">
-              <img src="assets/image/icon/moduleCard-productMgmt.svg" class="h-1/2"
-                alt="Grocery and supermarket retailers icon" width="40" height="40" loading="lazy" />
-            </div>
-            <p class="text-heading font-primary font-medium text-sm sm:text-base">
-              Grocery and supermarket retailers
-            </p>
-          </div>
-
-          <div class="fade-in text-center col-span-2 sm:col-span-1">
-            <div
-              class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-sky">
-              <img src="assets/image/icon/layers-icon.svg" class="h-1/2"
-                alt="E-commerce businesses with loyalty programs icon" width="40" height="40" loading="lazy" />
-            </div>
-            <p class="text-heading font-primary font-medium text-sm sm:text-base">
-              E-commerce businesses with loyalty programs
-            </p>
-          </div>
-        </div>
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
       </div>
-    </section>
 
-    <!----- Section 6: Ready to Make Promotions More Personal? ----->
-    <!-- Design: personalized-recommendations.html Section 6 (centered CTA with Schedule a Demo button) -->
-    <section class="lg:py-[100px] sm:py-16 py-10">
-      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="fade-in grid lg:grid-cols-1 gap-8 lg:gap-[66px] items-center text-center">
-          <div>
+      <!----- Section 2: A Smarter Way to Engage Customers with Promotions ----->
+      <section class="lg:py-[100px] sm:py-16 py-10 bg-[#f6f8fb]">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="text-center mb-8 lg:mb-10">
             <h2
-              class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
-              Ready to Make Promotions<br class="hidden lg:block" />
-              More Personal?
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              A Smarter Way to Engage Customers with Promotions
             </h2>
-            <p class="text-description font-primary font-normal leading-[150%] max-w-[700px] mx-auto">
-              AI-powered Personalized Promotions help retailers deliver
-              smarter offers that customers are more likely to engage
-              with, improving loyalty, conversions, and campaign performance.
+            <p
+              class="text-description font-primary font-normal leading-[150%] max-w-[800px] mx-auto text-lg"
+            >
+              AI-powered Personalized Promotions analyze customer behavior and
+              shopping patterns to create targeted offers.
             </p>
-            <div class="mt-5 lg:mt-10 flex flex-wrap gap-3 justify-center">
-              <a href="/request-demo"
-                class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">
-                Schedule a Demo
-              </a>
-            </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!----- Section 7: Above-Footer CTA ----->
-    <section
-      class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover">
-      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-        <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8 items-center">
-          <div class="lg:max-w-[530px] w-full">
+          <div
+            class="mb-6 lg:mb-8 text-heading font-primary font-semibold text-xl text-center"
+          >
+            With AI-driven promotions, you can:
+          </div>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 max-w-[900px] mx-auto"
+          >
             <div
-              class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">
-              The Right Personalized Promotions Solution
+              class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="mt-1 min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p
+                  class="font-primary font-semibold text-heading text-base mb-1"
+                >
+                  Send personalized discounts
+                </p>
+                <p
+                  class="font-primary font-normal text-description text-sm leading-[150%]"
+                >
+                  Based on purchase history and shopping patterns
+                </p>
+              </div>
             </div>
-            <p class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]">
-              Helps retailers create targeted offers based on customer
-              preferences, shopping behavior, and purchase history, boosting
-              engagement while reducing unnecessary discounts.
-            </p>
-            <p class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]">
-              Ready to create promotions customers actually care about?
-            </p>
-            <a href="/contact-us"
-              class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Contact
-              Us</a>
+
+            <div
+              class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="mt-1 min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p
+                  class="font-primary font-semibold text-heading text-base mb-1"
+                >
+                  Recommend offers tailored to preferences
+                </p>
+                <p
+                  class="font-primary font-normal text-description text-sm leading-[150%]"
+                >
+                  Each customer sees offers that match their tastes
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="mt-1 min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p
+                  class="font-primary font-semibold text-heading text-base mb-1"
+                >
+                  Target promotions by product interests
+                </p>
+                <p
+                  class="font-primary font-normal text-description text-sm leading-[150%]"
+                >
+                  Segment customers by what they browse and buy
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="mt-1 min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p
+                  class="font-primary font-semibold text-heading text-base mb-1"
+                >
+                  Create location-based or seasonal offers
+                </p>
+                <p
+                  class="font-primary font-normal text-description text-sm leading-[150%]"
+                >
+                  Adapt promotions to region, weather, or time of year
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="mt-1 min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p
+                  class="font-primary font-semibold text-heading text-base mb-1"
+                >
+                  Deliver timely promotions at the right moment
+                </p>
+                <p
+                  class="font-primary font-normal text-description text-sm leading-[150%]"
+                >
+                  Triggered by real-time behavior and purchase timing
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="mt-1 min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p
+                  class="font-primary font-semibold text-heading text-base mb-1"
+                >
+                  Increase engagement with smarter campaigns
+                </p>
+                <p
+                  class="font-primary font-normal text-description text-sm leading-[150%]"
+                >
+                  Higher open and redemption rates than generic offers
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300 md:col-span-2 mx-auto w-full md:w-[calc(50%-0.75rem)]"
+            >
+              <div
+                class="mt-1 min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p
+                  class="font-primary font-semibold text-heading text-base mb-1"
+                >
+                  Reduce unnecessary blanket discounts
+                </p>
+                <p
+                  class="font-primary font-normal text-description text-sm leading-[150%]"
+                >
+                  Protect margins by targeting only interested buyers
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="rounded-[20px] overflow-hidden">
-            <div class="w-full h-fit p-3 sm:p-5 bg-white/45 border border-white rounded-[20px] overflow-hidden">
-              <img src="assets/image/personalized-promotions/artisanscloud-personalized-promotions.webp"
-                class="w-full h-full object-cover object-top rounded-2xl sm:rounded-[20px] border border-white"
-                alt="Personalized Promotions solution in action" width="700" height="380" loading="lazy" />
+
+          <div class="mt-10 lg:mt-14 text-center">
+            <p
+              class="text-description font-primary font-normal leading-[150%] text-lg bg-white inline-block px-8 py-4 rounded-full border border-[#e5e7eb] shadow-sm"
+            >
+              <strong class="text-heading font-semibold">In short:</strong> AI
+              helps retailers create
+              <strong class="text-heading font-semibold"
+                >offers customers actually want to use.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 3: Benefits for Retailers ----->
+      <section class="lg:py-[90px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              Benefits for Retailers
+            </h2>
+          </div>
+
+          <div
+            class="fade-in grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-[30px]"
+          >
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/target-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Offer redemption icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Increases offer redemption rates
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Customers are more likely to act on promotions that feel
+                  relevant to them
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/customer-copilots-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Customer loyalty icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Builds customer loyalty
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Personal touches make shoppers feel valued and more likely to
+                  return
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-1.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Avoid unnecessary discounts icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Avoids unnecessary discounts
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Target only customers who need an incentive, protecting profit
+                  margins
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/predictive-commerce-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Campaign performance icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Improves campaign performance
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Focused promotions deliver better ROI than broad
+                  mass-marketing campaigns
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#fff9ed] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/Predictive-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Repeat purchases icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Encourages repeat purchases
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Timely, personalized reminders give customers a reason to come
+                  back
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#f0f9f4] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/vision-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Personalized shopping icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Creates more personalized shopping experiences
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Every interaction feels tailored, making each visit more
+                  meaningful
+                </p>
+              </div>
             </div>
           </div>
         </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
       </div>
-      <img src="assets/image/icon/ctaBanner-shape.png"
-        class="animate-pulse absolute start-0 bottom-0 pointer-none select-none" alt="" width="150" height="150"
-        loading="lazy" />
-      <img src="assets/image/icon/ctaBanner-shape2.png"
-        class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none" alt=""
-        width="150" height="150" loading="lazy" />
-    </section>
-  </main>
 
-  {{> footer}}
+      <!----- Section 4: Personalized Promotions in Action ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-8 lg:mb-[60px]">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Personalized Promotions in Action
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-5">
+            <!-- Example 1: Favorite Drink Offer -->
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/customer-copilots-icon.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Favorite drink offer icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Favorite Drink Offer
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  A coffee shop identifies customers who regularly order
+                  flavored drinks. AI sends a personalized coupon for an
+                  <strong class="text-heading"
+                    >&ldquo;extra caramel latte.&rdquo;</strong
+                  >
+                </p>
+              </div>
+            </div>
 
-  <!-- Scripts -->
-  <script type="module" src="./assets/script/main.js"></script>
-</body>
+            <!-- Example 2: Fashion Preferences -->
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/Cloud-hybridDeployments-icon.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Fashion preferences icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Fashion Preferences
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  A shopper frequently buys sportswear. AI sends a promotion for
+                  <strong class="text-heading"
+                    >new activewear arrivals and running shoes.</strong
+                  >
+                </p>
+              </div>
+            </div>
 
+            <!-- Example 3: Location-Based Promotions -->
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/Predictive-icon.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Location-based promotions icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Location-Based Promotions
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Customers in colder regions receive discounts on
+                  <strong class="text-heading">winter jackets and boots</strong
+                  >, while warmer regions see promotions for
+                  <strong class="text-heading">light seasonal wear.</strong>
+                </p>
+              </div>
+            </div>
+
+            <!-- Example 4: Repeat Purchase Reminder -->
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/intelligentCard-icon-1.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Repeat purchase reminder icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Repeat Purchase Reminder
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  A customer who regularly buys skincare products receives a
+                  personalized offer when it&rsquo;s likely time to restock.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Section 5: Where Personalized Promotions Help Most ----->
+      <section class="lg:py-[90px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <h2
+            class="fade-in mb-10 md:mb-16 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] text-center"
+          >
+            Where Personalized Promotions Help Most
+          </h2>
+
+          <div
+            class="fade-in grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5"
+          >
+            <div
+              class="lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4"
+            >
+              <div
+                class="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 grid place-items-center rounded-[10px] bg-light-pink"
+              >
+                <img
+                  src="assets/image/icon/Cloud-hybridDeployments-icon.svg"
+                  class="h-1/2"
+                  alt="Fashion and apparel retailers icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-lg sm:text-xl text-heading font-primary font-semibold"
+                >
+                  Fashion and apparel retailers
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%] text-sm sm:text-base"
+                >
+                  Target style-conscious shoppers with preference-driven offers
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4"
+            >
+              <div
+                class="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 grid place-items-center rounded-[10px] bg-light-green-box"
+              >
+                <img
+                  src="assets/image/icon/customer-copilots-icon.svg"
+                  class="h-1/2"
+                  alt="Coffee shops and food chains icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-lg sm:text-xl text-heading font-primary font-semibold"
+                >
+                  Coffee shops and food chains
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%] text-sm sm:text-base"
+                >
+                  Send drink and meal promotions based on customers' order
+                  habits
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4"
+            >
+              <div
+                class="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 grid place-items-center rounded-[10px] bg-light-purple"
+              >
+                <img
+                  src="assets/image/icon/vision-icon.svg"
+                  class="h-1/2"
+                  alt="Beauty and skincare brands icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-lg sm:text-xl text-heading font-primary font-semibold"
+                >
+                  Beauty and skincare brands
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%] text-sm sm:text-base"
+                >
+                  Personalize offers based on skin type and product routines
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4"
+            >
+              <div
+                class="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 grid place-items-center rounded-[10px] bg-light-blue-box"
+              >
+                <img
+                  src="assets/image/icon/moduleCard-productMgmt.svg"
+                  class="h-1/2"
+                  alt="Grocery and supermarket retailers icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-lg sm:text-xl text-heading font-primary font-semibold"
+                >
+                  Grocery and supermarket retailers
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%] text-sm sm:text-base"
+                >
+                  Promote everyday items customers regularly restock
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="lg:col-span-2 mx-auto lg:w-1/2 lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 w-full lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4"
+            >
+              <div
+                class="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 grid place-items-center rounded-[10px] bg-light-sky"
+              >
+                <img
+                  src="assets/image/icon/layers-icon.svg"
+                  class="h-1/2"
+                  alt="E-commerce businesses with loyalty programs icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-lg sm:text-xl text-heading font-primary font-semibold"
+                >
+                  E-commerce businesses with loyalty programs
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%] text-sm sm:text-base"
+                >
+                  Reward loyal customers with tailored exclusive deals
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 7: Above-Footer CTA ----->
+      <section
+        class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover"
+      >
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+          <div
+            class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8 items-center"
+          >
+            <div class="lg:max-w-[530px] w-full">
+              <div
+                class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+              >
+                The Right Personalized Promotions Solution
+              </div>
+              <p
+                class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]"
+              >
+                Helps retailers create targeted offers based on customer
+                preferences, shopping behavior, and purchase history, boosting
+                engagement while reducing unnecessary discounts.
+              </p>
+              <p
+                class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]"
+              >
+                Ready to create promotions customers actually care about?
+              </p>
+              <a
+                href="/contact-us"
+                class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >Contact Us</a
+              >
+            </div>
+            <div class="rounded-[20px] overflow-hidden">
+              <div
+                class="w-full h-fit p-3 sm:p-5 bg-white/45 border border-white rounded-[20px] overflow-hidden"
+              >
+                <img
+                  src="assets/image/personalized-promotions/artisanscloud-personalized-promotions.webp"
+                  class="w-full h-full object-cover object-top rounded-2xl sm:rounded-[20px] border border-white"
+                  alt="Personalized Promotions solution in action"
+                  width="700"
+                  height="380"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          src="assets/image/icon/ctaBanner-shape.png"
+          class="animate-pulse absolute start-0 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <img
+          src="assets/image/icon/ctaBanner-shape2.png"
+          class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+      </section>
+
+      <!----- Section 6: Ready to Make Promotions More Personal? ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div
+            class="fade-in grid lg:grid-cols-1 gap-8 lg:gap-[66px] items-center text-center"
+          >
+            <div>
+              <h2
+                class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Ready to Make Promotions<br class="hidden lg:block" />
+                More Personal?
+              </h2>
+              <p
+                class="text-description font-primary font-normal leading-[150%] max-w-[700px] mx-auto"
+              >
+                AI-powered Personalized Promotions help retailers deliver
+                smarter offers that customers are more likely to engage with,
+                improving loyalty, conversions, and campaign performance.
+              </p>
+              <div class="mt-5 lg:mt-10 flex flex-wrap gap-3 justify-center">
+                <a
+                  href="/request-demo"
+                  class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >
+                  Schedule a Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {{> footer}}
+
+    <!-- Scripts -->
+    <script type="module" src="./assets/script/main.js"></script>
+  </body>
 </html>
