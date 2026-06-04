@@ -208,6 +208,11 @@ const PAGES = [
     title: 'Fraud Detection',
     subtitle: 'Make Payments Safer and Smarter',
   },
+  {
+    file: 'personalized-promotions',
+    title: 'Personalized\nPromotions',
+    subtitle: 'Send the right offer to the right customer',
+  },
 ];
 
 // Read the dark logo SVG (for light backgrounds) and encode as data URI

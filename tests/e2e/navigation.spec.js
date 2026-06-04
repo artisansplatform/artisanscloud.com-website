@@ -366,6 +366,45 @@ test.describe("Navigation Tests", () => {
     });
   });
 
+  test.describe("Retail AI Dropdown Links", () => {
+    test.use({ viewport: { width: 1280, height: 800 } });
+
+    test("desktop dropdown should contain Personalized Promotions link", async ({
+      page,
+    }) => {
+      await page.goto("/");
+
+      const link = page
+        .locator('header .dropdown-menu a[href="/personalized-promotions"]')
+        .first();
+      await expect(link).toHaveCount(1);
+      await expect(link).toHaveText("Personalized Promotions");
+    });
+
+    test("Personalized Promotions page should load and show hero heading", async ({
+      page,
+    }) => {
+      await page.goto("/personalized-promotions");
+
+      const heading = page.locator("#heroHeading");
+      await expect(heading).toBeVisible();
+    });
+
+    test("solutions dropdown toggle should be active on personalized-promotions page", async ({
+      page,
+    }) => {
+      await page.goto("/personalized-promotions");
+
+      const toggle = page.locator("header .dropdown-toggle.active");
+      await expect(toggle).toHaveCount(1);
+
+      const dropdownItem = page.locator(
+        'header .dropdown-item.active[href="/personalized-promotions"]',
+      );
+      await expect(dropdownItem).toHaveCount(1);
+    });
+  });
+
   test.describe("Redirects", () => {
     test("retail-platform should redirect to unified-commerce", async ({
       page,
