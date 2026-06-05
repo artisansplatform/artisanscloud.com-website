@@ -51,7 +51,7 @@ const PAGES = [
   {
     file: 'enterprise-ai',
     title: 'Enterprise AI',
-    subtitle: 'From strategy to production',
+    subtitle: 'Workforce readiness, knowledge and decision support',
   },
   {
     file: 'data-intelligence',
