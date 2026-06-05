@@ -100,8 +100,8 @@ const PAGES = [
   },
   {
     file: 'knowledge-harvester',
-    title: 'Knowledge Harvester',
-    subtitle: 'AI-powered knowledge capture',
+    title: 'Vault',
+    subtitle: 'Enterprise Knowledge Intelligence',
   },
   {
     file: 'merchandise-and-assortment-planning',
