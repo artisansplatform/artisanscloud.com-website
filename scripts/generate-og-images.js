@@ -51,7 +51,7 @@ const PAGES = [
   {
     file: 'enterprise-ai',
     title: 'Enterprise AI',
-    subtitle: 'From strategy to production',
+    subtitle: 'Workforce readiness, knowledge and decision support',
   },
   {
     file: 'data-intelligence',
@@ -100,8 +100,8 @@ const PAGES = [
   },
   {
     file: 'knowledge-harvester',
-    title: 'Knowledge Harvester',
-    subtitle: 'AI-powered knowledge capture',
+    title: 'Vault',
+    subtitle: 'Enterprise Knowledge Intelligence',
   },
   {
     file: 'merchandise-and-assortment-planning',
