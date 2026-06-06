@@ -199,6 +199,11 @@ const PAGES = [
     subtitle: 'Set the Right Price at the Right Time',
   },
   {
+    file: 'open-to-buy-planning',
+    title: 'Open-to-Buy (OTB)\nPlanning',
+    subtitle: 'Smarter Buying Decisions Powered by AI',
+  },
+  {
     file: 'store-layout-optimization',
     title: 'Store Layout\nOptimization',
     subtitle: 'Place products where they sell best',
