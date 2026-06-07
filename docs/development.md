@@ -15,7 +15,7 @@ npm run dev
 2. **Use template structure** with Handlebars partials:
    ```html
    <!DOCTYPE html>
-   <html>
+   <html lang="en">
    <head>
        <!-- Meta tags, title, stylesheets -->
        <link rel="stylesheet" href="./assets/style/output.css">
@@ -35,8 +35,9 @@ npm run dev
 3. **Update navigation**: Edit `partials/header.html` to add link to new page (applies to ALL pages)
 4. **Mark active state**: In new page's `<head>` or inline script, add logic to highlight active nav link
 5. **Add OG image**: Add entry to `PAGES` array in `scripts/generate-og-images.js`, run `npm run generate:og`, add `og:image` meta tags (see [Architecture: Open Graph Images](architecture.md#open-graph-images))
-6. **Test**: Run `npm run dev` and verify at http://localhost:3000/new-solution
-7. **Build**: Run `npm run build` to generate production files in `dist/`
+6. **Meet the on-page SEO checks** (enforced by `tests/seo.test.js`, see below): `<html lang="en">`, exactly one `<h1>`, a `<meta name="description">`, an `og:url` whose host matches the canonical link, and `<meta name="twitter:card" content="summary_large_image">` in the OG block.
+7. **Test**: Run `npm run dev` and verify at http://localhost:3000/new-solution
+8. **Build**: Run `npm run build` to generate production files in `dist/`
 
 ## Adding a Digital Business Card
 
@@ -180,6 +181,19 @@ Add its filename to the `EXCLUDED_PAGES` set at the top of `scripts/generate-sit
 
 ### Submitting to Google
 After first deploying the sitemap, submit `https://www.artisanscloud.com/sitemap.xml` once in Google Search Console. Subsequent deploys are picked up automatically via recrawl.
+
+## On-page SEO checks
+
+`tests/seo.test.js` runs as part of `npm test` (and therefore CI) and auto-discovers every built page in `dist/` (root pages plus generated `team/*.html`). For each page it asserts:
+
+- `<html lang>` is present (document language).
+- Exactly one `<h1>` (redirect stubs that use `<meta http-equiv="refresh">` are skipped).
+- `og:url` and the canonical link resolve to the same host, so the www / non-www signal never conflicts.
+- Any page with Open Graph tags also has `<meta name="twitter:card" content="summary_large_image">` and a non-empty `<meta name="description">`.
+
+Run just these checks with `npm run test:seo`. If you add a page that legitimately should not satisfy one of these (for example a new redirect stub), make it a `<meta http-equiv="refresh">` page or extend the exclusion logic in the test rather than weakening the assertion.
+
+Code style is pinned by `.prettierrc.json` / `.prettierignore`; format touched files with `npm run prettier` (a few legacy pages are not yet fully formatted and are out of scope for incremental changes).
 
 ## Image Optimization
 
