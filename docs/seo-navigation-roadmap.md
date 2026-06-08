@@ -139,7 +139,7 @@ Tasks:
 | /personalized-recommendations | TBD | |
 | /chatbots-for-quick-support | TBD | |
 | /role-play-agent | TBD | |
-| /knowledge-harvester | TBD | |
+| /vault-knowledge-harvester | TBD | |
 | /demand-flow | TBD | |
 | /enterprise-ai | TBD | |
 | /data-intelligence | TBD | |

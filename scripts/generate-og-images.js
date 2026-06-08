@@ -99,7 +99,7 @@ const PAGES = [
     subtitle: 'Multi-channel fulfillment orchestration',
   },
   {
-    file: 'knowledge-harvester',
+    file: 'vault-knowledge-harvester',
     title: 'Vault',
     subtitle: 'Enterprise Knowledge Intelligence',
   },
