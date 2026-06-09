@@ -76,6 +76,11 @@
             "source": "/artisans-commerce-cloud",
             "destination": "/unified-commerce",
             "permanent": true
+        },
+        {
+            "source": "/knowledge-harvester",
+            "destination": "/vault-knowledge-harvester",
+            "permanent": true
         }
     ],
     "crons": [
