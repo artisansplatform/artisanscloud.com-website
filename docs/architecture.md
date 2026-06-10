@@ -224,11 +224,28 @@ All responses are served with security headers defined in `vercel.json` under th
 
 | Header | Value | Purpose |
 |---|---|---|
+| `Content-Security-Policy-Report-Only` | see below | Restrict resource origins (XSS / injection defense) |
 | `X-Content-Type-Options` | `nosniff` | Prevent MIME sniffing |
 | `X-Frame-Options` | `DENY` | Prevent clickjacking |
 | `Strict-Transport-Security` | `max-age=31536000; includeSubDomains` | Force HTTPS |
 | `Referrer-Policy` | `strict-origin-when-cross-origin` | Limit referrer leakage |
 | `Permissions-Policy` | camera/mic/geo disabled | Restrict browser APIs |
+
+### Content Security Policy
+
+The CSP currently ships as **`Content-Security-Policy-Report-Only`**: browsers report violations to the console but block nothing, so it is safe to deploy while we confirm it does not break a real page.
+
+Key directives and why each origin is allowed:
+
+- `default-src 'self'`, `object-src 'none'`, `base-uri 'self'`, `frame-ancestors 'none'` (mirrors `X-Frame-Options: DENY`).
+- `script-src 'self'` + `cdn.jsdelivr.net`, `unpkg.com` (GSAP/Swiper/Lenis CDN), `snap.licdn.com` (LinkedIn Insight), `cloud.umami.is` (Umami), `va.vercel-scripts.com` (Vercel Analytics). **No `'unsafe-inline'`** - all first-party JS is modules bundled into `main.js`; this is enforced by the no-inline-script check in `tests/conventions.test.js`.
+- `style-src 'self' 'unsafe-inline'` - required by inline `style=` attributes and the `<style>` block on `404.html`.
+- `font-src 'self'` - Poppins is self-hosted.
+- `img-src 'self' data: https:` - QR codes are `data:` URIs; blog thumbnails come from arbitrary LinkedIn media hosts.
+- `connect-src` - Web3Forms (form submits), Vercel Insights, Umami, LinkedIn ad pixels.
+- `form-action 'self' https://api.web3forms.com`.
+
+**Rollout / how to enforce:** deploy, open a few pages on the Vercel preview (home, a feature page, `contact-us` with a form submit, a team card), and check the console for `Report-Only` violations. Once clean, switch enforcement by renaming the key in `vercel.json` from `Content-Security-Policy-Report-Only` to `Content-Security-Policy`. `tests/vercel-security.test.js` accepts either key, and asserts the core directives plus that `script-src` never gains `'unsafe-inline'`. If a new third-party script/origin is added later, extend the matching directive in `vercel.json`.
 
 ## Deployment
 - **Platform**: Vercel

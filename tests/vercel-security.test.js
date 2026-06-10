@@ -90,9 +90,48 @@ describe("Vercel Security Configuration", () => {
     expect(hsts.value).toBe("max-age=31536000; includeSubDomains");
   });
 
-  it("should have all 6 essential security headers", () => {
+  it("should define a Content Security Policy", () => {
+    const headerConfig = vercelConfig.headers[0];
+    // Accept either enforcing or report-only so flipping the rollout switch
+    // (rename the key, drop "-Report-Only") does not break this test.
+    const csp = headerConfig.headers.find(
+      (h) =>
+        h.key === "Content-Security-Policy" ||
+        h.key === "Content-Security-Policy-Report-Only",
+    );
+    expect(
+      csp,
+      "vercel.json must define a CSP (enforcing or report-only)",
+    ).toBeDefined();
+
+    // Core hardening directives.
+    expect(csp.value).toMatch(/default-src 'self'/);
+    expect(csp.value).toMatch(/object-src 'none'/);
+    expect(csp.value).toMatch(/frame-ancestors 'none'/);
+
+    // script-src must stay strict: no 'unsafe-inline'. All JS is either a
+    // module bundle (self) or an allowlisted external host. This is the
+    // assertion that makes the inline-script ban (conventions.test.js) pay off.
+    const scriptSrc = csp.value.match(/script-src([^;]*)/)?.[1] ?? "";
+    expect(scriptSrc, "script-src must not allow 'unsafe-inline'").not.toMatch(
+      /unsafe-inline/,
+    );
+
+    // Runtime script origins the site actually uses must be allowlisted.
+    for (const origin of [
+      "cdn.jsdelivr.net",
+      "unpkg.com",
+      "cloud.umami.is",
+      "snap.licdn.com",
+    ]) {
+      expect(scriptSrc, `script-src should allow ${origin}`).toContain(origin);
+    }
+  });
+
+  it("should have all essential security headers", () => {
     const headerConfig = vercelConfig.headers[0];
     const securityHeaders = [
+      "Content-Security-Policy-Report-Only",
       "X-Content-Type-Options",
       "X-Frame-Options",
       "X-XSS-Protection",
@@ -107,7 +146,7 @@ describe("Vercel Security Configuration", () => {
       expect(configuredHeaders).toContain(header);
     });
 
-    expect(headerConfig.headers.length).toBe(6);
+    expect(headerConfig.headers.length).toBe(7);
   });
 });
 
