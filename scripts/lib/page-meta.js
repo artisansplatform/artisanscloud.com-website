@@ -71,13 +71,15 @@ export function pageName(title) {
 // template can inject it raw without Handlebars HTML-escaping breaking the
 // JSON. Homepage carries the Organization + WebSite graph; every other
 // indexable page gets a Home > Page breadcrumb. Pages with the OG block
-// disabled (404, thank-you, blog-detail) get none. Page-specific schema
-// (e.g. SoftwareApplication, FAQPage) stays inline in the page itself.
+// disabled (404, thank-you, blog-detail) and redirect stubs (no title) get
+// none. Page-specific schema (e.g. SoftwareApplication, FAQPage) stays inline
+// in the page itself.
 export function buildJsonLd(slug, meta) {
   if (slug === "index") {
     return graph([ORGANIZATION, WEBSITE]);
   }
-  if (meta.og === false) return null;
+  // No breadcrumb without a name; also skips OG-disabled pages and stubs.
+  if (meta.og === false || !meta.title) return null;
   return graph([
     {
       "@type": "BreadcrumbList",

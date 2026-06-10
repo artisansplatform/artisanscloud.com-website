@@ -213,8 +213,25 @@ After first deploying the sitemap, submit `https://www.artisanscloud.com/sitemap
 - Exactly one `<h1>` (redirect stubs that use `<meta http-equiv="refresh">` are skipped).
 - `og:url` and the canonical link resolve to the same host, so the www / non-www signal never conflicts.
 - Any page with Open Graph tags also has `<meta name="twitter:card" content="summary_large_image">` and a non-empty `<meta name="description">`.
+- Every `<img>` has an `alt` attribute, and each page emits valid JSON-LD with the expected type.
 
 Run just these checks with `npm run test:seo`. If you add a page that legitimately should not satisfy one of these (for example a new redirect stub), make it a `<meta http-equiv="refresh">` page or extend the exclusion logic in the test rather than weakening the assertion.
+
+## Automated guardrails
+
+`npm test` runs every check below in CI (`.github/workflows/test.yml`). Each guards a documented footgun so a mistake fails the PR instead of shipping:
+
+| Check | File | What it catches |
+|-------|------|-----------------|
+| Build / partials | `tests/build.test.js` | pages build, partials resolved, blog containers/CSS/JS/sitemap/robots present |
+| Internal links | `tests/links.test.js` | links and local assets that 404 |
+| On-page SEO | `tests/seo.test.js` | missing lang / h1 / description / twitter card, og-canonical host mismatch, missing img alt, invalid JSON-LD |
+| Page metadata | `tests/pages-meta.test.js` | hand-written heads, missing/orphan `pages.json` entries, missing/orphan/wrong-size OG images, noindex page left in sitemap |
+| Conventions | `tests/conventions.test.js` | inline executable scripts, duplicate Swiper selectors, broken/ shadowing redirects, redirect stubs left in the sitemap |
+| Font subset | `tests/font-subset.test.js` | a font weight/style used in markup but not loaded |
+| Security headers | `tests/vercel-security.test.js` | missing security headers / cron config in `vercel.json` |
+
+Per-area run scripts: `test:seo`, `test:meta`, `test:conventions`, `test:font`, `test:links`, `test:build`.
 
 Code style is pinned by `.prettierrc.json` / `.prettierignore`; format touched files with `npm run prettier` (a few legacy pages are not yet fully formatted and are out of scope for incremental changes).
 

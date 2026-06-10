@@ -1,6 +1,7 @@
 import fs from "fs";
 import { glob } from "glob";
 import path from "path";
+import sharp from "sharp";
 import { fileURLToPath } from "url";
 import { describe, expect, it } from "vitest";
 
@@ -99,5 +100,33 @@ describe("pages.json / head-meta partial integrity", () => {
       orphans,
       "assets/og/ png files no longer referenced by any pages.json entry; delete them",
     ).toEqual([]);
+  });
+
+  // noindex and sitemap inclusion must not contradict each other.
+  it("keeps noindex pages out of the sitemap", () => {
+    const conflicts = Object.entries(pagesJson)
+      .filter(([, m]) => /noindex/i.test(m.robots ?? "") && m.sitemap !== false)
+      .map(([slug]) => slug);
+    expect(
+      conflicts,
+      'pages marked robots "noindex" must also set "sitemap": false (mixed crawl signals)',
+    ).toEqual([]);
+  });
+});
+
+// OG images must be exactly 1200x630 or social previews render cropped.
+describe("OG images have correct dimensions", () => {
+  const ogImages = glob.sync("assets/og/**/*.png", { cwd: rootDir });
+
+  it("finds OG images", () => {
+    expect(ogImages.length).toBeGreaterThan(0);
+  });
+
+  it.each(ogImages)("%s is 1200x630", async (image) => {
+    const { width, height } = await sharp(path.join(rootDir, image)).metadata();
+    expect(
+      `${width}x${height}`,
+      `${image} must be 1200x630 for social cards. Regenerate with "npm run generate:og".`,
+    ).toBe("1200x630");
   });
 });

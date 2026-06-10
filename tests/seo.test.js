@@ -97,6 +97,17 @@ describe("SEO invariants (per page)", () => {
       ).toBeTruthy();
     });
 
+    it("gives every <img> an alt attribute", () => {
+      const { doc } = loadPage(page);
+      const missing = [...doc.querySelectorAll("img")]
+        .filter((img) => !img.hasAttribute("alt"))
+        .map((img) => img.getAttribute("src") || "(no src)");
+      expect(
+        missing,
+        `${page} has <img> without an alt attribute (use alt="" for decorative images)`,
+      ).toEqual([]);
+    });
+
     it("emits valid JSON-LD structured data on indexable pages", () => {
       const { html, doc } = loadPage(page);
       if (isRedirectStub(html)) return;

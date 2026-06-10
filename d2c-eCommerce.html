@@ -1005,29 +1005,7 @@
 
     {{> footer}}
 
-    <!-- Key Features card view more and less -->
-    <script>
-      const cards = document.querySelectorAll(".feature-card");
-      const toggleBtn = document.getElementById("toggleCards");
-      const visibleCount = 6;
-
-      cards.forEach((card, index) => {
-        if (index >= visibleCount) {
-          card.classList.add("hidden");
-        }
-      });
-
-      toggleBtn.addEventListener("click", () => {
-        const isExpanded = toggleBtn.textContent.trim() === "View Less";
-        cards.forEach((card, index) => {
-          if (index >= visibleCount) {
-            card.classList.toggle("hidden", isExpanded);
-          }
-        });
-        toggleBtn.textContent = isExpanded ? "View More" : "View Less";
-      });
-    </script>
-
+    <!-- Key Features "view more / less" handled by modules/card-toggle.js -->
     <script type="module" src="assets/script/main.js"></script>
   </body>
 </html>

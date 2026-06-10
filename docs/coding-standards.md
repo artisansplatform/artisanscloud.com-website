@@ -16,6 +16,7 @@
 ## Accessibility
 - **Semantic HTML**: Use appropriate HTML5 elements (`<nav>`, `<main>`, `<article>`, `<section>`, etc.)
 - **ARIA labels**: Add `aria-label` to interactive elements without text (icon buttons, close buttons)
+- **Image alt text**: Every `<img>` needs an `alt` attribute (use `alt=""` for purely decorative images). Enforced by `tests/seo.test.js`.
 - **Keyboard navigation**: Ensure all interactive elements are keyboard accessible (Tab, Enter, Escape)
 - **Focus states**: Maintain visible focus indicators for keyboard navigation
 - **Color contrast**: Ensure text meets WCAG AA standards (4.5:1 for normal text)
