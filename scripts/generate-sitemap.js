@@ -56,7 +56,7 @@ const PAGE_META = {
   'customer-experience-management.html':       { priority: '0.6', changefreq: 'monthly' },
   'd2c-eCommerce.html':                        { priority: '0.6', changefreq: 'monthly' },
   'distributed-order-management.html':         { priority: '0.6', changefreq: 'monthly' },
-  'knowledge-harvester.html':                  { priority: '0.6', changefreq: 'monthly' },
+  'vault-knowledge-harvester.html':            { priority: '0.6', changefreq: 'monthly' },
   'merchandise-and-assortment-planning.html':  { priority: '0.6', changefreq: 'monthly' },
   'role-play-agent.html':                      { priority: '0.6', changefreq: 'monthly' },
   'warehouse-management-system.html':          { priority: '0.6', changefreq: 'monthly' },
