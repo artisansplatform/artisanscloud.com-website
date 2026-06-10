@@ -38,36 +38,43 @@
           class="header-link py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0"
           >Unified Commerce</a
         >
-        <div class="tw-dropdown relative group/nav">
+        <div class="tw-dropdown relative flex items-center">
           <a
             href="/enterprise-ai"
-            class="header-link flex items-center gap-2 cursor-pointer py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0"
+            class="header-link py-3 pl-2 pr-1 xl:pl-4 xl:pr-2 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0"
           >
             Enterprise AI
-            <svg
-              class="dropdown-icon h-[5px] transition-transform duration-600 group-hover/nav:rotate-180"
-              viewBox="0 0 9 5"
-            >
-              <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="currentColor" />
-            </svg>
           </a>
+          <div class="group/nav flex items-center h-full">
+            <button
+              class="py-3 pr-2 pl-1 xl:pr-4 xl:pl-2 cursor-pointer outline-0 text-heading hover:text-primary transition-colors flex items-center justify-center"
+              aria-label="Toggle Enterprise AI menu"
+            >
+              <svg
+                class="dropdown-icon h-[5px] transition-transform duration-600 group-hover/nav:rotate-180"
+                viewBox="0 0 9 5"
+              >
+                <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="currentColor" />
+              </svg>
+            </button>
 
-          <div
-            class="dropdown-menu absolute z-50 top-full mt-1 left-1/2 transform -translate-x-1/2 w-[380px] rounded-3xl border border-light-sky bg-[#ffffff99] backdrop-blur-[30px] shadow-sm opacity-0 translate-y-3 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:translate-y-0 group-hover/nav:pointer-events-auto transition-all duration-300 ease-out"
-          >
-            <div class="flex flex-col gap-6 p-6">
-              <a href="/lumen" class="dropdown-item group !w-full">
-                <h4 class="text-base font-semibold text-heading group-hover:text-primary transition-colors">Enterprise Copilot — Lumen</h4>
-                <p class="text-sm text-heading/70 mt-1.5 leading-snug font-normal">Conversational access to enterprise knowledge, workflows and operational intelligence</p>
-              </a>
-              <a href="/vault-knowledge-harvester" class="dropdown-item group !w-full">
-                <h4 class="text-base font-semibold text-heading group-hover:text-primary transition-colors">Knowledge Intelligence — Vault</h4>
-                <p class="text-sm text-heading/70 mt-1.5 leading-snug font-normal">Capture, organize, and activate enterprise knowledge</p>
-              </a>
-              <a href="/role-play-agent" class="dropdown-item group !w-full">
-                <h4 class="text-base font-semibold text-heading group-hover:text-primary transition-colors">AI Role Play — Arena</h4>
-                <p class="text-sm text-heading/70 mt-1.5 leading-snug font-normal">AI-powered simulation for workforce readiness and role-based learning</p>
-              </a>
+            <div
+              class="dropdown-menu absolute z-50 top-full mt-1 left-1/2 transform -translate-x-[60%] xl:-translate-x-1/2 w-[380px] rounded-3xl border border-light-sky bg-[#ffffff99] backdrop-blur-[30px] shadow-sm opacity-0 translate-y-3 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:translate-y-0 group-hover/nav:pointer-events-auto transition-all duration-300 ease-out"
+            >
+              <div class="flex flex-col gap-6 p-6">
+                <a href="/lumen" class="dropdown-item group !w-full">
+                  <h4 class="text-base font-semibold text-heading group-hover:text-primary transition-colors">Enterprise Copilot: Lumen</h4>
+                  <p class="text-sm text-heading/70 mt-1.5 leading-snug font-normal">Conversational access to enterprise knowledge, workflows and operational intelligence</p>
+                </a>
+                <a href="/vault-knowledge-harvester" class="dropdown-item group !w-full">
+                  <h4 class="text-base font-semibold text-heading group-hover:text-primary transition-colors">Knowledge Intelligence: Vault</h4>
+                  <p class="text-sm text-heading/70 mt-1.5 leading-snug font-normal">Capture, organize, and activate enterprise knowledge</p>
+                </a>
+                <a href="/role-play-agent" class="dropdown-item group !w-full">
+                  <h4 class="text-base font-semibold text-heading group-hover:text-primary transition-colors">AI Role Play: Arena</h4>
+                  <p class="text-sm text-heading/70 mt-1.5 leading-snug font-normal">AI-powered simulation for workforce readiness and role-based learning</p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
