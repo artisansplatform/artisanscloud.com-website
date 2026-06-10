@@ -1,0 +1,456 @@
+{
+  "404": {
+    "title": "404 Error - Artisans Cloud",
+    "og": false,
+    "sitemap": false,
+    "description": "The page you are looking for could not be found. Explore Artisans Cloud enterprise platforms and intelligence systems from the homepage."
+  },
+  "POS": {
+    "title": "Point of Sale (POS) System | Artisans Cloud",
+    "description": "Manage offline and online businesses from a unified retail platform. Our intelligent point of sale software helps retailers improve operational excellence and deliver a better customer experience.",
+    "keywords": "POS system, point of sale, retail POS, offline POS, online POS, unified retail platform, inventory management, customer loyalty, omnichannel retailing",
+    "ogCard": {
+      "title": "Point of Sale",
+      "subtitle": "Unified offline & online retail"
+    }
+  },
+  "about-us": {
+    "title": "Artisan's About Us | Artisans Cloud",
+    "description": "Learn about Artisans Cloud - innovators in enterprise intelligence. Discover how we engineer adaptive systems combining AI, data, and automation to drive measurable growth.",
+    "keywords": "About Artisans Cloud, Enterprise Intelligence, AI Transformation, Business Innovation, Data Engineering, Intelligent Systems, Enterprise Automation, Digital Transformation",
+    "ogTitle": "About Artisans Cloud | Architects of Enterprise Intelligence",
+    "ogDescription": "At Artisans Cloud, we architect the digital foundation of intelligent enterprises - uniting AI, data, and engineering to power clarity, agility, and sustained business value.",
+    "ogCard": {
+      "title": "About Us",
+      "subtitle": "Architects of Enterprise Intelligence"
+    },
+    "sitemap": {
+      "priority": "0.8",
+      "changefreq": "monthly"
+    }
+  },
+  "articles-and-resources": {
+    "title": "Articles and Resources - Artisans Cloud",
+    "ogCard": {
+      "title": "Insights & Thought\nLeadership",
+      "subtitle": "Latest from Artisans Cloud"
+    },
+    "sitemap": {
+      "priority": "0.8",
+      "changefreq": "weekly"
+    },
+    "description": "Browse articles, insights, and resources from Artisans Cloud covering unified commerce, retail operations, and enterprise AI."
+  },
+  "automation": {
+    "title": "Automation | Artisans Cloud",
+    "description": "Discover Artisans Cloud's low-code automation platform designed to simplify retail operations. Streamline app development, integrate systems, and enhance customer service with workflow automation, RPA, and AI.",
+    "keywords": "automation, low-code platform, retail automation, workflow automation, RPA, robotic process automation, business intelligence, AI automation, inventory management, Artisans Cloud",
+    "ogTitle": "Automation Platform | Artisans Cloud",
+    "ogDescription": "Simplify retail operations with Artisans Cloud's low-code automation platform. Automate workflows, integrate systems, and enhance customer experiences.",
+    "ogCard": {
+      "title": "Automation Platform",
+      "subtitle": "Low-code workflow automation"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
+    }
+  },
+  "blog-detail": {
+    "title": "Blog Details - Artisans Cloud",
+    "og": false,
+    "sitemap": false,
+    "description": "Read the full article from Artisans Cloud on unified commerce, retail technology, and enterprise intelligence."
+  },
+  "browser-pos": {
+    "title": "TabsyPOS - AI-Powered Browser POS | Artisans Cloud",
+    "description": "TabsyPOS is a free, privacy-first browser POS that works 100% offline. No installation, no cloud storage. Your data stays on your device. Perfect as a primary POS or backup solution when your main system goes down.",
+    "keywords": "TabsyPOS, Browser POS, Offline POS, Privacy-First POS, Free POS, AI-Powered POS, Cloud-Free Point of Sale, Local POS, Retail POS, Backup POS, POS Downtime Solution, Emergency POS, Artisans Cloud",
+    "ogTitle": "TabsyPOS - Free AI-Powered Browser POS | Artisans Cloud",
+    "ogDescription": "Experience a POS that works 100% offline with AI-powered search. TabsyPOS is free forever, privacy-first, and keeps your data on your device. No installation required.",
+    "ogCard": {
+      "title": "TabsyPOS",
+      "subtitle": "Free AI-Powered Browser POS"
+    }
+  },
+  "chatbots-for-quick-support": {
+    "title": "Chatbots for Quick Support | Artisans Cloud",
+    "description": "AI-powered chatbots give customers instant answers, order updates, and product guidance, helping retailers deliver faster support around the clock.",
+    "keywords": "chatbots for quick support, AI chatbot support, customer support chatbot, ecommerce chatbot, retail chatbot, instant customer answers, Artisans Cloud",
+    "ogDescription": "Give customers instant answers anytime with AI-powered chatbots for support, product questions, order tracking, and smooth agent handovers.",
+    "ogCard": {
+      "title": "Chatbots for Quick\nSupport",
+      "subtitle": "Instant answers, anytime"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
+    }
+  },
+  "contact-us": {
+    "title": "Contact Us | Artisans Cloud - Your Partner in Commerce Solutions",
+    "description": "Get in touch with Artisans Cloud for tailored commerce solutions. Explore our products like Commerce Cloud, Merchandise Planning, and more.",
+    "ogTitle": "Contact Us | Artisans Cloud",
+    "ogDescription": "Contact Artisans Cloud to learn about our innovative commerce solutions including D2C eCommerce, Unified Commerce, and Customer Xperience Management.",
+    "ogCard": {
+      "title": "Contact Us",
+      "subtitle": "Let's build something together"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
+    }
+  },
+  "customer-experience-management": {
+    "title": "Customer Xperience Management | Artisans Cloud",
+    "description": "Unlock the potential of unified customer data with Artisans Cloud Customer Xperience Management. Deliver personalized experiences and drive business growth through seamless integration and actionable insights.",
+    "ogDescription": "Elevate your digital strategy with Artisans Cloud Customer Xperience Management. Achieve a comprehensive understanding of your customers and deliver impactful omnichannel campaigns.",
+    "ogCard": {
+      "title": "Customer Xperience\nManagement",
+      "subtitle": "Omnichannel engagement at scale"
+    }
+  },
+  "customer-feedback-insights": {
+    "title": "Customer Feedback Insights | Artisans Cloud",
+    "description": "AI-powered Customer Feedback Insights analyses customer reviews at scale, identifies trends, and highlights actionable improvements to help retailers enhance products and build customer trust.",
+    "keywords": "customer feedback insights, AI feedback analysis, review analysis, sentiment analysis, retail feedback, customer reviews, feedback analytics, Artisans Cloud",
+    "ogDescription": "Turn customer reviews into actionable insights. AI-powered Customer Feedback Insights analyses feedback at scale and highlights what customers truly think.",
+    "ogCard": {
+      "title": "Customer Feedback\nInsights",
+      "subtitle": "Turn reviews into actionable insights"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
+    }
+  },
+  "d2c-eCommerce": {
+    "title": "Artisans Cloud | Simplifying D2C eCommerce",
+    "description": "Discover Artisans Cloud, your solution for D2C eCommerce. Simplify operations, boost efficiency, and enhance customer experiences with our composable full-stack platform.",
+    "ogDescription": "Transform your eCommerce strategy with Artisans Cloud. Achieve unparalleled flexibility and efficiency in D2C eCommerce with our innovative solutions.",
+    "ogCard": {
+      "title": "D2C eCommerce",
+      "subtitle": "Simplifying direct-to-consumer"
+    }
+  },
+  "data-intelligence": {
+    "title": "Data Intelligence | Artisans Cloud",
+    "description": "Unlock enterprise data potential with Artisans Cloud. Our Data Intelligence solutions transform data into intelligent action, driving agility, foresight, and operational excellence.",
+    "keywords": "data intelligence, enterprise AI, business intelligence, data automation, data analytics, data pipeline, cloud data architecture, Artisans Cloud",
+    "ogCard": {
+      "title": "Data Intelligence",
+      "subtitle": "Transform data into intelligent action"
+    },
+    "sitemap": {
+      "priority": "0.9",
+      "changefreq": "monthly"
+    }
+  },
+  "demand-flow": {
+    "title": "Demand Flow | Artisans Cloud",
+    "description": "Demand Flow by Artisans Cloud captures high-intent near me demand and converts it into measurable store visits, leads and revenue. AI-powered NearMe Intelligence platform for enterprise retailers.",
+    "keywords": "Demand Flow, local search, near me marketing, local SEO, store visits, enterprise retail, Artisans Cloud",
+    "ogDescription": "Capture real-time local demand and convert it into store visits and revenue. Demand Flow bridges the gap between digital intent and physical commerce.",
+    "ogCard": {
+      "title": "Demand Flow",
+      "subtitle": "Strengthening local discovery for retail networks"
+    },
+    "sitemap": {
+      "priority": "0.9",
+      "changefreq": "monthly"
+    }
+  },
+  "dify-consulting": {
+    "title": "Dify Consulting Services to Simplify, Automate and Optimise Workflows | Artisans Cloud",
+    "description": "Our team helps you plan, implement and optimise Dify to create smarter workflows, reduce manual tasks and accelerate business performance.",
+    "keywords": "Dify consulting, Dify implementation, workflow automation, AI automation, Dify setup, business workflow optimisation, Artisans Cloud",
+    "ogTitle": "Dify Consulting Services | Artisans Cloud",
+    "ogCard": {
+      "title": "Dify Consulting\nServices",
+      "subtitle": "Simplify, automate and optimise workflows"
+    },
+    "sitemap": {
+      "priority": "0.8",
+      "changefreq": "monthly"
+    }
+  },
+  "distributed-order-management": {
+    "title": "Distributed Order Management | Artisans Cloud",
+    "description": "Streamline your multi-channel order fulfillment with Artisans Cloud Distributed Order Management. Gain real-time visibility, intelligent orchestration, and personalized experiences for optimal efficiency in commerce.",
+    "ogCard": {
+      "title": "Distributed Order\nManagement",
+      "subtitle": "Multi-channel fulfillment orchestration"
+    }
+  },
+  "dynamic-pricing": {
+    "title": "Dynamic Pricing | Artisans Cloud",
+    "description": "AI-powered Dynamic Pricing automatically adjusts product prices based on demand, competition, and stock levels, helping retailers stay competitive and maximise revenue.",
+    "keywords": "dynamic pricing, AI pricing, retail pricing, price optimization, competitive pricing, demand-based pricing, Artisans Cloud",
+    "ogDescription": "Set the right price at the right time. AI-powered Dynamic Pricing adjusts prices automatically based on demand, competition, and inventory to maximize revenue.",
+    "ogCard": {
+      "title": "Dynamic Pricing",
+      "subtitle": "Set the Right Price at the Right Time"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
+    }
+  },
+  "enterprise-ai": {
+    "title": "Enterprise AI | Artisans Cloud",
+    "description": "Purpose-built AI solutions that help organizations improve workforce readiness, enterprise knowledge and operational decision support. Practical systems for how work gets done, every day.",
+    "keywords": "Enterprise AI, Workforce Readiness, Knowledge Intelligence, Decision Support, Arena, Vault, Lumen, Artisans Cloud",
+    "ogTitle": "Enterprise AI Systems for Modern Enterprise Operations | Artisans Cloud",
+    "ogDescription": "Purpose-built solutions that help organizations improve workforce readiness, enterprise knowledge and operational decision support.",
+    "ogCard": {
+      "title": "Enterprise AI",
+      "subtitle": "Workforce readiness, knowledge and decision support"
+    },
+    "sitemap": {
+      "priority": "0.9",
+      "changefreq": "monthly"
+    }
+  },
+  "fraud-detection": {
+    "title": "Fraud Detection | Artisans Cloud",
+    "description": "Fraudulent transactions can lead to financial losses, chargebacks, and customer trust issues. AI-powered Fraud Detection helps retailers identify unusual payment activity in real time.",
+    "keywords": "fraud detection, AI payment fraud, secure transactions, retail payment security, fraud prevention, Artisans Cloud",
+    "ogCard": {
+      "title": "Fraud Detection",
+      "subtitle": "Make Payments Safer and Smarter"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
+    }
+  },
+  "image-editing": {
+    "title": "AI Image Editing for Retail & E-commerce | Artisans Cloud",
+    "description": "Turn your products into visual masterpieces with AI-powered image editing. Remove backgrounds, add text, apply seasonal themes, and create stunning visuals in just a few clicks.",
+    "keywords": "AI image editing, product photography, e-commerce images, retail visuals, background removal, image enhancement, brand consistency, product image editing, Artisans Cloud",
+    "ogDescription": "Turn your products into visual masterpieces with AI-powered image editing. Create professional visuals in just a few clicks.",
+    "ogCard": {
+      "title": "AI Image Editing",
+      "subtitle": "Professional visuals for retail & e-commerce"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
+    }
+  },
+  "index": {
+    "title": "Intelligent Enterprise Transformation | Artisans Cloud",
+    "description": "Artisans Cloud drives Intelligent Enterprise Transformation by unifying data, intelligence, and workflows. Unlock operational agility, predictive decision-making, and sustained business growth.",
+    "keywords": "Intelligent Enterprise, Digital Transformation, AI in Business, Enterprise Automation, Predictive Analytics, Unified Data Platform, Cloud Intelligence, Artisans Cloud",
+    "ogDescription": "Transform your enterprise into an intelligent, adaptive system with Artisans Cloud. Accelerate growth through AI, automation, and unified business intelligence.",
+    "ogCard": {
+      "title": "Connected Enterprise\nSystems",
+      "subtitle": "For Modern Operations"
+    },
+    "sitemap": {
+      "priority": "1.0",
+      "changefreq": "weekly"
+    }
+  },
+  "integrations": {
+    "title": "Integrations - artisans Cloud | Seamless Commerce Solutions",
+    "description": "Discover how Artisan Cloud's integrations enhance your eCommerce experience. Connect with marketplaces, shipping carriers, and ERP systems for seamless digital transformation.",
+    "keywords": "commerce integrations, retail integrations, erp integration, pos integration, marketplace integrations, third-party integrations, artisans commerce cloud",
+    "ogCard": {
+      "title": "Integrations",
+      "subtitle": "Seamless commerce connectivity"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
+    }
+  },
+  "lumen": {
+    "title": "Lumen | Enterprise Intelligence Layer | Artisans Cloud",
+    "description": "Lumen unifies fragmented systems, workflows and operational knowledge into a connected intelligence layer designed for intelligent enterprise execution.",
+    "keywords": "Lumen, enterprise intelligence layer, connected intelligence, enterprise execution, knowledge contextualization, workflow automation, enterprise AI, Artisans Cloud",
+    "ogCard": {
+      "title": "Lumen",
+      "subtitle": "Enterprise intelligence layer for connected execution"
+    },
+    "sitemap": {
+      "priority": "0.8",
+      "changefreq": "monthly"
+    }
+  },
+  "merchandise-and-assortment-planning": {
+    "title": "Merchandise & Assortment Planning | Artisans Cloud",
+    "description": "Transform retail with precision assortment and merchandise planning. Deliver the right products, drive growth, and enhance customer experience with data-driven insights and intelligent Open-to-Buy planning.",
+    "keywords": "Merchandise Planning, Assortment Planning, Open-to-Buy, OTB Planning, Retail Planning, Inventory Management, Product Mix Optimization, Supply Chain Planning, Artisans Cloud",
+    "ogDescription": "Transform retail with precision assortment and merchandise planning. Data-driven insights to help retailers curate the perfect product mix and manage inventory levels efficiently.",
+    "ogCard": {
+      "title": "Merchandise &\nAssortment Planning",
+      "subtitle": "Data-driven product mix optimization"
+    }
+  },
+  "personalized-promotions": {
+    "title": "Personalized Promotions | Artisans Cloud",
+    "description": "AI-powered Personalized Promotions help retailers deliver tailored offers based on customer preferences, behavior, and purchase history, boosting engagement while reducing unnecessary discounts.",
+    "keywords": "personalized promotions, AI promotions, targeted offers, retail promotions, customer engagement, discount optimization, loyalty marketing, Artisans Cloud",
+    "ogDescription": "Send the right offer to the right customer. AI-powered Personalized Promotions deliver tailored discounts based on customer preferences, behavior, and purchase history.",
+    "ogCard": {
+      "title": "Personalized\nPromotions",
+      "subtitle": "Send the right offer to the right customer"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
+    }
+  },
+  "personalized-recommendations": {
+    "title": "Personalized Recommendations | Artisans Cloud",
+    "description": "AI-powered Personalized Recommendations show every shopper products they will love. Suggest relevant items based on behavior, preferences, and real-time activity to boost engagement and sales.",
+    "keywords": "personalized recommendations, AI recommendations, product suggestions, cross-sell, upsell, ecommerce personalization, retail AI, Artisans Cloud",
+    "ogDescription": "Show every shopper something they will love. AI-powered Personalized Recommendations suggest relevant products based on behavior, preferences, and real-time activity.",
+    "ogCard": {
+      "title": "Personalized\nRecommendations",
+      "subtitle": "Show every shopper something they'll love"
+    },
+    "sitemap": {
+      "priority": "0.9",
+      "changefreq": "monthly"
+    }
+  },
+  "privacy-policy": {
+    "title": "Privacy Policy | Artisans Cloud",
+    "description": "Learn how Artisans Cloud collects, uses, and protects your personal information. Read our comprehensive privacy policy for details on data security and your rights.",
+    "keywords": "Privacy Policy, Data Protection, GDPR, Personal Information, Data Security, Artisans Cloud Privacy",
+    "ogDescription": "Artisans Cloud is committed to protecting your privacy. Read our privacy policy to understand how we handle your data.",
+    "ogCard": {
+      "title": "Privacy Policy",
+      "subtitle": "How we protect your data"
+    },
+    "sitemap": {
+      "priority": "0.3",
+      "changefreq": "yearly"
+    }
+  },
+  "request-demo": {
+    "title": "Request a Demo | Artisans Cloud",
+    "description": "Request a demo of Artisans Cloud to see how our unified commerce and AI solutions can transform your business.",
+    "robots": "noindex",
+    "ogCard": {
+      "title": "Request a Demo",
+      "subtitle": "See Artisans Cloud in action"
+    },
+    "sitemap": false
+  },
+  "role-play-agent": {
+    "title": "Role Play Agent | Artisans Cloud",
+    "description": "Role Play Agent prepares your teams for real business situations before they happen. AI-powered simulations that build readiness, reduce response variability, and drive consistent execution across every role and team.",
+    "keywords": "role play agent, AI readiness, enterprise simulation, sales readiness, customer service training, workforce execution, onboarding, consistent performance, Artisans Cloud",
+    "ogDescription": "Role Play Agent prepares your teams for real situations before they happen. AI-powered simulations that build readiness, reduce variability, and drive consistent execution at scale.",
+    "ogCard": {
+      "title": "Role Play Agent",
+      "subtitle": "AI-powered readiness simulations"
+    }
+  },
+  "smart-auto-completion": {
+    "title": "Smart Auto-Completion | Artisans Cloud",
+    "description": "Smart Auto-Completion helps shoppers find products before they finish typing. AI-powered search predictions make product discovery faster and easier for e-commerce businesses.",
+    "keywords": "smart auto-completion, AI search, product discovery, e-commerce search, auto-suggest, search predictions, retail search, Artisans Cloud",
+    "ogDescription": "Find products before you finish typing. AI-powered Smart Auto-Completion predicts what shoppers are looking for and suggests relevant searches instantly.",
+    "ogCard": {
+      "title": "Smart Auto-Completion",
+      "subtitle": "Find products before you finish typing"
+    }
+  },
+  "smart-product-search": {
+    "title": "Smart Product Search | Artisans Cloud",
+    "description": "AI-powered Smart Product Search helps shoppers find exactly what they want. Understands intent, handles misspellings, and improves product discovery across your entire catalog.",
+    "keywords": "smart product search, AI search, product discovery, ecommerce search, retail search, intelligent search, Artisans Cloud",
+    "ogDescription": "AI-powered Smart Product Search helps shoppers find exactly what they want. Understands intent, handles misspellings, and improves product discovery.",
+    "ogCard": {
+      "title": "Smart Product Search",
+      "subtitle": "Help shoppers find exactly what they want"
+    }
+  },
+  "smarter-inventory-alerts": {
+    "title": "Smarter Inventory Alerts | Artisans Cloud",
+    "description": "AI-powered Smarter Inventory Alerts monitor sales trends and stock levels, helping retailers stay stocked, avoid shortages, and optimise inventory planning.",
+    "keywords": "smarter inventory alerts, AI inventory management, retail stock alerts, inventory monitoring, demand forecasting, stock level alerts, Artisans Cloud",
+    "ogDescription": "AI-powered alerts that monitor sales patterns and stock levels, helping retailers act before inventory issues impact business.",
+    "ogCard": {
+      "title": "Smarter Inventory\nAlerts",
+      "subtitle": "Stay stocked, stay ahead with AI"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
+    }
+  },
+  "store-layout-optimization": {
+    "title": "Store Layout Optimization | Artisans Cloud",
+    "description": "AI-powered Store Layout Optimization helps retailers understand customer movement and identify the best product placement strategies to improve visibility and increase sales.",
+    "keywords": "store layout optimization, product placement, AI retail, customer movement analysis, shelf optimization, merchandising, retail intelligence, Artisans Cloud",
+    "ogDescription": "Place products where they sell best. AI-powered Store Layout Optimization analyzes customer movement to recommend smarter product placement and improve in-store sales.",
+    "ogCard": {
+      "title": "Store Layout\nOptimization",
+      "subtitle": "Place products where they sell best"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
+    }
+  },
+  "terms-and-conditions": {
+    "title": "Terms and Conditions | Artisans Cloud",
+    "description": "Read the Terms and Conditions for using Artisans Cloud's enterprise intelligence platform and services. Understand your rights and obligations.",
+    "keywords": "Terms and Conditions, Terms of Service, User Agreement, Legal Terms, Artisans Cloud",
+    "ogDescription": "Review the Terms and Conditions governing the use of Artisans Cloud's enterprise intelligence platform and services.",
+    "ogCard": {
+      "title": "Terms & Conditions",
+      "subtitle": "Platform usage terms"
+    },
+    "sitemap": {
+      "priority": "0.3",
+      "changefreq": "yearly"
+    }
+  },
+  "thank-you": {
+    "title": "Thank you - Artisans Cloud",
+    "og": false,
+    "sitemap": false,
+    "description": "Thanks for reaching out to Artisans Cloud. Our team has received your message and will get back to you shortly."
+  },
+  "unified-commerce": {
+    "title": "Unified Commerce Platform for Retail Enterprises | Artisans Cloud",
+    "description": "Artisans Cloud unified commerce platform helps enterprise retailers manage inventory, orders, and customer data across all channels with real-time visibility and execution.",
+    "keywords": "unified commerce platform, omnichannel retail, enterprise retail platform, inventory management, order management, customer data platform, Artisans Cloud",
+    "ogTitle": "Unified Commerce Platform for Retail Enterprises | Artisans Cloud",
+    "ogCard": {
+      "title": "Unified Commerce\nPlatform",
+      "subtitle": "Omnichannel Commerce Platform for Modern Retail"
+    },
+    "sitemap": {
+      "priority": "0.9",
+      "changefreq": "monthly"
+    }
+  },
+  "vault-knowledge-harvester": {
+    "title": "Vault | Enterprise Knowledge Intelligence Layer | Artisans Cloud",
+    "description": "Preserve organizational knowledge, scale expertise and strengthen continuity across the enterprise. Vault transforms fragmented enterprise knowledge into a connected organizational memory that supports workforce readiness, operational continuity and enterprise intelligence.",
+    "keywords": "Vault, enterprise knowledge intelligence, knowledge management, knowledge continuity, organizational memory, digital experts, knowledge twins, workforce readiness, Artisans Cloud",
+    "ogTitle": "Vault | Enterprise Knowledge Intelligence Layer | Artisans Cloud",
+    "ogDescription": "Preserve organizational knowledge, scale expertise and strengthen continuity across the enterprise. Vault transforms fragmented enterprise knowledge into a connected organizational memory.",
+    "ogCard": {
+      "title": "Vault",
+      "subtitle": "Enterprise Knowledge Intelligence"
+    }
+  },
+  "warehouse-management-system": {
+    "title": "Warehouse Management System | Artisans Cloud",
+    "description": "Transform warehouse operations with Azentio WMS powered by AzentioOneERP. Intelligent inventory flow, operational visibility and predictive fulfillment performance within the Artisans Cloud Unified Commerce ecosystem.",
+    "keywords": "Warehouse Management System, WMS, Azentio WMS, AzentioOneERP, warehouse operations, inventory management, fulfillment, supply chain, unified commerce, Artisans Cloud",
+    "ogDescription": "Intelligent warehouse orchestration powered by AzentioOneERP. Real-time execution engine for synchronized, data-driven warehouse operations.",
+    "ogCard": {
+      "title": "Warehouse Management",
+      "subtitle": "Intelligent warehouse orchestration"
+    }
+  }
+}

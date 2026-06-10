@@ -12,13 +12,12 @@ npm run dev
 
 ## Adding a New Page
 1. **Create HTML** (e.g., `new-solution.html`) in repository root
-2. **Use template structure** with Handlebars partials:
+2. **Use template structure** with Handlebars partials. The whole `<head>` comes from the `head-meta` partial:
    ```html
    <!DOCTYPE html>
    <html lang="en">
    <head>
-       <!-- Meta tags, title, stylesheets -->
-       <link rel="stylesheet" href="./assets/style/output.css">
+       {{> head-meta}}
    </head>
    <body>
        <div id="cursor" class="hidden lg:block..."></div>
@@ -32,12 +31,34 @@ npm run dev
    </body>
    </html>
    ```
-3. **Update navigation**: Edit `partials/header.html` to add link to new page (applies to ALL pages)
-4. **Mark active state**: In new page's `<head>` or inline script, add logic to highlight active nav link
-5. **Add OG image**: Add entry to `PAGES` array in `scripts/generate-og-images.js`, run `npm run generate:og`, add `og:image` meta tags (see [Architecture: Open Graph Images](architecture.md#open-graph-images))
-6. **Meet the on-page SEO checks** (enforced by `tests/seo.test.js`, see below): `<html lang="en">`, exactly one `<h1>`, a `<meta name="description">`, an `og:url` whose host matches the canonical link, and `<meta name="twitter:card" content="summary_large_image">` in the OG block.
+3. **Add the metadata entry**: add a `new-solution` entry to `assets/data/pages.json` with at least `title` and `description` (see [Page metadata](#page-metadata-pagesjson) below). `tests/pages-meta.test.js` fails the build without it.
+4. **Update navigation**: Edit `partials/header.html` to add link to new page (applies to ALL pages)
+5. **Add OG image**: add `ogCard: { title, subtitle }` to the page's `pages.json` entry, run `npm run generate:og`, commit the PNG (see [Architecture: Open Graph Images](architecture.md#open-graph-images))
+6. **Meet the on-page SEO checks** (enforced by `tests/seo.test.js`, see below): the head-meta partial takes care of all of them except "exactly one `<h1>`", which is up to your page content.
 7. **Test**: Run `npm run dev` and verify at http://localhost:3000/new-solution
 8. **Build**: Run `npm run build` to generate production files in `dist/`
+
+## Page metadata (pages.json)
+
+`assets/data/pages.json` is the single source of truth for per-page head metadata. Each root page has an entry keyed by slug (filename without `.html`):
+
+```jsonc
+"new-solution": {
+  "title": "New Solution | Artisans Cloud",          // required, page <title> and og:title default
+  "description": "One or two sentences.",            // required, meta + og:description default
+  "keywords": "comma, separated",                    // optional
+  "robots": "noindex",                               // optional (request-demo uses this)
+  "og": false,                                       // optional: omit the whole OG/Twitter block
+  "ogTitle": "...", "ogDescription": "...",          // optional overrides
+  "ogImage": "/assets/og/custom.png",                // optional override (default /assets/og/{slug}.png)
+  "ogCard": { "title": "New\nSolution", "subtitle": "..." },  // text baked into the generated og image
+  "sitemap": { "priority": "0.8", "changefreq": "weekly" }    // optional; false excludes the page
+}
+```
+
+The values flow through `scripts/lib/page-meta.js` into three consumers: the `head-meta` partial (via the Handlebars `context` in `vite.config.js`), `scripts/generate-sitemap.js`, and `scripts/generate-og-images.js`. Page-specific head extras (JSON-LD, inline styles) stay in the page itself, after `{{> head-meta}}`.
+
+When renaming a page, rename the `pages.json` key, add a `vercel.json` redirect, and regenerate the OG image; `tests/pages-meta.test.js` flags orphan entries and orphan OG images if you forget.
 
 ## Adding a Digital Business Card
 
@@ -165,19 +186,19 @@ npm run update-fallback -- --url https://preview.example.com  # Fetch from custo
 - `public/robots.txt` is a static file (Vite passthrough); it references the sitemap URL and is deployed to `dist/robots.txt` unchanged
 
 ### Customising per-page SEO hints
-Edit `PAGE_META` in `scripts/generate-sitemap.js` to override `priority` and `changefreq` for a specific page:
+Set the `sitemap` field on the page's entry in `assets/data/pages.json`:
 
-```js
-'my-new-page.html': { priority: '0.8', changefreq: 'weekly' },
+```jsonc
+"my-new-page": { ..., "sitemap": { "priority": "0.8", "changefreq": "weekly" } }
 ```
 
-Pages not listed in `PAGE_META` get `{ priority: '0.6', changefreq: 'monthly' }`.
+Pages without a `sitemap` field get `{ priority: '0.6', changefreq: 'monthly' }`.
 
 ### Adding a new page
-No sitemap action required. Just create the `*.html` file in the root - it will appear in the next build's sitemap automatically. To fine-tune its SEO weight, add it to `PAGE_META`.
+No sitemap action required. Just create the `*.html` file in the root - it will appear in the next build's sitemap automatically. To fine-tune its SEO weight, set its `sitemap` field in `pages.json`.
 
 ### Excluding a page
-Add its filename to the `EXCLUDED_PAGES` set at the top of `scripts/generate-sitemap.js`.
+Set `"sitemap": false` on the page's entry in `assets/data/pages.json`.
 
 ### Submitting to Google
 After first deploying the sitemap, submit `https://www.artisanscloud.com/sitemap.xml` once in Google Search Console. Subsequent deploys are picked up automatically via recrawl.

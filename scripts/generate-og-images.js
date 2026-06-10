@@ -18,6 +18,7 @@ import { dirname, join } from 'path';
 import satori from 'satori';
 import sharp from 'sharp';
 import { fileURLToPath } from 'url';
+import { loadPages } from './lib/page-meta.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -35,185 +36,16 @@ const COLORS = {
   description: '#686c71',
 };
 
-// Page definitions: filename → { title, subtitle }
-// Titles are short display titles (not the full og:title with "| Artisans Cloud")
-const PAGES = [
-  {
-    file: 'index',
-    title: 'Connected Enterprise\nSystems',
-    subtitle: 'For Modern Operations',
-  },
-  {
-    file: 'unified-commerce',
-    title: 'Unified Commerce\nPlatform',
-    subtitle: 'Omnichannel Commerce Platform for Modern Retail',
-  },
-  {
-    file: 'enterprise-ai',
-    title: 'Enterprise AI',
-    subtitle: 'Workforce readiness, knowledge and decision support',
-  },
-  {
-    file: 'data-intelligence',
-    title: 'Data Intelligence',
-    subtitle: 'Transform data into intelligent action',
-  },
-  {
-    file: 'about-us',
-    title: 'About Us',
-    subtitle: 'Architects of Enterprise Intelligence',
-  },
-  {
-    file: 'automation',
-    title: 'Automation Platform',
-    subtitle: 'Low-code workflow automation',
-  },
-  {
-    file: 'integrations',
-    title: 'Integrations',
-    subtitle: 'Seamless commerce connectivity',
-  },
-  {
-    file: 'browser-pos',
-    title: 'TabsyPOS',
-    subtitle: 'Free AI-Powered Browser POS',
-  },
-  {
-    file: 'POS',
-    title: 'Point of Sale',
-    subtitle: 'Unified offline & online retail',
-  },
-  {
-    file: 'customer-experience-management',
-    title: 'Customer Xperience\nManagement',
-    subtitle: 'Omnichannel engagement at scale',
-  },
-  {
-    file: 'd2c-eCommerce',
-    title: 'D2C eCommerce',
-    subtitle: 'Simplifying direct-to-consumer',
-  },
-  {
-    file: 'distributed-order-management',
-    title: 'Distributed Order\nManagement',
-    subtitle: 'Multi-channel fulfillment orchestration',
-  },
-  {
-    file: 'vault-knowledge-harvester',
-    title: 'Vault',
-    subtitle: 'Enterprise Knowledge Intelligence',
-  },
-  {
-    file: 'merchandise-and-assortment-planning',
-    title: 'Merchandise &\nAssortment Planning',
-    subtitle: 'Data-driven product mix optimization',
-  },
-  {
-    file: 'role-play-agent',
-    title: 'Role Play Agent',
-    subtitle: 'AI-powered readiness simulations',
-  },
-  {
-    file: 'warehouse-management-system',
-    title: 'Warehouse Management',
-    subtitle: 'Intelligent warehouse orchestration',
-  },
-  {
-    file: 'smart-product-search',
-    title: 'Smart Product Search',
-    subtitle: 'Help shoppers find exactly what they want',
-  },
-  {
-    file: 'dify-consulting',
-    title: 'Dify Consulting\nServices',
-    subtitle: 'Simplify, automate and optimise workflows',
-  },
-  {
-    file: 'lumen',
-    title: 'Lumen',
-    subtitle: 'Enterprise intelligence layer for connected execution',
-  },
-  {
-    file: 'image-editing',
-    title: 'AI Image Editing',
-    subtitle: 'Professional visuals for retail & e-commerce',
-  },
-  {
-    file: 'articles-and-resources',
-    title: 'Insights & Thought\nLeadership',
-    subtitle: 'Latest from Artisans Cloud',
-  },
-  {
-    file: 'contact-us',
-    title: 'Contact Us',
-    subtitle: 'Let\'s build something together',
-  },
-  {
-    file: 'request-demo',
-    title: 'Request a Demo',
-    subtitle: 'See Artisans Cloud in action',
-  },
-  {
-    file: 'privacy-policy',
-    title: 'Privacy Policy',
-    subtitle: 'How we protect your data',
-  },
-  {
-    file: 'terms-and-conditions',
-    title: 'Terms & Conditions',
-    subtitle: 'Platform usage terms',
-  },
-  {
-    file: 'smart-auto-completion',
-    title: 'Smart Auto-Completion',
-    subtitle: 'Find products before you finish typing',
-  },
-  {
-    file: 'personalized-recommendations',
-    title: 'Personalized\nRecommendations',
-    subtitle: 'Show every shopper something they\'ll love',
-  },
-  {
-    file: 'chatbots-for-quick-support',
-    title: 'Chatbots for Quick\nSupport',
-    subtitle: 'Instant answers, anytime',
-  },
-  {
-    file: 'customer-feedback-insights',
-    title: 'Customer Feedback\nInsights',
-    subtitle: 'Turn reviews into actionable insights',
-  },
-  {
-    file: 'demand-flow',
-    title: 'Demand Flow',
-    subtitle: 'Strengthening local discovery for retail networks',
-  },
-  {
-    file: 'smarter-inventory-alerts',
-    title: 'Smarter Inventory\nAlerts',
-    subtitle: 'Stay stocked, stay ahead with AI',
-  },
-  {
-    file: 'dynamic-pricing',
-    title: 'Dynamic Pricing',
-    subtitle: 'Set the Right Price at the Right Time',
-  },
-  {
-    file: 'store-layout-optimization',
-    title: 'Store Layout\nOptimization',
-    subtitle: 'Place products where they sell best',
-  },
-  {
-    file: 'fraud-detection',
-    title: 'Fraud Detection',
-    subtitle: 'Make Payments Safer and Smarter',
-  },
-  {
-    file: 'personalized-promotions',
-    title: 'Personalized\nPromotions',
-    subtitle: 'Send the right offer to the right customer',
-  },
-];
+// Page og-card text comes from assets/data/pages.json (ogCard field).
+// Titles are short display titles (not the full og:title with "| Artisans Cloud").
+// Pages without an ogCard entry (or with an ogImage override) are skipped.
+const PAGES = Object.entries(loadPages())
+  .filter(([, meta]) => meta.ogCard)
+  .map(([slug, meta]) => ({
+    file: slug,
+    title: meta.ogCard.title,
+    subtitle: meta.ogCard.subtitle,
+  }));
 
 // Read the dark logo SVG (for light backgrounds) and encode as data URI
 const logoSvg = readFileSync(join(ROOT, 'assets', 'image', 'logo.svg'), 'utf-8');
