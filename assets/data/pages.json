@@ -452,5 +452,8 @@
       "title": "Warehouse Management",
       "subtitle": "Intelligent warehouse orchestration"
     }
+  },
+  "retail-platform": {
+    "sitemap": false
   }
 }
