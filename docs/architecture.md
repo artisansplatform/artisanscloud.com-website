@@ -144,6 +144,25 @@ Per-page head metadata is data-driven. Every root page's `<head>` is rendered fr
 - `tests/pages-meta.test.js` enforces the contract: every page uses the partial, has a `pages.json` entry with title + description, OG images exist on disk, and there are no orphan entries or orphan OG images (catches renames)
 - The exception: `retail-platform.html` is a meta-refresh redirect stub with a hand-written head
 
+## Structured Data (JSON-LD)
+
+Schema.org JSON-LD is generated from the same single source, so it stays consistent with the rest of the head.
+
+### What is emitted
+| Scope | Schema | Source |
+|-------|--------|--------|
+| Homepage | `Organization` + `WebSite` (`@graph`) | `ORGANIZATION` / `WEBSITE` constants in `scripts/lib/page-meta.js` |
+| Every other indexable root page | `BreadcrumbList` (Home > Page) | derived from the page title + slug in `buildJsonLd()` |
+| Team cards (`team/*.html`) | `Person` (job title, employer, email, socials) | `scripts/generate-team-cards.js` from `team-members.json` |
+| Page-specific (e.g. unified-commerce) | `SoftwareApplication`, `FAQPage` | hand-written inline in the page, after `{{> head-meta}}` |
+
+### How it works
+- `buildJsonLd(slug, meta)` in `scripts/lib/page-meta.js` returns the JSON-LD pre-serialized with `JSON.stringify`; the `head-meta` partial injects it raw via `{{{jsonLd}}}` (triple-stash) so Handlebars HTML-escaping cannot corrupt the JSON
+- Pages with `og: false` (404, blog-detail, thank-you) and the redirect stub get no schema
+- Site-wide identity lives in the `ORGANIZATION` / `WEBSITE` constants; update those to change name, logo, social profiles (`sameAs`), or the support contact
+- `tests/seo.test.js` asserts every indexable page emits valid JSON-LD with the expected primary type (Organization on home, Person on team cards, BreadcrumbList elsewhere)
+- To add richer per-page schema (Product, Article, more FAQs), put an extra `<script type="application/ld+json">` in the page itself after the partial
+
 ## Open Graph Images
 
 Each static page has an auto-generated OG image (1200x630 PNG) for social media previews.

@@ -96,5 +96,43 @@ describe("SEO invariants (per page)", () => {
         `${page} is missing a non-empty meta description`,
       ).toBeTruthy();
     });
+
+    it("emits valid JSON-LD structured data on indexable pages", () => {
+      const { html, doc } = loadPage(page);
+      if (isRedirectStub(html)) return;
+      const hasOg = doc.querySelector('meta[property="og:title"]');
+      const blocks = [
+        ...doc.querySelectorAll('script[type="application/ld+json"]'),
+      ];
+
+      // Pages with no OG block (404, blog-detail, thank-you) opt out of schema.
+      if (!hasOg) return;
+
+      expect(
+        blocks.length,
+        `${page} should carry at least one JSON-LD block`,
+      ).toBeGreaterThan(0);
+
+      const types = new Set();
+      for (const block of blocks) {
+        let parsed;
+        expect(() => {
+          parsed = JSON.parse(block.textContent);
+        }, `${page}: JSON-LD must be valid JSON`).not.toThrow();
+        for (const node of parsed["@graph"] ?? [parsed]) {
+          if (node["@type"]) types.add(node["@type"]);
+        }
+      }
+
+      // Homepage carries site identity, team cards describe a Person, every
+      // other indexable page gets a breadcrumb.
+      const expected =
+        page === "index.html"
+          ? "Organization"
+          : page.startsWith("team/")
+            ? "Person"
+            : "BreadcrumbList";
+      expect(types, `${page} should declare a ${expected}`).toContain(expected);
+    });
   });
 });

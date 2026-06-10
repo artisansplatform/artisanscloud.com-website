@@ -56,7 +56,9 @@ npm run dev
 }
 ```
 
-The values flow through `scripts/lib/page-meta.js` into three consumers: the `head-meta` partial (via the Handlebars `context` in `vite.config.js`), `scripts/generate-sitemap.js`, and `scripts/generate-og-images.js`. Page-specific head extras (JSON-LD, inline styles) stay in the page itself, after `{{> head-meta}}`.
+The values flow through `scripts/lib/page-meta.js` into three consumers: the `head-meta` partial (via the Handlebars `context` in `vite.config.js`), `scripts/generate-sitemap.js`, and `scripts/generate-og-images.js`. Page-specific head extras (custom JSON-LD, inline styles) stay in the page itself, after `{{> head-meta}}`.
+
+JSON-LD structured data is added automatically: the homepage gets Organization + WebSite, every other indexable page gets a BreadcrumbList, and team cards get Person schema. You only hand-write a JSON-LD `<script>` for richer per-page schema (Product, Article, extra FAQs). See [Architecture: Structured Data](architecture.md#structured-data-json-ld).
 
 When renaming a page, rename the `pages.json` key, add a `vercel.json` redirect, and regenerate the OG image; `tests/pages-meta.test.js` flags orphan entries and orphan OG images if you forget.
 
