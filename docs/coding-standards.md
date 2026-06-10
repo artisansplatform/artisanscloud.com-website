@@ -11,7 +11,7 @@
 - **Asset ownership**: Copy required images into this repository under `assets/image/`; do not hotlink external domains
 - **CDN usage**: External libraries (Swiper, GSAP, Lenis) loaded from CDN to leverage browser caching
 - **Asset optimization**: Use WebP format for images when possible
-- **Font subsetting**: The Google Fonts request loads only the Poppins weights actually used on the site (normal 400/500/600/700/800, italic 400/600). It lives in `partials/head-meta.html` (and the `scripts/generate-team-cards.js` template). Before adding a new weight or style to the markup, add it to that `family=Poppins:ital,wght@...` list, otherwise the browser synthesizes it. `tests/font-subset.test.js` (part of `npm test` / CI, or `npm run test:font`) fails the build if the markup uses a weight/style the font request does not load, and if the partial and generator request different variants.
+- **Font subsetting**: Poppins is self-hosted from `assets/fonts/poppins/` and declared as `@font-face` blocks in `assets/style/input.css`, covering only the variants the site uses (normal 400/500/600/700/800, italic 400/600) in latin and latin-ext unicode-range subsets. Before adding a new weight or style to the markup, download its woff2 files and add matching `@font-face` blocks, otherwise the browser synthesizes it (see [Development: Fonts](development.md#fonts)). `tests/font-subset.test.js` (part of `npm test` / CI, or `npm run test:font`) fails the build if the markup uses a variant with no `@font-face`, if a declared woff2 file is missing, or if anything still points at Google Fonts.
 
 ## Accessibility
 - **Semantic HTML**: Use appropriate HTML5 elements (`<nav>`, `<main>`, `<article>`, `<section>`, etc.)

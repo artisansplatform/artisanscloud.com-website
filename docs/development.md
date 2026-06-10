@@ -62,6 +62,26 @@ JSON-LD structured data is added automatically: the homepage gets Organization +
 
 When renaming a page, rename the `pages.json` key, add a `vercel.json` redirect, and regenerate the OG image; `tests/pages-meta.test.js` flags orphan entries and orphan OG images if you forget.
 
+## Fonts
+
+Poppins is self-hosted; nothing is loaded from Google Fonts at runtime. Three pieces work together:
+
+- **Font files**: `assets/fonts/poppins/poppins-{weight}[-italic]-{subset}.woff2`. Each variant ships as two unicode-range subsets, `latin` and `latin-ext`, so browsers only download what the page's characters need. Current variants: normal 400/500/600/700/800 and italic 400/600.
+- **`@font-face` declarations**: in `assets/style/input.css`, one block per file, all with `font-display: swap`. They flow into `output.css` at build time; Vite then fingerprints the woff2 files and rewrites the urls.
+- **Preloads**: `partials/head-meta.html` and the `scripts/generate-team-cards.js` template preload the two heaviest-used files (400 and 600 latin) to avoid a flash of fallback text. Vite rewrites these hrefs to the hashed filenames during build.
+
+### Adding a new weight or style
+
+1. Fetch Google's CSS for the variant with a browser user agent, for example:
+   `curl -A "Mozilla/5.0 ... Chrome/126" "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300&display=swap"`
+2. Download the `latin` and `latin-ext` woff2 urls from the response into `assets/fonts/poppins/` using the existing naming scheme.
+3. Add matching `@font-face` blocks (with the `unicode-range` values from the response) to `assets/style/input.css`.
+4. Run `npm run test:font` to confirm the subset and markup agree.
+
+If markup uses a weight or style with no `@font-face`, the browser fakes it (synthesized bold/oblique) and `tests/font-subset.test.js` fails the build. The same test fails if a declared woff2 file is missing from the repo, if the partial and the team-card generator preload different files, or if any source references `fonts.googleapis.com` again.
+
+Note: `npm run generate:og` still downloads Poppins TTFs at generation time because satori cannot read woff2. That is a build-tool dependency, not a runtime one.
+
 ## Adding a Digital Business Card
 
 Team members have standalone digital card pages at `/team/{slug}` with vCard download, QR code, and sharing options.
@@ -228,7 +248,7 @@ Run just these checks with `npm run test:seo`. If you add a page that legitimate
 | On-page SEO | `tests/seo.test.js` | missing lang / h1 / description / twitter card, og-canonical host mismatch, missing img alt, invalid JSON-LD |
 | Page metadata | `tests/pages-meta.test.js` | hand-written heads, missing/orphan `pages.json` entries, missing/orphan/wrong-size OG images, noindex page left in sitemap |
 | Conventions | `tests/conventions.test.js` | inline executable scripts, duplicate Swiper selectors, broken/ shadowing redirects, redirect stubs left in the sitemap |
-| Font subset | `tests/font-subset.test.js` | a font weight/style used in markup but not loaded |
+| Font subset | `tests/font-subset.test.js` | a font weight/style used in markup with no `@font-face`, a missing woff2 file, or a stray Google Fonts reference |
 | Security headers | `tests/vercel-security.test.js` | missing security headers / cron config in `vercel.json` |
 
 Per-area run scripts: `test:seo`, `test:meta`, `test:conventions`, `test:font`, `test:links`, `test:build`.

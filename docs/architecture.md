@@ -18,6 +18,7 @@ All HTML pages follow identical boilerplate:
 ## Styling Architecture
 - **Tailwind CSS v4** (`tailwind.config.js`) - utility-first CSS framework
 - **Input/Output CSS**: `assets/style/input.css` (source) → `assets/style/output.css` (compiled, loaded by all pages)
+- **Fonts**: Poppins is self-hosted. woff2 subsets live in `assets/fonts/poppins/`, declared as `@font-face` in `input.css`; `partials/head-meta.html` and the team-card generator preload the 400/600 latin files. No runtime requests to Google Fonts. See [Development: Fonts](development.md#fonts).
 - **Build-time**: CSS compiled via `npm run dev:tailwind` (watch) or `npm run build:css` (production)
 - **Naming**: CSS classes use Tailwind conventions + custom utilities (`.ripple`, `.dropdown-toggle`, `.dropdown-menu`)
 - **Colors**: Custom color classes defined in config: `text-heading`, `text-primary`, `bg-primary`, `light-sky`
