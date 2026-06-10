@@ -44,7 +44,7 @@ describe("Build Verification Tests", () => {
       expect(missingPages).toEqual([]);
     });
 
-    it("should process Handlebars partials (no {{> header}} or {{> footer}} syntax)", () => {
+    it("should process Handlebars partials (no {{> header}}, {{> footer}}, or {{> head-meta}} syntax)", () => {
       const pagesWithUnprocessedPartials = [];
 
       expectedPages.forEach((page) => {
@@ -55,7 +55,8 @@ describe("Build Verification Tests", () => {
           // Check for unprocessed Handlebars partial syntax
           if (
             content.includes("{{> header}}") ||
-            content.includes("{{> footer}}")
+            content.includes("{{> footer}}") ||
+            content.includes("{{> head-meta}}")
           ) {
             pagesWithUnprocessedPartials.push(page);
           }

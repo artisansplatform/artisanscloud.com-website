@@ -125,6 +125,25 @@ Two tracking scripts load on every page via `assets/script/main.js`.
 - Website ID is set as `UMAMI_WEBSITE_ID` in `assets/script/modules/umami.js`. The dashboard is at https://cloud.umami.is.
 - Free tier covers 10,000 events/month. Upgrade if launch traffic exceeds this.
 
+## Page Metadata (Single Source)
+
+Per-page head metadata is data-driven. Every root page's `<head>` is rendered from the `head-meta` Handlebars partial; the values come from one JSON file.
+
+### Key files
+| File | Purpose |
+|------|---------|
+| `assets/data/pages.json` | One entry per root page (keyed by slug): title, description, keywords, OG overrides, og-card text, sitemap hints |
+| `partials/head-meta.html` | Shared `<head>` template: title, canonical, description, Open Graph/Twitter block, fonts, stylesheet |
+| `scripts/lib/page-meta.js` | Loads `pages.json`, derives canonical/OG URLs; shared by `vite.config.js`, the sitemap script, and the OG image script |
+
+### How it works
+- Each page's `<head>` contains only `{{> head-meta}}` (plus optional page-specific extras such as JSON-LD scripts or inline styles)
+- `vite.config.js` passes a `context` function to `vite-plugin-handlebars` that looks up the page slug in `pages.json` and supplies the template variables
+- Canonical and `og:url` are derived from the slug (`https://www.artisanscloud.com/{slug}`), so they can never disagree
+- `og:title` / `og:description` default to `title` / `description`; `og: false` omits the whole OG block (404, blog-detail, thank-you)
+- `tests/pages-meta.test.js` enforces the contract: every page uses the partial, has a `pages.json` entry with title + description, OG images exist on disk, and there are no orphan entries or orphan OG images (catches renames)
+- The exception: `retail-platform.html` is a meta-refresh redirect stub with a hand-written head
+
 ## Open Graph Images
 
 Each static page has an auto-generated OG image (1200x630 PNG) for social media previews.
@@ -147,9 +166,9 @@ npm run generate:og    # Regenerate all OG images (requires network for font dow
 ```
 
 ### Adding a new page
-1. Add a new entry to the `PAGES` array in `scripts/generate-og-images.js`
-2. Run `npm run generate:og`
-3. Add `og:image`, `og:image:width`, `og:image:height` meta tags to the new HTML page
+1. Add an `ogCard: { title, subtitle }` to the page's entry in `assets/data/pages.json` (the script derives its page list from there)
+2. Run `npm run generate:og` and commit the new PNG
+3. The `og:image` meta tags come from the `head-meta` partial automatically
 
 ## SEO & Sitemap
 
@@ -171,10 +190,10 @@ public/robots.txt  ──(Vite passthrough)──>  dist/robots.txt
 | `public/robots.txt` | Static file copied to `dist/robots.txt`; references the sitemap URL |
 
 ### Excluded pages
-`404.html`, `thank-you.html`, `blog-detail.html` are excluded from the sitemap (no indexable canonical URL).
+Pages with `sitemap: false` in `assets/data/pages.json` are excluded: `404`, `thank-you`, `blog-detail`, `request-demo` (no indexable canonical URL).
 
 ### Adding a new page
-No action needed - `generate-sitemap.js` uses the same `glob.sync('*.html')` pattern as `vite.config.js`. New pages are included automatically. To override the default `priority`/`changefreq`, add an entry to `PAGE_META` in `scripts/generate-sitemap.js`.
+No action needed - `generate-sitemap.js` uses the same `glob.sync('*.html')` pattern as `vite.config.js`. New pages are included automatically. To override the default `priority`/`changefreq`, set the `sitemap` field on the page's entry in `assets/data/pages.json`.
 
 ### Build order
 `npm-run-all build:*` runs alphabetically: `build:css` → `build:html` → `build:sitemap` → `build:static`. The sitemap script always runs after Vite has created `dist/`. The `build:static` step copies `assets/og/` (OG images) into `dist/assets/og/`.
