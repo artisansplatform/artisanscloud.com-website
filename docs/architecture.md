@@ -233,7 +233,7 @@ All responses are served with security headers defined in `vercel.json` under th
 
 ### Content Security Policy
 
-The CSP currently ships as **`Content-Security-Policy-Report-Only`**: browsers report violations to the console but block nothing, so it is safe to deploy while we confirm it does not break a real page.
+The CSP is **enforced** (header `Content-Security-Policy`). It shipped first as `Content-Security-Policy-Report-Only` and was promoted to enforcing after a full static audit of every resource each built page loads (scripts, styles, fonts, images, data URIs, form posts, and the runtime analytics hosts) showed zero violations against the policy.
 
 Key directives and why each origin is allowed:
 
@@ -245,7 +245,7 @@ Key directives and why each origin is allowed:
 - `connect-src` - Web3Forms (form submits), Vercel Insights, Umami, LinkedIn ad pixels.
 - `form-action 'self' https://api.web3forms.com`.
 
-**Rollout / how to enforce:** deploy, open a few pages on the Vercel preview (home, a feature page, `contact-us` with a form submit, a team card), and check the console for `Report-Only` violations. Once clean, switch enforcement by renaming the key in `vercel.json` from `Content-Security-Policy-Report-Only` to `Content-Security-Policy`. `tests/vercel-security.test.js` accepts either key, and asserts the core directives plus that `script-src` never gains `'unsafe-inline'`. If a new third-party script/origin is added later, extend the matching directive in `vercel.json`.
+**If you add a third-party script, style host, image host, or network call,** extend the matching directive in `vercel.json`, otherwise the browser blocks it. `tests/vercel-security.test.js` asserts the core directives plus that `script-src` never gains `'unsafe-inline'` (it accepts either the enforcing or report-only key). To debug a suspected CSP block, temporarily rename the key back to `Content-Security-Policy-Report-Only` and read the violations in the browser console.
 
 ## Deployment
 - **Platform**: Vercel

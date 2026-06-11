@@ -131,7 +131,7 @@ describe("Vercel Security Configuration", () => {
   it("should have all essential security headers", () => {
     const headerConfig = vercelConfig.headers[0];
     const securityHeaders = [
-      "Content-Security-Policy-Report-Only",
+      "Content-Security-Policy",
       "X-Content-Type-Options",
       "X-Frame-Options",
       "X-XSS-Protection",
