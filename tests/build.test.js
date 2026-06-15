@@ -167,7 +167,7 @@ describe("Build Verification Tests", () => {
       const sitemapPath = path.join(distDir, "sitemap.xml");
       const content = fs.readFileSync(sitemapPath, "utf-8");
       expect(content).toContain(
-        "<loc>https://www.artisanscloud.com/unified-commerce</loc>",
+        "<loc>https://www.artisanscloud.com/nexus-unified-commerce</loc>",
       );
     });
 

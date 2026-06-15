@@ -5,8 +5,8 @@ Step-by-step plan for restructuring the site IA, replacing duplicate Unified Com
 ## Background
 
 - We are restructuring the site for SEO and to attract enterprise buyers.
-- PR #48 merged: `/retail-platform` was renamed to `/unified-commerce` with a 301 redirect.
-- PR #50 merged: `/unified-commerce` content rewritten, FAQ and SoftwareApplication schema added, `/overview` redirected to `/unified-commerce` and the file deleted, header and footer Overview links removed.
+- PR #48 merged: `/retail-platform` was renamed to `/nexus-unified-commerce` with a 301 redirect.
+- PR #50 merged: `/nexus-unified-commerce` content rewritten, FAQ and SoftwareApplication schema added, `/overview` redirected to `/nexus-unified-commerce` and the file deleted, header and footer Overview links removed.
 - PR #51 merged: site-wide brand naming sweep. "Artisans" alone and "Artisans Commerce Cloud" replaced with "Artisans Cloud" everywhere except where the legacy name was retired in favor of "Unified Commerce Platform".
 - PR #46 (blog SEO strategy doc) is deferred until after the IA changes land. Revisit at Step 8.
 - Google Search Console is connected. Data flow is manual; see GSC data flow section below.
@@ -78,7 +78,7 @@ Notes:
 For one-off questions, paste the relevant slice into chat directly.
 
 Most useful reports for this roadmap:
-- Queries and Pages report covering `/unified-commerce` and `/retail-platform`, to confirm the redirect consolidates impressions cleanly.
+- Queries and Pages report covering `/nexus-unified-commerce` and `/retail-platform`, to confirm the redirect consolidates impressions cleanly.
 - Pages report sorted by clicks, to identify pages that must not be orphaned during Step 6.
 - Coverage report, to catch any unexpected de-indexing after URL changes.
 
@@ -123,8 +123,8 @@ Tasks:
 
 | Current URL | New URL | Action |
 |---|---|---|
-| /retail-platform | /unified-commerce | done (PR #48) |
-| /overview | /unified-commerce | done (PR #50) |
+| /retail-platform | /nexus-unified-commerce | done (PR #48) |
+| /overview | /nexus-unified-commerce | done (PR #50) |
 | /POS | TBD | |
 | /browser-pos | TBD | |
 | /warehouse-management-system | TBD | |
@@ -160,7 +160,7 @@ Why this one first: enterprise retailers are the primary ICP, so this Solutions 
 Tasks:
 1. URL: `/solutions/retail-omnichannel` (locked nested pattern per IA).
 2. Keyword research:
-   - Primary keyword must be different from `/unified-commerce` to avoid cannibalization.
+   - Primary keyword must be different from `/nexus-unified-commerce` to avoid cannibalization.
    - Candidates to evaluate: "omnichannel retail solutions", "enterprise omnichannel platform", "unified retail operations".
    - Use a free keyword tool (Ahrefs free, Ubersuggest, or GSC) to validate volume and intent.
 3. Draft 800 to 1500 words structured as:
@@ -179,7 +179,7 @@ Tasks:
 Done when:
 - Page lives at the chosen URL with full content.
 - `npm run build`, `npm test`, `npm run test:e2e` all pass.
-- Primary keyword for this page is documented and confirmed distinct from `/unified-commerce`.
+- Primary keyword for this page is documented and confirmed distinct from `/nexus-unified-commerce`.
 
 ### Step 3: Build the Request Demo page
 
@@ -246,7 +246,7 @@ Why after Step 4: shipping the new nav with a retail-anchored homepage looks dis
 
 Findings driving this step (from the audit of `index.html`):
 - Hero H1 is retail-and-supply-chain only ("Streamline, Optimize, and Align Retail Planning and Supply Chain Operations"), contradicting the meta title "Intelligent Enterprise Transformation".
-- Both hero CTAs link to `/unified-commerce`, forcing every interested visitor into the retail funnel.
+- Both hero CTAs link to `/nexus-unified-commerce`, forcing every interested visitor into the retail funnel.
 - Hero floating cards are three-of-four retail.
 - The mid-page "Drive Sales" CTA section is 100% retail copy targeting "retailers".
 - Our Core Verticals, Intelligent Enterprise Transformation, Strategic Impact Snapshot, and Insights sections are already sector-neutral. They do not need rework.
@@ -263,7 +263,7 @@ Tasks (apply once the new content draft arrives):
 4. Rebalance the hero floating cards. Suggested mix: Unified Commerce, Decision Intelligence, Enterprise AI, plus one cross-cutting concept (for example, Predictive Operations). Replace assets accordingly.
 5. Replace or rewrite the Drive Sales CTA section (`index.html:339-355`):
    - Option A: Sector-neutral rewrite focused on outcomes (efficiency, decision speed, margin) without the word "retailer".
-   - Option B: Replace with a three-column block summarizing the three Platforms with deep-link buttons to `/unified-commerce`, `/data-intelligence`, `/enterprise-ai`.
+   - Option B: Replace with a three-column block summarizing the three Platforms with deep-link buttons to `/nexus-unified-commerce`, `/data-intelligence`, `/enterprise-ai`.
    - Recommend Option B; it strengthens internal linking to all three Platform pages.
 6. Add a small "Industries we serve" strip near the client logo marquee, listing the sectors named in the Sector Expertise card.
 7. Audit client logos. If most logos are retail brands, reorder the marquee so the first visible logos are a mixed sequence. If non-retail logos do not exist yet, decide whether to source one or two before this step ships.

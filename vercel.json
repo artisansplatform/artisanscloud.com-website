@@ -8,13 +8,18 @@
       "permanent": true
     },
     {
+      "source": "/unified-commerce",
+      "destination": "/nexus-unified-commerce",
+      "permanent": true
+    },
+    {
       "source": "/retail-platform",
-      "destination": "/unified-commerce",
+      "destination": "/nexus-unified-commerce",
       "permanent": true
     },
     {
       "source": "/overview",
-      "destination": "/unified-commerce",
+      "destination": "/nexus-unified-commerce",
       "permanent": true
     },
     {
@@ -69,12 +74,12 @@
     },
     {
       "source": "/solution",
-      "destination": "/unified-commerce",
+      "destination": "/nexus-unified-commerce",
       "permanent": true
     },
     {
       "source": "/artisans-commerce-cloud",
-      "destination": "/unified-commerce",
+      "destination": "/nexus-unified-commerce",
       "permanent": true
     },
     {
