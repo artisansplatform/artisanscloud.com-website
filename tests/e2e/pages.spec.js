@@ -58,9 +58,9 @@ const pages = [
   { path: "/POS", title: "Point of Sale", name: "POS.html" },
   { path: "/404", title: "404", name: "404.html" },
   {
-    path: "/unified-commerce",
+    path: "/nexus-unified-commerce",
     title: "Unified Commerce",
-    name: "unified-commerce.html",
+    name: "nexus-unified-commerce.html",
   },
   { path: "/thank-you", title: "Thank You", name: "thank-you.html" },
   { path: "/request-demo", title: "Request a Demo", name: "request-demo.html" },

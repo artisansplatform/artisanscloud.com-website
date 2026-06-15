@@ -38,7 +38,7 @@ npm run optimize:images  # Re-encode raster images in place via sharp (pass path
 ## Gotchas & Landmines
 
 - **Header/Footer are Handlebars partials** - edit `partials/header.html` or `partials/footer.html` ONLY. Never duplicate header/footer HTML into individual pages. `{{> header}}` and `{{> footer}}` are replaced at build time.
-- **Clean URLs** - Vercel serves pages without `.html`. Use root-relative paths in links: `/unified-commerce`, not `/unified-commerce.html`.
+- **Clean URLs** - Vercel serves pages without `.html`. Use root-relative paths in links: `/nexus-unified-commerce`, not `/nexus-unified-commerce.html`.
 - **Blog cards are JS-rendered** - `articles-and-resources.html` and `index.html` have empty `#blog-grid` / `#insights-grid` containers. Card HTML lives ONLY in `assets/script/modules/blog-articles.js`. Do NOT put card markup in HTML pages.
 - **Fallback articles** - `assets/data/fallback-articles.json` is the single source shared by both frontend JS and backend API (`api/lib/fallback-articles.js`). Keep them in sync.
 - **No inline scripts** - all JS goes through `assets/script/main.js` modules for CSP compatibility. Put page behavior in an `assets/script/modules/*.js` file that no-ops when its target element is absent (see `modules/card-toggle.js`) and import it in `main.js`. Enforced by `tests/conventions.test.js` (data blocks `application/ld+json` / `application/json` and redirect stubs are exempt).
