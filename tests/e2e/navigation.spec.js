@@ -182,7 +182,7 @@ test.describe("Navigation Tests", () => {
     test("solutions dropdown toggle should be active on a solution sub-page", async ({
       page,
     }) => {
-      await page.goto("/d2c-eCommerce", { waitUntil: 'domcontentloaded' });
+      await page.goto("/image-editing", { waitUntil: 'domcontentloaded' });
 
       // The Solutions dropdown toggle should be active
       const toggle = page.locator("header .dropdown-toggle.active");
@@ -190,7 +190,7 @@ test.describe("Navigation Tests", () => {
 
       // The matching dropdown item should also be active
       const dropdownItem = page.locator(
-        'header .dropdown-item.active[href="/d2c-eCommerce"]',
+        'header .dropdown-item.active[href="/image-editing"]',
       );
       await expect(dropdownItem).toHaveCount(1);
     });

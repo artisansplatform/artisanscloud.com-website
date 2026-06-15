@@ -85,6 +85,34 @@ export function initSwipers() {
         });
     }
 
+    // Nexus Capability Slider ========================
+    const nexusCapabilitySliderEl = document.querySelector(".nexusCapabilitySlider");
+    if (nexusCapabilitySliderEl) {
+        new Swiper(".nexusCapabilitySlider", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+            },
+            pagination: false,
+            navigation: {
+                nextEl: ".swiper-button-next-nexusCapability",
+                prevEl: ".swiper-button-prev-nexusCapability",
+            },
+        });
+    }
+
     // Use Cases Slider ========================
     const useCasesSliderEl = document.querySelector(".useCasesSlider");
     if (useCasesSliderEl) {
