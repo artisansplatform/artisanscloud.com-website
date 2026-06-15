@@ -419,13 +419,13 @@
     "description": "Thanks for reaching out to Artisans Cloud. Our team has received your message and will get back to you shortly."
   },
   "unified-commerce": {
-    "title": "Unified Commerce Platform for Retail Enterprises | Artisans Cloud",
-    "description": "Artisans Cloud unified commerce platform helps enterprise retailers manage inventory, orders, and customer data across all channels with real-time visibility and execution.",
-    "keywords": "unified commerce platform, omnichannel retail, enterprise retail platform, inventory management, order management, customer data platform, Artisans Cloud",
-    "ogTitle": "Unified Commerce Platform for Retail Enterprises | Artisans Cloud",
+    "title": "Nexus Unified Commerce Platform | Artisans Cloud",
+    "description": "Nexus Unified Commerce Platform connects stores, inventory, orders, and customer data across all retail channels into a single operational system for real-time execution.",
+    "keywords": "Nexus unified commerce, unified commerce platform, omnichannel retail, enterprise retail platform, inventory management, order management, Artisans Cloud",
+    "ogTitle": "Nexus Unified Commerce Platform | Artisans Cloud",
     "ogCard": {
-      "title": "Unified Commerce\nPlatform",
-      "subtitle": "Omnichannel Commerce Platform for Modern Retail"
+      "title": "Nexus Unified\nCommerce",
+      "subtitle": "Platform for Modern Retail Enterprises"
     },
     "sitemap": {
       "priority": "0.9",
