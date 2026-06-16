@@ -1,0 +1,1006 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
+
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
+
+    {{> header}}
+
+    <main class="w-full">
+      <!----- Banner Sec ----->
+      <section class="w-full h-full p-4 lg:p-5">
+        <div
+          class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] flex items-center justify-center h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/retail-plateform/banner-bg.webp')] bg-no-repeat bg-cover"
+        >
+          <div class="pt-5 lg:pt-[70px] pb-10 lg:pb-[62px] w-full">
+            <div class="fade-in max-w-[1400px] w-full mx-auto">
+              <div
+                class="fade-in flex flex-col lg:flex-row justify-center w-full lg:gap-x-6 xl:gap-x-12"
+              >
+                <div class="max-w-fit mx-auto lg:mx-0">
+                  <div class="text-center mt-7.5">
+                    <div
+                      class="mb-3 sm:mb-5 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
+                    >
+                      Open-to-Buy (OTB)
+                    </div>
+                    <h1
+                      id="heroHeading"
+                      class="mb-3 font-primary text-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] md:text-nowrap"
+                    >
+                      Open-to-Buy (OTB) Planning –<br />
+                      Smarter Buying Decisions Powered by AI
+                    </h1>
+                  </div>
+                  <div class="flex flex-col items-center mb-7.5 lg:mb-12">
+                    <p
+                      class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%] mb-3"
+                    >
+                      Inventory planning is one of the biggest challenges for
+                      retailers. Buying too much ties up cash in excess stock,
+                      while buying too little leads to missed sales
+                      opportunities.
+                    </p>
+                    <p
+                      class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                    >
+                      AI-powered Open-to-Buy (OTB) Planning helps retailers make
+                      smarter purchasing decisions using real-time inventory and
+                      sales data.
+                    </p>
+                    <a
+                      href="/request-demo"
+                      class="lg:mt-[25px] mt-4 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                    >
+                      Request a Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 1: Why Inventory Buying Decisions Are So Complex ----->
+      <section class="lg:py-[70px] md:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
+            <div
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Why Inventory Buying Decisions Are So Complex
+            </div>
+            <div class="">
+              <p
+                class="lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                Retailers need to balance inventory carefully to avoid
+                overstocking or running out of products.
+              </p>
+              <p
+                class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                Traditional planning often involves manual calculations across
+                multiple factors, making the process time-consuming and
+                error-prone.
+              </p>
+              <p
+                class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                Common challenges include:
+              </p>
+              <ul class="mt-4 ps-5">
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Predicting future demand accurately
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Managing forward cover requirements
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Tracking current stock and pending purchase orders
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Balancing desired closing stock levels
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Reacting to seasonal trends and sales fluctuations
+                </li>
+              </ul>
+              <p
+                class="mt-5 lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                When planning isn&rsquo;t accurate,
+                <strong class="text-heading"
+                  >retailers risk excess inventory, stock shortages, and reduced
+                  profitability.</strong
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Section 2: A Smarter Way to Plan Inventory with AI ----->
+      <section class="lg:py-[90px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="grid lg:grid-cols-2 lg:gap-12 gap-8 items-center">
+            <div class="lg:pe-10">
+              <h2
+                class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-10"
+              >
+                A Smarter Way to Plan Inventory with AI
+              </h2>
+              <img
+                src="assets/image/open-to-buy-planning/artisanscloud-plan-inventory.webp"
+                alt="AI-powered Open-to-Buy inventory planning illustration"
+                class="max-w-full h-auto mx-auto lg:mx-0"
+                width="500"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="fade-in">
+              <div
+                class="lg:mb-[30px] mb-6 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                AI-powered Open-to-Buy Planning helps retailers calculate how
+                much inventory to purchase using key business inputs and
+                historical insights.
+              </div>
+
+              <p
+                class="mb-4 text-heading font-primary font-semibold text-lg leading-[130%]"
+              >
+                With intelligent OTB planning, you can:
+              </p>
+
+              <div class="flex flex-col lg:gap-5 gap-5">
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Calculate OTB using
+                    <strong class="text-heading"
+                      >Planned Sales, Forward Cover, Opening Stock, Purchase
+                      Orders, and Closing Stock</strong
+                    >
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Automatically adjust buying plans based on demand trends
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Improve inventory allocation across categories
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Reduce manual spreadsheet calculations
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Account for seasonal sales patterns
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Identify potential stock shortages early
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Optimize purchasing decisions with real-time insights
+                  </p>
+                </div>
+              </div>
+
+              <p
+                class="mt-6 text-description font-primary font-normal leading-[150%]"
+              >
+                <strong class="text-heading">In short:</strong> AI helps
+                retailers buy
+                <strong class="text-heading"
+                  >the right products, in the right quantity, at the right
+                  time.</strong
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 3: Benefits for Retailers ----->
+      <section class="lg:py-[40px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              Benefits for Retailers
+            </h2>
+          </div>
+
+          <div
+            class="fade-in grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-[30px]"
+          >
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/target-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Accurate buying decisions icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Accurate buying decisions
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-1.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Prevents overstock and stockouts icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Prevents overstock and stockouts
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/predictive-commerce-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Improves cash flow and margins icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Improves cash flow and margins
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#F2EEFF] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-3.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Reduces manual work for planners icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Reduces manual work for planners
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#EEF4FF] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/layers-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Better inventory utilization icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Better inventory utilization
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#FFEFEF] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/Predictive-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Smarter seasonal and trend-based planning icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Smarter seasonal and trend-based planning
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 4: OTB Planning in Action ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-8 lg:mb-[60px]">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Open-to-Buy Planning in Action
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-5">
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/moduleCard-retailPLanning.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Forward Cover Planning icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+                >
+                  01
+                </div>
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Forward Cover Planning
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  A retailer sets a target for
+                  <strong class="text-heading"
+                    >3 months&rsquo; forward cover</strong
+                  >
+                  and enters planned sales for the upcoming quarter. AI
+                  considers
+                  <strong class="text-heading"
+                    >opening stock, pending purchase orders, and desired closing
+                    stock</strong
+                  >
+                  to recommend how much inventory should be purchased.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/Predictive-icon.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Seasonal Demand Adjustment icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+                >
+                  02
+                </div>
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Seasonal Demand Adjustment
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Sales for winter jackets increase earlier than expected. AI
+                  detects the trend and recommends increasing future purchases
+                  before stock runs low.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/intelligentCard-icon-2.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Preventing Overstock icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+                >
+                  03
+                </div>
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Preventing Overstock
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  A slow-moving category already has high stock levels and
+                  pending purchase orders. AI reduces future buying
+                  recommendations to avoid excess inventory.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/icon-ai.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Multi-Category Buying Optimization icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+                >
+                  04
+                </div>
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Multi-Category Buying Optimization
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  AI analyzes sales trends across categories and helps buyers
+                  prioritize high-performing products while reducing investment
+                  in weaker categories.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Section 5: How AI Makes OTB Planning Smarter ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              How AI Makes OTB Planning Smarter
+            </h2>
+            <p
+              class="text-description font-primary font-normal leading-[150%] max-w-[800px] mx-auto"
+            >
+              AI-powered OTB planning combines multiple data points to create
+              more accurate inventory buying recommendations.
+            </p>
+            <p
+              class="mt-4 text-heading font-primary font-semibold text-lg leading-[130%]"
+            >
+              The system considers:
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8">
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Planned sales forecasts
+              </div>
+            </div>
+
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Current opening stock levels
+              </div>
+            </div>
+
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Pending purchase orders
+              </div>
+            </div>
+
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Desired closing stock targets
+              </div>
+            </div>
+
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Forward cover requirements
+              </div>
+            </div>
+
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Historical sales trends
+              </div>
+            </div>
+
+            <div class="fade-in ps-8 relative md:col-span-2 md:max-w-[50%]">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Seasonal demand patterns
+              </div>
+            </div>
+          </div>
+
+          <div class="fade-in mt-10 text-center">
+            <p
+              class="text-description font-primary font-normal leading-[150%] max-w-[800px] mx-auto"
+            >
+              This enables retailers to make
+              <strong class="text-heading"
+                >data-driven buying decisions with greater confidence.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 6: Where OTB Planning Helps Most ----->
+      <section class="lg:py-[50px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <h2
+            class="fade-in mb-10 md:mb-16 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] text-center"
+          >
+            Where Open-to-Buy Planning Helps Most
+          </h2>
+
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 lg:gap-10 gap-5"
+          >
+            <div class="fade-in text-center">
+              <div
+                class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-pink"
+              >
+                <img
+                  src="assets/image/icon/moduleCard-productMgmt.svg"
+                  class="h-1/2"
+                  alt="Fashion and apparel retailers icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <p
+                class="text-heading font-primary font-medium text-sm sm:text-base"
+              >
+                Fashion and apparel retailers
+              </p>
+            </div>
+
+            <div class="fade-in text-center">
+              <div
+                class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-green-box"
+              >
+                <img
+                  src="assets/image/icon/layers-icon.svg"
+                  class="h-1/2"
+                  alt="Department stores icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <p
+                class="text-heading font-primary font-medium text-sm sm:text-base"
+              >
+                Department stores
+              </p>
+            </div>
+
+            <div class="fade-in text-center">
+              <div
+                class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-purple"
+              >
+                <img
+                  src="assets/image/icon/Predictive-icon.svg"
+                  class="h-1/2"
+                  alt="Grocery and supermarket chains icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <p
+                class="text-heading font-primary font-medium text-sm sm:text-base"
+              >
+                Grocery and supermarket chains
+              </p>
+            </div>
+
+            <div class="fade-in text-center">
+              <div
+                class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-blue-box"
+              >
+                <img
+                  src="assets/image/icon/moduleCard-retailPLanning.svg"
+                  class="h-1/2"
+                  alt="Retailers with seasonal inventory icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <p
+                class="text-heading font-primary font-medium text-sm sm:text-base"
+              >
+                Retailers with seasonal inventory
+              </p>
+            </div>
+
+            <div class="fade-in text-center col-span-2 sm:col-span-1">
+              <div
+                class="mb-4 sm:mb-6 mx-auto w-20 h-20 sm:w-24 sm:h-24 grid place-items-center rounded-[10px] bg-light-sky"
+              >
+                <img
+                  src="assets/image/icon/customer-copilots-icon.svg"
+                  class="h-1/2"
+                  alt="Merchandising and buying teams icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <p
+                class="text-heading font-primary font-medium text-sm sm:text-base"
+              >
+                Merchandising and buying teams
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 7: Ready to Plan Inventory More Accurately? ----->
+      <section
+        class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-16 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-buildTogether-BG.webp)] bg-no-repeat bg-top-left bg-cover"
+      >
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+          <div class="fade-in lg:max-w-[800px] mx-auto w-full text-center">
+            <h2
+              class="lg:mb-[30px] mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+            >
+              Ready to Plan Inventory More Accurately?
+            </h2>
+            <p class="text-white/80 font-primary font-normal leading-[150%]">
+              AI-powered Open-to-Buy Planning helps retailers reduce planning
+              errors, optimize inventory investment, and improve profitability
+              through smarter purchasing decisions.
+            </p>
+            <div
+              class="lg:mt-11 mt-8 flex items-center flex-wrap gap-2.5 justify-center"
+            >
+              <a
+                href="/request-demo"
+                class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+              >
+                Request a Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <img
+          src="assets/image/icon/CTA-buildTogether-shape1.svg"
+          class="animate-pulse absolute -top-[10%] start-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <img
+          src="assets/image/icon/CTA-buildTogether-shape2.svg"
+          class="animate-pulse hidden md:block absolute top-0 -end-[10%] pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+      </section>
+
+      <!----- Section 8: The Right OTB Planning Solution ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div
+            class="fade-in grid lg:grid-cols-2 gap-8 lg:gap-[66px] items-center"
+          >
+            <div class="flex items-center justify-center">
+              <img
+                src="assets/image/open-to-buy-planning/artisanscloud-open-to-buy-planning.webp"
+                alt="AI-powered Open-to-Buy inventory planning"
+                class="max-w-full h-auto rounded-2xl"
+                width="600"
+                height="500"
+                loading="lazy"
+              />
+            </div>
+
+            <div>
+              <h2
+                class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                The right Open-to-Buy Planning solution
+              </h2>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                combines sales forecasts, stock levels, purchase orders, and
+                forward cover planning to help retailers make smarter inventory
+                decisions, reducing waste while ensuring product availability.
+              </p>
+              <p
+                class="mt-4 text-description font-primary font-normal leading-[150%]"
+              >
+                Ready to modernize your inventory planning with AI?
+              </p>
+              <div class="mt-5 lg:mt-10 flex flex-wrap justify-end gap-3">
+                <a
+                  href="/contact-us"
+                  class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >
+                  Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {{> footer}}
+
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
+</html>

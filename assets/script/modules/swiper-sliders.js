@@ -243,6 +243,35 @@ export function initSwipers() {
         });
     }
 
+    // Personalized CX Experience Slider ========================
+    const personalizedCXExperienceSliderEl = document.querySelector(".PersonalizedCXExperienceSlider");
+    if (personalizedCXExperienceSliderEl) {
+        new Swiper(".PersonalizedCXExperienceSlider", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            speed: 700,
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 15,
+                },
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+            },
+            pagination: false,
+            navigation: {
+                nextEl: ".swiper-button-next-personalizedCXExperience",
+                prevEl: ".swiper-button-prev-personalizedCXExperience",
+            },
+        });
+    }
+
     // Personalized Recommendations Slider ========================
     const personalizedRecsSliderEl = document.querySelector(".PersonalizedRecsSlider");
     if (personalizedRecsSliderEl) {

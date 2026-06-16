@@ -1,0 +1,956 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
+
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
+
+    {{> header}}
+
+    <main class="w-full">
+      <!----- Banner Sec ----->
+      <section class="w-full h-full p-4 lg:p-5">
+        <div
+          class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/overview/overview-bannerBG.webp')] bg-no-repeat bg-cover"
+        >
+          <div
+            class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24"
+          >
+            <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
+              <div class="text-center mt-7.5">
+                <div
+                  class="mb-3 sm:mb-5 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
+                >
+                  Enterprise Data Search
+                </div>
+                <h1
+                  id="heroHeading"
+                  class="mb-3 font-primary text-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%]"
+                >
+                  Ask Questions, Get Answers Instantly
+                </h1>
+              </div>
+              <div
+                id="heroDec"
+                class="flex flex-col items-center mb-7.5 lg:mb-12"
+              >
+                <p
+                  class="mb-3 text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                >
+                  Retail teams shouldn&rsquo;t have to spend hours digging
+                  through spreadsheets, reports, dashboards, and multiple
+                  systems just to find one piece of information.
+                </p>
+                <p
+                  class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                >
+                  With AI-powered Enterprise Data Search, users can simply ask a
+                  question in plain language and get the answers they need in
+                  seconds.
+                </p>
+                <a
+                  href="/request-demo"
+                  class="lg:mt-[25px] mt-4 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >
+                  Request a Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 1: Why Finding Business Data Takes Too Long ----->
+      <section class="lg:py-[70px] md:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
+            <div
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Why Finding Business Data Takes Too Long
+            </div>
+            <div>
+              <p
+                class="lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                Retail organizations generate massive amounts of data every day
+                across sales, inventory, merchandising, purchasing, and
+                operations systems.
+              </p>
+              <p
+                class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                Common challenges include:
+              </p>
+              <ul class="mt-4 ps-5">
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Searching through multiple reports and dashboards
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Data spread across different systems
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Waiting for analysts to provide answers
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Difficulty finding the latest information
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Time wasted manually combining data from different sources
+                </li>
+              </ul>
+              <p
+                class="mt-5 lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                When information is hard to find,
+                <strong class="text-heading"
+                  >decisions become slower and opportunities can be
+                  missed.</strong
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 2: A Smarter Way to Access Enterprise Data ----->
+      <section
+        class="max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]"
+      >
+        <div
+          class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-8">
+            <div class="fade-in">
+              <h2
+                class="lg:mb-8 mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+              >
+                A Smarter Way to Access Enterprise Data
+              </h2>
+              <p
+                class="lg:mb-5 mb-4 text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]"
+              >
+                AI-powered Enterprise Data Search allows users to ask questions
+                in plain language and instantly receive relevant answers.
+              </p>
+              <p
+                class="lg:mb-5 mb-4 text-white/80 lg:max-w-[490px] font-primary font-semibold leading-[150%]"
+              >
+                With intelligent search, you can:
+              </p>
+
+              <div
+                class="mt-4 lg:mt-8 p-6 rounded-2xl bg-white/5 border border-white/10 lg:max-w-[490px]"
+              >
+                <p
+                  class="text-white/80 font-primary font-normal leading-[150%]"
+                >
+                  <strong class="text-white font-semibold">In short:</strong> AI
+                  turns enterprise data into a conversation, simply ask and get
+                  answers.
+                </p>
+              </div>
+            </div>
+            <div class="fade-in">
+              <ul class="flex flex-col lg:gap-7 gap-6">
+                <li class="ps-5 border-s-4 border-primary">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Search across multiple business systems from a single place
+                  </div>
+                </li>
+                <li class="ps-5 border-s-4 border-sky">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Ask questions using everyday language
+                  </div>
+                </li>
+                <li class="ps-5 border-s-4 border-pink">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Instantly retrieve sales, inventory, product, and
+                    operational data
+                  </div>
+                </li>
+                <li class="ps-5 border-s-4 border-sky-2">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Eliminate the need to navigate complex dashboards
+                  </div>
+                </li>
+                <li class="ps-5 border-s-4 border-grey">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Reduce dependency on technical teams and analysts
+                  </div>
+                </li>
+                <li class="ps-5 border-s-4 border-primary">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Get answers in seconds instead of hours
+                  </div>
+                </li>
+                <li class="ps-5 border-s-4 border-sky">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Enable faster, data-driven decision-making
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <img
+          src="assets/image/icon/strategicOutcomeBanner-shape-1.svg"
+          class="absolute select-none pointer-events-none start-0 bottom-0"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <img
+          src="assets/image/icon/strategicOutcomeBanner-shape-2.svg"
+          class="absolute select-none pointer-events-none end-0 top-0"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+      </section>
+
+      <!----- Section 3: Benefits for Retailers ----->
+      <section class="py-10 lg:py-16">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              Benefits for Retailers
+            </h2>
+          </div>
+
+          <div
+            class="fade-in grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-[30px]"
+          >
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentAutomation-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Saves hours of manual searching icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]"
+                >
+                  Saves hours of manual searching
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Makes data accessible to everyone icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]"
+                >
+                  Makes data accessible to everyone, not just analysts
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/Predictive-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Faster decisions icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]"
+                >
+                  Faster decisions with real-time answers
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#F2EEFF] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/metadata-LineageManagement-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Reduces dependency on reports icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]"
+                >
+                  Reduces dependency on reports and dashboards
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#EEF4FF] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/target-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Improves productivity icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]"
+                >
+                  Improves productivity across teams
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#FFEFEF] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/predictive-commerce-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Encourages data-driven decisions icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[130%]"
+                >
+                  Encourages data-driven decision-making
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 4: Enterprise Data Search in Action ----->
+      <section class="py-10 lg:py-16">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-8 lg:mb-[60px]">
+            <h2
+              class="mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Enterprise Data Search in Action
+            </h2>
+          </div>
+          <div class="flex flex-wrap justify-center lg:gap-[30px] gap-5">
+            <div
+              class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+            >
+              <div
+                class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/predictive-commerce-icon.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Sales Performance icon"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-lg text-heading font-primary font-semibold"
+                >
+                  Example 1 &ndash; Sales Performance
+                </div>
+                <p
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                >
+                  A planner asks:
+                  <em
+                    >&ldquo;What were last week&rsquo;s top 10 selling products
+                    in the Mumbai store?&rdquo;</em
+                  >
+                  AI instantly returns the ranked list without requiring
+                  multiple reports.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            >
+              <div
+                class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-2.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Inventory Insights icon"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-lg text-heading font-primary font-semibold"
+                >
+                  Example 2 &ndash; Inventory Insights
+                </div>
+                <p
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                >
+                  A buyer asks:
+                  <em
+                    >&ldquo;Which products are expected to run out of stock
+                    within the next two weeks?&rdquo;</em
+                  >
+                  AI analyzes inventory and sales trends and provides an
+                  immediate answer.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div
+                class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/moduleCard-productMgmt.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Category Performance icon"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-lg text-heading font-primary font-semibold"
+                >
+                  Example 3 &ndash; Category Performance
+                </div>
+                <p
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                >
+                  A merchandising manager asks:
+                  <em
+                    >&ldquo;How did women&rsquo;s footwear perform last month
+                    compared to the previous month?&rdquo;</em
+                  >
+                  AI retrieves sales figures, growth percentages, and key trends
+                  instantly.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div
+                class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/Cloud-hybridDeployments-icon.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Store Comparison icon"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-lg text-heading font-primary font-semibold"
+                >
+                  Example 4 &ndash; Store Comparison
+                </div>
+                <p
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                >
+                  An operations manager asks:
+                  <em
+                    >&ldquo;Which stores had the highest sales growth this
+                    quarter?&rdquo;</em
+                  >
+                  AI generates the answer from multiple data sources in seconds.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            >
+              <div
+                class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-securityCompliance.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Purchase Order Tracking icon"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-lg text-heading font-primary font-semibold"
+                >
+                  Example 5 &ndash; Purchase Order Tracking
+                </div>
+                <p
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                >
+                  A buyer asks:
+                  <em
+                    >&ldquo;Which purchase orders are delayed and may impact
+                    stock availability?&rdquo;</em
+                  >
+                  AI identifies affected products and highlights potential
+                  risks.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 5: How AI Makes Enterprise Search Possible ----->
+      <section class="lg:py-[70px] md:py-16 py-10 bg-[#f6f8fb]">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div
+            class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-start"
+          >
+            <div>
+              <h2
+                class="mb-5 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                How AI Makes Enterprise Search Possible
+              </h2>
+              <p
+                class="mb-6 text-description font-primary font-normal leading-[150%]"
+              >
+                AI connects and understands information across multiple business
+                systems, making data easy to access through natural
+                conversations.
+              </p>
+              <p
+                class="mb-6 text-heading font-primary font-semibold text-lg leading-[130%]"
+              >
+                The platform can search across:
+              </p>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Instead of learning where data lives, users simply ask a
+                question and let AI find the answer.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-3 content-start">
+              <span
+                class="bg-light-purple text-heading font-primary font-medium text-sm sm:text-base px-4 py-2 rounded-full"
+                >Sales reports</span
+              >
+              <span
+                class="bg-light-blue-box text-heading font-primary font-medium text-sm sm:text-base px-4 py-2 rounded-full"
+                >Inventory systems</span
+              >
+              <span
+                class="bg-light-green-box text-heading font-primary font-medium text-sm sm:text-base px-4 py-2 rounded-full"
+                >Product catalogs</span
+              >
+              <span
+                class="bg-light-pink text-heading font-primary font-medium text-sm sm:text-base px-4 py-2 rounded-full"
+                >Purchase orders</span
+              >
+              <span
+                class="bg-light-purple text-heading font-primary font-medium text-sm sm:text-base px-4 py-2 rounded-full"
+                >Merchandising data</span
+              >
+              <span
+                class="bg-light-blue-box text-heading font-primary font-medium text-sm sm:text-base px-4 py-2 rounded-full"
+                >Store performance reports</span
+              >
+              <span
+                class="bg-light-green-box text-heading font-primary font-medium text-sm sm:text-base px-4 py-2 rounded-full"
+                >Business dashboards and analytics platforms</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 6: Perfect For ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div
+            class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center"
+          >
+            <div>
+              <h2
+                class="mb-4 lg:mb-6 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Perfect For
+              </h2>
+              <p
+                class="mb-6 text-description font-primary font-normal leading-[150%]"
+              >
+                Enterprise Data Search is built for every retail team that needs
+                fast, reliable access to business data without relying on
+                technical teams or manual reports.
+              </p>
+              <ul class="flex flex-col gap-4">
+                <li class="fade-in flex items-start gap-4">
+                  <div
+                    class="flex-shrink-0 mt-0.5 w-10 h-10 grid place-items-center rounded-[8px] bg-light-pink"
+                  >
+                    <img
+                      src="assets/image/icon/moduleCard-retailPLanning.svg"
+                      class="h-1/2 transition-all ease-linear duration-300"
+                      alt="Retail planners icon"
+                      width="20"
+                      height="20"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-1 text-base text-heading font-primary font-semibold"
+                    >
+                      Retail Planners
+                    </div>
+                    <p
+                      class="text-sm text-description font-primary font-normal leading-[150%]"
+                    >
+                      Get quick answers on sales targets, category performance,
+                      and planning data without waiting for analyst reports.
+                    </p>
+                  </div>
+                </li>
+                <li class="fade-in flex items-start gap-4">
+                  <div
+                    class="flex-shrink-0 mt-0.5 w-10 h-10 grid place-items-center rounded-[8px] bg-light-green-box"
+                  >
+                    <img
+                      src="assets/image/icon/target-icon.svg"
+                      class="h-1/2 transition-all ease-linear duration-300"
+                      alt="Buyers and merchandisers icon"
+                      width="20"
+                      height="20"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-1 text-base text-heading font-primary font-semibold"
+                    >
+                      Buyers and Merchandisers
+                    </div>
+                    <p
+                      class="text-sm text-description font-primary font-normal leading-[150%]"
+                    >
+                      Instantly access inventory levels, purchase order status,
+                      and supplier data to make faster buying decisions.
+                    </p>
+                  </div>
+                </li>
+                <li class="fade-in flex items-start gap-4">
+                  <div
+                    class="flex-shrink-0 mt-0.5 w-10 h-10 grid place-items-center rounded-[8px] bg-light-purple"
+                  >
+                    <img
+                      src="assets/image/icon/moduleCard-productMgmt.svg"
+                      class="h-1/2 transition-all ease-linear duration-300"
+                      alt="Category managers icon"
+                      width="20"
+                      height="20"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-1 text-base text-heading font-primary font-semibold"
+                    >
+                      Category Managers
+                    </div>
+                    <p
+                      class="text-sm text-description font-primary font-normal leading-[150%]"
+                    >
+                      Track category performance, compare periods, and surface
+                      product insights in seconds.
+                    </p>
+                  </div>
+                </li>
+                <li class="fade-in flex items-start gap-4">
+                  <div
+                    class="flex-shrink-0 mt-0.5 w-10 h-10 grid place-items-center rounded-[8px] bg-light-blue-box"
+                  >
+                    <img
+                      src="assets/image/icon/intelligentCard-icon-3.svg"
+                      class="h-1/2 transition-all ease-linear duration-300"
+                      alt="Store operations teams icon"
+                      width="20"
+                      height="20"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-1 text-base text-heading font-primary font-semibold"
+                    >
+                      Store Operations Teams
+                    </div>
+                    <p
+                      class="text-sm text-description font-primary font-normal leading-[150%]"
+                    >
+                      Pull store performance reports and operational metrics on
+                      demand without navigating multiple dashboards.
+                    </p>
+                  </div>
+                </li>
+                <li class="fade-in flex items-start gap-4">
+                  <div
+                    class="flex-shrink-0 mt-0.5 w-10 h-10 grid place-items-center rounded-[8px] bg-light-sky"
+                  >
+                    <img
+                      src="assets/image/icon/artchitecHeightlight-card-interoperabilityScale.svg"
+                      class="h-1/2 transition-all ease-linear duration-300"
+                      alt="Supply chain teams icon"
+                      width="20"
+                      height="20"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-1 text-base text-heading font-primary font-semibold"
+                    >
+                      Supply Chain Teams
+                    </div>
+                    <p
+                      class="text-sm text-description font-primary font-normal leading-[150%]"
+                    >
+                      Check delivery timelines, identify delays, and monitor
+                      stock availability across locations with simple questions.
+                    </p>
+                  </div>
+                </li>
+                <li class="fade-in flex items-start gap-4">
+                  <div
+                    class="flex-shrink-0 mt-0.5 w-10 h-10 grid place-items-center rounded-[8px] bg-light-pink"
+                  >
+                    <img
+                      src="assets/image/icon/vision-icon.svg"
+                      class="h-1/2 transition-all ease-linear duration-300"
+                      alt="Executives and business leaders icon"
+                      width="20"
+                      height="20"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-1 text-base text-heading font-primary font-semibold"
+                    >
+                      Executives and Business Leaders
+                    </div>
+                    <p
+                      class="text-sm text-description font-primary font-normal leading-[150%]"
+                    >
+                      Get the business answers you need instantly, from
+                      anywhere, without relying on weekly reports or analyst
+                      reviews.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right: User Fit Visual Card Image -->
+            <div class="rounded-2xl md:rounded-[20px] p-5 fade-in">
+              <img
+                src="assets/image/enterprise-data-search/artisanscloud-enterprise-data-search.webp"
+                class="max-w-full h-auto object-cover rounded-xl w-full"
+                alt="Enterprise Data Search User Fit Overview"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 7: Ready to Find Business Answers in Seconds? ----->
+      <section
+        class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-16 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-buildTogether-BG.webp)] bg-no-repeat bg-top-left bg-cover"
+      >
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+          <div class="fade-in lg:max-w-[800px] mx-auto w-full text-center">
+            <h2
+              class="lg:mb-[30px] mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+            >
+              Ready to Find Business Answers in Seconds?
+            </h2>
+            <p
+              class="mb-4 text-white/80 font-primary font-normal leading-[150%]"
+            >
+              Stop wasting time searching through reports and dashboards.
+              Empower your teams with instant access to the information they
+              need to make faster and smarter decisions.
+            </p>
+            <div
+              class="lg:mt-11 mt-8 flex items-center flex-wrap gap-2.5 justify-center"
+            >
+              <a
+                href="/request-demo"
+                class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >Request a Demo</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <img
+          src="assets/image/icon/CTA-buildTogether-shape1.svg"
+          class="animate-pulse absolute -top-[10%] start-0 pointer-none select-none"
+          alt="Decorative shape"
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <img
+          src="assets/image/icon/CTA-buildTogether-shape2.svg"
+          class="animate-pulse hidden md:block absolute top-0 -end-[10%] pointer-none select-none"
+          alt="Decorative shape"
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+      </section>
+
+      <!----- Section 8: The Right Enterprise Data Search Solution ----->
+      <section class="lg:py-[110px] sm:py-16 py-10 bg-white">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-5 items-center">
+            <div class="p-5">
+              <img
+                src="assets/image/enterprise-data-search/artisanscloud-enterprise-data-search-solution.webp"
+                alt="Enterprise Data Search solution illustration"
+                class="max-w-full h-auto mx-auto lg:mx-0 rounded-2xl"
+                width="600"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+
+            <div>
+              <div
+                class="mb-5 md:mb-10 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                The right Enterprise Data Search solution
+              </div>
+              <p
+                class="mb-4 lg:mb-5 text-description font-primary font-normal text-base lg:text-lg leading-[150%]"
+              >
+                connects your business data and makes it instantly accessible
+                through natural language questions. Whether it&rsquo;s sales,
+                inventory, purchasing, or operational insights, AI helps your
+                teams find answers faster and make better decisions.
+              </p>
+              <p
+                class="mb-8 text-description font-primary font-semibold text-base lg:text-lg leading-[150%]"
+              >
+                Ready to transform the way your teams access enterprise data?
+              </p>
+              <div class="flex justify-start w-full">
+                <a
+                  href="/contact-us"
+                  class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {{> footer}}
+
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
+</html>
