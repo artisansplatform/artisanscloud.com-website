@@ -1,4 +1,46 @@
 {
+  "personalized-customer-experience": {
+    "title": "Personalized Customer Experience at Scale | Artisans Cloud",
+    "description": "Multi-agent AI helps retailers personalize interactions, recommendations, promotions, and communications for every shopper automatically and at scale.",
+    "keywords": "personalized customer experience, AI personalization, multi-agent AI retail, customer journey personalization, retail personalization, omnichannel personalization, Artisans Cloud",
+    "ogDescription": "Make every customer feel like your only customer. Multi-agent AI delivers personalized recommendations, promotions, and experiences at scale for every shopper.",
+    "ogCard": {
+      "title": "Personalized Customer\nExperience at Scale",
+      "subtitle": "Make Every Customer Feel Like Your Only Customer"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
+    }
+  },
+  "enterprise-data-search": {
+    "title": "Enterprise Data Search | Artisans Cloud",
+    "description": "AI-powered Enterprise Data Search lets retail teams ask questions in plain language and get instant answers from sales, inventory, purchasing, and operational data.",
+    "keywords": "enterprise data search, AI data search, retail data search, natural language search, business data access, data intelligence, Artisans Cloud",
+    "ogDescription": "Stop searching through reports. AI-powered Enterprise Data Search gives retail teams instant answers from any business data system using plain language questions.",
+    "ogCard": {
+      "title": "Enterprise Data Search",
+      "subtitle": "Ask Questions, Get Answers Instantly"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
+    }
+  },
+  "open-to-buy-planning": {
+    "title": "Open-to-Buy (OTB) Planning | Artisans Cloud",
+    "description": "AI-powered Open-to-Buy (OTB) Planning helps retailers make smarter purchasing decisions using real-time inventory and sales data, reducing overstock and stockouts.",
+    "keywords": "open-to-buy planning, OTB planning, AI inventory planning, retail buying decisions, forward cover, purchase orders, inventory optimization, Artisans Cloud",
+    "ogDescription": "Smarter buying decisions powered by AI. OTB Planning helps retailers calculate optimal purchase quantities using real-time inventory, sales forecasts, and demand trends.",
+    "ogCard": {
+      "title": "Open-to-Buy (OTB)\nPlanning",
+      "subtitle": "Smarter Buying Decisions Powered by AI"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
+    }
+  },
   "404": {
     "title": "404 Error - Artisans Cloud",
     "og": false,
