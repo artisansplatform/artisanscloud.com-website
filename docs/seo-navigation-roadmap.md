@@ -15,6 +15,8 @@ Step-by-step plan for restructuring the site IA, replacing duplicate Unified Com
 
 Final structure. Build everything against this.
 
+> Note: this block records the original target. The nav that actually shipped diverged from it (Unified Commerce rebranded to Nexus, the three platforms surfaced directly rather than under a single "Platform" entry, and Solutions built as a product grouping rather than `/solutions/<slug>` pages). For the current shipped structure, see `docs/information-architecture.md`. The Step 1 mapping table below reflects reality; the later steps still describe the original plan.
+
 ```
 Platform
   Unified Commerce Platform
