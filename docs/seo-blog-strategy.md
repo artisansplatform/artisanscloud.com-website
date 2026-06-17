@@ -4,7 +4,7 @@
 
 Today the website publishes no blog content of its own. Articles are written on LinkedIn Pulse and the site links out to them. `articles-and-resources.html` and the homepage `#insights-grid` render cards from `assets/data/fallback-articles.json`, then refresh from `/api/articles` (backed by a daily LinkedIn cron in `api/cron/fetch-articles.js`). Every card opens LinkedIn in a new tab.
 
-The SEO consequence: every article earns ranking equity for `linkedin.com`, not for `artisanscloud.com`. Google sees the site as a mostly static marketing brochure with no fresh long-form content on its own domain. The site also has no JSON-LD, no RSS, no Twitter card tags, and no individual article URLs, so even the topics the site does cover send thin signals to search.
+The SEO consequence: every article earns ranking equity for `linkedin.com`, not for `artisanscloud.com`. Google sees the site as a mostly static marketing brochure with no fresh long-form content on its own domain. The site has no RSS feed and no individual article URLs, so even the topics it does cover send thin signals to search. (Site-wide structured data and social tags already exist as of the metadata work on `main`: `partials/head-meta.html` plus `scripts/lib/page-meta.js` emit Organization and WebSite JSON-LD on the homepage, a BreadcrumbList on every other indexable page, and `twitter:card` tags everywhere. What is still missing is article-level `BlogPosting` schema and the article URLs to attach it to.)
 
 This doc answers two questions: (1) what is the best SEO strategy for blog content going forward, and (2) how good is the existing LinkedIn content if we were to publish it to the site as-is.
 
@@ -26,8 +26,8 @@ Ordering from best to worst for the website's SEO:
 
 - **Organic traffic flows to whoever owns the URL.** LinkedIn Pulse sends visitors to LinkedIn, where the CTA is "Follow the author," not "Book a demo." The site sends visitors into the demo funnel.
 - **Long-tail keywords compound.** Each article is a new landing page for a specific query ("agentic retail transactions," "unified commerce data models," etc.). Over 12 to 24 months, this is where most SEO-driven demos come from.
-- **Internal linking.** Articles on the site can link to `/retail-platform`, `/ai-agents`, team pages, and each other. Every internal link strengthens topical authority. LinkedIn articles cannot do this.
-- **Rich results.** With `BlogPosting` and `BreadcrumbList` JSON-LD, articles become eligible for Google article carousels and author-rich snippets. Not possible when articles live on LinkedIn.
+- **Internal linking.** Articles on the site can link to `/nexus-unified-commerce`, `/enterprise-ai`, team pages, and each other. Every internal link strengthens topical authority. LinkedIn articles cannot do this.
+- **Rich results.** With article-level `BlogPosting` JSON-LD (the `BreadcrumbList` is already auto-generated for indexable pages by `scripts/lib/page-meta.js`), articles become eligible for Google article carousels and author-rich snippets. Not possible when articles live on LinkedIn.
 - **Freshness signals.** Schema.org Article signals plus `lastmod` entries in the sitemap are how Googlebot decides when to re-crawl.
 
 ---
@@ -114,7 +114,7 @@ This mirrors the existing `scripts/generate-team-cards.js` pattern: source of tr
 | `assets/script/modules/blog-articles.js` | Import `local-articles.json`, merge with LinkedIn fallback, sort by `publishedAt`, branch card link on `article.source` (local: internal `/blog/{slug}` same-tab; linkedin: external new-tab as today) |
 | `assets/style/input.css` | Add a `prose` utility for article body (`h2`/`h3`/`p`/`ul`/`blockquote`/`img`/`code`). Skip `@tailwindcss/typography` (heavier) |
 | `api/articles.js` | De-dupe: exclude LinkedIn entries whose URN matches any local article's `linkedinUrl` frontmatter |
-| `partials/header.html` | Add `<link rel="alternate" type="application/rss+xml">`, Twitter card meta, Organization JSON-LD (once, inherited everywhere) |
+| `partials/header.html` | Add only the `<link rel="alternate" type="application/rss+xml">` autodiscovery link. Twitter card meta and Organization/WebSite JSON-LD already ship via `partials/head-meta.html` and `scripts/lib/page-meta.js`; do not duplicate them here. |
 | `blog-detail.html` | Delete. Lorem-ipsum placeholder; its markup is copied into the generator template |
 | `docs/blog-authoring.md` (new) | Author-facing how-to |
 | `docs/dynamic-blog-setup.md` | Note the shift to website-first, LinkedIn now secondary |
@@ -131,9 +131,9 @@ New npm scripts (`package.json`):
 
 Every generated `blog/{slug}.html` contains:
 
-- Full head block with unique `<title>`, `<meta name="description">`, `<link rel="canonical">`, `og:type=article`, `article:published_time`, `article:modified_time`, `article:author`, `article:tag`, Twitter card meta.
-- **JSON-LD `BlogPosting`** (headline, description, image, datePublished, dateModified, author with `sameAs` from team member socials, publisher org, keywords, articleSection, wordCount, inLanguage).
-- **JSON-LD `BreadcrumbList`** (Home, Resources, Category, Article).
+- Head meta emitted through `scripts/lib/page-meta.js`, the single source root pages and team cards already use, so the unique `<title>`, `<meta name="description">`, `<link rel="canonical">`, OG tags, and `twitter:card` stay consistent with the rest of the site. Add the article-specific `og:type=article`, `article:published_time`, `article:modified_time`, `article:author`, and `article:tag` on that path.
+- **JSON-LD `BlogPosting`** (headline, description, image, datePublished, dateModified, author with `sameAs` from team member socials, publisher org, keywords, articleSection, wordCount, inLanguage), emitted by the generator on top of the base meta.
+- **JSON-LD `BreadcrumbList`** (Home, Resources, Category, Article). `page-meta.js` already builds this for indexable pages via `buildJsonLd()`; reuse it rather than hand-rolling.
 - `{{> header}}` and `{{> footer}}` partials (the existing Vite Handlebars plugin resolves them at build time).
 - Article header with breadcrumb, title, tag/date/reading-time meta, author byline linking to `/team/{author-slug}`.
 - Hero image.
@@ -150,7 +150,7 @@ Every generated `blog/{slug}.html` contains:
 ### Listing and site-wide schema
 
 - `articles-and-resources.html` gets a `Blog` or `CollectionPage` JSON-LD block listing the most recent 10 articles via `blogPost`. Generator writes this into a partial `partials/blog-listing-jsonld.html` which the page includes.
-- Site-wide `Organization` JSON-LD in `partials/header.html` so every page has publisher schema.
+- Site-wide Organization and WebSite JSON-LD already ship on the homepage via `scripts/lib/page-meta.js`, so no new publisher schema is needed here. The only new listing-page work is the `Blog` / `CollectionPage` block above.
 
 ### Migration path for the 8 existing LinkedIn articles
 
@@ -166,14 +166,14 @@ Leave them as LinkedIn links for now. Reason: they already have some LinkedIn SE
 4. Extend OG image and sitemap generators.
 5. Update `vite.config.js` and `assets/script/modules/blog-articles.js`.
 6. Add `prose` CSS, delete `blog-detail.html`.
-7. Generated pages emit full SEO head (canonical, OG, Twitter, JSON-LD BlogPosting and BreadcrumbList).
+7. Generated pages emit their SEO head through `scripts/lib/page-meta.js` (canonical, OG, Twitter, BreadcrumbList) plus an article-level `BlogPosting` block.
 8. Docs updated per CLAUDE.md rule.
 
 **Phase 2 (SEO polish):**
 
 1. RSS feed plus autodiscovery link in header partial.
 2. CollectionPage JSON-LD on the listing page.
-3. Organization JSON-LD and Twitter meta site-wide via `partials/header.html`.
+3. Site-wide Organization/WebSite JSON-LD and `twitter:card` meta: already shipped via `scripts/lib/page-meta.js` and `partials/head-meta.html`, so no further work.
 4. Similar-insights swiper wired up to the merged article list.
 5. FAQPage JSON-LD support for articles that include a Q&A section.
 
@@ -201,7 +201,8 @@ Leave them as LinkedIn links for now. Reason: they already have some LinkedIn SE
 - `vite.config.js`: add `blog/*.html` glob
 - `assets/script/modules/blog-articles.js`: merge local and LinkedIn sources, branch on `source`
 - `api/articles.js`: de-dupe LinkedIn entries whose URN matches a local article
-- `partials/header.html`: Twitter meta, Organization JSON-LD, RSS autodiscovery
+- `partials/header.html`: RSS autodiscovery link only (Twitter meta and Organization JSON-LD already ship via `partials/head-meta.html` and `scripts/lib/page-meta.js`)
+- `scripts/lib/page-meta.js`: the single source for head meta and JSON-LD; extend it for article `BlogPosting` rather than hand-writing head tags
 - `assets/data/team-members.json`: read by generator for author byline and JSON-LD
 - `assets/style/input.css`: add `prose` utility
 - `blog-detail.html`: delete (Lorem-ipsum placeholder)
