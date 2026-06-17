@@ -1,123 +1,340 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <title>Integrations - artisans Cloud | Seamless Commerce Solutions</title>
-    <link rel="canonical" href="https://www.artisanscloud.com/integrations" />
-    <meta name="description"
-        content="Discover how Artisan Cloud's integrations enhance your eCommerce experience. Connect with marketplaces, shipping carriers, and ERP systems for seamless digital transformation.">
-    <meta name="keywords"
-        content="commerce integrations, retail integrations, erp integration, pos integration, marketplace integrations, third-party integrations, artisans commerce cloud">
-    <meta property="og:url" content="https://artisanscloud.com/integrations">
-    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/integrations.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="./assets/style/output.css">
-</head>
-
-<body>
-    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
 
     {{> header}}
 
     <section class="w-full h-full p-4 lg:p-5">
-        <div class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full rounded-2xl lg:rounded-[30px] px-5 xl:px-8 overflow-hidden bg-[#EEF3FF]">
-            <div class="max-w-[1240px] w-full mx-auto py-10 lg:py-[70px]">
-                <div class="fade-in text-center">
-                    <h1 class="text-[clamp(30px,4.4vw,60px)] text-heading font-primary font-semibold leading-[110%] max-w-[980px] mx-auto">
-                        Beyond Boundaries: Accelerating Growth with <span class="text-primary">pre-built Integrations</span>
-                    </h1>
-                    <p class="mt-4 text-description font-primary font-normal text-base lg:text-lg leading-[150%] max-w-[760px] mx-auto">
-                        Connect, collaborate and drive commerce together through seamless integration, creating a thriving ecosystem of innovation and growth
-                    </p>
-                </div>
+      <div
+        class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full rounded-2xl lg:rounded-[30px] px-5 xl:px-8 overflow-hidden bg-[#EEF3FF]"
+      >
+        <div class="max-w-[1240px] w-full mx-auto py-10 lg:py-[70px]">
+          <div class="fade-in text-center">
+            <div
+              class="mb-3 sm:mb-5 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
+            >
+              Integrations
             </div>
+            <h1
+              class="font-primary text-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] max-w-[980px] mx-auto"
+            >
+              Beyond Boundaries: Accelerating Growth with pre-built Integrations
+            </h1>
+            <div class="flex flex-col items-center mb-7.5 lg:mb-12">
+              <p
+                class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%] mt-4"
+              >
+                Connect, collaborate and drive commerce together through
+                seamless integration, creating a thriving ecosystem of
+                innovation and growth
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="lg:py-24 sm:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in space-y-10">
-                <div class="space-y-5">
-                    <h2 class="text-center text-heading font-primary font-semibold text-2xl">MARKETPLACES</h2>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/ebay-logo-767x307.webp" alt="eBay" class="max-h-8 w-auto" loading="lazy"></div>
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/lazada-logo-767x201.webp" alt="Lazada" class="max-h-8 w-auto" loading="lazy"></div>
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/shopee-logo.png" alt="Shopee" class="max-h-8 w-auto" loading="lazy"></div>
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/zalora-logo-767x111.webp" alt="ZALORA" class="max-h-8 w-auto" loading="lazy"></div>
-                    </div>
-                </div>
-
-                <div class="space-y-5">
-                    <h2 class="text-center text-heading font-primary font-semibold text-2xl">WEBSTORES</h2>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/magento-1x-logo.webp" alt="Magento 1" class="max-h-8 w-auto" loading="lazy"></div>
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/Magento-2x.webp" alt="Magento 2" class="max-h-8 w-auto" loading="lazy"></div>
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/salesforce-commerce-cloud-logo-1-767x403.webp" alt="Salesforce Commerce Cloud" class="max-h-8 w-auto" loading="lazy"></div>
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/shopify-logo-767x221.webp" alt="Shopify" class="max-h-8 w-auto" loading="lazy"></div>
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/shopify-plus-logo-767x157.webp" alt="Shopify Plus" class="max-h-8 w-auto" loading="lazy"></div>
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/woo-commerce-logo-767x156.webp" alt="WooCommerce" class="max-h-8 w-auto" loading="lazy"></div>
-                    </div>
-                </div>
-
-                <div class="space-y-5">
-                    <h2 class="text-center text-heading font-primary font-semibold text-2xl">SHIPPING CARRIERS</h2>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/aramex-logo-767x126.webp" alt="Aramex" class="max-h-8 w-auto" loading="lazy"></div>
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/city-link-express-logo.webp" alt="City-Link Express" class="max-h-8 w-auto" loading="lazy"></div>
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/dhl-logo-767x110.webp" alt="DHL" class="max-h-8 w-auto" loading="lazy"></div>
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/dhl-express-logo-767x238.webp" alt="DHL Express" class="max-h-8 w-auto" loading="lazy"></div>
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/gdex-logo-767x290.png" alt="GDEX" class="max-h-8 w-auto" loading="lazy"></div>
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/j-t-express-logo.webp" alt="J&T Express" class="max-h-8 w-auto" loading="lazy"></div>
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/ninja-van-logo-767x202.webp" alt="Ninja Van" class="max-h-8 w-auto" loading="lazy"></div>
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"><img src="assets/image/integrations/pos-laju-logo.webp" alt="Pos Laju" class="max-h-8 w-auto" loading="lazy"></div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div class="space-y-5">
-                        <h2 class="text-center text-heading font-primary font-semibold text-2xl">ERP &amp; ACCOUNTING</h2>
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3 max-w-[360px] mx-auto">
-                            <img src="assets/image/integrations/oracle-net-suite-logo-767x234.webp" alt="Oracle NetSuite" class="max-h-8 w-auto" loading="lazy">
-                        </div>
-                    </div>
-
-                    <div class="space-y-5">
-                        <h2 class="text-center text-heading font-primary font-semibold text-2xl">SOCIAL COMMERCE</h2>
-                        <div class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3 max-w-[360px] mx-auto">
-                            <img src="assets/image/integrations/TikTok-Shop.webp" alt="TikTok Shop" class="max-h-8 w-auto" loading="lazy">
-                        </div>
-                    </div>
-                </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in space-y-10">
+          <div class="space-y-5">
+            <h2
+              class="text-center text-heading font-primary font-semibold text-2xl"
+            >
+              MARKETPLACES
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/ebay-logo-767x307.webp"
+                  alt="eBay"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/lazada-logo-767x201.webp"
+                  alt="Lazada"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/shopee-logo.png"
+                  alt="Shopee"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/zalora-logo-767x111.webp"
+                  alt="ZALORA"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
             </div>
+          </div>
+
+          <div class="space-y-5">
+            <h2
+              class="text-center text-heading font-primary font-semibold text-2xl"
+            >
+              WEBSTORES
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/magento-1x-logo.webp"
+                  alt="Magento 1"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/Magento-2x.webp"
+                  alt="Magento 2"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/salesforce-commerce-cloud-logo-1-767x403.webp"
+                  alt="Salesforce Commerce Cloud"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/shopify-logo-767x221.webp"
+                  alt="Shopify"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/shopify-plus-logo-767x157.webp"
+                  alt="Shopify Plus"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/woo-commerce-logo-767x156.webp"
+                  alt="WooCommerce"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-5">
+            <h2
+              class="text-center text-heading font-primary font-semibold text-2xl"
+            >
+              SHIPPING CARRIERS
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/aramex-logo-767x126.webp"
+                  alt="Aramex"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/city-link-express-logo.webp"
+                  alt="City-Link Express"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/dhl-logo-767x110.webp"
+                  alt="DHL"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/dhl-express-logo-767x238.webp"
+                  alt="DHL Express"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/gdex-logo-767x290.png"
+                  alt="GDEX"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/j-t-express-logo.webp"
+                  alt="J&T Express"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/ninja-van-logo-767x202.webp"
+                  alt="Ninja Van"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3"
+              >
+                <img
+                  src="assets/image/integrations/pos-laju-logo.webp"
+                  alt="Pos Laju"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="space-y-5">
+              <h2
+                class="text-center text-heading font-primary font-semibold text-2xl"
+              >
+                ERP &amp; ACCOUNTING
+              </h2>
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3 max-w-[360px] mx-auto"
+              >
+                <img
+                  src="assets/image/integrations/oracle-net-suite-logo-767x234.webp"
+                  alt="Oracle NetSuite"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div class="space-y-5">
+              <h2
+                class="text-center text-heading font-primary font-semibold text-2xl"
+              >
+                SOCIAL COMMERCE
+              </h2>
+              <div
+                class="bg-white rounded-xl border border-[#E6EAF2] h-[78px] flex items-center justify-center p-3 max-w-[360px] mx-auto"
+              >
+                <img
+                  src="assets/image/integrations/TikTok-Shop.webp"
+                  alt="TikTok Shop"
+                  class="max-h-8 w-auto"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-            <div class="fade-in flex flex-col items-center text-center">
-                <div class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white max-w-[760px]">Contact us today to understand how we assist Retailers to Excel in Digital Transformation</div>
-                <a href="/contact-us" class="lg:mt-[20px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">CONTACT US</a>
-            </div>
+    <section
+      class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover"
+    >
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+        <div class="fade-in flex flex-col items-center text-center">
+          <div
+            class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white max-w-[760px]"
+          >
+            Contact us today to understand how we assist Retailers to Excel in
+            Digital Transformation
+          </div>
+          <a
+            href="/contact-us"
+            class="lg:mt-[20px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+            >CONTACT US</a
+          >
         </div>
+      </div>
 
-        <img src="assets/image/icon/ctaBanner-shape.png" class="animate-pulse absolute start-0 bottom-0 pointer-none select-none" alt="" width="150" height="150" loading="lazy">
-        <img src="assets/image/icon/ctaBanner-shape2.png" class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none" alt="" width="150" height="150" loading="lazy">
+      <img
+        src="assets/image/icon/ctaBanner-shape.png"
+        class="animate-pulse absolute start-0 bottom-0 pointer-none select-none"
+        alt=""
+        width="150"
+        height="150"
+        loading="lazy"
+      />
+      <img
+        src="assets/image/icon/ctaBanner-shape2.png"
+        class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
+        alt=""
+        width="150"
+        height="150"
+        loading="lazy"
+      />
     </section>
 
     {{> footer}}
 
     <script type="module" src="/assets/script/main.js"></script>
-</body>
-
+  </body>
 </html>

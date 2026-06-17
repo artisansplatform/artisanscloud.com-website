@@ -1,664 +1,1039 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <title>Personalized Recommendations | Artisans Cloud</title>
-    <link rel="canonical" href="https://www.artisanscloud.com/personalized-recommendations" />
-    <meta name="description"
-        content="AI-powered Personalized Recommendations show every shopper products they will love. Suggest relevant items based on behavior, preferences, and real-time activity to boost engagement and sales.">
-    <meta name="keywords"
-        content="personalized recommendations, AI recommendations, product suggestions, cross-sell, upsell, ecommerce personalization, retail AI, Artisans Cloud">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:url" content="https://artisanscloud.com/personalized-recommendations">
-    <meta property="og:title" content="Personalized Recommendations | Artisans Cloud">
-    <meta property="og:description"
-        content="Show every shopper something they will love. AI-powered Personalized Recommendations suggest relevant products based on behavior, preferences, and real-time activity.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/personalized-recommendations.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <!-- Font Family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="./assets/style/output.css">
-</head>
-
-<body>
-    <div id="cursor"
-        class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0">
-    </div>
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
 
     {{> header}}
 
     <main class="w-full">
-
-        <!----- Banner Sec ----->
-        <section class="w-full h-full p-4 lg:p-5">
-            <div
-                class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/distributed-order-management/bannerBG.webp')] bg-no-repeat bg-cover">
-                <div class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24">
-                    <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
-                        <div class="text-center lg:max-w-[850px] mx-auto">
-                            <h1 id="heroHeading"
-                                class="font-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] lg:leading-[61px]">
-                                <span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]">Personalized
-                                    Recommendations:</span><br>
-                                Show Every Shopper <br>
-                                Something They&rsquo;ll Love
-                            </h1>
-                            <div id="heroDec">
-                                <p
-                                    class="text-base lg:text-[20px] text-description font-primary font-normal leading-[150%]">
-                                    Sometimes shoppers browse your store but leave without buying because nothing
-                                    feels relevant. Personalized Recommendations use AI to suggest products based on
-                                    each shopper&rsquo;s interests, behavior, and preferences, making shopping more
-                                    engaging and meaningful.</p>
-                                <div id="heroBtn" class="mt-7 mx-auto w-full flex justify-center">
-                                    <a href="/contact-us"
-                                        class="mx-auto w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">
-                                        Schedule a Demo
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <!----- Banner Sec ----->
+      <section class="w-full h-full p-4 lg:p-5">
+        <div
+          class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/distributed-order-management/bannerBG.webp')] bg-no-repeat bg-cover"
+        >
+          <div
+            class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24"
+          >
+            <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
+              <div class="text-center lg:max-w-[850px] mx-auto">
+                <div
+                  class="mb-3 sm:mb-5 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
+                >
+                  Personalized Recommendations
                 </div>
-            </div>
-        </section>
-        <!----- End Banner Sec ----->
-
-
-        <!----- Section 1: Why Shoppers Leave Without Buying ----->
-        <section class="lg:pt-[100px] lg:pb-10 md:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
-                    <div
-                        class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
-                        Why Shoppers Leave Without Buying</div>
-                    <div class="">
-                        <p class="lg:pe-10 text-description font-primary font-normal leading-[150%]">Not every shopper
-                            finds something that catches their attention. When product suggestions are generic,
-                            customers
-                            may leave without exploring further.</p>
-                        <p class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]">This often
-                            happens because:</p>
-                        <ul class="mt-4 ps-5">
-                            <li
-                                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
-                                Products shown are not relevant to the shopper</li>
-                            <li
-                                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
-                                No complementary items are suggested</li>
-                            <li
-                                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
-                                Shoppers don&rsquo;t discover additional options</li>
-                            <li
-                                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
-                                Same recommendations are shown to everyone</li>
-                            <li
-                                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">
-                                Lack of personalized shopping experience</li>
-                        </ul>
-                        <p class="mt-5 lg:pe-10 text-description font-primary font-normal leading-[150%]">When
-                            customers don&rsquo;t feel understood, <strong class="text-heading">they leave without
-                                buying.</strong></p>
-                    </div>
+                <h1
+                  id="heroHeading"
+                  class="mb-3 font-primary text-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%]"
+                >
+                  Personalized Recommendations:<br />
+                  Show Every Shopper <br />
+                  Something They&rsquo;ll Love
+                </h1>
+                <div
+                  id="heroDec"
+                  class="flex flex-col items-center mb-7.5 lg:mb-12"
+                >
+                  <p
+                    class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%] mb-3"
+                  >
+                    Sometimes shoppers browse your store but leave without
+                    buying because nothing feels relevant.
+                  </p>
+                  <p
+                    class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                  >
+                    Personalized Recommendations use AI to suggest products
+                    based on each shopper&rsquo;s interests, behavior, and
+                    preferences, making shopping more engaging and meaningful.
+                  </p>
+                  <a
+                    href="/request-demo"
+                    class="lg:mt-[25px] mt-4 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                  >
+                    Request a Demo
+                  </a>
                 </div>
+              </div>
             </div>
-        </section>
-        <!----- End Section 1 ----->
+          </div>
+        </div>
+      </section>
 
-
+      <!----- Section 1: Why Shoppers Leave Without Buying ----->
+      <section class="lg:pt-[100px] lg:pb-10 md:py-16 py-10">
         <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+          <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
+            <div
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Why Shoppers Leave Without Buying
+            </div>
+            <div class="">
+              <p
+                class="lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                Not every shopper finds something that catches their attention.
+                When product suggestions are generic, customers may leave
+                without exploring further.
+              </p>
+              <p
+                class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                This often happens because:
+              </p>
+              <ul class="mt-4 ps-5">
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Products shown are not relevant to the shopper
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  No complementary items are suggested
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Shoppers don&rsquo;t discover additional options
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Same recommendations are shown to everyone
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Lack of personalized shopping experience
+                </li>
+              </ul>
+              <p
+                class="mt-5 lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                When customers don&rsquo;t feel understood,
+                <strong class="text-heading">they leave without buying.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Section 2: A Smarter Way to Engage Shoppers ----->
+      <section
+        class="max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]"
+      >
+        <div
+          class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-8">
+            <div class="fade-in">
+              <h2
+                class="lg:mb-8 mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+              >
+                A Smarter Way to Engage Shoppers
+              </h2>
+              <p
+                class="lg:mb-5 mb-4 text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]"
+              >
+                AI-powered Personalized Recommendations suggest products
+                tailored to each shopper.
+              </p>
+              <p
+                class="lg:mb-8 mb-5 text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]"
+              >
+                Instead of showing the same items to everyone, the system
+                recommends products based on:
+              </p>
+
+              <div
+                class="mt-8 lg:mt-12 p-6 rounded-2xl bg-white/5 border border-white/10 lg:max-w-[490px]"
+              >
+                <p
+                  class="text-white/80 font-primary font-normal leading-[150%]"
+                >
+                  <strong class="text-white font-semibold">In short:</strong>
+                  Every shopper gets
+                  <strong class="text-white font-semibold"
+                    >relevant suggestions</strong
+                  >
+                  that match their interests.
+                </p>
+              </div>
+            </div>
+            <div class="fade-in">
+              <ul class="flex flex-col lg:gap-7 gap-6">
+                <li class="ps-5 border-s-4 border-primary">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Browsing behavior
+                  </div>
+                  <p
+                    class="text-white/80 font-primary font-normal leading-[150%]"
+                  >
+                    Across your entire store and categories
+                  </p>
+                </li>
+                <li class="ps-5 border-s-4 border-sky">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Purchase history
+                  </div>
+                  <p
+                    class="text-white/80 font-primary font-normal leading-[150%]"
+                  >
+                    Based on past orders and purchase patterns
+                  </p>
+                </li>
+                <li class="ps-5 border-s-4 border-pink">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Products viewed
+                  </div>
+                  <p
+                    class="text-white/80 font-primary font-normal leading-[150%]"
+                  >
+                    Recently viewed items and wishlisted products
+                  </p>
+                </li>
+                <li class="ps-5 border-s-4 border-sky-2">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Similar customer preferences
+                  </div>
+                  <p
+                    class="text-white/80 font-primary font-normal leading-[150%]"
+                  >
+                    Lookalike audience behavior and matching signals
+                  </p>
+                </li>
+                <li class="ps-5 border-s-4 border-grey">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Trending items
+                  </div>
+                  <p
+                    class="text-white/80 font-primary font-normal leading-[150%]"
+                  >
+                    Real-time popularity and seasonal trends
+                  </p>
+                </li>
+                <li class="ps-5 border-s-4 border-primary">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Real-time shopping activity
+                  </div>
+                  <p
+                    class="text-white/80 font-primary font-normal leading-[150%]"
+                  >
+                    Current session intent and live interactions
+                  </p>
+                </li>
+                <li class="ps-5 border-s-4 border-sky">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Gender, age, and location signals
+                  </div>
+                  <p
+                    class="text-white/80 font-primary font-normal leading-[150%]"
+                  >
+                    Contextual demographic data for localized relevance
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
+        <img
+          src="assets/image/icon/strategicOutcomeBanner-shape-1.svg"
+          class="absolute select-none pointer-events-none start-0 bottom-0"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <img
+          src="assets/image/icon/strategicOutcomeBanner-shape-2.svg"
+          class="absolute select-none pointer-events-none end-0 top-0"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+      </section>
 
-        <!----- Section 2: A Smarter Way to Engage Shoppers ----->
-        <section
-            class="max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]">
-            <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-8">
-                    <div class="fade-in">
-                        <h2
-                            class="lg:mb-8 mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">
-                            A Smarter Way to Engage Shoppers</h2>
-                        <p class="lg:mb-5 mb-4 text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]">
-                            AI-powered Personalized Recommendations suggest products tailored to each shopper.</p>
-                        <p class="lg:mb-8 mb-5 text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]">
-                            Instead of showing the same items to everyone, the system recommends products based on:</p>
+      <!----- Section 3: Benefits for Retailers & E-commerce Businesses ----->
+      <section class="lg:py-[90px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              Benefits for Retailers &amp; E-commerce Businesses
+            </h2>
+          </div>
 
-                        <div class="mt-8 lg:mt-12 p-6 rounded-2xl bg-white/5 border border-white/10 lg:max-w-[490px]">
-                            <p class="text-white/80 font-primary font-normal leading-[150%]"><strong
-                                    class="text-white font-semibold">In short:</strong> Every shopper gets <strong
-                                    class="text-white font-semibold">relevant suggestions</strong> that match their
-                                interests.</p>
-                        </div>
-                    </div>
-                    <div class="fade-in">
-                        <ul class="flex flex-col lg:gap-7 gap-6">
-                            <li class="ps-5 border-s-4 border-primary">
-                                <div class="font-primary font-semibold lg:text-xl text-lg text-white mb-1">Browsing
-                                    behavior</div>
-                                <p class="text-white/80 font-primary font-normal leading-[150%]">Across your entire
-                                    store and categories</p>
-                            </li>
-                            <li class="ps-5 border-s-4 border-sky">
-                                <div class="font-primary font-semibold lg:text-xl text-lg text-white mb-1">Purchase
-                                    history</div>
-                                <p class="text-white/80 font-primary font-normal leading-[150%]">Based on past orders
-                                    and purchase patterns</p>
-                            </li>
-                            <li class="ps-5 border-s-4 border-pink">
-                                <div class="font-primary font-semibold lg:text-xl text-lg text-white mb-1">Products
-                                    viewed</div>
-                                <p class="text-white/80 font-primary font-normal leading-[150%]">Recently viewed items
-                                    and wishlisted products</p>
-                            </li>
-                            <li class="ps-5 border-s-4 border-sky-2">
-                                <div class="font-primary font-semibold lg:text-xl text-lg text-white mb-1">Similar
-                                    customer preferences</div>
-                                <p class="text-white/80 font-primary font-normal leading-[150%]">Lookalike audience
-                                    behavior and matching signals</p>
-                            </li>
-                            <li class="ps-5 border-s-4 border-grey">
-                                <div class="font-primary font-semibold lg:text-xl text-lg text-white mb-1">Trending
-                                    items</div>
-                                <p class="text-white/80 font-primary font-normal leading-[150%]">Real-time popularity
-                                    and seasonal trends</p>
-                            </li>
-                            <li class="ps-5 border-s-4 border-primary">
-                                <div class="font-primary font-semibold lg:text-xl text-lg text-white mb-1">Real-time
-                                    shopping activity</div>
-                                <p class="text-white/80 font-primary font-normal leading-[150%]">Current session intent
-                                    and live interactions</p>
-                            </li>
-                            <li class="ps-5 border-s-4 border-sky">
-                                <div class="font-primary font-semibold lg:text-xl text-lg text-white mb-1">Gender, age,
-                                    and location signals</div>
-                                <p class="text-white/80 font-primary font-normal leading-[150%]">Contextual demographic
-                                    data for localized relevance</p>
-                            </li>
-                        </ul>
-                    </div>
+          <div
+            class="fade-in grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-[30px]"
+          >
+            <!-- Benefit 1 -->
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/customer-copilots-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Customers feel understood icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Customers Feel Understood
                 </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Shoppers see products that match their preferences and feel
+                  valued
+                </p>
+              </div>
             </div>
 
-            <img src="assets/image/icon/strategicOutcomeBanner-shape-1.svg"
-                class="absolute select-none pointer-events-none start-0 bottom-0" alt="" width="150" height="150"
-                loading="lazy">
-            <img src="assets/image/icon/strategicOutcomeBanner-shape-2.svg"
-                class="absolute select-none pointer-events-none end-0 top-0" alt="" width="150" height="150"
-                loading="lazy">
-        </section>
-
-        <!----- End Section 2 ----->
-
-
-        <!----- Section 3: Benefits for Retailers & E-commerce Businesses ----->
-        <section class="lg:py-[90px] sm:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="fade-in text-center mb-10 lg:mb-16">
-                    <h2
-                        class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4">
-                        Benefits for Retailers &amp; E-commerce Businesses</h2>
+            <!-- Benefit 2 -->
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-1.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Cross-sell and upsell icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Higher Cross-sell &amp; Upsell
                 </div>
-
-                <div class="fade-in grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-[30px]">
-                    <!-- Benefit 1 -->
-                    <div
-                        class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col">
-                        <div
-                            class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/customer-copilots-icon.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="Customers feel understood icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Customers
-                                Feel Understood</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Shoppers see products
-                                that match their preferences and feel valued</p>
-                        </div>
-                    </div>
-
-                    <!-- Benefit 2 -->
-                    <div
-                        class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col">
-                        <div
-                            class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/intelligentCard-icon-1.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="Cross-sell and upsell icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Higher
-                                Cross-sell &amp; Upsell</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Relevant suggestions
-                                encourage customers to add more to their cart</p>
-                        </div>
-                    </div>
-
-                    <!-- Benefit 3 -->
-                    <div
-                        class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col">
-                        <div
-                            class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/predictive-commerce-icon.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="Increased order value icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Increased
-                                Average Order Value</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Personalized
-                                recommendations drive bigger baskets</p>
-                        </div>
-                    </div>
-
-                    <!-- Benefit 4 -->
-                    <div
-                        class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#F2EEFF] border border-[#f2f2f2] flex flex-col">
-                        <div
-                            class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/vision-icon.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="Product discovery icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Improved
-                                Product Discovery</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Shoppers find products
-                                they might have missed otherwise</p>
-                        </div>
-                    </div>
-
-                    <!-- Benefit 5 -->
-                    <div
-                        class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#EEF4FF] border border-[#f2f2f2] flex flex-col">
-                        <div
-                            class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/target-icon.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="Repeat purchases icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Boosted
-                                Repeat Purchases</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Personalized experiences
-                                keep customers coming back</p>
-                        </div>
-                    </div>
-
-                    <!-- Benefit 6 -->
-                    <div
-                        class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#FFEFEF] border border-[#f2f2f2] flex flex-col">
-                        <div
-                            class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/moduleCard-productMgmt.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="Engaging shopping icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">More
-                                Engaging Experience</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Every interaction feels
-                                relevant and thoughtful</p>
-                        </div>
-                    </div>
-                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Relevant suggestions encourage customers to add more to their
+                  cart
+                </p>
+              </div>
             </div>
-        </section>
-        <!----- End Section 3 ----->
 
-        <!----- Section 5: Where Personalized Recommendations Can Be Used ----->
-        <section class="lg:py-[100px] sm:py-16 py-10">
-            <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="text-center">
-                    <h2
-                        class="fade-in lg:mb-5 mb-3 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
-                        Where Personalized Recommendations Can Be Used</h2>
+            <!-- Benefit 3 -->
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/predictive-commerce-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Increased order value icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Increased Average Order Value
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Personalized recommendations drive bigger baskets
+                </p>
+              </div>
+            </div>
+
+            <!-- Benefit 4 -->
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#F2EEFF] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/vision-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Product discovery icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Improved Product Discovery
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Shoppers find products they might have missed otherwise
+                </p>
+              </div>
+            </div>
+
+            <!-- Benefit 5 -->
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#EEF4FF] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/target-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Repeat purchases icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Boosted Repeat Purchases
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Personalized experiences keep customers coming back
+                </p>
+              </div>
+            </div>
+
+            <!-- Benefit 6 -->
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#FFEFEF] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/moduleCard-productMgmt.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Engaging shopping icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  More Engaging Experience
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Every interaction feels relevant and thoughtful
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 5: Where Personalized Recommendations Can Be Used ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="text-center">
+            <h2
+              class="fade-in lg:mb-5 mb-3 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Where Personalized Recommendations Can Be Used
+            </h2>
+            <p
+              class="fade-in max-w-[850px] mx-auto lg:mb-10 mb-7 text-description font-primary font-normal text-base lg:text-lg leading-[150%]"
+            >
+              Personalized suggestions can be placed across every touchpoint in
+              the shopping journey to maximize engagement and conversion.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
+            <!-- Item 1 -->
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="flex-shrink-0 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/moduleCard-productMgmt.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Product Detail Pages icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Product Detail Pages
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  You may also like
+                </p>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="flex-shrink-0 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/target-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Cart Page icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Cart Page
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Frequently bought together
+                </p>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="flex-shrink-0 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentAutomation-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Homepage icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Homepage
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Recommended for you
+                </p>
+              </div>
+            </div>
+            <!-- Item 4 -->
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="flex-shrink-0 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/customer-copilots-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Email Campaigns icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Email Campaigns
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Personalized product picks in newsletters
+                </p>
+              </div>
+            </div>
+            <!-- Item 5 -->
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="flex-shrink-0 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/predictive-commerce-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Mobile App icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Mobile App Notifications
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Push recommendations based on activity
+                </p>
+              </div>
+            </div>
+            <!-- Item 6 -->
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="flex-shrink-0 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/vision-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="In-store Digital Displays icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  In-store Digital Displays
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Personalized suggestions at physical touchpoints
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 4: Personalized Recommendations in Action ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div
+            class="fade-in lg:mb-11 mb-8 flex flex-col md:flex-row md:items-end gap-5 justify-between"
+          >
+            <div class="md:max-w-[70%] text-left">
+              <h2
+                class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Personalized Recommendations in Action
+              </h2>
+              <p
+                class="mt-4 text-description font-primary font-normal leading-[150%] max-w-[800px]"
+              >
+                See how our AI-driven engine transforms shopper data into
+                high-converting, personalized experiences across every
+                touchpoint.
+              </p>
+            </div>
+            <div
+              class="flex items-center justify-start md:justify-center gap-[clamp(0.5rem,1.111vw+0.167rem,1rem)] fade-in"
+            >
+              <div
+                class="swiper-button-prev swiper-button-prev-personalizedRecs after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer"
+              >
+                <img
+                  src="assets/image/icon/rightArrowSwiper.svg"
+                  alt="Previous slide"
+                  class="h-[70%] select-none rotate-180"
+                  width="24"
+                  height="24"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="swiper-button-next swiper-button-next-personalizedRecs after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer"
+              >
+                <img
+                  src="assets/image/icon/rightArrowSwiper.svg"
+                  alt="Next slide"
+                  class="h-[70%] select-none"
+                  width="24"
+                  height="24"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper PersonalizedRecsSlider fade-in">
+            <div class="swiper-wrapper">
+              <!-- Example 1 -->
+              <div class="swiper-slide !h-auto">
+                <div
+                  class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+                >
+                  <div
+                    class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white text-primary text-center"
+                  >
+                    <img
+                      src="assets/image/icon/moduleCard-productMgmt.svg"
+                      class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300 mx-auto"
+                      alt="Purchase Insight"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                    >
+                      Based on Purchase
+                    </div>
                     <p
-                        class="fade-in max-w-[850px] mx-auto lg:mb-10 mb-7 text-description font-primary font-normal text-base lg:text-lg leading-[150%]">
-                        Personalized suggestions can be placed across every touchpoint in the shopping journey to
-                        maximize engagement and conversion.</p>
+                      class="text-description font-primary font-normal leading-[150%]"
+                    >
+                      A customer buys sneakers. AI recommends matching socks,
+                      sportswear, and gym accessories that go well with them.
+                    </p>
+                  </div>
                 </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
-                    <!-- Item 1 -->
+              </div>
+              <!-- Example 2 -->
+              <div class="swiper-slide !h-auto">
+                <div
+                  class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+                >
+                  <div
+                    class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white text-center"
+                  >
+                    <img
+                      src="assets/image/icon/intelligentAutomation-icon.svg"
+                      class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300 mx-auto"
+                      alt="Browsing Insight"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
                     <div
-                        class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                        <div
-                            class="flex-shrink-0 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/moduleCard-productMgmt.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="Product Detail Pages icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div
-                                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">
-                                Product Detail Pages</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">You may also like</p>
-                        </div>
+                      class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                    >
+                      Browsing Behavior
                     </div>
-                    <!-- Item 2 -->
-                    <div
-                        class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                        <div
-                            class="flex-shrink-0 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/target-icon.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="Cart Page icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div
-                                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">
-                                Cart Page</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Frequently bought
-                                together</p>
-                        </div>
-                    </div>
-                    <!-- Item 3 -->
-                    <div
-                        class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                        <div
-                            class="flex-shrink-0 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/intelligentAutomation-icon.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="Homepage icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div
-                                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">
-                                Homepage</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Recommended for you</p>
-                        </div>
-                    </div>
-                    <!-- Item 4 -->
-                    <div
-                        class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                        <div
-                            class="flex-shrink-0 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/customer-copilots-icon.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="Email Campaigns icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div
-                                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">
-                                Email Campaigns</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Personalized product
-                                picks in newsletters</p>
-                        </div>
-                    </div>
-                    <!-- Item 5 -->
-                    <div
-                        class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                        <div
-                            class="flex-shrink-0 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/predictive-commerce-icon.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="Mobile App icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div
-                                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">
-                                Mobile App Notifications</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Push recommendations
-                                based on activity</p>
-                        </div>
-                    </div>
-                    <!-- Item 6 -->
-                    <div
-                        class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                        <div
-                            class="flex-shrink-0 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/vision-icon.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="In-store Digital Displays icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div
-                                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">
-                                In-store Digital Displays</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Personalized suggestions
-                                at physical touchpoints</p>
-                        </div>
-                    </div>
+                    <p
+                      class="text-description font-primary font-normal leading-[150%]"
+                    >
+                      A shopper views formal shirts. AI suggests trousers,
+                      blazers, and leather belts to complete the look.
+                    </p>
+                  </div>
                 </div>
+              </div>
+              <!-- Example 3 -->
+              <div class="swiper-slide !h-auto">
+                <div
+                  class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+                >
+                  <div
+                    class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white text-center"
+                  >
+                    <img
+                      src="assets/image/icon/layers-icon.svg"
+                      class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300 mx-auto"
+                      alt="Wishlist Insight"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                    >
+                      Wishlist Items
+                    </div>
+                    <p
+                      class="text-description font-primary font-normal leading-[150%]"
+                    >
+                      Shoppers save items for later. AI notifies them when items
+                      go on sale or suggests similar alternatives.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Example 4 -->
+              <div class="swiper-slide !h-auto">
+                <div
+                  class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+                >
+                  <div
+                    class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white text-center"
+                  >
+                    <img
+                      src="assets/image/icon/Predictive-icon.svg"
+                      class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300 mx-auto"
+                      alt="Trend Insight"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                    >
+                      Trends & Popularity
+                    </div>
+                    <p
+                      class="text-description font-primary font-normal leading-[150%]"
+                    >
+                      Leverage social proof by showcasing what others are buying
+                      right now based on real-time network activity.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Example 5 -->
+              <div class="swiper-slide !h-auto">
+                <div
+                  class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#F2EEFF] border border-[#f2f2f2] flex flex-col"
+                >
+                  <div
+                    class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white text-primary text-center"
+                  >
+                    <img
+                      src="assets/image/icon/customer-copilots-icon.svg"
+                      class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300 mx-auto"
+                      alt="Notification Insight"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                    >
+                      Emails & Notifications
+                    </div>
+                    <p
+                      class="text-description font-primary font-normal leading-[150%]"
+                    >
+                      Send hyper-relevant "Just for You" newsletters that
+                      feature items matching a customer's style and size.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Example 6 -->
+              <div class="swiper-slide !h-auto">
+                <div
+                  class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#E7FAF9] border border-[#f2f2f2] flex flex-col"
+                >
+                  <div
+                    class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white text-primary text-center"
+                  >
+                    <img
+                      src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg"
+                      class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300 mx-auto"
+                      alt="Cross-Category Insight"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                    >
+                      Cross-Category
+                    </div>
+                    <p
+                      class="text-description font-primary font-normal leading-[150%]"
+                    >
+                      AI analyzes lookbooks to suggest a high-end designer bag
+                      that perfectly complements a recently viewed evening
+                      dress.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
-        <!----- End Section 5 ----->
+          </div>
+        </div>
+      </section>
 
-        <!----- Section 4: Personalized Recommendations in Action ----->
-        <section class="lg:py-[100px] sm:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="fade-in lg:mb-11 mb-8 flex flex-col md:flex-row md:items-end gap-5 justify-between">
-                    <div class="md:max-w-[70%] text-left">
-                        <h2
-                            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
-                            Personalized Recommendations in Action</h2>
-                        <p class="mt-4 text-description font-primary font-normal leading-[150%] max-w-[800px]">See how
-                            our AI-driven engine transforms shopper data into high-converting, personalized experiences
-                            across every touchpoint.</p>
-                    </div>
-                    <div
-                        class="flex items-center justify-start md:justify-center gap-[clamp(0.5rem,1.111vw+0.167rem,1rem)] fade-in">
-                        <div
-                            class="swiper-button-prev swiper-button-prev-personalizedRecs after:hidden !static border border-heading rounded-full !w-8 !h-8  !m-0 transition-all duration-200 ease-linear cursor-pointer">
-                            <img src="assets/image/icon/rightArrowSwiper.svg" alt="Previous slide"
-                                class="h-[70%] select-none rotate-180" width="24" height="24" loading="lazy">
-                        </div>
-                        <div
-                            class="swiper-button-next swiper-button-next-personalizedRecs after:hidden !static border border-heading rounded-full !w-8 !h-8  !m-0 transition-all duration-200 ease-linear cursor-pointer">
-                            <img src="assets/image/icon/rightArrowSwiper.svg" alt="Next slide"
-                                class="h-[70%] select-none" width="24" height="24" loading="lazy">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper PersonalizedRecsSlider fade-in">
-                    <div class="swiper-wrapper">
-                        <!-- Example 1 -->
-                        <div class="swiper-slide !h-auto">
-                            <div
-                                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                                <div
-                                    class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white text-primary text-center">
-                                    <img src="assets/image/icon/moduleCard-productMgmt.svg"
-                                        class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300 mx-auto"
-                                        alt="Purchase Insight" width="40" height="40" loading="lazy">
-                                </div>
-                                <div>
-                                    <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">
-                                        Based on Purchase</div>
-                                    <p class="text-description font-primary font-normal leading-[150%]">A customer buys
-                                        sneakers. AI recommends matching socks, sportswear, and gym accessories that go
-                                        well with them.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Example 2 -->
-                        <div class="swiper-slide !h-auto">
-                            <div
-                                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-                                <div
-                                    class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white text-center">
-                                    <img src="assets/image/icon/intelligentAutomation-icon.svg"
-                                        class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300 mx-auto"
-                                        alt="Browsing Insight" width="40" height="40" loading="lazy">
-                                </div>
-                                <div>
-                                    <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">
-                                        Browsing Behavior</div>
-                                    <p class="text-description font-primary font-normal leading-[150%]">A shopper views
-                                        formal shirts. AI suggests trousers, blazers, and leather belts to complete the
-                                        look.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Example 3 -->
-                        <div class="swiper-slide !h-auto">
-                            <div
-                                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                                <div
-                                    class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white text-center">
-                                    <img src="assets/image/icon/layers-icon.svg"
-                                        class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300 mx-auto"
-                                        alt="Wishlist Insight" width="40" height="40" loading="lazy">
-                                </div>
-                                <div>
-                                    <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">
-                                        Wishlist Items</div>
-                                    <p class="text-description font-primary font-normal leading-[150%]">Shoppers save
-                                        items for later. AI notifies them when items go on sale or suggests similar
-                                        alternatives.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Example 4 -->
-                        <div class="swiper-slide !h-auto">
-                            <div
-                                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                                <div
-                                    class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white text-center">
-                                    <img src="assets/image/icon/Predictive-icon.svg"
-                                        class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300 mx-auto"
-                                        alt="Trend Insight" width="40" height="40" loading="lazy">
-                                </div>
-                                <div>
-                                    <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">
-                                        Trends & Popularity</div>
-                                    <p class="text-description font-primary font-normal leading-[150%]">Leverage social
-                                        proof by showcasing what others are buying right now based on real-time network
-                                        activity.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Example 5 -->
-                        <div class="swiper-slide !h-auto">
-                            <div
-                                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#F2EEFF] border border-[#f2f2f2] flex flex-col">
-                                <div
-                                    class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white text-primary text-center">
-                                    <img src="assets/image/icon/customer-copilots-icon.svg"
-                                        class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300 mx-auto"
-                                        alt="Notification Insight" width="40" height="40" loading="lazy">
-                                </div>
-                                <div>
-                                    <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">
-                                        Emails & Notifications</div>
-                                    <p class="text-description font-primary font-normal leading-[150%]">Send
-                                        hyper-relevant "Just for You" newsletters that feature items matching a
-                                        customer's style and size.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Example 6 -->
-                        <div class="swiper-slide !h-auto">
-                            <div
-                                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#E7FAF9] border border-[#f2f2f2] flex flex-col">
-                                <div
-                                    class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white text-primary text-center">
-                                    <img src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg"
-                                        class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300 mx-auto"
-                                        alt="Cross-Category Insight" width="40" height="40" loading="lazy">
-                                </div>
-                                <div>
-                                    <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">
-                                        Cross-Category</div>
-                                    <p class="text-description font-primary font-normal leading-[150%]">AI analyzes
-                                        lookbooks to suggest a high-end designer bag that perfectly complements a
-                                        recently viewed evening dress.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <!----- Section 7: CTA Above Footer ----->
+      <section
+        class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover"
+      >
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+          <div
+            class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8 items-center"
+          >
+            <div class="lg:max-w-[530px] w-full">
+              <div
+                class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+              >
+                The Right Personalized Recommendation Solution
+              </div>
+              <p
+                class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]"
+              >
+                Understands shopper preferences, suggests relevant products, and
+                creates tailored experiences, helping retailers increase
+                cross-sell, upsell, and repeat purchases.
+              </p>
+              <p
+                class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]"
+              >
+                Ready to deliver personalized shopping at scale?
+              </p>
+              <a
+                href="/contact-us"
+                class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >Contact Us</a
+              >
             </div>
-        </section>
-        <!----- End Section 4 ----->
-
-        <!----- Section 7: CTA Above Footer ----->
-        <section
-            class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-                <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8 items-center">
-                    <div class="lg:max-w-[530px] w-full">
-                        <div
-                            class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">
-                            The Right Personalized Recommendation Solution</div>
-                        <p class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]">Understands
-                            shopper preferences, suggests relevant products, and creates tailored experiences, helping
-                            retailers increase cross-sell, upsell, and repeat purchases.</p>
-                        <p class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]">Ready to deliver
-                            personalized shopping at scale?</p>
-                        <a href="/contact-us"
-                            class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Contact
-                            Us</a>
-                    </div>
-                    <div class="rounded-[20px] overflow-hidden">
-                        <!-- PLACEHOLDER IMAGE: Replace with a Smart Auto-Completion product screenshot -->
-                        <div
-                            class="w-full h-fit p-3 sm:p-5 bg-white/45 border border-white rounded-[20px] overflow-hidden">
-                            <img src="assets/image/personalized-recommendations/personalized-recommendation-solution.webp"
-                                class="w-full h-full object-cover object-top rounded-2xl sm:rounded-[20px] border border-white"
-                                alt="Smart Auto-Completion in action" width="700" height="380" loading="lazy">
-                        </div>
-                    </div>
-                </div>
+            <div class="rounded-[20px] overflow-hidden">
+              <!-- PLACEHOLDER IMAGE: Replace with a Smart Auto-Completion product screenshot -->
+              <div
+                class="w-full h-fit p-3 sm:p-5 bg-white/45 border border-white rounded-[20px] overflow-hidden"
+              >
+                <img
+                  src="assets/image/personalized-recommendations/personalized-recommendation-solution.webp"
+                  class="w-full h-full object-cover object-top rounded-2xl sm:rounded-[20px] border border-white"
+                  alt="Smart Auto-Completion in action"
+                  width="700"
+                  height="380"
+                  loading="lazy"
+                />
+              </div>
             </div>
-            <img src="assets/image/icon/ctaBanner-shape.png"
-                class="animate-pulse absolute start-0 bottom-0 pointer-none select-none" alt="" width="150" height="150"
-                loading="lazy">
-            <img src="assets/image/icon/ctaBanner-shape2.png"
-                class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
-                alt="" width="150" height="150" loading="lazy">
-        </section>
-        <!----- End Section 7 ----->
+          </div>
+        </div>
+        <img
+          src="assets/image/icon/ctaBanner-shape.png"
+          class="animate-pulse absolute start-0 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <img
+          src="assets/image/icon/ctaBanner-shape2.png"
+          class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+      </section>
 
-        <!----- Section 6: Ready to Make Shopping More Personal? ----->
-        <section class="lg:py-[100px] sm:py-16 py-10">
-            <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="fade-in grid lg:grid-cols-1 gap-8 lg:gap-[66px] items-center text-center">
-                    <div>
-                        <h2
-                            class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
-                            Ready to Make Shopping<br class="hidden lg:block"> More Personal?</h2>
-                        <p class="lg:pe-10 text-description font-primary font-normal leading-[150%]">When customers see
-                            products that match their preferences, they are more likely to engage and buy.</p>
-                        <p class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]">Personalized
-                            Recommendations help you create meaningful shopping experiences that drive loyalty and
-                            revenue.</p>
-                        <div class="mt-5 lg:mt-10 flex flex-wrap gap-3 justify-center">
-                            <a href="/contact-us"
-                                class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">
-                                Schedule a Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
+      <!----- Section 6: Ready to Make Shopping More Personal? ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div
+            class="fade-in grid lg:grid-cols-1 gap-8 lg:gap-[66px] items-center text-center"
+          >
+            <div>
+              <h2
+                class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Ready to Make Shopping<br class="hidden lg:block" />
+                More Personal?
+              </h2>
+              <p
+                class="lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                When customers see products that match their preferences, they
+                are more likely to engage and buy.
+              </p>
+              <p
+                class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                Personalized Recommendations help you create meaningful shopping
+                experiences that drive loyalty and revenue.
+              </p>
+              <div class="mt-5 lg:mt-10 flex flex-wrap gap-3 justify-center">
+                <a
+                  href="/request-demo"
+                  class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >
+                  Request a Demo
+                </a>
+              </div>
             </div>
-        </section>
-        <!----- End Section 6 ----->
-
+          </div>
+        </div>
+      </section>
     </main>
 
     {{> footer}}
 
-    <!--+++++++ Script Start +++++++-->
-    <script type='module' src='assets/script/main.js'></script>
-</body>
-
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
 </html>

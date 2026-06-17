@@ -1,136 +1,150 @@
 {
-    "cleanUrls": true,
-    "outputDirectory": "dist",
-    "redirects": [
+  "cleanUrls": true,
+  "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/blog-list",
+      "destination": "/articles-and-resources",
+      "permanent": true
+    },
+    {
+      "source": "/unified-commerce",
+      "destination": "/nexus-unified-commerce",
+      "permanent": true
+    },
+    {
+      "source": "/retail-platform",
+      "destination": "/nexus-unified-commerce",
+      "permanent": true
+    },
+    {
+      "source": "/overview",
+      "destination": "/nexus-unified-commerce",
+      "permanent": true
+    },
+    {
+      "source": "/merchandise-planning",
+      "destination": "/merchandise-and-assortment-planning",
+      "permanent": true
+    },
+    {
+      "source": "/assortment-planning",
+      "destination": "/merchandise-and-assortment-planning",
+      "permanent": true
+    },
+    {
+      "source": "/d2c-ecommerce",
+      "destination": "/d2c-eCommerce",
+      "permanent": true
+    },
+    {
+      "source": "/customer-xperience-management",
+      "destination": "/customer-experience-management",
+      "permanent": true
+    },
+    {
+      "source": "/product-xperience-management",
+      "destination": "/customer-experience-management",
+      "permanent": true
+    },
+    {
+      "source": "/Integrations",
+      "destination": "/integrations",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/artificial-intelligence",
+      "destination": "/enterprise-ai",
+      "permanent": true
+    },
+    {
+      "source": "/business-intelligence",
+      "destination": "/data-intelligence",
+      "permanent": true
+    },
+    {
+      "source": "/headless-commerce",
+      "destination": "/d2c-eCommerce",
+      "permanent": true
+    },
+    {
+      "source": "/solution",
+      "destination": "/nexus-unified-commerce",
+      "permanent": true
+    },
+    {
+      "source": "/artisans-commerce-cloud",
+      "destination": "/nexus-unified-commerce",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge-harvester",
+      "destination": "/vault-knowledge-harvester",
+      "permanent": true
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/fetch-articles",
+      "schedule": "0 6 * * *"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
         {
-            "source": "/blog-list",
-            "destination": "/articles-and-resources",
-            "permanent": true
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: https:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' https://va.vercel-scripts.com https://cdn.jsdelivr.net https://unpkg.com https://snap.licdn.com https://cloud.umami.is; connect-src 'self' https://vitals.vercel-insights.com https://api.web3forms.com https://cloud.umami.is https://px.ads.linkedin.com https://px4.ads.linkedin.com; frame-src 'self'; form-action 'self' https://api.web3forms.com; upgrade-insecure-requests"
         },
         {
-            "source": "/retail-platform",
-            "destination": "/unified-commerce",
-            "permanent": true
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
         },
         {
-            "source": "/overview",
-            "destination": "/unified-commerce",
-            "permanent": true
+          "key": "X-Frame-Options",
+          "value": "DENY"
         },
         {
-            "source": "/merchandise-planning",
-            "destination": "/merchandise-and-assortment-planning",
-            "permanent": true
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
         },
         {
-            "source": "/assortment-planning",
-            "destination": "/merchandise-and-assortment-planning",
-            "permanent": true
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
         },
         {
-            "source": "/d2c-ecommerce",
-            "destination": "/d2c-eCommerce",
-            "permanent": true
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
         },
         {
-            "source": "/customer-xperience-management",
-            "destination": "/customer-experience-management",
-            "permanent": true
-        },
-        {
-            "source": "/product-xperience-management",
-            "destination": "/customer-experience-management",
-            "permanent": true
-        },
-        {
-            "source": "/Integrations",
-            "destination": "/integrations",
-            "permanent": true
-        },
-        {
-            "source": "/about",
-            "destination": "/about-us",
-            "permanent": true
-        },
-        {
-            "source": "/artificial-intelligence",
-            "destination": "/enterprise-ai",
-            "permanent": true
-        },
-        {
-            "source": "/business-intelligence",
-            "destination": "/data-intelligence",
-            "permanent": true
-        },
-        {
-            "source": "/headless-commerce",
-            "destination": "/d2c-eCommerce",
-            "permanent": true
-        },
-        {
-            "source": "/solution",
-            "destination": "/unified-commerce",
-            "permanent": true
-        },
-        {
-            "source": "/artisans-commerce-cloud",
-            "destination": "/unified-commerce",
-            "permanent": true
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
         }
-    ],
-    "crons": [
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
         {
-            "path": "/api/cron/fetch-articles",
-            "schedule": "0 6 * * *"
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
         }
-    ],
-    "headers": [
+      ]
+    },
+    {
+      "source": "/(.*)\\.html",
+      "headers": [
         {
-            "source": "/(.*)",
-            "headers": [
-                {
-                    "key": "X-Content-Type-Options",
-                    "value": "nosniff"
-                },
-                {
-                    "key": "X-Frame-Options",
-                    "value": "DENY"
-                },
-                {
-                    "key": "X-XSS-Protection",
-                    "value": "1; mode=block"
-                },
-                {
-                    "key": "Referrer-Policy",
-                    "value": "strict-origin-when-cross-origin"
-                },
-                {
-                    "key": "Permissions-Policy",
-                    "value": "camera=(), microphone=(), geolocation=()"
-                },
-                {
-                    "key": "Strict-Transport-Security",
-                    "value": "max-age=31536000; includeSubDomains"
-                }
-            ]
-        },
-        {
-            "source": "/assets/(.*)",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=31536000, immutable"
-                }
-            ]
-        },
-        {
-            "source": "/(.*)\\.html",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "no-cache"
-                }
-            ]
+          "key": "Cache-Control",
+          "value": "no-cache"
         }
-    ]
+      ]
+    }
+  ]
 }

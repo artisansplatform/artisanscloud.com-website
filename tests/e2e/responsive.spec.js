@@ -1,150 +1,185 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
 
 // Test pages at different viewports
 const viewports = [
-    { name: 'Mobile', width: 375, height: 667 },
-    { name: 'Tablet', width: 768, height: 1024 },
-    { name: 'Desktop', width: 1280, height: 800 },
+  { name: "Mobile", width: 375, height: 667 },
+  { name: "Tablet", width: 768, height: 1024 },
+  { name: "Desktop", width: 1280, height: 800 },
 ];
 
 // Sample pages to test responsiveness
 const pagesToTest = [
-    { path: '/', name: 'Home' },
-    { path: '/unified-commerce', name: 'Unified Commerce' },
-    { path: '/data-intelligence', name: 'Data Intelligence' },
-    { path: '/about-us', name: 'About Us' },
+  { path: "/", name: "Home" },
+  { path: "/nexus-unified-commerce", name: "Unified Commerce" },
+  { path: "/data-intelligence", name: "Data Intelligence" },
+  { path: "/about-us", name: "About Us" },
 ];
 
-test.describe('Responsive Layout Tests', () => {
-    for (const viewport of viewports) {
-        test.describe(`${viewport.name} Viewport (${viewport.width}x${viewport.height})`, () => {
-            test.use({ viewport: { width: viewport.width, height: viewport.height } });
+async function waitForPageReady(page) {
+  await page.waitForLoadState('domcontentloaded');
+  await expect(page.locator("body")).toBeVisible();
+}
 
-            for (const page of pagesToTest) {
-                test(`${page.name} should have visible header at ${viewport.name}`, async ({ page: browserPage }) => {
-                    await browserPage.goto(page.path);
-                    
-                    const header = browserPage.locator('header');
-                    await expect(header).toBeVisible();
-                });
+test.describe("Responsive Layout Tests", () => {
+  for (const viewport of viewports) {
+    test.describe(`${viewport.name} Viewport (${viewport.width}x${viewport.height})`, () => {
+      test.use({
+        viewport: { width: viewport.width, height: viewport.height },
+      });
 
-                test(`${page.name} should not have horizontal overflow at ${viewport.name}`, async ({ page: browserPage }) => {
-                    await browserPage.goto(page.path);
-                    
-                    // Check if page has horizontal scrollbar
-                    const hasHorizontalScroll = await browserPage.evaluate(() => {
-                        return document.documentElement.scrollWidth > document.documentElement.clientWidth;
-                    });
-                    
-                    expect(hasHorizontalScroll).toBe(false);
-                });
+      for (const page of pagesToTest) {
+        test(`${page.name} should have visible header at ${viewport.name}`, async ({
+          page: browserPage,
+        }) => {
+          await browserPage.goto(page.path, { waitUntil: 'domcontentloaded' });
 
-                test(`${page.name} should render content correctly at ${viewport.name}`, async ({ page: browserPage }) => {
-                    await browserPage.goto(page.path);
-                    
-                    // Wait for page to be fully loaded
-                    await browserPage.waitForLoadState('networkidle');
-                    
-                    // Check that body has content
-                    const bodyText = await browserPage.locator('body').textContent();
-                    expect(bodyText?.length).toBeGreaterThan(100);
-                });
-            }
-        });
-    }
-
-    test.describe('Mobile-specific Layout', () => {
-        test.use({ viewport: { width: 375, height: 667 } });
-
-        test('header navigation should be collapsed on mobile', async ({ page }) => {
-            await page.goto('/');
-            
-            // Desktop navigation should be hidden on mobile
-            // Mobile menu button should be visible
-            const menuToggle = page.locator('#menuToggle, button[aria-label*="menu"]').first();
-            
-            if (await menuToggle.count() > 0) {
-                await expect(menuToggle).toBeVisible();
-            }
+          const header = browserPage.locator("header");
+          await expect(header).toBeVisible();
         });
 
-        test('content should stack vertically on mobile', async ({ page }) => {
-            await page.goto('/');
-            
-            // Page should not be too wide
-            const bodyWidth = await page.evaluate(() => document.body.scrollWidth);
-            const viewportWidth = await page.evaluate(() => window.innerWidth);
-            
-            // Body width should not exceed viewport width by more than a small margin
-            expect(bodyWidth).toBeLessThanOrEqual(viewportWidth + 10);
+        test(`${page.name} should not have horizontal overflow at ${viewport.name}`, async ({
+          page: browserPage,
+        }) => {
+          await browserPage.goto(page.path, { waitUntil: 'domcontentloaded' });
+          await waitForPageReady(browserPage);
+
+          // Check if page has horizontal scrollbar
+          const hasHorizontalScroll = await browserPage.evaluate(() => {
+            return (
+              document.documentElement.scrollWidth >
+              document.documentElement.clientWidth
+            );
+          });
+
+          expect(hasHorizontalScroll).toBe(false);
         });
+
+        test(`${page.name} should render content correctly at ${viewport.name}`, async ({
+          page: browserPage,
+        }) => {
+          await browserPage.goto(page.path, { waitUntil: 'domcontentloaded' });
+
+          // Wait for page to be ready instead of relying on networkidle
+          await waitForPageReady(browserPage);
+
+          // Wait for critical headings to be visible
+          await expect(browserPage.locator("h1, h2").first()).toBeVisible();
+
+          // Check that body has content
+          const bodyText = await browserPage.locator("body").textContent();
+          expect(bodyText?.length).toBeGreaterThan(100);
+        });
+      }
+    });
+  }
+
+  test.describe("Mobile-specific Layout", () => {
+    test.use({ viewport: { width: 375, height: 667 } });
+
+    test("header navigation should be collapsed on mobile", async ({
+      page,
+    }) => {
+      await page.goto("/", { waitUntil: 'domcontentloaded' });
+
+      // Desktop navigation should be hidden on mobile
+      // Mobile menu button should be visible
+      const menuToggle = page
+        .locator('#menuToggle, button[aria-label*="menu"]')
+        .first();
+
+      if ((await menuToggle.count()) > 0) {
+        await expect(menuToggle).toBeVisible();
+      }
     });
 
-    test.describe('Desktop-specific Layout', () => {
-        test.use({ viewport: { width: 1280, height: 800 } });
+    test("content should stack vertically on mobile", async ({ page }) => {
+      await page.goto("/", { waitUntil: 'domcontentloaded' });
 
-        test('header navigation should be expanded on desktop', async ({ page }) => {
-            await page.goto('/');
-            
-            // Desktop navigation links should be visible (using header-link class)
-            const navLinks = page.locator('header .header-link').first();
-            await expect(navLinks).toBeVisible();
-        });
+      // Page should not be too wide
+      const bodyWidth = await page.evaluate(() => document.body.scrollWidth);
+      const viewportWidth = await page.evaluate(() => window.innerWidth);
 
-        test('content should have proper spacing on desktop', async ({ page }) => {
-            await page.goto('/');
-            
-            // Just verify the page renders without horizontal overflow
-            const hasHorizontalScroll = await page.evaluate(() => {
-                return document.documentElement.scrollWidth > document.documentElement.clientWidth;
-            });
-            
-            expect(hasHorizontalScroll).toBe(false);
-        });
+      // Body width should not exceed viewport width by more than a small margin
+      expect(bodyWidth).toBeLessThanOrEqual(viewportWidth + 10);
+    });
+  });
+
+  test.describe("Desktop-specific Layout", () => {
+    test.use({ viewport: { width: 1280, height: 800 } });
+
+    test("header navigation should be expanded on desktop", async ({
+      page,
+    }) => {
+      await page.goto("/", { waitUntil: 'domcontentloaded' });
+
+      // Desktop navigation links should be visible (using header-link class)
+      const navLinks = page.locator("header .header-link").first();
+      await expect(navLinks).toBeVisible();
     });
 
-    test.describe('Tablet Layout', () => {
-        test.use({ viewport: { width: 768, height: 1024 } });
+    test("content should have proper spacing on desktop", async ({ page }) => {
+      await page.goto("/", { waitUntil: 'domcontentloaded' });
 
-        test('tablet viewport should render properly', async ({ page }) => {
-            await page.goto('/');
-            
-            // Check header is visible
-            const header = page.locator('header');
-            await expect(header).toBeVisible();
-            
-            // Check no horizontal overflow
-            const hasHorizontalScroll = await page.evaluate(() => {
-                return document.documentElement.scrollWidth > document.documentElement.clientWidth;
-            });
-            
-            expect(hasHorizontalScroll).toBe(false);
-        });
-    });
+      // Just verify the page renders without horizontal overflow
+      const hasHorizontalScroll = await page.evaluate(() => {
+        return (
+          document.documentElement.scrollWidth >
+          document.documentElement.clientWidth
+        );
+      });
 
-    test.describe('Viewport Transition', () => {
-        test('layout should adapt when viewport changes', async ({ page, browser }) => {
-            // Start at desktop
-            const context = await browser.newContext({
-                viewport: { width: 1280, height: 800 }
-            });
-            const newPage = await context.newPage();
-            
-            await newPage.goto('/');
-            
-            // Check desktop layout
-            let header = newPage.locator('header');
-            await expect(header).toBeVisible();
-            
-            // Resize to mobile
-            await newPage.setViewportSize({ width: 375, height: 667 });
-            await newPage.waitForTimeout(300);
-            
-            // Check mobile layout still works
-            header = newPage.locator('header');
-            await expect(header).toBeVisible();
-            
-            await context.close();
-        });
+      expect(hasHorizontalScroll).toBe(false);
     });
+  });
+
+  test.describe("Tablet Layout", () => {
+    test.use({ viewport: { width: 768, height: 1024 } });
+
+    test("tablet viewport should render properly", async ({ page }) => {
+      await page.goto("/", { waitUntil: 'domcontentloaded' });
+
+      // Check header is visible
+      const header = page.locator("header");
+      await expect(header).toBeVisible();
+
+      // Check no horizontal overflow
+      const hasHorizontalScroll = await page.evaluate(() => {
+        return (
+          document.documentElement.scrollWidth >
+          document.documentElement.clientWidth
+        );
+      });
+
+      expect(hasHorizontalScroll).toBe(false);
+    });
+  });
+
+  test.describe("Viewport Transition", () => {
+    test("layout should adapt when viewport changes", async ({
+      page,
+      browser,
+    }) => {
+      // Start at desktop
+      const context = await browser.newContext({
+        viewport: { width: 1280, height: 800 },
+      });
+      const newPage = await context.newPage();
+
+      await newPage.goto("/", { waitUntil: 'domcontentloaded' });
+
+      // Check desktop layout
+      let header = newPage.locator("header");
+      await expect(header).toBeVisible();
+
+      // Resize to mobile
+      await newPage.setViewportSize({ width: 375, height: 667 });
+      await newPage.waitForTimeout(300);
+
+      // Check mobile layout still works
+      header = newPage.locator("header");
+      await expect(header).toBeVisible();
+
+      await context.close();
+    });
+  });
 });

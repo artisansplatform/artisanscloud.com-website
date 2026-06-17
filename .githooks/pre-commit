@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Warns when staged images exceed size thresholds. Does not modify files.
+# Bypass with: git commit --no-verify
+
+set -e
+
+staged=$(git diff --cached --name-only --diff-filter=ACMR | grep -iE '\.(png|jpe?g|webp|svg)$' || true)
+
+if [ -z "$staged" ]; then
+  exit 0
+fi
+
+# shellcheck disable=SC2086
+node scripts/check-images.js --staged $staged

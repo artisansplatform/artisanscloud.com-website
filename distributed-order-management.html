@@ -1,374 +1,887 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <title>Distributed Order Management | Artisans Cloud</title>
-    <link rel="canonical" href="https://www.artisanscloud.com/distributed-order-management" />
-    <meta name="description"
-        content="Streamline your multi-channel order fulfillment with Artisans Cloud Distributed Order Management. Gain real-time visibility, intelligent orchestration, and personalized experiences for optimal efficiency in commerce.">
-
-    <meta property="og:url" content="https://artisanscloud.com/distributed-order-management">
-    <meta property="og:title" content="Distributed Order Management | Artisans Cloud">
-    <meta property="og:description"
-        content="Streamline your multi-channel order fulfillment with Artisans Cloud Distributed Order Management. Gain real-time visibility, intelligent orchestration, and personalized experiences for optimal efficiency in commerce.">
-    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/distributed-order-management.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <!-- Font Family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="./assets/style/output.css">
-</head>
-<body>
-    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
 
     {{> header}}
 
-
     <!----- Banner Sec ----->
     <section class="w-full h-full p-4 lg:p-5">
-        <div class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/distributed-order-management/bannerBG.webp')] bg-no-repeat bg-cover bg-bottom-right">
-            <div class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24">
-                <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                    <div class="text-center lg:max-w-[990px] mx-auto">
-                        <div class="mb-6 lg:mb-[37px] font-primary font-semibold text-2xl sm:text-4xl lg:text-[44px] xl:text-[50px] text-heading leading-[120%]" id="heroHeading">Master the Art of Seamless Order Fulfillment and achieve Optimal Efficiency in Multi-Channel Commerce</div>
-                        <div id="heroDec">
-                            <p class="text-base lg:text-lg text-description font-primary font-normal leading-[150%]">Be more adaptable and responsive than ever before with the modular technology designed explicitly for retailers like you.</p>
-                            <a href="/contact-us" class="lg:mt-10 mt-6 mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Book 30 mins Demo</a>
-                        </div>
-                    </div>
-                </div>
+      <div
+        class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/distributed-order-management/bannerBG.webp')] bg-no-repeat bg-cover bg-bottom-right"
+      >
+        <div class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24">
+          <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+            <div class="text-center lg:max-w-[990px] mx-auto">
+              <div
+                class="mb-3 sm:mb-5 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
+              >
+                Order Management
+              </div>
+              <h1
+                class="mb-3 font-primary text-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%]"
+                id="heroHeading"
+              >
+                Master the Art of Seamless Order Fulfillment and achieve Optimal
+                Efficiency in Multi-Channel Commerce
+              </h1>
+              <div
+                id="heroDec"
+                class="flex flex-col items-center mb-7.5 lg:mb-12"
+              >
+                <p
+                  class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                >
+                  Be more adaptable and responsive than ever before with the
+                  modular technology designed explicitly for retailers like you.
+                </p>
+                <a
+                  href="/request-demo"
+                  class="lg:mt-[25px] mt-4 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                  >Book 30 mins Demo</a
+                >
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!----- End Banner Sec ----->
-
 
     <!----- unified power Sec ----->
     <section class="lg:pt-[100px] lg:pb-10 md:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
-                <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Unified Power: Streamlined <br class="hidden lg:block"> Orders, Inventory, & <br class="hidden lg:block"> Fulfillment in One <br class="hidden lg:block"> System</div>
-                <div class="">
-                    <p class="mb-4 lg:mb-6 text-description font-primary font-normal leading-[150%]">Navigating the intricate web of multi-channel sales can be daunting.</p>
-                    <p class="lg:pe-10 text-description font-primary font-normal leading-[150%]">Artisans Cloud Distributed Order Management (DOM) platform provides real-time access to crucial inventory and order data – empowering retailers to manage, orchestrate and track orders with ease while delivering an exceptional end-to-end experience for each customer. With DOM, we empower retailers with unprecedented adaptability and responsiveness.</p>
-                </div>
-            </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
+          <div
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Unified Power: Streamlined <br class="hidden lg:block" />
+            Orders, Inventory, & <br class="hidden lg:block" />
+            Fulfillment in One <br class="hidden lg:block" />
+            System
+          </div>
+          <div class="">
+            <p
+              class="mb-4 lg:mb-6 text-description font-primary font-normal leading-[150%]"
+            >
+              Navigating the intricate web of multi-channel sales can be
+              daunting.
+            </p>
+            <p
+              class="lg:pe-10 text-description font-primary font-normal leading-[150%]"
+            >
+              Artisans Cloud Distributed Order Management (DOM) platform
+              provides real-time access to crucial inventory and order data –
+              empowering retailers to manage, orchestrate and track orders with
+              ease while delivering an exceptional end-to-end experience for
+              each customer. With DOM, we empower retailers with unprecedented
+              adaptability and responsiveness.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
-    <!----- End unified power Sec ----->
-
 
     <!----- Achieve Optimal Efficiency Sec ----->
     <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
-                <div class="lg:pe-10">
-                    <img src="assets/image/solutions/distributed-order-management/Achieve-Optimal-Efficiency.svg" alt="Distributed order management system achieving optimal efficiency across multiple channels" class="max-w-full h-auto mx-auto lg:mx-0" width="500" height="400">
-                </div>
-                <div class="">
-                    <div class="lg:mb-10 mb-7 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]">Achieve Optimal Efficiency in Multi-Channel Commerce</div>
-
-                    <div class="flex flex-col lg:gap-5 gap-5">
-                        <div class="ps-8 relative">
-                            <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="Forward arrow icon" width="16" height="16">
-                            <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Complete Control</div>
-                            <p class="text-base text-description font-normal font-primary">Gain full visibility over every aspect of your orders – from placement to delivery – ensuring timely processing and accurate inventory tracking.</p>
-                        </div>
-                        <div class="ps-8 relative">
-                            <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="Forward arrow icon" width="16" height="16">
-                            <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Intelligent Orchestration</div>
-                            <p class="text-base text-description font-normal font-primary">Leverage smart routing algorithms that optimize shipping costs while maintaining fast delivery times. Effortlessly fulfill customer expectations at every step.</p>
-                        </div>
-                        <div class="ps-8 relative">
-                            <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="Forward arrow icon" width="16" height="16">
-                            <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Personalized Experiences.</div>
-                            <p class="text-base text-description font-normal font-primary">Customize offerings by managing pricing structures, promotions, taxes & duties dynamically across all channels as per regional preferences.</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
+          <div class="lg:pe-10">
+            <img
+              src="assets/image/solutions/distributed-order-management/Achieve-Optimal-Efficiency.svg"
+              alt="Distributed order management system achieving optimal efficiency across multiple channels"
+              class="max-w-full h-auto mx-auto lg:mx-0"
+              width="500"
+              height="400"
+            />
+          </div>
+          <div class="">
+            <div
+              class="lg:mb-10 mb-7 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Achieve Optimal Efficiency in Multi-Channel Commerce
             </div>
-        </div>
-    </section>
-    <!----- End Achieve Optimal Efficiency Sec ----->
 
+            <div class="flex flex-col lg:gap-5 gap-5">
+              <div class="ps-8 relative">
+                <img
+                  src="assets/image/icon/forward-arrow.svg"
+                  class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                  alt="Forward arrow icon"
+                  width="16"
+                  height="16"
+                />
+                <div
+                  class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary"
+                >
+                  Complete Control
+                </div>
+                <p class="text-base text-description font-normal font-primary">
+                  Gain full visibility over every aspect of your orders – from
+                  placement to delivery – ensuring timely processing and
+                  accurate inventory tracking.
+                </p>
+              </div>
+              <div class="ps-8 relative">
+                <img
+                  src="assets/image/icon/forward-arrow.svg"
+                  class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                  alt="Forward arrow icon"
+                  width="16"
+                  height="16"
+                />
+                <div
+                  class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary"
+                >
+                  Intelligent Orchestration
+                </div>
+                <p class="text-base text-description font-normal font-primary">
+                  Leverage smart routing algorithms that optimize shipping costs
+                  while maintaining fast delivery times. Effortlessly fulfill
+                  customer expectations at every step.
+                </p>
+              </div>
+              <div class="ps-8 relative">
+                <img
+                  src="assets/image/icon/forward-arrow.svg"
+                  class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                  alt="Forward arrow icon"
+                  width="16"
+                  height="16"
+                />
+                <div
+                  class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary"
+                >
+                  Personalized Experiences.
+                </div>
+                <p class="text-base text-description font-normal font-primary">
+                  Customize offerings by managing pricing structures,
+                  promotions, taxes & duties dynamically across all channels as
+                  per regional preferences.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!----- Infinite Scale, Limitless Flexibility Sec ----->
     <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
-                <div class="lg:pe-10">
-                    <div class="lg:mb-10 mb-7 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]">Infinite Scale, Limitless Flexibility. Take your commerce further, faster</div>
-
-                    <div class="flex flex-col lg:gap-5 gap-5">
-                        <div class="ps-8 relative">
-                            <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="Forward arrow icon" width="16" height="16">
-                            <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Real-Time Insights</div>
-                            <p class="text-base text-description font-normal font-primary">Monitor performance metrics instantly through a centralized dashboard providing actionable insights critical for strategic decision-making.</p>
-                        </div>
-                        <div class="ps-8 relative">
-                            <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="Forward arrow icon" width="16" height="16">
-                            <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Effortless Integration</div>
-                            <p class="text-base text-description font-normal font-primary">Seamlessly connect with various eCommerce platforms, marketplaces, and ERP systems, eliminating manual entry errors and maximizing efficiency.</p>
-                        </div>
-                        <div class="ps-8 relative">
-                            <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="Forward arrow icon" width="16" height="16">
-                            <div class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary">Scalable Solutions</div>
-                            <p class="text-base text-description font-normal font-primary">Expand your operations effortlessly to accommodate new sales channels or markets. Our DOM platform grows with you, ensuring a future-proof solution.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="">
-                    <img src="assets/image/solutions/distributed-order-management/Infinite-Scale.svg" alt="Infinite scale and limitless flexibility in distributed order management" class="max-w-full h-auto mx-auto" width="500" height="400">
-                </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
+          <div class="lg:pe-10">
+            <div
+              class="lg:mb-10 mb-7 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Infinite Scale, Limitless Flexibility. Take your commerce further,
+              faster
             </div>
-        </div>
-    </section>
-    <!----- End Infinite Scale, Limitless Flexibility Sec ----->
 
+            <div class="flex flex-col lg:gap-5 gap-5">
+              <div class="ps-8 relative">
+                <img
+                  src="assets/image/icon/forward-arrow.svg"
+                  class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                  alt="Forward arrow icon"
+                  width="16"
+                  height="16"
+                />
+                <div
+                  class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary"
+                >
+                  Real-Time Insights
+                </div>
+                <p class="text-base text-description font-normal font-primary">
+                  Monitor performance metrics instantly through a centralized
+                  dashboard providing actionable insights critical for strategic
+                  decision-making.
+                </p>
+              </div>
+              <div class="ps-8 relative">
+                <img
+                  src="assets/image/icon/forward-arrow.svg"
+                  class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                  alt="Forward arrow icon"
+                  width="16"
+                  height="16"
+                />
+                <div
+                  class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary"
+                >
+                  Effortless Integration
+                </div>
+                <p class="text-base text-description font-normal font-primary">
+                  Seamlessly connect with various eCommerce platforms,
+                  marketplaces, and ERP systems, eliminating manual entry errors
+                  and maximizing efficiency.
+                </p>
+              </div>
+              <div class="ps-8 relative">
+                <img
+                  src="assets/image/icon/forward-arrow.svg"
+                  class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                  alt="Forward arrow icon"
+                  width="16"
+                  height="16"
+                />
+                <div
+                  class="mb-3 text-lg lg:text-xl text-heading font-semibold font-primary"
+                >
+                  Scalable Solutions
+                </div>
+                <p class="text-base text-description font-normal font-primary">
+                  Expand your operations effortlessly to accommodate new sales
+                  channels or markets. Our DOM platform grows with you, ensuring
+                  a future-proof solution.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="">
+            <img
+              src="assets/image/solutions/distributed-order-management/Infinite-Scale.svg"
+              alt="Infinite scale and limitless flexibility in distributed order management"
+              class="max-w-full h-auto mx-auto"
+              width="500"
+              height="400"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
-
 
     <!----- Why choose artisans DOM Sec ----->
     <section class="lg:py-[100px] md:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="text-center">
-                <h1 class="fade-in lg:mb-10 mb-5 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Why choose Artisans Cloud DOM</h1>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
-                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Enhanced customer satisfaction icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Enhanced Customer Satisfaction</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Delight customers by providing prompt and accurate order delivery while maintaining transparent communication throughout their shopping journey.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/intelligentAutomation-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Streamlined operations icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Streamlined Operations</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Optimize workflows and minimize manual tasks, allowing your team to focus on strategic initiatives that fuel business growth.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/metadata-LineageManagement-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Reduced costs icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Reduced Costs</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Utilize intelligent shipping algorithms that lower operational expenses without compromising on delivery efficiency or customer satisfaction.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/DataQuality-Trust-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Unified data management icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Unified Data Management</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Access real-time inventory data across all channels. Making informed decisions for improved demand forecasting and stock replenishment.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/Cloud-hybridDeployments-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Future ready icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Be Future Ready</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Embrace a headless and modular platform and adapt quickly to changing business environments and stay ahead of the competition.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="text-center">
+          <h2
+            class="fade-in lg:mb-10 mb-5 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Why choose Artisans Cloud DOM
+          </h2>
         </div>
-    </section>
-    <!----- End Why choose artisans DOM Sec ----->
 
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
+          <div
+            class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Enhanced customer satisfaction icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Enhanced Customer Satisfaction
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Delight customers by providing prompt and accurate order
+                delivery while maintaining transparent communication throughout
+                their shopping journey.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/intelligentAutomation-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Streamlined operations icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Streamlined Operations
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Optimize workflows and minimize manual tasks, allowing your team
+                to focus on strategic initiatives that fuel business growth.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/metadata-LineageManagement-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Reduced costs icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Reduced Costs
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Utilize intelligent shipping algorithms that lower operational
+                expenses without compromising on delivery efficiency or customer
+                satisfaction.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/DataQuality-Trust-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Unified data management icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Unified Data Management
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Access real-time inventory data across all channels. Making
+                informed decisions for improved demand forecasting and stock
+                replenishment.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/Cloud-hybridDeployments-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Future ready icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Be Future Ready
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Embrace a headless and modular platform and adapt quickly to
+                changing business environments and stay ahead of the
+                competition.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!----- Simplify Commerce, Elevate Customer Experiences CTA Sec ----->
-    <section class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-buildTogether-BG.webp)] bg-no-repeat bg-top-left bg-cover">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-            <div class="fade-in lg:max-w-[800px] mx-auto w-full text-center">
-                <div class="lg:mb-[30px] mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">Simplify Commerce, Elevate Customer Experiences: Empower Your Retail Business with Ease</div>
-                <p class="text-white/80 font-primary font-normal leading-[150%]">AI That Delivers Measurable, Sustainable ROI. <br> That's why we've designed our product information management system to help you manage your product information more effectively, efficiently, and accurately. Contact us today to learn more about our platform and how we can help you manage your product information more effectively.</p>
-                <div class="lg:mt-11 mt-8 flex items-center flex-wrap gap-2.5 justify-center">
-                    <a href="/contact-us" class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Contact Us</a>
-                </div>
-            </div>
+    <section
+      class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-buildTogether-BG.webp)] bg-no-repeat bg-top-left bg-cover"
+    >
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+        <div class="fade-in lg:max-w-[800px] mx-auto w-full text-center">
+          <div
+            class="lg:mb-[30px] mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+          >
+            Simplify Commerce, Elevate Customer Experiences: Empower Your Retail
+            Business with Ease
+          </div>
+          <p class="text-white/80 font-primary font-normal leading-[150%]">
+            AI That Delivers Measurable, Sustainable ROI. <br />
+            That's why we've designed our product information management system
+            to help you manage your product information more effectively,
+            efficiently, and accurately. Contact us today to learn more about
+            our platform and how we can help you manage your product information
+            more effectively.
+          </p>
+          <div
+            class="lg:mt-11 mt-8 flex items-center flex-wrap gap-2.5 justify-center"
+          >
+            <a
+              href="/contact-us"
+              class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+              >Contact Us</a
+            >
+          </div>
         </div>
+      </div>
 
-        <img src="assets/image/icon/CTA-buildTogether-shape1.svg" class="animate-pulse absolute -top-[10%] start-0 pointer-none select-none" alt="Decorative shape element" width="150" height="150" loading="lazy">
-        <img src="assets/image/icon/CTA-buildTogether-shape2.svg" class="animate-pulse hidden md:block absolute top-0 -end-[10%] pointer-none select-none" alt="Decorative shape element" width="150" height="150" loading="lazy">
+      <img
+        src="assets/image/icon/CTA-buildTogether-shape1.svg"
+        class="animate-pulse absolute -top-[10%] start-0 pointer-none select-none"
+        alt="Decorative shape element"
+        width="150"
+        height="150"
+        loading="lazy"
+      />
+      <img
+        src="assets/image/icon/CTA-buildTogether-shape2.svg"
+        class="animate-pulse hidden md:block absolute top-0 -end-[10%] pointer-none select-none"
+        alt="Decorative shape element"
+        width="150"
+        height="150"
+        loading="lazy"
+      />
     </section>
-    <!----- End Simplify Commerce, Elevate Customer Experiences CTA Sec ----->
-
-
 
     <!----- Use Cases Sec ----->
     <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in lg:mb-10 mb-7 flex items-center gap-5 justify-between flex-nowrap">
-                <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Use Cases</div>
-                <div class="flex items-center justify-center gap-[clamp(0.5rem,1.111vw+0.167rem,1rem)]">
-                    <div class="swiper-button-prev swiper-button-prev-useCasesSlider after:hidden !static border border-heading rounded-full !w-8 !h-8  !m-0 transition-all duration-200 ease-linear cursor-pointer">
-                        <img src="assets/image/icon/rightArrowSwiper.svg" alt="Previous slide navigation arrow" class="h-[70%] select-none rotate-180" width="24" height="24" loading="lazy">
-                    </div>
-                    <div class="swiper-button-next swiper-button-next-useCasesSlider after:hidden !static border border-heading rounded-full !w-8 !h-8  !m-0 transition-all duration-200 ease-linear cursor-pointer">
-                        <img src="assets/image/icon/rightArrowSwiper.svg" alt="Next slide navigation arrow" class="h-[70%] select-none" width="24" height="24" loading="lazy">
-                    </div>
-                </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="fade-in lg:mb-10 mb-7 flex items-center gap-5 justify-between flex-nowrap"
+        >
+          <div
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Use Cases
+          </div>
+          <div
+            class="flex items-center justify-center gap-[clamp(0.5rem,1.111vw+0.167rem,1rem)]"
+          >
+            <div
+              class="swiper-button-prev swiper-button-prev-useCasesSlider after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer"
+            >
+              <img
+                src="assets/image/icon/rightArrowSwiper.svg"
+                alt="Previous slide navigation arrow"
+                class="h-[70%] select-none rotate-180"
+                width="24"
+                height="24"
+                loading="lazy"
+              />
             </div>
-
-            <div class="swiper useCasesSlider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide !h-auto">
-                        <div class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group">
-                            <div class="w-full aspect-video overflow-hidden rounded-xl">
-                                <img src="assets/image/insightsLeadership-card-1.png" alt="Headless commerce use case illustration" class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out" width="400" height="250" loading="lazy">
-                            </div>
-                            <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
-                                <div class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3">Headless Commerce</div>
-                                <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
-                                    <p class="line-clamp-3 text-description font-primary font-normal leading-[150%]">Seamlessly deliver personalized commerce experiences across channels with Artisans Cloud headless solution. Empower your business with unparalleled flexibility and transform the way you engage with customers.</p>
-                                    <a href="#" class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300 ease-in-out group-hover:rotate-45">
-                                            <g clip-path="url(#clip0_72_2743)">
-                                                <path d="M8 16L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M9 8H16V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </g>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide !h-auto">
-                        <div class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group">
-                            <div class="w-full aspect-video overflow-hidden rounded-xl">
-                                <img src="assets/image/insightsLeadership-card-2.png" alt="Composable commerce use case illustration" class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out" width="400" height="250" loading="lazy">
-                            </div>
-                            <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
-                                <div class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3">Composable Commerce</div>
-                                <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
-                                    <p class="line-clamp-3 text-description font-primary font-normal leading-[150%]">Dive into a retail revolution where personalization and adaptability reign supreme. craft a scalable...</p>
-                                    <a href="#" class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300 ease-in-out group-hover:rotate-45">
-                                            <g clip-path="url(#clip0_72_2743)">
-                                                <path d="M8 16L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M9 8H16V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </g>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide !h-auto">
-                        <div class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group">
-                            <div class="w-full aspect-video overflow-hidden rounded-xl">
-                                <img src="assets/image/insightsLeadership-card-3.png" alt="Unified commerce use case illustration" class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out" width="400" height="250" loading="lazy">
-                            </div>
-                            <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
-                                <div class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3">Unified Commerce</div>
-                                <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
-                                    <p class="line-clamp-3 text-description font-primary font-normal leading-[150%]">Unify every facet of commerce operations - from catalog, inventory and orders to customer service...</p>
-                                    <a href="#" class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300 ease-in-out group-hover:rotate-45">
-                                            <g clip-path="url(#clip0_72_2743)">
-                                                <path d="M8 16L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M9 8H16V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </g>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div
+              class="swiper-button-next swiper-button-next-useCasesSlider after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer"
+            >
+              <img
+                src="assets/image/icon/rightArrowSwiper.svg"
+                alt="Next slide navigation arrow"
+                class="h-[70%] select-none"
+                width="24"
+                height="24"
+                loading="lazy"
+              />
             </div>
+          </div>
         </div>
-    </section>
-    <!----- End Use Cases Sec ----->
 
+        <div class="swiper useCasesSlider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide !h-auto">
+              <div
+                class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group"
+              >
+                <div class="w-full aspect-video overflow-hidden rounded-xl">
+                  <img
+                    src="assets/image/insightsLeadership-card-1.png"
+                    alt="Headless commerce use case illustration"
+                    class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out"
+                    width="400"
+                    height="250"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
+                  <div
+                    class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3"
+                  >
+                    Headless Commerce
+                  </div>
+                  <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
+                    <p
+                      class="line-clamp-3 text-description font-primary font-normal leading-[150%]"
+                    >
+                      Seamlessly deliver personalized commerce experiences
+                      across channels with Artisans Cloud headless solution.
+                      Empower your business with unparalleled flexibility and
+                      transform the way you engage with customers.
+                    </p>
+                    <a
+                      href="#"
+                      class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="transition-all duration-300 ease-in-out group-hover:rotate-45"
+                      >
+                        <g clip-path="url(#clip0_72_2743)">
+                          <path
+                            d="M8 16L16 8"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M9 8H16V15"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide !h-auto">
+              <div
+                class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group"
+              >
+                <div class="w-full aspect-video overflow-hidden rounded-xl">
+                  <img
+                    src="assets/image/insightsLeadership-card-2.png"
+                    alt="Composable commerce use case illustration"
+                    class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out"
+                    width="400"
+                    height="250"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
+                  <div
+                    class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3"
+                  >
+                    Composable Commerce
+                  </div>
+                  <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
+                    <p
+                      class="line-clamp-3 text-description font-primary font-normal leading-[150%]"
+                    >
+                      Dive into a retail revolution where personalization and
+                      adaptability reign supreme. craft a scalable...
+                    </p>
+                    <a
+                      href="#"
+                      class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="transition-all duration-300 ease-in-out group-hover:rotate-45"
+                      >
+                        <g clip-path="url(#clip0_72_2743)">
+                          <path
+                            d="M8 16L16 8"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M9 8H16V15"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide !h-auto">
+              <div
+                class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group"
+              >
+                <div class="w-full aspect-video overflow-hidden rounded-xl">
+                  <img
+                    src="assets/image/insightsLeadership-card-3.png"
+                    alt="Unified commerce use case illustration"
+                    class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out"
+                    width="400"
+                    height="250"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
+                  <div
+                    class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3"
+                  >
+                    Unified Commerce
+                  </div>
+                  <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
+                    <p
+                      class="line-clamp-3 text-description font-primary font-normal leading-[150%]"
+                    >
+                      Unify every facet of commerce operations - from catalog,
+                      inventory and orders to customer service...
+                    </p>
+                    <a
+                      href="#"
+                      class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="transition-all duration-300 ease-in-out group-hover:rotate-45"
+                      >
+                        <g clip-path="url(#clip0_72_2743)">
+                          <path
+                            d="M8 16L16 8"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M9 8H16V15"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Scale Inventory and Order Management Sec -->
     <section class="lg:pb-[100px] sm:pb-16 pb-10">
-        <div class="max-w-[1280px] w-full px-4 xl:px-0 mx-auto">
-            <div class="md:p-[30px] lg:ps-16 p-5 md:rounded-[20px] rounded-2xl overflow-hidden bg-[#DFF4FF] bg-[url(../../assets/image/solutions/distributed-order-management/Scale-Inventory-Order-BG.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                <div class="grid lg:grid-cols-2 xl:gap-14 lg:gap-10 gap-7">
-                    <div class="lg:pt-8 pt-2 xl:pe-28">
-                        <div class="lg:mb-[30px] mb-6 lg:text-[38px] sm:text-3xl text-2xl font-primary font-medium text-heading lg:leading-[54px] leading-[120%]">Scale Inventory and Order Management with artisan’s Composable OMS</div>
-                        <p class="sm:mb-5 mb-4 text-description font-primary text-base font-normal">It's time to embrace digital transformation and unlock the full power of seamless order management. Take charge of your multi-channel commerce operations while delivering exceptional end-to-end experiences tailored for contemporary shoppers.</p>
-                        <p class="text-description font-primary text-base font-normal">Reach out now to learn more about how our DOM solution can boost efficiency, enhance customer experiences, and propel your business toward greater heights.</p>
-                    </div>
-                    <div class="bg-white lg:p-10 sm:p-7 p-5 md:rounded-[20px] rounded-xl">
-                        <form action="https://api.web3forms.com/submit" method="POST" class="w-full m-0">
-                            <input type="hidden" name="access_key" value="d082e756-9d9f-4750-bda0-10769f1253c6" />
-                            <input type="hidden" name="redirect" value="https://artisanscloud.com/thank-you" />
-                            <input type="checkbox" name="botcheck" style="display: none;" />
-                            <input type="hidden" name="subject" value="Distributed Order Management inquiry" />
-                            <input type="hidden" name="interest" value="Distributed Order Management" />
-                            <div class="lg:mb-6 mb-5 grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="first_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">First Name</label>
-                                    <input type="text" id="first_name" name="first_name" placeholder="Enter First Name" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                                <div>
-                                    <label for="last_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Last Name</label>
-                                    <input type="text" id="last_name" name="last_name" placeholder="Enter Last Name" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
-                                <div>
-                                    <label for="company_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Company Name</label>
-                                    <input type="text" id="company_name" name="company_name" placeholder="Enter Company Name" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
-                                <div>
-                                    <label for="email" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Email address</label>
-                                    <input type="email" id="email" name="email" placeholder="Enter email address" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
-                                <div>
-                                    <label for="phone_number" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Phone Number</label>
-                                    <input type="tel" id="phone_number" name="phone_number" placeholder="Enter phone number" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-
-                            <div class="mt-4 flex flex-wrap lg:flex-nowrap justify-between gap-6">
-                                <p class="text-sm text-description font-primary font-normal lg:leading-[26px] leading-[160%]">By submitting your information you agree with our <a href="/terms-and-conditions" class="font-semibold inline-block underline">Terms of Use</a> and <a href="/privacy-policy" class="font-semibold inline-block underline">Privacy Policy</a>.</p>
-                                <button type="submit" class="cursor-pointer w-fit h-fit rounded-[40px] sm:px-[40px] px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+      <div class="max-w-[1280px] w-full px-4 xl:px-0 mx-auto">
+        <div
+          class="md:p-[30px] lg:ps-16 p-5 md:rounded-[20px] rounded-2xl overflow-hidden bg-[#DFF4FF] bg-[url(../../assets/image/solutions/distributed-order-management/Scale-Inventory-Order-BG.svg)] bg-no-repeat bg-bottom-left bg-contain"
+        >
+          <div class="grid lg:grid-cols-2 xl:gap-14 lg:gap-10 gap-7">
+            <div class="lg:pt-8 pt-2 xl:pe-28">
+              <div
+                class="lg:mb-[30px] mb-6 lg:text-[38px] sm:text-3xl text-2xl font-primary font-medium text-heading lg:leading-[54px] leading-[120%]"
+              >
+                Scale Inventory and Order Management with artisan’s Composable
+                OMS
+              </div>
+              <p
+                class="sm:mb-5 mb-4 text-description font-primary text-base font-normal"
+              >
+                It's time to embrace digital transformation and unlock the full
+                power of seamless order management. Take charge of your
+                multi-channel commerce operations while delivering exceptional
+                end-to-end experiences tailored for contemporary shoppers.
+              </p>
+              <p class="text-description font-primary text-base font-normal">
+                Reach out now to learn more about how our DOM solution can boost
+                efficiency, enhance customer experiences, and propel your
+                business toward greater heights.
+              </p>
             </div>
-        </div>
-    </section>
-    <!-- End Scale Inventory and Order Management Sec -->
+            <div
+              class="bg-white lg:p-10 sm:p-7 p-5 md:rounded-[20px] rounded-xl"
+            >
+              <form
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                class="w-full m-0"
+              >
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="d082e756-9d9f-4750-bda0-10769f1253c6"
+                />
+                <input
+                  type="hidden"
+                  name="redirect"
+                  value="https://artisanscloud.com/thank-you"
+                />
+                <input type="checkbox" name="botcheck" style="display: none" />
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="Distributed Order Management inquiry"
+                />
+                <input
+                  type="hidden"
+                  name="interest"
+                  value="Distributed Order Management"
+                />
+                <div class="lg:mb-6 mb-5 grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      for="first_name"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >First Name</label
+                    >
+                    <input
+                      type="text"
+                      id="first_name"
+                      name="first_name"
+                      placeholder="Enter First Name"
+                      required
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="last_name"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >Last Name</label
+                    >
+                    <input
+                      type="text"
+                      id="last_name"
+                      name="last_name"
+                      placeholder="Enter Last Name"
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                </div>
+                <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                  <div>
+                    <label
+                      for="company_name"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >Company Name</label
+                    >
+                    <input
+                      type="text"
+                      id="company_name"
+                      name="company_name"
+                      placeholder="Enter Company Name"
+                      required
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                </div>
+                <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                  <div>
+                    <label
+                      for="email"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >Email address</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Enter email address"
+                      required
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                </div>
+                <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                  <div>
+                    <label
+                      for="phone_number"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >Phone Number</label
+                    >
+                    <input
+                      type="tel"
+                      id="phone_number"
+                      name="phone_number"
+                      placeholder="Enter phone number"
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                </div>
 
+                <div
+                  class="mt-4 flex flex-wrap lg:flex-nowrap justify-between gap-6"
+                >
+                  <p
+                    class="text-sm text-description font-primary font-normal lg:leading-[26px] leading-[160%]"
+                  >
+                    By submitting your information you agree with our
+                    <a
+                      href="/terms-and-conditions"
+                      class="font-semibold inline-block underline"
+                      >Terms of Use</a
+                    >
+                    and
+                    <a
+                      href="/privacy-policy"
+                      class="font-semibold inline-block underline"
+                      >Privacy Policy</a
+                    >.
+                  </p>
+                  <button
+                    type="submit"
+                    class="cursor-pointer w-fit h-fit rounded-[40px] sm:px-[40px] px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     {{> footer}}
 
-
-    <!--+++++++ Script Start +++++++-->
-
-    <script type='module' src='assets/script/main.js'></script>
-</body>
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
 </html>

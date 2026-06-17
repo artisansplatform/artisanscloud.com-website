@@ -1,406 +1,1004 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <title>Customer Xperience Management | Artisans Cloud</title>
-    <link rel="canonical" href="https://www.artisanscloud.com/customer-experience-management" />
-    <meta name="description"
-        content="Unlock the potential of unified customer data with Artisans Cloud Customer Xperience Management. Deliver personalized experiences and drive business growth through seamless integration and actionable insights.">
-    <meta property="og:url" content="https://artisanscloud.com/customer-experience-management">
-    <meta property="og:title" content="Customer Xperience Management | Artisans Cloud">
-    <meta property="og:description"
-        content="Elevate your digital strategy with Artisans Cloud Customer Xperience Management. Achieve a comprehensive understanding of your customers and deliver impactful omnichannel campaigns.">
-    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/customer-experience-management.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <!-- Font Family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="./assets/style/output.css">
-</head>
-<body>
-    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
 
     {{> header}}
 
-
     <!----- Banner Sec ----->
     <section class="w-full h-full p-4 lg:p-5">
-        <div class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/customer-experience-management/bannerBG.webp')] bg-no-repeat bg-cover bg-bottom-right">
-            <div class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24">
-                <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                    <div class="text-center lg:max-w-[900px] mx-auto">
-                        <h1 class="mb-6 lg:mb-[37px] font-primary font-semibold text-2xl sm:text-4xl lg:text-[44px] xl:text-[50px] text-heading leading-[120%]" id="heroHeading">Unlock the Potential of Unified Customer Data and Foster Growth Centered Around Customers</h1>
-                        <div id="heroDec">
-                            <p class="text-base lg:text-lg text-description font-primary font-normal leading-[150%]">Elevate your digital strategy with actionable insights, seamless <br class="hidden lg:block"> integration, and customer-centric growth. Get started today and embark <br class="hidden lg:block"> on a data-driven journey towards success.</p>
-                            <a href="/contact-us" class="lg:mt-10 mt-6 mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Book 30 mins Demo</a>
-                        </div>
-                    </div>
-                </div>
+      <div
+        class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/customer-experience-management/bannerBg.webp')] bg-no-repeat bg-cover bg-bottom-right"
+      >
+        <div class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24">
+          <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+            <div class="text-center lg:max-w-[900px] mx-auto">
+              <div
+                class="mb-3 sm:mb-5 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
+              >
+                Customer Experience
+              </div>
+              <h1
+                class="mb-3 font-primary text-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%]"
+                id="heroHeading"
+              >
+                Unlock the Potential of Unified Customer Data and Foster Growth
+                Centered Around Customers
+              </h1>
+              <div
+                id="heroDec"
+                class="flex flex-col items-center mb-7.5 lg:mb-12"
+              >
+                <p
+                  class="mb-3 text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                >
+                  Elevate your digital strategy with actionable insights,
+                  seamless integration, and customer-centric growth.
+                </p>
+                <p
+                  class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                >
+                  Get started today and embark on a data-driven journey towards
+                  success.
+                </p>
+                <a
+                  href="/request-demo"
+                  class="lg:mt-[25px] mt-4 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                  >Book 30 mins Demo</a
+                >
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!----- End Banner Sec ----->
 
-
-    <!----- Why artisans Customer Xperience Management Sec ----->
+    <!----- Why artisans Customer Experience Management Sec ----->
     <section class="lg:pt-[100px] lg:pb-10 md:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
-                <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Why Artisans Cloud <br class="hidden lg:block"> Customer Xperience <br class="hidden lg:block"> Management</div>
-                <div class="">
-                    <p class="lg:pe-10 text-description font-primary font-normal leading-[150%]">At Artisans Cloud, we recognize the significance of leveraging customer data to deliver personalized experiences and drive business growth. That's why we've developed a state-of-the-art data integration solution that empowers businesses to unify their customer data and extract its full potential. Seamlessly integrating with your existing systems, our platform enables you to effortlessly deliver personalized, omnichannel campaigns to real-time targeted audiences from a centralized hub. Harness the power of unified customer data to create impactful marketing initiatives that drive results and foster business expansion.</p>
-                </div>
-            </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
+          <div
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Why Artisans Cloud <br class="hidden lg:block" />
+            Customer Experience <br class="hidden lg:block" />
+            Management
+          </div>
+          <div class="">
+            <p
+              class="lg:pe-10 text-description font-primary font-normal leading-[150%]"
+            >
+              At Artisans Cloud, we recognize the significance of leveraging
+              customer data to deliver personalized experiences and drive
+              business growth. That's why we've developed a state-of-the-art
+              data integration solution that empowers businesses to unify their
+              customer data and extract its full potential. Seamlessly
+              integrating with your existing systems, our platform enables you
+              to effortlessly deliver personalized, omnichannel campaigns to
+              real-time targeted audiences from a centralized hub. Harness the
+              power of unified customer data to create impactful marketing
+              initiatives that drive results and foster business expansion.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
-    <!----- End Why artisans Customer Xperience Management Sec ----->
-
 
     <!----- Unified Customer Profile Sec ----->
     <section class="lg:pt-14 md:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
-                <div class="lg:pe-10">
-                    <img src="assets/image/solutions/customer-experience-management/unified-customoer-profile.svg" alt="Unified Customer Profile dashboard showing customer data aggregation" width="500" height="400" loading="lazy" class="max-w-full h-auto mx-auto lg:mx-0">
-                </div>
-                <div class="">
-                    <div class="lg:mb-5 mb-4 lg:text-xl text-lg text-heading font-primary font-semibold leading-[120%]">Unified Customer Profile</div>
-                    <div class="lg:mb-[30px] mb-6 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]">Achieve a Comprehensive Customer <br class="hidden lg:block"> History with Unified <br class="hidden lg:block"> User Profiles</div>
-
-                    <ul class="ps-5 lg:mb-10 mb-5">
-                        <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">Uncover the potential of centralized user profiles and gain invaluable insights into your customers' journey.</li>
-                        <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">Seamlessly stitch together customer interactions across multiple user sessions and devices to create a comprehensive customer history.</li>
-                        <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">Conveniently explore and analyze user profiles in one place, enabling personalized engagements and optimizing your business strategies.</li>
-                    </ul>
-
-                    <a href="/contact-us" class="lg:mt-10 mt-6 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Deliver Omnichannel Campaigns With Artisans Cloud CXM</a>
-                </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
+          <div class="lg:pe-10">
+            <img
+              src="assets/image/solutions/customer-experience-management/unified-customoer-profile.svg"
+              alt="Unified Customer Profile dashboard showing customer data aggregation"
+              width="500"
+              height="400"
+              loading="lazy"
+              class="max-w-full h-auto mx-auto lg:mx-0"
+            />
+          </div>
+          <div class="">
+            <div
+              class="lg:mb-5 mb-4 lg:text-xl text-lg text-heading font-primary font-semibold leading-[120%]"
+            >
+              Unified Customer Profile
             </div>
-        </div>
-    </section>
-    <!----- End Unified Customer Profile Sec ----->
+            <div
+              class="lg:mb-[30px] mb-6 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Achieve a Comprehensive Customer <br class="hidden lg:block" />
+              History with Unified <br class="hidden lg:block" />
+              User Profiles
+            </div>
 
+            <ul class="ps-5 lg:mb-10 mb-5">
+              <li
+                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+              >
+                Uncover the potential of centralized user profiles and gain
+                invaluable insights into your customers' journey.
+              </li>
+              <li
+                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+              >
+                Seamlessly stitch together customer interactions across multiple
+                user sessions and devices to create a comprehensive customer
+                history.
+              </li>
+              <li
+                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+              >
+                Conveniently explore and analyze user profiles in one place,
+                enabling personalized engagements and optimizing your business
+                strategies.
+              </li>
+            </ul>
+
+            <a
+              href="/contact-us"
+              class="lg:mt-10 mt-6 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+              >Deliver Omnichannel Campaigns With Artisans Cloud CXM</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!----- Unified Customer Profile Sec ----->
     <section class="lg:pt-[57px] lg:pb-[97px] md:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
-                <div class="lg:pe-10">
-                    <div class="lg:mb-5 mb-4 lg:text-xl text-lg text-heading font-primary font-semibold leading-[120%]">Personalized Omnichannel Campaigns</div>
-                    <div class="lg:mb-[30px] mb-6 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]">Deliver Personalized Omnichannel Campaigns with Ease</div>
-
-                    <ul class="ps-5 lg:mb-10 mb-5">
-                        <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">Unify customer profile data and engage customers everywhere with personalized, omnichannel campaigns.</li>
-                        <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">Gain valuable insights from consolidated data, manage campaigns independently, and leverage real-time targeting for maximum impact.</li>
-                        <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">Elevate your marketing efforts and achieve remarkable results by embracing the power of unified data and omnichannel engagement.</li>
-                    </ul>
-
-                    <a href="/contact-us" class="lg:mt-10 mt-6 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Unify Customer Profile With Artisans Cloud CXM</a>
-                </div>
-                <div class="lg:ps-10">
-                    <img src="assets/image/solutions/customer-experience-management/Personalized-Omnichannel.svg" alt="Personalized Omnichannel Campaigns illustration showing cross-channel marketing" width="500" height="400" loading="lazy" class="max-w-full h-auto mx-auto lg:mx-0">
-                </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
+          <div class="lg:pe-10">
+            <div
+              class="lg:mb-5 mb-4 lg:text-xl text-lg text-heading font-primary font-semibold leading-[120%]"
+            >
+              Personalized Omnichannel Campaigns
             </div>
-        </div>
-    </section>
-    <!----- End Unified Customer Profile Sec ----->
+            <div
+              class="lg:mb-[30px] mb-6 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Deliver Personalized Omnichannel Campaigns with Ease
+            </div>
 
+            <ul class="ps-5 lg:mb-10 mb-5">
+              <li
+                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+              >
+                Unify customer profile data and engage customers everywhere with
+                personalized, omnichannel campaigns.
+              </li>
+              <li
+                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+              >
+                Gain valuable insights from consolidated data, manage campaigns
+                independently, and leverage real-time targeting for maximum
+                impact.
+              </li>
+              <li
+                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+              >
+                Elevate your marketing efforts and achieve remarkable results by
+                embracing the power of unified data and omnichannel engagement.
+              </li>
+            </ul>
+
+            <a
+              href="/contact-us"
+              class="lg:mt-10 mt-6 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+              >Unify Customer Profile With Artisans Cloud CXM</a
+            >
+          </div>
+          <div class="lg:ps-10">
+            <img
+              src="assets/image/solutions/customer-experience-management/Personalized-Omnichannel.svg"
+              alt="Personalized Omnichannel Campaigns illustration showing cross-channel marketing"
+              width="500"
+              height="400"
+              loading="lazy"
+              class="max-w-full h-auto mx-auto lg:mx-0"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
-
 
     <!----- Why choose artisans CXM Sec ----->
     <section class="lg:py-[100px] md:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in lg:mb-11 mb-8 lg:mt-20 sm:mt-14 mt-8 flex items-center gap-5 justify-between">
-                <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Why choose Artisans Cloud CXM</div>
-                <div class="flex items-center justify-center gap-[clamp(0.5rem,1.111vw+0.167rem,1rem)]">
-                    <div class="swiper-button-prev swiper-button-prev-WhychooseCXMSwiper after:hidden !static border border-heading rounded-full !w-8 !h-8  !m-0 transition-all duration-200 ease-linear cursor-pointer">
-                        <img src="assets/image/icon/rightArrowSwiper.svg" alt="Previous slide arrow" width="24" height="24" loading="lazy" class="h-[70%] select-none rotate-180">
-                    </div>
-                    <div class="swiper-button-next swiper-button-next-WhychooseCXMSwiper after:hidden !static border border-heading rounded-full !w-8 !h-8  !m-0 transition-all duration-200 ease-linear cursor-pointer">
-                        <img src="assets/image/icon/rightArrowSwiper.svg" alt="Next slide arrow" width="24" height="24" loading="lazy" class="h-[70%] select-none">
-                    </div>
-                </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="fade-in lg:mb-11 mb-8 lg:mt-20 sm:mt-14 mt-8 flex items-center gap-5 justify-between"
+        >
+          <div
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Why choose Artisans Cloud CXM
+          </div>
+          <div
+            class="flex items-center justify-center gap-[clamp(0.5rem,1.111vw+0.167rem,1rem)]"
+          >
+            <div
+              class="swiper-button-prev swiper-button-prev-WhychooseCXMSwiper after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer"
+            >
+              <img
+                src="assets/image/icon/rightArrowSwiper.svg"
+                alt="Previous slide arrow"
+                width="24"
+                height="24"
+                loading="lazy"
+                class="h-[70%] select-none rotate-180"
+              />
             </div>
-
-            <div class="swiper WhychooseCXMSwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide !h-auto">
-                        <div class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                            <div class="mb-5 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                                <img src="assets/image/icon/moduleCard-retailPLanning.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Customer understanding icon" width="40" height="40" loading="lazy">
-                            </div>
-                            <div>
-                                <div class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold">Achieve Deeper Understanding of Customers</div>
-                                <p class="text-description font-primary font-normal leading-[150%]">Gain valuable insights into customer behaviors and preferences across touchpoints, allowing for detailed segmentation and highly relevant personalized experiences, ultimately driving increased conversions. Utilize our platform to unlock the power of enhanced customer data and optimize your marketing strategies for impactful customer journeys.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide !h-auto">
-                        <div class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/mission-card-shapeBG.svg)] bg-no-repeat bg-bottom-right">
-                            <div class="mb-5 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                                <img src="assets/image/icon/moduleCard-productMgmt.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Customer loyalty icon" width="40" height="40" loading="lazy">
-                            </div>
-                            <div>
-                                <div class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold">Drive Loyalty and Retention</div>
-                                <p class="text-description font-primary font-normal leading-[150%]">Deliver Personalized Experiences and Foster deeper customer relationships by leveraging intelligent service, product recommendations, and loyalty incentives to cultivate lasting connections.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide !h-auto">
-                        <div class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#F2EEFF] border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-right">
-                            <div class="mb-5 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                                <svg class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_1053_8214)">
-                                    <path d="M6.66602 33.3333H11.666" stroke="#8D68F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M28.334 33.3333H33.334" stroke="#8D68F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M17.5 33.3333H22.5" stroke="#FC4BDA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M6.66602 26.6667H11.666" stroke="#8D68F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M28.334 26.6667H33.334" stroke="#8D68F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M17.5 26.6667H22.5" stroke="#FC4BDA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M6.66602 20H11.666" stroke="#8D68F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M28.334 20H33.334" stroke="#13D9E4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M17.5 20H22.5" stroke="#FC4BDA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M6.66602 13.3333H11.666" stroke="#8D68F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M28.334 13.3333H33.334" stroke="#13D9E4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M6.66602 6.66675H11.666" stroke="#8D68F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </g>
-                                    <defs>
-                                    <clipPath id="clip0_1053_8214">
-                                    <rect width="40" height="40" fill="white"/>
-                                    </clipPath>
-                                    </defs>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold">Maintain a Competitive Edge</div>
-                                <p class="text-description font-primary font-normal leading-[150%]">Enhance operational performance to boost customer satisfaction and reduce churn rates, ultimately leading to improved business outcomes. Increase Customer Lifetime Value, driving efficiency and profitability.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide !h-auto">
-                        <div class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#ECF4FF] border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-right">
-                            <div class="mb-5 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                                <img src="assets/image/icon/Predictive-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Unified data management icon" width="40" height="40" loading="lazy">
-                            </div>
-                            <div>
-                                <div class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold">Unified Data Management</div>
-                                <p class="text-description font-primary font-normal leading-[150%]">Access real-time inventory data across all channels. Making informed decisions for improved demand forecasting and stock replenishment.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide !h-auto">
-                        <div class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                            <div class="mb-5 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                                <svg class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_1053_8229)">
-                                    <path d="M17.2715 5.98499L3.76148 28.5417C3.48297 29.024 3.33559 29.5708 3.334 30.1277C3.3324 30.6847 3.47665 31.2323 3.75239 31.7162C4.02813 32.2001 4.42575 32.6034 4.90571 32.8859C5.38567 33.1684 5.93124 33.3204 6.48815 33.3267H33.5115C34.0681 33.3202 34.6134 33.1682 35.0932 32.8858C35.5729 32.6034 35.9703 32.2003 36.246 31.7166C36.5217 31.233 36.6661 30.6856 36.6647 30.1289C36.6633 29.5722 36.5162 29.0256 36.2381 28.5433L22.7281 5.98332C22.4439 5.51416 22.0435 5.12623 21.5656 4.85698C21.0876 4.58774 20.5484 4.44629 19.9998 4.44629C19.4513 4.44629 18.912 4.58774 18.4341 4.85698C17.9561 5.12623 17.5557 5.51416 17.2715 5.98332V5.98499Z" stroke="#8D68F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M20 15H20.0167" stroke="#13D9E4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M18.334 20H20.0007V26.6667H21.6673" stroke="#FC4BDA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </g>
-                                    <defs>
-                                    <clipPath id="clip0_1053_8229">
-                                    <rect width="40" height="40" fill="white"/>
-                                    </clipPath>
-                                    </defs>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold">Data validation and error reporting</div>
-                                <p class="text-description font-primary font-normal leading-[150%]">Embrace a API driven modular platform and adapt quickly to changing business environments and stay ahead of the competition.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div
+              class="swiper-button-next swiper-button-next-WhychooseCXMSwiper after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer"
+            >
+              <img
+                src="assets/image/icon/rightArrowSwiper.svg"
+                alt="Next slide arrow"
+                width="24"
+                height="24"
+                loading="lazy"
+                class="h-[70%] select-none"
+              />
             </div>
+          </div>
         </div>
+
+        <div class="swiper WhychooseCXMSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide !h-auto">
+              <div
+                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+              >
+                <div
+                  class="mb-5 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/moduleCard-retailPLanning.svg"
+                    class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                    alt="Customer understanding icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <div
+                    class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                  >
+                    Achieve Deeper Understanding of Customers
+                  </div>
+                  <p
+                    class="text-description font-primary font-normal leading-[150%]"
+                  >
+                    Gain valuable insights into customer behaviors and
+                    preferences across touchpoints, allowing for detailed
+                    segmentation and highly relevant personalized experiences,
+                    ultimately driving increased conversions. Utilize our
+                    platform to unlock the power of enhanced customer data and
+                    optimize your marketing strategies for impactful customer
+                    journeys.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide !h-auto">
+              <div
+                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/mission-card-shapeBG.svg)] bg-no-repeat bg-bottom-right"
+              >
+                <div
+                  class="mb-5 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/moduleCard-productMgmt.svg"
+                    class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                    alt="Customer loyalty icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <div
+                    class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                  >
+                    Drive Loyalty and Retention
+                  </div>
+                  <p
+                    class="text-description font-primary font-normal leading-[150%]"
+                  >
+                    Deliver Personalized Experiences and Foster deeper customer
+                    relationships by leveraging intelligent service, product
+                    recommendations, and loyalty incentives to cultivate lasting
+                    connections.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide !h-auto">
+              <div
+                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#F2EEFF] border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-right"
+              >
+                <div
+                  class="mb-5 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <svg
+                    class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_1053_8214)">
+                      <path
+                        d="M6.66602 33.3333H11.666"
+                        stroke="#8D68F6"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M28.334 33.3333H33.334"
+                        stroke="#8D68F6"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M17.5 33.3333H22.5"
+                        stroke="#FC4BDA"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M6.66602 26.6667H11.666"
+                        stroke="#8D68F6"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M28.334 26.6667H33.334"
+                        stroke="#8D68F6"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M17.5 26.6667H22.5"
+                        stroke="#FC4BDA"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M6.66602 20H11.666"
+                        stroke="#8D68F6"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M28.334 20H33.334"
+                        stroke="#13D9E4"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M17.5 20H22.5"
+                        stroke="#FC4BDA"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M6.66602 13.3333H11.666"
+                        stroke="#8D68F6"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M28.334 13.3333H33.334"
+                        stroke="#13D9E4"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M6.66602 6.66675H11.666"
+                        stroke="#8D68F6"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_1053_8214">
+                        <rect width="40" height="40" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+                <div>
+                  <div
+                    class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                  >
+                    Maintain a Competitive Edge
+                  </div>
+                  <p
+                    class="text-description font-primary font-normal leading-[150%]"
+                  >
+                    Enhance operational performance to boost customer
+                    satisfaction and reduce churn rates, ultimately leading to
+                    improved business outcomes. Increase Customer Lifetime
+                    Value, driving efficiency and profitability.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide !h-auto">
+              <div
+                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#ECF4FF] border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-right"
+              >
+                <div
+                  class="mb-5 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/Predictive-icon.svg"
+                    class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                    alt="Unified data management icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <div
+                    class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                  >
+                    Unified Data Management
+                  </div>
+                  <p
+                    class="text-description font-primary font-normal leading-[150%]"
+                  >
+                    Access real-time inventory data across all channels. Making
+                    informed decisions for improved demand forecasting and stock
+                    replenishment.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide !h-auto">
+              <div
+                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+              >
+                <div
+                  class="mb-5 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <svg
+                    class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_1053_8229)">
+                      <path
+                        d="M17.2715 5.98499L3.76148 28.5417C3.48297 29.024 3.33559 29.5708 3.334 30.1277C3.3324 30.6847 3.47665 31.2323 3.75239 31.7162C4.02813 32.2001 4.42575 32.6034 4.90571 32.8859C5.38567 33.1684 5.93124 33.3204 6.48815 33.3267H33.5115C34.0681 33.3202 34.6134 33.1682 35.0932 32.8858C35.5729 32.6034 35.9703 32.2003 36.246 31.7166C36.5217 31.233 36.6661 30.6856 36.6647 30.1289C36.6633 29.5722 36.5162 29.0256 36.2381 28.5433L22.7281 5.98332C22.4439 5.51416 22.0435 5.12623 21.5656 4.85698C21.0876 4.58774 20.5484 4.44629 19.9998 4.44629C19.4513 4.44629 18.912 4.58774 18.4341 4.85698C17.9561 5.12623 17.5557 5.51416 17.2715 5.98332V5.98499Z"
+                        stroke="#8D68F6"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M20 15H20.0167"
+                        stroke="#13D9E4"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M18.334 20H20.0007V26.6667H21.6673"
+                        stroke="#FC4BDA"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_1053_8229">
+                        <rect width="40" height="40" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+                <div>
+                  <div
+                    class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                  >
+                    Data validation and error reporting
+                  </div>
+                  <p
+                    class="text-description font-primary font-normal leading-[150%]"
+                  >
+                    Embrace a API driven modular platform and adapt quickly to
+                    changing business environments and stay ahead of the
+                    competition.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <!----- End Why choose artisans CXM Sec ----->
-
-
 
     <!----- Simplify Commerce, Elevate Customer Experiences CTA Sec ----->
-    <section class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-buildTogether-BG.webp)] bg-no-repeat bg-top-left bg-cover">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-            <div class="fade-in lg:max-w-[800px] mx-auto w-full text-center">
-                <div class="lg:mb-[30px] mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">Simplify Commerce, Elevate Customer Experiences: Empower Your Retail Business with Ease</div>
-                <p class="text-white/80 font-primary font-normal leading-[150%]">Boost retail success with Composable Commerce – our advanced technology enables seamless, personalized shopping experiences across touchpoints. Gain a competitive edge, adapt to customer expectations, and elevate your business in the dynamic retail landscape.</p>
-                <div class="lg:mt-11 mt-8 flex items-center flex-wrap gap-2.5 justify-center">
-                    <a href="/contact-us" class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Contact Us</a>
-                </div>
-            </div>
+    <section
+      class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-buildTogether-BG.webp)] bg-no-repeat bg-top-left bg-cover"
+    >
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+        <div class="fade-in lg:max-w-[800px] mx-auto w-full text-center">
+          <div
+            class="lg:mb-[30px] mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+          >
+            Simplify Commerce, Elevate Customer Experiences: Empower Your Retail
+            Business with Ease
+          </div>
+          <p class="text-white/80 font-primary font-normal leading-[150%]">
+            Boost retail success with Composable Commerce – our advanced
+            technology enables seamless, personalized shopping experiences
+            across touchpoints. Gain a competitive edge, adapt to customer
+            expectations, and elevate your business in the dynamic retail
+            landscape.
+          </p>
+          <div
+            class="lg:mt-11 mt-8 flex items-center flex-wrap gap-2.5 justify-center"
+          >
+            <a
+              href="/contact-us"
+              class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+              >Contact Us</a
+            >
+          </div>
         </div>
+      </div>
 
-        <img src="assets/image/icon/CTA-buildTogether-shape1.svg" class="animate-pulse absolute -top-[10%] start-0 pointer-none select-none" alt="Decorative shape graphic" width="150" height="150" loading="lazy">
-        <img src="assets/image/icon/CTA-buildTogether-shape2.svg" class="animate-pulse hidden md:block absolute top-0 -end-[10%] pointer-none select-none" alt="Decorative shape graphic" width="150" height="150" loading="lazy">
+      <img
+        src="assets/image/icon/CTA-buildTogether-shape1.svg"
+        class="animate-pulse absolute -top-[10%] start-0 pointer-none select-none"
+        alt="Decorative shape graphic"
+        width="150"
+        height="150"
+        loading="lazy"
+      />
+      <img
+        src="assets/image/icon/CTA-buildTogether-shape2.svg"
+        class="animate-pulse hidden md:block absolute top-0 -end-[10%] pointer-none select-none"
+        alt="Decorative shape graphic"
+        width="150"
+        height="150"
+        loading="lazy"
+      />
     </section>
-    <!----- End Simplify Commerce, Elevate Customer Experiences CTA Sec ----->
-
 
     <!----- Use Cases Sec ----->
     <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in lg:mb-10 mb-7 flex items-center gap-5 justify-between flex-nowrap">
-                <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Use Cases</div>
-                <div class="flex items-center justify-center gap-[clamp(0.5rem,1.111vw+0.167rem,1rem)]">
-                    <div class="swiper-button-prev swiper-button-prev-useCasesSlider after:hidden !static border border-heading rounded-full !w-8 !h-8  !m-0 transition-all duration-200 ease-linear cursor-pointer">
-                        <img src="assets/image/icon/rightArrowSwiper.svg" alt="Previous slide arrow" width="24" height="24" loading="lazy" class="h-[70%] select-none rotate-180">
-                    </div>
-                    <div class="swiper-button-next swiper-button-next-useCasesSlider after:hidden !static border border-heading rounded-full !w-8 !h-8  !m-0 transition-all duration-200 ease-linear cursor-pointer">
-                        <img src="assets/image/icon/rightArrowSwiper.svg" alt="Next slide arrow" width="24" height="24" loading="lazy" class="h-[70%] select-none">
-                    </div>
-                </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="fade-in lg:mb-10 mb-7 flex items-center gap-5 justify-between flex-nowrap"
+        >
+          <div
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Use Cases
+          </div>
+          <div
+            class="flex items-center justify-center gap-[clamp(0.5rem,1.111vw+0.167rem,1rem)]"
+          >
+            <div
+              class="swiper-button-prev swiper-button-prev-useCasesSlider after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer"
+            >
+              <img
+                src="assets/image/icon/rightArrowSwiper.svg"
+                alt="Previous slide arrow"
+                width="24"
+                height="24"
+                loading="lazy"
+                class="h-[70%] select-none rotate-180"
+              />
             </div>
-
-            <div class="swiper useCasesSlider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide !h-auto">
-                        <div class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group">
-                            <div class="w-full aspect-video overflow-hidden rounded-xl">
-                                <img src="assets/image/insightsLeadership-card-1.png" alt="D2C eCommerce solution preview" width="400" height="250" loading="lazy" class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out">
-                            </div>
-                            <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
-                                <div class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3">D2C eCommerce</div>
-                                <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
-                                    <p class="line-clamp-3 text-description font-primary font-normal leading-[150%]">Simplify D2C e-commerce capabilities with our composable full - stack platform for successful...</p>
-                                    <a href="/d2c-eCommerce" class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300 ease-in-out group-hover:rotate-45">
-                                            <g clip-path="url(#clip0_72_2743)">
-                                                <path d="M8 16L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M9 8H16V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </g>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide !h-auto">
-                        <div class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group">
-                            <div class="w-full aspect-video overflow-hidden rounded-xl">
-                                <img src="assets/image/insightsLeadership-card-2.png" alt="Composable Commerce solution preview" width="400" height="250" loading="lazy" class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out">
-                            </div>
-                            <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
-                                <div class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3">Composable Commerce</div>
-                                <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
-                                    <p class="line-clamp-3 text-description font-primary font-normal leading-[150%]">Dive into a retail revolution where personalization and adaptability reign supreme. craft a scalable...</p>
-                                    <a href="#" class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300 ease-in-out group-hover:rotate-45">
-                                            <g clip-path="url(#clip0_72_2743)">
-                                                <path d="M8 16L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M9 8H16V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </g>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide !h-auto">
-                        <div class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group">
-                            <div class="w-full aspect-video overflow-hidden rounded-xl">
-                                <img src="assets/image/insightsLeadership-card-3.png" alt="Unified Commerce solution preview" width="400" height="250" loading="lazy" class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out">
-                            </div>
-                            <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
-                                <div class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3">Unified Commerce</div>
-                                <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
-                                    <p class="line-clamp-3 text-description font-primary font-normal leading-[150%]">Unify every facet of commerce operations - from catalog, inventory and orders to customer service...</p>
-                                    <a href="/unified-commerce" class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300 ease-in-out group-hover:rotate-45">
-                                            <g clip-path="url(#clip0_72_2743)">
-                                                <path d="M8 16L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M9 8H16V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </g>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div
+              class="swiper-button-next swiper-button-next-useCasesSlider after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer"
+            >
+              <img
+                src="assets/image/icon/rightArrowSwiper.svg"
+                alt="Next slide arrow"
+                width="24"
+                height="24"
+                loading="lazy"
+                class="h-[70%] select-none"
+              />
             </div>
+          </div>
         </div>
-    </section>
-    <!----- End Use Cases Sec ----->
 
+        <div class="swiper useCasesSlider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide !h-auto">
+              <div
+                class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group"
+              >
+                <div class="w-full aspect-video overflow-hidden rounded-xl">
+                  <img
+                    src="assets/image/insightsLeadership-card-1.png"
+                    alt="D2C eCommerce solution preview"
+                    width="400"
+                    height="250"
+                    loading="lazy"
+                    class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out"
+                  />
+                </div>
+                <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
+                  <div
+                    class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3"
+                  >
+                    D2C eCommerce
+                  </div>
+                  <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
+                    <p
+                      class="line-clamp-3 text-description font-primary font-normal leading-[150%]"
+                    >
+                      Simplify D2C e-commerce capabilities with our composable
+                      full - stack platform for successful...
+                    </p>
+                    <a
+                      href="/d2c-eCommerce"
+                      class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="transition-all duration-300 ease-in-out group-hover:rotate-45"
+                      >
+                        <g clip-path="url(#clip0_72_2743)">
+                          <path
+                            d="M8 16L16 8"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M9 8H16V15"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide !h-auto">
+              <div
+                class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group"
+              >
+                <div class="w-full aspect-video overflow-hidden rounded-xl">
+                  <img
+                    src="assets/image/insightsLeadership-card-2.png"
+                    alt="Composable Commerce solution preview"
+                    width="400"
+                    height="250"
+                    loading="lazy"
+                    class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out"
+                  />
+                </div>
+                <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
+                  <div
+                    class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3"
+                  >
+                    Composable Commerce
+                  </div>
+                  <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
+                    <p
+                      class="line-clamp-3 text-description font-primary font-normal leading-[150%]"
+                    >
+                      Dive into a retail revolution where personalization and
+                      adaptability reign supreme. craft a scalable...
+                    </p>
+                    <a
+                      href="#"
+                      class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="transition-all duration-300 ease-in-out group-hover:rotate-45"
+                      >
+                        <g clip-path="url(#clip0_72_2743)">
+                          <path
+                            d="M8 16L16 8"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M9 8H16V15"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide !h-auto">
+              <div
+                class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group"
+              >
+                <div class="w-full aspect-video overflow-hidden rounded-xl">
+                  <img
+                    src="assets/image/insightsLeadership-card-3.png"
+                    alt="Unified Commerce solution preview"
+                    width="400"
+                    height="250"
+                    loading="lazy"
+                    class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out"
+                  />
+                </div>
+                <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
+                  <div
+                    class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3"
+                  >
+                    Unified Commerce
+                  </div>
+                  <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
+                    <p
+                      class="line-clamp-3 text-description font-primary font-normal leading-[150%]"
+                    >
+                      Unify every facet of commerce operations - from catalog,
+                      inventory and orders to customer service...
+                    </p>
+                    <a
+                      href="/nexus-unified-commerce"
+                      class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] h-10 sm:h-[50px] grid place-items-center border border-[#d8d8d8] rounded-full text-heading hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white group"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="transition-all duration-300 ease-in-out group-hover:rotate-45"
+                      >
+                        <g clip-path="url(#clip0_72_2743)">
+                          <path
+                            d="M8 16L16 8"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M9 8H16V15"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Scale Inventory and Order Management Sec -->
     <section class="lg:pb-[100px] sm:pb-16 pb-10">
-        <div class="max-w-[1280px] w-full px-4 xl:px-0 mx-auto">
-            <div class="md:p-[30px] lg:ps-16 p-5 md:rounded-[20px] rounded-2xl overflow-hidden bg-[#DFF4FF] bg-[url(../../assets/image/solutions/distributed-order-management/Scale-Inventory-Order-BG.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                <div class="grid lg:grid-cols-2 xl:gap-14 lg:gap-10 gap-7">
-                    <div class="lg:pt-8 pt-2 xl:pe-20">
-                        <div class="lg:mb-[30px] mb-6 lg:text-[38px] sm:text-3xl text-2xl font-primary font-medium text-heading lg:leading-[54px] leading-[120%]">Achieve a Comprehensive Customer History with Unified User Profiles with artisan's CXM</div>
-                        <p class="sm:mb-5 mb-4 text-description font-primary text-base font-normal">It's time to embrace digital transformation and unlock the full power of Customer Experience Management solution. Take charge of your multi-channel commerce operations while delivering exceptional end-to-end experiences tailored for contemporary shoppers.</p>
-                        <p class="text-description font-primary text-base font-normal">Reach out now to learn more about how our CXM solution can unify customer profile, enhance customer experiences, and propel your business toward greater heights.</p>
-                    </div>
-                    <div class="bg-white lg:p-10 sm:p-7 p-5 md:rounded-[20px] rounded-xl">
-                        <form action="https://api.web3forms.com/submit" method="POST" class="w-full m-0">
-                            <input type="hidden" name="access_key" value="d082e756-9d9f-4750-bda0-10769f1253c6" />
-                            <input type="hidden" name="redirect" value="https://artisanscloud.com/thank-you" />
-                            <input type="checkbox" name="botcheck" style="display: none;" />
-                            <input type="hidden" name="subject" value="Customer Xperience Management inquiry" />
-                            <input type="hidden" name="interest" value="Customer Xperience Management" />
-                            <div class="lg:mb-6 mb-5 grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="first_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">First Name</label>
-                                    <input type="text" id="first_name" name="first_name" placeholder="Enter First Name" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                                <div>
-                                    <label for="last_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Last Name</label>
-                                    <input type="text" id="last_name" name="last_name" placeholder="Enter Last Name" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
-                                <div>
-                                    <label for="company_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Company Name</label>
-                                    <input type="text" id="company_name" name="company_name" placeholder="Enter Company Name" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
-                                <div>
-                                    <label for="email" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Email address</label>
-                                    <input type="email" id="email" name="email" placeholder="Enter email address" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
-                                <div>
-                                    <label for="phone_number" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Phone Number</label>
-                                    <input type="tel" id="phone_number" name="phone_number" placeholder="Enter phone number" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-
-                            <div class="mt-4 flex flex-wrap lg:flex-nowrap justify-between gap-6">
-                                <p class="text-sm text-description font-primary font-normal lg:leading-[26px] leading-[160%]">By submitting your information you agree with our <a href="/terms-and-conditions" class="font-semibold inline-block underline">Terms of Use</a> and <a href="/privacy-policy" class="font-semibold inline-block underline">Privacy Policy</a>.</p>
-                                <button type="submit" class="cursor-pointer w-fit h-fit rounded-[40px] sm:px-[40px] px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+      <div class="max-w-[1280px] w-full px-4 xl:px-0 mx-auto">
+        <div
+          class="md:p-[30px] lg:ps-16 p-5 md:rounded-[20px] rounded-2xl overflow-hidden bg-[#DFF4FF] bg-[url(../../assets/image/solutions/distributed-order-management/Scale-Inventory-Order-BG.svg)] bg-no-repeat bg-bottom-left bg-contain"
+        >
+          <div class="grid lg:grid-cols-2 xl:gap-14 lg:gap-10 gap-7">
+            <div class="lg:pt-8 pt-2 xl:pe-20">
+              <div
+                class="lg:mb-[30px] mb-6 lg:text-[38px] sm:text-3xl text-2xl font-primary font-medium text-heading lg:leading-[54px] leading-[120%]"
+              >
+                Achieve a Comprehensive Customer History with Unified User
+                Profiles with artisan's CXM
+              </div>
+              <p
+                class="sm:mb-5 mb-4 text-description font-primary text-base font-normal"
+              >
+                It's time to embrace digital transformation and unlock the full
+                power of Customer Experience Management solution. Take charge of
+                your multi-channel commerce operations while delivering
+                exceptional end-to-end experiences tailored for contemporary
+                shoppers.
+              </p>
+              <p class="text-description font-primary text-base font-normal">
+                Reach out now to learn more about how our CXM solution can unify
+                customer profile, enhance customer experiences, and propel your
+                business toward greater heights.
+              </p>
             </div>
+            <div
+              class="bg-white lg:p-10 sm:p-7 p-5 md:rounded-[20px] rounded-xl"
+            >
+              <form
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                class="w-full m-0"
+              >
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="d082e756-9d9f-4750-bda0-10769f1253c6"
+                />
+                <input
+                  type="hidden"
+                  name="redirect"
+                  value="https://artisanscloud.com/thank-you"
+                />
+                <input type="checkbox" name="botcheck" style="display: none" />
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="Customer Experience Management inquiry"
+                />
+                <input
+                  type="hidden"
+                  name="interest"
+                  value="Customer Experience Management"
+                />
+                <div class="lg:mb-6 mb-5 grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      for="first_name"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >First Name</label
+                    >
+                    <input
+                      type="text"
+                      id="first_name"
+                      name="first_name"
+                      placeholder="Enter First Name"
+                      required
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="last_name"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >Last Name</label
+                    >
+                    <input
+                      type="text"
+                      id="last_name"
+                      name="last_name"
+                      placeholder="Enter Last Name"
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                </div>
+                <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                  <div>
+                    <label
+                      for="company_name"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >Company Name</label
+                    >
+                    <input
+                      type="text"
+                      id="company_name"
+                      name="company_name"
+                      placeholder="Enter Company Name"
+                      required
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                </div>
+                <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                  <div>
+                    <label
+                      for="email"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >Email address</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Enter email address"
+                      required
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                </div>
+                <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                  <div>
+                    <label
+                      for="phone_number"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >Phone Number</label
+                    >
+                    <input
+                      type="tel"
+                      id="phone_number"
+                      name="phone_number"
+                      placeholder="Enter phone number"
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="mt-4 flex flex-wrap lg:flex-nowrap justify-between gap-6"
+                >
+                  <p
+                    class="text-sm text-description font-primary font-normal lg:leading-[26px] leading-[160%]"
+                  >
+                    By submitting your information you agree with our
+                    <a
+                      href="/terms-and-conditions"
+                      class="font-semibold inline-block underline"
+                      >Terms of Use</a
+                    >
+                    and
+                    <a
+                      href="/privacy-policy"
+                      class="font-semibold inline-block underline"
+                      >Privacy Policy</a
+                    >.
+                  </p>
+                  <button
+                    type="submit"
+                    class="cursor-pointer w-fit h-fit rounded-[40px] sm:px-[40px] px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!-- End Scale Inventory and Order Management Sec -->
-
-
 
     {{> footer}}
 
-
-    <!--+++++++ Script Start +++++++-->
-
-    <script type='module' src='assets/script/main.js'></script>
-</body>
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
 </html>

@@ -1,0 +1,49 @@
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+<title>{{title}}</title>
+<link rel="canonical" href="{{canonicalUrl}}" />
+<meta name="description" content="{{description}}" />
+{{#if keywords}}
+<meta name="keywords" content="{{keywords}}" />
+{{/if}} {{#if robots}}
+<meta name="robots" content="{{robots}}" />
+{{/if}} {{#if og}}
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:url" content="{{canonicalUrl}}" />
+<meta property="og:title" content="{{ogTitle}}" />
+<meta property="og:description" content="{{ogDescription}}" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="{{ogImageUrl}}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+{{/if}} {{#if jsonLd}}
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+  {{{jsonLd}}}
+</script>
+{{/if}}
+
+<!-- Font Family: self-hosted Poppins, declared in assets/style/input.css.
+     Preload only the two heaviest-used weights; the rest load via CSS. -->
+<link
+  rel="preload"
+  href="./assets/fonts/poppins/poppins-400-latin.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="./assets/fonts/poppins/poppins-600-latin.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+
+<link rel="stylesheet" href="./assets/style/output.css" />

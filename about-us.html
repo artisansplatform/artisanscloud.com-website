@@ -1,329 +1,694 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <title>Artisan's About Us | Artisans Cloud</title>
-    <link rel="canonical" href="https://www.artisanscloud.com/about-us" />
-    <meta name="description"
-        content="Learn about Artisans Cloud - innovators in enterprise intelligence. Discover how we engineer adaptive systems combining AI, data, and automation to drive measurable growth.">
-    <meta name="keywords"
-        content="About Artisans Cloud, Enterprise Intelligence, AI Transformation, Business Innovation, Data Engineering, Intelligent Systems, Enterprise Automation, Digital Transformation">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:url" content="https://artisanscloud.com/about-us">
-    <meta property="og:title" content="About Artisans Cloud | Architects of Enterprise Intelligence">
-    <meta property="og:description"
-        content="At Artisans Cloud, we architect the digital foundation of intelligent enterprises - uniting AI, data, and engineering to power clarity, agility, and sustained business value.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/about-us.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <!-- Font Family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="./assets/style/output.css">
-</head>
-<body>
-    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
 
     {{> header}}
 
-
     <!----- Banner Sec ----->
     <section class="w-full h-full p-4 lg:p-5">
-        <div class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/about-us/about-us-banner.webp')] bg-no-repeat bg-cover">
-            <div class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24">
-                <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                    <div class="text-center lg:max-w-[820px] mx-auto">
-                        <div class="mb-5 lg:mb-[27px] font-primary font-semibold text-sm sm:text-base leading-[120%] uppercase text-primary" id="heroHeading">Architects of the Intelligent Enterprise</div>
-                        <div class="mb-6 lg:mb-[37px] font-primary font-semibold text-2xl sm:text-4xl lg:text-[44px] xl:text-[50px] text-heading leading-[120%]" id="heroHeading"><span class="text-[#8D68F6]">Beyond Digital Transformation </span> <br> We Engineer Enterprise <br> Intelligence.</div>
-                        <div id="heroDec">
-                            <p class="text-base lg:text-lg text-description font-primary font-normal leading-[150%]">At Artisans Cloud, we architect the digital foundations of the intelligent enterprise. Our mission is to convert the complexity of modern operations into a decisive competitive advantage, enabling leaders to act with clarity, precision, and confidence in an unpredictable world. We bring together engineering, intelligence, and design to create adaptive systems that learn, evolve, and deliver measurable</p>
-                        </div>
-                    </div>
-                </div>
+      <div
+        class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/about-us/about-us-banner.webp')] bg-no-repeat bg-cover"
+      >
+        <div class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24">
+          <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+            <div class="text-center lg:max-w-[820px] mx-auto">
+              <div
+                class="mb-5 lg:mb-[27px] font-primary font-semibold text-sm sm:text-base leading-[120%] uppercase text-primary"
+                id="heroHeading"
+              >
+                Architects of the Intelligent Enterprise
+              </div>
+              <div
+                class="mb-3 font-primary font-semibold text-2xl sm:text-4xl lg:text-[44px] xl:text-[50px] text-heading leading-[120%]"
+                id="heroHeading"
+              >
+                <span class="text-[#8D68F6]"
+                  >Beyond Digital Transformation
+                </span>
+                <br />
+                We Engineer Enterprise <br />
+                Intelligence.
+              </div>
+              <div id="heroDec">
+                <p
+                  class="text-base lg:text-lg text-description font-primary font-normal leading-[150%] mb-3"
+                >
+                  At Artisans Cloud, we architect the digital foundations of the
+                  intelligent enterprise. Our mission is to convert the
+                  complexity of modern operations into a decisive competitive
+                  advantage, enabling leaders to act with clarity, precision,
+                  and confidence in an unpredictable world.
+                </p>
+                <p
+                  class="text-base lg:text-lg text-description font-primary font-normal leading-[150%]"
+                >
+                  We bring together engineering, intelligence, and design to
+                  create adaptive systems that learn, evolve, and deliver
+                  measurable
+                </p>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!----- End Banner Sec ----->
-
 
     <!----- Innovation Must Deliver Sec ----->
     <section class="py-10 sm:py-16 md:py-20 lg:py-[120px]">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-12 items-center">
-                <h1 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Innovation Must <br class="hidden lg:block"> Deliver Verifiable ROI <br class="hidden lg:block"> and Simplicity.</h1>
-                <p class="text-description font-primary font-normal leading-[150%]">Technology is powerful only when it translates directly into measurable business value. Our solutions are engineered to enhance operational precision, agility and quantifiable return on investment. We align every deployment to business results - not technical milestones - ensuring sustainable performance, sharper decisions, and enduring competitive advantage.</p>
-            </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-12 items-center"
+        >
+          <h1
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Innovation Must <br class="hidden lg:block" />
+            Deliver Verifiable ROI <br class="hidden lg:block" />
+            and Simplicity.
+          </h1>
+          <p class="text-description font-primary font-normal leading-[150%]">
+            Technology is powerful only when it translates directly into
+            measurable business value. Our solutions are engineered to enhance
+            operational precision, agility and quantifiable return on
+            investment. We align every deployment to business results - not
+            technical milestones - ensuring sustainable performance, sharper
+            decisions, and enduring competitive advantage.
+          </p>
         </div>
+      </div>
     </section>
-    <!----- End Innovation Must Deliver Sec ----->
-
 
     <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
-
 
     <!----- what we do Sec ----->
     <section class="lg:py-[100px] md:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="mb-4 text-center lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">What we do</div>
-            <p class="max-w-[915px] w-full mx-auto text-center lg:leading-[26px] leading-[130%] text-description font-primary font-normal">Three Pillars of Enterprise Intelligence</p>
-
-            <div class="mt-7 sm:mt-10 lg:mt-[60px]">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-[30px]">
-                    <div class=" pt-7 px-5 pb-5 rounded-2xl md:rounded-[30px] w-full h-full bg-light-purple">
-                        <div class="relative">
-                            <div class="w-[96%] mx-auto p-4 md:p-[22px] bg-white/25 border border-white rounded-xl md:rounded-[20px] aspect-[16/10] overflow-hidden">
-                                <img src="assets/image/ourCore-unifiedCommerce.webp" class="w-full h-full object-cover object-top rounded-[10px]" alt="Unified Commerce Transformation" width="400" height="250" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="-mt-5 relative z-10 pt-11 px-[30px] pb-[30px] bg-white rounded-2xl md:rounded-[20px] text-center shadow-[0px_-20px_20px_4px_#eae3ff]">
-                            <div class="mb-4 text-[22px] leading-[120%] font-semibold font-primary text-heading" title="Unified Commerce Transformation">Unified Commerce Transformation</div>
-                            <p class="mb-4 md:mb-8 text-description font-primary font-normal leading-[150%]">Our proprietary retail engine synchronizes data, stores, supply chains, and customer experiences - creating a single intelligent backbone for retail enterprises. From store to shelf to screen, we drive precision and profitability across the commerce journey.</p>
-
-                            <a href="/unified-commerce" class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] text-heading relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 mx-auto border border-[#D8D8D8] bg-[#F4F0FE] hover:bg-primary hover:text-white focus-visible:bg-primary focus-visible:text-white">Read More</a>
-                        </div>
-                    </div>
-                    <div class=" pt-7 px-5 pb-5 rounded-2xl md:rounded-[30px] w-full h-full bg-light-green">
-                        <div class="relative">
-                            <div class="w-[96%] mx-auto p-4 md:p-[22px] bg-white/25 border border-white rounded-xl md:rounded-[20px] aspect-[16/10] overflow-hidden">
-                                <img src="assets/image/ourCore-DecisionIntelligenForesight.webp" class="w-full h-full object-cover object-top rounded-[10px]" alt="Decision Intelligence and Data Foresight" width="400" height="250" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="-mt-5 relative z-10 pt-11 px-[30px] pb-[30px] bg-white rounded-2xl md:rounded-[20px] text-center shadow-[0px_-20px_20px_4px_#EAF5F6]">
-                            <div class="mb-4 text-[22px] leading-[120%] font-semibold font-primary text-heading" title="Decision Intelligence & Data Foresight">Decision Intelligence & Data Foresight</div>
-                            <p class="mb-4 md:mb-[55px] text-description font-primary font-normal leading-[150%]">We transform enterprise data into foresight through scalable architectures, predictive analytics, and real-time intelligence frameworks - empowering leadership to act with evidence, not assumptions.</p>
-
-                            <a href="/data-intelligence" class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] text-heading relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 mx-auto border border-[#D8D8D8] bg-[#EAF5F6] hover:bg-sky-2 hover:text-white focus-visible:bg-sky-2 focus-visible:text-white">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class=" md:col-span-2 pt-5 md:pt-[41px] pb-0 rounded-2xl md:rounded-[30px] w-full h-full bg-light-pink overflow-hidden">
-                        <div class="grid grid-cols-1 md:grid-cols-2">
-                            <div class="md:pt-11 pt-2 lg:ps-[70px] px-5 md:px-[30px] md:pb-[30px] pb-4">
-                                <div class="mb-4 text-[22px] leading-[120%] font-semibold font-primary text-heading" title="Cognitive Automation as a Service (AIaaS)">Cognitive Automation as a Service (AIaaS)</div>
-                                <p class="mb-4 md:mb-8 md:max-w-[485px] w-full text-description font-primary font-normal leading-[150%]">We embed responsible, high-impact AI into mission-critical workflows - enabling smarter automation, adaptive learning, and enterprise-grade decisioning that scales securely across industries.</p>
-
-                                <a href="/enterprise-ai" class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] text-heading relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 border border-[#D8D8D8] bg-[#F4E7F2] hover:bg-pink hover:text-white focus-visible:bg-pink focus-visible:text-white">Read More</a>
-                            </div>
-                            <div class="relative overflow-hidden flex items-end justify-end">
-                                <div class="transform translate-y-6 translate-x-6 p-4 bg-white/25 border border-white rounded-xl md:rounded-[20px] h-full aspect-[16/10] overflow-hidden">
-                                    <img src="assets/image/ourCore-AIaaS.webp" class="w-full h-full object-cover object-top-left rounded-[10px]" alt="Cognitive Automation as a Service" width="400" height="250" loading="lazy">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="mb-4 text-center lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+        >
+          What we do
         </div>
-    </section>
-    <!----- End what we do Sec ----->
+        <p
+          class="max-w-[915px] w-full mx-auto text-center lg:leading-[26px] leading-[130%] text-description font-primary font-normal"
+        >
+          Three Pillars of Enterprise Intelligence
+        </p>
 
+        <div class="mt-7 sm:mt-10 lg:mt-[60px]">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-[30px]">
+            <div
+              class="pt-7 px-5 pb-5 rounded-2xl md:rounded-[30px] w-full h-full bg-light-purple"
+            >
+              <div class="relative">
+                <div
+                  class="w-[96%] mx-auto p-4 md:p-[22px] bg-white/25 border border-white rounded-xl md:rounded-[20px] aspect-[16/10] overflow-hidden"
+                >
+                  <img
+                    src="assets/image/ourCore-unifiedCommerce.webp"
+                    class="w-full h-full object-cover object-top rounded-[10px]"
+                    alt="Unified Commerce Transformation"
+                    width="400"
+                    height="250"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div
+                class="-mt-5 relative z-10 pt-11 px-[30px] pb-[30px] bg-white rounded-2xl md:rounded-[20px] text-center shadow-[0px_-20px_20px_4px_#eae3ff]"
+              >
+                <div
+                  class="mb-4 text-[22px] leading-[120%] font-semibold font-primary text-heading"
+                  title="Unified Commerce Transformation"
+                >
+                  Unified Commerce Transformation
+                </div>
+                <p
+                  class="mb-4 md:mb-8 text-description font-primary font-normal leading-[150%]"
+                >
+                  Our proprietary retail engine synchronizes data, stores,
+                  supply chains, and customer experiences - creating a single
+                  intelligent backbone for retail enterprises. From store to
+                  shelf to screen, we drive precision and profitability across
+                  the commerce journey.
+                </p>
+
+                <a
+                  href="/nexus-unified-commerce"
+                  class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] text-heading relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 mx-auto border border-[#D8D8D8] bg-[#F4F0FE] hover:bg-primary hover:text-white focus-visible:bg-primary focus-visible:text-white"
+                  >Read More</a
+                >
+              </div>
+            </div>
+            <div
+              class="pt-7 px-5 pb-5 rounded-2xl md:rounded-[30px] w-full h-full bg-light-green"
+            >
+              <div class="relative">
+                <div
+                  class="w-[96%] mx-auto p-4 md:p-[22px] bg-white/25 border border-white rounded-xl md:rounded-[20px] aspect-[16/10] overflow-hidden"
+                >
+                  <img
+                    src="assets/image/ourCore-DecisionIntelligenForesight.webp"
+                    class="w-full h-full object-cover object-top rounded-[10px]"
+                    alt="Decision Intelligence and Data Foresight"
+                    width="400"
+                    height="250"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div
+                class="-mt-5 relative z-10 pt-11 px-[30px] pb-[30px] bg-white rounded-2xl md:rounded-[20px] text-center shadow-[0px_-20px_20px_4px_#EAF5F6]"
+              >
+                <div
+                  class="mb-4 text-[22px] leading-[120%] font-semibold font-primary text-heading"
+                  title="Decision Intelligence & Data Foresight"
+                >
+                  Decision Intelligence & Data Foresight
+                </div>
+                <p
+                  class="mb-4 md:mb-[55px] text-description font-primary font-normal leading-[150%]"
+                >
+                  We transform enterprise data into foresight through scalable
+                  architectures, predictive analytics, and real-time
+                  intelligence frameworks - empowering leadership to act with
+                  evidence, not assumptions.
+                </p>
+
+                <a
+                  href="/data-intelligence"
+                  class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] text-heading relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 mx-auto border border-[#D8D8D8] bg-[#EAF5F6] hover:bg-sky-2 hover:text-white focus-visible:bg-sky-2 focus-visible:text-white"
+                  >Read More</a
+                >
+              </div>
+            </div>
+
+            <div
+              class="md:col-span-2 pt-5 md:pt-[41px] pb-0 rounded-2xl md:rounded-[30px] w-full h-full bg-light-pink overflow-hidden"
+            >
+              <div class="grid grid-cols-1 md:grid-cols-2">
+                <div
+                  class="md:pt-11 pt-2 lg:ps-[70px] px-5 md:px-[30px] md:pb-[30px] pb-4"
+                >
+                  <div
+                    class="mb-4 text-[22px] leading-[120%] font-semibold font-primary text-heading"
+                    title="Cognitive Automation as a Service (AIaaS)"
+                  >
+                    Cognitive Automation as a Service (AIaaS)
+                  </div>
+                  <p
+                    class="mb-4 md:mb-8 md:max-w-[485px] w-full text-description font-primary font-normal leading-[150%]"
+                  >
+                    We embed responsible, high-impact AI into mission-critical
+                    workflows - enabling smarter automation, adaptive learning,
+                    and enterprise-grade decisioning that scales securely across
+                    industries.
+                  </p>
+
+                  <a
+                    href="/enterprise-ai"
+                    class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] text-heading relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 border border-[#D8D8D8] bg-[#F4E7F2] hover:bg-pink hover:text-white focus-visible:bg-pink focus-visible:text-white"
+                    >Read More</a
+                  >
+                </div>
+                <div
+                  class="relative overflow-hidden flex items-end justify-end"
+                >
+                  <div
+                    class="transform translate-y-6 translate-x-6 p-4 bg-white/25 border border-white rounded-xl md:rounded-[20px] h-full aspect-[16/10] overflow-hidden"
+                  >
+                    <img
+                      src="assets/image/ourCore-AIaaS.webp"
+                      class="w-full h-full object-cover object-top-left rounded-[10px]"
+                      alt="Cognitive Automation as a Service"
+                      width="400"
+                      height="250"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!----- Let Build the Intelligent Enterprise Sec ----->
-    <section class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-buildTogether-BG.webp)] bg-no-repeat bg-top-left bg-cover">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-            <div class="fade-in lg:max-w-[728px] mx-auto w-full text-center">
-                <div class="lg:mb-[30px] mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">Let's Build the Intelligent Enterprise - Together.</div>
-                <p class="text-white/80 font-primary font-normal leading-[150%]">The future of enterprise is intelligent systems that think, learn, and adapt with purpose. We help enterprises achieve the transformation with precision, speed, and measurable impact. Partner with us to design the systems that power intelligent operations, predictive decisions, and measurable growth.</p>
-                <div class="lg:mt-11 mt-8 flex items-center flex-wrap gap-2.5 justify-center">
-                    <a href="/contact-us" class="w-full sm:w-[260px] h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Partner With Us</a>
-                </div>
-            </div>
+    <section
+      class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-buildTogether-BG.webp)] bg-no-repeat bg-top-left bg-cover"
+    >
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+        <div class="fade-in lg:max-w-[728px] mx-auto w-full text-center">
+          <div
+            class="lg:mb-[30px] mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+          >
+            Let's Build the Intelligent Enterprise - Together.
+          </div>
+          <p class="text-white/80 font-primary font-normal leading-[150%]">
+            The future of enterprise is intelligent systems that think, learn,
+            and adapt with purpose. We help enterprises achieve the
+            transformation with precision, speed, and measurable impact. Partner
+            with us to design the systems that power intelligent operations,
+            predictive decisions, and measurable growth.
+          </p>
+          <div
+            class="lg:mt-11 mt-8 flex items-center flex-wrap gap-2.5 justify-center"
+          >
+            <a
+              href="/contact-us"
+              class="w-full sm:w-[260px] h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+              >Partner With Us</a
+            >
+          </div>
         </div>
+      </div>
 
-        <img src="assets/image/icon/CTA-buildTogether-shape1.svg" class="animate-pulse absolute -top-[15%] start-0 pointer-none select-none" alt="" width="200" height="200" loading="lazy">
-        <img src="assets/image/icon/CTA-buildTogether-shape2.svg" class="animate-pulse hidden md:block absolute top-0 -end-[10%] pointer-none select-none" alt="" width="200" height="200" loading="lazy">
+      <img
+        src="assets/image/icon/CTA-buildTogether-shape1.svg"
+        class="animate-pulse absolute -top-[15%] start-0 pointer-none select-none"
+        alt=""
+        width="200"
+        height="200"
+        loading="lazy"
+      />
+      <img
+        src="assets/image/icon/CTA-buildTogether-shape2.svg"
+        class="animate-pulse hidden md:block absolute top-0 -end-[10%] pointer-none select-none"
+        alt=""
+        width="200"
+        height="200"
+        loading="lazy"
+      />
     </section>
-    <!----- End Let Build the Intelligent Enterprise Sec ----->
-
-
 
     <!----- our vision & value Sec ----->
     <section class="lg:py-[100px] md:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in text-center">
-                <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Our Vision & Values</div>
-            </div>
-
-            <div class="sm:mt-10 mt-7 grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-4">
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/vision-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Vision icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold">Vision</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">To build enterprises that think and act with decisive intelligence and enduring agility.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/mission-card-shapeBG.svg)] bg-no-repeat bg-bottom-right">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/target-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Mission icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold">Mission</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">To architect and deploy enterprise intelligence uniting AI, data and operations into adaptive systems that deliver clarity, velocity, and sustained business value.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in text-center">
+          <div
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Our Vision & Values
+          </div>
         </div>
-    </section>
-    <!----- End our vision & value Sec ----->
 
+        <div
+          class="sm:mt-10 mt-7 grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-4"
+        >
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+          >
+            <div
+              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/vision-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Vision icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Vision
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                To build enterprises that think and act with decisive
+                intelligence and enduring agility.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/mission-card-shapeBG.svg)] bg-no-repeat bg-bottom-right"
+          >
+            <div
+              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/target-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Mission icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Mission
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                To architect and deploy enterprise intelligence uniting AI, data
+                and operations into adaptive systems that deliver clarity,
+                velocity, and sustained business value.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
-
 
     <!----- Our Differentiator Sec ----->
     <section class="lg:py-[100px] md:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 md:gap-10 gap-7 items-center">
-                <div class="">
-                    <div class="lg:mb-10 mb-5 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Our Differentiator</div>
-                    <div class="mb-2.5 text-heading font-primary font-semibold text-xl leading-[125%]">We engineer systems that think</div>
-                    <p class="lg:pe-12 text-description font-primary font-normal leading-[150%]">We integrate advanced AI, data engineering and business architecture to design self-learning ecosystems capable of sensing, predicting, and adapting continuously. Our approach blends world-class enterprise engineering with a deep understanding of global business models and operational realities.</p>
-                </div>
-
-                <div class="fade-in gridGradientCard flex flex-col justify-around gap-5 lg:gap-[30px] w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[20px] overflow-hidden bg-light-sky bg-[url(../../assets/image/icon/strategicCard-left-BG.png)] bg-no-repeat bg-cover">
-                    <div class="relative z-10 bg-white p-5 md:p-8 md:pb-5 rounded-2xl md:rounded-[20px] h-full">
-                        <svg class="lg:w-14 w-10 lg:h-14 h-10" width="54" height="46" viewBox="0 0 54 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_643_13816)">
-                                <path d="M0 0.00683594H22.2275V23.8594C22.0191 27.7138 20.6319 34.6572 15.8633 39.7705C12.0066 43.904 6.67101 46 0 46V38.0186C4.4103 38.0186 7.68047 36.8116 9.99316 34.333C12.9377 31.173 13.7134 26.5789 13.9023 23.8535H0V0.00683594ZM53.9941 0.00683594V23.8594C53.7857 27.7137 52.3984 34.6573 47.6299 39.7705C43.7733 43.9039 38.4375 45.9999 31.7666 46V38.0186C36.1768 38.0185 39.4471 36.8117 41.7598 34.333C44.7043 31.173 45.48 26.5789 45.6689 23.8535H31.7666V0.00683594H53.9941ZM31.7666 0.00683594H31.7598L31.7666 0V0.00683594Z" fill="url(#paint0_linear_643_13816)"/>
-                            </g>
-                            <defs>
-                            <linearGradient id="paint0_linear_643_13816" x1="26.9971" y1="0" x2="26.9971" y2="46" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#E9E3FF"/>
-                                <stop offset="1" stop-color="#E9D8FF"/>
-                            </linearGradient>
-                        </svg>
-
-                        <div class="mt-6 md:mt-10">
-                            <div class="text-xl lg:text-[28px] font-medium text-heading font-primary"><span class="font-semibold">We don’t sell software -</span> we build the infrastructure for enterprise intelligence.</div>
-                        </div>
-                    </div>
-                </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 md:gap-10 gap-7 items-center"
+        >
+          <div class="">
+            <div
+              class="lg:mb-10 mb-5 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Our Differentiator
             </div>
-        </div>
-    </section>
-    <!----- End Our Differentiator Sec ----->
+            <div
+              class="mb-2.5 text-heading font-primary font-semibold text-xl leading-[125%]"
+            >
+              We engineer systems that think
+            </div>
+            <p
+              class="lg:pe-12 text-description font-primary font-normal leading-[150%]"
+            >
+              We integrate advanced AI, data engineering and business
+              architecture to design self-learning ecosystems capable of
+              sensing, predicting, and adapting continuously. Our approach
+              blends world-class enterprise engineering with a deep
+              understanding of global business models and operational realities.
+            </p>
+          </div>
 
+          <div
+            class="fade-in gridGradientCard flex flex-col justify-around gap-5 lg:gap-[30px] w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[20px] overflow-hidden bg-light-sky bg-[url(../../assets/image/icon/strategicCard-left-BG.png)] bg-no-repeat bg-cover"
+          >
+            <div
+              class="relative z-10 bg-white p-5 md:p-8 md:pb-5 rounded-2xl md:rounded-[20px] h-full"
+            >
+              <svg
+                class="lg:w-14 w-10 lg:h-14 h-10"
+                width="54"
+                height="46"
+                viewBox="0 0 54 46"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_643_13816)">
+                  <path
+                    d="M0 0.00683594H22.2275V23.8594C22.0191 27.7138 20.6319 34.6572 15.8633 39.7705C12.0066 43.904 6.67101 46 0 46V38.0186C4.4103 38.0186 7.68047 36.8116 9.99316 34.333C12.9377 31.173 13.7134 26.5789 13.9023 23.8535H0V0.00683594ZM53.9941 0.00683594V23.8594C53.7857 27.7137 52.3984 34.6573 47.6299 39.7705C43.7733 43.9039 38.4375 45.9999 31.7666 46V38.0186C36.1768 38.0185 39.4471 36.8117 41.7598 34.333C44.7043 31.173 45.48 26.5789 45.6689 23.8535H31.7666V0.00683594H53.9941ZM31.7666 0.00683594H31.7598L31.7666 0V0.00683594Z"
+                    fill="url(#paint0_linear_643_13816)"
+                  />
+                </g>
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_643_13816"
+                    x1="26.9971"
+                    y1="0"
+                    x2="26.9971"
+                    y2="46"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#E9E3FF" />
+                    <stop offset="1" stop-color="#E9D8FF" />
+                  </linearGradient>
+                </defs>
+              </svg>
+
+              <div class="mt-6 md:mt-10">
+                <div
+                  class="text-xl lg:text-[28px] font-medium text-heading font-primary"
+                >
+                  <span class="font-semibold">We don’t sell software -</span> we
+                  build the infrastructure for enterprise intelligence.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
-
 
     <!----- Our Impact Sec ----->
     <section class="lg:py-[100px] md:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 md:gap-10 gap-7">
-                <div class="lg:pe-10">
-                    <img src="assets/image/about-us/our-impact.svg" alt="Our Impact infographic" class="max-w-full h-auto mx-auto lg:mx-0" width="500" height="400" loading="lazy">
-                </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 md:gap-10 gap-7">
+          <div class="lg:pe-10">
+            <img
+              src="assets/image/about-us/our-impact.svg"
+              alt="Our Impact infographic"
+              class="max-w-full h-auto mx-auto lg:mx-0"
+              width="500"
+              height="400"
+              loading="lazy"
+            />
+          </div>
 
-                <div class="">
-                    <div class="mb-5 md:mb-7 lg:mb-10 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Our Impact</div>
-                    <div class="mb-3 text-heading font-primary font-semibold text-xl leading-[125%]">Driving Intelligence at Global Scale</div>
-                    <p class="text-description font-primary font-normal leading-[150%]">We partner with some of the world’s most ambitious organizations to drive transformation that is both operationally profound and financially measurable.</p>
-
-                    <div class="sm:mt-6 mt-5 mb-1.5 text-heading font-primary font-semibold text-xl leading-[125%]">Our engagements have delivered:</div>
-                    <ul class="ps-5">
-                        <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[120%] text-description">40% faster executive decision cycles through unified intelligence systems</li>
-                        <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[120%] text-description">Double-digit margin improvement powered by predictive analytics</li>
-                        <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[120%] text-description">Millions saved via AI-driven automation and resource optimization</li>
-                        <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[120%] text-description">Enterprise-wide data unification enabling faster, evidence-based action</li>
-                    </ul>
-
-                    <p class="mt-5 lg:mt-6 text-description font-primary font-normal leading-[150%]">Every engagement begins with one purpose: to build enterprises that think faster than the market moves.</p>
-                </div>
+          <div class="">
+            <div
+              class="mb-5 md:mb-7 lg:mb-10 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Our Impact
             </div>
-        </div>
-    </section>
-    <!----- End Our Impact Sec ----->
+            <div
+              class="mb-3 text-heading font-primary font-semibold text-xl leading-[125%]"
+            >
+              Driving Intelligence at Global Scale
+            </div>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              We partner with some of the world’s most ambitious organizations
+              to drive transformation that is both operationally profound and
+              financially measurable.
+            </p>
 
+            <div
+              class="sm:mt-6 mt-5 mb-1.5 text-heading font-primary font-semibold text-xl leading-[125%]"
+            >
+              Our engagements have delivered:
+            </div>
+            <ul class="ps-5">
+              <li
+                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[120%] text-description"
+              >
+                40% faster executive decision cycles through unified
+                intelligence systems
+              </li>
+              <li
+                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[120%] text-description"
+              >
+                Double-digit margin improvement powered by predictive analytics
+              </li>
+              <li
+                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[120%] text-description"
+              >
+                Millions saved via AI-driven automation and resource
+                optimization
+              </li>
+              <li
+                class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[120%] text-description"
+              >
+                Enterprise-wide data unification enabling faster, evidence-based
+                action
+              </li>
+            </ul>
+
+            <p
+              class="mt-5 lg:mt-6 text-description font-primary font-normal leading-[150%]"
+            >
+              Every engagement begins with one purpose: to build enterprises
+              that think faster than the market moves.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
-
 
     <!----- Our Core Values Sec ----->
     <section class="lg:py-[100px] md:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="lg:mb-10 mb-7 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] text-center">Our Core Values</div>
-
-            <div class="flex flex-wrap justify-center h-full gap-5 lg:gap-[30px]">
-                <div class="fade-in w-full sm:w-[250px] md:w-[300px] xl:w-[350px] shrink-0 h-auto min-h-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col group">
-                    <div class="mb-6 sm:mb-8 lg:mb-12 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/intelligentCard-icon-1.svg" class="group-hover:scale-105 transition-all ease-linear duration-300" alt="Integrity in Engineering icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-3 md:mb-4 text-xl lg:text-[22px] text-heading font-primary font-semibold">Integrity in <br class="hidden lg:block">Engineering</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Every system we design must create measurable business value.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full sm:w-[250px] md:w-[300px] xl:w-[350px] shrink-0 h-auto min-h-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col group">
-                    <div class="mb-6 sm:mb-8 lg:mb-12 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/bulb-icon.svg" class="group-hover:scale-105 transition-all ease-linear duration-300" alt="Purpose in Innovation icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-3 md:mb-4 text-xl lg:text-[22px] text-heading font-primary font-semibold">Purpose in <br class="hidden lg:block">Innovation</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">We innovate to simplify complexity, not to amplify it.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full sm:w-[250px] md:w-[300px] xl:w-[350px] shrink-0 h-auto min-h-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col group">
-                    <div class="mb-6 sm:mb-8 lg:mb-12 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/partnership-transform.svg" class="group-hover:scale-105 transition-all ease-linear duration-300" alt="Partnership in Transformation icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-3 md:mb-4 text-xl lg:text-[22px] text-heading font-primary font-semibold">Partnership in <br class="hidden lg:block">Transformation</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">We co-create transformation, standing beside clients from strategy through scale.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full sm:w-[250px] md:w-[300px] xl:w-[350px] shrink-0 h-auto min-h-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-[#F2EEFF] border-[#f2f2f2] flex flex-col group">
-                    <div class="mb-6 sm:mb-8 lg:mb-12 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/agilityDiscipline-icon.svg" class="group-hover:scale-105 transition-all ease-linear duration-300" alt="Agility with Discipline icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-3 md:mb-4 text-xl lg:text-[22px] text-heading font-primary font-semibold">Agility with Discipline</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">We move fast, guided by structure, not haste.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full sm:w-[250px] md:w-[300px] xl:w-[350px] shrink-0 h-auto min-h-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-[#EEF4FF] border-[#f2f2f2] flex flex-col group">
-                    <div class="mb-6 sm:mb-8 lg:mb-12 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/earth-sustain-impact.svg" class="group-hover:scale-105 transition-all ease-linear duration-300" alt="Sustained Impact icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-3 md:mb-4 text-xl lg:text-[22px] text-heading font-primary font-semibold">Sustained Impact</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">We measure success by longevity, systems that continue to learn and deliver value.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="lg:mb-10 mb-7 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] text-center"
+        >
+          Our Core Values
         </div>
+
+        <div class="flex flex-wrap justify-center h-full gap-5 lg:gap-[30px]">
+          <div
+            class="fade-in w-full sm:w-[250px] md:w-[300px] xl:w-[350px] shrink-0 h-auto min-h-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col group"
+          >
+            <div
+              class="mb-6 sm:mb-8 lg:mb-12 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/intelligentCard-icon-1.svg"
+                class="group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Integrity in Engineering icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-3 md:mb-4 text-xl lg:text-[22px] text-heading font-primary font-semibold"
+              >
+                Integrity in <br class="hidden lg:block" />Engineering
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Every system we design must create measurable business value.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full sm:w-[250px] md:w-[300px] xl:w-[350px] shrink-0 h-auto min-h-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col group"
+          >
+            <div
+              class="mb-6 sm:mb-8 lg:mb-12 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/bulb-icon.svg"
+                class="group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Purpose in Innovation icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-3 md:mb-4 text-xl lg:text-[22px] text-heading font-primary font-semibold"
+              >
+                Purpose in <br class="hidden lg:block" />Innovation
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                We innovate to simplify complexity, not to amplify it.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full sm:w-[250px] md:w-[300px] xl:w-[350px] shrink-0 h-auto min-h-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col group"
+          >
+            <div
+              class="mb-6 sm:mb-8 lg:mb-12 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/partnership-transform.svg"
+                class="group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Partnership in Transformation icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-3 md:mb-4 text-xl lg:text-[22px] text-heading font-primary font-semibold"
+              >
+                Partnership in <br class="hidden lg:block" />Transformation
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                We co-create transformation, standing beside clients from
+                strategy through scale.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full sm:w-[250px] md:w-[300px] xl:w-[350px] shrink-0 h-auto min-h-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-[#F2EEFF] border-[#f2f2f2] flex flex-col group"
+          >
+            <div
+              class="mb-6 sm:mb-8 lg:mb-12 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/agilityDiscipline-icon.svg"
+                class="group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Agility with Discipline icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-3 md:mb-4 text-xl lg:text-[22px] text-heading font-primary font-semibold"
+              >
+                Agility with Discipline
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                We move fast, guided by structure, not haste.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full sm:w-[250px] md:w-[300px] xl:w-[350px] shrink-0 h-auto min-h-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-[#EEF4FF] border-[#f2f2f2] flex flex-col group"
+          >
+            <div
+              class="mb-6 sm:mb-8 lg:mb-12 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/earth-sustain-impact.svg"
+                class="group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Sustained Impact icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-3 md:mb-4 text-xl lg:text-[22px] text-heading font-primary font-semibold"
+              >
+                Sustained Impact
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                We measure success by longevity, systems that continue to learn
+                and deliver value.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <!----- End Our Core Values Sec ----->
-
-
-
-
 
     {{> footer}}
 
-
-    <!--+++++++ Script Start +++++++-->
-
-    <script type='module' src='assets/script/main.js'></script>
-</body>
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
 </html>

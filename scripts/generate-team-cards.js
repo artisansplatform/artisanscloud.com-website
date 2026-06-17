@@ -15,12 +15,12 @@
  * Or use the combined shortcut: npm run add:card
  */
 
-import { readFileSync, writeFileSync, mkdirSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { readFileSync, writeFileSync, mkdirSync } from "fs";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = join(__dirname, '..');
+const ROOT = join(__dirname, "..");
 
 // SVG icons (inlined for zero runtime dependency)
 const ICONS = {
@@ -40,14 +40,14 @@ const ICONS = {
 
 /** Extract @handle from a Twitter/X URL like https://x.com/Handle */
 function twitterHandle(url) {
-  if (!url) return '';
+  if (!url) return "";
   const match = url.match(/(?:twitter\.com|x\.com)\/([^/?#]+)/i);
-  return match ? `@${match[1]}` : '';
+  return match ? `@${match[1]}` : "";
 }
 
 /** Build the social icon block for the left panel */
 function buildSocialIcons(social) {
-  if (!social) return '';
+  if (!social) return "";
   const icons = [];
 
   if (social.linkedin) {
@@ -73,8 +73,8 @@ function buildSocialIcons(social) {
   }
 
   return icons.length
-    ? `\n                        <div class="mt-5 flex items-center gap-2.5">${icons.join('')}\n                        </div>`
-    : '';
+    ? `\n                        <div class="mt-5 flex items-center gap-2.5">${icons.join("")}\n                        </div>`
+    : "";
 }
 
 /** Build contact detail rows for the right panel */
@@ -131,7 +131,7 @@ function buildContactRows(member) {
                             </div>`);
   }
 
-  return rows.join('');
+  return rows.join("");
 }
 
 function buildCardHtml(member) {
@@ -140,6 +140,31 @@ function buildCardHtml(member) {
   const shortDescription = `Connect with ${member.name}, ${member.title} at ${member.company}.`;
   const canonicalUrl = `https://www.artisanscloud.com/team/${member.slug}`;
   const ogImage = `https://www.artisanscloud.com/assets/og/team/${member.slug}.png`;
+
+  // Person structured data (JSON-LD) for the digital business card.
+  const personJsonLd = JSON.stringify(
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: member.name,
+      jobTitle: member.title,
+      url: canonicalUrl,
+      image: ogImage,
+      worksFor: {
+        "@type": "Organization",
+        name: member.company,
+        url: member.companyUrl,
+      },
+      ...(member.email ? { email: `mailto:${member.email}` } : {}),
+      ...(member.phone ? { telephone: member.phone } : {}),
+      ...(member.location
+        ? { homeLocation: { "@type": "Place", name: member.location } }
+        : {}),
+      sameAs: Object.values(member.social || {}).filter(Boolean),
+    },
+    null,
+    4,
+  ).replace(/\n/g, "\n    ");
 
   // card-data JSON: only include fields used by digital-card.js
   const cardData = {
@@ -150,15 +175,15 @@ function buildCardHtml(member) {
     title: member.title,
     company: member.company,
     companyUrl: member.companyUrl,
-    location: member.location || '',
-    email: member.email || '',
-    phone: member.phone || '',
+    location: member.location || "",
+    email: member.email || "",
+    phone: member.phone || "",
     photo: member.photo,
     social: member.social || {},
   };
 
   return `<!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset='utf-8'>
@@ -188,12 +213,16 @@ function buildCardHtml(member) {
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${member.name} | Artisans Cloud">
     <meta name="twitter:description" content="${shortDescription}">
-    <meta name="twitter:image" content="${ogImage}">${handle ? `\n    <meta name="twitter:creator" content="${handle}">` : ''}
+    <meta name="twitter:image" content="${ogImage}">${handle ? `\n    <meta name="twitter:creator" content="${handle}">` : ""}
 
-    <!-- Font Family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    ${personJsonLd}
+    </script>
+
+    <!-- Font Family: self-hosted Poppins, declared in assets/style/input.css -->
+    <link rel="preload" href="/assets/fonts/poppins/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/poppins/poppins-600-latin.woff2" as="font" type="font/woff2" crossorigin>
 
     <link rel="stylesheet" href="/assets/style/output.css">
 </head>
@@ -204,7 +233,7 @@ function buildCardHtml(member) {
     <section class="w-full min-h-screen flex items-center justify-center py-8 px-4" data-digital-card="${member.slug}">
 
         <script id="card-data" type="application/json">
-        ${JSON.stringify(cardData, null, 8).replace(/\n/g, '\n        ')}
+        ${JSON.stringify(cardData, null, 8).replace(/\n/g, "\n        ")}
         </script>
 
         <div class="max-w-[800px] w-full mx-auto">
@@ -230,7 +259,7 @@ ${buildSocialIcons(member.social)}
                     <div class="flex-1 p-5 md:p-8 flex flex-col justify-center">
                         <!-- Bio -->
                         <div class="mb-6">
-                            <p class="text-description text-sm font-primary leading-relaxed">${member.bio || ''}</p>
+                            <p class="text-description text-sm font-primary leading-relaxed">${member.bio || ""}</p>
                         </div>
 
                         <!-- Contact Details -->
@@ -290,15 +319,15 @@ ${buildSocialIcons(member.social)}
 
 function main() {
   const args = process.argv.slice(2);
-  const slugIndex = args.indexOf('--slug');
+  const slugIndex = args.indexOf("--slug");
   const targetSlug = slugIndex !== -1 ? args[slugIndex + 1] : null;
 
   const members = JSON.parse(
-    readFileSync(join(ROOT, 'assets', 'data', 'team-members.json'), 'utf-8')
+    readFileSync(join(ROOT, "assets", "data", "team-members.json"), "utf-8"),
   );
 
   const toGenerate = targetSlug
-    ? members.filter(m => m.slug === targetSlug)
+    ? members.filter((m) => m.slug === targetSlug)
     : members;
 
   if (targetSlug && toGenerate.length === 0) {
@@ -306,12 +335,12 @@ function main() {
     process.exit(1);
   }
 
-  mkdirSync(join(ROOT, 'team'), { recursive: true });
+  mkdirSync(join(ROOT, "team"), { recursive: true });
 
   for (const member of toGenerate) {
     const html = buildCardHtml(member);
-    const outPath = join(ROOT, 'team', `${member.slug}.html`);
-    writeFileSync(outPath, html, 'utf-8');
+    const outPath = join(ROOT, "team", `${member.slug}.html`);
+    writeFileSync(outPath, html, "utf-8");
     console.log(`  team/${member.slug}.html`);
   }
 

@@ -1,0 +1,1496 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Artisans Cloud Unified Commerce Platform",
+        "description": "Enterprise unified commerce platform that connects inventory, orders, and customer data across all retail channels with real-time visibility and execution.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://www.artisanscloud.com/nexus-unified-commerce",
+        "offers": {
+          "@type": "Offer",
+          "seller": {
+            "@type": "Organization",
+            "name": "Artisans Cloud"
+          }
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a unified commerce platform?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A unified commerce platform connects inventory, orders, and customer data into a single system rather than stitching together separate tools. This gives retailers real-time visibility, faster decision-making, and consistent customer experiences across channels."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is unified commerce different from omnichannel?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Omnichannel connects multiple systems through integrations and middleware. Unified commerce operates as a single system with shared data and real-time execution. The difference is structural: omnichannel coordinates several systems, unified commerce eliminates the need for them."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What modules are included in a unified commerce platform?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A typical deployment includes order management, inventory management, point-of-sale, customer data platform, promotions, loyalty, retail planning, digital commerce, and reporting and analytics, all sharing the same data layer. Modules can be adopted independently or as a full suite."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
+
+    {{> header}}
+
+    <!----- Hero Banner ----->
+    <section class="w-full h-full p-4 lg:p-5">
+      <div
+        class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] flex items-center justify-center h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/retail-plateform/banner-bg.webp')] bg-no-repeat bg-cover"
+      >
+        <div class="pt-5 lg:pt-[70px] pb-10 lg:pb-[62px] w-full">
+          <div class="fade-in max-w-[1400px] w-full mx-auto">
+            <div
+              class="fade-in flex flex-col lg:flex-row justify-center w-full lg:gap-x-6 xl:gap-x-12"
+            >
+              <div
+                class="flex lg:flex-col justify-between gap-x-4 w-full lg:w-fit"
+              >
+                <div class="w-fit h-fit lg:ms-[clamp(24px,4.9vw,125px)]">
+                  <img
+                    src="/assets/image/retail-plateform/banner-subg-1.webp"
+                    alt="Retail platform dashboard"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px] shadow-[-10px_14px_94px_0px_#CBD4F6]"
+                  />
+                </div>
+                <div
+                  class="w-fit h-fit lg:me-[clamp(24px,4.9vw,125px)] lg:hidden"
+                >
+                  <img
+                    src="/assets/image/retail-plateform/banner-subg-2.webp"
+                    alt="Omnichannel operations interface"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px] shadow-[-10px_14px_94px_0px_#CBD4F6]"
+                  />
+                </div>
+                <div class="w-fit h-fit hidden lg:block lg:me-5">
+                  <img
+                    src="/assets/image/retail-plateform/banner-subg-3.webp"
+                    alt="Inventory management view"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px] shadow-[0px_14px_124px_0px_#C3D9EA99]"
+                  />
+                </div>
+              </div>
+
+              <div class="max-w-fit mx-auto lg:mx-0">
+                <div class="text-center mt-7.5">
+                  <div
+                    class="mb-3 sm:mb-5 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
+                  >
+                    Unified Commerce
+                  </div>
+                  <h1
+                    id="heroHeading"
+                    class="mb-3 font-primary text-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] md:text-nowrap"
+                  >
+                    Nexus Unified Commerce Platform<br />
+                    For Modern Retail Enterprises
+                  </h1>
+                </div>
+                <div class="flex flex-col items-center mb-7.5 lg:mb-12">
+                  <p
+                    class="mb-3 text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%] mb-3"
+                  >
+                    Connect stores, inventory, orders, customers and digital
+                    channels through a single operational platform.
+                  </p>
+                  <p
+                    class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                  >
+                    Nexus helps retailers simplify complex operations, improve
+                    visibility across the business and execute consistently
+                    across every customer touchpoint.
+                  </p>
+                  <a
+                    href="/request-demo"
+                    class="lg:mt-[25px] mt-4 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                    >Request a Demo</a
+                  >
+                </div>
+              </div>
+
+              <div
+                class="flex lg:flex-col items-end justify-between w-full gap-x-4 lg:w-fit"
+              >
+                <div
+                  class="w-fit h-fit lg:me-[clamp(24px,4.9vw,125px)] hidden lg:block"
+                >
+                  <img
+                    src="/assets/image/retail-plateform/banner-subg-2.webp"
+                    alt="Omnichannel operations interface"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px] shadow-[-10px_14px_94px_0px_#CBD4F6]"
+                  />
+                </div>
+                <div class="w-fit h-fit lg:hidden">
+                  <img
+                    src="/assets/image/retail-plateform/banner-subg-3.webp"
+                    alt="Inventory management view"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px] shadow-[0px_14px_124px_0px_#C3D9EA99]"
+                  />
+                </div>
+                <div class="w-fit h-fit lg:ms-5">
+                  <img
+                    src="/assets/image/retail-plateform/banner-subg-4.webp"
+                    alt="Supply chain coordination dashboard"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px] shadow-[0px_14px_124px_0px_#C3D9EA99]"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!----- Banner Big Image Sec ----->
+    <div
+      class="fade-in relative z-[2] mx-auto mt-7.5 md:mt-20 w-[80%] max-w-[1264px] p-[clamp(0.625rem,2.778vw-0.208rem,1.875rem)] rounded-[20px] border sm:border-[3px] border-[#F3F3F3] bg-white/25 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[40%] after:bg-gradient-to-b after:from-transparent after:to-white after:pointer-events-none after:select-none overflow-hidden"
+    >
+      <img
+        src="/assets/image/retail-plateform/artisanscloud-nexus-visual-2.webp"
+        alt="Nexus Unified Commerce Platform interface"
+        width="1200"
+        height="600"
+        loading="lazy"
+        class="h-full w-full object-cover object-top rounded-[10px] border border-white"
+      />
+    </div>
+
+    <!----- Retail Operations Should Not Be Disconnected ----->
+    <section class="py-10 md:py-20">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="grid lg:grid-cols-2 lg:gap-16 gap-8 items-start">
+          <div class="fade-in">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Retail Operations Should Not Be Disconnected
+            </h2>
+          </div>
+          <div class="fade-in">
+            <p
+              class="text-[clamp(14px,1.1vw,16px)] font-primary font-semibold text-heading leading-[150%] mb-4"
+            >
+              As retailers grow, operations become increasingly fragmented.
+            </p>
+            <p
+              class="text-description font-primary font-normal leading-[150%] mb-4"
+            >
+              Inventory sits in one system. Orders in another. Customer
+              information is spread across multiple applications. Digital
+              channels, stores and fulfillment teams often operate with
+              different data and disconnected processes.
+            </p>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              The result is slower decisions, inconsistent customer experiences
+              and operational inefficiencies across the business. Retail teams
+              need a shared view of operations and the ability to act in real
+              time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+    </div>
+
+    <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+    </div>
+
+    <!----- Built Around the Way Retail Operates ----->
+    <section class="lg:py-[90px] sm:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="fade-in lg:mb-10 mb-7 flex items-center gap-5 justify-between flex-nowrap"
+        >
+          <div
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Built Around the Way Retail Operates
+          </div>
+          <div
+            class="flex items-center justify-center gap-[clamp(0.5rem,1.111vw+0.167rem,1rem)]"
+          >
+            <div
+              class="swiper-button-prev swiper-button-prev-nexusCapability after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer"
+            >
+              <img
+                src="assets/image/icon/rightArrowSwiper.svg"
+                alt="Previous slide"
+                width="24"
+                height="24"
+                loading="lazy"
+                class="h-[70%] select-none rotate-180"
+              />
+            </div>
+            <div
+              class="swiper-button-next swiper-button-next-nexusCapability after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer"
+            >
+              <img
+                src="assets/image/icon/rightArrowSwiper.svg"
+                alt="Next slide"
+                width="24"
+                height="24"
+                loading="lazy"
+                class="h-[70%] select-none"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper nexusCapabilitySlider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide !h-auto">
+              <div
+                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col"
+              >
+                <div
+                  class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/artchitecHeightlight-card-setting.svg"
+                    class="h-1/2"
+                    alt="Enterprise POS icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <div
+                    class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                  >
+                    Enterprise POS
+                  </div>
+                  <p
+                    class="text-description font-primary font-normal leading-[150%]"
+                  >
+                    A modern point-of-sale application designed for retail
+                    operations across stores, formats and locations. Available
+                    on Windows, iOS and Android devices with support for both
+                    online and offline transactions, enabling stores to continue
+                    operating even when connectivity is unavailable.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide !h-auto">
+              <div
+                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col"
+              >
+                <div
+                  class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/intelligentCard-icon-3.svg"
+                    class="h-1/2"
+                    alt="Inventory and fulfillment icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <div
+                    class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                  >
+                    Inventory &amp; Fulfillment
+                  </div>
+                  <p
+                    class="text-description font-primary font-normal leading-[150%]"
+                  >
+                    Real-time inventory visibility and coordinated fulfillment
+                    across stores, warehouses and distribution locations.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide !h-auto">
+              <div
+                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col"
+              >
+                <div
+                  class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/artchitecHeightlight-card-interoperabilityScale.svg"
+                    class="h-1/2"
+                    alt="Order management icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <div
+                    class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                  >
+                    Order Management
+                  </div>
+                  <p
+                    class="text-description font-primary font-normal leading-[150%]"
+                  >
+                    Manage orders consistently from purchase through
+                    fulfillment, delivery and returns.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide !h-auto">
+              <div
+                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#F0EBFF] border border-[#f2f2f2] flex flex-col"
+              >
+                <div
+                  class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/intelligentCard-icon-1.svg"
+                    class="h-1/2"
+                    alt="Customer and loyalty icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <div
+                    class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                  >
+                    Customer &amp; Loyalty
+                  </div>
+                  <p
+                    class="text-description font-primary font-normal leading-[150%]"
+                  >
+                    Create connected customer experiences through unified
+                    customer profiles, memberships and loyalty programs.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide !h-auto">
+              <div
+                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#ECF4FF] border border-[#f2f2f2] flex flex-col"
+              >
+                <div
+                  class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/predictive-commerce-icon.svg"
+                    class="h-1/2"
+                    alt="Promotions and pricing icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <div
+                    class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                  >
+                    Promotions &amp; Pricing
+                  </div>
+                  <p
+                    class="text-description font-primary font-normal leading-[150%]"
+                  >
+                    Execute pricing and promotional strategies consistently
+                    across channels and locations.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide !h-auto">
+              <div
+                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col"
+              >
+                <div
+                  class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/moduleCard-productMgmt.svg"
+                    class="h-1/2"
+                    alt="Digital commerce icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <div
+                    class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                  >
+                    Digital Commerce
+                  </div>
+                  <p
+                    class="text-description font-primary font-normal leading-[150%]"
+                  >
+                    Launch branded online storefronts and manage digital
+                    commerce from the same operational foundation used across
+                    the business.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide !h-auto">
+              <div
+                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col"
+              >
+                <div
+                  class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/intelligentCard-icon-2.svg"
+                    class="h-1/2"
+                    alt="Mobile applications icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <div
+                    class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                  >
+                    Mobile Applications
+                  </div>
+                  <p
+                    class="text-description font-primary font-normal leading-[150%]"
+                  >
+                    Purpose-built applications for members, store managers and
+                    business owners, providing access to operational information
+                    and business performance from anywhere.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide !h-auto">
+              <div
+                class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col"
+              >
+                <div
+                  class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/moduleCard-retailPLanning.svg"
+                    class="h-1/2"
+                    alt="Reporting and analytics icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <div
+                    class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                  >
+                    Reporting &amp; Analytics
+                  </div>
+                  <p
+                    class="text-description font-primary font-normal leading-[150%]"
+                  >
+                    Access operational insights across sales, inventory,
+                    customer engagement and business performance.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+    </div>
+
+    <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+    </div>
+
+    <!----- Commerce Intelligence Built Into Operations ----->
+    <section class="lg:py-[90px] sm:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[60px] gap-10 items-start"
+        >
+          <div class="fade-in">
+            <h2
+              class="mb-4 lg:text-[38px] md:text-3xl text-2xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Commerce Intelligence Built Into Operations
+            </h2>
+            <p
+              class="mb-4 text-description font-primary font-normal leading-[150%]"
+            >
+              Nexus combines commerce operations with embedded intelligence,
+              helping teams monitor performance, identify issues and take action
+              from a single environment.
+            </p>
+            <p
+              class="mb-8 text-description font-primary font-normal leading-[150%]"
+            >
+              Users can explore business performance, operational trends and
+              retail activity through dashboards, recommendations and natural
+              language conversations powered by Lumen.
+            </p>
+
+            <div
+              class="p-5 md:p-6 rounded-2xl bg-[#f6f8fb] border border-[#ebebeb]"
+            >
+              <div
+                class="mb-4 text-heading font-primary font-semibold text-base leading-[125%]"
+              >
+                Ask Questions Such As
+              </div>
+              <ul class="flex flex-col gap-3">
+                <li class="flex items-start gap-3">
+                  <div
+                    class="mt-1 min-w-5 w-5 h-5 rounded-full bg-primary/10 grid place-items-center flex-shrink-0"
+                  >
+                    <div class="w-2 h-2 rounded-full bg-primary"></div>
+                  </div>
+                  <span
+                    class="text-description font-primary font-normal leading-[150%]"
+                    >How are sales performing today?</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <div
+                    class="mt-1 min-w-5 w-5 h-5 rounded-full bg-primary/10 grid place-items-center flex-shrink-0"
+                  >
+                    <div class="w-2 h-2 rounded-full bg-primary"></div>
+                  </div>
+                  <span
+                    class="text-description font-primary font-normal leading-[150%]"
+                    >Which stores are below target?</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <div
+                    class="mt-1 min-w-5 w-5 h-5 rounded-full bg-primary/10 grid place-items-center flex-shrink-0"
+                  >
+                    <div class="w-2 h-2 rounded-full bg-primary"></div>
+                  </div>
+                  <span
+                    class="text-description font-primary font-normal leading-[150%]"
+                    >What products are running low on inventory?</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <div
+                    class="mt-1 min-w-5 w-5 h-5 rounded-full bg-primary/10 grid place-items-center flex-shrink-0"
+                  >
+                    <div class="w-2 h-2 rounded-full bg-primary"></div>
+                  </div>
+                  <span
+                    class="text-description font-primary font-normal leading-[150%]"
+                    >Which promotions performed best this month?</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <div
+                    class="mt-1 min-w-5 w-5 h-5 rounded-full bg-primary/10 grid place-items-center flex-shrink-0"
+                  >
+                    <div class="w-2 h-2 rounded-full bg-primary"></div>
+                  </div>
+                  <span
+                    class="text-description font-primary font-normal leading-[150%]"
+                    >What are the top-selling categories this week?</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="fade-in grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-[30px]"
+          >
+            <div
+              class="p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 lg:mb-8 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/target-icon.svg"
+                  class="h-1/2"
+                  alt="Operational visibility icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="mb-2 text-xl text-heading font-primary font-semibold leading-[125%]"
+              >
+                Operational Visibility
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Monitor sales, inventory, customers and fulfillment in real
+                time.
+              </p>
+            </div>
+
+            <div
+              class="p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 lg:mb-8 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/bulb-icon.svg"
+                  class="h-1/2"
+                  alt="Actionable insights icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="mb-2 text-xl text-heading font-primary font-semibold leading-[125%]"
+              >
+                Actionable Insights
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Identify trends, exceptions and operational risks across the
+                business.
+              </p>
+            </div>
+
+            <div
+              class="p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#F0EBFF] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 lg:mb-8 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentAutomation-icon.svg"
+                  class="h-1/2"
+                  alt="Recommended actions icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="mb-2 text-xl text-heading font-primary font-semibold leading-[125%]"
+              >
+                Recommended Actions
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Highlight opportunities that require attention and support
+                faster decision-making.
+              </p>
+            </div>
+
+            <div
+              class="p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 lg:mb-8 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/icon-conversational.svg"
+                  class="h-1/2"
+                  alt="Conversational access icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="mb-2 text-xl text-heading font-primary font-semibold leading-[125%]"
+              >
+                Conversational Access
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Access operational information and business performance through
+                natural language conversations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!----- One Platform for Retail Operations ----->
+    <section class="lg:py-[90px] sm:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in flex justify-center w-full">
+          <img
+            src="assets/image/retail-plateform/artisanscloud-nexus-visual-1.webp"
+            alt="Nexus unified commerce platform overview"
+            class="w-full h-auto mx-auto rounded-2xl"
+            width="full"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+    </div>
+
+    <!----- Why Retailers Choose Nexus ----->
+    <section class="lg:py-[90px] sm:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="fade-in max-w-[860px] mx-auto text-center lg:mb-[60px] mb-10"
+        >
+          <h2
+            class="mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Why Retailers Choose Nexus
+          </h2>
+          <p
+            class="mb-4 text-description font-primary font-normal leading-[150%]"
+          >
+            Retailers often rely on multiple systems to manage stores,
+            inventory, orders, customers and digital channels. Nexus brings
+            these operational functions together within a single platform,
+            helping teams work from a shared view of the business.
+          </p>
+          <p class="text-description font-primary font-normal leading-[150%]">
+            The result is greater visibility, better coordination and more
+            consistent execution across retail operations.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 gap-10 items-start"
+        >
+          <div class="fade-in">
+            <h3
+              class="mb-3 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[125%]"
+            >
+              Designed For Enterprise Retail
+            </h3>
+            <p
+              class="mb-8 text-description font-primary font-normal leading-[150%]"
+            >
+              Nexus is built to support large-scale retail operations across
+              multiple brands, regions and channels.
+            </p>
+            <div class="flex flex-col lg:gap-6 gap-5">
+              <div class="ps-8 relative">
+                <img
+                  src="assets/image/icon/forward-arrow.svg"
+                  class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                  alt=""
+                  width="16"
+                  height="16"
+                  loading="lazy"
+                />
+                <div
+                  class="mb-1.5 text-base text-heading font-semibold font-primary"
+                >
+                  Unified Data Foundation
+                </div>
+                <p
+                  class="text-base text-description font-normal font-primary leading-[150%]"
+                >
+                  A shared operational view across commerce activities.
+                </p>
+              </div>
+              <div class="ps-8 relative">
+                <img
+                  src="assets/image/icon/forward-arrow.svg"
+                  class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                  alt=""
+                  width="16"
+                  height="16"
+                  loading="lazy"
+                />
+                <div
+                  class="mb-1.5 text-base text-heading font-semibold font-primary"
+                >
+                  Modular Architecture
+                </div>
+                <p
+                  class="text-base text-description font-normal font-primary leading-[150%]"
+                >
+                  Deploy capabilities independently and scale as business
+                  requirements evolve.
+                </p>
+              </div>
+              <div class="ps-8 relative">
+                <img
+                  src="assets/image/icon/forward-arrow.svg"
+                  class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                  alt=""
+                  width="16"
+                  height="16"
+                  loading="lazy"
+                />
+                <div
+                  class="mb-1.5 text-base text-heading font-semibold font-primary"
+                >
+                  Open Integration Framework
+                </div>
+                <p
+                  class="text-base text-description font-normal font-primary leading-[150%]"
+                >
+                  Connect with ERP, CRM, finance, logistics and ecosystem
+                  platforms.
+                </p>
+              </div>
+              <div class="ps-8 relative">
+                <img
+                  src="assets/image/icon/forward-arrow.svg"
+                  class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                  alt=""
+                  width="16"
+                  height="16"
+                  loading="lazy"
+                />
+                <div
+                  class="mb-1.5 text-base text-heading font-semibold font-primary"
+                >
+                  Enterprise Security
+                </div>
+                <p
+                  class="text-base text-description font-normal font-primary leading-[150%]"
+                >
+                  Built to support governance, compliance and operational
+                  requirements.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="fade-in">
+            <img
+              src="assets/image/retail-plateform/artisanscloud-why-choose-nexus.webp"
+              alt="Nexus unified retail modules"
+              class="mx-auto w-full lg:mb-8 sm:mb-6 mb-5"
+              width="auto"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+    </div>
+
+    <!----- Designed To Scale with Your Business ----->
+    <section class="lg:py-[90px] sm:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="lg:mb-[50px] sm:mb-9 mb-5 max-w-[860px] w-full mx-auto text-center"
+        >
+          <h2
+            class="fade-in mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Designed To Scale with Your Business
+          </h2>
+          <p
+            class="fade-in font-primary font-normal text-base leading-[150%] text-description"
+          >
+            Whether operating hundreds of stores or serving customers across
+            multiple markets, Nexus is designed to support high transaction
+            volumes and complex retail environments.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-[30px] gap-5"
+        >
+          <div
+            class="fade-in lg:p-6 p-5 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex flex-col lg:gap-4 gap-3 w-full h-full"
+          >
+            <div class="flex items-center lg:gap-4 gap-3">
+              <div
+                class="max-w-12 sm:max-w-14 min-w-12 sm:min-w-14 h-12 sm:h-14 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-interoperabilityScale.svg"
+                  class="h-1/2"
+                  alt="API first architecture icon"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="text-heading font-primary font-semibold lg:text-lg text-base leading-[120%]"
+              >
+                API-First Architecture
+              </div>
+            </div>
+            <p
+              class="text-description font-primary font-normal text-sm lg:text-base leading-[150%] text-center sm:text-left"
+            >
+              Integrate seamlessly with existing enterprise systems.
+            </p>
+          </div>
+
+          <div
+            class="fade-in lg:p-6 p-5 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex flex-col lg:gap-4 gap-3 w-full h-full"
+          >
+            <div class="flex items-center lg:gap-4 gap-3">
+              <div
+                class="max-w-12 sm:max-w-14 min-w-12 sm:min-w-14 h-12 sm:h-14 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/Cloud-hybridDeployments-icon.svg"
+                  class="h-1/2"
+                  alt="Flexible deployment icon"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="text-heading font-primary font-semibold lg:text-lg text-base leading-[120%]"
+              >
+                Flexible Deployment
+              </div>
+            </div>
+            <p
+              class="text-description font-primary font-normal text-sm lg:text-base leading-[150%] text-center sm:text-left"
+            >
+              Cloud, hybrid and on-premise deployment options.
+            </p>
+          </div>
+
+          <div
+            class="fade-in lg:p-6 p-5 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex flex-col lg:gap-4 gap-3 w-full h-full"
+          >
+            <div class="flex items-center lg:gap-4 gap-3">
+              <div
+                class="max-w-12 sm:max-w-14 min-w-12 sm:min-w-14 h-12 sm:h-14 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg"
+                  class="h-1/2"
+                  alt="Native integrations icon"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="text-heading font-primary font-semibold lg:text-lg text-base leading-[120%]"
+              >
+                Native Integrations
+              </div>
+            </div>
+            <p
+              class="text-description font-primary font-normal text-sm lg:text-base leading-[150%] text-center sm:text-left"
+            >
+              Support for leading enterprise and retail platforms.
+            </p>
+          </div>
+
+          <div
+            class="fade-in lg:p-6 p-5 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex flex-col lg:gap-4 gap-3 w-full h-full"
+          >
+            <div class="flex items-center lg:gap-4 gap-3">
+              <div
+                class="max-w-12 sm:max-w-14 min-w-12 sm:min-w-14 h-12 sm:h-14 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-securityCompliance.svg"
+                  class="h-1/2"
+                  alt="Operational resilience icon"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="text-heading font-primary font-semibold lg:text-lg text-base leading-[120%]"
+              >
+                Operational Resilience
+              </div>
+            </div>
+            <p
+              class="text-description font-primary font-normal text-sm lg:text-base leading-[150%] text-center sm:text-left"
+            >
+              Designed for performance, availability and business continuity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+    </div>
+
+    <!----- Operational Impact Across the Enterprise ----->
+    <section class="lg:py-[90px] sm:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <h2
+          class="fade-in lg:mb-[50px] mb-8 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] text-center"
+        >
+          Operational Impact Across the Enterprise
+        </h2>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-[30px] gap-5"
+        >
+          <div
+            class="fade-in p-5 md:p-[30px] rounded-2xl md:rounded-[30px] border border-[#e8e8e8] bg-white flex flex-col"
+          >
+            <div
+              class="mb-5 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb]"
+            >
+              <img
+                src="assets/image/icon/intelligentCard-icon-3.svg"
+                class="h-1/2"
+                alt="Better inventory visibility icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+            >
+              Better Inventory Visibility
+            </div>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              Improve stock availability and reduce uncertainty.
+            </p>
+          </div>
+
+          <div
+            class="fade-in p-5 md:p-[30px] rounded-2xl md:rounded-[30px] border border-[#e8e8e8] bg-white flex flex-col"
+          >
+            <div
+              class="mb-5 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb]"
+            >
+              <img
+                src="assets/image/icon/Predictive-icon.svg"
+                class="h-1/2"
+                alt="Faster decisions icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+            >
+              Faster Decisions
+            </div>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              Access operational information when it is needed.
+            </p>
+          </div>
+
+          <div
+            class="fade-in p-5 md:p-[30px] rounded-2xl md:rounded-[30px] border border-[#e8e8e8] bg-white flex flex-col"
+          >
+            <div
+              class="mb-5 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb]"
+            >
+              <img
+                src="assets/image/icon/artchitecHeightlight-card-interoperabilityScale.svg"
+                class="h-1/2"
+                alt="Improved fulfillment performance icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+            >
+              Improved Fulfillment Performance
+            </div>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              Coordinate inventory and orders more effectively.
+            </p>
+          </div>
+
+          <div
+            class="fade-in p-5 md:p-[30px] rounded-2xl md:rounded-[30px] border border-[#e8e8e8] bg-white flex flex-col"
+          >
+            <div
+              class="mb-5 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb]"
+            >
+              <img
+                src="assets/image/icon/intelligentCard-icon-2.svg"
+                class="h-1/2"
+                alt="Consistent customer experiences icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+            >
+              Consistent Customer Experiences
+            </div>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              Deliver connected experiences across every channel.
+            </p>
+          </div>
+
+          <div
+            class="fade-in p-5 md:p-[30px] rounded-2xl md:rounded-[30px] border border-[#e8e8e8] bg-white flex flex-col"
+          >
+            <div
+              class="mb-5 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb]"
+            >
+              <img
+                src="assets/image/icon/agilityDiscipline-icon.svg"
+                class="h-1/2"
+                alt="Greater operational efficiency icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+            >
+              Greater Operational Efficiency
+            </div>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              Reduce manual effort and disconnected processes.
+            </p>
+          </div>
+
+          <div
+            class="fade-in p-5 md:p-[30px] rounded-2xl md:rounded-[30px] border border-[#e8e8e8] bg-white flex flex-col"
+          >
+            <div
+              class="mb-5 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb]"
+            >
+              <img
+                src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg"
+                class="h-1/2"
+                alt="Enterprise-wide visibility icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="mb-2 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+            >
+              Enterprise-Wide Visibility
+            </div>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              Connect teams through a shared view of operations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+    </div>
+
+    <!----- Connected Across The Retail Ecosystem ----->
+    <section class="lg:py-[50px] sm:py-16 py-10">
+      <div
+        class="lg:mb-[50px] sm:mb-9 mb-5 max-w-[860px] w-full mx-auto text-center"
+      >
+        <h2
+          class="fade-in mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+        >
+          Connected Across the Retail Ecosystem
+        </h2>
+        <p
+          class="fade-in font-primary font-normal text-base leading-[150%] text-description"
+        >
+          Nexus connects the systems, channels, and partners that powers your
+          business, so you can operate with visibility, coordinate with
+          confidence and deliver better experiences.
+        </p>
+      </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in flex justify-center w-full">
+          <img
+            src="assets/image/retail-plateform/artisanscloud-nexus-visual-3.webp"
+            alt="Nexus connected across the retail ecosystem"
+            class="w-full h-auto mx-auto rounded-2xl"
+            width="full"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!----- Supporting Modern Retail Operations ----->
+    <section class="lg:py-[50px] sm:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <h2
+          class="fade-in lg:mb-4 mb-3 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] text-center"
+        >
+          Supporting Modern Retail Operations
+        </h2>
+
+        <div
+          class="flex flex-wrap justify-center gap-5 lg:gap-[30px] mt-8 lg:mt-12"
+        >
+          <div
+            class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col"
+          >
+            <div
+              class="mb-5 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/intelligentCard-icon-2.svg"
+                alt="Omnichannel retail icon"
+                width="40"
+                height="40"
+                loading="lazy"
+                class="h-1/2"
+              />
+            </div>
+            <div
+              class="mb-3 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+            >
+              Omnichannel Retail
+            </div>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              Connect stores, eCommerce, marketplaces and mobile channels.
+            </p>
+          </div>
+
+          <div
+            class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col"
+          >
+            <div
+              class="mb-5 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/moduleCard-retailPLanning.svg"
+                alt="Multi-location retail icon"
+                width="40"
+                height="40"
+                loading="lazy"
+                class="h-1/2"
+              />
+            </div>
+            <div
+              class="mb-3 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+            >
+              Multi-Location Retail
+            </div>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              Manage inventory and operations across regions and locations.
+            </p>
+          </div>
+
+          <div
+            class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#F2EEFF] border border-[#f2f2f2] flex flex-col"
+          >
+            <div
+              class="mb-5 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/artchitecHeightlight-card-interoperabilityScale.svg"
+                alt="Cross-channel fulfillment icon"
+                width="40"
+                height="40"
+                loading="lazy"
+                class="h-1/2"
+              />
+            </div>
+            <div
+              class="mb-3 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+            >
+              Cross-Channel Fulfillment
+            </div>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              Support ship-from-store, pickup and delivery models.
+            </p>
+          </div>
+
+          <div
+            class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#ECF4FF] border border-[#f2f2f2] flex flex-col"
+          >
+            <div
+              class="mb-5 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/moduleCard-productMgmt.svg"
+                alt="Direct-to-consumer commerce icon"
+                width="40"
+                height="40"
+                loading="lazy"
+                class="h-1/2"
+              />
+            </div>
+            <div
+              class="mb-3 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+            >
+              Direct-To-Consumer Commerce
+            </div>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              Launch branded digital experiences on a shared commerce
+              foundation.
+            </p>
+          </div>
+
+          <div
+            class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col"
+          >
+            <div
+              class="mb-5 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/layers-icon.svg"
+                alt="Multi-brand retail operations icon"
+                width="40"
+                height="40"
+                loading="lazy"
+                class="h-1/2"
+              />
+            </div>
+            <div
+              class="mb-3 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+            >
+              Multi-Brand Retail Operations
+            </div>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              Manage multiple brands and business units within a single
+              platform.
+            </p>
+          </div>
+
+          <div
+            class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#FFF8EC] border border-[#f2f2f2] flex flex-col"
+          >
+            <div
+              class="mb-5 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/artchitecHeightlight-card-setting.svg"
+                alt="Composable commerce icon"
+                width="40"
+                height="40"
+                loading="lazy"
+                class="h-1/2"
+              />
+            </div>
+            <div
+              class="mb-3 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+            >
+              Composable Commerce
+            </div>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              Integrate with existing technologies while maintaining operational
+              consistency.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!----- Closing CTA ----->
+    <section
+      class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-16 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url('../../assets/image/CTA-bg-driveSale.png')] bg-no-repeat bg-top-left bg-cover"
+    >
+      <div
+        class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10 text-center"
+      >
+        <h2
+          class="fade-in mb-4 lg:mb-6 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white max-w-[700px] mx-auto"
+        >
+          Transform Retail Operations Through Connected Commerce
+        </h2>
+        <p
+          class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%] max-w-[600px] mx-auto"
+        >
+          Nexus helps retailers connect inventory, orders, customers, stores and
+          digital channels within a single operational platform designed for
+          visibility, coordination and execution.
+        </p>
+        <a
+          href="/request-demo"
+          class="mt-6 mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+          >Request a Demo</a
+        >
+      </div>
+      <img
+        src="assets/image/icon/ctaBanner-shape.png"
+        class="animate-pulse absolute start-0 bottom-0 pointer-none select-none"
+        alt=""
+        width="150"
+        height="150"
+        loading="lazy"
+      />
+      <img
+        src="assets/image/icon/ctaBanner-shape2.png"
+        class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
+        alt=""
+        width="150"
+        height="150"
+        loading="lazy"
+      />
+    </section>
+
+    {{> footer}}
+
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
+
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
+
+    {{> header}}
+
+    <main class="w-full">
+      <!----- Banner Sec ----->
+      <section class="w-full h-full p-4 lg:p-5">
+        <div
+          class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/distributed-order-management/bannerBG.webp')] bg-no-repeat bg-cover"
+        >
+          <div
+            class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24"
+          >
+            <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
+              <div class="text-center mt-7.5">
+                <div
+                  class="mb-3 sm:mb-5 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
+                >
+                  Personalized Customer Experience at Scale
+                </div>
+                <h1
+                  id="heroHeading"
+                  class="mb-3 font-primary text-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%]"
+                >
+                  Make Every Customer Feel <br />
+                  Like Your Only Customer
+                </h1>
+              </div>
+              <div
+                id="heroDec"
+                class="flex flex-col items-center mb-7.5 lg:mb-12"
+              >
+                <p
+                  class="mb-3 text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                >
+                  Every customer has different preferences, shopping habits, and
+                  interests. Yet many retailers still deliver the same
+                  experience to everyone.
+                </p>
+                <p
+                  class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                >
+                  Multi-agent AI helps retailers personalize interactions,
+                  recommendations, promotions, and communications for every
+                  shopper, automatically and at scale.
+                </p>
+                <a
+                  href="/request-demo"
+                  class="lg:mt-[25px] mt-4 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >
+                  Request a Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 1: Why One-Size-Fits-All Experiences No Longer Work ----->
+      <section class="lg:pt-[100px] lg:pb-10 md:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
+            <div
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Why One-Size-Fits-All Experiences No Longer Work
+            </div>
+            <div>
+              <p
+                class="lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                Today's customers expect brands to understand their preferences
+                and provide relevant experiences.
+              </p>
+              <p
+                class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                However, personalizing experiences for thousands&mdash;or even
+                millions&mdash;of customers manually is nearly impossible.
+              </p>
+              <p
+                class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                Common challenges include
+              </p>
+              <ul class="mt-4 ps-5">
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Sending the same promotions to every customer
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Showing identical product recommendations to all shoppers
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Missing opportunities to engage customers individually
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Struggling to personalize across multiple channels
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Limited time and resources to create targeted experiences
+                </li>
+              </ul>
+              <p
+                class="mt-5 lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                When customers receive generic experiences,
+                <strong class="text-heading"
+                  >engagement drops and loyalty becomes harder to build.</strong
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Section 2: A Smarter Way to Personalize Every Customer Journey ----->
+      <section class="lg:py-[100px] sm:py-16 py-10 bg-[#f6f8fb]">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="text-center mb-8 lg:mb-10">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              A Smarter Way to Personalize Every Customer Journey
+            </h2>
+            <p
+              class="text-description font-primary font-normal leading-[150%] max-w-[800px] mx-auto text-lg"
+            >
+              Multi-agent AI works like a team of intelligent assistants, each
+              specializing in a different part of the customer experience.
+            </p>
+            <p
+              class="mt-4 text-description font-primary font-normal leading-[150%] max-w-[800px] mx-auto"
+            >
+              Together, these AI agents continuously analyze customer behavior
+              and coordinate actions to create highly personalized experiences.
+            </p>
+          </div>
+
+          <div
+            class="mb-6 lg:mb-8 text-heading font-primary font-semibold text-xl text-center"
+          >
+            With Multi-Agent AI, you can
+          </div>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 max-w-[900px] mx-auto"
+          >
+            <div
+              class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="mt-1 min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p
+                  class="font-primary font-semibold text-heading text-base mb-1"
+                >
+                  Recommend products based on individual interests
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="mt-1 min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p
+                  class="font-primary font-semibold text-heading text-base mb-1"
+                >
+                  Deliver personalized promotions and offers
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="mt-1 min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p
+                  class="font-primary font-semibold text-heading text-base mb-1"
+                >
+                  Send messages at the optimal time
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="mt-1 min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p
+                  class="font-primary font-semibold text-heading text-base mb-1"
+                >
+                  Choose the most effective communication channel
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="mt-1 min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p
+                  class="font-primary font-semibold text-heading text-base mb-1"
+                >
+                  Adapt experiences based on browsing and purchase behavior
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300"
+            >
+              <div
+                class="mt-1 min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p
+                  class="font-primary font-semibold text-heading text-base mb-1"
+                >
+                  Create unique customer journeys automatically
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#e5e7eb] hover:shadow-md transition-shadow duration-300 md:col-span-2 mx-auto w-full md:w-[calc(50%-0.75rem)]"
+            >
+              <div
+                class="mt-1 min-w-8 max-w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6666 5.83337L7.49992 15L3.33325 10.8334"
+                    stroke="#8D68F6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p
+                  class="font-primary font-semibold text-heading text-base mb-1"
+                >
+                  Scale personalization across millions of customers
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10 lg:mt-14 text-center">
+            <p
+              class="text-description font-primary font-normal leading-[150%] text-lg bg-white inline-block px-8 py-4 rounded-full border border-[#e5e7eb] shadow-sm"
+            >
+              <strong class="text-heading font-semibold">In short:</strong> AI
+              helps retailers deliver
+              <strong class="text-heading font-semibold"
+                >the right experience, to the right customer, at the right
+                time.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 3: Benefits for Retailers ----->
+      <section class="lg:py-[90px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              Benefits for Retailers
+            </h2>
+          </div>
+
+          <div
+            class="fade-in grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-[30px]"
+          >
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/customer-copilots-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Stronger customer relationships icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Builds stronger customer relationships
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/target-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Engagement and loyalty icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Increases engagement and loyalty
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/predictive-commerce-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Conversions and sales icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Boosts conversions and sales
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-1.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Customer satisfaction icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Improves customer satisfaction
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#fff9ed] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/vision-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Cross-sell and upsell icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Enhances cross-sell and upsell opportunities
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#f0f9f4] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/moduleCard-productMgmt.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Personalize without manual effort icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Personalizes experiences without additional manual effort
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Section 4: Personalized Experiences in Action ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-8 lg:mb-[60px]">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Personalized Experiences in Action
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-5">
+            <!-- Example 1: Personalized Product Promotions -->
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/customer-copilots-icon.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Personalized Product Promotions"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Personalized Product Promotions
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  One customer frequently browses and purchases sneakers, while another prefers formal shoes. Multi-agent AI identifies these preferences and automatically sends a weekend sneaker promotion to the first customer and shares new formal collection arrivals with the second customer. Each customer receives content relevant to their interests.
+                </p>
+              </div>
+            </div>
+
+            <!-- Example 2: Channel Preference Optimization -->
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/intelligentAutomation-icon.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Channel Preference Optimization"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Channel Preference Optimization
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  A customer regularly opens mobile app notifications but rarely checks email. AI automatically prioritizes app notifications to maximize engagement.
+                </p>
+              </div>
+            </div>
+
+            <!-- Example 3: Personalized Offers -->
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/layers-icon.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Personalized Offers"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Personalized Offers
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  A loyalty member frequently purchases skincare products. AI predicts when they may need a refill and sends a personalized discount at the right moment.
+                </p>
+              </div>
+            </div>
+
+            <!-- Example 4: Location-Based Experiences -->
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/Predictive-icon.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Location-Based Experiences"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Location-Based Experiences
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Customers in colder regions receive recommendations for winter apparel, while customers in warmer climates see seasonal products better suited to their location.
+                </p>
+              </div>
+            </div>
+
+            <!-- Example 5: Re-Engaging Inactive Customers -->
+            <div
+              class="fade-in md:col-span-2 mx-auto w-full md:w-[calc(50%-0.75rem)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#F2EEFF] border border-[#f2f2f2] flex flex-col"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Re-Engaging Inactive Customers"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Re-Engaging Inactive Customers
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  A customer who hasn&rsquo;t purchased in several months receives a tailored offer featuring products similar to their previous purchases. AI automatically adjusts the message, timing, and channel to increase the likelihood of re-engagement.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 5: How Multi-Agent AI Makes Personalization Possible ----->
+      <section
+        class="max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]"
+      >
+        <div
+          class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-8">
+            <div class="fade-in">
+              <h2
+                class="lg:mb-8 mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+              >
+                How Multi-Agent AI Makes Personalization Possible
+              </h2>
+              <p
+                class="lg:mb-5 mb-4 text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]"
+              >
+                Unlike traditional systems that rely on simple rules,
+                Multi-Agent AI uses multiple specialized AI agents that work
+                together.
+              </p>
+              <div
+                class="mt-8 lg:mt-12 p-6 rounded-2xl bg-white/5 border border-white/10 lg:max-w-[490px]"
+              >
+                <p
+                  class="text-white/80 font-primary font-normal leading-[150%]"
+                >
+                  Each agent contributes its expertise, creating a
+                  <strong class="text-white font-semibold"
+                    >coordinated and highly personalized customer
+                    experience.</strong
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="fade-in">
+              <p
+                class="lg:mb-8 mb-5 text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]"
+              >
+                These agents may focus on
+              </p>
+              <ul class="flex flex-col lg:gap-7 gap-6">
+                <li class="ps-5 border-s-4 border-primary">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Product recommendations
+                  </div>
+                </li>
+                <li class="ps-5 border-s-4 border-sky">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Promotions and discounts
+                  </div>
+                </li>
+                <li class="ps-5 border-s-4 border-pink">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Customer segmentation
+                  </div>
+                </li>
+                <li class="ps-5 border-s-4 border-sky-2">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Communication timing
+                  </div>
+                </li>
+                <li class="ps-5 border-s-4 border-grey">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Channel selection
+                  </div>
+                </li>
+                <li class="ps-5 border-s-4 border-primary">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Customer behavior analysis
+                  </div>
+                </li>
+                <li class="ps-5 border-s-4 border-sky">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Loyalty and retention strategies
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <img
+          src="assets/image/icon/strategicOutcomeBanner-shape-1.svg"
+          class="absolute select-none pointer-events-none start-0 bottom-0"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <img
+          src="assets/image/icon/strategicOutcomeBanner-shape-2.svg"
+          class="absolute select-none pointer-events-none end-0 top-0"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+      </section>
+
+      <!----- Section 6: Where Personalized Customer Experiences Deliver Value ----->
+      <section class="lg:py-[90px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <h2
+            class="fade-in mb-10 md:mb-16 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] text-center"
+          >
+            Where Personalized Customer Experiences Deliver Value
+          </h2>
+
+          <div
+            class="fade-in grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5"
+          >
+            <div
+              class="lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4"
+            >
+              <div
+                class="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 grid place-items-center rounded-[10px] bg-light-pink"
+              >
+                <img
+                  src="assets/image/icon/Cloud-hybridDeployments-icon.svg"
+                  class="h-1/2"
+                  alt="E-commerce platforms icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div class="my-auto">
+                <div
+                  class="mb-1 text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[110%]"
+                >
+                  E-commerce platforms
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4"
+            >
+              <div
+                class="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 grid place-items-center rounded-[10px] bg-light-green-box"
+              >
+                <img
+                  src="assets/image/icon/customer-copilots-icon.svg"
+                  class="h-1/2"
+                  alt="Fashion and apparel retailers icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div class="my-auto">
+                <div
+                  class="mb-1 text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[110%]"
+                >
+                  Fashion and apparel retailers
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4"
+            >
+              <div
+                class="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 grid place-items-center rounded-[10px] bg-light-purple"
+              >
+                <img
+                  src="assets/image/icon/vision-icon.svg"
+                  class="h-1/2"
+                  alt="Grocery and supermarket chains icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div class="my-auto">
+                <div
+                  class="mb-1 text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[110%]"
+                >
+                  Grocery and supermarket chains
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4"
+            >
+              <div
+                class="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 grid place-items-center rounded-[10px] bg-light-blue-box"
+              >
+                <img
+                  src="assets/image/icon/moduleCard-productMgmt.svg"
+                  class="h-1/2"
+                  alt="Beauty and skincare brands icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div class="my-auto">
+                <div
+                  class="mb-1 text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[110%]"
+                >
+                  Beauty and skincare brands
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4"
+            >
+              <div
+                class="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 grid place-items-center rounded-[10px] bg-light-sky"
+              >
+                <img
+                  src="assets/image/icon/layers-icon.svg"
+                  class="h-1/2"
+                  alt="Loyalty and membership programs icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div class="my-auto">
+                <div
+                  class="mb-1 text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[110%]"
+                >
+                  Loyalty and membership programs
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4"
+            >
+              <div
+                class="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 grid place-items-center rounded-[10px] bg-[#fff9ed]"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-1.svg"
+                  class="h-1/2"
+                  alt="Omnichannel retail businesses icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div class="my-auto">
+                <div
+                  class="mb-1 text-xl sm:text-[22px] text-heading font-primary font-semibold leading-[110%]"
+                >
+                  Omnichannel retail businesses
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 7: Bottom CTA ----->
+      <section
+        class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-buildTogether-BG.webp)] bg-no-repeat bg-top-left bg-cover"
+      >
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+          <div class="fade-in lg:max-w-[800px] mx-auto w-full text-center">
+            <div
+              class="lg:mb-[30px] mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+            >
+              The right Personalized Customer Experience solution
+            </div>
+            <p
+              class="mb-4 text-white/80 font-primary font-normal leading-[150%]"
+            >
+              combines intelligent recommendations, personalized promotions,
+              optimal timing, and channel selection to create unique journeys
+              for every shopper. With Multi-Agent AI, retailers can build
+              stronger relationships, increase loyalty, and drive more
+              conversions&mdash;at any scale.
+            </p>
+            <p class="text-white/80 font-primary font-normal leading-[150%]">
+              Ready to deliver truly personalized experiences to every customer?
+            </p>
+            <div
+              class="lg:mt-11 mt-8 flex items-center flex-wrap gap-2.5 justify-center"
+            >
+              <a
+                href="/contact-us"
+                class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >Contact Us</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <img
+          src="assets/image/icon/CTA-buildTogether-shape1.svg"
+          class="animate-pulse absolute -top-[10%] start-0 pointer-none select-none"
+          alt="Decorative shape"
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <img
+          src="assets/image/icon/CTA-buildTogether-shape2.svg"
+          class="animate-pulse hidden md:block absolute top-0 -end-[10%] pointer-none select-none"
+          alt="Decorative shape"
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+      </section>
+
+      <!----- Section 8: Ready to Personalize Every Customer Interaction? ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div
+            class="fade-in grid lg:grid-cols-1 gap-8 lg:gap-[66px] items-center text-center"
+          >
+            <div>
+              <h2
+                class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Ready to Personalize Every<br class="hidden lg:block" />
+                Customer Interaction?
+              </h2>
+              <p
+                class="text-description font-primary font-normal leading-[150%] max-w-[700px] mx-auto"
+              >
+                Customers are more likely to engage with brands that understand
+                their needs and preferences. Multi-agent AI helps retailers
+                create meaningful, personalized experiences at a scale that
+                would be impossible manually.
+              </p>
+              <div class="mt-5 lg:mt-10 flex flex-wrap gap-3 justify-center">
+                <a
+                  href="/request-demo"
+                  class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >
+                  Request a Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {{> footer}}
+
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
+</html>

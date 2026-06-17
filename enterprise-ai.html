@@ -1,418 +1,814 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <title>Enterprise AI | Artisans Cloud</title>
-    <link rel="canonical" href="https://www.artisanscloud.com/enterprise-ai" />
-    <meta name="description"
-        content="Discover how Artisans Cloud empowers enterprises with Artificial Intelligence. Automate decision-making, optimize operations, and build intelligent, adaptive systems with cognitive automation and generative AI.">
-    <meta name="keywords"
-        content="Artificial Intelligence, Enterprise AI, Cognitive Automation, Generative AI, AI Solutions, Business Intelligence, Autonomous Agents, Predictive Analytics, Conversational AI, Artisans Cloud">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:url" content="https://artisanscloud.com/enterprise-ai">
-    <meta property="og:title" content="Artificial Intelligence Solutions | Artisans Cloud">
-    <meta property="og:description"
-        content="Explore how Artisans Cloud transforms enterprise AI from strategy to production. Build intelligent systems that accelerate business performance and deliver measurable ROI.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/enterprise-ai.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <!-- Font Family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="./assets/style/output.css">
-</head>
-<body>
-    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
-
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
 
     {{> header}}
 
-
     <!----- Banner Sec ----->
     <section class="w-full h-full p-4 lg:p-5">
-        <div
-            class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] flex items-center justify-center h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/enterprise-ai/enterprise-ai-bannerBG.webp')] bg-no-repeat bg-cover">
-            <div class="pt-5 md:pt-8 pb-8 md:pb-10 w-full  ">
-                <div class="fade-in max-w-[1400px] w-full mx-auto">
-                    <div class="fade-in flex flex-col lg:flex-row justify-center w-full">
-                        <div class="flex lg:flex-col justify-between gap-x-4 w-full lg:w-fit lg:me-4  mb-5 lg:mb-0 ">
-                            <div class="w-fit h-fit md:mt-[32px] lg:ms-auto my-auto lg:my-0 ">
-                                <img src="/assets/image/enterprise-ai/enterprise-ai-subg-1.webp" alt="AI-powered automation visualization" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                            <div class="w-fit h-fit lg:ms-auto hidden lg:block">
-                                <img src="/assets/image/enterprise-ai/enterprise-ai-subg-3.webp" alt="Enterprise intelligence dashboard" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                            <div class="w-fit h-fit lg:ms-auto block lg:hidden">
-                                <img src="/assets/image/enterprise-ai/enterprise-ai-subg-2.webp" alt="Cognitive automation in action" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                        </div>
-                        <div class="max-w-fit mx-auto lg:mx-0">
-                            <div class="text-center w-full lg:w-auto lg:mt-[48px] mb-5">
-                                <div class="mb-3 sm:mb-6 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
-                                    id="heroHeading">AI Engineered for Enterprise Execution</div>
-                                <h1 class="font-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] lg:leading-[61px]"
-                                    id="heroDec"><span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]">Cognitive Automation</span><br> Engineering
-                                    Intelligence <br> That Performs</h1>
-                            </div>
-                            <div id="heroDec" class="w-full lg:w-auto">
-                                <p
-                                    class="text-[clamp(14px,1.3vw,18px)] mx-auto px-2.5 lg:px-0 max-w-[613px] text-center text-description font-primary font-normal leading-[150%]">
-                                    At Artisans Cloud, we transform AI strategy into enterprise reality. We architect and
-                                    deploy production-ready intelligence that accelerates decisions, automates
-                                    complexity, and delivers measurable, sustainable business value.</p>
-                                <a href="/contact-us"
-                                    class="mt-7 mx-auto w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">
-                                    Build Intelligent Enterprise
-                                </a>
-                            </div>
-                        </div>
-                        <div class="flex lg:flex-col justify-between w-full gap-x-4 lg:w-fit lg:ms-4 mt-5 lg:mt-0">
-                            <div class="w-fit h-fit lg:me-auto hidden lg:block ">
-                                <img src="/assets/image/enterprise-ai/enterprise-ai-subg-2.webp" alt="Cognitive automation in action" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                            <div class="w-fit h-fit lg:me-auto lg:hidden">
-                                <img src="/assets/image/enterprise-ai/enterprise-ai-subg-3.webp" alt="Enterprise intelligence dashboard" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                            <div class="w-fit h-fit mb-[14px] lg:me-auto my-auto lg:my-0  ">
-                                <img src="/assets/image/enterprise-ai/enterprise-ai-subg-4.webp" alt="AI-driven decision making system" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                        </div>
-                    </div>
+      <div
+        class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] flex items-center justify-center h-full rounded-2xl px-3 overflow-hidden bg-[url('../image/enterprise-ai/enterprise-ai-bannerBG.webp')] bg-no-repeat bg-cover"
+      >
+        <div class="pt-5 lg:pt-[64px] pb-[40px] lg:pb-[65px] w-full">
+          <div class="fade-in max-w-[1400px] w-full mx-auto my-auto">
+            <div
+              class="fade-in flex flex-col lg:flex-row justify-center w-full"
+            >
+              <div
+                class="flex lg:flex-col items-center lg:items-start justify-between gap-2 w-full lg:w-fit mb-5 lg:mb-0"
+              >
+                <div
+                  class="flex items-center gap-2 lg:gap-3 flex-1 min-w-0 lg:flex-none lg:w-fit md:ms-[clamp(12px,5.7vw,20px)] bg-white/40 backdrop-blur-md border border-white/50 rounded-2xl shadow-sm px-3 py-1.5 lg:px-5 lg:py-2.5"
+                >
+                  <img
+                    src="assets/image/enterprise-ai/artisanscloud-workflow-readiness.webp"
+                    alt="Workforce Readiness"
+                    class="w-8 h-8 sm:w-10 sm:h-10 lg:w-[46px] lg:h-[46px] object-contain flex-shrink-0"
+                  />
+                  <span
+                    class="font-primary font-semibold text-heading text-[12px] sm:text-[13px] lg:text-[15px] leading-tight lg:whitespace-nowrap"
+                    >Workforce Readiness</span
+                  >
                 </div>
+
+                <div
+                  class="hidden lg:flex items-center gap-2 lg:gap-3 w-fit h-fit md:ms-[clamp(12px,2.7vw,95px)] mb-2 bg-white/40 backdrop-blur-md border border-white/50 rounded-2xl shadow-sm px-3 py-1.5 lg:px-5 lg:py-2.5"
+                >
+                  <img
+                    src="assets/image/enterprise-ai/artisanscloud-enterprice-knowledge.webp"
+                    alt="Enterprise Knowledge"
+                    class="w-8 h-8 sm:w-10 sm:h-10 lg:w-[46px] lg:h-[46px] object-contain"
+                  />
+                  <span
+                    class="font-primary font-semibold text-heading text-[12px] sm:text-[13px] lg:text-[15px] leading-tight whitespace-nowrap"
+                    >Enterprise Knowledge</span
+                  >
+                </div>
+                <div
+                  class="flex lg:hidden items-center gap-2 flex-1 min-w-0 md:me-[clamp(12px,2.7vw,66px)] bg-white/40 backdrop-blur-md border border-white/50 rounded-2xl shadow-sm px-3 py-1.5 lg:px-5 lg:py-2.5"
+                >
+                  <img
+                    src="assets/image/enterprise-ai/artisanscloud-ai-agents-automation.webp"
+                    alt="AI Agents & Automation"
+                    class="w-8 h-8 sm:w-10 sm:h-10 lg:w-[46px] lg:h-[46px] object-contain flex-shrink-0"
+                  />
+                  <span
+                    class="font-primary font-semibold text-heading text-[12px] sm:text-[13px] lg:text-[15px] leading-tight"
+                    >AI Agents & Automation</span
+                  >
+                </div>
+              </div>
+
+              <div class="max-w-fit mx-auto lg:mx-0">
+                <div class="text-center mt-7.5 lg:mt-[40px]">
+                  <div
+                    class="mb-3 sm:mb-5 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
+                  >
+                    Enterprise AI
+                  </div>
+                  <h1
+                    class="mb-3 font-primary text-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] md:text-nowrap"
+                    id="heroHeading"
+                  >
+                    Enterprise AI Systems for<br class="hidden sm:block" />
+                    Modern Enterprise Operations
+                  </h1>
+                </div>
+                <div
+                  id="heroDec"
+                  class="flex flex-col items-center mb-7.5 lg:mb-12 w-full lg:w-auto"
+                >
+                  <p
+                    class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%] mb-3"
+                  >
+                    Purpose-built solutions that help organizations improve
+                    workforce readiness, enterprise knowledge and operational
+                    decision support.
+                  </p>
+                  <p
+                    class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                  >
+                    Designed for enterprises that need practical systems to
+                    support how work is learned, knowledge is shared and
+                    decisions are executed.
+                  </p>
+                  <a
+                    href="/request-demo"
+                    class="lg:mt-[25px] mt-4 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 bg-primary text-white hover:bg-primary-light"
+                  >
+                    Request a Demo
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="flex lg:flex-col items-center lg:items-end justify-between w-full gap-2 lg:w-fit mt-5 lg:mt-0"
+              >
+                <div
+                  class="hidden lg:flex items-center gap-2 lg:gap-3 w-fit h-fit md:me-[clamp(12px,2.7vw,66px)] bg-white/40 backdrop-blur-md border border-white/50 rounded-2xl shadow-sm px-3 py-1.5 lg:px-5 lg:py-2.5"
+                >
+                  <img
+                    src="assets/image/enterprise-ai/artisanscloud-ai-agents-automation.webp"
+                    alt="AI Agents & Automation"
+                    class="w-8 h-8 sm:w-10 sm:h-10 lg:w-[46px] lg:h-[46px] object-contain"
+                  />
+                  <span
+                    class="font-primary font-semibold text-heading text-[12px] sm:text-[13px] lg:text-[15px] leading-tight whitespace-nowrap"
+                    >AI Agents & Automation</span
+                  >
+                </div>
+                <div
+                  class="flex lg:hidden items-center gap-2 flex-1 min-w-0 md:ms-[clamp(12px,2.7vw,95px)] bg-white/40 backdrop-blur-md border border-white/50 rounded-2xl shadow-sm px-3 py-1.5 lg:px-5 lg:py-2.5"
+                >
+                  <img
+                    src="assets/image/enterprise-ai/artisanscloud-enterprice-knowledge.webp"
+                    alt="Enterprise Knowledge"
+                    class="w-8 h-8 sm:w-10 sm:h-10 lg:w-[46px] lg:h-[46px] object-contain flex-shrink-0"
+                  />
+                  <span
+                    class="font-primary font-semibold text-heading text-[12px] sm:text-[13px] lg:text-[15px] leading-tight"
+                    >Enterprise Knowledge</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-2 lg:gap-3 flex-1 min-w-0 lg:flex-none lg:w-fit md:me-[clamp(12px,2.7vw,89px)] bg-white/40 backdrop-blur-md border border-white/50 rounded-2xl shadow-sm px-3 py-1.5 lg:px-5 lg:py-2.5"
+                >
+                  <img
+                    src="assets/image/enterprise-ai/artisanscloud-decision-intelligence.webp"
+                    alt="Decision Intelligence"
+                    class="w-8 h-8 sm:w-10 sm:h-10 lg:w-[46px] lg:h-[46px] object-contain flex-shrink-0"
+                  />
+                  <span
+                    class="font-primary font-semibold text-heading text-[12px] sm:text-[13px] lg:text-[15px] leading-tight lg:whitespace-nowrap"
+                    >Decision Intelligence</span
+                  >
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!----- End Banner Sec ----->
 
-
-    <!----- Banner Big Image Sec ----->
-    <div
-        class="fade-in relative z-[2] mx-auto mt-7.5 md:mt-20 w-[80%] max-w-[1264px] p-[clamp(0.625rem,2.778vw-0.208rem,1.875rem)] rounded-[20px] border sm:border-[3px] border-[#F3F3F3] bg-white/25 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[40%] after:bg-gradient-to-b after:from-transparent after:to-white after:pointer-events-none after:select-none overflow-hidden">
-        <img src="assets/image/enterprise-ai/enterpriseAi-banner.webp" alt="Enterprise AI platform dashboard showcasing cognitive automation capabilities" width="1200" height="600" loading="lazy"
-            class="h-full w-full object-cover object-top rounded-[10px] border border-white" />
-    </div>
-    <!----- End Banner Big Image Sec ----->
-
-
-    <!----- Our Approach Sec ----->
-    <section class="py-10 md:py-20">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="text-center">
-                <h2 class="fade-in lg:mb-5 mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Our Approach</h2>
-                <h2 class="fade-in mb-2.5 text-heading font-primary font-semibold text-xl leading-[125%]">From Strategy to Production - Operationalizing Enterprise AI</h2>
-                <div class="fade-in max-w-[880px] w-full mx-auto">
-                    <p class="lg:mb-5 mb-4 text-description font-primary font-normal leading-[150%]">We help enterprises move beyond AI experimentation to proven execution. We work from concept to global deployment, building adaptive, secure and outcome-driven systems that integrate seamlessly with your enterprise architecture. Our solutions are engineered for clarity, velocity and sustained value ensuring AI enhances performance and decision confidence across every function.</p>
-                    <h2 class="mb-2.5 text-heading font-primary font-semibold text-xl leading-[125%]">Core Pillars of Enterprise Intelligence</h2>
-                    <p class="text-description font-primary font-normal leading-[150%]">Our solutions augment human capability, simplify complexity, and drive enterprise automation at scale.</p>
-                </div>
-            </div>
-
-            <div class="mt-5 mt-10 lg:mt-[50px] grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
-                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Cognitive automation icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Cognitive Automation</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">AI that blends logic, context, and learning to automate strategic, high-value workflows.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/artchitecHeightlight-card-congitiveIntelligent.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Autonomous agents icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Autonomous Agents</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Systems capable of planning, reasoning, and executing complex, end-to-end business processes independently.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/artchitecHeightlight-card-setting.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Foresight-driven intelligence icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Foresight-Driven Intelligence</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Predictive and prescriptive analytics that anticipate shifts, optimize resources, and power proactive decision-making.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/artchitecHeightlight-card-interoperabilityScale.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Generative enterprise AI icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Generative Enterprise AI</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Secure, domain-trained models that generate actionable insights, documentation, and recommendations without data risk.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/artchitecHeightlight-card-securityCompliance.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Conversational intelligence icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Conversational Intelligence</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Natural-language interfaces that allow teams to interact with enterprise data and systems as effortlessly as a conversation.</p>
-                    </div>
-                </div>
-            </div>
+    <!----- Enterprise AI for Real-World Operations Sec ----->
+    <section class="py-5 md:py-20">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in text-center max-w-[820px] mx-auto">
+          <h2
+            class="lg:mb-5 mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Enterprise AI for Real-World Operations
+          </h2>
+          <p
+            class="lg:mb-4 mb-3 text-description font-primary font-normal leading-[150%]"
+          >
+            As organizations grow, information becomes distributed across
+            systems, teams and business functions. Knowledge becomes harder to
+            access, workforce readiness becomes more difficult to maintain and
+            decisions increasingly depend on timely access to the right
+            information.
+          </p>
+          <p
+            class="lg:mb-4 mb-3 text-description font-primary font-normal leading-[150%]"
+          >
+            Organizations need practical systems that help employees learn
+            faster, access relevant knowledge and make informed decisions within
+            the context of everyday work.
+          </p>
+          <p class="text-description font-primary font-normal leading-[150%]">
+            Our Enterprise AI solutions address these challenges through a
+            portfolio of purpose-built products that support workforce
+            readiness, enterprise knowledge and decision-making.
+          </p>
         </div>
+      </div>
     </section>
-    <!----- End Our Approach Sec ----->
-
 
     <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
 
-
-    <!----- Strategic Partnership Sec ----->
-    <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-5">
-                <div class="lg:pe-10 lg:pt-[22px]">
-                    <div class="fade-in lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] lg:mb-10 mb-5">Strategic Partnership</div>
-                    <div class="mb-3 lg:mb-[15px] text-heading font-primary font-semibold text-xl leading-[125%]">Accelerating Velocity Through Strategic Collaboration</div>
-                    <p class="text-description font-primary font-normal leading-[150%]">We works within a powerful ecosystem of partners including Dify, the no-code agentic AI framework to accelerate enterprise transformation. Our approach merges the agility of partner ecosystems with the precision of our enterprise-grade engineering, ensuring rapid, secure, and scalable AI adoption.</p>
-                </div>
-                <div class="">
-                    <img src="assets/image/enterprise-ai/ai-use-cases.png" alt="Strategic partnership ecosystem diagram showing collaboration with AI frameworks" width="600" height="400" loading="lazy" class="max-w-full h-auto mx-auto lg:mx-0">
-                </div>
-            </div>
+    <!------ Enterprise AI Products Sec ------>
+    <section class="lg:py-[80px] sm:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in mb-8 md:mb-10 lg:mb-[50px] text-center">
+          <h2
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Enterprise AI Products
+          </h2>
         </div>
-    </section>
-    <!----- End Strategic Partnership Sec ----->
 
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6">
+          <!-- Arena Card -->
+          <div
+            class="fade-in p-5 md:p-6 border border-[#f2f2f2] rounded-2xl bg-white flex flex-col h-full"
+          >
+            <div class="flex gap-4 items-start mb-4">
+              <img
+                src="assets/image/homepage/artisanscloud-arena.webp"
+                alt="Arena icon"
+                class="w-8 h-8 object-contain flex-shrink-0 mt-0.5"
+              />
+              <div>
+                <h3
+                  class="text-heading font-primary font-bold text-lg md:text-[19px] leading-[120%]"
+                >
+                  Arena
+                </h3>
+                <div
+                  class="text-[#ea580c] font-primary font-semibold text-sm md:text-[14px] mt-0.5"
+                >
+                  Workforce Readiness Through Role-Play and Simulation
+                </div>
+              </div>
+            </div>
+            <p
+              class="text-description font-primary font-normal leading-[150%] text-sm mb-3"
+            >
+              Arena enables organizations to prepare employees for customer
+              interactions, operational scenarios and role-specific
+              responsibilities through simulation-based learning experiences.
+            </p>
+            <p
+              class="text-description font-primary font-normal leading-[150%] text-sm mb-4"
+            >
+              From onboarding and workforce readiness to customer engagement and
+              leadership development, Arena helps teams build confidence,
+              consistency and preparedness before live execution.
+            </p>
+            <ul class="ps-0 mb-5 flex flex-col gap-2 flex-1">
+              <li class="flex items-start gap-2">
+                <svg
+                  class="flex-shrink-0 mt-0.5 text-[#ea580c]"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                  >Role-based simulation and practice</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="flex-shrink-0 mt-0.5 text-[#ea580c]"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                  >Scenario-driven learning experiences</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="flex-shrink-0 mt-0.5 text-[#ea580c]"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                  >Workforce onboarding and readiness</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="flex-shrink-0 mt-0.5 text-[#ea580c]"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                  >Performance assessment and feedback</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="flex-shrink-0 mt-0.5 text-[#ea580c]"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                  >Customer service and sales enablement</span
+                >
+              </li>
+            </ul>
+            <a
+              href="/role-play-agent"
+              class="mt-auto ms-auto w-fit rounded-[40px] px-6 py-3 flex items-center justify-center text-center font-primary font-bold text-sm relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 border border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white"
+            >
+              Explore Arena
+            </a>
+          </div>
+
+          <!-- Vault Card -->
+          <div
+            class="fade-in p-5 md:p-6 border border-[#f2f2f2] rounded-2xl bg-white flex flex-col h-full"
+          >
+            <div class="flex gap-4 items-start mb-4">
+              <img
+                src="assets/image/homepage/artisanscloud-valut.webp"
+                alt="Vault icon"
+                class="w-8 h-8 object-contain flex-shrink-0 mt-0.5"
+              />
+              <div>
+                <h3
+                  class="text-heading font-primary font-bold text-lg md:text-[19px] leading-[120%]"
+                >
+                  Vault
+                </h3>
+                <div
+                  class="text-[#059669] font-primary font-semibold text-sm md:text-[14px] mt-0.5"
+                >
+                  Knowledge Intelligence for the Enterprise
+                </div>
+              </div>
+            </div>
+            <p
+              class="text-description font-primary font-normal leading-[150%] text-sm mb-3"
+            >
+              Critical enterprise knowledge often resides across documents,
+              systems and individual expertise. Vault helps organizations
+              capture, organize and activate institutional knowledge so it
+              remains accessible and usable across the enterprise.
+            </p>
+            <p
+              class="text-description font-primary font-normal leading-[150%] text-sm mb-4"
+            >
+              Designed for knowledge-intensive environments, Vault provides a
+              structured foundation for knowledge discovery, continuity and
+              organizational learning.
+            </p>
+            <ul class="ps-0 mb-5 flex flex-col gap-2 flex-1">
+              <li class="flex items-start gap-2">
+                <svg
+                  class="flex-shrink-0 mt-0.5 text-[#059669]"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                  >Enterprise knowledge capture</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="flex-shrink-0 mt-0.5 text-[#059669]"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                  >Enterprise knowledge Graph</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="flex-shrink-0 mt-0.5 text-[#059669]"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                  >Knowledge discovery and retrieval</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="flex-shrink-0 mt-0.5 text-[#059669]"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                  >Institutional knowledge preservation</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="flex-shrink-0 mt-0.5 text-[#059669]"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                  >Governance and Knowledge activation across teams</span
+                >
+              </li>
+            </ul>
+            <a
+              href="/vault-knowledge-harvester"
+              class="mt-auto ms-auto w-fit rounded-[40px] px-6 py-3 flex items-center justify-center text-center font-primary font-bold text-sm relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 border border-[#059669] text-[#059669] hover:bg-[#059669] hover:text-white"
+            >
+              Explore Vault
+            </a>
+          </div>
+
+          <!-- Lumen Card -->
+          <div
+            class="fade-in p-5 md:p-6 border border-[#f2f2f2] rounded-2xl bg-white flex flex-col h-full"
+          >
+            <div class="flex gap-4 items-start mb-4">
+              <img
+                src="/assets/image/homepage/artisanscloud-lumen.webp"
+                alt="Lumen icon"
+                class="w-8 h-8 object-contain flex-shrink-0 mt-0.5"
+              />
+              <div>
+                <h3
+                  class="text-heading font-primary font-bold text-lg md:text-[19px] leading-[120%]"
+                >
+                  Lumen
+                </h3>
+                <div
+                  class="text-[#2563eb] font-primary font-semibold text-sm md:text-[14px] mt-0.5"
+                >
+                  Enterprise Copilot for Knowledge and Decision Support
+                </div>
+              </div>
+            </div>
+            <p
+              class="text-description font-primary font-normal leading-[150%] text-sm mb-3"
+            >
+              Lumen provides conversational access to enterprise knowledge,
+              operational information and business context.
+            </p>
+            <p
+              class="text-description font-primary font-normal leading-[150%] text-sm mb-4"
+            >
+              Designed to support decision-making and execution, Lumen helps
+              employees access relevant information, navigate processes and
+              interact with enterprise systems through a natural and intuitive
+              experience.
+            </p>
+            <ul class="ps-0 mb-5 flex flex-col gap-2 flex-1">
+              <li class="flex items-start gap-2">
+                <svg
+                  class="flex-shrink-0 mt-0.5 text-[#2563eb]"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                  >Conversational enterprise assistance</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="flex-shrink-0 mt-0.5 text-[#2563eb]"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                  >Enterprise knowledge access</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="flex-shrink-0 mt-0.5 text-[#2563eb]"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                  >Operational decision support</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="flex-shrink-0 mt-0.5 text-[#2563eb]"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                  >Workflow guidance</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="flex-shrink-0 mt-0.5 text-[#2563eb]"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                  >Context-aware information retrieval</span
+                >
+              </li>
+            </ul>
+            <a
+              href="/lumen"
+              class="mt-auto ms-auto w-fit rounded-[40px] px-6 py-3 flex items-center justify-center text-center font-primary font-bold text-sm relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 border border-[#2563eb] text-[#2563eb] hover:bg-[#2563eb] hover:text-white"
+            >
+              Explore Lumen
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
 
-
-    <!----- Co-creation Model Sec ----->
-    <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in text-center">
-                <div class="mb-2.5 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Co-creation Model</div>
-                <div class="lg:mb-5 mb-4 text-heading font-primary font-semibold text-xl leading-[125%]">Co-Building Intelligence and IP - A Model for Enduring Advantage</div>
-                <p class="max-w-[870px] w-full mx-auto text-description font-primary font-normal leading-[150%]">Artisans Cloud collaborates with enterprises to co-create proprietary AI assets that deliver sustained strategic differentiation. Through our co-creation model, clients not only deploy intelligence they build ownership of it.</p>
-            </div>
-
-            <div class="fade-in lg:mb-7 mb-5 lg:mt-[60px] sm:mt-14 mt-8 text-heading font-primary font-semibold lg:text-[28px] text-2xl leading-[125%] text-center">Our Co-Creation Principles</div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-4">
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/icon-StrategicAlignment.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Strategic alignment icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Strategic Alignment</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Solutions anchored in measurable business outcomes.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/icon-AIEngineering.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="AI engineering excellence icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">AI Engineering Excellence</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Cognitive and agentic systems built for immediate impact.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/bulb-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Shared IP value icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Shared IP Value</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Co-owned innovation that compounds enterprise advantage.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/icon-ProductionFirstMindset.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Production-first mindset icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Production-First Mindset</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Every build ready for scale from day one.</p>
-                    </div>
-                </div>
-            </div>
+    <!------ Deploy Independently or Together Sec ------>
+    <section class="lg:py-[90px] sm:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in">
+          <img
+            src="assets/image/enterprise-ai/artisanscloud-deploy-independently.webp"
+            alt="Deploy Independently or Together"
+            class="w-full h-auto rounded-[10px] lg:rounded-[20px]"
+            loading="lazy"
+          />
         </div>
+      </div>
     </section>
-    <!----- End Co-creation Model Sec ----->
 
-
-    <!------ Impact Framework sec ------>
-    <section class="impactFrameworkCTA max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-8">
-                <div class="fade-in">
-                    <div class="lg:mb-8 mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">Impact Framework</div>
-                    <div class="lg:mb-5 mb-4 font-primary font-semibold text-xl leading-[125%] text-white">AI That Delivers Measurable, Sustainable ROI.</div>
-                    <p class="lg:mb-5 mb-4 text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]">We define success by outcomes, not output. Our production-ready deployments consistently deliver measurable enterprise impact.</p>
-                    <p class="text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]">Every deployment is engineered for performance, precision, and permanence.</p>
+    <!------ Adapted for Enterprise Use Cases Sec ------>
+    <section
+      class="impactFrameworkCTA max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading lg:mt-[80px] sm:mt-16 mt-10 py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]"
+    >
+      <div
+        class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-8">
+          <div class="fade-in">
+            <h2
+              class="lg:mb-8 mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+            >
+              Adapted for <br />Enterprise Use Cases
+            </h2>
+            <p
+              class="lg:mb-5 mb-4 text-white/80 font-primary font-normal leading-[150%]"
+            >
+              Every organization operates differently. Enterprise solutions must
+              align with existing processes, operating models and business
+              objectives.
+            </p>
+            <p
+              class="lg:mb-5 mb-4 text-white/80 font-primary font-normal leading-[150%]"
+            >
+              Artisans Cloud works with organizations to adapt and extend Arena,
+              Vault and Lumen for specific operational requirements, industry
+              use cases and operational workflows.
+            </p>
+          </div>
+          <div class="fade-in">
+            <ul
+              class="grid grid-cols-1 sm:grid-cols-2 lg:gap-x-8 lg:gap-y-6 gap-5"
+            >
+              <li class="ps-5 border-s-4 border-primary">
+                <div class="font-primary font-semibold text-base text-white">
+                  Workforce onboarding and readiness
                 </div>
-                <div class="fade-in">
-                    <ul class="flex flex-col lg:gap-7 gap-6">
-                        <li class="ps-5 border-s-4 border-primary">
-                            <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1"><span class="counter">40</span>-<span class="counter">60</span>% faster decision cycles</div>
-                            <p class="text-white/80 font-primary font-normal leading-[150%]">Through cognitive automation</p>
-                        </li>
-                        <li class="ps-5 border-s-4 border-sky">
-                            <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1"><span class="counter">30</span>%+ margin and efficiency gains</div>
-                            <p class="text-white/80 font-primary font-normal leading-[150%]">across operational functions</p>
-                        </li>
-                        <li class="ps-5 border-s-4 border-pink">
-                            <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Millions in cost avoidance</div>
-                            <p class="text-white/80 font-primary font-normal leading-[150%]">via predictive optimization</p>
-                        </li>
-                        <li class="ps-5 border-s-4 border-grey">
-                            <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">New IP assets</div>
-                            <p class="text-white/80 font-primary font-normal leading-[150%]">co-created with clients for strategic advantage</p>
-                        </li>
-                    </ul>
+              </li>
+              <li class="ps-5 border-s-4 border-sky">
+                <div class="font-primary font-semibold text-base text-white">
+                  Knowledge transfer and retention
                 </div>
-            </div>
+              </li>
+              <li class="ps-5 border-s-4 border-pink">
+                <div class="font-primary font-semibold text-base text-white">
+                  Customer service enablement
+                </div>
+              </li>
+              <li class="ps-5 border-s-4 border-grey">
+                <div class="font-primary font-semibold text-base text-white">
+                  Knowledge Retention during role transition
+                </div>
+              </li>
+              <li class="ps-5 border-s-4 border-primary">
+                <div class="font-primary font-semibold text-base text-white">
+                  Sales readiness and coaching
+                </div>
+              </li>
+              <li class="ps-5 border-s-4 border-sky">
+                <div class="font-primary font-semibold text-base text-white">
+                  Operational guidance and support
+                </div>
+              </li>
+              <li class="ps-5 border-s-4 border-pink">
+                <div class="font-primary font-semibold text-base text-white">
+                  Enterprise knowledge access
+                </div>
+              </li>
+              <li class="ps-5 border-s-4 border-grey">
+                <div class="font-primary font-semibold text-base text-white">
+                  Process assistance and execution support
+                </div>
+              </li>
+              <li class="ps-5 border-s-4 border-primary">
+                <div class="font-primary font-semibold text-base text-white">
+                  Cross-functional collaboration
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-
-        <img src="assets/image/icon/strategicOutcomeBanner-shape-1.svg" class="absolute select-none pointer-events-none start-0 bottom-0" alt="Decorative shape element" width="150" height="150" loading="lazy">
-        <img src="assets/image/icon/strategicOutcomeBanner-shape-2.svg" class="absolute select-none pointer-events-none end-0 top-0" alt="Decorative shape element" width="150" height="150" loading="lazy">
+      </div>
+      <img
+        src="assets/image/icon/strategicOutcomeBanner-shape-1.svg"
+        class="absolute select-none pointer-events-none start-0 bottom-0"
+        alt=""
+        width="150"
+        height="150"
+        loading="lazy"
+      />
+      <img
+        src="assets/image/icon/strategicOutcomeBanner-shape-2.svg"
+        class="absolute select-none pointer-events-none end-0 top-0"
+        alt=""
+        width="150"
+        height="150"
+        loading="lazy"
+      />
     </section>
-    <!------ End Impact Framework sec ------>
-
-
-    <!------ Use Cases Delivered Sec ------>
-    <section class="lg:py-[110px] lg:pb-[100px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in mb-6 md:mb-8 lg:mb-[50px]">
-                <div class="mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Use Cases Delivered</div>
-                <p class="max-w-[700px] text-description font-primary font-normal text-base leading-[150%]">Purpose-built AI agents from Artisans Cloud, deployed to solve complex enterprise challenges in knowledge management and workforce capability.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[30px]">
-
-                <!-- Knowledge Harvester Card -->
-                <a href="/knowledge-harvester" class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group block">
-                    <div class="w-full aspect-video overflow-hidden rounded-xl">
-                        <img src="assets/image/knowledge-harvester/knowledge-harvester-solution.png" alt="Knowledge Harvester - AI-driven knowledge continuity framework" class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out" width="540" height="360" loading="lazy">
-                    </div>
-                    <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
-                        <div class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3">Knowledge Harvester</div>
-                        <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
-                            <p class="line-clamp-3 text-description font-primary font-normal leading-[150%]">Transform individual experience into an accessible organizational asset - ensuring continuity, faster onboarding and informed decision-making when people move.</p>
-                            <span class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] aspect-square grid place-items-center border border-[#d8d8d8] rounded-full text-heading group-hover:bg-heading group-hover:text-white">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300 ease-in-out group-hover:rotate-45">
-                                    <g clip-path="url(#clip0_usecase_kh)">
-                                        <path d="M8 16L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M9 8H16V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    </g>
-                                    <defs><clipPath id="clip0_usecase_kh"><rect width="24" height="24" fill="white"/></clipPath></defs>
-                                </svg>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Role Play Agent Card -->
-                <a href="/role-play-agent" class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group block">
-                    <div class="w-full aspect-video overflow-hidden rounded-xl">
-                        <img src="assets/image/role-play-agent/role-play-solution.png" alt="Role Play Agent - AI-driven experiential learning simulation" class="h-full w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out" width="540" height="360" loading="lazy">
-                    </div>
-                    <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
-                        <div class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3">Role Play Agent</div>
-                        <div class="flex flex-wrap sm:flex-nowrap gap-4 md:items-end">
-                            <p class="line-clamp-3 text-description font-primary font-normal leading-[150%]">Transform training from theoretical learning into experiential capability building - simulating real-world conversations and scenarios so employees perform with confidence.</p>
-                            <span class="max-w-10 min-w-10 sm:max-w-[50px] sm:min-w-[50px] aspect-square grid place-items-center border border-[#d8d8d8] rounded-full text-heading group-hover:bg-heading group-hover:text-white">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300 ease-in-out group-hover:rotate-45">
-                                    <g clip-path="url(#clip0_usecase_rp)">
-                                        <path d="M8 16L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M9 8H16V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    </g>
-                                    <defs><clipPath id="clip0_usecase_rp"><rect width="24" height="24" fill="white"/></clipPath></defs>
-                                </svg>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-            </div>
-        </div>
-    </section>
-    <!------ End Use Cases Delivered Sec ------>
-
-
-    <!------ Why Artisans Cloud sec ------>
-    <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in mb-5 sm:mb-10 lg:mb-[60px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] text-center">Why Artisans Cloud</div>
-            <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-5 items-center">
-                <div class="p-5">
-                    <img src="assets/image/enterprise-ai/whyArtisans.svg" alt="Why Artisans Cloud - enterprise AI advantages infographic" width="500" height="400" loading="lazy" class="max-w-full h-auto mx-auto lg:mx-0">
-                </div>
-
-                <div>
-                    <div class="mb-4 text-heading font-primary font-semibold text-xl leading-[125%]">Engineering the Future of Intelligent Operations</div>
-                    <p class="text-description font-primary font-normal leading-[150%]">Artisans Cloud unites design, data architecture and enterprise engineering to build systems that evolve with your business. We operate as a strategic co-builder ensuring every deployment strengthens both capability and competitiveness.</p>
-
-                    <div class="lg:mt-5 mt-4 mb-3 text-heading text-base font-primary font-bold">Why Enterprises Choose Artisans Cloud</div>
-                    <ul class="ps-5">
-                        <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[120%] text-description">Deep domain expertise in AI and enterprise systems</li>
-                        <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[120%] text-description">Proven record of agentic AI deployment and rapid scaling</li>
-                        <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[120%] text-description">End-to-end delivery from strategy to production</li>
-                        <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[120%] text-description">Co-creation model ensuring shared IP and verifiable ROI</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!------ End Why Artisans Cloud sec ------>
-
 
     <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
 
-
-    <!------ Build the Data Foundation for Intelligent Growth sec ------>
-    <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in grid lg:grid-cols-2 gap-8 lg:gap-[66px] items-center">
-                <div class="">
-                    <h2 class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Building Intelligent <br class="hidden lg:block">  Enterprises That Think, <br class="hidden lg:block"> Adapt, and Evolve</h2>
-                    <p class="lg:pe-10 text-description font-primary font-normal leading-[150%]">Harness the full potential of cognitive automation to transform operations, accelerate outcomes, and future-proof business performance.</p>
-                    <a href="/contact-us" class="mt-5 lg:mt-10 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Start Your Transformation Journey</a>
-                </div>
-                <div class="unifiedCommerce_sec_imgBox ourApproachImageBox relative rounded-2xl md:rounded-[20px] bg-white/25 grid place-items-center sm:ps-[26px] ps-5 sm:pt-[26px] pt-5 p-4 sm:pb-[41px] pb-6 overflow-hidden after:h-[25%]">
-                    <img src="assets/image/enterprise-ai/startDataJourney.png" class="h-full w-full object-cover" alt="Start your transformation journey - intelligent enterprise visualization" width="500" height="400" loading="lazy">
-                    <div class="absolute top-0 end-0 w-[20%] h-full bg-[linear-gradient(90deg,_rgba(255,255,255,0)_5%,_#FFFFFF_70%,_#FFFFFF_100%)] pointer-events-none select-none"></div>
-                </div>
-            </div>
+    <!------ Built for Enterprise Execution Sec ------>
+    <section class="lg:py-[80px] sm:py-16 py-10">
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in text-center max-w-[820px] mx-auto">
+          <h2
+            class="lg:mb-8 mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%]"
+          >
+            Built for Enterprise Execution
+          </h2>
+          <p
+            class="lg:mb-4 mb-3 text-description font-primary font-normal leading-[150%]"
+          >
+            Artisans Cloud focuses on practical systems that help enterprises
+            improve how knowledge is accessed, teams are prepared and decisions
+            are supported across everyday operations.
+          </p>
+          <p
+            class="lg:mb-4 mb-3 text-description font-primary font-normal leading-[150%]"
+          >
+            Whether deployed independently or together, Arena, Vault and Lumen
+            are designed to help organizations operate with greater visibility,
+            readiness and confidence.
+          </p>
+          <a
+            href="/contact-us"
+            class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light mx-auto"
+          >
+            Talk to our Expert
+          </a>
         </div>
+      </div>
     </section>
-    <!------ End Build the Data Foundation for Intelligent Growth sec ------>
-
-
 
     {{> footer}}
 
-
-    <!--+++++++ Script Start +++++++-->
-
-    <script type='module' src='assets/script/main.js'></script>
-</body>
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
 </html>

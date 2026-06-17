@@ -5,8 +5,8 @@ Step-by-step plan for restructuring the site IA, replacing duplicate Unified Com
 ## Background
 
 - We are restructuring the site for SEO and to attract enterprise buyers.
-- PR #48 merged: `/retail-platform` was renamed to `/unified-commerce` with a 301 redirect.
-- PR #50 merged: `/unified-commerce` content rewritten, FAQ and SoftwareApplication schema added, `/overview` redirected to `/unified-commerce` and the file deleted, header and footer Overview links removed.
+- PR #48 merged: `/retail-platform` was renamed to `/nexus-unified-commerce` with a 301 redirect.
+- PR #50 merged: `/nexus-unified-commerce` content rewritten, FAQ and SoftwareApplication schema added, `/overview` redirected to `/nexus-unified-commerce` and the file deleted, header and footer Overview links removed.
 - PR #51 merged: site-wide brand naming sweep. "Artisans" alone and "Artisans Commerce Cloud" replaced with "Artisans Cloud" everywhere except where the legacy name was retired in favor of "Unified Commerce Platform".
 - PR #46 (blog SEO strategy doc) is deferred until after the IA changes land. Revisit at Step 8.
 - Google Search Console is connected. Data flow is manual; see GSC data flow section below.
@@ -78,7 +78,7 @@ Notes:
 For one-off questions, paste the relevant slice into chat directly.
 
 Most useful reports for this roadmap:
-- Queries and Pages report covering `/unified-commerce` and `/retail-platform`, to confirm the redirect consolidates impressions cleanly.
+- Queries and Pages report covering `/nexus-unified-commerce` and `/retail-platform`, to confirm the redirect consolidates impressions cleanly.
 - Pages report sorted by clicks, to identify pages that must not be orphaned during Step 6.
 - Coverage report, to catch any unexpected de-indexing after URL changes.
 
@@ -121,49 +121,63 @@ Tasks:
 2. Write the IA reference (the locked structure above plus rules for module nesting) into `docs/information-architecture.md`.
 3. Fill in the page-to-URL map below. Action options per page: keep at current URL, move with 301, fold into another page with 301, delete.
 
-All URLs are decided. Action options used: **keep** (no change), **delete file** (URL redirected at edge, file is unused), **rename + 301** (move file, add redirect from old URL), **redirect** (no file, redirect rule in vercel.json).
+Most pages ship at their current URL. The Nexus rebrand and the legacy-URL redirects have shipped (PRs #48, #50, #52); the one remaining planned move is the blog (`/articles-and-resources` to `/blog`, Step 8). Disposition values: **keep** (URL unchanged), **redirect stub** (file kept as a meta-refresh stub, edge 301 in `vercel.json`, `sitemap: false`), **rename + 301** (move the file and add a redirect from the old URL), **301 only** (no file, redirect rule in `vercel.json`).
+
+The "New URL" column reads "same" wherever the page keeps its current URL.
 
 | Current URL | Disposition | New URL | Notes |
 |---|---|---|---|
-| /retail-platform | delete file | /unified-commerce | Redirect already in `vercel.json` (PR #48). The 10-line stub file is unused; delete it during Step 6 cleanup. |
-| /overview | done | /unified-commerce | Redirect and file deletion shipped in PR #50. |
-| / (homepage) | rewrite | / | Content rewrite shipped in Step 5; URL unchanged. Draft at `docs/homepage-content.md`. |
-| /unified-commerce | keep | /unified-commerce | Platform page. Already rewritten (PR #50). |
-| /enterprise-ai | keep | /enterprise-ai | Platform page. |
-| /data-intelligence | keep | /data-intelligence | Platform page (standalone, not folded into Unified Commerce). |
-| /POS | keep | /POS | Module under Unified Commerce. Note URL is uppercase; case sensitivity flagged below. |
-| /browser-pos | keep | /browser-pos | TabsyPOS variant. Kept separate from /POS based on traffic. |
-| /warehouse-management-system | keep | /warehouse-management-system | Module under Unified Commerce. |
-| /distributed-order-management | keep | /distributed-order-management | OMS module under Unified Commerce. |
-| /d2c-eCommerce | keep | /d2c-eCommerce | D2C module. Mixed-case URL; case sensitivity flagged below. |
-| /customer-experience-management | keep | /customer-experience-management | CXM module under Unified Commerce. |
-| /merchandise-and-assortment-planning | keep | /merchandise-and-assortment-planning | Module under Unified Commerce. |
-| /automation | keep | /automation | Intelligent Automation module under Unified Commerce. |
-| /demand-flow | keep | /demand-flow | Nested under Unified Commerce in nav. Decision made: GSC shows no branded search demand. |
-| /role-play-agent | keep | /role-play-agent | App under Enterprise AI Platform. |
-| /knowledge-harvester | keep | /knowledge-harvester | App under Enterprise AI Platform. |
-| /image-editing | keep | /image-editing | Retail AI subsection under Enterprise AI Platform. |
-| /smart-auto-completion | keep | /smart-auto-completion | Retail AI subsection. |
-| /smart-product-search | keep | /smart-product-search | Retail AI subsection. |
-| /personalized-recommendations | keep | /personalized-recommendations | Retail AI subsection. |
-| /chatbots-for-quick-support | keep | /chatbots-for-quick-support | Retail AI subsection. |
-| /articles-and-resources | rename + 301 | /blog | Verbose URL, near-zero traffic. Move and 301. Implement in Step 8. |
-| /blog-detail | keep | /blog-detail | Blog post template. Stays at current URL. |
-| /about-us | keep | /about-us | Company > About. |
-| /contact-us | keep | /contact-us | Company > Contact. Also interim destination for "Request Demo" CTA until Step 3 ships. |
-| /integrations | keep | /integrations | Footer link plus contextual mentions on Platform pages. |
-| /dify-consulting | keep | /dify-consulting | Niche services page. Kept, omitted from main nav. |
-| /privacy-policy | keep | /privacy-policy | Footer link. |
-| /terms-and-conditions | keep | /terms-and-conditions | Footer link. |
-| /thank-you | keep | /thank-you | System page (form thank-you). |
-| /404 | keep | /404 | System page. |
-| /team/dev-nair | keep | /team/dev-nair | Auto-generated team page. |
-| /team/gaurav-makhecha | keep | /team/gaurav-makhecha | Auto-generated team page. |
+| / (homepage) | keep | / | Homepage, rewritten during the Nexus rollout. |
+| /nexus-unified-commerce | keep | same | Unified Commerce platform, rebranded "Nexus". `/unified-commerce`, `/retail-platform`, `/overview`, `/solution`, `/artisans-commerce-cloud` all 301 here. |
+| /enterprise-ai | keep | same | Enterprise AI platform. `/artificial-intelligence` 301s here. |
+| /data-intelligence | keep | same | Data Intelligence platform (standalone). `/business-intelligence` 301s here. |
+| /vault-knowledge-harvester | keep | same | "Vault" (Knowledge Intelligence), under Enterprise AI. Renamed from Knowledge Harvester; `/knowledge-harvester` 301s here. |
+| /lumen | keep | same | "Lumen" (Enterprise Copilot), under Enterprise AI. New page. |
+| /role-play-agent | keep | same | "Arena" (AI Role Play), under Enterprise AI. |
+| /POS | keep | same | Point of Sale (Solutions menu). Uppercase URL; case sensitivity noted below. |
+| /browser-pos | keep | same | TabsyPOS (Solutions menu). Kept separate from /POS. |
+| /merchandise-and-assortment-planning | keep | same | Supply Chain Planning (Solutions menu). `/merchandise-planning`, `/assortment-planning` 301 here. |
+| /warehouse-management-system | keep | same | Supply Chain Planning (Solutions menu). |
+| /distributed-order-management | keep | same | Nexus OMS module. Footer link. |
+| /d2c-eCommerce | keep | same | Nexus D2C module. Footer link. Mixed-case URL; `/d2c-ecommerce`, `/headless-commerce` 301 here. |
+| /customer-experience-management | keep | same | Nexus CXM module. Footer link. `/customer-xperience-management`, `/product-xperience-management` 301 here. |
+| /automation | keep | same | Nexus Intelligent Automation module. Footer link. |
+| /demand-flow | keep | same | Forecasting capability under Nexus. In the sitemap, but not currently linked from header or footer. |
+| /image-editing | keep | same | Solutions > Retail AI. |
+| /smart-auto-completion | keep | same | Solutions > Retail AI. |
+| /smart-product-search | keep | same | Solutions > Retail AI. |
+| /personalized-recommendations | keep | same | Solutions > Retail AI. |
+| /chatbots-for-quick-support | keep | same | Solutions > Retail AI. |
+| /smarter-inventory-alerts | keep | same | Solutions > Retail AI. |
+| /customer-feedback-insights | keep | same | Solutions > Retail AI (under "More"). |
+| /dynamic-pricing | keep | same | Solutions > Retail AI (under "More"). |
+| /store-layout-optimization | keep | same | Solutions > Retail AI (under "More"). |
+| /fraud-detection | keep | same | Solutions > Retail AI (under "More"). |
+| /personalized-promotions | keep | same | Solutions > Retail AI (under "More"). |
+| /open-to-buy-planning | keep | same | Solutions > Retail AI (under "More"). |
+| /personalized-customer-experience | keep | same | Solutions > Retail AI (under "More"). |
+| /enterprise-data-search | keep | same | Solutions > Retail AI (under "More"). |
+| /articles-and-resources | rename + 301 (planned) | /blog | Blog list. Footer link. Move and 301 still pending (Step 8). |
+| /blog-detail | keep | same | Blog post template. `sitemap: false`. |
+| /about-us | keep | same | Company > About. Top-level nav. `/about` 301s here. |
+| /contact-us | keep | same | Company > Contact. Primary CTA ("Talk to us"). |
+| /integrations | keep | same | Footer link. `/Integrations` 301s here. |
+| /dify-consulting | keep | same | Niche services page. Footer link, omitted from header nav. |
+| /request-demo | keep | same | Demo CTA destination plus footer link. noindex, `sitemap: false`. Shipped (was Step 3). |
+| /privacy-policy | keep | same | Footer link. |
+| /terms-and-conditions | keep | same | Footer link. |
+| /thank-you | keep | same | System page. `sitemap: false`. |
+| /404 | keep | same | System page. `sitemap: false`. |
+| /retail-platform | redirect stub | /nexus-unified-commerce | File kept as a meta-refresh stub. `sitemap: false`. Edge 301 in `vercel.json`. |
+| /team/dev-nair | keep | same | Auto-generated team card. |
+| /team/gaurav-makhecha | keep | same | Auto-generated team card. |
 
 ### Sub-decisions surfaced during mapping
 
-- **URL case sensitivity.** Vercel routing is case-sensitive (verified with `curl -I`). `/d2c-eCommerce` and `/POS` work; their lowercase variants 404. Lowercase redirects were added in PR #52 to recover SEO equity. Long-term recommendation: rename the files to lowercase (`d2c-ecommerce.html`, `pos.html`) with 301s from the current casing. Worth doing during Step 6 (page audit and redirect map) since it touches multiple files.
-- **Blog URL pattern: `/blog`.** Resolved to flat `/blog` rather than `/resources/blog/`. Rationale in `docs/information-architecture.md`. Step 8 implements the move.
+- **Nexus rebrand.** Unified Commerce shipped as "Nexus" at `/nexus-unified-commerce` (PRs #48 and #50). The earlier assumption of `/unified-commerce` as the canonical URL was superseded; `/unified-commerce` now 301s to the Nexus URL.
+- **Solutions mega-menu.** Shipped as a product grouping (Retail AI, Point of Sale, Supply Chain Planning), not the `/solutions/<slug>` buyer-problem pages described in Steps 2 and 7. Those pages have not shipped. Decide whether they coexist with or replace the current grouping before building them.
+- **URL case sensitivity.** Vercel routing is case-sensitive. `/d2c-eCommerce` and `/POS` work; their lowercase variants 404. Lowercase redirects were added in PR #52 to recover SEO equity. Long-term recommendation: rename the files to lowercase (`d2c-ecommerce.html`, `pos.html`) with 301s from the current casing. Worth doing during Step 6 (page audit and redirect map) since it touches multiple files.
+- **Blog URL pattern: `/blog`.** Resolved to flat `/blog` rather than `/resources/blog/`. Rationale in `docs/information-architecture.md`. The move and 301 are still pending (Step 8); the footer currently links `/articles-and-resources`.
 
 Done when:
 - `docs/information-architecture.md` exists with the locked IA and module nesting rules.
@@ -179,7 +193,7 @@ Why this one first: enterprise retailers are the primary ICP, so this Solutions 
 Tasks:
 1. URL: `/solutions/retail-omnichannel` (locked nested pattern per IA).
 2. Keyword research:
-   - Primary keyword must be different from `/unified-commerce` to avoid cannibalization.
+   - Primary keyword must be different from `/nexus-unified-commerce` to avoid cannibalization.
    - Candidates to evaluate: "omnichannel retail solutions", "enterprise omnichannel platform", "unified retail operations".
    - Use a free keyword tool (Ahrefs free, Ubersuggest, or GSC) to validate volume and intent.
 3. Draft 800 to 1500 words structured as:
@@ -198,7 +212,7 @@ Tasks:
 Done when:
 - Page lives at the chosen URL with full content.
 - `npm run build`, `npm test`, `npm run test:e2e` all pass.
-- Primary keyword for this page is documented and confirmed distinct from `/unified-commerce`.
+- Primary keyword for this page is documented and confirmed distinct from `/nexus-unified-commerce`.
 
 ### Step 3: Build the Request Demo page
 
@@ -265,7 +279,7 @@ Why after Step 4: shipping the new nav with a retail-anchored homepage looks dis
 
 Findings driving this step (from the audit of `index.html`):
 - Hero H1 is retail-and-supply-chain only ("Streamline, Optimize, and Align Retail Planning and Supply Chain Operations"), contradicting the meta title "Intelligent Enterprise Transformation".
-- Both hero CTAs link to `/unified-commerce`, forcing every interested visitor into the retail funnel.
+- Both hero CTAs link to `/nexus-unified-commerce`, forcing every interested visitor into the retail funnel.
 - Hero floating cards are three-of-four retail.
 - The mid-page "Drive Sales" CTA section is 100% retail copy targeting "retailers".
 - Our Core Verticals, Intelligent Enterprise Transformation, Strategic Impact Snapshot, and Insights sections are already sector-neutral. They do not need rework.
@@ -282,7 +296,7 @@ Tasks (apply once the new content draft arrives):
 4. Rebalance the hero floating cards. Suggested mix: Unified Commerce, Decision Intelligence, Enterprise AI, plus one cross-cutting concept (for example, Predictive Operations). Replace assets accordingly.
 5. Replace or rewrite the Drive Sales CTA section (`index.html:339-355`):
    - Option A: Sector-neutral rewrite focused on outcomes (efficiency, decision speed, margin) without the word "retailer".
-   - Option B: Replace with a three-column block summarizing the three Platforms with deep-link buttons to `/unified-commerce`, `/data-intelligence`, `/enterprise-ai`.
+   - Option B: Replace with a three-column block summarizing the three Platforms with deep-link buttons to `/nexus-unified-commerce`, `/data-intelligence`, `/enterprise-ai`.
    - Recommend Option B; it strengthens internal linking to all three Platform pages.
 6. Add a small "Industries we serve" strip near the client logo marquee, listing the sectors named in the Sector Expertise card.
 7. Audit client logos. If most logos are retail brands, reorder the marquee so the first visible logos are a mixed sequence. If non-retail logos do not exist yet, decide whether to source one or two before this step ships.
