@@ -1,0 +1,1352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
+
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
+
+    {{> header}}
+
+    <main class="w-full">
+      <!----- Banner Sec ----->
+      <section class="w-full h-full p-4 lg:p-5">
+        <div
+          class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/overview/overview-bannerBG.webp')] bg-no-repeat bg-cover"
+        >
+          <div
+            class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24"
+          >
+            <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
+              <div class="text-center lg:max-w-[920px] mx-auto">
+                <div
+                  class="mb-3 sm:mb-5 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
+                >
+                  Powered by NearMe Intelligence
+                </div>
+                <h1
+                  class="font-primary text-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%]"
+                >
+                  Demand Flow<br />
+                  Capture Real-Time Demand.<br />
+                  Convert It Into Revenue.
+                </h1>
+                <div
+                  id="heroDec"
+                  class="flex flex-col items-center mb-7.5 lg:mb-12"
+                >
+                  <p
+                    class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%] mb-3"
+                  >
+                    In today&rsquo;s retail environment, demand already exists
+                    but it is not consistently captured at the store level.
+                    Customers search, compare and decide in real time. The gap
+                    between that intent and an actual store visit is where
+                    revenue is lost.
+                  </p>
+                  <p
+                    class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                  >
+                    Demand Flow bridges the gap between high-intent local search
+                    and measurable business outcomes.
+                  </p>
+                  <a
+                    href="/request-demo"
+                    class="lg:mt-[25px] mt-4 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                  >
+                    Request a Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- What is Demand Flow Sec ----->
+      <section class="py-10 md:py-20">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="grid lg:grid-cols-2 gap-8 lg:gap-[66px] items-center">
+            <div class="fade-in">
+              <img
+                src="assets/image/demand-flow/local-growth.webp"
+                class="max-w-full h-auto mx-auto lg:mx-0 rounded-2xl"
+                alt="Local growth intelligence visualization for retail stores"
+                width="540"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+            <div class="fade-in">
+              <h2
+                class="lg:mb-4 mb-3 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                What is Demand Flow?
+              </h2>
+              <p
+                class="mb-4 text-description font-primary font-normal leading-[150%]"
+              >
+                Demand Flow is an AI-powered
+                <strong class="text-heading"
+                  >NearMe Intelligence platform</strong
+                >
+                that connects digital discovery with physical commerce.
+              </p>
+              <p
+                class="mb-5 text-description font-primary font-normal leading-[150%]"
+              >
+                It identifies real-time local search intent, ensures your brand
+                is discoverable at the right moment and converts that intent
+                into store visits, leads and transactions while providing full
+                visibility into performance.
+              </p>
+              <div
+                class="p-5 rounded-2xl bg-[#f6f8fb] border-s-4 border-primary"
+              >
+                <p
+                  class="text-heading font-primary font-semibold text-base lg:text-lg leading-[150%] italic"
+                >
+                  &ldquo;From search to store. From intent to revenue. Fully
+                  measurable.&rdquo;
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Why It Matters Sec ----->
+      <section class="lg:py-[70px] md:py-16 py-10">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="text-center mb-8 lg:mb-[50px]">
+            <h2
+              class="fade-in lg:mb-5 mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Why It Matters
+            </h2>
+          </div>
+
+          <!-- Blockquote -->
+          <div class="fade-in max-w-[860px] w-full mx-auto mb-8 lg:mb-[50px]">
+            <blockquote
+              class="relative p-6 lg:p-10 rounded-2xl lg:rounded-[30px] bg-[#f6f8fb] border-s-4 border-primary"
+            >
+              <p
+                class="text-heading font-primary font-semibold text-lg lg:text-xl leading-[150%] italic"
+              >
+                &ldquo;Demand Flow solves the last-mile demand gap between
+                digital search intent and in-store revenue.&rdquo;
+              </p>
+            </blockquote>
+          </div>
+
+          <!-- Stats grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-[30px] gap-5">
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-8 pe-6 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full items-start"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/target-icon.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Local search statistics icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-1.5 text-heading font-primary font-bold text-2xl leading-[120%]"
+                >
+                  80%+
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  of customers search before visiting a store
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-8 pe-6 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full items-start"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/Predictive-icon.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Real-time decisions icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-1.5 text-heading font-primary font-bold text-2xl leading-[120%]"
+                >
+                  Seconds
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Decisions are made within seconds at the local level
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-8 pe-6 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full items-start"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/metadata-LineageManagement-icon.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Visibility gap icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-1.5 text-heading font-primary font-bold text-2xl leading-[120%]"
+                >
+                  Blind Spot
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Most enterprises lack visibility into how digital intent
+                  translates into store revenue
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- How Demand Flow Works Sec ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-8 lg:mb-[60px]">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              How Demand Flow Works
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-5">
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/target-icon.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Capture local intent icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+                >
+                  01
+                </div>
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Capture Local Intent
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Detect high-intent, location-based searches in real time
+                  across search engines, maps and digital platforms.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/intelligentAutomation-icon.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Optimize discoverability icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+                >
+                  02
+                </div>
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Optimize Discoverability
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Ensure every store appears accurately, consistently and
+                  prominently when customers search.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/icon-conversational.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Engage and convert icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+                >
+                  03
+                </div>
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Engage &amp; Convert
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Drive actions: calls, directions, bookings and visits through
+                  intelligent engagement and automation.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+                <div
+                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                >
+                  <img
+                    src="assets/image/icon/predictive-commerce-icon.svg"
+                    class="h-1/2 transition-all ease-linear duration-300"
+                    alt="Measure attribution icon"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+                >
+                  04
+                </div>
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Measure What Matters
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Track the complete journey from search to interaction to store
+                  visit and convert with clear attribution.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Core Capabilities Sec ----->
+      <section class="py-10 md:py-20 bg-[#f6f8fb]">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-8 lg:mb-[60px]">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Core Capabilities
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/icon-ai.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="NearMe Intelligence Engine icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  NearMe Intelligence Engine
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  The AI layer that continuously analyses search behavior,
+                  customer intent and local trends to drive real-time decisions.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/Cloud-hybridDeployments-icon.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Local Discovery and Visibility icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Local Discovery &amp; Visibility
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Optimize store listings, improve rankings and ensure your
+                  brand is found across all relevant digital touch-points.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-securityCompliance.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Reputation and Trust Management icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Reputation &amp; Trust Management
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Monitor, manage and enhance customer reviews to influence
+                  decision-making and increase conversions.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-congitiveIntelligent.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Conversion and Engagement Engine icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Conversion &amp; Engagement Engine
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Engage customers through intelligent interactions that capture
+                  and qualify leads instantly.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Demand Analytics and Attribution icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Demand Analytics &amp; Attribution
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Gain a unified view of performance with clear insights into
+                  what drives store visits, leads and revenue.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-interoperabilityScale.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Autonomous Growth Engine icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Autonomous Growth Engine
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Continuously optimize content, listings and engagement
+                  strategies without manual intervention.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Built for Enterprise Scale Sec ----->
+      <section
+        class="impactFrameworkCTA max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]"
+      >
+        <div
+          class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-8">
+            <div class="fade-in">
+              <div
+                class="lg:mb-8 mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+              >
+                Built for Enterprise Scale
+              </div>
+              <div
+                class="lg:mb-5 mb-4 font-primary font-semibold text-xl leading-[125%] text-white"
+              >
+                Designed to operate seamlessly across multi-location enterprises
+              </div>
+              <p
+                class="lg:mb-5 mb-4 text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]"
+              >
+                Centralized intelligence with localized execution, giving you
+                real-time visibility and consistent brand presence at every
+                level: store, region and brand.
+              </p>
+            </div>
+            <div class="fade-in">
+              <ul class="flex flex-col lg:gap-7 gap-6">
+                <li class="ps-5 border-s-4 border-primary">
+                  <div
+                    class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Centralized Control
+                  </div>
+                  <p
+                    class="text-white/80 font-primary font-normal leading-[150%]"
+                  >
+                    Centralized control with localized execution across all
+                    store locations.
+                  </p>
+                </li>
+                <li class="ps-5 border-s-4 border-sky">
+                  <div
+                    class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Real-Time Visibility
+                  </div>
+                  <p
+                    class="text-white/80 font-primary font-normal leading-[150%]"
+                  >
+                    Unified dashboards at store, region and brand level for
+                    immediate action.
+                  </p>
+                </li>
+                <li class="ps-5 border-s-4 border-pink">
+                  <div
+                    class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Brand Consistency
+                  </div>
+                  <p
+                    class="text-white/80 font-primary font-normal leading-[150%]"
+                  >
+                    Consistent brand presence across all digital channels
+                    without manual effort.
+                  </p>
+                </li>
+                <li class="ps-5 border-s-4 border-grey">
+                  <div
+                    class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Scalable Growth
+                  </div>
+                  <p
+                    class="text-white/80 font-primary font-normal leading-[150%]"
+                  >
+                    Scale demand capture without adding operational complexity
+                    or headcount.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <img
+          src="assets/image/icon/strategicOutcomeBanner-shape-1.svg"
+          class="absolute select-none pointer-events-none start-0 bottom-0"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <img
+          src="assets/image/icon/strategicOutcomeBanner-shape-2.svg"
+          class="absolute select-none pointer-events-none end-0 top-0"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+      </section>
+
+      <!----- Key Outcomes Sec ----->
+      <section class="lg:py-[70px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              Key Outcomes
+            </h2>
+            <p
+              class="max-w-[700px] mx-auto text-description font-primary font-normal leading-[150%]"
+            >
+              Measurable results that Demand Flow delivers across multi-location
+              retail enterprises.
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 lg:gap-[30px] gap-5"
+          >
+            <div
+              class="fade-in lg:col-span-2 w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/target-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Local search visibility icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Increased Local Visibility
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Higher &ldquo;near me&rdquo; search rankings across all store
+                  locations
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in lg:col-span-2 w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-1.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Store visits icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Higher Store Visits
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  More in-store conversions driven by real-time local demand
+                  signals
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in lg:col-span-2 w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentAutomation-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Reduced aggregator dependency icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Reduced Aggregator Dependency
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Own your local channel instead of relying on third-party
+                  platforms
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in lg:col-span-2 w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-securityCompliance.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Customer trust icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Stronger Customer Trust
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Improved reputation and review scores driving higher
+                  conversion at the local level
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in lg:col-span-2 w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/predictive-commerce-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Data-driven decisions icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Data-Driven Decisions
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Faster, data-driven decision making
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in lg:col-span-2 w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-right"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-2.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Measurable ROI icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Measurable ROI
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Measurable ROI from digital-to-physical journeys
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Demand Flow within Artisans Cloud Sec ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div
+            class="fade-in grid lg:grid-cols-2 gap-8 lg:gap-[66px] items-center"
+          >
+            <div>
+              <h2
+                class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Demand Flow within Artisans Cloud Unified Commerce
+              </h2>
+              <p
+                class="mb-5 text-description font-primary font-normal leading-[150%]"
+              >
+                Demand Flow is not a standalone tool. It is deeply integrated
+                into the Artisans Cloud ecosystem, connecting seamlessly with
+                your existing commerce infrastructure.
+              </p>
+              <div class="flex flex-col gap-4">
+                <div class="flex items-start gap-4">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="flex-shrink-0 mt-1 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Inventory and order management</strong
+                    >
+                    to fulfil captured demand instantly and efficiently
+                  </p>
+                </div>
+                <div class="flex items-start gap-4">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="flex-shrink-0 mt-1 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Customer data platforms</strong
+                    >
+                    for enriched local profiles and personalised engagement
+                  </p>
+                </div>
+                <div class="flex items-start gap-4">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="flex-shrink-0 mt-1 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Omnichannel engagement systems</strong
+                    >
+                    to close the loop between discovery and transaction
+                  </p>
+                </div>
+              </div>
+              <p
+                class="mt-6 text-description font-primary font-semibold leading-[150%]"
+              >
+                This ensures that
+                <strong class="text-heading"
+                  >captured demand can be fulfilled instantly and
+                  efficiently</strong
+                >, closing the loop between discovery and revenue.
+              </p>
+            </div>
+            <div
+              class="unifiedCommerce_sec_imgBox ourApproachImageBox relative rounded-2xl md:rounded-[20px] bg-white/25 grid place-items-center sm:ps-[26px] ps-5 sm:pt-[26px] pt-5 p-4 sm:pb-[41px] pb-6 overflow-hidden after:h-[25%]"
+            >
+              <img
+                src="assets/image/demand-flow/location-centric.webp"
+                class="h-full w-full object-cover rounded-xl"
+                alt="Demand Flow integrated within Artisans Cloud Unified Commerce platform"
+                width="540"
+                height="400"
+                loading="lazy"
+              />
+              <div
+                class="absolute top-0 end-0 w-[20%] h-full bg-[linear-gradient(90deg,_rgba(255,255,255,0)_5%,_#FFFFFF_70%,_#FFFFFF_100%)] pointer-events-none select-none"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- The Shift Sec ----->
+      <section class="lg:py-[70px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              The Shift from Marketing to Revenue Intelligence
+            </h2>
+            <p
+              class="max-w-[700px] mx-auto text-description font-primary font-normal leading-[150%]"
+            >
+              Traditional approaches focus on traffic and impressions. Demand
+              Flow focuses on outcomes.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
+            <div
+              class="fade-in p-6 lg:p-8 rounded-2xl lg:rounded-[20px] bg-[#f6f8fb] border border-[#f2f2f2]"
+            >
+              <div
+                class="mb-5 text-heading font-primary font-semibold text-2xl lg:text-[28px] leading-[120%]"
+              >
+                Traditional Approach
+              </div>
+              <div class="flex flex-col gap-4">
+                <div class="flex items-start gap-4">
+                  <span
+                    class="flex-shrink-0 w-4 text-red-400 font-bold text-xl leading-none select-none mt-0.5"
+                    >&times;</span
+                  >
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Focuses on impressions and traffic volume with no clear
+                    revenue link
+                  </p>
+                </div>
+                <div class="flex items-start gap-4">
+                  <span
+                    class="flex-shrink-0 w-4 text-red-400 font-bold text-xl leading-none select-none mt-0.5"
+                    >&times;</span
+                  >
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    No attribution between digital intent and in-store revenue
+                  </p>
+                </div>
+                <div class="flex items-start gap-4">
+                  <span
+                    class="flex-shrink-0 w-4 text-red-400 font-bold text-xl leading-none select-none mt-0.5"
+                    >&times;</span
+                  >
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Manual, fragmented local store management across locations
+                  </p>
+                </div>
+                <div class="flex items-start gap-4">
+                  <span
+                    class="flex-shrink-0 w-4 text-red-400 font-bold text-xl leading-none select-none mt-0.5"
+                    >&times;</span
+                  >
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Dependent on third-party aggregators for local visibility
+                  </p>
+                </div>
+                <div class="flex items-start gap-4">
+                  <span
+                    class="flex-shrink-0 w-4 text-red-400 font-bold text-xl leading-none select-none mt-0.5"
+                    >&times;</span
+                  >
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Slow to respond to local demand shifts and search trends
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="fade-in p-6 lg:p-8 rounded-2xl lg:rounded-[20px] bg-light-green-box border border-[#f2f2f2]"
+            >
+              <div
+                class="mb-5 text-heading font-primary font-semibold text-2xl lg:text-[28px] leading-[120%]"
+              >
+                Demand Flow
+              </div>
+              <div class="flex flex-col gap-4">
+                <div class="flex items-start gap-4">
+                  <span
+                    class="flex-shrink-0 w-4 text-primary font-bold text-xl leading-none select-none mt-0.5"
+                    >&#10003;</span
+                  >
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Tracks outcomes: store visits, leads and attributable
+                    revenue
+                  </p>
+                </div>
+                <div class="flex items-start gap-4">
+                  <span
+                    class="flex-shrink-0 w-4 text-primary font-bold text-xl leading-none select-none mt-0.5"
+                    >&#10003;</span
+                  >
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Full attribution from digital search to physical transaction
+                  </p>
+                </div>
+                <div class="flex items-start gap-4">
+                  <span
+                    class="flex-shrink-0 w-4 text-primary font-bold text-xl leading-none select-none mt-0.5"
+                    >&#10003;</span
+                  >
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    AI-powered automation for all store listings at enterprise
+                    scale
+                  </p>
+                </div>
+                <div class="flex items-start gap-4">
+                  <span
+                    class="flex-shrink-0 w-4 text-primary font-bold text-xl leading-none select-none mt-0.5"
+                    >&#10003;</span
+                  >
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Direct local presence owned and controlled by the enterprise
+                  </p>
+                </div>
+                <div class="flex items-start gap-4">
+                  <span
+                    class="flex-shrink-0 w-4 text-primary font-bold text-xl leading-none select-none mt-0.5"
+                    >&#10003;</span
+                  >
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Real-time optimization based on live local demand signals
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="fade-in mt-10 lg:mt-16 max-w-[760px] mx-auto text-center">
+            <blockquote
+              class="relative p-6 lg:p-10 rounded-2xl lg:rounded-[30px] bg-[#f6f8fb] border-s-4 border-primary"
+            >
+              <p
+                class="text-heading font-primary font-semibold text-lg lg:text-xl leading-[150%] italic"
+              >
+                &ldquo;Not just visibility. Not just engagement. But measurable,
+                attributable revenue at the point of demand.&rdquo;
+              </p>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!----- CTA Sec ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div
+            class="fade-in grid lg:grid-cols-2 gap-8 lg:gap-[66px] items-center"
+          >
+            <div>
+              <h2
+                class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Start Capturing the Demand You Already Have
+              </h2>
+              <p
+                class="lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                Transform your local presence into a predictable, measurable
+                revenue engine with Demand Flow.
+              </p>
+              <div class="mt-5 lg:mt-10 flex flex-wrap gap-3">
+                <a
+                  href="/request-demo"
+                  class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >
+                  Request a Demo
+                </a>
+              </div>
+            </div>
+
+            <!-- Revenue Intelligence Dashboard Card -->
+            <div
+              class="rounded-2xl md:rounded-[20px] bg-[#EFF6FF] p-6 sm:p-8 space-y-5"
+            >
+              <div class="flex items-center justify-between">
+                <span class="font-primary font-semibold text-heading text-base"
+                  >Revenue Intelligence</span
+                >
+                <span
+                  class="text-xs font-primary font-medium text-primary bg-[#DBEAFE] rounded-full px-3 py-1"
+                  >Live</span
+                >
+              </div>
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between mb-1.5">
+                    <span class="text-sm font-primary text-description"
+                      >Local Search Visibility</span
+                    >
+                    <span
+                      class="text-sm font-primary font-semibold text-heading"
+                      >+87%</span
+                    >
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white overflow-hidden">
+                    <div
+                      class="h-full rounded-full bg-primary"
+                      style="width: 87%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1.5">
+                    <span class="text-sm font-primary text-description"
+                      >Store Visit Conversion</span
+                    >
+                    <span
+                      class="text-sm font-primary font-semibold text-heading"
+                      >+64%</span
+                    >
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white overflow-hidden">
+                    <div
+                      class="h-full rounded-full bg-[#6EBD9B]"
+                      style="width: 64%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1.5">
+                    <span class="text-sm font-primary text-description"
+                      >Demand Attribution Rate</span
+                    >
+                    <span
+                      class="text-sm font-primary font-semibold text-heading"
+                      >92%</span
+                    >
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white overflow-hidden">
+                    <div
+                      class="h-full rounded-full bg-[#C5AAFF]"
+                      style="width: 92%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-white rounded-xl p-4 text-center">
+                  <div
+                    class="font-primary font-bold text-2xl text-primary leading-none mb-1"
+                  >
+                    3x
+                  </div>
+                  <div
+                    class="text-xs font-primary text-description leading-[140%]"
+                  >
+                    More Qualified Store Visits
+                  </div>
+                </div>
+                <div class="bg-white rounded-xl p-4 text-center">
+                  <div
+                    class="font-primary font-bold text-2xl text-[#6EBD9B] leading-none mb-1"
+                  >
+                    -40%
+                  </div>
+                  <div
+                    class="text-xs font-primary text-description leading-[140%]"
+                  >
+                    Reduction in Aggregator Costs
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <div
+                  class="flex items-center gap-3 bg-white rounded-lg px-4 py-2.5"
+                >
+                  <span
+                    class="w-2 h-2 rounded-full bg-primary flex-shrink-0"
+                  ></span>
+                  <span class="text-sm font-primary text-description flex-1"
+                    >NearMe Intent Detection</span
+                  >
+                  <span class="text-xs font-primary font-medium text-primary"
+                    >Active</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-3 bg-white rounded-lg px-4 py-2.5"
+                >
+                  <span
+                    class="w-2 h-2 rounded-full bg-[#6EBD9B] flex-shrink-0"
+                  ></span>
+                  <span class="text-sm font-primary text-description flex-1"
+                    >Store Listing Optimization</span
+                  >
+                  <span class="text-xs font-primary font-medium text-[#6EBD9B]"
+                    >Enabled</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-3 bg-white rounded-lg px-4 py-2.5"
+                >
+                  <span
+                    class="w-2 h-2 rounded-full bg-[#C5AAFF] flex-shrink-0"
+                  ></span>
+                  <span class="text-sm font-primary text-description flex-1"
+                    >Revenue Attribution</span
+                  >
+                  <span class="text-xs font-primary font-medium text-[#C5AAFF]"
+                    >Tracking</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {{> footer}}
+
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
+</html>

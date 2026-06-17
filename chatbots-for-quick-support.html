@@ -1,641 +1,1033 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <title>Chatbots for Quick Support | Artisans Cloud</title>
-    <link rel="canonical" href="https://www.artisanscloud.com/chatbots-for-quick-support" />
-    <meta name="description"
-        content="AI-powered chatbots give customers instant answers, order updates, and product guidance, helping retailers deliver faster support around the clock.">
-    <meta name="keywords"
-        content="chatbots for quick support, AI chatbot support, customer support chatbot, ecommerce chatbot, retail chatbot, instant customer answers, Artisans Cloud">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:url" content="https://artisanscloud.com/chatbots-for-quick-support">
-    <meta property="og:title" content="Chatbots for Quick Support | Artisans Cloud">
-    <meta property="og:description"
-        content="Give customers instant answers anytime with AI-powered chatbots for support, product questions, order tracking, and smooth agent handovers.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/chatbots-for-quick-support.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <!-- Font Family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="./assets/style/output.css">
-</head>
-
-<body>
-    <div id="cursor"
-        class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0">
-    </div>
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
 
     {{> header}}
 
     <main class="w-full">
+      <!----- Banner Sec ----->
+      <section class="w-full h-full p-4 lg:p-5">
+        <div
+          class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/retail-plateform/banner-bg.webp')] bg-no-repeat bg-cover"
+        >
+          <div
+            class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24"
+          >
+            <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
+              <div class="text-center lg:max-w-[850px] mx-auto">
+                <div
+                  class="mb-3 sm:mb-5 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
+                >
+                  Quick Support
+                </div>
+                <h1
+                  id="heroHeading"
+                  class="mb-3 font-primary text-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%]"
+                >
+                  Chatbots for Quick Support:<br />
+                  Instant Answers, <br />
+                  Anytime
+                </h1>
+                <div
+                  id="heroDec"
+                  class="flex flex-col items-center mb-7.5 lg:mb-12"
+                >
+                  <p
+                    class="mb-3 text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                  >
+                    Customers expect quick responses when they have questions.
+                    Waiting for human support can slow things down and lead to
+                    frustration.
+                  </p>
+                  <p
+                    class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                  >
+                    AI-powered chatbots provide instant answers to common
+                    queries, helping customers get the information they need
+                    anytime.
+                  </p>
+                  <a
+                    href="/customer-experience-management"
+                    class="lg:mt-[25px] mt-4 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                    >Learn How</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!----- Banner Sec ----->
-        <section class="w-full h-full p-4 lg:p-5">
+      <!----- Section 1: The Challenge ----->
+      <section class="py-10 lg:py-16">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="text-center">
+            <h2
+              class="fade-in lg:mb-5 mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Why Slow Support Frustrates Customers
+            </h2>
+            <p
+              class="fade-in mb-6 lg:mb-10 text-heading font-primary font-semibold text-xl leading-[125%]"
+            >
+              Immediate Assistance is the New Standard
+            </p>
+          </div>
+
+          <!-- Blockquote -->
+          <div class="fade-in max-w-[860px] w-full mx-auto mb-8 lg:mb-[50px]">
+            <blockquote
+              class="relative p-6 lg:p-10 rounded-2xl lg:rounded-[30px] bg-[#f6f8fb] border-s-4 border-primary"
+            >
+              <p
+                class="text-heading font-primary font-semibold text-lg lg:text-xl leading-[150%] italic"
+              >
+                "In a world of instant gratification, waiting for support isn't
+                just an inconvenience, it is a reason for customers to choose
+                your competitor."
+              </p>
+            </blockquote>
+          </div>
+
+          <!-- Challenge Intro -->
+          <div
+            class="fade-in mb-6 text-heading font-primary font-semibold text-xl leading-[125%] text-center"
+          >
+            When support is slow or unavailable, retail businesses face
+          </div>
+
+          <!-- Challenge Cards -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
             <div
-                class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/retail-plateform/banner-bg.webp')] bg-no-repeat bg-cover">
-                <div class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24">
-                    <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
-                        <div class="text-center lg:max-w-[850px] mx-auto">
-                            <h1 id="heroHeading"
-                                class="font-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] lg:leading-[61px]">
-                                <span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]">Chatbots for Quick
-                                    Support:</span><br>
-                                Instant Answers, <br>
-                                Anytime
-                            </h1>
-                            <div id="heroDec">
-                                <p
-                                    class="text-base lg:text-[20px] text-description font-primary font-normal leading-[150%]">
-                                    Customers expect quick responses when they have questions. Waiting for human
-                                    support can slow things down and lead to frustration. AI-powered chatbots
-                                    provide instant answers to common queries, helping customers get the
-                                    information they need anytime.</p>
-                                <a href="/customer-experience-management"
-                                    class="lg:mt-10 mt-6 mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Learn
-                                    How</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-1.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Waiting too long icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div class="my-auto">
+                <p class="text-heading font-primary font-normal leading-[150%]">
+                  Frustrated customers waiting too long for basic replies
+                </p>
+              </div>
             </div>
-        </section>
-        <!----- End Banner Sec ----->
-
-
-        <!----- Section 1: The Challenge ----->
-        <section class="py-10 lg:py-16">
-            <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="text-center">
-                    <h2
-                        class="fade-in lg:mb-5 mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
-                        Why Slow Support Frustrates Customers</h2>
-                    <p class="fade-in mb-6 lg:mb-10 text-heading font-primary font-semibold text-xl leading-[125%]">
-                        Immediate Assistance is the New Standard</p>
-                </div>
-
-                <!-- Blockquote -->
-                <div class="fade-in max-w-[860px] w-full mx-auto mb-8 lg:mb-[50px]">
-                    <blockquote
-                        class="relative p-6 lg:p-10 rounded-2xl lg:rounded-[30px] bg-[#f6f8fb] border-s-4 border-primary">
-                        <p class="text-heading font-primary font-semibold text-lg lg:text-xl leading-[150%] italic">
-                            "In a world of instant gratification, waiting for support isn't just an inconvenience, it is
-                            a reason for customers to choose your competitor."
-                        </p>
-                    </blockquote>
-                </div>
-
-                <!-- Challenge Intro -->
-                <div class="fade-in mb-6 text-heading font-primary font-semibold text-xl leading-[125%] text-center">
-                    When support is slow or unavailable, retail businesses face
-                </div>
-
-                <!-- Challenge Cards -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
-                    <div
-                        class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                        <div
-                            class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0">
-                            <img src="assets/image/icon/intelligentCard-icon-1.svg"
-                                class="h-1/2 transition-all ease-linear duration-300" alt="Waiting too long icon"
-                                width="40" height="40" loading="lazy">
-                        </div>
-                        <div class="my-auto">
-                            <p class="text-heading font-primary font-normal leading-[150%]">Frustrated customers waiting
-                                too long for basic replies</p>
-                        </div>
-                    </div>
-                    <div
-                        class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                        <div
-                            class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0">
-                            <img src="assets/image/icon/intelligentCard-icon-2.svg"
-                                class="h-1/2 transition-all ease-linear duration-300" alt="Repetitive questions icon"
-                                width="40" height="40" loading="lazy">
-                        </div>
-                        <div class="my-auto">
-                            <p class="text-heading font-primary font-normal leading-[150%]">Support teams overwhelmed by
-                                repetitive shopper queries</p>
-                        </div>
-                    </div>
-                    <div
-                        class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                        <div
-                            class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0">
-                            <img src="assets/image/icon/intelligentCard-icon-3.svg"
-                                class="h-1/2 transition-all ease-linear duration-300" alt="Limited support hours icon"
-                                width="40" height="40" loading="lazy">
-                        </div>
-                        <div class="my-auto">
-                            <p class="text-heading font-primary font-normal leading-[150%]">Zero assistance during
-                                off-peak hours and weekends</p>
-                        </div>
-                    </div>
-                    <div
-                        class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                        <div
-                            class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0">
-                            <img src="assets/image/icon/Predictive-icon.svg"
-                                class="h-1/2 transition-all ease-linear duration-300" alt="High workload icon"
-                                width="40" height="40" loading="lazy">
-                        </div>
-                        <div class="my-auto">
-                            <p class="text-heading font-primary font-normal leading-[150%]">High operational costs and
-                                customer service staff burnout</p>
-                        </div>
-                    </div>
-                    <div
-                        class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                        <div
-                            class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0">
-                            <img src="assets/image/icon/embeddedFramework-icon.svg"
-                                class="h-1/2 transition-all ease-linear duration-300" alt="Missed sales icon" width="40"
-                                height="40" loading="lazy">
-                        </div>
-                        <div class="my-auto">
-                            <p class="text-heading font-primary font-normal leading-[150%]">Lost revenue as shoppers
-                                abandon carts due to unanswered questions</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="fade-in mt-6 lg:mt-10 text-center">
-                    <p class="text-description font-primary font-normal leading-[150%] max-w-[800px] mx-auto">
-                        When customers do not get quick answers, they often leave before completing a purchase.
-                        Traditional support models are struggling to keep up with modern retail demands.
-                    </p>
-                </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-2.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Repetitive questions icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div class="my-auto">
+                <p class="text-heading font-primary font-normal leading-[150%]">
+                  Support teams overwhelmed by repetitive shopper queries
+                </p>
+              </div>
             </div>
-        </section>
-        <!----- End Section 1 ----->
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-3.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Limited support hours icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div class="my-auto">
+                <p class="text-heading font-primary font-normal leading-[150%]">
+                  Zero assistance during off-peak hours and weekends
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/Predictive-icon.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="High workload icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div class="my-auto">
+                <p class="text-heading font-primary font-normal leading-[150%]">
+                  High operational costs and customer service staff burnout
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/embeddedFramework-icon.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Missed sales icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div class="my-auto">
+                <p class="text-heading font-primary font-normal leading-[150%]">
+                  Lost revenue as shoppers abandon carts due to unanswered
+                  questions
+                </p>
+              </div>
+            </div>
+          </div>
 
+          <div class="fade-in mt-6 lg:mt-10 text-center">
+            <p
+              class="text-description font-primary font-normal leading-[150%] max-w-[800px] mx-auto"
+            >
+              When customers do not get quick answers, they often leave before
+              completing a purchase. Traditional support models are struggling
+              to keep up with modern retail demands.
+            </p>
+          </div>
+        </div>
+      </section>
 
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Section 2 ----->
+      <section class="py-10 lg:py-16">
         <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+          <div class="grid lg:grid-cols-2 lg:gap-12 gap-8 items-center">
+            <div class="lg:pe-10">
+              <div
+                class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-10"
+              >
+                A Smarter Way to Support Customers
+              </div>
+              <img
+                src="assets/image/chatbot/customers-supports.webp"
+                alt="AI chatbot assistant helping customers with quick support"
+                class="max-w-full h-auto mx-auto lg:mx-0 rounded-md"
+                width="500"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+            <div class="">
+              <div
+                class="lg:mb-[30px] mb-6 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                AI-powered chatbots handle common questions instantly and
+                provide helpful responses in real time.
+              </div>
+
+              <p
+                class="mb-6 text-description font-primary font-normal leading-[150%]"
+              >
+                Instead of making customers wait for a reply, the chatbot
+                supports them the moment they ask.
+              </p>
+
+              <p
+                class="mb-4 text-heading font-primary font-semibold text-lg leading-[130%]"
+              >
+                With AI chatbots, you can:
+              </p>
+
+              <div class="flex flex-col lg:gap-5 gap-5">
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Answer frequently asked questions instantly</strong
+                    >
+                    at any time
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Provide order status and tracking details</strong
+                    >
+                    without manual follow-up
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Assist with product-related queries</strong
+                    >
+                    while shoppers are still deciding
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Guide customers to the right products</strong
+                    >
+                    based on what they need
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading">Support customers 24/7</strong>
+                    across different touchpoints
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Reduce repetitive workload for support teams</strong
+                    >
+                    so human agents can focus on complex cases
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Seamlessly hand over to a human agent</strong
+                    >
+                    when a case needs extra attention
+                  </p>
+                </div>
+              </div>
+
+              <p
+                class="mt-6 text-description font-primary font-normal leading-[150%]"
+              >
+                <strong class="text-heading">In short:</strong> Customers get
+                <strong class="text-heading"
+                  >instant help without waiting.</strong
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 3 ----->
+      <section class="py-10 lg:py-16">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              Benefits for Retailers &amp; E-commerce Businesses
+            </h2>
+          </div>
+
+          <div
+            class="fade-in grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-[30px]"
+          >
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/target-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Faster answers icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Faster Answers for Customers
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Shoppers get support the moment they ask a question
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentAutomation-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Reduced workload icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Reduced Workload for Support Staff
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Routine questions are handled automatically
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/customer-copilots-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="24-7 assistance icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  24/7 Customer Assistance
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Support remains available beyond working hours
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#F2EEFF] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/vision-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Improved satisfaction icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Improved Customer Satisfaction
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Faster support leads to smoother shopping experiences
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#EEF4FF] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/moduleCard-productMgmt.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Faster decisions icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Faster Decision-Making for Shoppers
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Questions get resolved before shoppers lose momentum
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#FFEFEF] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/predictive-commerce-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Purchase completion icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Increased Chances of Completing Purchases
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Timely help prevents lost sales at key moments
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 4 ----->
+      <section
+        class="max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]"
+      >
+        <div
+          class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-8">
+            <div class="fade-in">
+              <h2
+                class="lg:mb-8 mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+              >
+                Where Chatbots Can Be Used
+              </h2>
+              <p
+                class="lg:mb-5 mb-4 text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]"
+              >
+                Quick support works best when it is available wherever customers
+                need help during the buying and post-purchase journey.
+              </p>
+
+              <div
+                class="mt-8 lg:mt-12 p-6 rounded-2xl bg-white/5 border border-white/10 lg:max-w-[490px]"
+              >
+                <p
+                  class="text-white/80 font-primary font-normal leading-[150%]"
+                >
+                  <strong class="text-white font-semibold">In short:</strong> AI
+                  chatbots provide
+                  <strong class="text-white font-semibold"
+                    >instant assistance everywhere</strong
+                  >
+                  customers need it most.
+                </p>
+              </div>
+            </div>
+            <div class="fade-in">
+              <ul class="flex flex-col lg:gap-7 gap-6">
+                <li class="ps-5 border-s-4 border-primary">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Website Support Widget
+                  </div>
+                  <p
+                    class="text-white/80 font-primary font-normal leading-[150%]"
+                  >
+                    Answer shopper questions directly on product and category
+                    pages
+                  </p>
+                </li>
+                <li class="ps-5 border-s-4 border-sky">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Mobile App Customer Support
+                  </div>
+                  <p
+                    class="text-white/80 font-primary font-normal leading-[150%]"
+                  >
+                    Provide quick help inside the app without switching channels
+                  </p>
+                </li>
+                <li class="ps-5 border-s-4 border-pink">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Checkout Assistance
+                  </div>
+                  <p
+                    class="text-white/80 font-primary font-normal leading-[150%]"
+                  >
+                    Help customers resolve delivery, payment, or policy
+                    questions before they leave
+                  </p>
+                </li>
+                <li class="ps-5 border-s-4 border-sky-2">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Order Tracking Support
+                  </div>
+                  <p
+                    class="text-white/80 font-primary font-normal leading-[150%]"
+                  >
+                    Share shipment updates and delivery timelines instantly
+                  </p>
+                </li>
+                <li class="ps-5 border-s-4 border-grey">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    FAQ Automation
+                  </div>
+                  <p
+                    class="text-white/80 font-primary font-normal leading-[150%]"
+                  >
+                    Handle repeated policy, account, and product questions
+                    automatically
+                  </p>
+                </li>
+                <li class="ps-5 border-s-4 border-primary">
+                  <div
+                    class="font-primary font-semibold lg:text-xl text-lg text-white mb-1"
+                  >
+                    Post-Purchase Support
+                  </div>
+                  <p
+                    class="text-white/80 font-primary font-normal leading-[150%]"
+                  >
+                    Assist customers with returns, exchanges, and follow-up
+                    questions
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
+        <img
+          src="assets/image/icon/strategicOutcomeBanner-shape-1.svg"
+          class="absolute select-none pointer-events-none start-0 bottom-0"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <img
+          src="assets/image/icon/strategicOutcomeBanner-shape-2.svg"
+          class="absolute select-none pointer-events-none end-0 top-0"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+      </section>
 
-        <!----- Section 2 ----->
-        <section class="py-10 lg:py-16">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="grid lg:grid-cols-2 lg:gap-12 gap-8 items-center">
-                    <div class="lg:pe-10">
-                        <div
-                            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-10">
-                            A Smarter Way to Support Customers</div>
-                        <img src="assets/image/chatbot/customers-supports.webp"
-                            alt="AI chatbot assistant helping customers with quick support"
-                            class="max-w-full h-auto mx-auto lg:mx-0 rounded-md" width="500" height="400"
-                            loading="lazy">
-                    </div>
-                    <div class="">
-                        <div
-                            class="lg:mb-[30px] mb-6 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]">
-                            AI-powered chatbots handle common questions instantly and provide helpful responses in real
-                            time.
-                        </div>
-
-                        <p class="mb-6 text-description font-primary font-normal leading-[150%]">Instead of making
-                            customers wait for a reply, the chatbot supports them the moment they ask.</p>
-
-                        <p class="mb-4 text-heading font-primary font-semibold text-lg leading-[130%]">With AI chatbots,
-                            you can:</p>
-
-                        <div class="flex flex-col lg:gap-5 gap-5">
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg"
-                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
-                                    width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong
-                                        class="text-heading">Answer frequently asked questions instantly</strong> at any
-                                    time</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg"
-                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
-                                    width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong
-                                        class="text-heading">Provide order status and tracking details</strong> without
-                                    manual follow-up</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg"
-                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
-                                    width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong
-                                        class="text-heading">Assist with product-related queries</strong> while shoppers
-                                    are still deciding</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg"
-                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
-                                    width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong
-                                        class="text-heading">Guide customers to the right products</strong> based on
-                                    what
-                                    they need</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg"
-                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
-                                    width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong
-                                        class="text-heading">Support customers 24/7</strong> across different
-                                    touchpoints
-                                </p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg"
-                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
-                                    width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong
-                                        class="text-heading">Reduce repetitive workload for support teams</strong> so
-                                    human agents can focus on complex cases</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg"
-                                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt=""
-                                    width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary"><strong
-                                        class="text-heading">Seamlessly hand over to a human agent</strong> when a case
-                                    needs extra attention</p>
-                            </div>
-                        </div>
-
-                        <p class="mt-6 text-description font-primary font-normal leading-[150%]"><strong
-                                class="text-heading">In short:</strong> Customers get <strong
-                                class="text-heading">instant help without waiting.</strong></p>
-                    </div>
+      <!----- Section 5: Chatbots in Action ----->
+      <section class="py-10 lg:py-16">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-8 lg:mb-[60px]">
+            <h2
+              class="mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Chatbots in Action
+            </h2>
+            <p
+              class="max-w-[700px] w-full mx-auto text-description font-primary font-normal leading-[150%]"
+            >
+              Real-world examples of how AI chatbots provide immediate
+              assistance across the shopper journey.
+            </p>
+          </div>
+          <div class="flex flex-wrap justify-center lg:gap-[30px] gap-5">
+            <div
+              class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+            >
+              <div
+                class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-1.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Order status icon"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-lg text-heading font-primary font-semibold"
+                >
+                  Order Status
                 </div>
+                <p
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                >
+                  A customer asks,
+                  <strong class="text-heading">"Has my order shipped?"</strong>
+                  The chatbot instantly replies with status and tracking links.
+                </p>
+              </div>
             </div>
-        </section>
-        <!----- End Section 2 ----->
-
-
-        <!----- Section 3 ----->
-        <section class="py-10 lg:py-16">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="fade-in text-center mb-10 lg:mb-16">
-                    <h2
-                        class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4">
-                        Benefits for Retailers &amp; E-commerce Businesses</h2>
+            <div
+              class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            >
+              <div
+                class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-securityCompliance.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Return policy icon"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-lg text-heading font-primary font-semibold"
+                >
+                  Return Policy
                 </div>
-
-                <div class="fade-in grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-[30px]">
-                    <div
-                        class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col">
-                        <div
-                            class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/target-icon.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="Faster answers icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Faster
-                                Answers for Customers</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Shoppers get support the
-                                moment they ask a question</p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col">
-                        <div
-                            class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/intelligentAutomation-icon.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="Reduced workload icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Reduced
-                                Workload for Support Staff</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Routine questions are
-                                handled automatically</p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col">
-                        <div
-                            class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/customer-copilots-icon.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="24-7 assistance icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">24/7
-                                Customer Assistance</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Support remains
-                                available beyond working hours</p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#F2EEFF] border border-[#f2f2f2] flex flex-col">
-                        <div
-                            class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/vision-icon.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="Improved satisfaction icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Improved
-                                Customer Satisfaction</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Faster support leads to
-                                smoother shopping experiences</p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#EEF4FF] border border-[#f2f2f2] flex flex-col">
-                        <div
-                            class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/moduleCard-productMgmt.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="Faster decisions icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Faster
-                                Decision-Making for Shoppers</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Questions get resolved
-                                before shoppers lose momentum</p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#FFEFEF] border border-[#f2f2f2] flex flex-col">
-                        <div
-                            class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/predictive-commerce-icon.svg"
-                                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
-                                alt="Purchase completion icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Increased
-                                Chances of Completing Purchases</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Timely help prevents
-                                lost
-                                sales at key moments</p>
-                        </div>
-                    </div>
-                </div>
+                <p
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                >
+                  A shopper asks,
+                  <strong class="text-heading"
+                    >"Can I return this item?"</strong
+                  >
+                  The chatbot shares return policy details and next steps
+                  instantly.
+                </p>
+              </div>
             </div>
-        </section>
-        <!----- End Section 3 ----->
-
-
-        <!----- Section 4 ----->
-        <section
-            class="max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]">
-            <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-8">
-                    <div class="fade-in">
-                        <h2
-                            class="lg:mb-8 mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">
-                            Where Chatbots Can Be Used</h2>
-                        <p class="lg:mb-5 mb-4 text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]">
-                            Quick support works best when it is available wherever customers need help during the buying
-                            and post-purchase journey.</p>
-
-                        <div class="mt-8 lg:mt-12 p-6 rounded-2xl bg-white/5 border border-white/10 lg:max-w-[490px]">
-                            <p class="text-white/80 font-primary font-normal leading-[150%]"><strong
-                                    class="text-white font-semibold">In short:</strong> AI chatbots provide <strong
-                                    class="text-white font-semibold">instant assistance everywhere</strong> customers
-                                need it most.</p>
-                        </div>
-                    </div>
-                    <div class="fade-in">
-                        <ul class="flex flex-col lg:gap-7 gap-6">
-                            <li class="ps-5 border-s-4 border-primary">
-                                <div class="font-primary font-semibold lg:text-xl text-lg text-white mb-1">Website
-                                    Support Widget</div>
-                                <p class="text-white/80 font-primary font-normal leading-[150%]">Answer shopper
-                                    questions directly on product and category pages</p>
-                            </li>
-                            <li class="ps-5 border-s-4 border-sky">
-                                <div class="font-primary font-semibold lg:text-xl text-lg text-white mb-1">Mobile App
-                                    Customer Support</div>
-                                <p class="text-white/80 font-primary font-normal leading-[150%]">Provide quick help
-                                    inside the app without switching channels</p>
-                            </li>
-                            <li class="ps-5 border-s-4 border-pink">
-                                <div class="font-primary font-semibold lg:text-xl text-lg text-white mb-1">Checkout
-                                    Assistance</div>
-                                <p class="text-white/80 font-primary font-normal leading-[150%]">Help customers resolve
-                                    delivery, payment, or policy questions before they leave</p>
-                            </li>
-                            <li class="ps-5 border-s-4 border-sky-2">
-                                <div class="font-primary font-semibold lg:text-xl text-lg text-white mb-1">Order
-                                    Tracking Support</div>
-                                <p class="text-white/80 font-primary font-normal leading-[150%]">Share shipment updates
-                                    and delivery timelines instantly</p>
-                            </li>
-                            <li class="ps-5 border-s-4 border-grey">
-                                <div class="font-primary font-semibold lg:text-xl text-lg text-white mb-1">FAQ
-                                    Automation</div>
-                                <p class="text-white/80 font-primary font-normal leading-[150%]">Handle repeated policy,
-                                    account, and product questions automatically</p>
-                            </li>
-                            <li class="ps-5 border-s-4 border-primary">
-                                <div class="font-primary font-semibold lg:text-xl text-lg text-white mb-1">
-                                    Post-Purchase Support</div>
-                                <p class="text-white/80 font-primary font-normal leading-[150%]">Assist customers with
-                                    returns, exchanges, and follow-up questions</p>
-                            </li>
-                        </ul>
-                    </div>
+            <div
+              class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div
+                class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/target-icon.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Product availability icon"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-lg text-heading font-primary font-semibold"
+                >
+                  Product Availability
                 </div>
+                <p
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                >
+                  A customer asks,
+                  <strong class="text-heading"
+                    >"Is this available in red?"</strong
+                  >
+                  The chatbot checks inventory and responds in real time.
+                </p>
+              </div>
             </div>
-
-            <img src="assets/image/icon/strategicOutcomeBanner-shape-1.svg"
-                class="absolute select-none pointer-events-none start-0 bottom-0" alt="" width="150" height="150"
-                loading="lazy">
-            <img src="assets/image/icon/strategicOutcomeBanner-shape-2.svg"
-                class="absolute select-none pointer-events-none end-0 top-0" alt="" width="150" height="150"
-                loading="lazy">
-        </section>
-        <!----- End Section 4 ----->
-
-        <!----- Section 5: Chatbots in Action ----->
-        <section class="py-10 lg:py-16">
-            <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="fade-in text-center mb-8 lg:mb-[60px]">
-                    <h2
-                        class="mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
-                        Chatbots in Action</h2>
-                    <p class="max-w-[700px] w-full mx-auto text-description font-primary font-normal leading-[150%]">
-                        Real-world examples of how AI chatbots provide immediate assistance across the shopper journey.
-                    </p>
+            <div
+              class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div
+                class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/predictive-commerce-icon.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Delivery time icon"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-lg text-heading font-primary font-semibold"
+                >
+                  Delivery Time
                 </div>
-                <div class="flex flex-wrap justify-center lg:gap-[30px] gap-5">
-                    <div
-                        class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                        <div
-                            class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/intelligentCard-icon-1.svg"
-                                class="h-1/2 transition-all ease-linear duration-300" alt="Order status icon" width="32"
-                                height="32" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2 text-lg text-heading font-primary font-semibold">Order Status</div>
-                            <p class="text-sm text-description font-primary font-normal leading-[150%]">A customer asks,
-                                <strong class="text-heading">"Has my order shipped?"</strong> The chatbot instantly
-                                replies with status and tracking links.
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-                        <div
-                            class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/artchitecHeightlight-card-securityCompliance.svg"
-                                class="h-1/2 transition-all ease-linear duration-300" alt="Return policy icon"
-                                width="32" height="32" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2 text-lg text-heading font-primary font-semibold">Return Policy</div>
-                            <p class="text-sm text-description font-primary font-normal leading-[150%]">A shopper asks,
-                                <strong class="text-heading">"Can I return this item?"</strong> The chatbot shares
-                                return policy details and next steps instantly.
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                        <div
-                            class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/target-icon.svg"
-                                class="h-1/2 transition-all ease-linear duration-300" alt="Product availability icon"
-                                width="32" height="32" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2 text-lg text-heading font-primary font-semibold">Product Availability</div>
-                            <p class="text-sm text-description font-primary font-normal leading-[150%]">A customer asks,
-                                <strong class="text-heading">"Is this available in red?"</strong> The chatbot checks
-                                inventory and responds in real time.
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                        <div
-                            class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/predictive-commerce-icon.svg"
-                                class="h-1/2 transition-all ease-linear duration-300" alt="Delivery time icon"
-                                width="32" height="32" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2 text-lg text-heading font-primary font-semibold">Delivery Time</div>
-                            <p class="text-sm text-description font-primary font-normal leading-[150%]">A shopper asks,
-                                <strong class="text-heading">"When will it arrive?"</strong> The chatbot provides
-                                estimated delivery dates based on zip code.
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                        <div
-                            class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/icon-conversational.svg"
-                                class="h-1/2 transition-all ease-linear duration-300" alt="Human handover icon"
-                                width="32" height="32" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2 text-lg text-heading font-primary font-semibold">Human Handover</div>
-                            <p class="text-sm text-description font-primary font-normal leading-[150%]">When a shopper
-                                has a complex inquiry, the chatbot transfers them to a live agent with the full
-                                conversation context.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <p class="fade-in mt-8 text-center text-heading font-primary font-semibold text-lg leading-[150%]">These
-                    interactions keep shoppers supported at every step, reducing friction and boosting confidence.</p>
+                <p
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                >
+                  A shopper asks,
+                  <strong class="text-heading">"When will it arrive?"</strong>
+                  The chatbot provides estimated delivery dates based on zip
+                  code.
+                </p>
+              </div>
             </div>
-        </section>
-        <!----- End Section 5 ----->
-
-
-        <!----- Section 6 ----->
-        <section
-            class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-16 mb-10 lg:mb-16 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-                <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8 items-center">
-                    <div class="lg:max-w-[530px] w-full">
-                        <div
-                            class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">
-                            The Right AI Chatbot Solution</div>
-                        <p class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]">Answers common
-                            questions instantly, reduces support workload, and ensures customers receive fast and
-                            reliable assistance anytime, anywhere.</p>
-                        <p class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]">Ready to deliver
-                            faster support and improve customer satisfaction?</p>
-                        <a href="/contact-us"
-                            class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Contact
-                            Us</a>
-                    </div>
-                    <div class="rounded-[20px] overflow-hidden">
-                        <div
-                            class="w-full h-fit p-3 sm:p-5 bg-white/45 border border-white rounded-[20px] overflow-hidden">
-                            <img src="assets/image/chatbot/ai-chatbot.webp"
-                                class="w-full h-full object-cover object-top rounded-2xl sm:rounded-[20px] border border-white bg-white"
-                                alt="AI chatbot solution illustration" width="700" height="380" loading="lazy">
-                        </div>
-                    </div>
+            <div
+              class="fade-in w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+            >
+              <div
+                class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/icon-conversational.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Human handover icon"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-lg text-heading font-primary font-semibold"
+                >
+                  Human Handover
                 </div>
+                <p
+                  class="text-sm text-description font-primary font-normal leading-[150%]"
+                >
+                  When a shopper has a complex inquiry, the chatbot transfers
+                  them to a live agent with the full conversation context.
+                </p>
+              </div>
             </div>
-            <img src="assets/image/icon/ctaBanner-shape.png"
-                class="animate-pulse absolute start-0 bottom-0 pointer-none select-none" alt="" width="150" height="150"
-                loading="lazy">
-            <img src="assets/image/icon/ctaBanner-shape2.png"
-                class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
-                alt="" width="150" height="150" loading="lazy">
-        </section>
-        <!----- End Section 6 ----->
+          </div>
 
+          <p
+            class="fade-in mt-8 text-center text-heading font-primary font-semibold text-lg leading-[150%]"
+          >
+            These interactions keep shoppers supported at every step, reducing
+            friction and boosting confidence.
+          </p>
+        </div>
+      </section>
 
-        <!----- Section 7 ----->
-        <section class="py-10 lg:py-16">
-            <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="fade-in grid lg:grid-cols-1 gap-8 lg:gap-[66px] items-center text-center">
-                    <div>
-                        <h2
-                            class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">
-                            Ready to Provide Instant Customer Support?</h2>
-                        <p class="lg:pe-10 text-description font-primary font-normal leading-[150%]">Quick responses
-                            improve customer experience and help shoppers move forward with confidence.</p>
-                        <p class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]">AI-powered
-                            chatbots ensure customers always get the help they need without delays.</p>
-                        <div class="mt-5 lg:mt-10 flex flex-wrap gap-3 justify-center">
-                            <a href="/contact-us"
-                                class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">
-                                Schedule a Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
+      <!----- Section 6 ----->
+      <section
+        class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-16 mb-10 lg:mb-16 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover"
+      >
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+          <div
+            class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8 items-center"
+          >
+            <div class="lg:max-w-[530px] w-full">
+              <div
+                class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+              >
+                The Right AI Chatbot Solution
+              </div>
+              <p
+                class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]"
+              >
+                Answers common questions instantly, reduces support workload,
+                and ensures customers receive fast and reliable assistance
+                anytime, anywhere.
+              </p>
+              <p
+                class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]"
+              >
+                Ready to deliver faster support and improve customer
+                satisfaction?
+              </p>
+              <a
+                href="/contact-us"
+                class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >Contact Us</a
+              >
             </div>
-        </section>
-        <!----- End Section 7 ----->
+            <div class="rounded-[20px] overflow-hidden">
+              <div
+                class="w-full h-fit p-3 sm:p-5 bg-white/45 border border-white rounded-[20px] overflow-hidden"
+              >
+                <img
+                  src="assets/image/chatbot/ai-chatbot.webp"
+                  class="w-full h-full object-cover object-top rounded-2xl sm:rounded-[20px] border border-white bg-white"
+                  alt="AI chatbot solution illustration"
+                  width="700"
+                  height="380"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          src="assets/image/icon/ctaBanner-shape.png"
+          class="animate-pulse absolute start-0 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <img
+          src="assets/image/icon/ctaBanner-shape2.png"
+          class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+      </section>
+
+      <!----- Section 7 ----->
+      <section class="py-10 lg:py-16">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div
+            class="fade-in grid lg:grid-cols-1 gap-8 lg:gap-[66px] items-center text-center"
+          >
+            <div>
+              <h2
+                class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Ready to Provide Instant Customer Support?
+              </h2>
+              <p
+                class="lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                Quick responses improve customer experience and help shoppers
+                move forward with confidence.
+              </p>
+              <p
+                class="mt-4 lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                AI-powered chatbots ensure customers always get the help they
+                need without delays.
+              </p>
+              <div class="mt-5 lg:mt-10 flex flex-wrap gap-3 justify-center">
+                <a
+                  href="/request-demo"
+                  class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >
+                  Request a Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     {{> footer}}
 
-    <!--+++++++ Script Start +++++++-->
-    <script type='module' src='assets/script/main.js'></script>
-</body>
-
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
 </html>

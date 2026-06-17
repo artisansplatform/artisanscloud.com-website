@@ -30,7 +30,7 @@ export function initNavActive() {
             item.classList.add('active');
             const dropdown = item.closest('.tw-dropdown');
             if (dropdown) {
-                const toggle = dropdown.querySelector('.dropdown-toggle');
+                const toggle = dropdown.querySelector('.dropdown-toggle, .header-link');
                 if (toggle) toggle.classList.add('active');
             }
         }

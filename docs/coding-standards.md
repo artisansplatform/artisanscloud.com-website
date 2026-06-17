@@ -11,10 +11,12 @@
 - **Asset ownership**: Copy required images into this repository under `assets/image/`; do not hotlink external domains
 - **CDN usage**: External libraries (Swiper, GSAP, Lenis) loaded from CDN to leverage browser caching
 - **Asset optimization**: Use WebP format for images when possible
+- **Font subsetting**: Poppins is self-hosted from `assets/fonts/poppins/` and declared as `@font-face` blocks in `assets/style/input.css`, covering only the variants the site uses (normal 400/500/600/700/800, italic 400/600) in latin and latin-ext unicode-range subsets. Before adding a new weight or style to the markup, download its woff2 files and add matching `@font-face` blocks, otherwise the browser synthesizes it (see [Development: Fonts](development.md#fonts)). `tests/font-subset.test.js` (part of `npm test` / CI, or `npm run test:font`) fails the build if the markup uses a variant with no `@font-face`, if a declared woff2 file is missing, or if anything still points at Google Fonts.
 
 ## Accessibility
 - **Semantic HTML**: Use appropriate HTML5 elements (`<nav>`, `<main>`, `<article>`, `<section>`, etc.)
 - **ARIA labels**: Add `aria-label` to interactive elements without text (icon buttons, close buttons)
+- **Image alt text**: Every `<img>` needs an `alt` attribute (use `alt=""` for purely decorative images). Enforced by `tests/seo.test.js`.
 - **Keyboard navigation**: Ensure all interactive elements are keyboard accessible (Tab, Enter, Escape)
 - **Focus states**: Maintain visible focus indicators for keyboard navigation
 - **Color contrast**: Ensure text meets WCAG AA standards (4.5:1 for normal text)

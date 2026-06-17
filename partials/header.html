@@ -1,172 +1,598 @@
-    <!----- Header ----->
-    <header id="siteHeader" class="fixed top-5 px-5 w-full z-[998] transition-all duration-200 ease-linear">
-        <div class="px-3 pt-3 header-inner transition-all duration-200 ease-linear">
-            <div class="relative w-full bg-white/70 sm:p-5 p-4 border border-[#E9F1FF] rounded-[10px] sm:rounded-[20px] flex items-center justify-between flex-nowrap transition-all duration-200 ease-linear">
-                <a href="/index" class="transition-all duration-300"><img src="assets/image/logo.svg" alt="Logo" class="h-8 xl:h-10" width="120" height="40"></a>
+<!----- Header ----->
+<header
+  id="siteHeader"
+  class="fixed top-5 px-5 w-full z-[998] transition-all duration-200 ease-linear"
+>
+  <div class="px-3 pt-3 header-inner transition-all duration-200 ease-linear">
+    <div
+      class="relative w-full bg-white/70 sm:p-5 p-4 border border-[#E9F1FF] rounded-[10px] sm:rounded-[20px] flex items-center justify-between flex-nowrap transition-all duration-200 ease-linear"
+    >
+      <a href="/index" class="transition-all duration-300"
+        ><img
+          src="assets/image/logo.svg"
+          alt="Artisans Cloud"
+          class="h-8 xl:h-10"
+          width="120"
+          height="40"
+      /></a>
 
-                <button id="menuToggle" class="flex lg:hidden items-center justify-center w-10 h-10 rounded-full bg-white" aria-label="Open menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#000">
-                        <path d="M3 4H21V6H3V4ZM9 11H21V13H9V11ZM3 18H21V20H3V18Z"></path>
+      <button
+        id="menuToggle"
+        class="flex lg:hidden items-center justify-center w-10 h-10 rounded-full bg-white"
+        aria-label="Open menu"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="#000"
+        >
+          <path d="M3 4H21V6H3V4ZM9 11H21V13H9V11ZM3 18H21V20H3V18Z"></path>
+        </svg>
+      </button>
+
+      <div class="hidden lg:flex items-center gap-0 xl:gap-4">
+        <a
+          href="/nexus-unified-commerce"
+          class="header-link py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0"
+          >Unified Commerce</a
+        >
+        <div class="tw-dropdown">
+          <button
+            class="dropdown-toggle header-link flex items-center gap-2 cursor-pointer py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0"
+          >
+            Enterprise AI
+            <svg
+              class="dropdown-icon h-[5px] transition-transform duration-500"
+              viewBox="0 0 9 5"
+            >
+              <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="currentColor" />
+            </svg>
+          </button>
+
+          <div
+            class="dropdown-menu absolute z-50 top-full mt-1 left-1/2 transform -translate-x-1/2 w-[96vw] rounded-3xl border border-light-sky bg-[#ffffff99] backdrop-blur-[30px] shadow-sm opacity-0 translate-y-3 pointer-events-none transition-all duration-300 ease-out"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 p-8"
+            >
+              <div
+                class="hidden lg:block max-w-[576px] order-3 xl:order-1 flex flex-col justify-around gap-5 lg:gap-[30px] w-full h-full p-5 rounded-[10px] overflow-hidden bg-light-sky bg-[url(../../assets/image/icon/strategicCard-left-BG.png)] bg-no-repeat bg-cover"
+              >
+                <div
+                  class="relative z-[1] bg-white pt-[30px] pe-[33px] pb-6 ps-[25px] rounded-[6px] h-full"
+                >
+                  <svg
+                    class="lg:mb-5 mb-4 lg:h-[46px] h-8"
+                    width="54"
+                    height="46"
+                    viewBox="0 0 54 46"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_612_3023)">
+                      <path
+                        d="M0 0.00683594H22.2275V23.8594C22.0191 27.7138 20.6319 34.6572 15.8633 39.7705C12.0066 43.904 6.67101 46 0 46V38.0186C4.4103 38.0186 7.68047 36.8116 9.99316 34.333C12.9377 31.173 13.7134 26.5789 13.9023 23.8535H0V0.00683594ZM53.9941 0.00683594V23.8594C53.7857 27.7137 52.3984 34.6573 47.6299 39.7705C43.7733 43.9039 38.4375 45.9999 31.7666 46V38.0186C36.1768 38.0185 39.4471 36.8117 41.7598 34.333C44.7043 31.173 45.48 26.5789 45.6689 23.8535H31.7666V0.00683594H53.9941ZM31.7666 0.00683594H31.7598L31.7666 0V0.00683594Z"
+                        fill="url(#paint0_linear_612_3023)"
+                      />
+                    </g>
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear_612_3023"
+                        x1="26.9971"
+                        y1="0"
+                        x2="26.9971"
+                        y2="46"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#E9E3FF" />
+                        <stop offset="1" stop-color="#E9D8FF" />
+                      </linearGradient>
+                      <clipPath id="clip0_612_3023">
+                        <rect width="54" height="46" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <p
+                    class="lg:text-2xl text-lg font-medium font-primary text-heading leading-[130%]"
+                  >
+                    Architects of the Intelligent Enterprise Beyond Digital
+                    Transformation - We Engineer Enterprise Intelligence.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="xl:ps-16 order-1 xl:order-2 lg:col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 content-center"
+              >
+                <a
+                  href="/enterprise-ai"
+                  class="dropdown-item group block !w-full"
+                >
+                  <h4
+                    class="mb-2 lg:text-xl text-lg font-semibold text-heading group-hover:text-primary transition-colors"
+                  >
+                    Enterprise AI Overview
+                  </h4>
+                  <p
+                    class="text-sm lg:text-base text-heading/80 leading-relaxed font-normal"
+                  >
+                    Discover our comprehensive suite of Enterprise AI solutions
+                    designed to transform your business operations and
+                    decision-making.
+                  </p>
+                </a>
+                <a
+                  href="/vault-knowledge-harvester"
+                  class="dropdown-item group block !w-full"
+                >
+                  <h4
+                    class="mb-2 lg:text-xl text-lg font-semibold text-heading group-hover:text-primary transition-colors"
+                  >
+                    Knowledge Intelligence: Vault
+                  </h4>
+                  <p
+                    class="text-sm lg:text-base text-heading/80 leading-relaxed font-normal"
+                  >
+                    Capture, organize, and activate enterprise knowledge
+                    securely across your entire organization.
+                  </p>
+                </a>
+                <a href="/lumen" class="dropdown-item group block !w-full">
+                  <h4
+                    class="mb-2 lg:text-xl text-lg font-semibold text-heading group-hover:text-primary transition-colors"
+                  >
+                    Enterprise Copilot: Lumen
+                  </h4>
+                  <p
+                    class="text-sm lg:text-base text-heading/80 leading-relaxed font-normal"
+                  >
+                    Conversational access to enterprise knowledge, workflows and
+                    operational intelligence.
+                  </p>
+                </a>
+                <a
+                  href="/role-play-agent"
+                  class="dropdown-item group block !w-full"
+                >
+                  <h4
+                    class="mb-2 lg:text-xl text-lg font-semibold text-heading group-hover:text-primary transition-colors"
+                  >
+                    AI Role Play: Arena
+                  </h4>
+                  <p
+                    class="text-sm lg:text-base text-heading/80 leading-relaxed font-normal"
+                  >
+                    AI-powered simulation for workforce readiness, training, and
+                    immersive role-based learning.
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="/data-intelligence"
+          class="header-link py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0"
+          >Data Intelligence</a
+        >
+
+        <div class="tw-dropdown">
+          <button
+            class="dropdown-toggle header-link flex items-center gap-2 cursor-pointer py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0"
+          >
+            Solutions
+            <svg
+              class="dropdown-icon h-[5px] transition-transform duration-500"
+              viewBox="0 0 9 5"
+            >
+              <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="currentColor" />
+            </svg>
+          </button>
+
+          <div
+            class="dropdown-menu absolute z-50 top-full mt-1 left-1/2 transform -translate-x-1/2 w-[96vw] rounded-3xl border border-light-sky bg-[#ffffff99] backdrop-blur-[30px] shadow-sm opacity-0 translate-y-3 pointer-events-none transition-all duration-300 ease-out"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 p-8"
+            >
+              <div
+                class="hidden lg:block max-w-[576px] order-3 xl:order-1 flex flex-col justify-around gap-5 lg:gap-[30px] w-full h-full p-5 rounded-[10px] overflow-hidden bg-light-sky bg-[url(../../assets/image/icon/strategicCard-left-BG.png)] bg-no-repeat bg-cover"
+              >
+                <div
+                  class="relative z-[1] bg-white pt-[30px] pe-[33px] pb-6 ps-[25px] rounded-[6px] h-full"
+                >
+                  <svg
+                    class="lg:mb-5 mb-4 lg:h-[46px] h-8"
+                    width="54"
+                    height="46"
+                    viewBox="0 0 54 46"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_612_3023)">
+                      <path
+                        d="M0 0.00683594H22.2275V23.8594C22.0191 27.7138 20.6319 34.6572 15.8633 39.7705C12.0066 43.904 6.67101 46 0 46V38.0186C4.4103 38.0186 7.68047 36.8116 9.99316 34.333C12.9377 31.173 13.7134 26.5789 13.9023 23.8535H0V0.00683594ZM53.9941 0.00683594V23.8594C53.7857 27.7137 52.3984 34.6573 47.6299 39.7705C43.7733 43.9039 38.4375 45.9999 31.7666 46V38.0186C36.1768 38.0185 39.4471 36.8117 41.7598 34.333C44.7043 31.173 45.48 26.5789 45.6689 23.8535H31.7666V0.00683594H53.9941ZM31.7666 0.00683594H31.7598L31.7666 0V0.00683594Z"
+                        fill="url(#paint0_linear_612_3023)"
+                      />
+                    </g>
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear_612_3023"
+                        x1="26.9971"
+                        y1="0"
+                        x2="26.9971"
+                        y2="46"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#E9E3FF" />
+                        <stop offset="1" stop-color="#E9D8FF" />
+                      </linearGradient>
+                      <clipPath id="clip0_612_3023">
+                        <rect width="54" height="46" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <p
+                    class="lg:text-2xl text-lg font-medium font-primary text-heading leading-[130%]"
+                  >
+                    Architects of the Intelligent Enterprise Beyond Digital
+                    Transformation - We Engineer Enterprise Intelligence.
+                  </p>
+                </div>
+              </div>
+              <div class="xl:ps-16 order-1 xl:order-2">
+                <h4
+                  class="mb-4 lg:mb-5 lg:text-xl text-lg font-semibold text-heading"
+                >
+                  Retail AI
+                </h4>
+                <div class="flex flex-col gap-3">
+                  <a href="/image-editing" class="dropdown-item"
+                    >Image Editing</a
+                  >
+                  <a href="/smart-auto-completion" class="dropdown-item"
+                    >Smart Auto-Completion</a
+                  >
+                  <a href="/smart-product-search" class="dropdown-item"
+                    >Smart Product Search</a
+                  >
+                  <a href="/personalized-recommendations" class="dropdown-item"
+                    >Personalized Recommendations</a
+                  >
+                  <a href="/chatbots-for-quick-support" class="dropdown-item"
+                    >Chatbots for Quick Support</a
+                  >
+                  <a href="/smarter-inventory-alerts" class="dropdown-item"
+                    >Smarter Inventory Alerts</a
+                  >
+
+                  <button
+                    class="dropdown-more dropdown-item flex items-center gap-2 cursor-pointer"
+                  >
+                    More
+                    <svg class="h-[5px]" viewBox="0 0 9 5">
+                      <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="currentColor" />
                     </svg>
-                </button>
-
-                <div class="hidden lg:flex items-center gap-0 xl:gap-4">
-                    <a href="/retail-platform" class="header-link py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Retail Platform</a>
-                    <a href="/data-intelligence" class="header-link py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Data Intelligence</a>
-                    <a href="/enterprise-ai" class="header-link py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Enterprise AI</a>
-
-                    <div class="tw-dropdown">
-                        <button class="dropdown-toggle header-link flex items-center gap-2 cursor-pointer py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">
-                            Solutions
-                            <svg class="dropdown-icon h-[5px] transition-transform duration-300" viewBox="0 0 9 5">
-                                <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="currentColor"/>
-                            </svg>
-                        </button>
-
-                        <div class="dropdown-menu absolute z-50 top-full mt-1 left-1/2 transform -translate-x-1/2 w-[96vw] rounded-3xl border border-light-sky bg-[#ffffff99] backdrop-blur-[30px] shadow-sm opacity-0 translate-y-3 pointer-events-none transition-all duration-300 ease-out">
-                            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 p-8">
-                                <div class="hidden lg:block max-w-[576px] order-3 xl:order-1 flex flex-col justify-around gap-5 lg:gap-[30px] w-full h-full p-5 rounded-[10px] overflow-hidden bg-light-sky bg-[url(../../assets/image/icon/strategicCard-left-BG.png)] bg-no-repeat bg-cover">
-                                    <div class="relative z-[1] bg-white pt-[30px] pe-[33px] pb-6 ps-[25px] rounded-[6px] h-full">
-                                        <svg class="lg:mb-5 mb-4 lg:h-[46px] h-8" width="54" height="46" viewBox="0 0 54 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_612_3023)">
-                                                <path d="M0 0.00683594H22.2275V23.8594C22.0191 27.7138 20.6319 34.6572 15.8633 39.7705C12.0066 43.904 6.67101 46 0 46V38.0186C4.4103 38.0186 7.68047 36.8116 9.99316 34.333C12.9377 31.173 13.7134 26.5789 13.9023 23.8535H0V0.00683594ZM53.9941 0.00683594V23.8594C53.7857 27.7137 52.3984 34.6573 47.6299 39.7705C43.7733 43.9039 38.4375 45.9999 31.7666 46V38.0186C36.1768 38.0185 39.4471 36.8117 41.7598 34.333C44.7043 31.173 45.48 26.5789 45.6689 23.8535H31.7666V0.00683594H53.9941ZM31.7666 0.00683594H31.7598L31.7666 0V0.00683594Z" fill="url(#paint0_linear_612_3023)"/>
-                                            </g>
-                                            <defs>
-                                                <linearGradient id="paint0_linear_612_3023" x1="26.9971" y1="0" x2="26.9971" y2="46" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#E9E3FF"/>
-                                                    <stop offset="1" stop-color="#E9D8FF"/>
-                                                </linearGradient>
-                                                <clipPath id="clip0_612_3023">
-                                                    <rect width="54" height="46" fill="white"/>
-                                                </clipPath>
-                                            </defs>
-                                        </svg>
-                                        <p class="lg:text-2xl text-lg font-medium font-primary text-heading leading-[130%]">Architects of the Intelligent Enterprise Beyond Digital Transformation - We Engineer Enterprise Intelligence.</p>
-                                    </div>
-                                </div>
-                                <div class="xl:ps-16 order-1 xl:order-2">
-                                    <h4 class="mb-4 lg:mb-5 lg:text-xl text-lg font-semibold text-heading">Retail AI</h4>
-                                    <div class="flex flex-col gap-3">
-                                        <a href="/image-editing" class="dropdown-item">Image Editing</a>
-                                        <a href="/smart-auto-completion" class="dropdown-item">Smart Auto-Completion</a>
-                                        <a href="/smart-product-search" class="dropdown-item">Smart Product Search</a>
-                                        <a href="/personalized-recommendations" class="dropdown-item">Personalized Recommendations</a>
-                                        <details class="group">
-                                            <summary class="dropdown-item flex items-center gap-2 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                                                More
-                                                <svg class="h-[5px] transition-transform duration-300 group-open:rotate-180" viewBox="0 0 9 5">
-                                                    <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="currentColor"/>
-                                                </svg>
-                                            </summary>
-                                            <div class="flex flex-col gap-3 pt-3 ps-3 ms-1 mt-1">
-                                                <a href="/chatbots-for-quick-support" class="dropdown-item">Chatbots for Quick Support</a>
-                                            </div>
-                                        </details>
-                                    </div>
-                                    <h4 class="mt-6 lg:mt-12 mb-4 lg:mb-5 lg:text-xl text-lg font-semibold text-heading">Point of Sale</h4>
-                                    <div class="flex flex-col gap-3">
-                                        <a href="/POS" class="dropdown-item">POS System</a>
-                                        <a href="/browser-pos" class="dropdown-item">TabsyPOS</a>
-                                    </div>
-                                </div>
-                                <div class="order-2 xl:order-3">
-                                    <h4 class="mt-0 mb-4 lg:mb-5 lg:text-xl text-lg font-semibold text-heading">Unified Commerce</h4>
-                                    <div class="flex flex-col gap-3">
-                                        <a href="/overview" class="dropdown-item">Overview</a>
-                                        <a href="/automation" class="dropdown-item">Automation</a>
-                                        <a href="/d2c-eCommerce" class="dropdown-item">D2C eCommerce</a>
-                                        <a href="/distributed-order-management" class="dropdown-item">Distributed Order Management</a>
-                                        <a href="/customer-experience-management" class="dropdown-item">Customer Xperience Management</a>
-                                    </div>
-                                    <h4 class="mt-6 lg:mt-12 mb-4 lg:mb-5 lg:text-xl text-lg font-semibold text-heading">Supply Chain Planning</h4>
-                                    <div class="flex flex-col gap-3">
-                                        <a href="/merchandise-and-assortment-planning" class="dropdown-item">Merchandise &amp; Assortment Planning</a>
-                                        <a href="/warehouse-management-system" class="dropdown-item">Warehouse Management System</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="/about-us" class="header-link py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">About Us</a>
+                  </button>
+                  <div class="dropdown-extra">
+                    <a
+                      href="/customer-feedback-insights"
+                      class="dropdown-item pb-3"
+                      >Customer Feedback Insights</a
+                    >
+                    <a href="/dynamic-pricing" class="dropdown-item pb-3"
+                      >Dynamic Pricing</a
+                    >
+                    <a href="/store-layout-optimization" class="dropdown-item"
+                      >Store Layout Optimization</a
+                    >
+                    <a href="/fraud-detection" class="dropdown-item pt-3"
+                      >Fraud Detection</a
+                    >
+                    <a
+                      href="/personalized-promotions"
+                      class="dropdown-item pt-3"
+                      >Personalized Promotions</a
+                    >
+                    <a href="/open-to-buy-planning" class="dropdown-item pt-3"
+                      >Open-to-Buy Planning</a
+                    >
+                    <a
+                      href="/personalized-customer-experience"
+                      class="dropdown-item pt-3"
+                      >Personalized Customer Experience</a
+                    >
+                    <a href="/enterprise-data-search" class="dropdown-item pt-3"
+                      >Enterprise Data Search</a
+                    >
+                  </div>
                 </div>
-
-                <a href="/contact-us" class="py-3 px-5 mt-auto lg:mt-0 w-fit h-fit rounded-[40px] hidden lg:flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm xl:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-heading text-white hover:bg-primary">
-                    <img src="assets/image/icon/talkTOUs-icon.svg" alt="Talk to us icon" width="20" height="20">
-                    Talk to us
-                </a>
-            </div>
-        </div>
-    </header>
-    <!-- Mobile Menu -->
-    <div id="mainNav" class="block lg:hidden fixed top-0 end-0 w-full sm:w-[400px] h-screen bg-white transform translate-x-full transition-transform duration-300 z-[999]">
-        <div class="h-full p-5 flex flex-col justify-between">
-            <button id="menuClose" class="text-end text-xl pb-3">✕</button>
-            <div class="grow flex flex-col items-start gap-2 overflow-y-auto">
-                <a href="/retail-platform" class="header-link py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Retail Platform</a>
-                <a href="/data-intelligence" class="header-link py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Data Intelligence</a>
-                <a href="/enterprise-ai" class="header-link py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">Enterprise AI</a>
-
-                <div class="tw-dropdown relative w-full">
-                    <button class="dropdown-toggle header-link w-full flex items-center gap-2 cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">
-                        Solutions
-                        <svg class="ms-auto dropdown-icon w-2 h-2 transition-transform duration-300" viewBox="0 0 9 5">
-                            <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="currentColor"/>
-                        </svg>
-                    </button>
-
-                    <div class="dropdown-menu static top-0 left-0 mt-1 p-3 w-full rounded-xl border border-light-sky bg-white opacity-0 hidden pointer-events-none transition-all duration-300 ease-out">
-                        <div class="">
-                            <h4 class="mb-2 text-base font-semibold text-heading font-primary">Retail AI</h4>
-                            <div class="flex flex-col gap-2">
-                                <a href="/image-editing" class="dropdown-item text-sm">Image Editing</a>
-                                <a href="/smart-auto-completion" class="dropdown-item text-sm">Smart Auto-Completion</a>
-                                <a href="/smart-product-search" class="dropdown-item text-sm">Smart Product Search</a>
-                                <a href="/personalized-recommendations" class="dropdown-item text-sm">Personalized Recommendations</a>
-                                <details class="group">
-                                    <summary class="dropdown-item text-sm flex items-center gap-2 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                                        More
-                                        <svg class="w-2 h-2 transition-transform duration-300 group-open:rotate-180" viewBox="0 0 9 5">
-                                            <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="currentColor"/>
-                                        </svg>
-                                    </summary>
-                                    <div class="flex flex-col gap-2 pt-2 ps-3 ms-1 mt-1">
-                                        <a href="/chatbots-for-quick-support" class="dropdown-item text-sm">Chatbots for Quick Support</a>
-                                    </div>
-                                </details>
-                            </div>
-                            <h4 class="mt-6 mb-2 text-base font-semibold text-heading font-primary">Point of Sale</h4>
-                            <div class="flex flex-col gap-2">
-                                <a href="/POS" class="dropdown-item text-sm">POS System</a>
-                                <a href="/browser-pos" class="dropdown-item text-sm">TabsyPOS</a>
-                            </div>
-                        </div>
-                        <div class="mt-6">
-                            <h4 class="mb-2 text-base font-semibold text-heading font-primary">Unified Commerce</h4>
-                            <div class="flex flex-col gap-2">
-                                <a href="/overview" class="dropdown-item text-sm">Overview</a>
-                                <a href="/automation" class="dropdown-item text-sm">Automation</a>
-                                <a href="/d2c-eCommerce" class="dropdown-item text-sm">D2C eCommerce</a>
-                                <a href="/distributed-order-management" class="dropdown-item text-sm">Distributed Order Management</a>
-                                <a href="/customer-experience-management" class="dropdown-item text-sm">Customer Xperience Management</a>
-                            </div>
-                            <h4 class="mt-6 mb-2 text-base font-semibold text-heading font-primary">Supply Chain Planning</h4>
-                            <div class="flex flex-col gap-2">
-                                <a href="/merchandise-and-assortment-planning" class="dropdown-item text-sm">Merchandise &amp; Assortment Planning</a>
-                                <a href="/warehouse-management-system" class="dropdown-item text-sm">Warehouse Management System</a>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+              <div class="order-2 xl:order-3">
+                <h4
+                  class="mt-0 mb-4 lg:mb-5 lg:text-xl text-lg font-semibold text-heading"
+                >
+                  Point of Sale
+                </h4>
+                <div class="flex flex-col gap-3">
+                  <a href="/POS" class="dropdown-item">POS System</a>
+                  <a href="/browser-pos" class="dropdown-item">TabsyPOS</a>
                 </div>
-                <a href="/about-us" class="header-link py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0">About Us</a>
+                <h4
+                  class="mt-6 lg:mt-12 mb-4 lg:mb-5 lg:text-xl text-lg font-semibold text-heading"
+                >
+                  Supply Chain Planning
+                </h4>
+                <div class="flex flex-col gap-3">
+                  <a
+                    href="/merchandise-and-assortment-planning"
+                    class="dropdown-item"
+                    >Merchandise &amp; Assortment Planning</a
+                  >
+                  <a href="/warehouse-management-system" class="dropdown-item"
+                    >Warehouse Management System</a
+                  >
+                </div>
+              </div>
             </div>
-
-            <div class="pt-3">
-                <a href="/contact-us" class="py-3 px-5 mt-auto lg:mt-0 w-full sm:w-fit h-fit rounded-[40px] flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-heading text-white hover:bg-primary">
-                    <img src="assets/image/icon/talkTOUs-icon.svg" alt="Talk to us icon" width="20" height="20">
-                    Talk to us
-                </a>
-            </div>
+          </div>
         </div>
+
+        <a
+          href="/about-us"
+          class="header-link py-3 px-2 xl:px-4 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0"
+          >About Us</a
+        >
+      </div>
+
+      <a
+        href="/contact-us"
+        class="py-3 px-5 mt-auto lg:mt-0 w-fit h-fit rounded-[40px] hidden lg:flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm xl:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-heading text-white hover:bg-primary"
+      >
+        <img
+          src="assets/image/icon/talkTOUs-icon.svg"
+          alt="Talk to us icon"
+          width="20"
+          height="20"
+        />
+        Talk to us
+      </a>
     </div>
-    <div id="menuOverlay" class="fixed inset-0 bg-black/40 opacity-0 invisible transition-all duration-300 z-[998]"></div>
+  </div>
+</header>
+<!-- Mobile Menu -->
+<div
+  id="mainNav"
+  class="block lg:hidden fixed top-0 end-0 w-full sm:w-[400px] h-screen bg-white transform translate-x-full transition-transform duration-300 z-[999]"
+>
+  <div class="h-full p-5 flex flex-col justify-between">
+    <button id="menuClose" class="text-end text-xl pb-3">✕</button>
+    <div class="grow flex flex-col items-start gap-2 overflow-y-auto">
+      <a
+        href="/nexus-unified-commerce"
+        class="header-link py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0"
+        >Unified Commerce</a
+      >
+      <div class="tw-dropdown relative w-full">
+        <button
+          class="dropdown-toggle header-link w-full flex items-center gap-2 cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0"
+        >
+          Enterprise AI
+          <svg
+            class="ms-auto dropdown-icon w-2 h-2 transition-transform duration-500"
+            viewBox="0 0 9 5"
+          >
+            <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="currentColor" />
+          </svg>
+        </button>
+
+        <div
+          class="dropdown-menu static top-0 left-0 mt-1 p-3 w-full rounded-xl border border-light-sky bg-white opacity-0 hidden pointer-events-none transition-all duration-300 ease-out"
+        >
+          <div class="flex flex-col gap-5">
+            <a href="/enterprise-ai" class="dropdown-item group block !w-full">
+              <h4
+                class="text-sm font-semibold text-heading group-hover:text-primary transition-colors"
+              >
+                Enterprise AI Overview
+              </h4>
+              <p class="text-xs text-heading/70 mt-1 leading-snug font-normal">
+                Discover our comprehensive suite of Enterprise AI solutions
+                designed to transform your business operations and
+                decision-making.
+              </p>
+            </a>
+            <a
+              href="/vault-knowledge-harvester"
+              class="dropdown-item group block !w-full"
+            >
+              <h4
+                class="text-sm font-semibold text-heading group-hover:text-primary transition-colors"
+              >
+                Knowledge Intelligence: Vault
+              </h4>
+              <p class="text-xs text-heading/70 mt-1 leading-snug font-normal">
+                Capture, organize, and activate enterprise knowledge securely
+                across your entire organization.
+              </p>
+            </a>
+            <a href="/lumen" class="dropdown-item group block !w-full">
+              <h4
+                class="text-sm font-semibold text-heading group-hover:text-primary transition-colors"
+              >
+                Enterprise Copilot: Lumen
+              </h4>
+              <p class="text-xs text-heading/70 mt-1 leading-snug font-normal">
+                Conversational access to enterprise knowledge, workflows and
+                operational intelligence.
+              </p>
+            </a>
+            <a
+              href="/role-play-agent"
+              class="dropdown-item group block !w-full"
+            >
+              <h4
+                class="text-sm font-semibold text-heading group-hover:text-primary transition-colors"
+              >
+                AI Role Play: Arena
+              </h4>
+              <p class="text-xs text-heading/70 mt-1 leading-snug font-normal">
+                AI-powered simulation for workforce readiness, training, and
+                immersive role-based learning.
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <a
+        href="/data-intelligence"
+        class="header-link py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0"
+        >Data Intelligence</a
+      >
+
+      <div class="tw-dropdown relative w-full">
+        <button
+          class="dropdown-toggle header-link w-full flex items-center gap-2 cursor-pointer py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0"
+        >
+          Solutions
+          <svg
+            class="ms-auto dropdown-icon w-2 h-2 transition-transform duration-500"
+            viewBox="0 0 9 5"
+          >
+            <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="currentColor" />
+          </svg>
+        </button>
+
+        <div
+          class="dropdown-menu static top-0 left-0 mt-1 p-3 w-full rounded-xl border border-light-sky bg-white opacity-0 hidden pointer-events-none transition-all duration-300 ease-out"
+        >
+          <div class="">
+            <h4 class="mb-2 text-base font-semibold text-heading font-primary">
+              Retail AI
+            </h4>
+            <div class="flex flex-col gap-2">
+              <a href="/image-editing" class="dropdown-item text-sm"
+                >Image Editing</a
+              >
+              <a href="/smart-auto-completion" class="dropdown-item text-sm"
+                >Smart Auto-Completion</a
+              >
+              <a href="/smart-product-search" class="dropdown-item text-sm"
+                >Smart Product Search</a
+              >
+              <a
+                href="/personalized-recommendations"
+                class="dropdown-item text-sm"
+                >Personalized Recommendations</a
+              >
+              <a
+                href="/chatbots-for-quick-support"
+                class="dropdown-item text-sm"
+                >Chatbots for Quick Support</a
+              >
+              <a href="/smarter-inventory-alerts" class="dropdown-item text-sm"
+                >Smarter Inventory Alerts</a
+              >
+
+              <button
+                class="dropdown-more dropdown-item text-sm flex items-center gap-2 cursor-pointer"
+              >
+                More
+                <svg class="w-2 h-2" viewBox="0 0 9 5">
+                  <path d="M4.5 4.5L0 0H9L4.5 4.5Z" fill="currentColor" />
+                </svg>
+              </button>
+              <div class="dropdown-extra">
+                <a
+                  href="/customer-feedback-insights"
+                  class="dropdown-item text-sm pb-3"
+                  >Customer Feedback Insights</a
+                >
+                <a href="/dynamic-pricing" class="dropdown-item text-sm pb-3"
+                  >Dynamic Pricing</a
+                >
+                <a
+                  href="/store-layout-optimization"
+                  class="dropdown-item text-sm pb-3"
+                  >Store Layout Optimization</a
+                >
+                <a href="/fraud-detection" class="dropdown-item text-sm pb-3"
+                  >Fraud Detection</a
+                >
+                <a
+                  href="/personalized-promotions"
+                  class="dropdown-item text-sm pb-3"
+                  >Personalized Promotions</a
+                >
+                <a href="/open-to-buy-planning" class="dropdown-item text-sm pb-3"
+                  >Open-to-Buy Planning</a
+                >
+                <a
+                  href="/personalized-customer-experience"
+                  class="dropdown-item text-sm pb-3"
+                  >Personalized Customer Experience</a
+                >
+                <a href="/enterprise-data-search" class="dropdown-item text-sm pb-3"
+                  >Enterprise Data Search</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="mt-6">
+            <h4 class="mb-2 text-base font-semibold text-heading font-primary">
+              Point of Sale
+            </h4>
+            <div class="flex flex-col gap-2">
+              <a href="/POS" class="dropdown-item text-sm">POS System</a>
+              <a href="/browser-pos" class="dropdown-item text-sm">TabsyPOS</a>
+            </div>
+            <h4
+              class="mt-6 mb-2 text-base font-semibold text-heading font-primary"
+            >
+              Supply Chain Planning
+            </h4>
+            <div class="flex flex-col gap-2">
+              <a
+                href="/merchandise-and-assortment-planning"
+                class="dropdown-item text-sm"
+                >Merchandise &amp; Assortment Planning</a
+              >
+              <a
+                href="/warehouse-management-system"
+                class="dropdown-item text-sm"
+                >Warehouse Management System</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <a
+        href="/about-us"
+        class="header-link py-2 px-3 rounded-[70px] font-primary font-normal text-base leading-[100%] text-heading hover:text-primary focus-visible:text-primary transition-all duration-300 ease-in-out outline-0"
+        >About Us</a
+      >
+    </div>
+
+    <div class="pt-3">
+      <a
+        href="/contact-us"
+        class="py-3 px-5 mt-auto lg:mt-0 w-full sm:w-fit h-fit rounded-[40px] flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-heading text-white hover:bg-primary"
+      >
+        <img
+          src="assets/image/icon/talkTOUs-icon.svg"
+          alt="Talk to us icon"
+          width="20"
+          height="20"
+        />
+        Talk to us
+      </a>
+    </div>
+  </div>
+</div>
+<div
+  id="menuOverlay"
+  class="fixed inset-0 bg-black/40 opacity-0 invisible transition-all duration-300 z-[998]"
+></div>

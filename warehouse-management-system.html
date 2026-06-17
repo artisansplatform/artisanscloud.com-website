@@ -1,400 +1,934 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <title>Warehouse Management System | Artisans Cloud</title>
-    <link rel="canonical" href="https://www.artisanscloud.com/warehouse-management-system" />
-    <meta name="description"
-        content="Transform warehouse operations with Azentio WMS powered by AzentioOneERP. Intelligent inventory flow, operational visibility and predictive fulfillment performance within the Artisans Unified Commerce ecosystem.">
-    <meta name="keywords"
-        content="Warehouse Management System, WMS, Azentio WMS, AzentioOneERP, warehouse operations, inventory management, fulfillment, supply chain, unified commerce, Artisans Cloud">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:url" content="https://artisanscloud.com/warehouse-management-system">
-    <meta property="og:title" content="Warehouse Management System | Artisans Cloud">
-    <meta property="og:description"
-        content="Intelligent warehouse orchestration powered by AzentioOneERP. Real-time execution engine for synchronized, data-driven warehouse operations.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/warehouse-management-system.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <!-- Font Family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="./assets/style/output.css">
-</head>
-<body>
-    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
 
     {{> header}}
 
     <main class="w-full">
-
-        <!----- Banner Sec ----->
-        <section class="w-full h-full p-4 lg:p-5">
-            <div class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/distributed-order-management/bannerBG.webp')] bg-no-repeat bg-cover bg-bottom-right">
-                <div class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] xl:pb-44 lg:pb-36 sm:pb-24">
-                    <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                        <div class="text-center lg:max-w-[900px] mx-auto">
-                            <div class="mb-6 lg:mb-[37px] font-primary font-semibold text-2xl sm:text-4xl lg:text-[44px] xl:text-[50px] text-heading leading-[120%]" id="heroHeading">Intelligent Warehouse Orchestration</div>
-                            <div id="heroDec">
-                                <p class="mb-4 lg:mb-6 text-lg lg:text-xl text-heading font-primary font-semibold leading-[130%]">Precision &middot; Velocity &middot; Control</p>
-                                <p class="text-base lg:text-lg text-description font-primary font-normal leading-[150%]">The Warehouse Management System powered by AzentioOneERP is a real-time execution engine that transforms warehouse operations into a synchronized, data-driven environment.</p>
-                                <p class="mt-4 text-base lg:text-lg text-description font-primary font-normal leading-[150%]">Integrated within the <strong class="text-heading">Artisans Unified Commerce ecosystem</strong>, it enables intelligent
-                                inventory flow, operational visibility and predictive fulfillment performance across complex distribution networks.</p>
-                                <a href="/contact-us" class="lg:mt-10 mt-6 mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Book 30 mins Demo</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!----- End Banner Sec ----->
-
-
-        <!----- Unified Commerce Ecosystem Sec ----->
-        <section class="lg:pt-[100px] lg:pb-10 md:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
-                    <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">A Warehouse Operating System for Modern Supply Chain Operations</div>
-                    <div class="">
-                        <p class="lg:pe-10 text-description font-primary font-normal leading-[150%]">At the core of Azentio WMS lies a unified warehouse intelligence layer designed to orchestrate inbound, storage, picking, packing and dispatch processes with precision and scale. It connects space, stock, labor and movement into a single operational framework, eliminating silos and enabling:</p>
-                        <ul class="mt-4 ps-5">
-                            <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">Real-time inventory accuracy across bins and storage zones</li>
-                            <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">Intelligent storage optimization</li>
-                            <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">High-volume SKU management</li>
-                            <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">Adaptive picking strategies</li>
-                            <li class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description">Measurable productivity gains</li>
-                        </ul>
-                        <p class="mt-5 lg:pe-10 text-description font-primary font-normal leading-[150%]">The result is a warehouse that operates with agility, consistency and enterprise-grade control.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!----- End Unified Commerce Ecosystem Sec ----->
-
-
-        <!----- Operational Intelligence Stats Sec ----->
-        <section class="lg:py-[90px] sm:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="fade-in text-center mb-10 lg:mb-16">
-                    <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4">Operational Intelligence to Drive Performance</h2>
-                    <p class="max-w-[800px] mx-auto text-description font-primary font-normal leading-[150%]">Warehouse environments are often constrained by manual coordination, picking inefficiencies, and fragmented visibility. Azentio WMS introduces structured automation and intelligent execution within a unified ERP backbone.</p>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-[30px] gap-5">
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/target-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Storage utilization icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-1 text-primary font-primary font-bold text-3xl sm:text-4xl leading-[110%]">30%</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Optimized storage utilization through rule-based allocation and cube-fit logic</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/intelligentCard-icon-1.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Operational efficiency icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-1 text-primary font-primary font-bold text-3xl sm:text-4xl leading-[110%]">25%</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Improved operational efficiency through guided workflows and automation</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/icon-ai.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Reduced picking errors icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Reduced Picking Errors</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Through intelligent wave planning and confirmation controls</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                        <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/moduleCard-retailPLanning.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Higher capacity utilization icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Higher Capacity Utilization</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">By aligning warehouse execution with enterprise demand signals</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!----- End Operational Intelligence Stats Sec ----->
-
-
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
-        </div>
-
-
-        <!----- Inbound Intelligence Sec ----->
-        <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
-                    <div class="lg:pe-10">
-                        <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-10">Inbound Intelligence</div>
-                        <img src="assets/image/solutions/distributed-order-management/Achieve-Optimal-Efficiency.svg" alt="Inbound intelligence dashboard showing warehouse receiving operations" class="max-w-full h-auto mx-auto lg:mx-0" width="500" height="400" loading="lazy">
-                    </div>
-                    <div class="">
-                        <div class="lg:mb-[30px] mb-6 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]">A structured, rule-driven framework governs how inventory enters and flows through the warehouse.</div>
-
-                        <div class="flex flex-col lg:gap-5 gap-5">
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary">Centralized inbound command dashboard</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary">Automated put-away based on configurable business rules</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary">Cube-fit and sequence-based storage optimization</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary">Cross-docking to accelerate outbound fulfillment</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary">Palletization and staging controls</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary">Paperless receiving via handheld devices</p>
-                            </div>
-                        </div>
-
-                        <p class="mt-6 text-description font-primary font-normal leading-[150%]">Every inbound movement is synchronized with the ERP core ensuring real-time financial and inventory alignment.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!----- End Inbound Intelligence Sec ----->
-
-
-        <!----- Outbound Orchestration Sec ----->
-        <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="grid lg:grid-cols-2 lg:gap-12 gap-8 items-center">
-                    <div class="order-2 lg:order-1">
-                        <img src="assets/image/solutions/distributed-order-management/Infinite-Scale.svg" alt="Outbound orchestration showing dispatch and fulfillment workflow" class="max-w-full h-auto mx-auto lg:mx-0" width="500" height="400" loading="lazy">
-                    </div>
-                    <div class="order-1 lg:order-2">
-                        <div class="mb-4 lg:mb-6 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Outbound Orchestration</div>
-                        <p class="mb-6 text-description font-primary font-normal leading-[150%]">Outbound operations are engineered for precision, compliance and speed.</p>
-                        <div class="flex flex-col gap-4">
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary">Unified outbound control dashboard</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary">Wave, batch, and order-based picking strategies</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary">Priority-driven delivery scheduling</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary">FIFO / FEFO allocation logic</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary">Customer-wise order grouping</p>
-                            </div>
-                            <div class="ps-8 relative">
-                                <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                                <p class="text-base text-description font-normal font-primary">Automated zero-stock confirmation</p>
-                            </div>
-                        </div>
-                        <p class="mt-6 text-description font-primary font-normal leading-[150%]">This structured orchestration minimizes errors while accelerating dispatch velocity across channels.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!----- End Outbound Orchestration Sec -----><!----- Enterprise Interoperability Sec ----->
-        <section class="lg:py-[100px] sm:py-16 py-10">
-            <div
-                class="max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]">
-                <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-8">
-                        <div class="fade-in">
-                            <div
-                                class="lg:mb-8 mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">
-                                Engineered for Enterprise Interoperability</div>
-                            <p class="text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]">As part of the
-                                Azentio OneERP suite, the WMS seamlessly connects with your enterprise systems. Within the
-                                Artisans Unified Commerce architecture, it functions as an intelligent execution layer to bridge
-                                warehouse operations with merchandising, planning and customer fulfillment.</p>
-                        </div>
-                        <div class="fade-in">
-                            <ul class="flex flex-col lg:gap-7 gap-6">
-                                <li class="ps-5 border-s-4 border-primary">
-                                    <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Finance and
-                                        Procurement Modules</div>
-                                </li>
-                                <li class="ps-5 border-s-4 border-sky">
-                                    <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Transportation
-                                        Systems</div>
-                                </li>
-                                <li class="ps-5 border-s-4 border-pink">
-                                    <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">3PL Networks
-                                    </div>
-                                </li>
-                                <li class="ps-5 border-s-4 border-sky-2">
-                                    <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Barcode, RFID,
-                                        Robotics &amp; Smart Automation</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <img src="assets/image/icon/strategicOutcomeBanner-shape-1.svg"
-                    class="absolute select-none pointer-events-none start-0 bottom-0" alt="" width="150" height="150"
-                    loading="lazy">
-                <img src="assets/image/icon/strategicOutcomeBanner-shape-2.svg"
-                    class="absolute select-none pointer-events-none end-0 top-0" alt="" width="150" height="150" loading="lazy">
-            </div>
-        </section>
-        <!----- End Enterprise Interoperability Sec ----->
-
-
-        <!----- Paperless Mobile Real-time Sec ----->
-        <section class="lg:py-[100px] sm:py-16 py-10">
+      <!----- Banner Sec ----->
+      <section class="w-full h-full p-4 lg:p-5">
+        <div
+          class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/distributed-order-management/bannerBG.webp')] bg-no-repeat bg-cover bg-bottom-right"
+        >
+          <div
+            class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] xl:pb-44 lg:pb-36 sm:pb-24"
+          >
             <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="text-center">
-                    <h2 class="fade-in lg:mb-10 mb-5 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Paperless &middot; Mobile &middot; Real time</h2>
-                    <p class="max-w-[800px] mx-auto mb-10 text-description font-primary font-normal leading-[150%]">Designed for execution on the warehouse floor, Azentio WMS empowers teams through mobile-first workflows:</p>
+              <div class="text-center lg:max-w-[900px] mx-auto">
+                <div
+                  class="mb-3 sm:mb-5 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
+                >
+                  Warehouse Management
                 </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
-                    <div class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                        <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/intelligentAutomation-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Handheld pick and put-away icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Pick &amp; Put-away Confirmations</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Handheld-based pick and put-away confirmations for warehouse floor execution.</p>
-                        </div>
-                    </div>
-                    <div class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                        <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/Cloud-hybridDeployments-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Real-time stock relocation icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Real-time Stock Relocation</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Move inventory between zones and bins with instant system updates.</p>
-                        </div>
-                    </div>
-                    <div class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                        <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/metadata-LineageManagement-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Automated document sequencing icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Automated Document Sequencing</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Eliminate manual paperwork with automated document generation and sequencing.</p>
-                        </div>
-                    </div>
-                    <div class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                        <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/DataQuality-Trust-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Barcode and label generation icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div>
-                            <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Barcode &amp; Label Generation</div>
-                            <p class="text-description font-primary font-normal leading-[150%]">Generate barcodes and labels seamlessly for streamlined warehouse operations.</p>
-                        </div>
-                    </div>
+                <h1
+                  class="mb-3 font-primary text-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%]"
+                  id="heroHeading"
+                >
+                  Intelligent Warehouse Orchestration
+                </h1>
+                <div
+                  id="heroDec"
+                  class="flex flex-col items-center mb-7.5 lg:mb-12"
+                >
+                  <p
+                    class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%] mb-3"
+                  >
+                    Precision &middot; Velocity &middot; Control
+                  </p>
+                  <p
+                    class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%] mb-3"
+                  >
+                    The Warehouse Management System powered by AzentioOneERP is
+                    a real-time execution engine that transforms warehouse
+                    operations into a synchronized, data-driven environment.
+                  </p>
+                  <p
+                    class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                  >
+                    Integrated within the
+                    <strong class="text-heading"
+                      >Artisans Cloud Unified Commerce ecosystem</strong
+                    >, it enables intelligent inventory flow, operational
+                    visibility and predictive fulfillment performance across
+                    complex distribution networks.
+                  </p>
+                  <a
+                    href="/request-demo"
+                    class="lg:mt-[25px] mt-4 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                    >Book 30 mins Demo</a
+                  >
                 </div>
-
-                <p class="fade-in mt-8 text-center text-description font-primary font-normal leading-[150%]">Operational updates reflect instantly across the enterprise system eliminating reconciliation gaps.</p>
+              </div>
             </div>
-        </section>
-        <!----- End Paperless Mobile Real-time Sec ----->
+          </div>
+        </div>
+      </section>
 
-
-        <!----- From Storage to Strategic Asset Sec ----->
-        <section class="lg:py-[90px] sm:py-16 py-10">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-                <div class="fade-in text-center mb-10 lg:mb-16">
-                    <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4">From Storage Facility to Strategic Asset</h2>
-                    <p class="max-w-[800px] mx-auto text-description font-primary font-normal leading-[150%]">Warehousing is no longer a back-end function. It is a strategic driver of customer experience, margin protection and fulfillment excellence. With <strong class="text-heading">Azentio Warehouse Management System</strong>, integrated into the Artisans Unified Commerce ecosystem, enterprises gain:</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8">
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">End-to-end Visibility</div>
-                        <p class="text-base text-description font-normal font-primary">Complete transparency across all warehouse operations and inventory movements.</p>
-                    </div>
-
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Real-time Enterprise Synchronization</div>
-                        <p class="text-base text-description font-normal font-primary">Instant data alignment across all enterprise systems for unified decision-making.</p>
-                    </div>
-
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Faster Fulfillment Cycles</div>
-                        <p class="text-base text-description font-normal font-primary">Accelerated order processing and dispatch for improved customer satisfaction.</p>
-                    </div>
-
-                    <div class="fade-in ps-8 relative">
-                        <img src="assets/image/icon/forward-arrow.svg" class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3" alt="" width="16" height="16" loading="lazy">
-                        <div class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary">Sustainable Cost Efficiency</div>
-                        <p class="text-base text-description font-normal font-primary">Optimized resource utilization and reduced operational overhead for long-term savings.</p>
-                    </div>
-                </div>
+      <!----- Unified Commerce Ecosystem Sec ----->
+      <section class="lg:pt-[100px] lg:pb-10 md:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="grid lg:grid-cols-2 lg:gap-16 gap-8">
+            <div
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              A Warehouse Operating System for Modern Supply Chain Operations
             </div>
-        </section>
-        <!----- End From Storage to Strategic Asset Sec ----->
-
-
-        <!----- CTA Sec ----->
-        <section class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover">
-            <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-                <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8 items-center">
-                    <div class="lg:max-w-[530px] w-full">
-                        <div class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">Architect Your Warehouse for Scale and Intelligence</div>
-                        <p class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]">Transform warehouse execution into a connected, intelligent capability within your unified commerce ecosystem.</p>
-                        <div class="flex flex-wrap gap-3">
-                            <a href="/contact-us" class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Explore Warehouse Capabilities</a>
-                            <a href="/contact-us" class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out border border-white text-white hover:bg-white/10">Speak with our Solution Architect</a>
-                        </div>
-                    </div>
-                    <div class="rounded-[20px] overflow-hidden">
-                        <img src="assets/image/warehouse-management-system/warehouse-management-system-screenshot.png" class="w-full h-full object-cover object-top rounded-2xl sm:rounded-[20px]" alt="Warehouse Management System Demo" width="700" height="380" loading="lazy">
-                    </div>
-                </div>
+            <div class="">
+              <p
+                class="lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                At the core of Azentio WMS lies a unified warehouse intelligence
+                layer designed to orchestrate inbound, storage, picking, packing
+                and dispatch processes with precision and scale. It connects
+                space, stock, labor and movement into a single operational
+                framework, eliminating silos and enabling:
+              </p>
+              <ul class="mt-4 ps-5">
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Real-time inventory accuracy across bins and storage zones
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Intelligent storage optimization
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  High-volume SKU management
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Adaptive picking strategies
+                </li>
+                <li
+                  class="mb-1 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[140%] text-description"
+                >
+                  Measurable productivity gains
+                </li>
+              </ul>
+              <p
+                class="mt-5 lg:pe-10 text-description font-primary font-normal leading-[150%]"
+              >
+                The result is a warehouse that operates with agility,
+                consistency and enterprise-grade control.
+              </p>
             </div>
-            <img src="assets/image/icon/ctaBanner-shape.png" class="animate-pulse absolute start-0 bottom-0 pointer-none select-none" alt="" width="150" height="150" loading="lazy">
-            <img src="assets/image/icon/ctaBanner-shape2.png" class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none" alt="" width="150" height="150" loading="lazy">
-        </section>
-        <!----- End CTA Sec ----->
+          </div>
+        </div>
+      </section>
+
+      <!----- Operational Intelligence Stats Sec ----->
+      <section class="lg:py-[90px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              Operational Intelligence to Drive Performance
+            </h2>
+            <p
+              class="max-w-[800px] mx-auto text-description font-primary font-normal leading-[150%]"
+            >
+              Warehouse environments are often constrained by manual
+              coordination, picking inefficiencies, and fragmented visibility.
+              Azentio WMS introduces structured automation and intelligent
+              execution within a unified ERP backbone.
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-[30px] gap-5"
+          >
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/target-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Storage utilization icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-1 text-primary font-primary font-bold text-3xl sm:text-4xl leading-[110%]"
+                >
+                  30%
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Optimized storage utilization through rule-based allocation
+                  and cube-fit logic
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-1.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Operational efficiency icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-1 text-primary font-primary font-bold text-3xl sm:text-4xl leading-[110%]"
+                >
+                  25%
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Improved operational efficiency through guided workflows and
+                  automation
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/icon-ai.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Reduced picking errors icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Reduced Picking Errors
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Through intelligent wave planning and confirmation controls
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            >
+              <div
+                class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/moduleCard-retailPLanning.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Higher capacity utilization icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2.5 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Higher Capacity Utilization
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  By aligning warehouse execution with enterprise demand signals
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Inbound Intelligence Sec ----->
+      <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="grid lg:grid-cols-2 lg:gap-12 gap-8">
+            <div class="lg:pe-10">
+              <div
+                class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-10"
+              >
+                Inbound Intelligence
+              </div>
+              <img
+                src="assets/image/solutions/distributed-order-management/Achieve-Optimal-Efficiency.svg"
+                alt="Inbound intelligence dashboard showing warehouse receiving operations"
+                class="max-w-full h-auto mx-auto lg:mx-0"
+                width="500"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+            <div class="">
+              <div
+                class="lg:mb-[30px] mb-6 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                A structured, rule-driven framework governs how inventory enters
+                and flows through the warehouse.
+              </div>
+
+              <div class="flex flex-col lg:gap-5 gap-5">
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Centralized inbound command dashboard
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Automated put-away based on configurable business rules
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Cube-fit and sequence-based storage optimization
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Cross-docking to accelerate outbound fulfillment
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Palletization and staging controls
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Paperless receiving via handheld devices
+                  </p>
+                </div>
+              </div>
+
+              <p
+                class="mt-6 text-description font-primary font-normal leading-[150%]"
+              >
+                Every inbound movement is synchronized with the ERP core
+                ensuring real-time financial and inventory alignment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Outbound Orchestration Sec ----->
+      <section class="lg:pt-14 lg:pb-[97px] md:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="grid lg:grid-cols-2 lg:gap-12 gap-8 items-center">
+            <div class="order-2 lg:order-1">
+              <img
+                src="assets/image/solutions/distributed-order-management/Infinite-Scale.svg"
+                alt="Outbound orchestration showing dispatch and fulfillment workflow"
+                class="max-w-full h-auto mx-auto lg:mx-0"
+                width="500"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+            <div class="order-1 lg:order-2">
+              <div
+                class="mb-4 lg:mb-6 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Outbound Orchestration
+              </div>
+              <p
+                class="mb-6 text-description font-primary font-normal leading-[150%]"
+              >
+                Outbound operations are engineered for precision, compliance and
+                speed.
+              </p>
+              <div class="flex flex-col gap-4">
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Unified outbound control dashboard
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Wave, batch, and order-based picking strategies
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Priority-driven delivery scheduling
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    FIFO / FEFO allocation logic
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Customer-wise order grouping
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    Automated zero-stock confirmation
+                  </p>
+                </div>
+              </div>
+              <p
+                class="mt-6 text-description font-primary font-normal leading-[150%]"
+              >
+                This structured orchestration minimizes errors while
+                accelerating dispatch velocity across channels.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!----- Enterprise Interoperability Sec ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div
+          class="max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]"
+        >
+          <div
+            class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10"
+          >
+            <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-8">
+              <div class="fade-in">
+                <div
+                  class="lg:mb-8 mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+                >
+                  Engineered for Enterprise Interoperability
+                </div>
+                <p
+                  class="text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]"
+                >
+                  As part of the Azentio OneERP suite, the WMS seamlessly
+                  connects with your enterprise systems. Within the Artisans
+                  Cloud Unified Commerce architecture, it functions as an
+                  intelligent execution layer to bridge warehouse operations
+                  with merchandising, planning and customer fulfillment.
+                </p>
+              </div>
+              <div class="fade-in">
+                <ul class="flex flex-col lg:gap-7 gap-6">
+                  <li class="ps-5 border-s-4 border-primary">
+                    <div
+                      class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1"
+                    >
+                      Finance and Procurement Modules
+                    </div>
+                  </li>
+                  <li class="ps-5 border-s-4 border-sky">
+                    <div
+                      class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1"
+                    >
+                      Transportation Systems
+                    </div>
+                  </li>
+                  <li class="ps-5 border-s-4 border-pink">
+                    <div
+                      class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1"
+                    >
+                      3PL Networks
+                    </div>
+                  </li>
+                  <li class="ps-5 border-s-4 border-sky-2">
+                    <div
+                      class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1"
+                    >
+                      Barcode, RFID, Robotics &amp; Smart Automation
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <img
+            src="assets/image/icon/strategicOutcomeBanner-shape-1.svg"
+            class="absolute select-none pointer-events-none start-0 bottom-0"
+            alt=""
+            width="150"
+            height="150"
+            loading="lazy"
+          />
+          <img
+            src="assets/image/icon/strategicOutcomeBanner-shape-2.svg"
+            class="absolute select-none pointer-events-none end-0 top-0"
+            alt=""
+            width="150"
+            height="150"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <!----- Paperless Mobile Real-time Sec ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="text-center">
+            <h2
+              class="fade-in lg:mb-10 mb-5 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Paperless &middot; Mobile &middot; Real time
+            </h2>
+            <p
+              class="max-w-[800px] mx-auto mb-10 text-description font-primary font-normal leading-[150%]"
+            >
+              Designed for execution on the warehouse floor, Azentio WMS
+              empowers teams through mobile-first workflows:
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentAutomation-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Handheld pick and put-away icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Pick &amp; Put-away Confirmations
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Handheld-based pick and put-away confirmations for warehouse
+                  floor execution.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/Cloud-hybridDeployments-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Real-time stock relocation icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Real-time Stock Relocation
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Move inventory between zones and bins with instant system
+                  updates.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/metadata-LineageManagement-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Automated document sequencing icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Automated Document Sequencing
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Eliminate manual paperwork with automated document generation
+                  and sequencing.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/DataQuality-Trust-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Barcode and label generation icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+                >
+                  Barcode &amp; Label Generation
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Generate barcodes and labels seamlessly for streamlined
+                  warehouse operations.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p
+            class="fade-in mt-8 text-center text-description font-primary font-normal leading-[150%]"
+          >
+            Operational updates reflect instantly across the enterprise system
+            eliminating reconciliation gaps.
+          </p>
+        </div>
+      </section>
+
+      <!----- From Storage to Strategic Asset Sec ----->
+      <section class="lg:py-[90px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              From Storage Facility to Strategic Asset
+            </h2>
+            <p
+              class="max-w-[800px] mx-auto text-description font-primary font-normal leading-[150%]"
+            >
+              Warehousing is no longer a back-end function. It is a strategic
+              driver of customer experience, margin protection and fulfillment
+              excellence. With
+              <strong class="text-heading"
+                >Azentio Warehouse Management System</strong
+              >, integrated into the Artisans Cloud Unified Commerce ecosystem,
+              enterprises gain:
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8">
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                End-to-end Visibility
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                Complete transparency across all warehouse operations and
+                inventory movements.
+              </p>
+            </div>
+
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Real-time Enterprise Synchronization
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                Instant data alignment across all enterprise systems for unified
+                decision-making.
+              </p>
+            </div>
+
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Faster Fulfillment Cycles
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                Accelerated order processing and dispatch for improved customer
+                satisfaction.
+              </p>
+            </div>
+
+            <div class="fade-in ps-8 relative">
+              <img
+                src="assets/image/icon/forward-arrow.svg"
+                class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                alt=""
+                width="16"
+                height="16"
+                loading="lazy"
+              />
+              <div
+                class="mb-2 text-lg lg:text-xl text-heading font-semibold font-primary"
+              >
+                Sustainable Cost Efficiency
+              </div>
+              <p class="text-base text-description font-normal font-primary">
+                Optimized resource utilization and reduced operational overhead
+                for long-term savings.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- CTA Sec ----->
+      <section
+        class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover"
+      >
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+          <div
+            class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8 items-center"
+          >
+            <div class="lg:max-w-[530px] w-full">
+              <div
+                class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+              >
+                Architect Your Warehouse for Scale and Intelligence
+              </div>
+              <p
+                class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]"
+              >
+                Transform warehouse execution into a connected, intelligent
+                capability within your unified commerce ecosystem.
+              </p>
+              <div class="flex flex-wrap gap-3">
+                <a
+                  href="/contact-us"
+                  class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                  >Explore Warehouse Capabilities</a
+                >
+                <a
+                  href="/contact-us"
+                  class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out border border-white text-white hover:bg-white/10"
+                  >Speak with our Solution Architect</a
+                >
+              </div>
+            </div>
+            <div class="rounded-[20px] overflow-hidden">
+              <img
+                src="assets/image/warehouse-management-system/warehouse-management-system-screenshot.png"
+                class="w-full h-full object-cover object-top rounded-2xl sm:rounded-[20px]"
+                alt="Warehouse Management System Demo"
+                width="700"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+        <img
+          src="assets/image/icon/ctaBanner-shape.png"
+          class="animate-pulse absolute start-0 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <img
+          src="assets/image/icon/ctaBanner-shape2.png"
+          class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+      </section>
     </main>
-
 
     {{> footer}}
 
-
-    <!--+++++++ Script Start +++++++-->
-
-    <script type='module' src='assets/script/main.js'></script>
-</body>
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
 </html>

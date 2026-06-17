@@ -1,450 +1,1773 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
 
-    <title>Intelligent Enterprise Transformation | Artisans Cloud</title>
-    <link rel="canonical" href="https://www.artisanscloud.com/" />
-    <meta name="description"
-        content="Artisans Cloud drives Intelligent Enterprise Transformation by unifying data, intelligence, and workflows. Unlock operational agility, predictive decision-making, and sustained business growth.">
-    <meta name="keywords"
-        content="Intelligent Enterprise, Digital Transformation, AI in Business, Enterprise Automation, Predictive Analytics, Unified Data Platform, Cloud Intelligence, Artisans Cloud">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:url" content="https://artisanscloud.com/">
-    <meta property="og:title" content="Intelligent Enterprise Transformation | Artisans Cloud">
-    <meta property="og:description"
-        content="Transform your enterprise into an intelligent, adaptive system with Artisans Cloud. Accelerate growth through AI, automation, and unified business intelligence.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/index.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <!-- Font Family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="./assets/style/output.css">
-</head>
-<body>
-    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
-
-
-    <!----- Header ----->
     {{> header}}
-
 
     <!----- Hero Sec ----->
     <section class="w-full h-full p-4 lg:p-5">
-        <div class="max-w-full w-full h-full mx-auto rounded-[30px] sm:pt-[141px] pt-24 bg-[url('../../assets/image/hero_bg.webp')] bg-no-repeat bg-bottom bg-cover">
-            <div class="flex flex-col sm:flex-row items-center pt-7.5 md:pt-12 lg:pt-[28px] pb-[30px] md:pb-[43px] text-center h-full max-w-[1400px] w-full mx-auto">
+      <div
+        class="relative max-w-full w-full mx-auto rounded-[30px] sm:pt-[141px] pt-24 overflow-hidden bg-[#ede8fd] min-h-[560px] sm:min-h-[620px] lg:min-h-0 lg:aspect-[1717/916] lg:max-h-[820px]"
+      >
+        <!-- Full-width background image (desktop only; hidden on mobile/tablet to prevent card overlap) -->
+        <img
+          src="/assets/image/banner-image.webp"
+          alt=""
+          class="absolute inset-0 w-full h-full object-cover object-center hidden lg:block"
+          width="1717"
+          height="916"
+          fetchpriority="high"
+          aria-hidden="true"
+        />
 
-                <div class="w-full  hidden sm:block">
-                    <div class="ml-[clamp(16px,4vw,58px)] me-[clamp(20px,5vw,81px)]">
-                        <div class="mb-[30px] w-full max-w-[315px]">
-                            <div
-                                class="flex items-center justify-center text-nowrap text-center w-full px-4 mb-3 min-h-[clamp(15px,4vw,63px)] font-bold text-[clamp(6px,1.1vw,17px)] text-[#204446] bg-[#FFFFFF] rounded-[clamp(10px,2.5vw,20px)] shadow-[30px_14px_64px_0px_#D6CDED99]">
-                                Retail Planning</div>
-                            <img src="/assets/image/hero_sub_bg_1.webp" alt="Retail Planning"
-                                class="w-full h-full shadow-[30px_14px_64px_0px_#D6CDED99] bg-transparent rounded-[clamp(10px,2.5vw,20px)]" width="315" height="197">
-                        </div>
-                    </div>
-                    <div class="ml-[clamp(24px,7vw,145px)] ">
-                        <div class="max-w-[315px]">
-                            <div
-                                class="flex items-center justify-center text-nowrap text-center w-full px-1 md:px-4 mb-3 min-h-[clamp(28px,4vw,87px)] font-bold text-[clamp(6px,1.1vw,17px)]  text-[#204446] bg-[#FFFFFF] rounded-[clamp(10px,2.5vw,20px)] shadow-[30px_14px_64px_0px_#D6CDED99]">
-                                Decision Intelligence & <br> Data Foresight</div>
-                            <img src="/assets/image/hero_sub_bg_2.webp" alt=""
-                                class="shadow-[30px_14px_64px_0px_#D6CDED99] rounded-[clamp(10px,2.5vw,20px)]">
-                        </div>
-                    </div>
-                </div>
-                <!-- ----- Mobile Responsive---- -->
-                <div class="w-full flex justify-between gap-5 mb-7.5 sm:hidden ">
-                    <div class=" ms-5">
-                        <div class="max-w-[315px]">
-                            <div
-                                class="flex items-center justify-center text-nowrap text-center w-full px-4 mb-3 min-h-6 font-bold text-[8px] text-[#204446] bg-[#FFFFFF] rounded-[clamp(10px,2.5vw,20px)] shadow-[30px_14px_64px_0px_#D6CDED99]">
-                                Retail Planning</div>
-                            <img src="/assets/image/hero_sub_bg_1.webp" alt="Retail Planning"
-                                class="shadow-[30px_14px_64px_0px_#D6CDED99] bg-transparent rounded-[clamp(10px,2.5vw,20px)]" width="315" height="197">
-                        </div>
-                    </div>
-                    <div class="me-5">
-                        <div class="max-w-[315px]">
-                            <div
-                                class="flex items-center justify-center text-nowrap text-center w-full px-4 mb-3 min-h-6 font-bold text-[8px]  text-[#204446] bg-[#FFFFFF] rounded-[clamp(10px,2.5vw,20px)] shadow-[30px_14px_64px_0px_#D6CDED99]">
-                                Supply Chain Operations</div>
-                            <img src="/assets/image/hero_sub_bg_3.webp" alt="Supply Chain Operations"
-                                class="shadow-[30px_14px_64px_0px_#D6CDED99] rounded-[clamp(10px,2.5vw,20px)]" width="315" height="197">
-                        </div>
-                    </div>
-                </div>
-                <!-- ----------------- end------------>
-
-                <div class="mx-auto lg:mt-[100px] lg:mb-[clamp(24px,5vw,80px)]">
-                    <div class="ms-2 md:ms-6 me-2">
-                        <h1 class=" hidden sm:block text-heading font-primary font-semibold leading-[135%] text-[clamp(16px,3.5vw,42px)] text-nowrap"
-                            id="heroHeading">Streamline, <br> Optimize, and Align <br> Retail Planning and <br> Supply Chain <br> Operations </h1>
-                        <h1 class="block sm:hidden text-heading font-primary font-semibold leading-[120%] text-[24px] "
-                            id="heroHeading">Streamline, Optimize, <br> and Align  Retail <br> Planning and Supply <br> Chain Operations </h1>
-                        <div id="heroBtn"
-                            class="mt-6 lg:mt-11.75 w-full flex flex-row items-center justify-center flex-wrap gap-3 ">
-                            <a href="/retail-platform"
-                                class="w-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Get
-                                started</a>
-                            <a href="/retail-platform"
-                                class="w-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] text-heading relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 bg-white hover:bg-heading hover:text-white focus-visible:bg-heading focus-visible:text-white">View
-                                Demo</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full hidden sm:block">
-                    <div class="flex flex-col items-end w-full">
-                        <div class="ms-[clamp(16px,4vw,70px)] me-[clamp(20px,5vw,85px)]">
-                            <div class=" mb-[30px] max-w-[315px]">
-                                <div
-                                    class="flex items-center justify-center text-nowrap text-center w-full px-4 mb-3 min-h-[clamp(15px,4vw,63px)] font-bold text-[clamp(6px,1.1vw,17px)]  text-[#204446] bg-[#FFFFFF] rounded-[clamp(10px,2.5vw,20px)] shadow-[30px_14px_64px_0px_#D6CDED99]">
-                                    Supply Chain Operations</div>
-                                <img src="/assets/image/hero_sub_bg_3.webp" alt="Supply Chain Operations"
-                                    class="shadow-[30px_14px_64px_0px_#D6CDED99] rounded-[clamp(10px,2.5vw,20px)]" width="315" height="197">
-                            </div>
-                        </div>
-                        <div class="me-[clamp(24px,7.5vw,159px)]">
-                            <div class="max-w-[315px] ">
-                                <div
-                                    class="flex items-center justify-center text-nowrap text-center w-full px-4 mb-3 min-h-[clamp(15px,4vw,63px)] font-bold text-[clamp(6px,1.1vw,17px)]  text-[#204446] bg-[#FFFFFF] rounded-[clamp(10px,2.5vw,20px)] shadow-[30px_14px_64px_0px_#D6CDED99]">
-                                    Business Intelligence</div>
-                                <img src="/assets/image/hero_sub_bg_4.webp" alt="Business Intelligence"
-                                    class="shadow-[30px_14px_64px_0px_#D6CDED99] rounded-[clamp(10px,2.5vw,20px)]" width="315" height="197">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ------------Mobile Responsive---------------->
-
-                <div class="w-full flex justify-between gap-5 mt-7.5 sm:hidden ">
-                    <div class="ms-5">
-                        <div class="max-w-[315px]">
-                            <div
-                                class="flex items-center justify-center text-nowrap text-center w-full px-1 md:px-4 mb-3 min-h-8.5 font-bold text-[8px] text-[#204446] bg-[#FFFFFF] rounded-[clamp(10px,2.5vw,20px)] shadow-[30px_14px_64px_0px_#D6CDED99]">
-                                Decision Intelligence & <br> Data Foresight</div>
-                            <img src="/assets/image/hero_sub_bg_2.webp" alt="Decision Intelligence"
-                                class="shadow-[30px_14px_64px_0px_#D6CDED99] rounded-[clamp(10px,2.5vw,20px)]" width="315" height="197">
-                        </div>
-                    </div>
-                    <div class="me-5">
-                        <div class="max-w-[315px] ">
-                            <div
-                                class="flex items-center justify-center text-nowrap text-center w-full px-4 mb-3 min-h-6 font-bold text-[8px] text-[#204446] bg-[#FFFFFF] rounded-[clamp(10px,2.5vw,20px)] shadow-[30px_14px_64px_0px_#D6CDED99]">
-                                Business Intelligence</div>
-                            <img src="/assets/image/hero_sub_bg_4.webp" alt="Business Intelligence"
-                                class="shadow-[30px_14px_64px_0px_#D6CDED99] rounded-[clamp(10px,2.5vw,20px)]" width="315" height="197">
-                        </div>
-                    </div>
-                </div>
+        <!-- Content layer -->
+        <div
+          class="relative z-10 flex flex-col lg:flex-row items-start w-full h-full px-5 lg:px-12 xl:px-16 pt-8 lg:pt-12 pb-10 lg:pb-16 gap-6"
+        >
+          <!-- Text: left half -->
+          <div
+            class="w-full lg:w-[52%] flex flex-col justify-center text-center lg:text-left"
+          >
+            <h1
+              class="font-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] lg:leading-[61px] mb-4"
+              id="heroHeading"
+            >
+              <span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]"
+                >Connected Enterprise Systems</span
+              ><br />
+              for Modern Operations
+            </h1>
+            <p
+              class="text-primary font-primary font-semibold text-[clamp(14px,1.1vw,17px)] mb-5 leading-[150%]"
+            >
+              Designed for large-scale, complex enterprise environments.
+            </p>
+            <p
+              class="text-[clamp(14px,1.3vw,18px)] text-description font-primary font-normal leading-[150%] mb-4"
+            >
+              Artisans Cloud delivers enterprise platforms and enterprise
+              intelligence systems designed to improve visibility, coordination
+              and execution across modern business operations.
+            </p>
+            <p
+              class="text-[clamp(14px,1.3vw,18px)] text-description font-primary font-normal leading-[150%] mb-8"
+            >
+              From unified commerce and operational workflows to enterprise
+              knowledge, workforce readiness and AI-driven decision support,
+              Artisans Cloud enables connected execution across the enterprise.
+            </p>
+            <div
+              id="heroBtn"
+              class="flex flex-row items-center justify-center lg:justify-start flex-wrap gap-4"
+            >
+              <a
+                href="/request-demo"
+                class="w-fit rounded-[40px] px-6 py-3.5 flex items-center justify-center gap-2 font-primary font-semibold text-base md:text-base leading-[100%] bg-primary text-white transition-all duration-300 ease-in-out hover:bg-primary-light active:scale-95"
+              >
+                Request a Demo
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/nexus-unified-commerce"
+                class="w-fit rounded-[40px] px-6 py-3.5 flex items-center justify-center gap-2 font-primary font-semibold text-base md:text-base leading-[100%] text-heading bg-white border border-[#e2e8f0] transition-all duration-300 ease-in-out hover:bg-heading hover:text-white active:scale-95"
+              >
+                Explore Platforms
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
             </div>
-
+          </div>
         </div>
+      </div>
     </section>
-    <!----- End Hero Sec ----->
-
 
     <!----- Our Client Sec ----->
     <section class="lg:pt-[70px] md:pt-12 pt-9 pb-4">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="text-heading font-semibold leading-[125%] font-primary lg:text-2xl! text-lg text-center mb-8 lg:mb-11">Our Clients & Partners</div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="text-heading font-semibold leading-[125%] font-primary lg:text-2xl! text-lg text-center mb-8 lg:mb-11"
+        >
+          Trusted by Enterprises & Partners
         </div>
+      </div>
 
-        <div class="ourClientMaruqee swiper w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
-                    <div class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-4 border border-[#efefef] rounded-[10px] grid place-items-center">
-                        <img src="assets/image/client-logo-1.svg" class="max-h-8 sm:max-h-12 w-auto object-contain" alt="Client logo" width="160" height="32" loading="lazy">
-                    </div>
-                </div>
-                <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
-                    <div class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-4 border border-[#efefef] rounded-[10px] grid place-items-center">
-                        <img src="assets/image/client-logo-2.svg" class="max-h-8 sm:max-h-12 w-auto object-contain" alt="Client logo" width="140" height="28" loading="lazy">
-                    </div>
-                </div>
-                <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
-                    <div class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-4 border border-[#efefef] rounded-[10px] grid place-items-center">
-                        <img src="assets/image/client-logo-3.svg" class="max-h-8 sm:max-h-12 w-auto object-contain" alt="Client logo" width="120" height="24" loading="lazy">
-                    </div>
-                </div>
-                <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
-                    <div class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-4 border border-[#efefef] rounded-[10px] grid place-items-center">
-                        <img src="assets/image/client-logo-4.svg" class="max-h-8 sm:max-h-12 w-auto object-contain" alt="Client logo" width="160" height="32" loading="lazy">
-                    </div>
-                </div>
-                <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
-                    <div class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-4 border border-[#efefef] rounded-[10px] grid place-items-center">
-                        <img src="assets/image/client-logo-6.svg" class="max-h-8 sm:max-h-12 w-auto object-contain" alt="Client logo" width="180" height="36" loading="lazy">
-                    </div>
-                </div>
-                <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
-                    <div class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-4 border border-[#efefef] rounded-[10px] grid place-items-center">
-                        <img src="assets/image/client-logo-5.svg" class="max-h-8 sm:max-h-12 w-auto object-contain" alt="Client logo" width="160" height="32" loading="lazy">
-                    </div>
-                </div>
-                <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
-                    <div class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-3 border border-[#efefef] rounded-[10px] grid place-items-center">
-                        <img src="assets/image/client-logo-7.svg" class="max-h-8 sm:max-h-12 w-auto object-contain" alt="Client logo" width="200" height="40" loading="lazy">
-                    </div>
-                </div>
-                 <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
-                    <div class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-4 border border-[#efefef] rounded-[10px] grid place-items-center">
-                        <img src="assets/image/client-logo-8.svg" class="max-h-8 sm:max-h-12 w-auto object-contain" alt="Client logo" width="200" height="40" loading="lazy">
-                    </div>
-                </div>
-                <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
-                    <div class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-2 border border-[#efefef] rounded-[10px] grid place-items-center">
-                        <img src="assets/image/client-logo-9.svg" class="max-h-8 sm:max-h-12 w-auto object-contain" alt="Client logo" width="200" height="40" loading="lazy">
-                    </div>
-                </div>
-                <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
-                    <div class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-2 border border-[#efefef] rounded-[10px] grid place-items-center">
-                        <img src="assets/image/client-logo-10-ci.png" class="max-h-8 sm:max-h-12 w-auto object-contain" alt="Client logo" width="200" height="40" loading="lazy">
-                    </div>
-                </div>
-                <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
-                    <div class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-2 border border-[#efefef] rounded-[10px] grid place-items-center">
-                        <img src="assets/image/client-logo-11-kingsway.png" class="max-h-8 sm:max-h-12 w-auto object-contain" alt="Client logo" width="200" height="40" loading="lazy">
-                    </div>
-                </div>
+      <div
+        class="ourClientMaruqee swiper w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+      >
+        <div class="swiper-wrapper">
+          <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
+            <div
+              class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-4 border border-[#efefef] rounded-[10px] grid place-items-center"
+            >
+              <img
+                src="assets/image/client-logo-1.svg"
+                class="max-h-8 sm:max-h-12 w-auto object-contain"
+                alt="Client logo"
+                width="160"
+                height="32"
+                loading="lazy"
+              />
             </div>
-        </div>
-    </section>
-    <!----- End Our Client Sec ----->
-
-
-    <!----- Our Core Verticals Sec ----->
-    <section class="lg:py-[110px] lg:pb-[100px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="mb-4 text-center fade-in lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Our Core Verticals</div>
-            <p class="max-w-[915px] w-full mx-auto text-center lg:leading-[26px] leading-[130%] fade-in text-description font-primary">We bring intelligent transformation to the industries shaping the future of business. Each vertical is powered by our unified data, AI, and commerce foundation - designed to deliver agility, foresight, and measurable outcomes.</p>
-
-            <div class="mt-7 sm:mt-10 lg:mt-[60px]">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-[30px]">
-                    <div class="fade-in pt-7 px-5 pb-5 rounded-2xl md:rounded-[30px] w-full h-full bg-light-purple">
-                        <div class="relative">
-                            <div class="w-[96%] mx-auto p-4 md:p-[22px] bg-white/25 border border-white rounded-xl md:rounded-[20px] aspect-[16/10] overflow-hidden">
-                                <img src="assets/image/ourCore-unifiedCommerce.webp" class="w-full h-full object-cover object-top rounded-[10px]" alt="Unified Commerce" width="400" height="250" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="-mt-5 relative z-10 pt-11 px-[30px] pb-[30px] bg-white rounded-2xl md:rounded-[20px] text-center shadow-[0px_-20px_20px_4px_#eae3ff]">
-                            <div class="mb-4 line-clamp-1 text-[22px] leading-[120%] font-semibold font-primary text-heading" title="Unified Commerce Transformation">Unified Commerce Transformation</div>
-                            <p class="mb-4 md:mb-8 text-description font-primary font-normal text-base leading-[150%]">Built as a single source of truth, it eliminates channel silos and orchestrates the entire retail journey from store to supply chain to customer delivering seamless omnichannel experiences and maximized customer lifetime value. Unlike conventional retail stacks, Artisans’ platform integrates AI-native decisioning directly into the commerce core.</p>
-
-                            <a href="/retail-platform" class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] text-heading relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 mx-auto border border-[#D8D8D8] bg-[#F4F0FE] hover:bg-primary hover:text-white focus-visible:bg-primary focus-visible:text-white">Read More</a>
-                        </div>
-                    </div>
-                    <div class="fade-in pt-7 px-5 pb-5 rounded-2xl md:rounded-[30px] w-full h-full bg-light-green">
-                        <div class="relative">
-                            <div class="w-[96%] mx-auto p-4 md:p-[22px] bg-white/25 border border-white rounded-xl md:rounded-[20px] aspect-[16/10] overflow-hidden">
-                                <img src="assets/image/ourCore-DecisionIntelligenForesight.webp" class="w-full h-full object-cover object-top rounded-[10px]" alt="Decision Intelligence" width="400" height="250" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="-mt-5 relative z-10 pt-11 px-[30px] pb-[30px] bg-white rounded-2xl md:rounded-[20px] text-center shadow-[0px_-20px_20px_4px_#EAF5F6]">
-                            <div class="mb-4 line-clamp-1 text-[22px] leading-[120%] font-semibold font-primary text-heading" title="Decision Intelligence & Data Foresight">Decision Intelligence & Data Foresight</div>
-                            <p class="mb-4 md:mb-8 text-description font-primary font-normal text-base leading-[150%]">We convert enterprise data ecosystems into predictive decision engines. From large-scale data lakes to real-time analytics, our solutions surface foresight not hindsight allowing leaders to act with precision and confidence in volatile markets. Intelligence, operationalized at the speed of business.</p>
-
-                            <a href="/data-intelligence" class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] text-heading relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 mx-auto border border-[#D8D8D8] bg-[#EAF5F6] hover:bg-sky-2 hover:text-white focus-visible:bg-sky-2 focus-visible:text-white">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="fade-in md:col-span-2 pt-5 md:pt-[41px] pb-0 rounded-2xl md:rounded-[30px] w-full h-full bg-light-pink overflow-hidden">
-                        <div class="grid grid-cols-1 md:grid-cols-2">
-                            <div class="md:pt-11 pt-2 lg:ps-[70px] px-5 md:px-[30px] md:pb-[30px] pb-4">
-                                <div class="mb-4 line-clamp-1 text-[22px] text-center md:text-left leading-[120%] font-semibold font-primary text-heading" title="Cognitive Automation as a Service (AIaaS)">Cognitive Automation as a Service (AIaaS)</div>
-                                <p class="mb-4 md:mb-8 md:max-w-[485px] text-center md:text-left w-full text-description font-primary font-normal text-base leading-[150%]">We operationalize enterprise-grade AI within mission-critical workflows. From intelligent automation to generative copilots and conversational analytics, our cognitive layer accelerates decisions, amplifies human capability, and ensures every action is explainable and trusted.</p>
-
-                                <a href="/enterprise-ai" class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 mx-auto md:mx-0 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] text-heading relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 border border-[#D8D8D8] bg-[#F4E7F2] hover:bg-pink hover:text-white focus-visible:bg-pink focus-visible:text-white">Read More</a>
-                            </div>
-                            <div class="relative overflow-hidden flex items-end justify-end">
-                                <div class="transform translate-y-6 translate-x-6 p-4 bg-white/25 border border-white rounded-xl md:rounded-[20px] h-full aspect-[16/10] overflow-hidden">
-                                    <img src="assets/image/ourCore-AIaaS.webp" class="w-full h-full object-cover object-top-left rounded-[10px]" alt="AI as a Service" width="400" height="250" loading="lazy">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
+            <div
+              class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-4 border border-[#efefef] rounded-[10px] grid place-items-center"
+            >
+              <img
+                src="assets/image/client-logo-2.svg"
+                class="max-h-8 sm:max-h-12 w-auto object-contain"
+                alt="Client logo"
+                width="140"
+                height="28"
+                loading="lazy"
+              />
             </div>
+          </div>
+          <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
+            <div
+              class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-4 border border-[#efefef] rounded-[10px] grid place-items-center"
+            >
+              <img
+                src="assets/image/client-logo-3.svg"
+                class="max-h-8 sm:max-h-12 w-auto object-contain"
+                alt="Client logo"
+                width="120"
+                height="24"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
+            <div
+              class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-4 border border-[#efefef] rounded-[10px] grid place-items-center"
+            >
+              <img
+                src="assets/image/client-logo-4.svg"
+                class="max-h-8 sm:max-h-12 w-auto object-contain"
+                alt="Client logo"
+                width="160"
+                height="32"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
+            <div
+              class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-4 border border-[#efefef] rounded-[10px] grid place-items-center"
+            >
+              <img
+                src="assets/image/client-logo-6.svg"
+                class="max-h-8 sm:max-h-12 w-auto object-contain"
+                alt="Client logo"
+                width="180"
+                height="36"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
+            <div
+              class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-4 border border-[#efefef] rounded-[10px] grid place-items-center"
+            >
+              <img
+                src="assets/image/client-logo-5.svg"
+                class="max-h-8 sm:max-h-12 w-auto object-contain"
+                alt="Client logo"
+                width="160"
+                height="32"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
+            <div
+              class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-3 border border-[#efefef] rounded-[10px] grid place-items-center"
+            >
+              <img
+                src="assets/image/client-logo-7.svg"
+                class="max-h-8 sm:max-h-12 w-auto object-contain"
+                alt="Client logo"
+                width="200"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
+            <div
+              class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-4 border border-[#efefef] rounded-[10px] grid place-items-center"
+            >
+              <img
+                src="assets/image/client-logo-8.svg"
+                class="max-h-8 sm:max-h-12 w-auto object-contain"
+                alt="Client logo"
+                width="200"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
+            <div
+              class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-2 border border-[#efefef] rounded-[10px] grid place-items-center"
+            >
+              <img
+                src="assets/image/client-logo-9.svg"
+                class="max-h-8 sm:max-h-12 w-auto object-contain"
+                alt="Client logo"
+                width="200"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
+            <div
+              class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-2 border border-[#efefef] rounded-[10px] grid place-items-center"
+            >
+              <img
+                src="assets/image/client-logo-10-ci.png"
+                class="max-h-8 sm:max-h-12 w-auto object-contain"
+                alt="Client logo"
+                width="200"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="swiper-slide px-2 !w-auto whitespace-nowrap">
+            <div
+              class="clientLogo relative sm:max-w-60 max-w-40 sm:min-w-60 min-w-40 sm:h-20 p-2 border border-[#efefef] rounded-[10px] grid place-items-center"
+            >
+              <img
+                src="assets/image/client-logo-11-kingsway.png"
+                class="max-h-8 sm:max-h-12 w-auto object-contain"
+                alt="Client logo"
+                width="200"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!----- End Our Core Verticals Sec ----->
 
+    <!----- What We Do Sec ----->
+    <section class="lg:py-20 sm:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-[66px] items-center">
+          <div class="fade-in">
+            <div
+              class="mb-3 text-primary font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase tracking-wider"
+            >
+              WHAT WE DO
+            </div>
+            <h2
+              class="lg:mb-5 mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Enterprise Platforms and Intelligence Systems
+            </h2>
+            <p
+              class="lg:mb-4 mb-3 text-description font-primary font-normal text-base leading-[150%]"
+            >
+              Artisans Cloud delivers connected enterprise platforms and
+              intelligence systems designed to support modern operational
+              execution across complex business environments.
+            </p>
+            <p
+              class="lg:mb-4 mb-3 text-description font-primary font-normal text-base leading-[150%]"
+            >
+              Our platform portfolio includes unified commerce capabilities for
+              large-scale retail operations alongside horizontal enterprise
+              intelligence systems for workforce readiness, enterprise
+              knowledge, intelligent workflows and operational decision support.
+            </p>
+            <p
+              class="text-heading font-primary font-semibold text-base leading-[150%]"
+            >
+              By combining operational platforms with embedded intelligence,
+              Artisans Cloud helps organizations improve visibility,
+              coordination and execution consistency across enterprise
+              operations.
+            </p>
+          </div>
+          <div class="fade-in">
+            <img
+              src="assets/image/homepage/artisanscloud-platforms-intelligence.webp"
+              class="max-w-full h-auto mx-auto lg:mx-0 rounded-2xl"
+              alt="Connected enterprise systems for modern operations"
+              width="580"
+              height="420"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
 
+    <!----- Our Offerings Sec ----->
+    <section class="lg:py-20 sm:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <h2
+          class="mb-10 lg:mb-14 text-center lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+        >
+          Our Offerings
+        </h2>
 
-    <!----- Intelligent Enterprise Sec ----->
-    <section class="lg:py-[110px] lg:pb-[100px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in lg:mb-5 mb-4 grid grid-cols-1 lg:grid-cols-2 gap-3">
-                <div class="">
-                    <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">The Partner for <br class="hidden lg:block"> Intelligent Enterprise <br class="hidden lg:block"> Transformation</div>
-                </div>
-                <div class="">
-                    <div class="mb-4 text-heading font-primary font-semibold text-xl leading-[125%]">We bring three strengths to every engagement</div>
-                    <p class="text-description font-primary font-normal text-base leading-[150%]">Artisans integrates enterprise engineering with strategic intelligence to create systems that learn, adapt, and deliver measurable business value. Our approach unites predictive analytics, domain expertise, and execution precision enabling organizations to scale intelligence, not just infrastructure.</p>
-                </div>
+        <div class="flex flex-col gap-5 lg:gap-[30px]">
+          <!-- Row 1: Card 1 (Nexus) + Card 2 (Enterprise AI) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-[30px]">
+            <!-- Card 1: Nexus -->
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col group"
+            >
+              <div
+                class="mb-5 max-w-14 min-w-14 h-14 grid place-items-center rounded-[10px] bg-white overflow-hidden"
+              >
+                <img
+                  src="assets/image/homepage/artisanscloud-nexus.webp"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Nexus platform"
+                  width="56"
+                  height="56"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="mb-2 text-xl lg:text-2xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Nexus
+              </div>
+              <div
+                class="mb-3 text-heading font-primary font-semibold text-base leading-[150%]"
+              >
+                Unified Commerce Platform for Connected Retail Operations
+              </div>
+              <p
+                class="mb-3 text-description font-primary font-normal text-base leading-[150%]"
+              >
+                Bring together inventory, orders, fulfillment, customers, and
+                omnichannel operations into one connected operational system.
+              </p>
+              <p
+                class="mb-5 text-description font-primary font-normal text-base leading-[150%]"
+              >
+                Built for enterprises managing high-volume commerce operations
+                across stores, warehouses, marketplaces and digital channels.
+              </p>
+              <div
+                class="mb-3 text-heading font-primary font-semibold text-base"
+              >
+                Capabilities
+              </div>
+              <ul class="flex flex-col gap-2 mb-6">
+                <li
+                  class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+                >
+                  <svg
+                    class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  Real-time inventory visibility across sales channels
+                </li>
+                <li
+                  class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+                >
+                  <svg
+                    class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  Centralized order orchestration
+                </li>
+                <li
+                  class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+                >
+                  <svg
+                    class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  Omnichannel commerce operations
+                </li>
+                <li
+                  class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+                >
+                  <svg
+                    class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  Customer and loyalty workflows
+                </li>
+                <li
+                  class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+                >
+                  <svg
+                    class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  Promotions and pricing coordination
+                </li>
+                <li
+                  class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+                >
+                  <svg
+                    class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  Retail and distributed commerce support
+                </li>
+              </ul>
+              <div class="mt-auto">
+                <a
+                  href="/nexus-unified-commerce"
+                  class="text-primary font-primary font-semibold text-base hover:underline"
+                  >Explore Unified Commerce Platform &rarr;</a
+                >
+              </div>
             </div>
 
-
-            <div class="mt-5 md:mt-9 lg:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px]">
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col group">
-                    <div class="mb-6 sm:mb-8 lg:mb-12 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/intelligentCard-icon-1.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Predictive Intelligence icon" width="40" height="40" loading="lazy">
+            <!-- Card 2: Enterprise AI -->
+            <div
+              class="fade-in w-full h-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col group"
+            >
+              <div
+                class="mb-5 max-w-14 min-w-14 h-14 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/icon-AIEngineering.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Enterprise AI icon"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="mb-2 text-xl lg:text-2xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Enterprise AI
+              </div>
+              <div
+                class="mb-3 font-primary font-semibold text-base leading-[150%]"
+              >
+                Designed for Operational Execution
+              </div>
+              <p
+                class="mb-5 text-description font-primary font-normal text-base leading-[150%]"
+              >
+                AI systems purpose-built to prepare teams, make enterprise
+                knowledge usable and support execution across operational
+                workflows.
+              </p>
+              <div class="flex flex-col gap-3 flex-1">
+                <div class="p-4 bg-white/50 rounded-xl flex flex-col">
+                  <div
+                    class="flex items-center gap-2 text-description font-primary text-base leading-[150%]"
+                  >
+                    <div
+                      class="w-8 h-8 rounded-[6px] bg-white grid place-items-center mb-2 overflow-hidden"
+                    >
+                      <img
+                        src="assets/image/homepage/artisanscloud-arena.webp"
+                        class="w-full h-full object-cover"
+                        alt="Arena platform"
+                        width="32"
+                        height="32"
+                        loading="lazy"
+                      />
                     </div>
-                    <div>
-                        <div class="mb-3 md:mb-4 text-xl lg:text-[22px] text-heading font-primary font-semibold">Predictive Intelligence</div>
-                        <p class="text-description font-primary font-normal text-base leading-[150%]">Proprietary AI and data orchestration frameworks that anticipate outcomes and optimize margins.</p>
+                    <div
+                      class="mb-1 text-heading font-primary font-semibold text-base leading-[150%]"
+                    >
+                      Arena - Role Play Agent
                     </div>
+                  </div>
+                  <p
+                    class="mb-2 text-description font-primary font-normal text-base leading-[150%]"
+                  >
+                    Prepare teams for real-world operational, customer, and
+                    decision scenarios through AI-driven simulations.
+                  </p>
+                  <a
+                    href="/role-play-agent"
+                    class="text-primary font-primary font-semibold text-xs hover:underline mt-auto"
+                    >Explore Arena &rarr;</a
+                  >
                 </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col group">
-                    <div class="mb-6 sm:mb-8 lg:mb-12 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/intelligentCard-icon-2.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Sector Expertise icon" width="40" height="40" loading="lazy">
+                <div class="p-4 bg-white/50 rounded-xl flex flex-col">
+                  <div
+                    class="flex items-center gap-2 text-description font-primary text-base leading-[150%]"
+                  >
+                    <div
+                      class="w-8 h-8 rounded-[6px] bg-white grid place-items-center mb-2 overflow-hidden"
+                    >
+                      <img
+                        src="assets/image/homepage/artisanscloud-valut.webp"
+                        class="w-full h-full object-cover"
+                        alt="Vault platform"
+                        width="32"
+                        height="32"
+                        loading="lazy"
+                      />
                     </div>
-                    <div>
-                        <div class="mb-3 md:mb-4 text-xl lg:text-[22px] text-heading font-primary font-semibold">Sector Expertise</div>
-                        <p class="text-description font-primary font-normal text-base leading-[150%]">Proven acceleration frameworks for Retail, Automobile and Manufacturing for Global Enterprises.</p>
+                    <div
+                      class="mb-1 text-heading font-primary font-semibold text-base leading-[150%]"
+                    >
+                      Vault - Knowledge Harvester
                     </div>
+                  </div>
+                  <p
+                    class="mb-2 text-description font-primary font-normal text-base leading-[150%]"
+                  >
+                    Capture, retain and operationalize enterprise knowledge
+                    across people, projects, and systems.
+                  </p>
+                  <a
+                    href="/vault-knowledge-harvester"
+                    class="text-primary font-primary font-semibold text-xs hover:underline mt-auto"
+                    >Explore Vault &rarr;</a
+                  >
                 </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col group">
-                    <div class="mb-6 sm:mb-8 lg:mb-12 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/intelligentCard-icon-3.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Execution at Scale icon" width="40" height="40" loading="lazy">
+                <div class="p-4 bg-white/50 rounded-xl flex flex-col">
+                  <div
+                    class="flex items-center gap-2 text-description font-primary text-base leading-[150%]"
+                  >
+                    <div
+                      class="w-8 h-8 rounded-[6px] bg-white grid place-items-center mb-2 overflow-hidden"
+                    >
+                      <img
+                        src="assets/image/homepage/artisanscloud-lumen.webp"
+                        class="w-full h-full object-cover"
+                        alt="Lumen platform"
+                        width="32"
+                        height="32"
+                        loading="lazy"
+                      />
                     </div>
-                    <div>
-                        <div class="mb-3 md:mb-4 text-xl lg:text-[22px] text-heading font-primary font-semibold">Execution at Scale</div>
-                        <p class="text-description font-primary font-normal text-base leading-[150%]">Enterprise-grade engineering that operationalises transformation from pilot to global deployment.</p>
+                    <div
+                      class="mb-1 text-heading font-primary font-semibold text-base leading-[150%]"
+                    >
+                      Lumen - Enterprise Intelligence
                     </div>
+                  </div>
+                  <p
+                    class="mb-2 text-description font-primary font-normal text-base leading-[150%]"
+                  >
+                    Enterprise interaction layer for natural-language access
+                    across enterprise systems, workflows, operational knowledge,
+                    and contextual enterprise intelligence.
+                  </p>
+                  <a
+                    href="/lumen"
+                    class="text-primary font-primary font-semibold text-xs hover:underline mt-auto"
+                    >Explore Lumen &rarr;</a
+                  >
                 </div>
+              </div>
             </div>
+          </div>
+
+          <!-- Row 2: Data Intelligence - full width -->
+          <div
+            class="fade-in w-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-green border border-[#f2f2f2] flex flex-col lg:flex-row gap-6 lg:gap-10 group"
+          >
+            <!-- Left: header info -->
+            <div class="lg:w-[30%] lg:flex-shrink-0 flex flex-col">
+              <div
+                class="mb-5 max-w-14 min-w-14 h-14 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/Predictive-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Data Intelligence icon"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="mb-2 text-xl lg:text-2xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Data Intelligence
+              </div>
+              <div
+                class="mb-3 text-heading font-primary font-semibold text-base leading-[150%]"
+              >
+                Connected Intelligence Across Enterprise Systems
+              </div>
+              <p
+                class="text-description font-primary font-normal text-base leading-[150%]"
+              >
+                Create a unified operational data foundation across systems,
+                workflows and business functions.
+              </p>
+            </div>
+
+            <!-- Right: capabilities -->
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <div
+                  class="mb-3 text-heading font-primary font-semibold text-base"
+                >
+                  Enable:
+                </div>
+                <ul class="flex flex-col gap-2 mb-4">
+                  <li
+                    class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+                  >
+                    <svg
+                      class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    Real-time operational visibility
+                  </li>
+                  <li
+                    class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+                  >
+                    <svg
+                      class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    Forecasting and planning
+                  </li>
+                  <li
+                    class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+                  >
+                    <svg
+                      class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    Cross-functional coordination
+                  </li>
+                  <li
+                    class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+                  >
+                    <svg
+                      class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    Enterprise reporting and analytics
+                  </li>
+                  <li
+                    class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+                  >
+                    <svg
+                      class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    Faster operational and strategic decisions
+                  </li>
+                </ul>
+                <p
+                  class="mb-5 text-description font-primary font-normal text-base italic leading-[150%]"
+                >
+                  Designed for organizations where execution depends on timely,
+                  connected intelligence.
+                </p>
+              </div>
+              <div>
+                <a
+                  href="/data-intelligence"
+                  class="text-primary font-primary font-semibold text-base hover:underline"
+                  >Explore Data Intelligence &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!----- End Intelligent Enterprise Sec ----->
 
-
-    <!----- Drive Sales CTA Sec ----->
-    <section class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8 items-center">
-                <div class="fade-in lg:max-w-[540px] w-full">
-                    <div class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">Drive Sales, Reduce Costs, and Minimize Waste with Our Unified Retail Platform</div>
-                    <p class="text-white/80 font-primary font-normal text-base leading-[150%]">Artisans Commerce Cloud integrates AI and machine learning technology to deliver data-driven insights that align retail operations with real-time demand. Our platform helps retailers increase sales, reduce operational costs, and cut down on waste through intelligent analytics, forecasting, and optimization, providing a bridge to improved profitability.</p>
-                </div>
-                <div class="fade-in p-3 sm:p-5 bg-white/45 border border-white rounded-[20px] overflow-hidden">
-                    <img src="assets/image/cta-driveSale.webp" class="w-full h-full object-cover object-top border border-white rounded-[10px]" alt="Drive sales platform" width="540" height="400" loading="lazy">
-                </div>
+    <!----- Enterprise AI Ecosystem Sec ----->
+    <section
+      class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-heading bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover"
+    >
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+        <div class="text-center mb-10 lg:mb-14">
+          <h2
+            class="lg:mb-4 mb-3 lg:text-5xl md:text-4xl text-3xl text-white font-primary font-semibold leading-[120%]"
+          >
+            Enterprise AI Ecosystem
+          </h2>
+          <p
+            class="lg:mb-4 mb-3 text-white/70 font-primary font-semibold text-base leading-[150%] tracking-[-0.02em]"
+          >
+            Capture Knowledge &rarr; Prepare Teams &rarr; Interact with
+            Intelligence &rarr; Execute Workflows
+          </p>
+          <p
+            class="text-white/70 font-primary font-normal text-base leading-[150%] max-w-[600px] mx-auto"
+          >
+            Artisans Cloud connects enterprise AI capabilities into a unified
+            execution environment.
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-[30px] mb-10"
+        >
+          <div
+            class="fade-in p-5 rounded-2xl bg-white/5 border border-white/10"
+          >
+            <div
+              class="w-10 h-10 rounded-[8px] bg-white/10 grid place-items-center mb-4"
+            >
+              <img
+                src="assets/image/icon/icon-ai.svg"
+                class="h-5 w-5"
+                alt="Capture icon"
+                width="20"
+                height="20"
+                loading="lazy"
+              />
             </div>
+            <div class="mb-2 text-white font-primary font-semibold text-base">
+              Capture
+            </div>
+            <p
+              class="text-white/70 font-primary font-normal text-base leading-[150%]"
+            >
+              Knowledge Harvester captures, structures, and contextualizes
+              enterprise knowledge across workflows and systems.
+            </p>
+          </div>
+          <div
+            class="fade-in p-5 rounded-2xl bg-white/5 border border-white/10"
+          >
+            <div
+              class="w-10 h-10 rounded-[8px] bg-white/10 grid place-items-center mb-4"
+            >
+              <img
+                src="assets/image/icon/icon-AIEngineering.svg"
+                class="h-5 w-5"
+                alt="Prepare icon"
+                width="20"
+                height="20"
+                loading="lazy"
+              />
+            </div>
+            <div class="mb-2 text-white font-primary font-semibold text-base">
+              Prepare
+            </div>
+            <p
+              class="text-white/70 font-primary font-normal text-base leading-[150%]"
+            >
+              Role Play Agent prepares teams for real-world customer,
+              operational, and decision scenarios.
+            </p>
+          </div>
+          <div
+            class="fade-in p-5 rounded-2xl bg-white/5 border border-white/10"
+          >
+            <div
+              class="w-10 h-10 rounded-[8px] bg-white/10 grid place-items-center mb-4"
+            >
+              <img
+                src="assets/image/icon/icon-conversational.svg"
+                class="h-5 w-5"
+                alt="Interact icon"
+                width="20"
+                height="20"
+                loading="lazy"
+              />
+            </div>
+            <div class="mb-2 text-white font-primary font-semibold text-base">
+              Interact
+            </div>
+            <p
+              class="text-white/70 font-primary font-normal text-base leading-[150%]"
+            >
+              Lumen enables natural-language interaction with enterprise
+              systems, operational knowledge, workflows, and AI-driven
+              intelligence.
+            </p>
+          </div>
+          <div
+            class="fade-in p-5 rounded-2xl bg-white/5 border border-white/10"
+          >
+            <div
+              class="w-10 h-10 rounded-[8px] bg-white/10 grid place-items-center mb-4"
+            >
+              <img
+                src="assets/image/icon/icon-StrategicAlignment.svg"
+                class="h-5 w-5"
+                alt="Execute icon"
+                width="20"
+                height="20"
+                loading="lazy"
+              />
+            </div>
+            <div class="mb-2 text-white font-primary font-semibold text-base">
+              Execute
+            </div>
+            <p
+              class="text-white/70 font-primary font-normal text-base leading-[150%]"
+            >
+              AI Agents support operational tasks, workflow automation, and
+              execution consistency across teams and enterprise processes.
+            </p>
+          </div>
+        </div>
+        <p class="text-center text-white/60 font-primary font-normal text-base">
+          Together, these systems improve readiness, decision-making, and
+          execution across the enterprise.
+        </p>
+      </div>
+      <img
+        src="assets/image/icon/ctaBanner-shape.png"
+        class="animate-pulse absolute start-0 bottom-0 pointer-none select-none"
+        alt=""
+        width="150"
+        height="150"
+        loading="lazy"
+      />
+      <img
+        src="assets/image/icon/ctaBanner-shape2.png"
+        class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
+        alt=""
+        width="150"
+        height="150"
+        loading="lazy"
+      />
+    </section>
+
+    <!----- From Insight to Execution Sec ----->
+    <section class="lg:py-[100px] md:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 md:gap-10 gap-7 items-center"
+        >
+          <div class="fade-in">
+            <h2
+              class="lg:mb-10 mb-5 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              From Insight to Execution
+            </h2>
+            <p
+              class="lg:pe-12 text-description font-primary font-normal leading-[150%]"
+            >
+              Most enterprises already have dashboards, reports, and systems.
+              The challenge is turning information into consistent execution
+              across teams and workflows.
+            </p>
+          </div>
+
+          <div
+            class="fade-in gridGradientCard flex flex-col justify-around gap-5 lg:gap-[30px] w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[20px] overflow-hidden bg-light-sky bg-[url(assets/image/icon/strategicCard-left-BG.png)] bg-no-repeat bg-cover"
+          >
+            <div
+              class="relative z-10 bg-white p-5 md:p-8 md:pb-8 rounded-2xl md:rounded-[20px] h-full"
+            >
+              <svg
+                class="lg:w-14 w-10 lg:h-14 h-10"
+                width="54"
+                height="46"
+                viewBox="0 0 54 46"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_insight_exec)">
+                  <path
+                    d="M0 0.00683594H22.2275V23.8594C22.0191 27.7138 20.6319 34.6572 15.8633 39.7705C12.0066 43.904 6.67101 46 0 46V38.0186C4.4103 38.0186 7.68047 36.8116 9.99316 34.333C12.9377 31.173 13.7134 26.5789 13.9023 23.8535H0V0.00683594ZM53.9941 0.00683594V23.8594C53.7857 27.7137 52.3984 34.6573 47.6299 39.7705C43.7733 43.9039 38.4375 45.9999 31.7666 46V38.0186C36.1768 38.0185 39.4471 36.8117 41.7598 34.333C44.7043 31.173 45.48 26.5789 45.6689 23.8535H31.7666V0.00683594H53.9941ZM31.7666 0.00683594H31.7598L31.7666 0V0.00683594Z"
+                    fill="url(#paint0_linear_insight_exec)"
+                  />
+                </g>
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_insight_exec"
+                    x1="26.9971"
+                    y1="0"
+                    x2="26.9971"
+                    y2="46"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#E9E3FF" />
+                    <stop offset="1" stop-color="#E9D8FF" />
+                  </linearGradient>
+                  <clipPath id="clip0_insight_exec">
+                    <rect width="54" height="46" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+
+              <div class="mt-6 md:mt-10">
+                <div
+                  class="text-xl lg:text-[28px] font-medium text-heading font-primary"
+                >
+                  Artisans Cloud
+                  <span class="font-semibold"
+                    >connects systems, intelligence, and workflows</span
+                  >
+                  to support operational execution in real time.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!----- Real-World Enterprise Scenarios Sec ----->
+    <section class="lg:py-20 sm:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <h2
+          class="mb-10 lg:mb-14 text-center lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+        >
+          Real-World Enterprise Scenarios
+        </h2>
+        <div class="flex flex-wrap justify-center gap-5 lg:gap-[30px]">
+          <div
+            class="fade-in w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col group"
+          >
+            <div
+              class="mb-6 sm:mb-8 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/intelligentCard-icon-1.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Knowledge Continuity icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="mb-3 text-xl lg:text-[22px] text-heading font-primary font-semibold"
+            >
+              Knowledge Continuity
+            </div>
+            <p
+              class="text-description font-primary font-normal text-base leading-[150%]"
+            >
+              Retain and reuse operational knowledge across transitions,
+              projects, and distributed teams.
+            </p>
+          </div>
+          <div
+            class="fade-in w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col group"
+          >
+            <div
+              class="mb-6 sm:mb-8 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/intelligentCard-icon-2.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Workforce Readiness icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="mb-3 text-xl lg:text-[22px] text-heading font-primary font-semibold"
+            >
+              Workforce Readiness
+            </div>
+            <p
+              class="text-description font-primary font-normal text-base leading-[150%]"
+            >
+              Prepare teams through AI-driven simulations and contextual
+              learning experiences.
+            </p>
+          </div>
+          <div
+            class="fade-in w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col group"
+          >
+            <div
+              class="mb-6 sm:mb-8 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/intelligentCard-icon-3.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Customer Operations icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="mb-3 text-xl lg:text-[22px] text-heading font-primary font-semibold"
+            >
+              Customer Operations
+            </div>
+            <p
+              class="text-description font-primary font-normal text-base leading-[150%]"
+            >
+              Support customer interactions with connected workflows,
+              operational visibility, and AI-assisted decision support.
+            </p>
+          </div>
+          <div
+            class="fade-in w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col group"
+          >
+            <div
+              class="mb-6 sm:mb-8 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/icon-conversational.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Conversational Enterprise Access icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="mb-3 text-xl lg:text-[22px] text-heading font-primary font-semibold"
+            >
+              Conversational Enterprise Access
+            </div>
+            <p
+              class="text-description font-primary font-normal text-base leading-[150%]"
+            >
+              Enable teams to retrieve operational knowledge, workflows,
+              reports, and recommendations through natural-language interaction
+              using Lumen.
+            </p>
+          </div>
+          <div
+            class="fade-in w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)] p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-green border border-[#f2f2f2] flex flex-col group"
+          >
+            <div
+              class="mb-6 sm:mb-8 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/Predictive-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Operational Decision Support icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="mb-3 text-xl lg:text-[22px] text-heading font-primary font-semibold"
+            >
+              Operational Decision Support
+            </div>
+            <p
+              class="text-description font-primary font-normal text-base leading-[150%]"
+            >
+              Support faster operational responses through connected data,
+              workflows, and contextual enterprise intelligence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+    </div>
+
+    <!----- Built For Enterprise Sec ----->
+    <!-- Design adapted from lumen.html "Why Enterprises Choose Lumen" section: horizontal icon+text cards in bg-[#f6f8fb] 2-col grid with last:col-span-2 centering -->
+    <section class="lg:py-20 sm:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <!-- Section header -->
+        <h2
+          class="mb-10 lg:mb-14 text-center lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+        >
+          Built for Enterprise Environments
+        </h2>
+
+        <!-- Industries + Supporting as tick-list cards -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-[30px] mb-14 lg:mb-20"
+        >
+          <div
+            class="fade-in p-5 md:p-[30px] rounded-2xl md:rounded-[20px] bg-[#f6f8fb]"
+          >
+            <div
+              class="mb-4 text-heading font-primary font-semibold text-xl lg:text-2xl leading-[130%]"
+            >
+              Operating across industries
+            </div>
+            <ul class="flex flex-col gap-2">
+              <li
+                class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+              >
+                <svg
+                  class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Retail
+              </li>
+              <li
+                class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+              >
+                <svg
+                  class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Automotive
+              </li>
+              <li
+                class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+              >
+                <svg
+                  class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Manufacturing
+              </li>
+              <li
+                class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+              >
+                <svg
+                  class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Distribution and supply chain
+              </li>
+              <li
+                class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+              >
+                <svg
+                  class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Enterprise operations
+              </li>
+            </ul>
+          </div>
+          <div
+            class="fade-in p-5 md:p-[30px] rounded-2xl md:rounded-[20px] bg-[#f6f8fb]"
+          >
+            <div
+              class="mb-4 text-heading font-primary font-semibold text-xl lg:text-2xl leading-[130%]"
+            >
+              Supporting
+            </div>
+            <ul class="flex flex-col gap-2">
+              <li
+                class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+              >
+                <svg
+                  class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Multi-location operations
+              </li>
+              <li
+                class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+              >
+                <svg
+                  class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Distributed teams
+              </li>
+              <li
+                class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+              >
+                <svg
+                  class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Complex workflows
+              </li>
+              <li
+                class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+              >
+                <svg
+                  class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Enterprise-scale systems
+              </li>
+              <li
+                class="flex items-start gap-2 text-description font-primary text-base leading-[150%]"
+              >
+                <svg
+                  class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                High-volume operational environments
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <img src="assets/image/icon/ctaBanner-shape.png" class="animate-pulse absolute start-0 bottom-0 pointer-none select-none" alt="" width="150" height="150" loading="lazy">
-        <img src="assets/image/icon/ctaBanner-shape2.png" class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none" alt="" width="100" height="100" loading="lazy">
+        <!-- Why Artisans Cloud heading -->
+        <div
+          class="mb-3 text-primary font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase tracking-wider text-center"
+        >
+          WHY ARTISANS CLOUD
+        </div>
+        <h3
+          class="mb-10 lg:mb-[50px] text-center lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+        >
+          Execution-Focused Enterprise Systems
+        </h3>
+
+        <!-- 5 horizontal icon+text cards (lumen.html design) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Unified operational environment icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Unified Operational Environment
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Commerce, AI, workflows and data systems work together, not as
+                disconnected tools.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/artchitecHeightlight-card-congitiveIntelligent.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Real-time by design icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Real-Time by Design
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Built for operational visibility, responsiveness, and execution
+                in real time.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/artchitecHeightlight-card-securityCompliance.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="AI embedded into workflows icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                AI Embedded into Workflows
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                AI supports real operational work, not isolated experimentation.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/artchitecHeightlight-card-interoperabilityScale.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Enterprise knowledge operationalized icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Enterprise Knowledge Operationalized
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Knowledge becomes contextual, reusable, and actionable across
+                the organization.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/artchitecHeightlight-card-setting.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Designed for complex enterprise operations icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Designed for Complex Enterprise Operations
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Built for scalability, integration, and enterprise-wide
+                coordination.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <!----- End Drive Sales CTA Sec ----->
-
-
 
     <!----- Strategic Impact Snapshot Sec ----->
-    <section class="lg:py-[110px] lg:pb-[100px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in max-w-[950px] w-full mx-auto text-center">
-                <div class="mb-3 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Strategic Impact Snapshot</div>
-                <div class="mb-3 md:mb-5 text-heading font-primary font-semibold text-xl leading-[125%]">Transformation, Quantified.</div>
-                <p class="text-description font-primary font-normal text-base leading-[150%]">Our platform and services are meticulously engineered for performance, scalability, and verifiable return on investment. We empower clients to drive enterprise agility, hyper-optimize operational efficiency, and accelerate sustainable growth. Our results speak in outcomes, not adjectives. Every engagement is engineered for measurable return on intelligence.</p>
-            </div>
-
-            <div class="mt-7 sm:mt-10 lg:mt-[60px] grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-[30px]">
-                <div class="fade-in gridGradientCard flex flex-col justify-around gap-5 lg:gap-[30px] w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[20px] overflow-hidden bg-light-sky bg-[url(../../assets/image/icon/strategicCard-left-BG.png)] bg-no-repeat bg-cover">
-                    <div class="relative z-10 bg-white p-5 md:p-8 md:pb-5 rounded-2xl md:rounded-[20px] h-full">
-                        <div class="mb-1 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Acceleration</div>
-                        <p class="text-description font-primary font-normal text-base leading-[150%]">In strategic reporting via unified Decision Intelligence frameworks.</p>
-                        <div class="font-primary font-semibold text-4xl md:text-5xl lg:text-6xl leading-[110%] text-heading mt-5 md:mt-8"><span class="counter">40</span>%</div>
-                    </div>
-                    <div class="relative z-10 bg-white p-5 md:p-8 md:pb-5 rounded-2xl md:rounded-[20px] h-full">
-                        <div class="mb-1 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Margin Expansion</div>
-                        <p class="text-description font-primary font-normal text-base leading-[150%]">Achieved through predictive pricing and logistics optimization.</p>
-                        <div class="font-primary font-semibold text-4xl md:text-5xl lg:text-6xl leading-[110%] text-heading mt-5 md:mt-8"><span class="counter">25</span>%</div>
-                    </div>
-                </div>
-                <div class="fade-in">
-                    <div class="h-full flex flex-col justify-around gap-5 lg:gap-[30px]">
-                        <div class="p-5 md:p-[30px] rounded-2xl md:rounded-[20px] border border-light-border overflow-hidden bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom bg-cover">
-                            <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-light-pink mb-5 md:mb-8 lg:mb-[50px]">
-                                <img src="assets/image/icon/stratagic-significantCost-1.svg" class="h-1/2" alt="Cost avoidance icon" width="40" height="40" loading="lazy">
-                            </div>
-                            <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Significant cost avoidance</div>
-                            <p class="text-description font-primary font-normal text-base leading-[150%]">Achieved through AI-driven cognitive automation.</p>
-                        </div>
-                        <div class="p-5 md:p-[30px] rounded-2xl md:rounded-[20px] border border-light-border overflow-hidden bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom bg-cover">
-                            <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-light-green-box mb-5 md:mb-8 lg:mb-[50px]">
-                                <img src="assets/image/icon/stratagic-significantCost-2.svg" class="h-1/2" alt="Data unification icon" width="40" height="40" loading="lazy">
-                            </div>
-                            <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Cross-enterprise data unification</div>
-                            <p class="text-description font-primary font-normal text-base leading-[150%]">Enabling faster, evidence-based action.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="lg:py-[70px] md:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="text-center mb-10 lg:mb-14">
+          <div
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            STRATEGIC IMPACT
+          </div>
         </div>
+        <div class="grid lg:grid-cols-2 lg:gap-16 gap-8 items-center">
+          <!-- Left: Stat boxes -->
+          <div class="flex flex-col gap-5">
+            <div
+              class="fade-in p-5 md:p-[30px] rounded-2xl md:rounded-[20px] bg-grey/10 border border-[#f2f2f2]"
+            >
+              <div
+                class="mb-2 lg:text-4xl md:text-3xl text-2xl text-primary font-primary font-extrabold leading-[110%]"
+              >
+                <span class="counter">40</span>%
+              </div>
+              <p
+                class="text-heading font-primary font-semibold text-base leading-[150%]"
+              >
+                Operational Intelligence with Measurable Outcomes
+              </p>
+            </div>
+            <div
+              class="fade-in p-5 md:p-[30px] rounded-2xl md:rounded-[20px] bg-grey/10 border border-[#f2f2f2]"
+            >
+              <div
+                class="mb-2 lg:text-4xl md:text-3xl text-2xl text-primary font-primary font-extrabold leading-[110%]"
+              >
+                <span class="counter">25</span>%
+              </div>
+              <p
+                class="text-heading font-primary font-semibold text-base leading-[150%]"
+              >
+                Faster operational visibility and reporting
+              </p>
+            </div>
+          </div>
+          <!-- Right: Bullet list -->
+          <div class="fade-in">
+            <ul class="flex flex-col lg:gap-6 gap-5">
+              <li class="ps-5 border-s-4 border-primary">
+                <p
+                  class="font-primary font-normal leading-[150%] text-description"
+                >
+                  Improvement in workflow efficiency and coordination
+                </p>
+              </li>
+              <li class="ps-5 border-s-4 border-sky">
+                <div
+                  class="font-primary font-normal leading-[150%] text-description"
+                >
+                  Reduced Operational Complexity
+                </div>
+              </li>
+              <li class="ps-5 border-s-4 border-pink">
+                <p
+                  class="font-primary font-normal leading-[150%] text-description"
+                >
+                  Through connected systems and AI-assisted workflows
+                </p>
+              </li>
+              <li class="ps-5 border-s-4 border-grey">
+                <div
+                  class="font-primary font-normal leading-[150%] text-description"
+                >
+                  Better Execution Consistency
+                </div>
+              </li>
+              <li class="ps-5 border-s-4 border-primary">
+                <p
+                  class="font-primary font-normal leading-[150%] text-description"
+                >
+                  Across teams, workflows, and operational processes
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
-    <!----- End Strategic Impact Snapshot Sec ----->
 
+    <!----- Architect the Intelligent Enterprise Sec ----->
+    <section class="lg:py-[100px] sm:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="fade-in grid grid-cols-1 xl:gap-14 lg:gap-10 gap-5 text-center place-items-center justify-items-center"
+        >
+          <div>
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Architect the Intelligent Enterprise
+            </h2>
+            <p
+              class="lg:mb-3.75 my-4 text-description font-primary font-normal leading-[150%]"
+            >
+              Connect enterprise systems, workflows, and intelligence into one
+              operational ecosystem designed for execution at scale.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3 justify-center">
+              <a
+                href="/request-demo"
+                class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-base md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >Schedule an Executive Discussion</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
-
 
     <!----- Insights & Leadership Sec ----->
     <section class="lg:py-[110px] lg:pb-[100px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in flex gap-4 flex-wrap lg:items-center justify-between relative">
-                <div class="max-w-[930px] w-full">
-                    <div class="mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Insights & Leadership</div>
-                    <p class="text-description font-primary font-normal text-base leading-[150%]">Ideas shaping the future of the Intelligent Enterprise. From AI governance to predictive analytics and digital architecture, Our strategists and engineers explore how data, AI and decision architecture are redefining enterprise performance for the next decade.</p>
-                </div>
-
-                <a href="/articles-and-resources" class="mt-4 lg:mt-0 lg:ms-auto w-fit h-fit rounded-[40px] justify-center text-center font-primary font-bold text-sm md:text-base leading-[100%] text-heading relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 bg-white border border-[#d8d8d8] flex items-center gap-2 py-[13px] ps-6 pe-4 group hover:bg-heading hover:text-white">
-                    All Insights
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:rotate-45 transition-all duration-300 ease-in-out">
-                        <g clip-path="url(#clip0_72_2743)">
-                            <path d="M8 16L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M9 8H16V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </g>
-                    </svg>
-                </a>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="fade-in flex gap-4 flex-wrap lg:items-center justify-between relative"
+        >
+          <div class="max-w-[930px] w-full">
+            <div
+              class="mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Insights and Leadership
             </div>
+            <p
+              class="text-description font-primary font-normal text-base leading-[150%]"
+            >
+              Ideas shaping the future of retail and enterprise commerce.
+              Explore how AI, data architecture, and unified operations are
+              redefining how retailers compete and grow.
+            </p>
+          </div>
 
-            <div id="insights-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[30px] mt-6 md:mt-8 lg:mt-[50px]">
-                <!-- Insights cards rendered dynamically by assets/script/modules/blog-articles.js -->
-                <!-- To update card content, edit api/lib/fallback-articles.js (single source of truth) -->
-            </div>
-            <noscript>
-                <p class="text-center text-description font-primary py-10">Please enable JavaScript to view insights.</p>
-            </noscript>
+          <a
+            href="/articles-and-resources"
+            class="mt-4 lg:mt-0 lg:ms-auto w-fit h-fit rounded-[40px] justify-center text-center font-primary font-bold text-base md:text-base leading-[100%] text-heading relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 bg-white border border-[#d8d8d8] flex items-center gap-2 py-[13px] ps-6 pe-4 group hover:bg-heading hover:text-white"
+          >
+            All Insights
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="group-hover:rotate-45 transition-all duration-300 ease-in-out"
+            >
+              <g clip-path="url(#clip0_72_2743)">
+                <path
+                  d="M8 16L16 8"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9 8H16V15"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </svg>
+          </a>
         </div>
+
+        <div
+          id="insights-grid"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[30px] mt-6 md:mt-8 lg:mt-[50px]"
+        >
+          <!-- Insights cards rendered dynamically by assets/script/modules/blog-articles.js -->
+          <!-- To update card content, edit api/lib/fallback-articles.js (single source of truth) -->
+        </div>
+        <noscript>
+          <p class="text-center text-description font-primary py-10">
+            Please enable JavaScript to view insights.
+          </p>
+        </noscript>
+      </div>
     </section>
-    <!----- End Insights & Leadership Sec ----->
-
-
 
     {{> footer}}
 
-
-    <!--+++++++ Script Start +++++++-->
-
-    <script type='module' src='assets/script/main.js'></script>
-</body>
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
 </html>

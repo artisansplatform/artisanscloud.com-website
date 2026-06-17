@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
+
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
+
+    {{> header}}
+
+    <main class="w-full">
+      <!----- Banner Sec ----->
+      <section class="w-full h-full p-4 lg:p-5">
+        <div
+          class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/distributed-order-management/bannerBG.webp')] bg-no-repeat bg-cover"
+        >
+          <div
+            class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] lg:pb-36 sm:pb-24"
+          >
+            <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
+              <div class="text-center lg:max-w-[850px] mx-auto">
+                <div
+                  class="mb-3 sm:mb-5 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
+                >
+                  Dynamic Pricing
+                </div>
+                <h1
+                  id="heroHeading"
+                  class="mb-3 font-primary text-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%]"
+                >
+                  Dynamic Pricing:<br />
+                  Set the Right Price at the Right Time
+                </h1>
+                <div
+                  id="heroDec"
+                  class="flex flex-col items-center mb-7.5 lg:mb-12"
+                >
+                  <p
+                    class="mb-3 text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                  >
+                    Pricing plays a crucial role in retail success. Setting
+                    prices too high can reduce sales, while pricing too low can
+                    impact profitability.
+                  </p>
+                  <p
+                    class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                  >
+                    Dynamic Pricing uses AI to automatically adjust prices based
+                    on demand, competition, and other factors, helping retailers
+                    stay competitive and maximise revenue.
+                  </p>
+                  <a
+                    href="/request-demo"
+                    class="lg:mt-[25px] mt-4 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                  >
+                    Request a Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 1: Why Pricing is Challenging ----->
+      <section class="py-10 lg:py-16">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="text-center">
+            <h2
+              class="fade-in lg:mb-5 mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Why Pricing is Challenging for Retailers
+            </h2>
+          </div>
+
+          <!-- Blockquote -->
+          <div class="fade-in max-w-[860px] w-full mx-auto mb-8 lg:mb-[50px]">
+            <blockquote
+              class="relative p-6 lg:p-10 rounded-2xl lg:rounded-[30px] bg-[#f6f8fb] border-s-4 border-primary"
+            >
+              <p
+                class="text-heading font-primary font-semibold text-lg lg:text-xl leading-[150%] italic"
+              >
+                "Finding the perfect price for every product isn't easy. Market
+                conditions change quickly, and static pricing often fails to
+                keep up."
+              </p>
+            </blockquote>
+          </div>
+
+          <!-- Challenge Intro -->
+          <div
+            class="fade-in mb-6 text-heading font-primary font-semibold text-xl leading-[125%] text-center"
+          >
+            Common challenges include:
+          </div>
+
+          <!-- Challenge Cards -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-1.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Lost sales icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div class="my-auto">
+                <p class="text-heading font-primary font-normal leading-[150%]">
+                  Prices set too high leading to lost sales
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-2.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Reduced margins icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div class="my-auto">
+                <p class="text-heading font-primary font-normal leading-[150%]">
+                  Prices set too low reducing profit margins
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-3.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Manual updates icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div class="my-auto">
+                <p class="text-heading font-primary font-normal leading-[150%]">
+                  Manual price updates taking too much time
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/Predictive-icon.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Competitor pricing icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div class="my-auto">
+                <p class="text-heading font-primary font-normal leading-[150%]">
+                  Difficulty responding to competitor pricing
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/embeddedFramework-icon.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Slow clearance icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div class="my-auto">
+                <p class="text-heading font-primary font-normal leading-[150%]">
+                  Slow clearance of excess inventory
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="fade-in mt-6 lg:mt-10 text-center">
+            <p
+              class="text-description font-primary font-normal leading-[150%] max-w-[800px] mx-auto"
+            >
+              Without flexible pricing,
+              <strong class="text-heading"
+                >retailers may miss both revenue and profit
+                opportunities.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Section 2: A Smarter Way to Price Products ----->
+      <section class="lg:py-[90px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="grid lg:grid-cols-2 lg:gap-12 gap-8 items-center">
+            <!-- Left: heading + image -->
+            <div class="lg:pe-10">
+              <h2
+                class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-10"
+              >
+                A Smarter Way to Price Products
+              </h2>
+              <img
+                src="assets/image/dynamic-pricing/artisanscloud-price-products.webp"
+                alt="AI-powered dynamic pricing dashboard for retail"
+                class="max-w-full h-auto mx-auto lg:mx-0"
+                width="500"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- Right: intro + feature list + callout -->
+            <div class="fade-in">
+              <div
+                class="lg:mb-[30px] mb-6 lg:text-[28px] text-2xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                AI-powered Dynamic Pricing adjusts product prices automatically
+                based on real-time signals.
+              </div>
+
+              <p
+                class="mb-4 text-heading font-primary font-semibold text-lg leading-[130%]"
+              >
+                With intelligent pricing, you can:
+              </p>
+
+              <div class="flex flex-col lg:gap-5 gap-5">
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Demand-based adjustments</strong
+                    >
+                    based on real-time demand fluctuations
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading">Competitive response</strong>
+                    to react to competitor pricing changes in real time
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Stock-level optimization</strong
+                    >
+                    by pricing according to available inventory
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading">Peak demand pricing</strong> to
+                    increase prices during high-demand periods
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading">Clearance automation</strong>
+                    to reduce prices and clear slow-moving inventory
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading"
+                      >Time and season awareness</strong
+                    >
+                    to adapt pricing based on time of day or season
+                  </p>
+                </div>
+                <div class="ps-8 relative">
+                  <img
+                    src="assets/image/icon/forward-arrow.svg"
+                    class="absolute top-1.5 start-0 select-none pointer-events-none sm:h-4 h-3"
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <p
+                    class="text-base text-description font-normal font-primary"
+                  >
+                    <strong class="text-heading">Strategy automation</strong> to
+                    improve your overall pricing approach automatically
+                  </p>
+                </div>
+              </div>
+
+              <p
+                class="mt-6 text-description font-primary font-normal leading-[150%]"
+              >
+                <strong class="text-heading">In short:</strong> AI helps you
+                <strong class="text-heading">price smarter, not harder.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 3: Benefits for Retailers ----->
+      <section class="lg:py-[40px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div class="fade-in text-center mb-10 lg:mb-16">
+            <h2
+              class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%] mb-4"
+            >
+              Benefits for Retailers
+            </h2>
+          </div>
+
+          <div
+            class="fade-in grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-[30px]"
+          >
+            <!-- Benefit 1 -->
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/target-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Increases sales icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Increases sales during peak demand
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Boosts revenue during peak demand by automatically adjusting
+                  to optimal price points
+                </p>
+              </div>
+            </div>
+
+            <!-- Benefit 2 -->
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-1.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Clears stock icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Clears slow-moving stock with better timing
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Reduces prices at the right time to move inventory before it
+                  becomes a liability
+                </p>
+              </div>
+            </div>
+
+            <!-- Benefit 3 -->
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-sky border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/predictive-commerce-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Maximizes margins icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Maximizes Profit Margins
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Continuously finds the optimal price that balances sales
+                  volume with profit per unit
+                </p>
+              </div>
+            </div>
+
+            <!-- Benefit 4 -->
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#F2EEFF] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/icon-ai.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Improves competitiveness icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Improves Competitiveness
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Stays ahead of market shifts by reacting to competitor prices
+                  and demand signals in real time
+                </p>
+              </div>
+            </div>
+
+            <!-- Benefit 5 -->
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#EEF4FF] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-3.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Reduces manual effort icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Reduces Manual Pricing Effort
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Automates pricing decisions so your team can focus on strategy
+                  rather than spreadsheets
+                </p>
+              </div>
+            </div>
+
+            <!-- Benefit 6 -->
+            <div
+              class="feature-card group w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-[#FFEFEF] border border-[#f2f2f2] flex flex-col"
+            >
+              <div
+                class="mb-5 sm:mb-7 lg:mb-[50px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/layers-icon.svg"
+                  class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                  alt="Optimizes inventory icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                >
+                  Optimizes Inventory Movement
+                </div>
+                <p
+                  class="text-description font-primary font-normal leading-[150%]"
+                >
+                  Keeps stock flowing efficiently by using pricing as a lever to
+                  balance supply and demand
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 4: Where Dynamic Pricing Helps Most ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div
+            class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center"
+          >
+            <div>
+              <h2
+                class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Where Dynamic Pricing Helps Most
+              </h2>
+              <p
+                class="mb-5 text-description font-primary font-normal leading-[150%]"
+              >
+                Dynamic Pricing delivers the greatest impact for retailers where
+                competition is fierce and margins matter, including:
+              </p>
+              <ul class="ps-5">
+                <li
+                  class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description"
+                >
+                  Retailers with large product catalogs
+                </li>
+                <li
+                  class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description"
+                >
+                  E-commerce stores with competitive markets
+                </li>
+                <li
+                  class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description"
+                >
+                  Seasonal product businesses
+                </li>
+                <li
+                  class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description"
+                >
+                  High-demand consumer goods retailers
+                </li>
+                <li
+                  class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description"
+                >
+                  Businesses managing excess inventory
+                </li>
+              </ul>
+            </div>
+            <div
+              class="unifiedCommerce_sec_imgBox ourApproachImageBox relative rounded-2xl md:rounded-[20px] bg-white/25 grid place-items-center sm:ps-[26px] ps-5 sm:pt-[26px] pt-5 p-4 sm:pb-[41px] pb-6 overflow-hidden after:h-[25%]"
+            >
+              <img
+                src="assets/image/dynamic-pricing/artisanscloud-dynamic-pricing.webp"
+                class="h-full w-full object-cover rounded-xl"
+                alt="Dynamic pricing platform analytics visualization"
+                width="500"
+                height="400"
+                loading="lazy"
+              />
+              <div
+                class="absolute top-0 end-0 w-[20%] h-full bg-[linear-gradient(90deg,_rgba(255,255,255,0)_5%,_#FFFFFF_70%,_#FFFFFF_100%)] pointer-events-none select-none"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      </div>
+
+      <!----- Section 5: Dynamic Pricing in Action ----->
+      <section class="lg:py-[100px] sm:py-16 py-10">
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div
+            class="fade-in lg:mb-11 mb-8 flex flex-col md:flex-row md:items-end gap-5 justify-between"
+          >
+            <div class="md:max-w-[70%] text-left">
+              <h2
+                class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Dynamic Pricing in Action
+              </h2>
+              <p
+                class="mt-4 text-description font-primary font-normal leading-[150%] max-w-[800px]"
+              >
+                Real-world examples of how AI-powered Dynamic Pricing responds
+                to changing conditions to protect and grow your revenue.
+              </p>
+            </div>
+            <div
+              class="flex items-center justify-start md:justify-center gap-[clamp(0.5rem,1.111vw+0.167rem,1rem)] fade-in"
+            >
+              <div
+                class="swiper-button-prev swiper-button-prev-dynamicPricing after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer"
+              >
+                <img
+                  src="assets/image/icon/rightArrowSwiper.svg"
+                  alt="Previous slide"
+                  class="h-[70%] select-none rotate-180"
+                  width="24"
+                  height="24"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="swiper-button-next swiper-button-next-dynamicPricing after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer"
+              >
+                <img
+                  src="assets/image/icon/rightArrowSwiper.svg"
+                  alt="Next slide"
+                  class="h-[70%] select-none"
+                  width="24"
+                  height="24"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper DynamicPricingSlider fade-in">
+            <div class="swiper-wrapper">
+              <!-- Example 1 -->
+              <div class="swiper-slide !h-auto">
+                <div
+                  class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+                >
+                  <div
+                    class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                  >
+                    <img
+                      src="assets/image/icon/intelligentCard-icon-1.svg"
+                      class="h-1/2 transition-all ease-linear duration-300 mx-auto"
+                      alt="Weather-based demand icon"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                    >
+                      Weather-Based Demand
+                    </div>
+                    <p
+                      class="text-description font-primary font-normal leading-[150%]"
+                    >
+                      Rain is forecasted unexpectedly. AI lowers the price of
+                      <strong class="text-heading">umbrellas</strong>, boosting
+                      quick sales before the weather changes.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Example 2 -->
+              <div class="swiper-slide !h-auto">
+                <div
+                  class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+                >
+                  <div
+                    class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                  >
+                    <img
+                      src="assets/image/icon/Predictive-icon.svg"
+                      class="h-1/2 transition-all ease-linear duration-300 mx-auto"
+                      alt="High demand product icon"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                    >
+                      High Demand Product
+                    </div>
+                    <p
+                      class="text-description font-primary font-normal leading-[150%]"
+                    >
+                      A trending product starts selling fast. AI slightly
+                      increases the price to
+                      <strong class="text-heading">maximize margins</strong>
+                      while demand is strong.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Example 3 -->
+              <div class="swiper-slide !h-auto">
+                <div
+                  class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+                >
+                  <div
+                    class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                  >
+                    <img
+                      src="assets/image/icon/layers-icon.svg"
+                      class="h-1/2 transition-all ease-linear duration-300 mx-auto"
+                      alt="Slow-moving inventory icon"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                    >
+                      Slow-Moving Inventory
+                    </div>
+                    <p
+                      class="text-description font-primary font-normal leading-[150%]"
+                    >
+                      A seasonal item is not selling. AI reduces the price at
+                      the right time to
+                      <strong class="text-heading">clear stock</strong> before
+                      the season ends.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Example 4 -->
+              <div class="swiper-slide !h-auto">
+                <div
+                  class="w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+                >
+                  <div
+                    class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+                  >
+                    <img
+                      src="assets/image/icon/icon-ai.svg"
+                      class="h-1/2 transition-all ease-linear duration-300 mx-auto"
+                      alt="Competitor price change icon"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+                    >
+                      Competitor Price Change
+                    </div>
+                    <p
+                      class="text-description font-primary font-normal leading-[150%]"
+                    >
+                      A competitor lowers the price of a similar product. AI
+                      adjusts pricing to
+                      <strong class="text-heading">stay competitive</strong>
+                      without sacrificing margin.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- Section 6: CTA Above Footer ----->
+      <section
+        class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover"
+      >
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+          <div
+            class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8 items-center"
+          >
+            <div class="lg:max-w-[530px] w-full">
+              <div
+                class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+              >
+                The Right Dynamic Pricing Solution
+              </div>
+              <p
+                class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]"
+              >
+                Adapts prices based on demand, competition, and inventory
+                levels, helping retailers increase sales, improve margins, and
+                move stock efficiently.
+              </p>
+              <p
+                class="mb-4 text-white/80 font-primary font-normal text-base leading-[150%]"
+              >
+                Ready to make smarter pricing decisions with AI?
+              </p>
+              <a
+                href="/contact-us"
+                class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >Contact Us</a
+              >
+            </div>
+            <div class="rounded-[20px] overflow-hidden">
+              <div
+                class="w-full h-fit p-3 sm:p-5 bg-white/45 border border-white rounded-[20px] overflow-hidden"
+              >
+                <img
+                  src="assets/image/cta-driveSale.webp"
+                  class="w-full h-full object-cover object-top rounded-2xl sm:rounded-[20px] border border-white"
+                  alt="Dynamic Pricing solution driving sales and revenue"
+                  width="700"
+                  height="380"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          src="assets/image/icon/ctaBanner-shape.png"
+          class="animate-pulse absolute start-0 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <img
+          src="assets/image/icon/ctaBanner-shape2.png"
+          class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+      </section>
+
+      <!----- Section 7: Ready to Optimize Your Pricing Strategy ----->
+      <section class="py-10 lg:py-16">
+        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+          <div
+            class="fade-in grid lg:grid-cols-1 gap-8 lg:gap-[66px] items-center text-center"
+          >
+            <div>
+              <h2
+                class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+              >
+                Ready to Optimize Your Pricing Strategy?
+              </h2>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Dynamic Pricing helps retailers stay competitive, maximise
+                profits, and respond quickly to changing demand, without manual
+                effort.
+              </p>
+              <div class="mt-5 lg:mt-10 flex flex-wrap gap-3 justify-center">
+                <a
+                  href="/request-demo"
+                  class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >
+                  Request a Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {{> footer}}
+
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
+</html>

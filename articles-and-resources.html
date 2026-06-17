@@ -1,134 +1,256 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Articles and Resources - Artisans Cloud</title>
-    <link rel="canonical" href="https://www.artisanscloud.com/articles-and-resources" />
-    <meta property="og:url" content="https://artisanscloud.com/articles-and-resources">
-    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/articles-and-resources.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-
-    <!-- Font Family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="./assets/style/output.css">
-</head>
-<body>
-    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
 
     {{> header}}
 
-
     <!----- Banner Sec ----->
     <section class="w-full h-full p-4 lg:p-5">
-        <div class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/blog-list/blog-list-banner.webp')] bg-no-repeat bg-cover">
-            <div class="pt-5 lg:pt-[100px] pb-20 sm:pb-24 md:pb-[200px]">
-                <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
-                    <div class="text-center lg:max-w-[850px] mx-auto">
-                        <h1 class="mb-6 lg:mb-[37px] font-primary font-semibold text-2xl sm:text-4xl lg:text-[44px] xl:text-[50px] text-heading leading-[120%]" id="heroHeading">Transform Your Retail Strategy with Expert Insights</h1>
-                        <div id="heroDec">
-                            <p class="text-base lg:text-lg text-description font-primary font-normal leading-[150%]">Explore our curated articles, offering actionable insights into retail innovation. From demand forecasting to inventory optimization, these resources are crafted to help you drive growth, improve efficiency, and stay ahead in a competitive market.</p>
-                            <a href="/contact-us" class="lg:mt-10 mt-6 mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Book A Minutes Demo</a>
-                        </div>
-                    </div>
-                </div>
+      <div
+        class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/blog-list/blog-list-banner.webp')] bg-no-repeat bg-cover"
+      >
+        <div class="pt-5 lg:pt-[100px] pb-20 sm:pb-24 md:pb-[200px]">
+          <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
+            <div class="text-center mt-7.5">
+              <div
+                class="mb-3 sm:mb-5 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
+              >
+                Articles &amp; Resources
+              </div>
+              <h1
+                class="mb-3 font-primary text-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%]"
+                id="heroHeading"
+              >
+                Transform Your Retail Strategy <br />with Expert Insights
+              </h1>
             </div>
+            <div
+              id="heroDec"
+              class="flex flex-col items-center mb-7.5 lg:mb-12"
+            >
+              <p
+                class="mb-3 text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+              >
+                Explore our curated articles, offering actionable insights into
+                retail innovation.
+              </p>
+              <p
+                class="mb-3 text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+              >
+                From demand forecasting to inventory optimization, these
+                resources are crafted to help you drive growth, improve
+                efficiency, and stay ahead in a competitive market.
+              </p>
+              <a
+                href="/request-demo"
+                class="lg:mt-[25px] mt-4 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                >Book A Minutes Demo</a
+              >
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!----- End Banner Sec ----->
-
 
     <!----- Articles and Resources Sec ----->
     <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
-            <div id="blog-grid" class="grid lg:grid-cols-3 sm:grid-cols-2 lg:gap-[30px] sm:gap-5 gap-4">
-                <!-- Blog cards rendered dynamically by assets/script/modules/blog-articles.js -->
-                <!-- To update card content, edit api/lib/fallback-articles.js (single source of truth) -->
-            </div>
-            <noscript>
-                <p class="text-center text-description font-primary py-10">Please enable JavaScript to view blog articles.</p>
-            </noscript>
-
-            <div class="mt-5 lg:mt-10">
-                <button id="load-more-btn" type="button" style="display:none" class="cursor-pointer mx-auto w-fit h-fit rounded-[40px] justify-center text-center font-primary font-semibold text-sm md:text-base leading-[100%] text-heading relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 bg-white border border-heading flex items-center gap-2 py-4 px-8 group hover:bg-heading hover:text-white">Load More</button>
-            </div>
+      <div class="max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
+        <div
+          id="blog-grid"
+          class="grid lg:grid-cols-3 sm:grid-cols-2 lg:gap-[30px] sm:gap-5 gap-4"
+        >
+          <!-- Blog cards rendered dynamically by assets/script/modules/blog-articles.js -->
+          <!-- To update card content, edit api/lib/fallback-articles.js (single source of truth) -->
         </div>
+        <noscript>
+          <p class="text-center text-description font-primary py-10">
+            Please enable JavaScript to view blog articles.
+          </p>
+        </noscript>
+
+        <div class="mt-5 lg:mt-10">
+          <button
+            id="load-more-btn"
+            type="button"
+            style="display: none"
+            class="cursor-pointer mx-auto w-fit h-fit rounded-[40px] justify-center text-center font-primary font-semibold text-sm md:text-base leading-[100%] text-heading relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 bg-white border border-heading flex items-center gap-2 py-4 px-8 group hover:bg-heading hover:text-white"
+          >
+            Load More
+          </button>
+        </div>
+      </div>
     </section>
-    <!----- End Articles and Resources Sec ----->
 
-
-    <!-- Empower Your Retail Success with Artisans Commerce Cloud Sec -->
+    <!-- Empower Your Retail Success with Artisans Cloud Sec -->
     <section class="lg:pb-[100px] sm:pb-16 pb-10">
-        <div class="max-w-[1280px] w-full px-4 xl:px-0 mx-auto">
-            <div class="md:p-[30px] lg:ps-16 p-5 md:rounded-[20px] rounded-2xl overflow-hidden bg-[#DFF4FF] bg-[url(../../assets/image/solutions/distributed-order-management/Scale-Inventory-Order-BG.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                <div class="grid lg:grid-cols-2 xl:gap-14 lg:gap-10 gap-7">
-                    <div class="lg:pt-8 pt-2 xl:pe-5">
-                        <div class="lg:mb-[30px] mb-6 lg:text-[38px] sm:text-3xl text-2xl font-primary font-medium text-heading lg:leading-[54px] leading-[120%]">Empower Your Retail Success with Artisans Commerce Cloud</div>
-                        <p class="sm:mb-5 mb-4 text-description font-primary text-base font-normal">We're here to support your journey towards optimized retail operations. Reach out with your questions, or let us know how we can assist in transforming your retail strategy.</p>
-                        <p class="text-description font-primary text-base font-normal">Our team is ready to provide the insights and solutions you need to thrive.</p>
-                    </div>
-                    <div class="bg-white lg:p-10 sm:p-7 p-5 md:rounded-[20px] rounded-xl">
-                        <form action="https://api.web3forms.com/submit" method="POST" class="w-full m-0">
-                            <input type="hidden" name="access_key" value="d082e756-9d9f-4750-bda0-10769f1253c6" />
-                            <input type="hidden" name="redirect" value="https://artisanscloud.com/thank-you" />
-                            <input type="checkbox" name="botcheck" style="display: none;" />
-                            <input type="hidden" name="subject" value="Blog inquiry" />
-                            <input type="hidden" name="interest" value="Blog" />
-                            <div class="lg:mb-6 mb-5 grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="first_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">First Name</label>
-                                    <input type="text" id="first_name" name="first_name" placeholder="Enter First Name" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                                <div>
-                                    <label for="last_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Last Name</label>
-                                    <input type="text" id="last_name" name="last_name" placeholder="Enter Last Name" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
-                                <div>
-                                    <label for="company_name" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Company Name</label>
-                                    <input type="text" id="company_name" name="company_name" placeholder="Enter Company Name" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
-                                <div>
-                                    <label for="email" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Email address</label>
-                                    <input type="email" id="email" name="email" placeholder="Enter email address" required class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-                            <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
-                                <div>
-                                    <label for="phone_number" class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary">Phone Number</label>
-                                    <input type="tel" id="phone_number" name="phone_number" placeholder="Enter phone number" class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary">
-                                </div>
-                            </div>
-
-                            <div class="mt-4 flex flex-wrap lg:flex-nowrap justify-between gap-6">
-                                <p class="text-sm text-description font-primary font-normal lg:leading-[26px] leading-[160%]">By submitting your information you agree with our <a href="/terms-and-conditions" class="font-semibold inline-block underline">Terms of Use</a> and <a href="/privacy-policy" class="font-semibold inline-block underline">Privacy Policy</a>.</p>
-                                <button type="submit" class="cursor-pointer w-fit h-fit rounded-[40px] sm:px-[40px] px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+      <div class="max-w-[1280px] w-full px-4 xl:px-0 mx-auto">
+        <div
+          class="md:p-[30px] lg:ps-16 p-5 md:rounded-[20px] rounded-2xl overflow-hidden bg-[#DFF4FF] bg-[url(../../assets/image/solutions/distributed-order-management/Scale-Inventory-Order-BG.svg)] bg-no-repeat bg-bottom-left bg-contain"
+        >
+          <div class="grid lg:grid-cols-2 xl:gap-14 lg:gap-10 gap-7">
+            <div class="lg:pt-8 pt-2 xl:pe-5">
+              <div
+                class="lg:mb-[30px] mb-6 lg:text-[38px] sm:text-3xl text-2xl font-primary font-medium text-heading lg:leading-[54px] leading-[120%]"
+              >
+                Empower Your Retail Success with Artisans Cloud
+              </div>
+              <p
+                class="sm:mb-5 mb-4 text-description font-primary text-base font-normal"
+              >
+                We're here to support your journey towards optimized retail
+                operations. Reach out with your questions, or let us know how we
+                can assist in transforming your retail strategy.
+              </p>
+              <p class="text-description font-primary text-base font-normal">
+                Our team is ready to provide the insights and solutions you need
+                to thrive.
+              </p>
             </div>
-        </div>
-    </section>
-    <!-- End Empower Your Retail Success with Artisans Commerce Cloud Sec -->
+            <div
+              class="bg-white lg:p-10 sm:p-7 p-5 md:rounded-[20px] rounded-xl"
+            >
+              <form
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                class="w-full m-0"
+              >
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="d082e756-9d9f-4750-bda0-10769f1253c6"
+                />
+                <input
+                  type="hidden"
+                  name="redirect"
+                  value="https://artisanscloud.com/thank-you"
+                />
+                <input type="checkbox" name="botcheck" style="display: none" />
+                <input type="hidden" name="subject" value="Blog inquiry" />
+                <input type="hidden" name="interest" value="Blog" />
+                <div class="lg:mb-6 mb-5 grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      for="first_name"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >First Name</label
+                    >
+                    <input
+                      type="text"
+                      id="first_name"
+                      name="first_name"
+                      placeholder="Enter First Name"
+                      required
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="last_name"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >Last Name</label
+                    >
+                    <input
+                      type="text"
+                      id="last_name"
+                      name="last_name"
+                      placeholder="Enter Last Name"
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                </div>
+                <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                  <div>
+                    <label
+                      for="company_name"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >Company Name</label
+                    >
+                    <input
+                      type="text"
+                      id="company_name"
+                      name="company_name"
+                      placeholder="Enter Company Name"
+                      required
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                </div>
+                <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                  <div>
+                    <label
+                      for="email"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >Email address</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Enter email address"
+                      required
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                </div>
+                <div class="lg:mb-6 mb-5 grid grid-cols-1 gap-4">
+                  <div>
+                    <label
+                      for="phone_number"
+                      class="mb-1 block sm:text-base text-sm font-medium text-heading font-primary"
+                      >Phone Number</label
+                    >
+                    <input
+                      type="tel"
+                      id="phone_number"
+                      name="phone_number"
+                      placeholder="Enter phone number"
+                      class="w-full sm:py-4 py-3 px-3.5 text-heading sm:text-base text-sm font-primary font-normal border border-light-border rounded-xl placeholder:text-[#8DA2C2] focus-visible:outline-primary"
+                    />
+                  </div>
+                </div>
 
+                <div
+                  class="mt-4 flex flex-wrap lg:flex-nowrap justify-between gap-6"
+                >
+                  <p
+                    class="text-sm text-description font-primary font-normal lg:leading-[26px] leading-[160%]"
+                  >
+                    By submitting your information you agree with our
+                    <a
+                      href="/terms-and-conditions"
+                      class="font-semibold inline-block underline"
+                      >Terms of Use</a
+                    >
+                    and
+                    <a
+                      href="/privacy-policy"
+                      class="font-semibold inline-block underline"
+                      >Privacy Policy</a
+                    >.
+                  </p>
+                  <button
+                    type="submit"
+                    class="cursor-pointer w-fit h-fit rounded-[40px] sm:px-[40px] px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     {{> footer}}
 
-
-    <!--+++++++ Script Start +++++++-->
-
-    <script type='module' src='assets/script/main.js'></script>
-</body>
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
 </html>

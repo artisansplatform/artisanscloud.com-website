@@ -1,308 +1,650 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <title>Data Intelligence | Artisans Cloud</title>
-    <link rel="canonical" href="https://www.artisanscloud.com/data-intelligence" />
-    <meta name="description"
-        content="Unlock enterprise data potential with Artisans Cloud. Our Data Intelligence solutions transform data into intelligent action, driving agility, foresight, and operational excellence.">
-    <meta name="keywords"
-        content="data intelligence, enterprise AI, business intelligence, data automation, data analytics, data pipeline, cloud data architecture, Artisans Cloud">
-    <meta property="og:url" content="https://artisanscloud.com/data-intelligence">
-    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/data-intelligence.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <!-- Font Family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="./assets/style/output.css">
-</head>
-<body>
-    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
-
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
 
     {{> header}}
 
-
     <!----- Banner Sec ----->
     <section class="w-full h-full p-4 lg:p-5">
-        <div
-            class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] flex items-center justify-center h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/data-intelligence/banner-BG.webp')] bg-no-repeat bg-cover">
-            <div class="pt-5 lg:pt-[64px] pb-[40px] lg:pb-[65px] w-full">
-                <div class="fade-in max-w-[1400px] w-full mx-auto my-auto">
-                    <div class="fade-in flex flex-col lg:flex-row justify-center w-full">
-
-                        <div
-                            class="flex lg:flex-col items-center lg:items-start justify-between gap-x-4 w-full lg:w-fit mb-5 lg:mb-0 ">
-                            <div class="w-fit h-fit md:ms-[clamp(12px,5.7vw,20px)] ">
-                                <img src="/assets/image/data-intelligence/banner-subg-1.webp" alt="Data visualization dashboard"
-                                    class="rounded-[10px] lg:rounded-[20px]" width="200" height="150">
-                            </div>
-
-                            <div class="w-fit h-fit md:ms-[clamp(12px,2.7vw,95px)] mb-2  hidden lg:block">
-                                <img src="/assets/image/data-intelligence/banner-subg-3.webp" alt="Data analytics chart"
-                                    class="rounded-[10px] lg:rounded-[20px]" width="200" height="150">
-                            </div>
-                            <div class="w-fit h-fit md:me-[clamp(12px,2.7vw,66px)] block lg:hidden">
-                                <img src="/assets/image/data-intelligence/banner-subg-2.webp" alt="Data intelligence interface"
-                                    class="rounded-[10px] lg:rounded-[20px]" width="200" height="150">
-                            </div>
-                        </div>
-
-                        <div class="max-w-fit mx-auto lg:mx-0">
-                            <div class="lg:mt-[70px] mb-5 text-center w-full lg:w-auto">
-                                <div class="font-primary font-semibold text-[clamp(24px,3.6vw,40px)] text-heading leading-[120%] lg:leading-[61px] md:text-nowrap "
-                                    id="heroHeading"><span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]"> Data Intelligence </span><br> Transforming Enterprise Data <br> into
-                                    Intelligent Action</div>
-                            </div>
-                            <div id="heroDec" class="lg:mb-[76px] w-full lg:w-auto">
-                                <div class="w-full">
-                                    <p
-                                        class="text-center max-w-[662px] mx-auto text-wrap px-2.5 lg:px-0 text-[clamp(14px,1.3vw,18px)] text-description font-primary font-normal leading-[150%]">
-                                        We build modern data ecosystems that unify, automate, and activate enterprise
-                                        intelligence. Artisans transforms static
-                                        reports into dynamic, decision-ready foresight, connecting every layer of the
-                                        business.</p>
-                                    <a href="/contact-us"
-                                        class="lg:mt-[25px] mt-4 w-fit h-fit mx-auto rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Explore
-                                        Data Intelligence Solutions</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="flex lg:flex-col items-center lg:items-end justify-between w-full gap-x-4 lg:w-fit mt-5 lg:mt-0">
-                            <div class="w-fit h-fit md:me-[clamp(12px,2.7vw,66px)] hidden lg:block ">
-                                <img src="/assets/image/data-intelligence/banner-subg-2.webp" alt="Data intelligence interface"
-                                    class="rounded-[10px] lg:rounded-[20px]" width="200" height="150">
-                            </div>
-                            <div class="w-fit h-fit md:ms-[clamp(12px,2.7vw,95px)] block lg:hidden">
-                                <img src="/assets/image/data-intelligence/banner-subg-3.webp" alt="Data analytics chart"
-                                    class="rounded-[10px] lg:rounded-[20px]" width="200" height="150">
-                            </div>
-                            <div class="w-fit h-fit md:me-[clamp(12px,2.7vw,89px)] ">
-                                <img src="/assets/image/data-intelligence/banner-subg-4.webp" alt="Business intelligence dashboard"
-                                    class="rounded-[10px] lg:rounded-[20px]" width="200" height="150">
-                            </div>
-                        </div>
-                    </div>
+      <div
+        class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] flex items-center justify-center h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/data-intelligence/banner-BG.webp')] bg-no-repeat bg-cover"
+      >
+        <div class="pt-5 lg:pt-[64px] pb-[40px] lg:pb-[65px] w-full">
+          <div class="fade-in max-w-[1400px] w-full mx-auto my-auto">
+            <div
+              class="fade-in flex flex-col lg:flex-row justify-center w-full"
+            >
+              <div
+                class="flex lg:flex-col items-center lg:items-start justify-between gap-x-4 w-full lg:w-fit mb-5 lg:mb-0"
+              >
+                <div class="w-fit h-fit md:ms-[clamp(12px,5.7vw,20px)]">
+                  <img
+                    src="/assets/image/data-intelligence/banner-subg-1.webp"
+                    alt="Data visualization dashboard"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                    width="200"
+                    height="150"
+                  />
                 </div>
-            </div>
-        </div>
-    </section>
-    <!----- End Banner Sec ----->
 
+                <div
+                  class="w-fit h-fit md:ms-[clamp(12px,2.7vw,95px)] mb-2 hidden lg:block"
+                >
+                  <img
+                    src="/assets/image/data-intelligence/banner-subg-3.webp"
+                    alt="Data analytics chart"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                    width="200"
+                    height="150"
+                  />
+                </div>
+                <div
+                  class="w-fit h-fit md:me-[clamp(12px,2.7vw,66px)] block lg:hidden"
+                >
+                  <img
+                    src="/assets/image/data-intelligence/banner-subg-2.webp"
+                    alt="Data intelligence interface"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                    width="200"
+                    height="150"
+                  />
+                </div>
+              </div>
+
+              <div class="max-w-fit mx-auto lg:mx-0">
+                <div class="text-center mt-7.5 lg:mt-[70px]">
+                  <div
+                    class="mb-3 sm:mb-5 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
+                  >
+                    Data Intelligence
+                  </div>
+                  <h1
+                    class="font-primary text-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%]"
+                    id="heroHeading"
+                  >
+                    Data Intelligence <br />
+                    Transforming Enterprise Data <br />
+                    into Intelligent Action
+                  </h1>
+                </div>
+                <div
+                  id="heroDec"
+                  class="flex flex-col items-center mb-7.5 lg:mb-12 w-full lg:w-auto"
+                >
+                  <p
+                    class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%] mb-3"
+                  >
+                    We build modern data ecosystems that unify, automate, and
+                    activate enterprise intelligence.
+                  </p>
+                  <p
+                    class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                  >
+                    Artisans Cloud transforms static reports into dynamic,
+                    decision-ready foresight, connecting every layer of the
+                    business.
+                  </p>
+                  <a
+                    href="/contact-us"
+                    class="lg:mt-[25px] mt-4 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                    >Explore Data Intelligence Solutions</a
+                  >
+                </div>
+              </div>
+
+              <div
+                class="flex lg:flex-col items-center lg:items-end justify-between w-full gap-x-4 lg:w-fit mt-5 lg:mt-0"
+              >
+                <div
+                  class="w-fit h-fit md:me-[clamp(12px,2.7vw,66px)] hidden lg:block"
+                >
+                  <img
+                    src="/assets/image/data-intelligence/banner-subg-2.webp"
+                    alt="Data intelligence interface"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                    width="200"
+                    height="150"
+                  />
+                </div>
+                <div
+                  class="w-fit h-fit md:ms-[clamp(12px,2.7vw,95px)] block lg:hidden"
+                >
+                  <img
+                    src="/assets/image/data-intelligence/banner-subg-3.webp"
+                    alt="Data analytics chart"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                    width="200"
+                    height="150"
+                  />
+                </div>
+                <div class="w-fit h-fit md:me-[clamp(12px,2.7vw,89px)]">
+                  <img
+                    src="/assets/image/data-intelligence/banner-subg-4.webp"
+                    alt="Business intelligence dashboard"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                    width="200"
+                    height="150"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!----- Banner Big Image Sec ----->
     <div
-        class="fade-in relative z-[2] mx-auto mt-7.5 md:mt-[67px] mb-4 lg:mb-7.5 w-[80%] max-w-[1264px] p-[clamp(0.625rem,2.778vw-0.208rem,1.875rem)] rounded-[20px] border sm:border-[3px] border-[#F3F3F3] bg-white/25 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[30%] after:bg-gradient-to-b after:from-transparent after:to-white after:pointer-events-none after:select-none overflow-hidden">
-        <img src="assets/image/data-intelligence/bannerImage.webp" alt="Data Intelligence Platform"
-            class="h-full w-full object-cover object-top rounded-[10px] border border-white" width="1200" height="600" loading="lazy" />
+      class="fade-in relative z-[2] mx-auto mt-7.5 md:mt-[67px] mb-4 lg:mb-7.5 w-[80%] max-w-[1264px] p-[clamp(0.625rem,2.778vw-0.208rem,1.875rem)] rounded-[20px] border sm:border-[3px] border-[#F3F3F3] bg-white/25 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[30%] after:bg-gradient-to-b after:from-transparent after:to-white after:pointer-events-none after:select-none overflow-hidden"
+    >
+      <img
+        src="assets/image/data-intelligence/bannerImage.webp"
+        alt="Data Intelligence Platform"
+        class="h-full w-full object-cover object-top rounded-[10px] border border-white"
+        width="1200"
+        height="600"
+        loading="lazy"
+      />
     </div>
-    <!----- End Banner Big Image Sec ----->
-
 
     <!----- Our Approach Sec ----->
     <section class="py-10 md:py-16">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <h1 class="fade-in mb-5 md:mb-16 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-extrabold leading-[120%] text-center">Our Approach</h1>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <h2
+          class="fade-in mb-5 md:mb-16 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-extrabold leading-[120%] text-center"
+        >
+          Our Approach
+        </h2>
 
-            <div class="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 xl:gap-20 2xl:gap-[100px] items-center">
-                <img src="assets/image/data-intelligence/dataintelligent-ourApproch-image.svg" class="fade-in max-w-full h-auto mx-auto 2xl:mx-0" alt="Data Intelligence Approach infographic" width="500" height="400" loading="lazy">
-                <div class="fade-in">
-                    <h2 class="lg:mb-4 mb-3 text-heading font-primary font-semibold text-xl leading-[125%]">From Data Silos to Enterprise-Ready Intelligence.</h2>
-                    <p class="lg:pe-5 text-description font-primary font-normal leading-[150%]">Artisans helps enterprises modernise how they manage, process, and operationalise data. We work from architecture design to deployment, building governed, scalable systems that make data accessible, interpretable, and actionable across the enterprise. Our focus transcends technology, centred instead on creating continuous intelligence pipelines that seamlessly connect data, analytics, and operations into one resilient ecosystem.</p>
-                </div>
-            </div>
+        <div
+          class="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 xl:gap-20 2xl:gap-[100px] items-center"
+        >
+          <img
+            src="assets/image/data-intelligence/dataintelligent-ourApproch-image.svg"
+            class="fade-in max-w-full h-auto mx-auto 2xl:mx-0"
+            alt="Data Intelligence Approach infographic"
+            width="500"
+            height="400"
+            loading="lazy"
+          />
+          <div class="fade-in">
+            <h2
+              class="lg:mb-4 mb-3 text-heading font-primary font-semibold text-xl leading-[125%]"
+            >
+              From Data Silos to Enterprise-Ready Intelligence.
+            </h2>
+            <p
+              class="lg:pe-5 text-description font-primary font-normal leading-[150%]"
+            >
+              Artisans Cloud helps enterprises modernise how they manage,
+              process, and operationalise data. We work from architecture design
+              to deployment, building governed, scalable systems that make data
+              accessible, interpretable, and actionable across the enterprise.
+              Our focus transcends technology, centred instead on creating
+              continuous intelligence pipelines that seamlessly connect data,
+              analytics, and operations into one resilient ecosystem.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
-    <!----- End Our Approach Sec ----->
-
 
     <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
-
 
     <!----- Architecting the data foundation Sec ----->
     <section class="lg:py-[90px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in lg:mb-[50px] sm:mb-9 mb-5 grid grid-cols-1 max-w-[933px] w-full mx-auto text-center">
-                <h4 class="mb-2.5 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Architecting the data foundation</h4>
-                <h4 class="lg:mb-5 mb-4 text-heading font-primary font-semibold text-xl leading-[125%]">Architecting the Core Infrastructure of Decision Intelligence.</h4>
-                <p class="text-description font-primary font-normal leading-[150%]">We design and implement data foundations engineered for agility, trust, and scalability. Our expertise spans modern data architecture, integration, and governance-ensuring your enterprise can act on intelligence, not just store information.</p>
-            </div>
-
-            <div class="fade-in md:mt-[60px] mt-4 mb-4 md:mb-[30px] text-heading font-semibold text-center font-primary text-lg lg:text-[28px]">Core Capabilities</div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
-                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Data Mesh icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Data Mesh & Unified Fabric</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Decentralised data ownership with enterprise-wide discoverability and governance.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/intelligentAutomation-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Data Pipelines icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Data Pipelines & Orchestration</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Automated ingestion, transformation, and delivery across complex enterprise systems.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/metadata-LineageManagement-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Metadata Management icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Metadata & Lineage Management</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Complete traceability for audit-ready transparency and operational control.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/DataQuality-Trust-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Data Quality icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Data Quality & Trust Frameworks</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Continuous validation for accuracy, integrity, and reliability.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/Cloud-hybridDeployments-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Cloud Deployment icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Cloud & Hybrid Deployments</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Optimised architecture for scalability, performance, and cost efficiency.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="fade-in lg:mb-[50px] sm:mb-9 mb-5 grid grid-cols-1 max-w-[933px] w-full mx-auto text-center"
+        >
+          <h4
+            class="mb-2.5 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Architecting the data foundation
+          </h4>
+          <h4
+            class="lg:mb-5 mb-4 text-heading font-primary font-semibold text-xl leading-[125%]"
+          >
+            Architecting the Core Infrastructure of Decision Intelligence.
+          </h4>
+          <p class="text-description font-primary font-normal leading-[150%]">
+            We design and implement data foundations engineered for agility,
+            trust, and scalability. Our expertise spans modern data
+            architecture, integration, and governance-ensuring your enterprise
+            can act on intelligence, not just store information.
+          </p>
         </div>
+
+        <div
+          class="fade-in md:mt-[60px] mt-4 mb-4 md:mb-[30px] text-heading font-semibold text-center font-primary text-lg lg:text-[28px]"
+        >
+          Core Capabilities
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
+          <div
+            class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Data Mesh icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Data Mesh & Unified Fabric
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Decentralised data ownership with enterprise-wide
+                discoverability and governance.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/intelligentAutomation-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Data Pipelines icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Data Pipelines & Orchestration
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Automated ingestion, transformation, and delivery across complex
+                enterprise systems.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/metadata-LineageManagement-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Metadata Management icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Metadata & Lineage Management
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Complete traceability for audit-ready transparency and
+                operational control.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/DataQuality-Trust-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Data Quality icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Data Quality & Trust Frameworks
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Continuous validation for accuracy, integrity, and reliability.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/Cloud-hybridDeployments-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Cloud Deployment icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Cloud & Hybrid Deployments
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Optimised architecture for scalability, performance, and cost
+                efficiency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <!----- End Architecting the data foundation Sec ----->
-
-
 
     <!----- Drive Sales CTA Sec ----->
-    <section class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-            <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8 items-center">
-                <div class="lg:max-w-[530px] w-full">
-                    <div class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">Build the Data Foundation for Intelligent Growth</div>
-                    <p class="text-white/80 font-primary font-normal text-base leading-[150%]">Artisans unites data engineering, analytics, and automation into a single continuum of intelligence. We enable enterprises to transform data into a living system-always learning, always guiding, always advancing.</p>
-                    <a href="/contact-us" class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">Start Your Data Intelligence Journey</a>
-                </div>
-                <div class="rounded-[20px] overflow-hidden">
-                    <img src="assets/image/data-intelligence/cta-section.webp" class="w-full h-full object-cover object-top rounded-2xl sm:rounded-[20px]" alt="Data Foundation visualization" width="600" height="400" loading="lazy">
-                </div>
+    <section
+      class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/CTA-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover"
+    >
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+        <div
+          class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8 items-center"
+        >
+          <div class="lg:max-w-[530px] w-full">
+            <div
+              class="lg:mb-4 mb-3 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+            >
+              Build the Data Foundation for Intelligent Growth
             </div>
+            <p
+              class="text-white/80 font-primary font-normal text-base leading-[150%]"
+            >
+              Artisans Cloud unites data engineering, analytics, and automation
+              into a single continuum of intelligence. We enable enterprises to
+              transform data into a living system-always learning, always
+              guiding, always advancing.
+            </p>
+            <a
+              href="/contact-us"
+              class="lg:mt-[30px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+              >Start Your Data Intelligence Journey</a
+            >
+          </div>
+          <div class="rounded-[20px] overflow-hidden">
+            <img
+              src="assets/image/data-intelligence/cta-section.webp"
+              class="w-full h-full object-cover object-top rounded-2xl sm:rounded-[20px]"
+              alt="Data Foundation visualization"
+              width="600"
+              height="400"
+              loading="lazy"
+            />
+          </div>
         </div>
+      </div>
 
-        <img src="assets/image/icon/ctaBanner-shape.png" class="animate-pulse absolute start-0 bottom-0 pointer-none select-none" alt="" width="150" height="150" loading="lazy">
-        <img src="assets/image/icon/ctaBanner-shape2.png" class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none" alt="" width="150" height="150" loading="lazy">
+      <img
+        src="assets/image/icon/ctaBanner-shape.png"
+        class="animate-pulse absolute start-0 bottom-0 pointer-none select-none"
+        alt=""
+        width="150"
+        height="150"
+        loading="lazy"
+      />
+      <img
+        src="assets/image/icon/ctaBanner-shape2.png"
+        class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
+        alt=""
+        width="150"
+        height="150"
+        loading="lazy"
+      />
     </section>
-    <!----- End Drive Sales CTA Sec ----->
-
-
 
     <!----- Intelligent insights decision systems Sec ----->
     <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in grid grid-cols-1 lg:grid-cols-2 xl:gap-14 lg:gap-10 gap-5">
-                <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Intelligent <br class="hidden lg:block"> decision <br class="hidden lg:block"> systems</div>
-                <div class="">
-                    <div class="lg:mb-[15px] mb-3 text-heading font-primary font-semibold text-xl leading-[125%]">From Dashboards to Decision Systems.</div>
-                    <p class="lg:mb-[15px] mb-3 text-description font-primary font-normal leading-[150%]">We bring intelligence closer to decision-makers by integrating advanced analytics and AI within business workflows. Artisans builds insight systems that move beyond static reporting - transforming data into real-time, contextual guidance.</p>
-                    <p class="text-description font-primary font-normal leading-[150%]">Every deployment is engineered for velocity, clarity, and absolute accountability-enabling faster, data-driven action across all critical functions.</p>
-                </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="fade-in grid grid-cols-1 lg:grid-cols-2 xl:gap-14 lg:gap-10 gap-5"
+        >
+          <div
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Intelligent <br class="hidden lg:block" />
+            decision <br class="hidden lg:block" />
+            systems
+          </div>
+          <div class="">
+            <div
+              class="lg:mb-[15px] mb-3 text-heading font-primary font-semibold text-xl leading-[125%]"
+            >
+              From Dashboards to Decision Systems.
             </div>
-
-            <div class="lg:mt-[60px] sm:mt-10 mt-7 grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-4">
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/moduleCard-retailPLanning.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Executive Dashboards icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Executive Dashboards</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Unified visibility into performance metrics and predictive insights.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/layers-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Cognitive Reporting icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Cognitive Reporting Layers</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Automated analytics that explain, not just display, what’s happening and why.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/Predictive-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Predictive Models icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Predictive & Prescriptive Models</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">AI-driven recommendations to anticipate and optimise outcomes.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/embeddedFramework-icon.svg" class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300" alt="Embedded Decision Frameworks icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold">Embedded Decision Frameworks</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Integrations that deliver intelligence directly into ERP, CRM, or custom enterprise applications.</p>
-                    </div>
-                </div>
-            </div>
+            <p
+              class="lg:mb-[15px] mb-3 text-description font-primary font-normal leading-[150%]"
+            >
+              We bring intelligence closer to decision-makers by integrating
+              advanced analytics and AI within business workflows. Artisans
+              Cloud builds insight systems that move beyond static reporting -
+              transforming data into real-time, contextual guidance.
+            </p>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              Every deployment is engineered for velocity, clarity, and absolute
+              accountability-enabling faster, data-driven action across all
+              critical functions.
+            </p>
+          </div>
         </div>
-    </section>
-    <!----- End Intelligent insights decision systems Sec ----->
 
+        <div
+          class="lg:mt-[60px] sm:mt-10 mt-7 grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-4"
+        >
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+          >
+            <div
+              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/moduleCard-retailPLanning.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Executive Dashboards icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Executive Dashboards
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Unified visibility into performance metrics and predictive
+                insights.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+          >
+            <div
+              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/layers-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Cognitive Reporting icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Cognitive Reporting Layers
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Automated analytics that explain, not just display, what’s
+                happening and why.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+          >
+            <div
+              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/Predictive-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Predictive Models icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Predictive & Prescriptive Models
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                AI-driven recommendations to anticipate and optimise outcomes.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+          >
+            <div
+              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/embeddedFramework-icon.svg"
+                class="h-1/2 group-hover:scale-105 transition-all ease-linear duration-300"
+                alt="Embedded Decision Frameworks icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div
+                class="mb-4 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Embedded Decision Frameworks
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Integrations that deliver intelligence directly into ERP, CRM,
+                or custom enterprise applications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
-
 
     <!----- Co-building intelligence with enterprises Sec ----->
     <section class="lg:py-[110px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-5">
-                <div class="p-5">
-                    <img src="assets/image/data-intelligence/data-platform.png" alt="Co-building Intelligence illustration" class="max-w-full h-auto mx-auto lg:mx-0" width="600" height="400" loading="lazy">
-                </div>
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-5">
+          <div class="p-5">
+            <img
+              src="assets/image/data-intelligence/data-platform.png"
+              alt="Co-building Intelligence illustration"
+              class="max-w-full h-auto mx-auto lg:mx-0"
+              width="600"
+              height="400"
+              loading="lazy"
+            />
+          </div>
 
-                <div>
-                    <div class="mb-5 md:mb-10 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Co-building intelligence with enterprises</div>
-                    <div class="mb-4 lg:mb-5 text-heading font-primary font-semibold text-xl leading-[125%]">Partnering to Design the Future of Enterprise Intelligence.</div>
-                    <p class="mb-4 lg:mb-5 text-description font-primary font-normal leading-[150%]">Artisans works alongside enterprise teams to co-architect data and intelligence systems that evolve with business needs. We combine deep domain expertise with engineering precision to build solutions that are owned, operated, and continuously refined by our clients.</p>
-                    <p class="text-description font-primary font-normal leading-[150%]">Our partnerships go beyond delivery-we help organisations establish data culture, governance frameworks, and IP co-creation models that sustain long-term innovation.</p>
-                </div>
+          <div>
+            <div
+              class="mb-5 md:mb-10 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              Co-building intelligence with enterprises
             </div>
+            <div
+              class="mb-4 lg:mb-5 text-heading font-primary font-semibold text-xl leading-[125%]"
+            >
+              Partnering to Design the Future of Enterprise Intelligence.
+            </div>
+            <p
+              class="mb-4 lg:mb-5 text-description font-primary font-normal leading-[150%]"
+            >
+              Artisans Cloud works alongside enterprise teams to co-architect
+              data and intelligence systems that evolve with business needs. We
+              combine deep domain expertise with engineering precision to build
+              solutions that are owned, operated, and continuously refined by
+              our clients.
+            </p>
+            <p class="text-description font-primary font-normal leading-[150%]">
+              Our partnerships go beyond delivery-we help organisations
+              establish data culture, governance frameworks, and IP co-creation
+              models that sustain long-term innovation.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
-    <!----- End Co-building intelligence with enterprises Sec ----->
-
-
 
     {{> footer}}
 
-
-    <!--+++++++ Script Start +++++++-->
-
-    <script type='module' src='assets/script/main.js'></script>
-</body>
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
 </html>

@@ -1,677 +1,1459 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <title>Role Play Agent | Artisans Cloud</title>
-    <link rel="canonical" href="https://www.artisanscloud.com/role-play-agent" />
-    <meta name="description"
-        content="The Role Play Agent is an AI-powered training solution that simulates real-world conversations and scenarios, enabling employees to practice, refine and master critical interactions before facing them in reality.">
-    <meta name="keywords"
-        content="role play agent, AI training, sales enablement, customer service training, workforce readiness, experiential learning, leadership development, onboarding, Artisans Cloud">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:url" content="https://artisanscloud.com/role-play-agent">
-    <meta property="og:title" content="Role Play Agent | Artisans Cloud">
-    <meta property="og:description"
-        content="Transform training from theoretical learning into experiential capability building. AI-powered role play simulations that prepare your workforce for the moments that matter.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.artisanscloud.com/assets/og/role-play-agent.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <!-- Font Family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="./assets/style/output.css">
-</head>
-
-<body>
-    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
 
     {{> header}}
 
-
     <!----- Banner Sec ----->
     <section class="w-full h-full p-4 lg:p-5">
-        <div
-            class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] flex items-center justify-center h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/enterprise-ai/enterprise-ai-bannerBG.webp')] bg-no-repeat bg-cover">
-            <div class="pt-5 md:pt-8 pb-8 md:pb-10 w-full">
-                <div class="fade-in max-w-[1400px] w-full mx-auto">
-                    <div class="fade-in flex flex-col lg:flex-row justify-center w-full">
-                        <div class="flex lg:flex-col justify-between gap-x-4 w-full lg:w-fit lg:me-4 mb-5 lg:mb-0">
-                            <div class="w-fit h-fit md:mt-[32px] lg:ms-auto my-auto lg:my-0">
-                                <img src="/assets/image/role-play-agent/rp-subg-1.webp" alt="Scenario Comprehension dashboard" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                            <div class="w-fit h-fit lg:ms-auto hidden lg:block">
-                                <img src="/assets/image/role-play-agent/rp-subg-3.webp" alt="Customer Satisfaction metric" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                            <div class="w-fit h-fit lg:ms-auto block lg:hidden">
-                                <img src="/assets/image/role-play-agent/rp-subg-2.webp" alt="Case Handling Proficiency dashboard" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                        </div>
-
-                        <div class="max-w-fit mx-auto lg:mx-0">
-                            <div class="text-center w-full lg:w-auto lg:mt-[48px] mb-5">
-                                <div class="mb-3 sm:mb-6 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
-                                    id="heroHeading">Prepare your workforce for the moments that matter</div>
-                                <div class="font-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%] lg:leading-[61px]"
-                                    id="heroDec">
-                                    <span class="text-[clamp(28px,4vw,50px)] text-[#8D68F6]">Role Play Agent</span><br>
-                                    Practice Real Scenarios<br>
-                                    Build Real Capability
-                                </div>
-                            </div>
-                            <div id="heroDec" class="w-full lg:w-auto">
-                                <p
-                                    class="text-[clamp(14px,1.3vw,18px)] mx-auto px-2.5 lg:px-0 max-w-[613px] text-center text-description font-primary font-normal leading-[150%]">
-                                    Transform training from theoretical learning into experiential capability building -
-                                    simulating real-world conversations and scenarios so employees perform with confidence.</p>
-                                <a href="/contact-us"
-                                    class="mt-7 mx-auto w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">
-                                    Request a Demonstration
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="flex lg:flex-col justify-between w-full gap-x-4 lg:w-fit lg:ms-4 mt-5 lg:mt-0">
-                            <div class="w-fit h-fit lg:me-auto hidden lg:block">
-                                <img src="/assets/image/role-play-agent/rp-subg-2.webp" alt="Case Handling Proficiency dashboard" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                            <div class="w-fit h-fit lg:me-auto lg:hidden">
-                                <img src="/assets/image/role-play-agent/rp-subg-3.webp" alt="Customer Satisfaction metric" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                            <div class="w-fit h-fit mb-[14px] lg:me-auto my-auto lg:my-0">
-                                <img src="/assets/image/role-play-agent/rp-subg-4.webp" alt="Collaboration Skills dashboard" width="200" height="150"
-                                    class="rounded-[10px] lg:rounded-[20px]">
-                            </div>
-                        </div>
-                    </div>
+      <div
+        class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] flex items-center justify-center h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/enterprise-ai/enterprise-ai-bannerBG.webp')] bg-no-repeat bg-cover"
+      >
+        <div class="pt-5 md:pt-8 pb-8 md:pb-10 w-full">
+          <div class="fade-in max-w-[1400px] w-full mx-auto">
+            <div
+              class="fade-in flex flex-col lg:flex-row justify-center w-full"
+            >
+              <div
+                class="flex lg:flex-col justify-between gap-x-4 w-full lg:w-fit lg:me-4 mb-5 lg:mb-0"
+              >
+                <div
+                  class="w-fit h-fit md:mt-[32px] lg:ms-auto my-auto lg:my-0"
+                >
+                  <img
+                    src="/assets/image/role-play-agent/rp-subg-1.webp"
+                    alt="Scenario Comprehension dashboard"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                  />
                 </div>
+                <div class="w-fit h-fit lg:ms-auto hidden lg:block">
+                  <img
+                    src="/assets/image/role-play-agent/rp-subg-3.webp"
+                    alt="Customer Satisfaction metric"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                  />
+                </div>
+                <div class="w-fit h-fit lg:ms-auto block lg:hidden">
+                  <img
+                    src="/assets/image/role-play-agent/rp-subg-2.webp"
+                    alt="Case Handling Proficiency dashboard"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                  />
+                </div>
+              </div>
+
+              <div class="max-w-fit mx-auto lg:mx-0">
+                <div class="text-center mt-7.5 lg:mt-[48px]">
+                  <div
+                    class="mb-3 sm:mb-5 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase text-primary"
+                  >
+                    AI Role Play Platform
+                  </div>
+                  <h1
+                    class="mb-3 font-primary text-primary font-semibold text-[clamp(24px,3.6vw,42px)] text-heading leading-[120%]"
+                    id="heroHeading"
+                  >
+                    Enterprise Execution Readiness
+                  </h1>
+                </div>
+                <div
+                  id="heroDec"
+                  class="flex flex-col items-center mb-7.5 lg:mb-12 w-full lg:w-auto"
+                >
+                  <p
+                    class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%] mb-3"
+                  >
+                    Prepare teams for real-world customer, operational, and
+                    decision scenarios so they can act with consistency and
+                    confidence.
+                  </p>
+                  <p
+                    class="text-[clamp(14px,1.3vw,18px)] px-2.5 lg:px-0 max-w-[639px] text-description text-center font-primary font-normal leading-[150%]"
+                  >
+                    Designed for enterprise environments where execution varies
+                    across individuals and situations.
+                  </p>
+                  <a
+                    href="/request-demo"
+                    class="lg:mt-[25px] mt-4 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                  >
+                    Request a Demo
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="flex lg:flex-col justify-between w-full gap-x-4 lg:w-fit lg:ms-4 mt-5 lg:mt-0"
+              >
+                <div class="w-fit h-fit lg:me-auto hidden lg:block">
+                  <img
+                    src="/assets/image/role-play-agent/rp-subg-2.webp"
+                    alt="Case Handling Proficiency dashboard"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                  />
+                </div>
+                <div class="w-fit h-fit lg:me-auto lg:hidden">
+                  <img
+                    src="/assets/image/role-play-agent/rp-subg-3.webp"
+                    alt="Customer Satisfaction metric"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                  />
+                </div>
+                <div class="w-fit h-fit mb-[14px] lg:me-auto my-auto lg:my-0">
+                  <img
+                    src="/assets/image/role-play-agent/rp-subg-4.webp"
+                    alt="Collaboration Skills dashboard"
+                    width="200"
+                    height="150"
+                    class="rounded-[10px] lg:rounded-[20px]"
+                  />
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!----- End Banner Sec ----->
 
-
-    <!----- The Challenge Sec ----->
+    <!----- Why Training Alone Is Not Enough Sec ----->
     <section class="py-10 md:py-20">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="text-center">
-                <h1 class="fade-in lg:mb-5 mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">The Challenge</h1>
-                <h2 class="fade-in mb-6 lg:mb-10 text-heading font-primary font-semibold text-xl leading-[125%]">Employees are often expected to perform in complex situations without sufficient practice.</h2>
-            </div>
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="text-center mb-8 lg:mb-[60px]">
+          <h2
+            class="fade-in lg:mb-5 mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Why Training Alone Is Not Enough
+          </h2>
+          <p
+            class="fade-in text-description font-primary font-normal leading-[150%] max-w-[700px] mx-auto"
+          >
+            Most enterprise training is built around content delivery. But
+            performance depends on execution.
+          </p>
+        </div>
 
-            <!-- Challenge Intro -->
-            <div class="fade-in mb-6 text-heading font-primary font-semibold text-xl leading-[125%] text-center">
-                Organizations struggle with
+        <!-- Contrast cards -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-5 mb-8 lg:mb-10"
+        >
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+          >
+            <div
+              class="mb-4 sm:mb-5 text-lg font-primary font-semibold text-heading"
+            >
+              Most enterprise training is
             </div>
-
-            <!-- Challenge Cards -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
-                <div class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0">
-                        <img src="assets/image/icon/intelligentCard-icon-1.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Limited training opportunities icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div class="my-auto">
-                        <p class="text-heading font-primary font-normal leading-[150%]">Limited opportunities for realistic training</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0">
-                        <img src="assets/image/icon/intelligentCard-icon-2.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Inconsistent coaching icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div class="my-auto">
-                        <p class="text-heading font-primary font-normal leading-[150%]">Inconsistent coaching quality</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0">
-                        <img src="assets/image/icon/intelligentCard-icon-3.svg" class="h-1/2 transition-all ease-linear duration-300" alt="High training cost icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div class="my-auto">
-                        <p class="text-heading font-primary font-normal leading-[150%]">High cost of instructor-led simulations</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0">
-                        <img src="assets/image/icon/Predictive-icon.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Safe practice environment icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div class="my-auto">
-                        <p class="text-heading font-primary font-normal leading-[150%]">Lack of safe environments to practice difficult conversations</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0">
-                        <img src="assets/image/icon/embeddedFramework-icon.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Performance gap icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div class="my-auto">
-                        <p class="text-heading font-primary font-normal leading-[150%]">Performance gaps during real customer interactions</p>
-                    </div>
-                </div>
+            <ul class="flex flex-col gap-3">
+              <li class="flex items-center gap-3">
+                <span
+                  class="w-2 h-2 rounded-full bg-primary flex-shrink-0"
+                ></span>
+                <span
+                  class="text-description font-primary font-normal leading-[150%]"
+                  >Static</span
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <span
+                  class="w-2 h-2 rounded-full bg-primary flex-shrink-0"
+                ></span>
+                <span
+                  class="text-description font-primary font-normal leading-[150%]"
+                  >Content-driven</span
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <span
+                  class="w-2 h-2 rounded-full bg-primary flex-shrink-0"
+                ></span>
+                <span
+                  class="text-description font-primary font-normal leading-[150%]"
+                  >Not aligned with real situations</span
+                >
+              </li>
+            </ul>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+          >
+            <div
+              class="mb-4 sm:mb-5 text-lg font-primary font-semibold text-heading"
+            >
+              But real work is
             </div>
+            <ul class="flex flex-col gap-3">
+              <li class="flex items-center gap-3">
+                <span
+                  class="w-2 h-2 rounded-full bg-[#22c55e] flex-shrink-0"
+                ></span>
+                <span
+                  class="text-description font-primary font-normal leading-[150%]"
+                  >Dynamic</span
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <span
+                  class="w-2 h-2 rounded-full bg-[#22c55e] flex-shrink-0"
+                ></span>
+                <span
+                  class="text-description font-primary font-normal leading-[150%]"
+                  >Context-driven</span
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <span
+                  class="w-2 h-2 rounded-full bg-[#22c55e] flex-shrink-0"
+                ></span>
+                <span
+                  class="text-description font-primary font-normal leading-[150%]"
+                  >Often unpredictable</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
 
-            <div class="fade-in mt-6 lg:mt-10 text-center">
-                <p class="text-description font-primary font-normal leading-[150%] max-w-[800px] mx-auto">
-                    Traditional training methods focus on knowledge but not execution.
+        <!-- Consequence callout -->
+        <div
+          class="fade-in mb-6 text-heading font-primary font-semibold text-xl leading-[125%] text-center"
+        >
+          Teams may be trained, but not always prepared. When real situations
+          arise
+        </div>
+
+        <!-- Consequence cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-[30px] gap-5">
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-8 pe-6 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/intelligentCard-icon-1.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Responses vary across individuals"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div class="my-auto">
+              <p class="text-heading font-primary font-normal leading-[150%]">
+                Responses vary across individuals
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-8 pe-6 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/intelligentCard-icon-2.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Decisions are inconsistent"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div class="my-auto">
+              <p class="text-heading font-primary font-normal leading-[150%]">
+                Decisions are inconsistent
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-8 pe-6 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/intelligentCard-icon-3.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Execution depends on individual experience"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div class="my-auto">
+              <p class="text-heading font-primary font-normal leading-[150%]">
+                Execution depends on individual experience
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+    </div>
+
+    <!----- From Training to Real-World Readiness Sec ----->
+    <section class="lg:py-[100px] sm:py-16 py-10">
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center"
+        >
+          <div class="lg:pe-10">
+            <h2
+              class="fade-in mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              From Training to Real-World Readiness
+            </h2>
+            <p
+              class="mb-5 text-description font-primary font-normal leading-[150%]"
+            >
+              Most systems focus on delivering knowledge. Role Play Agent
+              focuses on preparing teams to act in real situations.
+            </p>
+            <ul class="ps-5 mb-5">
+              <li
+                class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description"
+              >
+                Simulate real business scenarios
+              </li>
+              <li
+                class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description"
+              >
+                Enable repeated practice across roles
+              </li>
+              <li
+                class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description"
+              >
+                Build consistency across teams
+              </li>
+              <li
+                class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description"
+              >
+                Prepare teams before live interactions
+              </li>
+            </ul>
+          </div>
+          <div>
+            <img
+              src="assets/image/role-play-agent/artisanscloud-role-play-solution.webp"
+              alt="AI agent preparing teams for real-world execution"
+              width="540"
+              height="360"
+              loading="lazy"
+              class="max-w-full h-auto mx-auto lg:mx-0 rounded-[10px] lg:rounded-[20px] border border-[#f2f2f2]"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+    </div>
+
+    <!----- How Role Play Agent Works Sec ----->
+    <section class="lg:py-[100px] sm:py-16 py-10" id="how-it-works">
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in text-center mb-8 lg:mb-[60px]">
+          <h2
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            How AI Role Play Agent Works
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-5">
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+          >
+            <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-setting.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Define scenarios icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+              >
+                01
+              </div>
+            </div>
+            <div>
+              <div
+                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Define Scenarios
+              </div>
+              <p
+                class="mb-2 text-description font-primary font-normal leading-[150%]"
+              >
+                Create simulations based on
+              </p>
+              <ul class="flex flex-col gap-1.5">
+                <li class="flex items-center gap-2">
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-primary/40 flex-shrink-0"
+                  ></span
+                  ><span
+                    class="text-description font-primary font-normal text-sm leading-[150%]"
+                    >Roles and responsibilities</span
+                  >
+                </li>
+                <li class="flex items-center gap-2">
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-primary/40 flex-shrink-0"
+                  ></span
+                  ><span
+                    class="text-description font-primary font-normal text-sm leading-[150%]"
+                    >Workflows and business context</span
+                  >
+                </li>
+                <li class="flex items-center gap-2">
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-primary/40 flex-shrink-0"
+                  ></span
+                  ><span
+                    class="text-description font-primary font-normal text-sm leading-[150%]"
+                    >Customer and operational situations</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+          >
+            <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Simulate interactions icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+              >
+                02
+              </div>
+            </div>
+            <div>
+              <div
+                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Simulate Interactions
+              </div>
+              <p
+                class="mb-2 text-description font-primary font-normal leading-[150%]"
+              >
+                Teams engage in
+              </p>
+              <ul class="flex flex-col gap-1.5 mb-3">
+                <li class="flex items-center gap-2">
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-[#22c55e]/40 flex-shrink-0"
+                  ></span
+                  ><span
+                    class="text-description font-primary font-normal text-sm leading-[150%]"
+                    >Customer conversations</span
+                  >
+                </li>
+                <li class="flex items-center gap-2">
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-[#22c55e]/40 flex-shrink-0"
+                  ></span
+                  ><span
+                    class="text-description font-primary font-normal text-sm leading-[150%]"
+                    >Operational scenarios</span
+                  >
+                </li>
+                <li class="flex items-center gap-2">
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-[#22c55e]/40 flex-shrink-0"
+                  ></span
+                  ><span
+                    class="text-description font-primary font-normal text-sm leading-[150%]"
+                    >Decision-making situations</span
+                  >
+                </li>
+              </ul>
+              <p
+                class="text-description font-primary font-normal text-sm leading-[150%] italic"
+              >
+                Simulations reflect real-world variability, not scripted
+                responses.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+          >
+            <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-congitiveIntelligent.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Practice and improve icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+              >
+                03
+              </div>
+            </div>
+            <div>
+              <div
+                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Practice and Improve
+              </div>
+              <p
+                class="mb-2 text-description font-primary font-normal leading-[150%]"
+              >
+                Teams
+              </p>
+              <ul class="flex flex-col gap-1.5">
+                <li class="flex items-center gap-2">
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-purple-400/40 flex-shrink-0"
+                  ></span
+                  ><span
+                    class="text-description font-primary font-normal text-sm leading-[150%]"
+                    >Practice repeatedly</span
+                  >
+                </li>
+                <li class="flex items-center gap-2">
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-purple-400/40 flex-shrink-0"
+                  ></span
+                  ><span
+                    class="text-description font-primary font-normal text-sm leading-[150%]"
+                    >Improve through real scenarios</span
+                  >
+                </li>
+                <li class="flex items-center gap-2">
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-purple-400/40 flex-shrink-0"
+                  ></span
+                  ><span
+                    class="text-description font-primary font-normal text-sm leading-[150%]"
+                    >Build confidence before live situations</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+          >
+            <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+              >
+                <img
+                  src="assets/image/icon/bulb-icon.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Scale across teams icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none"
+              >
+                04
+              </div>
+            </div>
+            <div>
+              <div
+                class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold"
+              >
+                Scale Across Teams
+              </div>
+              <p
+                class="mb-2 text-description font-primary font-normal leading-[150%]"
+              >
+                Ensure
+              </p>
+              <ul class="flex flex-col gap-1.5">
+                <li class="flex items-center gap-2">
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-blue-400/40 flex-shrink-0"
+                  ></span
+                  ><span
+                    class="text-description font-primary font-normal text-sm leading-[150%]"
+                    >Consistent capability across locations</span
+                  >
+                </li>
+                <li class="flex items-center gap-2">
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-blue-400/40 flex-shrink-0"
+                  ></span
+                  ><span
+                    class="text-description font-primary font-normal text-sm leading-[150%]"
+                    >Standardized execution across teams</span
+                  >
+                </li>
+                <li class="flex items-center gap-2">
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-blue-400/40 flex-shrink-0"
+                  ></span
+                  ><span
+                    class="text-description font-primary font-normal text-sm leading-[150%]"
+                    >Faster readiness for new hires</span
+                  >
+                </li>
+                <p
+                  class="text-description font-primary font-normal text-sm leading-[150%] italic"
+                >
+                  Teams are prepared before real interactions-not learning
+                  during them
                 </p>
+              </ul>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!----- End The Challenge Sec ----->
 
-
-    <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
-    </div>
-
-
-    <!----- The Solution Sec ----->
-    <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center">
-                <div class="lg:pe-10">
-                    <h2 class="fade-in mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">The Solution</h2>
-                    <h3 class="fade-in mb-4 text-heading font-primary font-semibold text-xl leading-[125%]">AI-Driven experiential learning at scale</h3>
-                    <p class="mb-5 text-description font-primary font-normal leading-[150%]">
-                        The Role Play Agent creates dynamic, context-aware simulations tailored to the organization's
-                        business, culture, and communication standards. Employees engage in guided role-play conversations
-                        across scenarios such as:
-                    </p>
-                    <ul class="ps-5 mb-5">
-                        <li class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description">Handling dissatisfied customers</li>
-                        <li class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description">Engaging new prospects</li>
-                        <li class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description">Managing objections</li>
-                        <li class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description">Negotiating outcomes</li>
-                        <li class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description">Delivering difficult messages</li>
-                    </ul>
-                    <p class="text-description font-primary font-normal leading-[150%]">The system adapts in real time providing an immersive and realistic experience.</p>
-                </div>
-                <div>
-                    <img src="assets/image/role-play-agent/role-play-solution.png" alt="AI agent conducting conversational role-play simulation" width="540" height="360" loading="lazy"
-                        class="max-w-full h-auto mx-auto lg:mx-0">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!----- End The Solution Sec ----->
-
-
-    <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
-    </div>
-
-
-    <!----- How It Works Sec ----->
-    <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in text-center mb-8 lg:mb-[60px]">
-                <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">How It Works</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-5">
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                        <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/artchitecHeightlight-card-setting.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Define organizational context icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">01</div>
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Define Organizational Context</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Configure business context, tone guidelines, policies and communication standards.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                        <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Design scenarios icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">02</div>
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Design Scenarios</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Create role-specific situations aligned to real operational challenges.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                        <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/artchitecHeightlight-card-congitiveIntelligent.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Practice through simulation icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">03</div>
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Practice Through Simulation</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Employees interact with the AI agent in conversational sessions that mirror real interactions.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                    <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                        <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white">
-                            <img src="assets/image/icon/bulb-icon.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Feedback and improvement icon" width="40" height="40" loading="lazy">
-                        </div>
-                        <div class="text-[clamp(28px,3vw,40px)] font-primary font-extrabold text-primary/20 leading-none select-none">04</div>
-                    </div>
-                    <div>
-                        <div class="mb-2.5 text-xl sm:text-[22px] text-heading font-primary font-semibold">Feedback &amp; Improvement</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">The system analyzes performance and provides structured feedback, strengths and development areas.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!----- End How It Works Sec ----->
-
-
-    <!----- Core Capabilities Sec ----->
+    <!----- Where It Applies Sec ----->
     <section class="py-10 md:py-20 bg-[#f6f8fb]">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in text-center mb-8 lg:mb-[60px]">
-                <h2 class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Core Capabilities</h2>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
-                <div class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0">
-                        <img src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Context-aware simulations icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Context-Aware Simulations</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Scenarios reflect the organization's industry, customer types and communication style.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0">
-                        <img src="assets/image/icon/artchitecHeightlight-card-congitiveIntelligent.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Adaptive conversations icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Adaptive Conversations</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">AI dynamically adjusts responses based on employee input.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0">
-                        <img src="assets/image/icon/icon-StrategicAlignment.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Structured feedback icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Structured Feedback</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Detailed insights on strengths, gaps and improvement opportunities.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0">
-                        <img src="assets/image/icon/artchitecHeightlight-card-interoperabilityScale.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Multi-role coverage icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Multi-Role Coverage</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Applicable across sales, service, leadership and operational roles.</p>
-                    </div>
-                </div>
-                <div class="fade-in lg:last:col-span-2 lg:last:w-1/2 mx-auto lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full">
-                    <div class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0">
-                        <img src="assets/image/icon/artchitecHeightlight-card-setting.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Scalable training icon" width="40" height="40" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]">Scalable Training</div>
-                        <p class="text-description font-primary font-normal leading-[150%]">Enable consistent capability building across the workforce.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in text-center mb-8 lg:mb-[60px]">
+          <h2
+            class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Where It Applies
+          </h2>
+          <p
+            class="mt-4 text-description font-primary font-normal leading-[150%] max-w-[700px] mx-auto"
+          >
+            Role Play Agent prepares teams for real enterprise scenarios across
+          </p>
         </div>
-    </section>
-    <!----- End Core Capabilities Sec ----->
-
-
-    <!------ Business Impact Sec ------>
-    <section class="impactFrameworkCTA max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-8">
-                <div class="fade-in">
-                    <div class="lg:mb-8 mb-5 xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white">Business Impact</div>
-                    <div class="lg:mb-5 mb-4 font-primary font-semibold text-xl leading-[125%] text-white">Confidence in Execution. Consistency at Scale.</div>
-                    <p class="lg:mb-5 mb-4 text-white/80 lg:max-w-[490px] font-primary font-normal leading-[150%]">Better-prepared employees deliver measurable improvements across customer experience, skill development, and operational performance.</p>
-                </div>
-                <div class="fade-in">
-                    <ul class="flex flex-col lg:gap-6 gap-5">
-                        <li class="ps-5 border-s-4 border-primary">
-                            <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Improved Customer Experience</div>
-                            <p class="text-white/80 font-primary font-normal leading-[150%]">Better-prepared employees deliver more effective interactions.</p>
-                        </li>
-                        <li class="ps-5 border-s-4 border-sky">
-                            <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Faster Skill Development</div>
-                            <p class="text-white/80 font-primary font-normal leading-[150%]">Accelerate readiness for complex roles.</p>
-                        </li>
-                        <li class="ps-5 border-s-4 border-pink">
-                            <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Reduced Training Costs</div>
-                            <p class="text-white/80 font-primary font-normal leading-[150%]">Minimize reliance on resource-intensive simulations.</p>
-                        </li>
-                        <li class="ps-5 border-s-4 border-grey">
-                            <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Confidence in Execution</div>
-                            <p class="text-white/80 font-primary font-normal leading-[150%]">Employees perform with clarity and composure.</p>
-                        </li>
-                        <li class="ps-5 border-s-4 border-primary">
-                            <div class="font-primary font-extrabold lg:text-xl text-lg text-white mb-1">Consistent Organizational Standards</div>
-                            <p class="text-white/80 font-primary font-normal leading-[150%]">Ensure alignment with brand voice and policies.</p>
-                        </li>
-                    </ul>
-                </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/customer-copilots-icon.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Customer interactions icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
             </div>
+            <div class="my-auto">
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Customer Interactions
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Sales, service, and support.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/icon-AIEngineering.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Operational workflows icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div class="my-auto">
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Operational Workflows
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Process-driven and exception scenarios.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/target-icon.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Decision situations icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div class="my-auto">
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Decision Situations
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Handling ambiguity and trade-offs.
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/agilityDiscipline-icon.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Cross-functional roles icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div class="my-auto">
+              <div
+                class="mb-2 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%]"
+              >
+                Cross-Functional Roles
+              </div>
+              <p
+                class="text-description font-primary font-normal leading-[150%]"
+              >
+                Consistent responses across teams.
+              </p>
+            </div>
+          </div>
         </div>
-        <img src="assets/image/icon/strategicOutcomeBanner-shape-1.svg" class="absolute select-none pointer-events-none start-0 bottom-0" alt="" width="150" height="150" loading="lazy">
-        <img src="assets/image/icon/strategicOutcomeBanner-shape-2.svg" class="absolute select-none pointer-events-none end-0 top-0" alt="" width="150" height="150" loading="lazy">
+      </div>
     </section>
-    <!------ End Business Impact Sec ------>
 
+    <!------ Not a Training Tool Sec ------>
+    <section
+      class="impactFrameworkCTA max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]"
+    >
+      <div
+        class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10"
+      >
+        <div class="text-center mb-8 lg:mb-12">
+          <div
+            class="xl:text-[42px] lg:text-4xl text-3xl font-primary font-semibold leading-[120%] text-white"
+          >
+            Not a Training Tool. A System for Execution Readiness
+          </div>
+          <p
+            class="mt-4 text-white/70 font-primary font-normal leading-[150%] max-w-[650px] mx-auto"
+          >
+            See how Role Unlike traditional training tools:
+          </p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-8 gap-6">
+          <!-- Traditional Training -->
+          <div class="rounded-2xl bg-white/10 p-6 sm:p-8">
+            <div class="mb-5 font-primary font-semibold text-lg text-white/50">
+              Traditional Training Systems
+            </div>
+            <ul class="flex flex-col gap-4">
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-1.5 w-2 h-2 rounded-full bg-white/30 flex-shrink-0"
+                ></span>
+                <span
+                  class="text-white/50 font-primary font-normal leading-[150%]"
+                  >Static content</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-1.5 w-2 h-2 rounded-full bg-white/30 flex-shrink-0"
+                ></span>
+                <span
+                  class="text-white/50 font-primary font-normal leading-[150%]"
+                  >Knowledge-focused</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-1.5 w-2 h-2 rounded-full bg-white/30 flex-shrink-0"
+                ></span>
+                <span
+                  class="text-white/50 font-primary font-normal leading-[150%]"
+                  >One-time learning</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-1.5 w-2 h-2 rounded-full bg-white/30 flex-shrink-0"
+                ></span>
+                <span
+                  class="text-white/50 font-primary font-normal leading-[150%]"
+                  >Individual performance</span
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Role Play Agent -->
+          <div
+            class="rounded-2xl bg-primary/20 border border-primary/40 p-6 sm:p-8"
+          >
+            <div class="mb-5 font-primary font-semibold text-lg text-white">
+              Role Play Agent
+            </div>
+            <ul class="flex flex-col gap-4">
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-1.5 w-2 h-2 rounded-full bg-primary flex-shrink-0"
+                ></span>
+                <span class="text-white font-primary font-normal leading-[150%]"
+                  >Dynamic simulation</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-1.5 w-2 h-2 rounded-full bg-primary flex-shrink-0"
+                ></span>
+                <span class="text-white font-primary font-normal leading-[150%]"
+                  >Execution-focused</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-1.5 w-2 h-2 rounded-full bg-primary flex-shrink-0"
+                ></span>
+                <span class="text-white font-primary font-normal leading-[150%]"
+                  >Continuous practice</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-1.5 w-2 h-2 rounded-full bg-primary flex-shrink-0"
+                ></span>
+                <span class="text-white font-primary font-normal leading-[150%]"
+                  >Team-wide consistency</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <img
+        src="assets/image/icon/strategicOutcomeBanner-shape-1.svg"
+        class="absolute select-none pointer-events-none start-0 bottom-0"
+        alt=""
+        width="150"
+        height="150"
+        loading="lazy"
+      />
+      <img
+        src="assets/image/icon/strategicOutcomeBanner-shape-2.svg"
+        class="absolute select-none pointer-events-none end-0 top-0"
+        alt=""
+        width="150"
+        height="150"
+        loading="lazy"
+      />
+    </section>
 
-    <!------ Use Cases Sec ------>
+    <!------ Real-World Enterprise Scenarios Sec ------>
     <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in text-center mb-8 lg:mb-[60px]">
-                <h2 class="mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Use Cases</h2>
-                <p class="max-w-[700px] w-full mx-auto text-description font-primary font-normal leading-[150%]">
-                    Use cases enabled by the Role Play Agent
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-[30px] gap-5">
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                    <div class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/customer-copilots-icon.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Customer service training icon" width="32" height="32" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-lg text-heading font-primary font-semibold">Customer Service Training</div>
-                        <p class="text-sm text-description font-primary font-normal leading-[150%]">Practice handling complaints, escalations and service recovery.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right">
-                    <div class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/icon-AIEngineering.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Sales enablement icon" width="32" height="32" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-lg text-heading font-primary font-semibold">Sales Enablement</div>
-                        <p class="text-sm text-description font-primary font-normal leading-[150%]">Simulate prospect conversations, objections and negotiations.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                    <div class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/target-icon.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Leadership development icon" width="32" height="32" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-lg text-heading font-primary font-semibold">Leadership Development</div>
-                        <p class="text-sm text-description font-primary font-normal leading-[150%]">Practice coaching, feedback delivery and difficult conversations.</p>
-                    </div>
-                </div>
-                <div class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain">
-                    <div class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/agilityDiscipline-icon.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Onboarding programs icon" width="32" height="32" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-lg text-heading font-primary font-semibold">Onboarding Programs</div>
-                        <p class="text-sm text-description font-primary font-normal leading-[150%]">Prepare new hires for real interactions quickly.</p>
-                    </div>
-                </div>
-                <div class="fade-in md:col-span-2 lg:col-span-1 w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right">
-                    <div class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white">
-                        <img src="assets/image/icon/artchitecHeightlight-card-securityCompliance.svg" class="h-1/2 transition-all ease-linear duration-300" alt="Compliance and risk training icon" width="32" height="32" loading="lazy">
-                    </div>
-                    <div>
-                        <div class="mb-2 text-lg text-heading font-primary font-semibold">Compliance &amp; Risk Scenarios</div>
-                        <p class="text-sm text-description font-primary font-normal leading-[150%]">Train employees to respond appropriately in sensitive situations.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in text-center mb-8 lg:mb-[60px]">
+          <h2
+            class="mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Real-World Enterprise Scenarios
+          </h2>
+          <p
+            class="max-w-[700px] w-full mx-auto text-description font-primary font-normal leading-[150%]"
+          >
+            Role Play Agent prepares teams for the interactions that matter
+            most.
+          </p>
         </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-[30px] gap-5">
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+          >
+            <div
+              class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/icon-AIEngineering.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Enterprise sales icon"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div class="mb-2 text-lg text-heading font-primary font-semibold">
+                Enterprise Sales: First Conversations with Prospects
+              </div>
+              <p
+                class="text-sm text-description font-primary font-normal leading-[150%]"
+              >
+                Prepare teams to engage new prospects with structured discovery,
+                positioning, and clarity.
+              </p>
+              <p class="mt-3 text-xs font-primary font-semibold">
+                Outcome: more consistent and confident first interactions
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+          >
+            <div
+              class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/customer-copilots-icon.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Customer support icon"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div class="mb-2 text-lg text-heading font-primary font-semibold">
+                Customer Support: Handling Complex Situations
+              </div>
+              <p
+                class="text-sm text-description font-primary font-normal leading-[150%]"
+              >
+                Simulate escalations, objections, and multi-step interactions.
+              </p>
+              <p class="mt-3 text-xs font-primary font-semibold">
+                Outcome: improved response quality and consistency
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+          >
+            <div
+              class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/agilityDiscipline-icon.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Operations icon"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div class="mb-2 text-lg text-heading font-primary font-semibold">
+                Operations: Exception and Decision Handling
+              </div>
+              <p
+                class="text-sm text-description font-primary font-normal leading-[150%]"
+              >
+                Prepare teams to respond to constraints, delays, and operational
+                challenges.
+              </p>
+              <p class="mt-3 text-xs font-primary font-semibold">
+                Outcome: faster and more aligned decisions
+              </p>
+            </div>
+          </div>
+          <div
+            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-blue-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-4.svg)] bg-no-repeat bg-bottom-left bg-contain"
+          >
+            <div
+              class="mb-4 sm:mb-5 max-w-14 sm:max-w-16 min-w-14 sm:min-w-16 h-14 sm:h-16 grid place-items-center rounded-[10px] bg-white"
+            >
+              <img
+                src="assets/image/icon/target-icon.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Onboarding icon"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div class="mb-2 text-lg text-heading font-primary font-semibold">
+                Onboarding: Role Readiness Before Execution
+              </div>
+              <p
+                class="text-sm text-description font-primary font-normal leading-[150%]"
+              >
+                Prepare new hires through real scenarios before they engage in
+                live work.
+              </p>
+              <p class="mt-3 text-xs font-primary font-semibold">
+                Outcome: faster ramp-up and reduced dependency on shadowing
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <!------ End Use Cases Sec ------>
-
 
     <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
 
-
-    <!------ Designed for Enterprise Sec ------>
+    <!------ Deep-Dive: First Conversation Readiness Sec ------>
     <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center">
-                <div>
-                    <h2 class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Designed for Enterprise Organizations</h2>
-                    <p class="mb-5 text-description font-primary font-normal leading-[150%]">Ideal for organizations where interaction quality directly impacts outcomes:</p>
-                    <ul class="ps-5">
-                        <li class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description">Customer-facing teams</li>
-                        <li class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description">Sales organizations</li>
-                        <li class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description">Service operations</li>
-                        <li class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description">Leadership pipelines</li>
-                        <li class="mb-2 last:mb-0 list-disc marker:text-primary font-primary font-normal sm:text-base text-sm leading-[150%] text-description">High-reliability environments</li>
-                    </ul>
-                </div>
-                <!-- Training Performance Dashboard Card -->
-                <div class="rounded-2xl md:rounded-[20px] bg-[#F6F3FF] p-6 sm:p-8 space-y-5">
-                    <!-- Header -->
-                    <div class="flex items-center justify-between">
-                        <span class="font-primary font-semibold text-heading text-base">Training Performance</span>
-                        <span class="text-xs font-primary font-medium text-primary bg-[#EDE8FF] rounded-full px-3 py-1">Live Dashboard</span>
-                    </div>
-                    <!-- Metric rows with progress bars -->
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1.5">
-                                <span class="text-sm font-primary text-description">Scenario Completion</span>
-                                <span class="text-sm font-primary font-semibold text-heading">95%</span>
-                            </div>
-                            <div class="w-full h-2 rounded-full bg-white overflow-hidden">
-                                <div class="h-full rounded-full bg-primary" style="width:95%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1.5">
-                                <span class="text-sm font-primary text-description">Customer Satisfaction Score</span>
-                                <span class="text-sm font-primary font-semibold text-heading">97%</span>
-                            </div>
-                            <div class="w-full h-2 rounded-full bg-white overflow-hidden">
-                                <div class="h-full rounded-full bg-[#FFB5F4]" style="width:97%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1.5">
-                                <span class="text-sm font-primary text-description">First-Call Resolution</span>
-                                <span class="text-sm font-primary font-semibold text-heading">+40%</span>
-                            </div>
-                            <div class="w-full h-2 rounded-full bg-white overflow-hidden">
-                                <div class="h-full rounded-full bg-[#85ADDE]" style="width:75%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Stat callouts -->
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="bg-white rounded-xl p-4 text-center">
-                            <div class="font-primary font-bold text-2xl text-primary leading-none mb-1">60%</div>
-                            <div class="text-xs font-primary text-description leading-[140%]">Reduction in Training Time</div>
-                        </div>
-                        <div class="bg-white rounded-xl p-4 text-center">
-                            <div class="font-primary font-bold text-2xl text-[#C5AAFF] leading-none mb-1">50%</div>
-                            <div class="text-xs font-primary text-description leading-[140%]">Improvement in New Hire Confidence</div>
-                        </div>
-                    </div>
-                    <!-- Scenario status list -->
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-3 bg-white rounded-lg px-4 py-2.5">
-                            <span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
-                            <span class="text-sm font-primary text-description flex-1">Sales Training</span>
-                            <span class="text-xs font-primary font-medium text-primary">Complete</span>
-                        </div>
-                        <div class="flex items-center gap-3 bg-white rounded-lg px-4 py-2.5">
-                            <span class="w-2 h-2 rounded-full bg-[#FFB5F4] flex-shrink-0"></span>
-                            <span class="text-sm font-primary text-description flex-1">Customer Service</span>
-                            <span class="text-xs font-primary font-medium text-[#C5AAFF]">In Progress</span>
-                        </div>
-                        <div class="flex items-center gap-3 bg-white rounded-lg px-4 py-2.5">
-                            <span class="w-2 h-2 rounded-full bg-[#85ADDE] flex-shrink-0"></span>
-                            <span class="text-sm font-primary text-description flex-1">Compliance Scenarios</span>
-                            <span class="text-xs font-primary font-medium text-[#85ADDE]">Scheduled</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="max-w-[935px] w-full mx-auto text-center mb-8 lg:mb-[60px]">
+          <h2
+            class="mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            Deep-Dive: First Conversation Readiness
+          </h2>
+          <p
+            class="text-description font-primary font-normal leading-[150%] max-w-[700px] mx-auto text-lg italic"
+          >
+            Situation: A sales representative engages a new enterprise prospect.
+          </p>
         </div>
-    </section>
-    <!------ End Designed for Enterprise Sec ------>
 
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] sm:gap-5 gap-4 items-stretch"
+        >
+          <div class="flex flex-col sm:gap-[30px] gap-4">
+            <!-- Before Card -->
+            <div
+              class="fade-in border border-light-border rounded-xl lg:rounded-[20px] sm:p-8 p-5 flex lg:items-center lg:gap-6 gap-4 bg-[#f6f8fb] h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-2.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="Before state icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3"
+                >
+                  Before Role Play Agent
+                </div>
+                <ul class="flex flex-col gap-2">
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="mt-1.5 w-1.5 h-1.5 rounded-full bg-description/40 flex-shrink-0"
+                    ></span>
+                    <span
+                      class="text-description font-primary font-normal text-sm leading-[150%]"
+                      >Conversations depend on individual experience</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="mt-1.5 w-1.5 h-1.5 rounded-full bg-description/40 flex-shrink-0"
+                    ></span>
+                    <span
+                      class="text-description font-primary font-normal text-sm leading-[150%]"
+                      >Discovery quality varies across team</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="mt-1.5 w-1.5 h-1.5 rounded-full bg-description/40 flex-shrink-0"
+                    ></span>
+                    <span
+                      class="text-description font-primary font-normal text-sm leading-[150%]"
+                      >Missed opportunities in early interactions</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- With Card -->
+            <div
+              class="fade-in border border-light-border rounded-xl lg:rounded-[20px] sm:p-8 p-5 flex lg:items-center lg:gap-6 gap-4 bg-light-sky h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/intelligentAutomation-icon.svg"
+                  class="h-1/2 transition-all ease-linear duration-300"
+                  alt="With Agent icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div
+                  class="text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] mb-3"
+                >
+                  With Role Play Agent
+                </div>
+                <ul class="flex flex-col gap-2">
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"
+                    ></span>
+                    <span
+                      class="text-heading font-primary font-normal text-sm leading-[150%]"
+                      >Structured and consistent conversations</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"
+                    ></span>
+                    <span
+                      class="text-heading font-primary font-normal text-sm leading-[150%]"
+                      >Better discovery and positioning</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"
+                    ></span>
+                    <span
+                      class="text-heading font-primary font-normal text-sm leading-[150%]"
+                      >Increased confidence in interactions</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Impact Card (Right Column) -->
+          <div
+            class="fade-in gridGradientCard bg-light-green bg-[url('../../assets/image/icon/strategicCard-left-BG.png')] bg-no-repeat bg-bottom-right rounded-2xl lg:rounded-[30px] sm:p-10 p-6 flex flex-col justify-center h-full relative overflow-hidden border border-light-border"
+          >
+            <div class="relative z-10">
+              <div
+                class="mb-6 max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white shadow-sm"
+              >
+                <img
+                  src="assets/image/icon/intelligentCard-icon-3.svg"
+                  class="h-1/2"
+                  alt="Impact icon"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="mb-6 text-heading font-primary font-semibold text-2xl lg:text-3xl leading-[120%]"
+              >
+                Impact
+              </div>
+              <ul class="flex flex-col gap-4">
+                <li class="flex items-start gap-3">
+                  <span
+                    class="mt-1.5 w-2 h-2 rounded-full bg-[#22c55e] flex-shrink-0"
+                  ></span>
+                  <span
+                    class="text-heading font-primary font-medium text-base lg:text-lg leading-[150%]"
+                    >Faster ramp-up for new team members</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="mt-1.5 w-2 h-2 rounded-full bg-[#22c55e] flex-shrink-0"
+                  ></span>
+                  <span
+                    class="text-heading font-primary font-medium text-base lg:text-lg leading-[150%]"
+                    >Higher consistency in early-stage conversations</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="mt-1.5 w-2 h-2 rounded-full bg-[#22c55e] flex-shrink-0"
+                  ></span>
+                  <span
+                    class="text-heading font-primary font-medium text-base lg:text-lg leading-[150%]"
+                    >Improved progression to next stage</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
+      <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
     </div>
 
-
-    <!------ Integrations Sec ------>
-    <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center">
-                <!-- Integration icon grid -->
-                <div class="grid grid-cols-3 sm:grid-cols-4 gap-4 sm:gap-5">
-                    <div class="aspect-square rounded-2xl bg-[#f6f8fb] grid place-items-center p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                        <div class="text-center">
-                            <svg class="w-8 h-8 mx-auto mb-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                            <span class="text-xs font-primary font-medium text-heading leading-tight block">LMS Platforms</span>
-                        </div>
-                    </div>
-                    <div class="aspect-square rounded-2xl bg-[#f6f8fb] grid place-items-center p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                        <div class="text-center">
-                            <svg class="w-8 h-8 mx-auto mb-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                            <span class="text-xs font-primary font-medium text-heading leading-tight block">Slack</span>
-                        </div>
-                    </div>
-                    <div class="aspect-square rounded-2xl bg-[#f6f8fb] grid place-items-center p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                        <div class="text-center">
-                            <svg class="w-8 h-8 mx-auto mb-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            <span class="text-xs font-primary font-medium text-heading leading-tight block">Microsoft Teams</span>
-                        </div>
-                    </div>
-                    <div class="aspect-square rounded-2xl bg-[#f6f8fb] grid place-items-center p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                        <div class="text-center">
-                            <svg class="w-8 h-8 mx-auto mb-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-                            <span class="text-xs font-primary font-medium text-heading leading-tight block">Salesforce</span>
-                        </div>
-                    </div>
-                    <div class="aspect-square rounded-2xl bg-[#f6f8fb] grid place-items-center p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                        <div class="text-center">
-                            <svg class="w-8 h-8 mx-auto mb-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-                            <span class="text-xs font-primary font-medium text-heading leading-tight block">Zoom</span>
-                        </div>
-                    </div>
-                    <div class="aspect-square rounded-2xl bg-[#f6f8fb] grid place-items-center p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                        <div class="text-center">
-                            <svg class="w-8 h-8 mx-auto mb-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                            <span class="text-xs font-primary font-medium text-heading leading-tight block">Google Meet</span>
-                        </div>
-                    </div>
-                    <div class="aspect-square rounded-2xl bg-[#f6f8fb] grid place-items-center p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                        <div class="text-center">
-                            <svg class="w-8 h-8 mx-auto mb-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg>
-                            <span class="text-xs font-primary font-medium text-heading leading-tight block">HubSpot</span>
-                        </div>
-                    </div>
-                    <div class="aspect-square rounded-2xl bg-[#f6f8fb] grid place-items-center p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                        <div class="text-center">
-                            <svg class="w-8 h-8 mx-auto mb-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"/></svg>
-                            <span class="text-xs font-primary font-medium text-heading leading-tight block">Webex</span>
-                        </div>
-                    </div>
-                    <div class="aspect-square rounded-2xl bg-[#f6f8fb] grid place-items-center p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                        <div class="text-center">
-                            <svg class="w-8 h-8 mx-auto mb-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                            <span class="text-xs font-primary font-medium text-heading leading-tight block">Confluence</span>
-                        </div>
-                    </div>
-                    <div class="aspect-square rounded-2xl bg-[#f6f8fb] grid place-items-center p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                        <div class="text-center">
-                            <svg class="w-8 h-8 mx-auto mb-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                            <span class="text-xs font-primary font-medium text-heading leading-tight block">Outlook</span>
-                        </div>
-                    </div>
-                    <div class="aspect-square rounded-2xl bg-[#f6f8fb] grid place-items-center p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                        <div class="text-center">
-                            <svg class="w-8 h-8 mx-auto mb-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-                            <span class="text-xs font-primary font-medium text-heading leading-tight block">SharePoint</span>
-                        </div>
-                    </div>
-                    <div class="aspect-square rounded-2xl bg-[#f6f8fb] grid place-items-center p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                        <div class="text-center">
-                            <svg class="w-8 h-8 mx-auto mb-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                            <span class="text-xs font-primary font-medium text-heading leading-tight block">Google Calendar</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Text content -->
-                <div>
-                    <div class="mb-3 sm:mb-5 font-primary font-semibold text-[clamp(12px,1.1vw,16px)] leading-[120%] uppercase tracking-wider text-primary">Seamless Integration</div>
-                    <h2 class="mb-4 lg:mb-6 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Train Within the Tools Your Teams Already Use</h2>
-                    <p class="mb-5 text-description font-primary font-normal leading-[150%]">
-                        The Role Play Agent integrates with your existing communication, CRM and learning platforms - embedding training directly into daily workflows so employees practice where they perform.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 rounded-full bg-[#f6f8fb] text-sm font-primary font-medium text-heading">Slack</span>
-                        <span class="px-3 py-1.5 rounded-full bg-[#f6f8fb] text-sm font-primary font-medium text-heading">Microsoft Teams</span>
-                        <span class="px-3 py-1.5 rounded-full bg-[#f6f8fb] text-sm font-primary font-medium text-heading">Salesforce</span>
-                        <span class="px-3 py-1.5 rounded-full bg-[#f6f8fb] text-sm font-primary font-medium text-heading">HubSpot</span>
-                        <span class="px-3 py-1.5 rounded-full bg-[#f6f8fb] text-sm font-primary font-medium text-heading">Google Workspace</span>
-                        <span class="px-3 py-1.5 rounded-full bg-[#f6f8fb] text-sm font-primary font-medium text-heading">Zoom</span>
-                        <span class="px-3 py-1.5 rounded-full bg-[#f6f8fb] text-sm font-primary font-medium text-heading">Webex</span>
-                        <span class="px-3 py-1.5 rounded-full bg-[#f6f8fb] text-sm font-primary font-medium text-heading">Confluence</span>
-                        <span class="px-3 py-1.5 rounded-full bg-[#f6f8fb] text-sm font-primary font-medium text-heading">SharePoint</span>
-                        <span class="px-3 py-1.5 rounded-full bg-[#f6f8fb] text-sm font-primary font-medium text-heading">Outlook</span>
-                        <span class="px-3 py-1.5 rounded-full bg-[#f6f8fb] text-sm font-primary font-medium text-heading">LMS Platforms</span>
-                        <span class="px-3 py-1.5 rounded-full bg-[#f6f8fb] text-sm font-primary font-medium text-heading">and more</span>
-                    </div>
-                </div>
-            </div>
+    <!------ What This Changes Sec ------>
+    <section class="lg:py-[50px] sm:py-16 py-10">
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in text-center mb-8 lg:mb-[60px]">
+          <h2
+            class="mb-4 lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+          >
+            What This Changes
+          </h2>
+          <p
+            class="max-w-[700px] w-full mx-auto text-description font-primary font-normal leading-[150%]"
+          >
+            Role Play Agent shifts how organizations approach readiness, not
+            just training.
+          </p>
         </div>
+        <div class="pb-2 flex flex-wrap justify-center lg:gap-[30px] gap-5">
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-8 pe-6 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)]"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/intelligentCard-icon-1.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Improve readiness icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div class="my-auto">
+              <div
+                class="text-heading font-primary font-semibold text-base leading-[120%]"
+              >
+                Improve Readiness
+              </div>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-8 pe-6 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)]"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/intelligentCard-icon-2.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Reduce variability icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div class="my-auto">
+              <div
+                class="text-heading font-primary font-semibold text-base leading-[120%]"
+              >
+                Reduce Variability
+              </div>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-8 pe-6 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)]"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/intelligentCard-icon-3.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Consistent execution icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div class="my-auto">
+              <div
+                class="text-heading font-primary font-semibold text-base leading-[120%]"
+              >
+                Consistent Execution
+              </div>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-8 pe-6 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)]"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/Predictive-icon.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Build confidence icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div class="my-auto">
+              <div
+                class="text-heading font-primary font-semibold text-base leading-[120%]"
+              >
+                Build Confidence
+              </div>
+            </div>
+          </div>
+          <div
+            class="fade-in lg:py-6 py-5 lg:pe-8 pe-6 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-20px)]"
+          >
+            <div
+              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+            >
+              <img
+                src="assets/image/icon/embeddedFramework-icon.svg"
+                class="h-1/2 transition-all ease-linear duration-300"
+                alt="Improve decision quality icon"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+            <div class="my-auto">
+              <div
+                class="text-heading font-primary font-semibold text-base leading-[120%]"
+              >
+                Improve Decision Quality
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <!------ End Integrations Sec ------>
 
+    <!------ Portfolio Image Sec ------>
+    <section class="lg:py-[50px] sm:py-16 py-10">
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in w-full flex justify-center">
+          <img
+            src="assets/image/artisanscloud-lumen-vault-arena.webp"
+            alt="Greater Value Together: Vault, Lumen, and Arena working as one connected portfolio"
+            width="1200"
+            height="auto"
+            loading="lazy"
+            class="max-w-full h-auto rounded-[10px] lg:rounded-[20px]"
+          />
+        </div>
+      </div>
+    </section>
 
     <!------ CTA Sec ------>
-    <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-            <div class="fade-in grid lg:grid-cols-2 gap-8 lg:gap-[66px] items-center">
-                <div>
-                    <h2 class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Build a Confident,<br class="hidden lg:block"> Capable Workforce</h2>
-                    <p class="lg:pe-10 text-description font-primary font-normal leading-[150%]">Discover how AI-powered role play can elevate performance across your organization.</p>
-                    <div class="mt-5 lg:mt-10 flex flex-wrap gap-3">
-                        <a href="/contact-us"
-                            class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light">
-                            Request a Demonstration
-                        </a>
-                        <a href="/contact-us"
-                            class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out border border-heading text-heading hover:bg-heading hover:text-white">
-                            Speak With an Expert
-                        </a>
-                    </div>
-                </div>
-                <div class="unifiedCommerce_sec_imgBox ourApproachImageBox relative rounded-2xl md:rounded-[20px] bg-white/25 grid place-items-center sm:ps-[26px] ps-5 sm:pt-[26px] pt-5 p-4 sm:pb-[41px] pb-6 overflow-hidden after:h-[25%]">
-                    <img src="assets/image/enterprise-ai/startDataJourney.png" class="h-full w-full object-cover" alt="Build a confident and capable workforce with AI-powered role play" width="500" height="400" loading="lazy">
-                    <div class="absolute top-0 end-0 w-[20%] h-full bg-[linear-gradient(90deg,_rgba(255,255,255,0)_5%,_#FFFFFF_70%,_#FFFFFF_100%)] pointer-events-none select-none"></div>
-                </div>
+    <section class="lg:py-[50px] sm:py-16 py-10">
+      <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div
+          class="fade-in grid lg:grid-cols-2 gap-8 lg:gap-[66px] items-center"
+        >
+          <div class="relative flex justify-center items-center w-full h-full">
+            <div
+              class="border-2 border-[#F3F3F3] rounded-2xl md:rounded-[20px] p-5"
+            >
+              <img
+                src="assets/image/role-play-agent/artisanscloud-training-to-real-world.webp"
+                class="max-w-full h-auto object-cover rounded-xl"
+                alt="Role Play Agent preparing teams for execution"
+                width="500"
+                height="400"
+                loading="lazy"
+              />
             </div>
+          </div>
+          <div>
+            <h2
+              class="mb-5 md:mb-[30px] lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]"
+            >
+              From Practice to Execution
+            </h2>
+            <p
+              class="lg:pe-10 text-description font-primary font-normal leading-[150%]"
+            >
+              Most systems train teams. Role Play Agent ensures teams are
+              prepared to act, consistently, confidently, in real situations.
+            </p>
+            <p
+              class="mt-3 lg:pe-10 text-description font-primary font-normal leading-[150%]"
+            >
+              Whether you are improving customer interactions, strengthening
+              operational readiness, or accelerating onboarding, Role Play Agent
+              provides a structured way to prepare teams for real-world
+              execution.
+            </p>
+            <div class="mt-5 lg:mt-10 flex justify-end flex-wrap gap-3">
+              <a
+                href="/request-demo"
+                class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-primary font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+              >
+                Request a Demo
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!------ End CTA Sec ------>
-
 
     {{> footer}}
 
-
-    <!--+++++++ Script Start +++++++-->
-    <script type='module' src='assets/script/main.js'></script>
-</body>
-
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
 </html>
