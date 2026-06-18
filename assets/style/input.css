@@ -169,7 +169,7 @@ body {
     .t-h2-sm   { @apply font-semibold leading-heading text-2xl lg:text-3xl; }
     .t-h3      { @apply font-semibold leading-heading text-xl lg:text-2xl; }
     .t-lead    { @apply font-normal leading-body text-lg lg:text-xl; }
-    .t-body    { @apply font-normal leading-body text-base; }
+    .t-body    { @apply font-normal text-lg leading-body text-base; }
     .t-body-sm { @apply font-normal leading-body text-sm; }
     .t-caption { @apply font-normal leading-body; }
 
