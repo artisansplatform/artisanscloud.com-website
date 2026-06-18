@@ -287,6 +287,33 @@ The optimizer writes a `.tmp` sibling, compares sizes, and only replaces the ori
 ### Bypass
 For exceptional cases (e.g., a banner that genuinely needs to be large), commit with `git commit --no-verify`. Do not normalize the bypass into a habit.
 
+## Typography Scale
+
+All headings and body copy use a set of semantic classes defined once in `assets/style/input.css`. Use these instead of hand-writing font sizes or line-heights.
+
+| Class | Role | Output |
+|-------|------|--------|
+| `.t-display` | Hero / page `<h1>` | `font-semibold leading-heading text-3xl sm:text-4xl lg:text-5xl xl:text-6xl` |
+| `.t-h2` | Section title `<h2>` | `font-semibold leading-heading text-3xl md:text-4xl lg:text-5xl` |
+| `.t-h2-sm` | Compact section title | `font-semibold leading-heading text-2xl lg:text-3xl` |
+| `.t-h3` | Card / sub-heading | `font-semibold leading-heading text-xl lg:text-2xl` |
+| `.t-lead` | Lead / intro paragraph | `font-normal leading-body text-lg lg:text-xl` |
+| `.t-body` | Default paragraph | `font-normal leading-body text-base` |
+| `.t-body-sm` | Small / secondary text | `font-normal leading-body text-sm` |
+| `.t-caption` | Captions / labels | `font-normal leading-body text-xs` |
+
+Usage pattern: the `.t-*` class owns only size, weight, and line-height. Add color and spacing as separate utilities:
+
+```html
+<h2 class="mb-5 text-heading t-h2">Section Title</h2>
+<h2 class="mb-5 text-white t-h2">Dark Section Title</h2>
+```
+
+Rules:
+- Never hand-write `text-[NNpx]` or `leading-[NN%]` in markup.
+- Never add `font-primary` to elements; `body` already sets Poppins globally.
+- To change the type scale globally, edit the class definitions in `assets/style/input.css`, not individual pages.
+
 ## Common UI Conventions
 
 | Convention | Pattern |

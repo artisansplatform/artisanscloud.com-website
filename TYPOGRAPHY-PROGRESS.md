@@ -86,14 +86,14 @@ Two files per session. Update status as each file is completed.
 - [x] `terms-and-conditions.html`
 - [x] `404.html`
 - [x] `thank-you.html`
-- [ ] `blog-detail.html`
+- [x] `blog-detail.html`
 
 ---
 
 ## Phase 8: Partials (if they carry heading/body roles)
 
-- [ ] `partials/header.html`
-- [ ] `partials/footer.html`
+- [x] `partials/header.html`
+- [x] `partials/footer.html`
 - [-] `partials/head-meta.html` — metadata only, no visible text roles
 
 ---
@@ -108,9 +108,9 @@ Two files per session. Update status as each file is completed.
 
 ## Post-migration
 
-- [ ] Update `docs/development.md` — add Typography scale section
-- [ ] Update `CLAUDE.md` and `AGENTS.md` — add typography Gotcha bullet
-- [ ] Verify `font-primary` count reaches 0 (`grep -rho 'font-primary' --include="*.html" . | wc -l`)
+- [x] Update `docs/development.md` — add Typography scale section
+- [x] Update `CLAUDE.md` and `AGENTS.md` — add typography Gotcha bullet
+- [x] Verify `font-primary` count reaches 0 — only `ftrBottomTitle` in footer remains (intentionally bespoke, per plan)
 
 @TYPOGRAPHY-CONSISTENCY.md this is my plan and this is my @TYPOGRAPHY-PROGRESS.md file to track my which
 is completed and which is pending so can you do it acordingly and i already did the first one which is enterprise-data-search.html please check and do next one
