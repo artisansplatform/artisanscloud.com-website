@@ -171,7 +171,7 @@ body {
     .t-lead    { @apply font-normal leading-body text-lg lg:text-xl; }
     .t-body    { @apply font-normal leading-body text-base; }
     .t-body-sm { @apply font-normal leading-body text-sm; }
-    .t-caption { @apply font-normal leading-body text-xs; }
+    .t-caption { @apply font-normal leading-body; }
 
     /* Buttons style */
     .ripple {
