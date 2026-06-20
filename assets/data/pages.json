@@ -57,14 +57,14 @@
     }
   },
   "about-us": {
-    "title": "Artisan's About Us | Artisans Cloud",
-    "description": "Learn about Artisans Cloud - innovators in enterprise intelligence. Discover how we engineer adaptive systems combining AI, data, and automation to drive measurable growth.",
-    "keywords": "About Artisans Cloud, Enterprise Intelligence, AI Transformation, Business Innovation, Data Engineering, Intelligent Systems, Enterprise Automation, Digital Transformation",
-    "ogTitle": "About Artisans Cloud | Architects of Enterprise Intelligence",
-    "ogDescription": "At Artisans Cloud, we architect the digital foundation of intelligent enterprises - uniting AI, data, and engineering to power clarity, agility, and sustained business value.",
+    "title": "About Us | Artisans Cloud",
+    "description": "Artisans is an enterprise platform company that helps organizations preserve knowledge, prepare people, improve decision-making and execute operations with confidence.",
+    "keywords": "About Artisans Cloud, Intelligent Enterprise, Enterprise Platform, Workforce Readiness, Knowledge Intelligence, Decision Support, Enterprise Execution, Artisans Cloud",
+    "ogTitle": "About Us | Architects of the Intelligent Enterprise",
+    "ogDescription": "Artisans is an enterprise platform company that helps organizations preserve knowledge, prepare people, improve decision-making and execute operations with confidence.",
     "ogCard": {
       "title": "About Us",
-      "subtitle": "Architects of Enterprise Intelligence"
+      "subtitle": "Architects of the Intelligent Enterprise"
     },
     "sitemap": {
       "priority": "0.8",
