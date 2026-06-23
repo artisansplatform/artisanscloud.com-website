@@ -177,11 +177,11 @@
   },
   "data-intelligence": {
     "title": "Data Intelligence | Artisans Cloud",
-    "description": "Unlock enterprise data potential with Artisans Cloud. Our Data Intelligence solutions transform data into intelligent action, driving agility, foresight, and operational excellence.",
-    "keywords": "data intelligence, enterprise AI, business intelligence, data automation, data analytics, data pipeline, cloud data architecture, Artisans Cloud",
+    "description": "Connect fragmented enterprise data into a unified intelligence foundation. Artisans Cloud helps organizations link systems, create context and enable better decisions, operational visibility and enterprise AI.",
+    "keywords": "data intelligence, enterprise AI, business intelligence, connected intelligence, enterprise data foundation, data analytics, knowledge discovery, Artisans Cloud",
     "ogCard": {
       "title": "Data Intelligence",
-      "subtitle": "Transform data into intelligent action"
+      "subtitle": "Connect Data. Create Context. Enable Intelligence."
     },
     "sitemap": {
       "priority": "0.9",
