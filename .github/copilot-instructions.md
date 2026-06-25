@@ -33,6 +33,8 @@ npm run generate:cards   # Regenerate all team card HTML pages from team-members
 npm run add:card         # Add/update a team card: generates HTML + OG image (run after editing JSON)
 npm run check:images     # Flag staged or all assets/ images that exceed size thresholds
 npm run optimize:images  # Re-encode raster images in place via sharp (pass paths after --)
+npm run generate:blog    # Generate blog HTML pages from blog/*.md (also runs as build:blog)
+npm run sync:notion      # Fetch "Ready to Publish" articles from Notion and write blog/*.md
 ```
 
 ## Gotchas & Landmines
