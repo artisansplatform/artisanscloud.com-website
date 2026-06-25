@@ -13,8 +13,8 @@ import 'dotenv/config';
 //   NOTION_DATABASE_ID   - The blog database ID from the Notion page URL
 
 import { Client } from "@notionhq/client";
-import { writeFileSync, mkdirSync } from "fs";
-import { join, dirname } from "path";
+import { writeFileSync, mkdirSync, existsSync } from "fs";
+import { join, dirname, extname } from "path";
 import { fileURLToPath } from "url";
 import { blocksToMarkdown } from "./lib/notion-to-markdown.js";
 
@@ -22,7 +22,19 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const BLOG_DIR = join(ROOT, "blog");
 
-const notion = new Client({ auth: process.env.NOTION_TOKEN });
+const notion = new Client({ 
+  auth: process.env.NOTION_TOKEN,
+  fetch: (url, init) => {
+    init = init || {};
+    init.headers = init.headers || {};
+    if (typeof init.headers.set === 'function') {
+      init.headers.set('Connection', 'close');
+    } else {
+      init.headers['Connection'] = 'close';
+    }
+    return fetch(url, init);
+  }
+});
 const DATABASE_ID = process.env.NOTION_DATABASE_ID;
 
 function getProp(page, name, type) {
@@ -32,10 +44,23 @@ function getProp(page, name, type) {
     case "title":    return prop.title?.map((t) => t.plain_text).join("") || "";
     case "text":     return prop.rich_text?.map((t) => t.plain_text).join("") || "";
     case "select":   return prop.select?.name || "";
-    case "multi":    return prop.multi_select?.map((s) => s.name) || [];
+    case "multi":
+      if (prop.type === "multi_select") return prop.multi_select?.map((s) => s.name) || [];
+      if (prop.type === "rich_text") {
+        const text = prop.rich_text?.map((t) => t.plain_text).join("") || "";
+        return text ? text.split(",").map(t => t.trim()).filter(Boolean) : [];
+      }
+      return [];
     case "date":     return prop.date?.start || "";
     case "url":      return prop.url || "";
     case "checkbox": return prop.checkbox || false;
+    case "files": {
+      if (prop.files?.length > 0) {
+        const f = prop.files[0];
+        return f.type === "external" ? (f.external?.url || "") : (f.file?.url || "");
+      }
+      return "";
+    }
     default:         return null;
   }
 }
@@ -44,7 +69,8 @@ function buildFrontmatter(meta) {
   const lines = ["---"];
   lines.push(`title: "${meta.title.replace(/"/g, '\\"')}"`);
   lines.push(`slug: ${meta.slug}`);
-  lines.push(`description: "${meta.description.replace(/"/g, '\\"')}"`);
+  const safeDesc = (meta.description || "").replace(/"/g, '\\"').replace(/\n/g, ' ');
+  lines.push(`description: "${safeDesc}"`);
   lines.push(`publishedAt: "${meta.publishedAt}"`);
   if (meta.author)       lines.push(`author: ${meta.author}`);
   if (meta.tags?.length) lines.push(`tags: [${meta.tags.map((t) => `"${t}"`).join(", ")}]`);
@@ -56,6 +82,30 @@ function buildFrontmatter(meta) {
   lines.push(`notionId: ${meta.notionId}`);
   lines.push("---");
   return lines.join("\n");
+}
+
+const BLOG_IMG_DIR = join(ROOT, "assets", "image", "blog");
+const BLOG_IMG_PATH = "/assets/image/blog";
+
+async function downloadHeroImage(url, slug) {
+  mkdirSync(BLOG_IMG_DIR, { recursive: true });
+
+  // Strip query params to get the real filename/extension from the S3 key
+  const cleanPath = url.split("?")[0];
+  const rawExt = extname(cleanPath).toLowerCase().replace(".", "");
+  const validExts = ["jpg", "jpeg", "png", "webp", "gif", "avif"];
+  const ext = validExts.includes(rawExt) ? rawExt : "jpg";
+  const filename = `${slug}.${ext}`;
+  const destPath = join(BLOG_IMG_DIR, filename);
+
+  if (existsSync(destPath)) {
+    return `${BLOG_IMG_PATH}/${filename}`;
+  }
+
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status} fetching hero image`);
+  writeFileSync(destPath, Buffer.from(await res.arrayBuffer()));
+  return `${BLOG_IMG_PATH}/${filename}`;
 }
 
 async function fetchBlocks(pageId) {
@@ -100,12 +150,16 @@ async function run() {
 
   for (const page of response.results) {
     const title       = getProp(page, "Title", "title");
-    const slug        = getProp(page, "Slug", "text");
+    const rawSlug     = getProp(page, "Slug", "text");
+    const slug        = rawSlug ? rawSlug.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") : null;
     const description = getProp(page, "Description", "text");
     const author      = getProp(page, "Author", "select");
     const tags        = getProp(page, "Tags", "multi");
     const publishedAt = getProp(page, "Published Date", "date");
-    const hero        = getProp(page, "Hero Image URL", "url");
+    const heroProp    = page.properties["Hero Image URL"];
+    const heroRawUrl  = heroProp?.type === "files"
+      ? getProp(page, "Hero Image URL", "files")
+      : getProp(page, "Hero Image URL", "url");
     const heroAlt     = getProp(page, "Hero Image Alt", "text");
     const featured    = getProp(page, "Featured", "checkbox");
     const linkedinUrl = getProp(page, "LinkedIn URL", "url");
@@ -115,8 +169,24 @@ async function run() {
       continue;
     }
 
+    // Download uploaded hero image to make the URL permanent
+    let hero = heroRawUrl || "";
+    if (heroProp?.type === "files" && heroRawUrl) {
+      try {
+        hero = await downloadHeroImage(heroRawUrl, slug);
+        console.log(`Hero image saved: ${hero}`);
+      } catch (err) {
+        console.warn(`Could not download hero image for "${title}": ${err.message}`);
+        hero = "";
+      }
+    }
+
     const blocks = await fetchBlocks(page.id);
-    const body   = blocksToMarkdown(blocks);
+    let body     = blocksToMarkdown(blocks);
+
+    if (!body.trim() && description) {
+      body = description;
+    }
 
     const frontmatter = buildFrontmatter({
       title, slug, description, author, tags,
@@ -130,8 +200,12 @@ async function run() {
     writeFileSync(filepath, `${frontmatter}\n\n${body}\n`);
     console.log(`Written: blog/${filename}`);
 
-    await markPagePublished(page.id);
-    console.log(`Marked as Published in Notion: "${title}"`);
+    try {
+      await markPagePublished(page.id);
+      console.log(`Marked as Published in Notion: "${title}"`);
+    } catch (err) {
+      console.warn(`Could not mark "${title}" as published in Notion: ${err.message}`);
+    }
   }
 }
 
