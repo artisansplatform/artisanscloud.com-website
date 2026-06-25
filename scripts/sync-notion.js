@@ -72,12 +72,9 @@ function buildFrontmatter(meta) {
   const safeDesc = (meta.description || "").replace(/"/g, '\\"').replace(/\n/g, ' ');
   lines.push(`description: "${safeDesc}"`);
   lines.push(`publishedAt: "${meta.publishedAt}"`);
-  if (meta.author)       lines.push(`author: ${meta.author}`);
   if (meta.tags?.length) lines.push(`tags: [${meta.tags.map((t) => `"${t}"`).join(", ")}]`);
   if (meta.hero)         lines.push(`hero: ${meta.hero}`);
   if (meta.heroAlt)      lines.push(`heroAlt: "${meta.heroAlt}"`);
-  if (meta.linkedinUrl)  lines.push(`linkedinUrl: ${meta.linkedinUrl}`);
-  lines.push(`featured: ${meta.featured}`);
   lines.push(`draft: false`);
   lines.push(`notionId: ${meta.notionId}`);
   lines.push("---");
@@ -153,7 +150,6 @@ async function run() {
     const rawSlug     = getProp(page, "Slug", "text");
     const slug        = rawSlug ? rawSlug.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") : null;
     const description = getProp(page, "Description", "text");
-    const author      = getProp(page, "Author", "select");
     const tags        = getProp(page, "Tags", "multi");
     const publishedAt = getProp(page, "Published Date", "date");
     const heroProp    = page.properties["Hero Image URL"];
@@ -161,8 +157,6 @@ async function run() {
       ? getProp(page, "Hero Image URL", "files")
       : getProp(page, "Hero Image URL", "url");
     const heroAlt     = getProp(page, "Hero Image Alt", "text");
-    const featured    = getProp(page, "Featured", "checkbox");
-    const linkedinUrl = getProp(page, "LinkedIn URL", "url");
 
     if (!slug) {
       console.warn(`Skipping "${title}": no slug set.`);
@@ -189,9 +183,9 @@ async function run() {
     }
 
     const frontmatter = buildFrontmatter({
-      title, slug, description, author, tags,
+      title, slug, description, tags,
       publishedAt: publishedAt || new Date().toISOString().split("T")[0],
-      hero, heroAlt, featured, linkedinUrl,
+      hero, heroAlt,
       notionId: page.id,
     });
 

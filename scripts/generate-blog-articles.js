@@ -15,7 +15,7 @@
  * runs before build:html so Vite picks up the generated HTML files.
  */
 
-import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync, unlinkSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { markdownToHtml } from './lib/markdown.js';
@@ -325,6 +325,8 @@ function processFile(filepath, filename) {
   const outPath = join(BLOG_DIR, slug + '.html');
   writeFileSync(outPath, html, 'utf-8');
   console.log('Written: blog/' + slug + '.html');
+  unlinkSync(filepath);
+  console.log('Deleted: ' + filename);
 
   return {
     title: meta.title || '',
