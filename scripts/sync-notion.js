@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 
+import 'dotenv/config';
+
 // Fetches "Ready to Publish" articles from Notion, converts to Markdown,
 // and writes them to the blog/ folder.
 //
 // Run manually:   node scripts/sync-notion.js
 // Run in CI:      triggered by GitHub Actions on schedule or workflow_dispatch
 //
-// Required env vars:
+// Required env vars (set in .env for local dev, GitHub secrets for CI):
 //   NOTION_TOKEN         - Internal integration token (secret_...)
 //   NOTION_DATABASE_ID   - The blog database ID from the Notion page URL
 
