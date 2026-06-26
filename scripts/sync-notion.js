@@ -156,7 +156,7 @@ async function run() {
 
   for (const page of response.results) {
     const title       = getProp(page, "Title", "title");
-    const rawSlug     = getProp(page, "Slug", "text");
+    const rawSlug     = title;
     const slug        = rawSlug ? rawSlug.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") : null;
     const tags        = getProp(page, "Tags", "multi");
     const publishedAt = getProp(page, "Published Date", "date");
@@ -164,7 +164,7 @@ async function run() {
     const heroRawUrl  = heroProp?.type === "files"
       ? getProp(page, "Hero Image URL", "files")
       : getProp(page, "Hero Image URL", "url");
-    const heroAlt     = getProp(page, "Hero Image Alt", "text");
+    const heroAlt     = title;
 
     if (!slug) {
       console.warn(`Skipping "${title}": no slug set.`);
