@@ -169,8 +169,8 @@ function buildBreadcrumbJsonLd(meta, slug) {
 
 function generateHtml(meta, slug, bodyHtml) {
   const title = meta.title || 'Untitled';
-  const description = meta.description || '';
-  const hero = meta.hero || FALLBACK_HERO;
+  const description = meta.description || meta.content || '';
+  const hero = meta.hero;
   const heroAlt = meta.heroAlt || title;
   const ogImage = meta.hero && meta.hero.startsWith('http')
     ? meta.hero
@@ -234,10 +234,13 @@ function generateHtml(meta, slug, bodyHtml) {
   parts.push('');
   parts.push('  {{> header}}');
   parts.push('');
+  const minHeightClass = hero ? 'lg:min-h-[768px]' : 'lg:min-h-[500px]';
+  const paddingBottomClass = hero ? 'pb-20 sm:pb-24 md:pb-[200px]' : 'pb-20 sm:pb-24';
+
   parts.push('  <!-- Hero section -->');
   parts.push('  <section class="w-full h-full p-4 lg:p-5">');
-  parts.push('    <div class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url(\'/assets/image/blog-list/bloge-detail-banner.webp\')] bg-no-repeat bg-cover">');
-  parts.push('      <div class="max-w-[850px] w-full mx-auto mt-[50px] pb-20 sm:pb-24 md:pb-[200px]">');
+  parts.push('    <div class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full ' + minHeightClass + ' h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url(\'/assets/image/blog-list/bloge-detail-banner.webp\')] bg-no-repeat bg-cover">');
+  parts.push('      <div class="max-w-[850px] w-full mx-auto mt-[50px] ' + paddingBottomClass + '">');
   parts.push('        <!-- Breadcrumb -->');
   parts.push('        <div class="mb-5">');
   parts.push('          <div class="flex items-center gap-1">');
@@ -276,11 +279,15 @@ function generateHtml(meta, slug, bodyHtml) {
   parts.push('    </div>');
   parts.push('  </section>');
   parts.push('');
-  parts.push('  <!-- Hero image -->');
-  parts.push('  <div class="fade-in relative z-[2] mx-auto mb-[50px] -mt-[13%] sm:-mt-[14%] md:-mt-[150px] lg:-mt-[300px] w-[80%] max-w-[850px]">');
-  parts.push('    <img src="' + hero + '" alt="' + heroAlt.replace(/"/g, '&quot;') + '" width="1200" height="600" class="h-full w-full object-cover object-top rounded-[12px]">');
-  parts.push('  </div>');
-  parts.push('');
+
+  if (hero) {
+    parts.push('  <!-- Hero image -->');
+    parts.push('  <div class="fade-in relative z-[2] mx-auto mb-[50px] -mt-[13%] sm:-mt-[14%] md:-mt-[150px] lg:-mt-[300px] w-[80%] max-w-[850px]">');
+    parts.push('    <img src="' + hero + '" alt="' + heroAlt.replace(/"/g, '&quot;') + '" width="1200" height="600" class="h-full w-full object-cover object-top rounded-[12px]">');
+    parts.push('  </div>');
+    parts.push('');
+  }
+
   parts.push('  <!-- Article body -->');
   parts.push('  <div class="lg:pb-[100px] py-10 pt-0">');
   parts.push('    <div class="max-w-[850px] w-full px-4 xl:px-0 mx-auto">');
@@ -330,7 +337,7 @@ function processFile(filepath, filename) {
 
   return {
     title: meta.title || '',
-    description: meta.description || '',
+    description: meta.description || meta.content || '',
     thumbnail: meta.hero || FALLBACK_HERO,
     tags: meta.tags || [],
     url: '/blog/' + slug,

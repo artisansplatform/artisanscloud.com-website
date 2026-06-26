@@ -12,6 +12,34 @@ export function richTextToMarkdown(richTexts) {
       if (rt.annotations.bold) text = `**${text}**`;
       if (rt.annotations.italic) text = `_${text}_`;
       if (rt.annotations.strikethrough) text = `~~${text}~~`;
+      
+      if (rt.annotations.color && rt.annotations.color !== "default") {
+        const colorMap = {
+          "gray": "color: gray;",
+          "brown": "color: #A52A2A;",
+          "orange": "color: orange;",
+          "yellow": "color: #eab308;",
+          "green": "color: green;",
+          "blue": "color: blue;",
+          "purple": "color: purple;",
+          "pink": "color: pink;",
+          "red": "color: red;",
+          "gray_background": "background-color: lightgray;",
+          "brown_background": "background-color: #f3e5f5;",
+          "orange_background": "background-color: #ffe0b2;",
+          "yellow_background": "background-color: #fff9c4;",
+          "green_background": "background-color: #c8e6c9;",
+          "blue_background": "background-color: #bbdefb;",
+          "purple_background": "background-color: #e1bee7;",
+          "pink_background": "background-color: #f8bbd0;",
+          "red_background": "background-color: #ffcdd2;"
+        };
+        const style = colorMap[rt.annotations.color];
+        if (style) {
+          text = `<span style="${style}">${text}</span>`;
+        }
+      }
+      
       return text;
     })
     .join("");

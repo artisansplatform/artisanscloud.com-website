@@ -16,6 +16,7 @@ import { Client } from "@notionhq/client";
 import { writeFileSync, mkdirSync, existsSync } from "fs";
 import { join, dirname, extname } from "path";
 import { fileURLToPath } from "url";
+import { execSync } from "child_process";
 import { blocksToMarkdown } from "./lib/notion-to-markdown.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -102,6 +103,14 @@ async function downloadHeroImage(url, slug) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`HTTP ${res.status} fetching hero image`);
   writeFileSync(destPath, Buffer.from(await res.arrayBuffer()));
+
+  try {
+    console.log(`Optimizing image ${filename}...`);
+    execSync(`npm run optimize:images -- "${destPath}"`, { stdio: "inherit", cwd: ROOT });
+  } catch (err) {
+    console.warn(`Failed to optimize image ${filename}: ${err.message}`);
+  }
+
   return `${BLOG_IMG_PATH}/${filename}`;
 }
 
@@ -149,7 +158,6 @@ async function run() {
     const title       = getProp(page, "Title", "title");
     const rawSlug     = getProp(page, "Slug", "text");
     const slug        = rawSlug ? rawSlug.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") : null;
-    const description = getProp(page, "Description", "text");
     const tags        = getProp(page, "Tags", "multi");
     const publishedAt = getProp(page, "Published Date", "date");
     const heroProp    = page.properties["Hero Image URL"];
@@ -177,6 +185,13 @@ async function run() {
 
     const blocks = await fetchBlocks(page.id);
     let body     = blocksToMarkdown(blocks);
+
+    // Extract description from the first text paragraph
+    let description = "";
+    const firstParagraphBlock = blocks.find(b => b.type === "paragraph" && b.paragraph?.rich_text?.length > 0);
+    if (firstParagraphBlock) {
+      description = firstParagraphBlock.paragraph.rich_text.map(rt => rt.plain_text).join("");
+    }
 
     if (!body.trim() && description) {
       body = description;
