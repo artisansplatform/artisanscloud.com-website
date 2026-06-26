@@ -2,7 +2,7 @@ name: Sync Notion Articles
 
 on:
   schedule:
-    - cron: "0 * * * *"   # runs every hour
+    - cron: "0 0 * * *"   # runs once daily at midnight UTC
   workflow_dispatch:        # also allows manual trigger from GitHub Actions tab
 
 jobs:
@@ -29,10 +29,13 @@ jobs:
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
         run: node scripts/sync-notion.js
 
+      - name: Generate blog HTML
+        run: node scripts/generate-blog-articles.js
+
       - name: Commit new articles if any
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add blog/
+          git add blog/ assets/data/local-articles.json assets/image/blog/
           git diff --staged --quiet || git commit -m "chore: sync articles from Notion"
           git push
