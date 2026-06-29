@@ -3,7 +3,7 @@ name: Sync Notion Articles
 on:
   push:
     branches:
-      - claude/happy-bell-3vv2y6
+      - main
 
   workflow_dispatch:
 
@@ -42,9 +42,6 @@ jobs:
           BRANCH="notion-sync/$(date +%Y-%m-%d)-${GITHUB_RUN_NUMBER}"
           echo "BRANCH=$BRANCH" >> $GITHUB_ENV
 
-          # Testing on the feature branch: base the sync branch on the commit
-          # that triggered this run (already checked out), so the sync scripts
-          # are present. Switch back to main before merging this to main.
           git checkout -B "$BRANCH"
 
       - name: Run Notion sync
@@ -100,5 +97,5 @@ jobs:
           gh pr create \
             --title "chore: sync articles from Notion ($(date +%Y-%m-%d))" \
             --body "Automated daily sync of published articles from Notion." \
-            --base ${{ github.ref_name }} \
+            --base main \
             --head "$BRANCH"
