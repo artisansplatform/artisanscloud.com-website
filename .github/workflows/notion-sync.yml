@@ -76,5 +76,3 @@ jobs:
             --body "Automated daily sync of published articles from Notion." \
             --base main \
             --head "$BRANCH"
-
-          gh pr merge "$BRANCH" --merge --auto
