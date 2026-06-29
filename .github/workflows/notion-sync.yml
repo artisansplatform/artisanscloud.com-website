@@ -58,7 +58,7 @@ jobs:
 
       - name: Optimize blog images
         run: |
-          mapfile -t images < <(find assets/image/blog \
+          mapfile -t images < <(find public/assets/image/blog \
             \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.webp" \) 2>/dev/null)
 
           if [ ${#images[@]} -gt 0 ]; then
@@ -72,7 +72,7 @@ jobs:
           # create blog/ or assets/image/blog/ (e.g. no new articles, or no
           # article images), and those dirs are not tracked when empty, so a
           # bare "git add blog/" would fail the pathspec under bash -e.
-          for path in blog assets/data/local-articles.json assets/image/blog; do
+          for path in blog assets/data/local-articles.json public/assets/image/blog; do
             if [ -e "$path" ]; then
               git add "$path"
             fi

@@ -82,7 +82,7 @@ function buildFrontmatter(meta) {
   return lines.join("\n");
 }
 
-const BLOG_IMG_DIR = join(ROOT, "assets", "image", "blog");
+const BLOG_IMG_DIR = join(ROOT, "public", "assets", "image", "blog");
 const BLOG_IMG_PATH = "/assets/image/blog";
 
 async function downloadHeroImage(url, slug) {
