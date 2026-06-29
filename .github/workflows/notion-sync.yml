@@ -58,14 +58,18 @@ jobs:
           BRANCH="notion-sync/$(date +%Y-%m-%d)"
 
           git fetch origin main
-          # Create the sync branch from origin/main. With a dirty index, a plain
-          # "checkout -b" becomes a merge-style checkout that carries tracked
-          # files that exist on this branch but not on main (notably
-          # .github/workflows/notion-sync.yml) into the index. The GITHUB_TOKEN
-          # cannot push workflow files, so that would get the push rejected.
-          # Reset the index to origin/main, then stage only the content paths so
-          # the commit can never contain a workflow change.
-          git checkout -b "$BRANCH" origin/main
+          # Put the new branch on top of origin/main WITHOUT touching the
+          # worktree. A "git checkout ... origin/main" aborts here because the
+          # sync modified tracked files that differ on main (e.g.
+          # assets/data/local-articles.json), and a dirty-index checkout would
+          # also drag .github/workflows/notion-sync.yml into the commit, which
+          # the GITHUB_TOKEN is not allowed to push. Instead: create the branch
+          # at the current commit (no worktree change), then "reset --mixed" the
+          # index to origin/main. reset --mixed never touches the worktree, so it
+          # cannot abort and keeps the generated files in place. The index is now
+          # a clean origin/main baseline, so only the paths we explicitly stage
+          # below can ever land in the commit (never the workflow file).
+          git checkout -B "$BRANCH"
           git reset --mixed origin/main
 
           for path in blog/ assets/data/local-articles.json assets/image/blog/; do
