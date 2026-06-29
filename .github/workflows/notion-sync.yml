@@ -41,6 +41,13 @@ jobs:
       - name: Generate blog HTML
         run: node scripts/generate-blog-articles.js
 
+      - name: Optimize blog images
+        run: |
+          images=$(find assets/image/blog/ -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.webp" 2>/dev/null | tr '\n' ' ')
+          if [ -n "$images" ]; then
+            node scripts/optimize-images.js $images
+          fi
+
       - name: Create branch, open PR, and merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
