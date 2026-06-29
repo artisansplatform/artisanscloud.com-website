@@ -55,6 +55,19 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+          BRANCH="notion-sync/$(date +%Y-%m-%d)"
+
+          git fetch origin main
+          # Create the sync branch from origin/main. With a dirty index, a plain
+          # "checkout -b" becomes a merge-style checkout that carries tracked
+          # files that exist on this branch but not on main (notably
+          # .github/workflows/notion-sync.yml) into the index. The GITHUB_TOKEN
+          # cannot push workflow files, so that would get the push rejected.
+          # Reset the index to origin/main, then stage only the content paths so
+          # the commit can never contain a workflow change.
+          git checkout -b "$BRANCH" origin/main
+          git reset --mixed origin/main
+
           for path in blog/ assets/data/local-articles.json assets/image/blog/; do
             [ -e "$path" ] && git add "$path"
           done
@@ -64,10 +77,6 @@ jobs:
             exit 0
           fi
 
-          BRANCH="notion-sync/$(date +%Y-%m-%d)"
-
-          git fetch origin main
-          git checkout -b "$BRANCH" origin/main
           # --no-verify skips the image-size pre-commit hook; optimization already ran above
           git commit --no-verify -m "chore: sync articles from Notion"
           git push origin "$BRANCH"
