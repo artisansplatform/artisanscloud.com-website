@@ -159,7 +159,7 @@ async function run() {
     const rawSlug     = title;
     const slug        = rawSlug ? rawSlug.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") : null;
     const tags        = getProp(page, "Tags", "multi");
-    const publishedAt = getProp(page, "Published Date", "date");
+    const publishedAt = new Date().toISOString().split("T")[0];
     const heroProp    = page.properties["Hero Image URL"];
     const heroRawUrl  = heroProp?.type === "files"
       ? getProp(page, "Hero Image URL", "files")
@@ -199,12 +199,12 @@ async function run() {
 
     const frontmatter = buildFrontmatter({
       title, slug, description, tags,
-      publishedAt: publishedAt || new Date().toISOString().split("T")[0],
+      publishedAt,
       hero, heroAlt,
       notionId: page.id,
     });
 
-    const filename = `${publishedAt || new Date().toISOString().split("T")[0]}-${slug}.md`;
+    const filename = `${publishedAt}-${slug}.md`;
     const filepath = join(BLOG_DIR, filename);
     writeFileSync(filepath, `${frontmatter}\n\n${body}\n`);
     console.log(`Written: blog/${filename}`);
