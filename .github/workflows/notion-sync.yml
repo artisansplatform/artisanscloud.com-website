@@ -39,12 +39,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          BRANCH="notion-sync/$(date +%Y-%m-%d)"
+          BRANCH="notion-sync/$(date +%Y-%m-%d)-${GITHUB_RUN_NUMBER}"
           echo "BRANCH=$BRANCH" >> $GITHUB_ENV
 
-          git fetch origin main
-          git checkout main
-          git pull origin main
+          # Testing on the feature branch: base the sync branch on the commit
+          # that triggered this run (already checked out), so the sync scripts
+          # are present. Switch back to main before merging this to main.
           git checkout -B "$BRANCH"
 
       - name: Run Notion sync
@@ -87,5 +87,5 @@ jobs:
           gh pr create \
             --title "chore: sync articles from Notion ($(date +%Y-%m-%d))" \
             --body "Automated daily sync of published articles from Notion." \
-            --base main \
+            --base ${{ github.ref_name }} \
             --head "$BRANCH"
