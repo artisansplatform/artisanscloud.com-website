@@ -1,9 +1,14 @@
 name: Sync Notion Articles
 
 on:
+  push:
+    branches:
+      - claude/happy-bell-3vv2y6
+
+  workflow_dispatch:
+
   schedule:
-    - cron: "0 0 * * *"   # runs once daily at midnight UTC
-  workflow_dispatch:        # also allows manual trigger from GitHub Actions tab
+    - cron: "0 0 * * *"
 
 jobs:
   sync:
@@ -11,6 +16,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -41,18 +47,24 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git add blog/ assets/data/local-articles.json assets/image/blog/
+
           if git diff --staged --quiet; then
             echo "No new articles to sync. Skipping."
             exit 0
           fi
+
           BRANCH="notion-sync/$(date +%Y-%m-%d)"
+
           git checkout -b "$BRANCH"
           git commit -m "chore: sync articles from Notion"
           git push origin "$BRANCH"
+
           gh pr create \
             --title "chore: sync articles from Notion ($(date +%Y-%m-%d))" \
             --body "Automated daily sync of published articles from Notion." \
             --base main \
             --head "$BRANCH"
+
           gh pr merge "$BRANCH" --merge --auto
