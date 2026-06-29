@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "title": "Enterprise applications",
+    "description": "complex business operations, often across multiple departments, teams, or even global organizations. Unlike simple applications, enterprise systems prioritize scalability, reliability, security, and maintainability. They typically handle critical business processes such as finance, inventory, human resources, customer management, and analytics. Because of their importance, these applications must be built with a strong architectural foundation that ensures consistent performance under high load and evolving business requirements.",
+    "thumbnail": "/assets/image/blog/enterprise-applications.jpg",
+    "tags": [
+      "Test",
+      "Article",
+      "abc"
+    ],
+    "url": "/blog/enterprise-applications",
+    "publishedAt": "2026-06-29",
+    "source": "local"
+  }
+]
