@@ -48,7 +48,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add blog/ assets/data/local-articles.json assets/image/blog/
+          for path in blog/ assets/data/local-articles.json assets/image/blog/; do
+            [ -e "$path" ] && git add "$path"
+          done
 
           if git diff --staged --quiet; then
             echo "No new articles to sync. Skipping."
