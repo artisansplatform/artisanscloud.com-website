@@ -66,21 +66,34 @@ jobs:
           fi
 
       - name: Commit changes
+        id: commit
         run: |
-          git add blog/ assets/data/local-articles.json assets/image/blog/
+          # Stage only the sync outputs that exist. The sync does not always
+          # create blog/ or assets/image/blog/ (e.g. no new articles, or no
+          # article images), and those dirs are not tracked when empty, so a
+          # bare "git add blog/" would fail the pathspec under bash -e.
+          for path in blog assets/data/local-articles.json assets/image/blog; do
+            if [ -e "$path" ]; then
+              git add "$path"
+            fi
+          done
 
           if git diff --cached --quiet; then
             echo "No new articles to sync."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
           git commit --no-verify -m "chore: sync articles from Notion"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
 
       - name: Push branch
+        if: steps.commit.outputs.changed == 'true'
         run: |
           git push --set-upstream origin "$BRANCH"
 
       - name: Create Pull Request
+        if: steps.commit.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
