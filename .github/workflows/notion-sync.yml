@@ -66,7 +66,8 @@ jobs:
 
           BRANCH="notion-sync/$(date +%Y-%m-%d)"
 
-          git checkout -b "$BRANCH"
+          git fetch origin main
+          git checkout -b "$BRANCH" origin/main
           # --no-verify skips the image-size pre-commit hook; optimization already ran above
           git commit --no-verify -m "chore: sync articles from Notion"
           git push origin "$BRANCH"
