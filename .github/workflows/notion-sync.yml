@@ -8,6 +8,9 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -32,10 +35,24 @@ jobs:
       - name: Generate blog HTML
         run: node scripts/generate-blog-articles.js
 
-      - name: Commit new articles if any
+      - name: Create branch, open PR, and merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add blog/ assets/data/local-articles.json assets/image/blog/
-          git diff --staged --quiet || git commit -m "chore: sync articles from Notion"
-          git push
+          if git diff --staged --quiet; then
+            echo "No new articles to sync. Skipping."
+            exit 0
+          fi
+          BRANCH="notion-sync/$(date +%Y-%m-%d)"
+          git checkout -b "$BRANCH"
+          git commit -m "chore: sync articles from Notion"
+          git push origin "$BRANCH"
+          gh pr create \
+            --title "chore: sync articles from Notion ($(date +%Y-%m-%d))" \
+            --body "Automated daily sync of published articles from Notion." \
+            --base main \
+            --head "$BRANCH"
+          gh pr merge "$BRANCH" --merge --auto
