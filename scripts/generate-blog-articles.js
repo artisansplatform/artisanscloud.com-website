@@ -362,6 +362,16 @@ function main() {
   const mdFiles = readdirSync(BLOG_DIR).filter((f) => f.endsWith('.md'));
 
   if (mdFiles.length === 0) {
+    // No new .md sources to process. If local-articles.json already has content
+    // (from a previous sync that generated and deleted the .md files), leave it
+    // alone. Only reset to empty if the file is truly missing or empty.
+    if (existsSync(LOCAL_ARTICLES_PATH)) {
+      const existing = readFileSync(LOCAL_ARTICLES_PATH, 'utf-8').trim();
+      if (existing && existing !== '[]') {
+        console.log('No .md files found in blog/. Keeping existing local-articles.json.');
+        return;
+      }
+    }
     console.log('No .md files found in blog/. Writing empty local-articles.json.');
     writeFileSync(LOCAL_ARTICLES_PATH, '[]', 'utf-8');
     return;
