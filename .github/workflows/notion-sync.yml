@@ -13,6 +13,7 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
       pull-requests: write
@@ -22,15 +23,29 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Create sync branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          BRANCH="notion-sync/$(date +%Y-%m-%d)"
+          echo "BRANCH=$BRANCH" >> $GITHUB_ENV
+
+          git fetch origin main
+          git checkout main
+          git pull origin main
+          git checkout -B "$BRANCH"
 
       - name: Run Notion sync
         env:
@@ -43,48 +58,32 @@ jobs:
 
       - name: Optimize blog images
         run: |
-          mapfile -t images < <(find assets/image/blog/ \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.webp" \) 2>/dev/null)
+          mapfile -t images < <(find assets/image/blog \
+            \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.webp" \) 2>/dev/null)
+
           if [ ${#images[@]} -gt 0 ]; then
             node scripts/optimize-images.js "${images[@]}"
           fi
 
-      - name: Create branch, open PR, and merge
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit changes
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog/ assets/data/local-articles.json assets/image/blog/
 
-          BRANCH="notion-sync/$(date +%Y-%m-%d)"
-
-          git fetch origin main
-          # Put the new branch on top of origin/main WITHOUT touching the
-          # worktree. A "git checkout ... origin/main" aborts here because the
-          # sync modified tracked files that differ on main (e.g.
-          # assets/data/local-articles.json), and a dirty-index checkout would
-          # also drag .github/workflows/notion-sync.yml into the commit, which
-          # the GITHUB_TOKEN is not allowed to push. Instead: create the branch
-          # at the current commit (no worktree change), then "reset --mixed" the
-          # index to origin/main. reset --mixed never touches the worktree, so it
-          # cannot abort and keeps the generated files in place. The index is now
-          # a clean origin/main baseline, so only the paths we explicitly stage
-          # below can ever land in the commit (never the workflow file).
-          git checkout -B "$BRANCH"
-          git reset --mixed origin/main
-
-          for path in blog/ assets/data/local-articles.json assets/image/blog/; do
-            [ -e "$path" ] && git add "$path"
-          done
-
-          if git diff --staged --quiet; then
-            echo "No new articles to sync. Skipping."
+          if git diff --cached --quiet; then
+            echo "No new articles to sync."
             exit 0
           fi
 
-          # --no-verify skips the image-size pre-commit hook; optimization already ran above
           git commit --no-verify -m "chore: sync articles from Notion"
-          git push origin "$BRANCH"
 
+      - name: Push branch
+        run: |
+          git push --set-upstream origin "$BRANCH"
+
+      - name: Create Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
           gh pr create \
             --title "chore: sync articles from Notion ($(date +%Y-%m-%d))" \
             --body "Automated daily sync of published articles from Notion." \
