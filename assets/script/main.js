@@ -21,6 +21,7 @@ import { initDigitalCard } from "./modules/digital-card.js";
 import { initVercelAnalytics } from "./modules/vercel-analytics.js";
 import { initLinkedInInsight } from "./modules/linkedin-insight.js";
 import { initUmami } from "./modules/umami.js";
+import { initArena } from "./modules/arena.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initNavActive();
@@ -42,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initVercelAnalytics();
   initLinkedInInsight();
   initUmami();
+  initArena();
 });
 
 // Multi-select runs immediately (outside DOMContentLoaded)

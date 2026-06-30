@@ -15,7 +15,8 @@ const pagesJson = JSON.parse(
 
 // retail-platform.html is a meta-refresh redirect stub with a hand-written
 // head; every other root page must use the shared head-meta partial.
-const STUB_PAGES = new Set(["retail-platform.html"]);
+// arena.html is a standalone third-party landing page with its own head.
+const STUB_PAGES = new Set(["retail-platform.html", "arena.html"]);
 
 const allPages = glob.sync("*.html", { cwd: rootDir });
 const partialPages = allPages.filter((p) => !STUB_PAGES.has(p));
