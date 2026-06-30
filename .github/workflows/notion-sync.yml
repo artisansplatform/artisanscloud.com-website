@@ -3,7 +3,7 @@ name: Sync Notion Articles
 on:
   push:
     branches:
-      - main
+      - claude/happy-bell-3vv2y6
 
   workflow_dispatch:
 
