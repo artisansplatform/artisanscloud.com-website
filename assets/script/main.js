@@ -17,6 +17,7 @@ import { initTabs } from "./modules/tabs.js";
 import { initCardToggle } from "./modules/card-toggle.js";
 import { initNavActive } from "./modules/nav-active.js";
 import { initBlogArticles } from "./modules/blog-articles.js";
+import { initSimilarInsights } from "./modules/similar-insights.js";
 import { initDigitalCard } from "./modules/digital-card.js";
 import { initVercelAnalytics } from "./modules/vercel-analytics.js";
 import { initLinkedInInsight } from "./modules/linkedin-insight.js";
@@ -25,6 +26,7 @@ import { initUmami } from "./modules/umami.js";
 document.addEventListener("DOMContentLoaded", () => {
   initNavActive();
   initBlogArticles();
+  initSimilarInsights();
   initDigitalCard();
   initSmoothScroll();
   initHeader();

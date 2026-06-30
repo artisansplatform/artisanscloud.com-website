@@ -235,7 +235,7 @@ function generateHtml(meta, slug, bodyHtml) {
   parts.push('  {{> header}}');
   parts.push('');
   const minHeightClass = hero ? 'lg:min-h-[768px]' : 'lg:min-h-[500px]';
-  const paddingBottomClass = hero ? 'pb-20 sm:pb-24 md:pb-[200px]' : 'pb-20 sm:pb-24';
+  const paddingBottomClass = hero ? 'pb-20 sm:pb-24 md:pb-[200px] lg:pb-[350px]' : 'pb-20 sm:pb-24';
 
   parts.push('  <!-- Hero section -->');
   parts.push('  <section class="w-full h-full p-4 lg:p-5">');
@@ -282,8 +282,8 @@ function generateHtml(meta, slug, bodyHtml) {
 
   if (hero) {
     parts.push('  <!-- Hero image -->');
-    parts.push('  <div class="fade-in relative z-[2] mx-auto mb-[50px] -mt-[13%] sm:-mt-[14%] md:-mt-[150px] lg:-mt-[300px] w-[80%] max-w-[850px]">');
-    parts.push('    <img src="' + hero + '" alt="' + heroAlt.replace(/"/g, '&quot;') + '" width="1200" height="600" class="h-full w-full object-cover object-top rounded-[12px]">');
+    parts.push('  <div class="fade-in relative z-[2] mx-auto mb-[50px] -mt-[13%] sm:-mt-[14%] md:-mt-[150px] lg:-mt-[300px] w-[80%] max-w-[850px] aspect-[2/1] overflow-hidden rounded-[12px]">');
+    parts.push('    <img src="' + hero + '" alt="' + heroAlt.replace(/"/g, '&quot;') + '" width="1200" height="600" class="h-full w-full object-cover object-top">');
     parts.push('  </div>');
     parts.push('');
   }
@@ -300,6 +300,26 @@ function generateHtml(meta, slug, bodyHtml) {
   parts.push('  <div class="max-w-[1240px] w-full px-4 xl:px-0 mx-auto">');
   parts.push('    <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>');
   parts.push('  </div>');
+  parts.push('');
+  parts.push('  <!-- Similar Insights -->');
+  parts.push('  <section class="lg:py-[100px] sm:py-16 py-10">');
+  parts.push('    <div class="max-w-[1240px] w-full px-4 xl:px-0 mx-auto">');
+  parts.push('      <div class="fade-in lg:mb-10 mb-7 flex items-center gap-5 justify-between flex-nowrap">');
+  parts.push('        <div class="lg:text-5xl md:text-4xl text-3xl text-heading font-primary font-semibold leading-[120%]">Similar Insights</div>');
+  parts.push('        <div class="flex items-center justify-center gap-[clamp(0.5rem,1.111vw+0.167rem,1rem)]">');
+  parts.push('          <div class="swiper-button-prev swiper-button-prev-similarInsightsSlider after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer">');
+  parts.push('            <img src="/assets/image/icon/rightArrowSwiper.svg" alt="Previous slide arrow" width="24" height="24" loading="lazy" class="h-[70%] select-none rotate-180">');
+  parts.push('          </div>');
+  parts.push('          <div class="swiper-button-next swiper-button-next-similarInsightsSlider after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer">');
+  parts.push('            <img src="/assets/image/icon/rightArrowSwiper.svg" alt="Next slide arrow" width="24" height="24" loading="lazy" class="h-[70%] select-none">');
+  parts.push('          </div>');
+  parts.push('        </div>');
+  parts.push('      </div>');
+  parts.push('      <div class="swiper similarInsightsSlider">');
+  parts.push('        <div class="swiper-wrapper" id="similar-insights-grid" data-current-url="/blog/' + slug + '"></div>');
+  parts.push('      </div>');
+  parts.push('    </div>');
+  parts.push('  </section>');
   parts.push('');
   parts.push('  {{> footer}}');
   parts.push('');
