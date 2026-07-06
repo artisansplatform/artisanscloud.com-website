@@ -1,14 +1,10 @@
 name: Sync Notion Articles
 
 on:
-  push:
-    branches:
-      - claude/happy-bell-3vv2y6
-
   workflow_dispatch:
 
-  schedule:
-    - cron: "0 0 * * *"
+concurrency:
+  group: notion-sync
 
 jobs:
   sync:
@@ -20,13 +16,13 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
           fetch-depth: 0
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: "20"
           cache: npm
@@ -96,6 +92,6 @@ jobs:
         run: |
           gh pr create \
             --title "chore: sync articles from Notion ($(date +%Y-%m-%d))" \
-            --body "Automated daily sync of published articles from Notion." \
+            --body "Manual sync of published articles from Notion." \
             --base main \
             --head "$BRANCH"
