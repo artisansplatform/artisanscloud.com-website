@@ -86,3 +86,7 @@ To test or run the Notion sync manually from your local machine, you need to set
 ```bash
 node scripts/generate-blog-articles.js --slug your-article-slug
 ```
+
+### Sync History Audit Trail
+
+Every run of the `notion-sync.yml` workflow logs a row (date, article count/titles, PR link, status) to a "Sync History" database in Notion, so sync activity is visible without checking GitHub Actions. See [`docs/notion-history-setup.md`](notion-history-setup.md) for setup and how it works.

@@ -23,6 +23,16 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const BLOG_DIR = join(ROOT, "blog");
 
+// Read by log-notion-history.js. generate-blog-articles.js deletes each
+// source .md right after converting it, so by the time the workflow gets to
+// logging, git diff can no longer see what was synced. This file is the only
+// reliable record.
+const SYNC_RESULT_PATH = join(ROOT, ".notion-sync-result.json");
+
+function writeSyncResult(titles) {
+  writeFileSync(SYNC_RESULT_PATH, JSON.stringify({ count: titles.length, titles }, null, 2));
+}
+
 const notion = new Client({ 
   auth: process.env.NOTION_TOKEN,
   fetch: (url, init) => {
@@ -149,72 +159,79 @@ async function run() {
 
   if (response.results.length === 0) {
     console.log("No articles ready to publish.");
+    writeSyncResult([]);
     return;
   }
 
   mkdirSync(BLOG_DIR, { recursive: true });
 
-  for (const page of response.results) {
-    const title       = getProp(page, "Title", "title");
-    const rawSlug     = title;
-    const slug        = rawSlug ? rawSlug.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") : null;
-    const tags        = getProp(page, "Tags", "multi");
-    const publishedAt = new Date().toISOString().split("T")[0];
-    const heroProp    = page.properties["Hero Image URL"];
-    const heroRawUrl  = heroProp?.type === "files"
-      ? getProp(page, "Hero Image URL", "files")
-      : getProp(page, "Hero Image URL", "url");
-    const heroAlt     = title;
+  const syncedTitles = [];
+  try {
+    for (const page of response.results) {
+      const title       = getProp(page, "Title", "title");
+      const rawSlug     = title;
+      const slug        = rawSlug ? rawSlug.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") : null;
+      const tags        = getProp(page, "Tags", "multi");
+      const publishedAt = new Date().toISOString().split("T")[0];
+      const heroProp    = page.properties["Hero Image URL"];
+      const heroRawUrl  = heroProp?.type === "files"
+        ? getProp(page, "Hero Image URL", "files")
+        : getProp(page, "Hero Image URL", "url");
+      const heroAlt     = title;
 
-    if (!slug) {
-      console.warn(`Skipping "${title}": no slug set.`);
-      continue;
-    }
+      if (!slug) {
+        console.warn(`Skipping "${title}": no slug set.`);
+        continue;
+      }
 
-    // Download uploaded hero image to make the URL permanent
-    let hero = heroRawUrl || "";
-    if (heroProp?.type === "files" && heroRawUrl) {
+      // Download uploaded hero image to make the URL permanent
+      let hero = heroRawUrl || "";
+      if (heroProp?.type === "files" && heroRawUrl) {
+        try {
+          hero = await downloadHeroImage(heroRawUrl, slug);
+          console.log(`Hero image saved: ${hero}`);
+        } catch (err) {
+          console.warn(`Could not download hero image for "${title}": ${err.message}`);
+          hero = "";
+        }
+      }
+
+      const blocks = await fetchBlocks(page.id);
+      let body     = blocksToMarkdown(blocks);
+
+      // Extract description from the first text paragraph
+      let description = "";
+      const firstParagraphBlock = blocks.find(b => b.type === "paragraph" && b.paragraph?.rich_text?.length > 0);
+      if (firstParagraphBlock) {
+        description = firstParagraphBlock.paragraph.rich_text.map(rt => rt.plain_text).join("");
+      }
+
+      if (!body.trim() && description) {
+        body = description;
+      }
+
+      const frontmatter = buildFrontmatter({
+        title, slug, description, tags,
+        publishedAt,
+        hero, heroAlt,
+        notionId: page.id,
+      });
+
+      const filename = `${publishedAt}-${slug}.md`;
+      const filepath = join(BLOG_DIR, filename);
+      writeFileSync(filepath, `${frontmatter}\n\n${body}\n`);
+      console.log(`Written: blog/${filename}`);
+      syncedTitles.push(title);
+
       try {
-        hero = await downloadHeroImage(heroRawUrl, slug);
-        console.log(`Hero image saved: ${hero}`);
+        await markPagePublished(page.id);
+        console.log(`Marked as Published in Notion: "${title}"`);
       } catch (err) {
-        console.warn(`Could not download hero image for "${title}": ${err.message}`);
-        hero = "";
+        console.warn(`Could not mark "${title}" as published in Notion: ${err.message}`);
       }
     }
-
-    const blocks = await fetchBlocks(page.id);
-    let body     = blocksToMarkdown(blocks);
-
-    // Extract description from the first text paragraph
-    let description = "";
-    const firstParagraphBlock = blocks.find(b => b.type === "paragraph" && b.paragraph?.rich_text?.length > 0);
-    if (firstParagraphBlock) {
-      description = firstParagraphBlock.paragraph.rich_text.map(rt => rt.plain_text).join("");
-    }
-
-    if (!body.trim() && description) {
-      body = description;
-    }
-
-    const frontmatter = buildFrontmatter({
-      title, slug, description, tags,
-      publishedAt,
-      hero, heroAlt,
-      notionId: page.id,
-    });
-
-    const filename = `${publishedAt}-${slug}.md`;
-    const filepath = join(BLOG_DIR, filename);
-    writeFileSync(filepath, `${frontmatter}\n\n${body}\n`);
-    console.log(`Written: blog/${filename}`);
-
-    try {
-      await markPagePublished(page.id);
-      console.log(`Marked as Published in Notion: "${title}"`);
-    } catch (err) {
-      console.warn(`Could not mark "${title}" as published in Notion: ${err.message}`);
-    }
+  } finally {
+    writeSyncResult(syncedTitles);
   }
 }
 

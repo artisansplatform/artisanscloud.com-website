@@ -14,6 +14,7 @@
     "build:static": "cp -r assets/og dist/assets/og",
     "generate:blog": "node scripts/generate-blog-articles.js",
     "sync:notion": "node scripts/sync-notion.js",
+    "log:notion-history": "node scripts/log-notion-history.js",
     "generate:og": "node scripts/generate-og-images.js",
     "generate:cards": "node scripts/generate-team-cards.js",
     "add:card": "npm run generate:cards && npm run generate:og",

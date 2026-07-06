@@ -41,6 +41,7 @@ jobs:
           git checkout -B "$BRANCH"
 
       - name: Run Notion sync
+        id: sync
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
@@ -86,12 +87,24 @@ jobs:
           git push --set-upstream origin "$BRANCH"
 
       - name: Create Pull Request
+        id: create-pr
         if: steps.commit.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr create \
+          PR_URL=$(gh pr create \
             --title "chore: sync articles from Notion ($(date +%Y-%m-%d))" \
             --body "Manual sync of published articles from Notion." \
             --base main \
-            --head "$BRANCH"
+            --head "$BRANCH")
+          echo "pr_url=$PR_URL" >> "$GITHUB_OUTPUT"
+
+      - name: Log sync history to Notion
+        if: always()
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_HISTORY_DATABASE_ID: ${{ secrets.NOTION_HISTORY_DATABASE_ID }}
+          SYNC_OUTCOME: ${{ steps.sync.outcome }}
+          CHANGED: ${{ steps.commit.outputs.changed }}
+          PR_URL: ${{ steps.create-pr.outputs.pr_url }}
+        run: node scripts/log-notion-history.js
