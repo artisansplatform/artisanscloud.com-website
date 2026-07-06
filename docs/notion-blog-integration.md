@@ -81,30 +81,6 @@ To test or run the Notion sync manually from your local machine, you need to set
    ```
    *(This will fetch the articles, generate the Markdown files, and download the images).*
 
-### Manual Authoring (Without Notion)
-
-If you prefer not to use Notion, or if the Notion sync is unavailable, you can manually author articles as Markdown files.
-
-1. Create `blog/{date}-{slug}.md` with YAML frontmatter:
-   ```markdown
-   ---
-   title: "Your Article Title"
-   slug: your-article-slug
-   description: "One or two sentences for SEO."
-   publishedAt: "2025-01-15"
-   tags: ["AI", "Commerce"]
-   hero: /assets/image/blog/hero-image.webp
-   heroAlt: "Description of the hero image"
-   featured: false
-   draft: false
-   ---
-
-   Article body in Markdown...
-   ```
-2. Run `node scripts/generate-blog-articles.js` (or `npm run generate:blog`) to generate HTML.
-3. Run `npm run build` to verify the full build.
-4. Commit both the `.md` file and the generated `blog/{slug}.html`.
-
 ### Regenerating a Single Article
 
 ```bash
