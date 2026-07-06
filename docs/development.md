@@ -84,62 +84,11 @@ Note: `npm run generate:og` still downloads Poppins TTFs at generation time beca
 
 ## Adding a Blog Article (Notion-Powered)
 
-Long-form blog articles live as Markdown files in `blog/` and are converted to HTML pages at build time.
+Blog articles live as Markdown files in `blog/` and are converted to HTML pages at build time. 
 
-### Via Notion (recommended for non-developers)
+Writers typically author these in Notion, where a GitHub Action automatically syncs them to the repository. Developers can also author `.md` files manually.
 
-1. Open the **Blog Articles** database in Notion
-2. Create a new page, fill in Title, Slug, Description, Tags, Published Date, Hero Image URL
-3. Write the article body in the page content area
-4. Set Status to **Ready to Publish**
-5. The GitHub Action runs hourly (`notion-sync.yml`) and writes the `.md` file to `blog/`
-6. Vercel rebuilds the site and the article goes live at `/blog/{slug}`
-
-To trigger immediately: go to GitHub Actions tab and run **Sync Notion Articles** manually.
-
-### Manually (for developers)
-
-1. Create `blog/{date}-{slug}.md` with YAML frontmatter:
-   ```markdown
-   ---
-   title: "Your Article Title"
-   slug: your-article-slug
-   description: "One or two sentences for SEO."
-   publishedAt: "2025-01-15"
-   tags: ["AI", "Commerce"]
-   hero: /assets/image/blog/hero-image.webp
-   heroAlt: "Description of the hero image"
-   featured: false
-   draft: false
-   ---
-
-   Article body in Markdown...
-   ```
-2. Run `node scripts/generate-blog-articles.js` (or `npm run generate:blog`) to generate HTML
-3. Run `npm run build` to verify the full build
-4. Commit both the `.md` file and the generated `blog/{slug}.html`
-
-### Frontmatter fields
-
-| Field | Required | Description |
-|---|---|---|
-| `title` | Yes | Article headline |
-| `slug` | Yes | URL path (`/blog/{slug}`) |
-| `description` | Yes | SEO meta description |
-| `publishedAt` | Yes | Publication date (YYYY-MM-DD) |
-| `tags` | No | Array of tag strings |
-| `hero` | No | Hero image URL (absolute or root-relative) |
-| `heroAlt` | No | Alt text for hero image |
-| `featured` | No | Boolean, marks as featured |
-| `draft` | No | `true` skips the file during generation |
-| `linkedinUrl` | No | Link to original LinkedIn post |
-| `notionId` | No | Set automatically by sync script |
-
-### Regenerating a single article
-
-```bash
-node scripts/generate-blog-articles.js --slug your-article-slug
-```
+For detailed instructions on the Notion workflow, frontmatter fields, and manual article generation, see the **[Notion Blog Integration Guide](notion-blog-integration.md)**.
 
 ## Adding a Digital Business Card
 

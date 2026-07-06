@@ -42,8 +42,8 @@ function createSlide(article) {
 </div>`;
 }
 
-export function initSimilarInsights() {
-  const grid = document.getElementById('similar-insights-grid');
+export function initLatestInsights() {
+  const grid = document.getElementById('latest-insights-grid');
   if (!grid) return;
 
   const currentUrl = grid.dataset.currentUrl || '';
@@ -59,7 +59,7 @@ export function initSimilarInsights() {
 
   grid.innerHTML = candidates.slice(0, 6).map(createSlide).join('');
 
-  new Swiper('.similarInsightsSlider', {
+  new Swiper('.latestInsightsSlider', {
     modules: [Navigation],
     slidesPerView: 1,
     spaceBetween: 20,
@@ -69,8 +69,8 @@ export function initSimilarInsights() {
       1024: { slidesPerView: 3, spaceBetween: 20 },
     },
     navigation: {
-      nextEl: '.swiper-button-next-similarInsightsSlider',
-      prevEl: '.swiper-button-prev-similarInsightsSlider',
+      nextEl: '.swiper-button-next-latestInsightsSlider',
+      prevEl: '.swiper-button-prev-latestInsightsSlider',
     },
   });
 }
