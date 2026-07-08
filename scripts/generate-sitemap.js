@@ -44,9 +44,12 @@ const DEFAULT_META = { priority: '0.6', changefreq: 'monthly' };
 function pageToUrl(baseUrl, filename) {
   if (filename === 'index.html') return `${baseUrl}/`;
   // Vercel cleanUrls: true, omit .html extension
+  // Handles both root pages and blog/slug.html paths
   const slug = filename.replace('.html', '');
   return `${baseUrl}/${slug}`;
 }
+
+const BLOG_META = { priority: '0.7', changefreq: 'weekly' };
 
 function main() {
   const { baseUrl } = parseArgs();
@@ -57,10 +60,12 @@ function main() {
     .filter(f => PAGES_META[f.replace('.html', '')]?.sitemap !== false)
     .sort();
 
-  const urlEntries = pages.map(page => {
-    const { priority, changefreq } =
-      PAGES_META[page.replace('.html', '')]?.sitemap ?? DEFAULT_META;
-    const loc = pageToUrl(baseUrl, page);
+  // Include generated blog article pages
+  const blogPages = glob
+    .sync('blog/*.html', { cwd: ROOT })
+    .sort();
+
+  function makeUrlEntry(loc, priority, changefreq) {
     return [
       '  <url>',
       `    <loc>${loc}</loc>`,
@@ -69,19 +74,33 @@ function main() {
       `    <priority>${priority}</priority>`,
       '  </url>',
     ].join('\n');
+  }
+
+  const urlEntries = pages.map(page => {
+    const { priority, changefreq } =
+      PAGES_META[page.replace('.html', '')]?.sitemap ?? DEFAULT_META;
+    const loc = pageToUrl(baseUrl, page);
+    return makeUrlEntry(loc, priority, changefreq);
   });
+
+  const blogEntries = blogPages.map(page => {
+    const loc = pageToUrl(baseUrl, page);
+    return makeUrlEntry(loc, BLOG_META.priority, BLOG_META.changefreq);
+  });
+
+  const allEntries = [...urlEntries, ...blogEntries];
 
   const xml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    urlEntries.join('\n'),
+    allEntries.join('\n'),
     '</urlset>',
     '', // trailing newline
   ].join('\n');
 
   const outPath = join(ROOT, 'dist', 'sitemap.xml');
   writeFileSync(outPath, xml, 'utf-8');
-  console.log(`sitemap.xml: ${pages.length} URLs written → dist/sitemap.xml`);
+  console.log(`sitemap.xml: ${pages.length + blogPages.length} URLs written → dist/sitemap.xml`);
 }
 
 main();

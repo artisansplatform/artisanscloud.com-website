@@ -82,6 +82,14 @@ If markup uses a weight or style with no `@font-face`, the browser fakes it (syn
 
 Note: `npm run generate:og` still downloads Poppins TTFs at generation time because satori cannot read woff2. That is a build-tool dependency, not a runtime one.
 
+## Adding a Blog Article (Notion-Powered)
+
+Blog articles live as Markdown files in `blog/` and are converted to HTML pages at build time. 
+
+Writers typically author these in Notion, where a GitHub Action automatically syncs them to the repository. Developers can also author `.md` files manually.
+
+For detailed instructions on the Notion workflow, frontmatter fields, and manual article generation, see the **[Notion Blog Integration Guide](notion-blog-integration.md)**.
+
 ## Adding a Digital Business Card
 
 Team members have standalone digital card pages at `/team/{slug}` with vCard download, QR code, and sharing options.
