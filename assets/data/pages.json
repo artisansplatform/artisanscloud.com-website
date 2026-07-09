@@ -390,6 +390,10 @@
     "ogCard": {
       "title": "Role Play Agent",
       "subtitle": "AI-powered readiness simulations"
+    },
+    "sitemap": {
+      "priority": "0.8",
+      "changefreq": "monthly"
     }
   },
   "smart-auto-completion": {
