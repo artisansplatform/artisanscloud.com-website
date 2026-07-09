@@ -173,10 +173,10 @@ async function run() {
       const slug        = rawSlug ? rawSlug.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") : null;
       const tags        = getProp(page, "Tags", "multi");
       const publishedAt = new Date().toISOString().split("T")[0];
-      const heroProp    = page.properties["Hero Image URL"];
+      const heroProp    = page.properties["Hero Image"];
       const heroRawUrl  = heroProp?.type === "files"
-        ? getProp(page, "Hero Image URL", "files")
-        : getProp(page, "Hero Image URL", "url");
+        ? getProp(page, "Hero Image", "files")
+        : getProp(page, "Hero Image", "url");
       const heroAlt     = title;
 
       if (!slug) {
