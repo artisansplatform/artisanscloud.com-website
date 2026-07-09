@@ -6,3 +6,5 @@ dist/
 /playwright/.cache/
 assets/style/output.css
 data/gsc/
+.env
+.notion-sync-result.json
