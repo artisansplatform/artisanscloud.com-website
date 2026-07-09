@@ -14,7 +14,7 @@
 
 import fallbackArticles from '../../data/fallback-articles.json';
 
-const FALLBACK_IMAGE = '/assets/image/insightsLeadership-card-1.png';
+const FALLBACK_IMAGE = '/assets/image/artisanscloud-insightsLeadership-card-1.png';
 const ARTICLES_PER_PAGE = 9;
 
 let visibleCount = ARTICLES_PER_PAGE;
