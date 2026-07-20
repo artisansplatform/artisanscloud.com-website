@@ -202,7 +202,32 @@ body {
         .tw-dropdown.show .dropdown-menu { @apply !opacity-100 !block !pointer-events-auto; }
     }
     
-    .ourClientMaruqee .swiper-wrapper {transition-timing-function: linear !important;}
+    /* Client logo marquee: CSS-only continuous scroll.
+       The track holds two identical logo groups, so shifting it by -50%
+       lands exactly on the start of the duplicate and loops seamlessly. */
+    .logoMarquee { overflow: hidden; }
+    .logoMarquee-track {
+        display: flex;
+        width: max-content;
+        will-change: transform;
+        animation: logo-marquee 45s linear infinite;
+    }
+    .logoMarquee-group {
+        display: flex;
+        align-items: center;
+        flex: 0 0 auto;
+    }
+    .logoMarquee:hover .logoMarquee-track { animation-play-state: paused; }
+
+    @keyframes logo-marquee {
+        from { transform: translate3d(0, 0, 0); }
+        to { transform: translate3d(-50%, 0, 0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .logoMarquee-track { animation: none; }
+        .logoMarquee { overflow-x: auto; }
+    }
     
     .unifiedCommerce_sec_imgBox::before {
         content: "";

@@ -1,32 +1,14 @@
 import Swiper from 'swiper';
-import { Autoplay, Navigation, FreeMode } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 
 // Configure Swiper to use modules
-Swiper.use([Autoplay, Navigation, FreeMode]);
+Swiper.use([Navigation]);
 
 // Swiper Sliders ==========================================
 export function initSwipers() {
 
-    // Our Client Marquee ========================
-    const clientMarqueeEl = document.querySelector(".ourClientMaruqee");
-    if (clientMarqueeEl) {
-        new Swiper(".ourClientMaruqee", {
-            slidesPerView: "auto",
-            spaceBetween: 0,
-            speed: 3000,
-            allowTouchMove: true,
-            simulateTouch: false,
-            touchStartPreventDefault: false,
-            freeMode: true,
-            freeModeMomentum: false,
-            autoplay: {
-                delay: 0,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: false,
-            },
-            loop: true,
-        });
-    }
+    // Note: the client logo marquee on the homepage is CSS-only
+    // (.logoMarquee in assets/style/input.css), not a Swiper instance.
 
     // Key Capability Slider ========================
     const keyCapabilitySliderEl = document.querySelector(".keyCapabilitySlider");
