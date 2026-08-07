@@ -16,6 +16,7 @@ const distDir = path.join(rootDir, "dist");
 const pages = [
   ...glob.sync("*.html", { cwd: rootDir }),
   ...glob.sync("team/*.html", { cwd: rootDir }),
+  ...glob.sync("enterprise-copilot/*.html", { cwd: rootDir }),
 ];
 
 // Parse a built page from dist/ (post-Handlebars) into a DOM document.

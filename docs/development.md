@@ -11,7 +11,7 @@ npm run dev
 ```
 
 ## Adding a New Page
-1. **Create HTML** (e.g., `new-solution.html`) in repository root
+1. **Create HTML** in the repository root (e.g., `new-solution.html`) or inside a subdirectory (e.g., `enterprise-copilot/lumen.html`)
 2. **Use template structure** with Handlebars partials. The whole `<head>` comes from the `head-meta` partial:
    ```html
    <!DOCTYPE html>
@@ -31,7 +31,7 @@ npm run dev
    </body>
    </html>
    ```
-3. **Add the metadata entry**: add a `new-solution` entry to `assets/data/pages.json` with at least `title` and `description` (see [Page metadata](#page-metadata-pagesjson) below). `tests/pages-meta.test.js` fails the build without it.
+3. **Add the metadata entry**: add an entry to `assets/data/pages.json` keyed by the file's path slug (e.g. `new-solution` or `enterprise-copilot/lumen`) with at least `title` and `description` (see [Page metadata](#page-metadata-pagesjson) below). `tests/pages-meta.test.js` fails the build without it.
 4. **Update navigation**: Edit `partials/header.html` to add link to new page (applies to ALL pages)
 5. **Add OG image**: add `ogCard: { title, subtitle }` to the page's `pages.json` entry, run `npm run generate:og`, commit the PNG (see [Architecture: Open Graph Images](architecture.md#open-graph-images))
 6. **Meet the on-page SEO checks** (enforced by `tests/seo.test.js`, see below): the head-meta partial takes care of all of them except "exactly one `<h1>`", which is up to your page content.
@@ -203,7 +203,7 @@ npm run update-fallback -- --url https://preview.example.com  # Fetch from custo
 
 ### How it works
 - `scripts/generate-sitemap.js` runs as `build:sitemap` (after Vite's `build:html`)
-- It uses `glob.sync('*.html')` - the same discovery pattern as `vite.config.js` - so every page in the root is included automatically
+- It discovers both root `*.html` pages and nested subdirectory pages (e.g., `enterprise-copilot/*.html`) so they are included automatically
 - Excluded pages: `404.html`, `thank-you.html`, `blog-detail.html`
 - `public/robots.txt` is a static file (Vite passthrough); it references the sitemap URL and is deployed to `dist/robots.txt` unchanged
 

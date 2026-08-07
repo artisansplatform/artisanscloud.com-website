@@ -86,6 +86,11 @@
       "source": "/knowledge-harvester",
       "destination": "/vault-knowledge-harvester",
       "permanent": true
+    },
+    {
+      "source": "/lumen",
+      "destination": "/enterprise-copilot/lumen",
+      "permanent": true
     }
   ],
   "crons": [

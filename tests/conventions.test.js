@@ -20,7 +20,10 @@ function read(rel) {
 // outside the module system.
 // ---------------------------------------------------------------------------
 describe("No inline executable scripts", () => {
-  const pages = glob.sync("*.html", { cwd: rootDir });
+  const pages = [
+    ...glob.sync("*.html", { cwd: rootDir }),
+    ...glob.sync("enterprise-copilot/*.html", { cwd: rootDir }),
+  ];
 
   describe.each(pages)("%s", (page) => {
     it("has no inline <script> with executable code", () => {
@@ -89,9 +92,10 @@ describe("vercel.json redirects are sound", () => {
 
   // Set of routes the site actually serves (clean URLs, no .html).
   const routes = new Set(
-    glob
-      .sync("*.html", { cwd: rootDir })
-      .map((f) => (f === "index.html" ? "/" : `/${f.replace(/\.html$/, "")}`)),
+    [
+      ...glob.sync("*.html", { cwd: rootDir }),
+      ...glob.sync("enterprise-copilot/*.html", { cwd: rootDir }),
+    ].map((f) => (f === "index.html" ? "/" : `/${f.replace(/\.html$/, "")}`)),
   );
   const sources = new Set(redirects.map((r) => r.source));
   const isStub = (slug) =>
@@ -137,8 +141,10 @@ describe("vercel.json redirects are sound", () => {
 // ---------------------------------------------------------------------------
 describe("Redirect stubs stay out of the sitemap", () => {
   const pages = JSON.parse(read("assets/data/pages.json"));
-  const stubs = glob
-    .sync("*.html", { cwd: rootDir })
+  const stubs = [
+    ...glob.sync("*.html", { cwd: rootDir }),
+    ...glob.sync("enterprise-copilot/*.html", { cwd: rootDir }),
+  ]
     .filter((f) => /http-equiv=["']refresh["']/i.test(read(f)))
     .map((f) => f.replace(/\.html$/, ""));
 

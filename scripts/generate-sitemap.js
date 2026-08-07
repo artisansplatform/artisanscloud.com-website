@@ -52,8 +52,10 @@ function main() {
   const { baseUrl } = parseArgs();
   const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
 
-  const pages = glob
-    .sync('*.html', { cwd: ROOT })
+  const pages = [
+    ...glob.sync('*.html', { cwd: ROOT }),
+    ...glob.sync('enterprise-copilot/*.html', { cwd: ROOT }),
+  ]
     .filter(f => PAGES_META[f.replace('.html', '')]?.sitemap !== false)
     .sort();
 

@@ -49,7 +49,7 @@ const pages = [
     title: "Enterprise AI",
     name: "enterprise-ai.html",
   },
-  { path: "/lumen", title: "Lumen", name: "lumen.html" },
+  { path: "/enterprise-copilot/lumen", title: "Lumen", name: "enterprise-copilot/lumen.html" },
   {
     path: "/merchandise-and-assortment-planning",
     title: "Merchandise & Assortment Planning",

@@ -17,7 +17,10 @@ const pagesJson = JSON.parse(
 // head; every other root page must use the shared head-meta partial.
 const STUB_PAGES = new Set(["retail-platform.html"]);
 
-const allPages = glob.sync("*.html", { cwd: rootDir });
+const allPages = [
+  ...glob.sync("*.html", { cwd: rootDir }),
+  ...glob.sync("enterprise-copilot/*.html", { cwd: rootDir }),
+];
 const partialPages = allPages.filter((p) => !STUB_PAGES.has(p));
 
 describe("pages.json / head-meta partial integrity", () => {
@@ -89,12 +92,13 @@ describe("pages.json / head-meta partial integrity", () => {
     for (const [slug, meta] of Object.entries(pagesJson)) {
       if (meta.og === false) continue;
       referenced.add(
-        meta.ogImage ? path.basename(meta.ogImage) : `${slug}.png`,
+        meta.ogImage ? meta.ogImage.replace(/^\/?assets\/og\//, "") : `${slug}.png`,
       );
     }
-    const onDisk = fs
-      .readdirSync(path.join(rootDir, "assets", "og"))
-      .filter((f) => f.endsWith(".png"));
+    const onDisk = glob
+      .sync("assets/og/**/*.png", { cwd: rootDir })
+      .map((f) => f.replace(/^assets\/og\//, ""))
+      .filter((f) => !f.startsWith("team/"));
     const orphans = onDisk.filter((f) => !referenced.has(f));
     expect(
       orphans,

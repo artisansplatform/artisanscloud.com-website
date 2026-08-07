@@ -37,6 +37,7 @@ const MARKUP_GLOBS = [
   "*.html",
   "partials/*.html",
   "team/*.html",
+  "enterprise-copilot/*.html",
   "assets/script/**/*.js",
 ];
 

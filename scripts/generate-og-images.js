@@ -427,6 +427,7 @@ async function main() {
     const png = await sharp(Buffer.from(svg)).png({ quality: 90 }).toBuffer();
 
     const outPath = join(OUT_DIR, `${page.file}.png`);
+    mkdirSync(dirname(outPath), { recursive: true });
     writeFileSync(outPath, png);
     generated++;
     console.log(`  ${page.file}.png (${(png.length / 1024).toFixed(1)} KB)`);

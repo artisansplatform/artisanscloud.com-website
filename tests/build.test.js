@@ -14,7 +14,10 @@ const distDir = path.join(rootDir, "dist");
 // Note: This matches the behavior of vite.config.js (line 8) which also uses
 // glob.sync('*.html') to build all HTML files in the root directory.
 // Any HTML file in the root will be built and tested - this is intentional.
-const expectedPages = glob.sync("*.html", { cwd: rootDir });
+const expectedPages = [
+  ...glob.sync("*.html", { cwd: rootDir }),
+  ...glob.sync("enterprise-copilot/*.html", { cwd: rootDir }),
+];
 
 describe("Build Verification Tests", () => {
   beforeAll(() => {
