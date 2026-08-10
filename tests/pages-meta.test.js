@@ -20,6 +20,9 @@ const STUB_PAGES = new Set(["retail-platform.html"]);
 const allPages = [
   ...glob.sync("*.html", { cwd: rootDir }),
   ...glob.sync("enterprise-copilot/*.html", { cwd: rootDir }),
+  ...glob.sync("unified-commerce/*.html", { cwd: rootDir }),
+  ...glob.sync("role-play-agent/*.html", { cwd: rootDir }),
+  ...glob.sync("knowledge-harvester/*.html", { cwd: rootDir }),
 ];
 const partialPages = allPages.filter((p) => !STUB_PAGES.has(p));
 

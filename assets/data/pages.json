@@ -382,7 +382,7 @@
     },
     "sitemap": false
   },
-  "role-play-agent": {
+  "role-play-agent/arena": {
     "title": "Arena RolePlay | AI Sales Coaching Platform | Artisans Cloud",
     "description": "Role Play Agent prepares your teams for real business situations before they happen. AI-powered simulations that build readiness, reduce response variability, and drive consistent execution across every role and team.",
     "keywords": "role play agent, AI readiness, enterprise simulation, sales readiness, customer service training, workforce execution, onboarding, consistent performance, Artisans Cloud",
@@ -464,7 +464,7 @@
     "sitemap": false,
     "description": "Thanks for reaching out to Artisans Cloud. Our team has received your message and will get back to you shortly."
   },
-  "nexus-unified-commerce": {
+  "unified-commerce/nexus": {
     "title": "Nexus Unified Commerce | Enterprise Retail & Omnichannel Platform | Artisans Cloud",
     "description": "Nexus Unified Commerce Platform connects stores, inventory, orders, and customer data across all retail channels into a single operational system for real-time execution.",
     "keywords": "Nexus unified commerce, unified commerce platform, omnichannel retail, enterprise retail platform, inventory management, order management, Artisans Cloud",
@@ -478,7 +478,7 @@
       "changefreq": "monthly"
     }
   },
-  "vault-knowledge-harvester": {
+  "knowledge-harvester/vault": {
     "title": "Vault Knowledge Harvester | Enterprise Knowledge Intelligence Platform | Artisans Cloud",
     "description": "Preserve organizational knowledge, scale expertise and strengthen continuity across the enterprise. Vault transforms fragmented enterprise knowledge into a connected organizational memory that supports workforce readiness, operational continuity and enterprise intelligence.",
     "keywords": "Vault, enterprise knowledge intelligence, knowledge management, knowledge continuity, organizational memory, digital experts, knowledge twins, workforce readiness, Artisans Cloud",

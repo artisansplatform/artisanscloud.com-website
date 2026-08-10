@@ -58,16 +58,21 @@ const pages = [
   { path: "/POS", title: "Point of Sale", name: "POS.html" },
   { path: "/404", title: "404", name: "404.html" },
   {
-    path: "/nexus-unified-commerce",
+    path: "/unified-commerce/nexus",
     title: "Unified Commerce",
-    name: "nexus-unified-commerce.html",
+    name: "unified-commerce/nexus.html",
   },
   { path: "/thank-you", title: "Thank You", name: "thank-you.html" },
   { path: "/request-demo", title: "Request a Demo", name: "request-demo.html" },
   {
-    path: "/role-play-agent",
+    path: "/role-play-agent/arena",
     title: "Role Play Agent",
-    name: "role-play-agent.html",
+    name: "role-play-agent/arena.html",
+  },
+  {
+    path: "/knowledge-harvester/vault",
+    title: "Knowledge Harvester",
+    name: "knowledge-harvester/vault.html",
   },
   {
     path: "/smarter-inventory-alerts",

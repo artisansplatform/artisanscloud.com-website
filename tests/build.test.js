@@ -17,6 +17,9 @@ const distDir = path.join(rootDir, "dist");
 const expectedPages = [
   ...glob.sync("*.html", { cwd: rootDir }),
   ...glob.sync("enterprise-copilot/*.html", { cwd: rootDir }),
+  ...glob.sync("unified-commerce/*.html", { cwd: rootDir }),
+  ...glob.sync("role-play-agent/*.html", { cwd: rootDir }),
+  ...glob.sync("knowledge-harvester/*.html", { cwd: rootDir }),
 ];
 
 describe("Build Verification Tests", () => {
@@ -170,7 +173,7 @@ describe("Build Verification Tests", () => {
       const sitemapPath = path.join(distDir, "sitemap.xml");
       const content = fs.readFileSync(sitemapPath, "utf-8");
       expect(content).toContain(
-        "<loc>https://www.artisanscloud.com/nexus-unified-commerce</loc>",
+        "<loc>https://www.artisanscloud.com/unified-commerce/nexus</loc>",
       );
     });
 

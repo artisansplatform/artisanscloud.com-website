@@ -170,11 +170,11 @@ test.describe("Navigation Tests", () => {
     test.use({ viewport: { width: 1280, height: 800 } });
 
     test("header link should be active on matching page", async ({ page }) => {
-      await page.goto("/nexus-unified-commerce", { waitUntil: 'domcontentloaded' });
+      await page.goto("/unified-commerce/nexus", { waitUntil: 'domcontentloaded' });
 
       // The "Unified Commerce" header link should have the active class
       const activeLink = page.locator(
-        'header .header-link.active[href="/nexus-unified-commerce"]',
+        'header .header-link.active[href="/unified-commerce/nexus"]',
       );
       await expect(activeLink).toHaveCount(1);
     });
@@ -198,11 +198,11 @@ test.describe("Navigation Tests", () => {
     test("footer nav link should be active on matching page", async ({
       page,
     }) => {
-      await page.goto("/nexus-unified-commerce", { waitUntil: 'domcontentloaded' });
+      await page.goto("/unified-commerce/nexus", { waitUntil: 'domcontentloaded' });
 
       // Footer "Unified Commerce" link should have the active class
       const footerActiveLink = page.locator(
-        'footer .flex.flex-col a.active[href="/nexus-unified-commerce"]',
+        'footer .flex.flex-col a.active[href="/unified-commerce/nexus"]',
       );
       await expect(footerActiveLink).toHaveCount(1);
     });
@@ -214,7 +214,7 @@ test.describe("Navigation Tests", () => {
 
       // Unified Commerce link should NOT be active
       const inactiveLink = page.locator(
-        'header .header-link.active[href="/nexus-unified-commerce"]',
+        'header .header-link.active[href="/unified-commerce/nexus"]',
       );
       await expect(inactiveLink).toHaveCount(0);
 
@@ -406,13 +406,13 @@ test.describe("Navigation Tests", () => {
   });
 
   test.describe("Redirects", () => {
-    test("retail-platform should redirect to nexus-unified-commerce", async ({
+    test("retail-platform should redirect to unified-commerce/nexus", async ({
       page,
     }) => {
       await page.goto("/retail-platform", { waitUntil: 'domcontentloaded' });
 
-      // Wait for URL to change to /nexus-unified-commerce
-      await expect(page).toHaveURL(/\/nexus-unified-commerce/);
+      // Wait for URL to change to /unified-commerce/nexus
+      await expect(page).toHaveURL(/\/unified-commerce\/nexus/);
 
       // Check that the page loaded successfully
       const heading = page.locator("#heroHeading");

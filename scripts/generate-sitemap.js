@@ -55,6 +55,9 @@ function main() {
   const pages = [
     ...glob.sync('*.html', { cwd: ROOT }),
     ...glob.sync('enterprise-copilot/*.html', { cwd: ROOT }),
+    ...glob.sync('unified-commerce/*.html', { cwd: ROOT }),
+    ...glob.sync('role-play-agent/*.html', { cwd: ROOT }),
+    ...glob.sync('knowledge-harvester/*.html', { cwd: ROOT }),
   ]
     .filter(f => PAGES_META[f.replace('.html', '')]?.sitemap !== false)
     .sort();

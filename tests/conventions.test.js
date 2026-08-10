@@ -23,6 +23,9 @@ describe("No inline executable scripts", () => {
   const pages = [
     ...glob.sync("*.html", { cwd: rootDir }),
     ...glob.sync("enterprise-copilot/*.html", { cwd: rootDir }),
+    ...glob.sync("unified-commerce/*.html", { cwd: rootDir }),
+    ...glob.sync("role-play-agent/*.html", { cwd: rootDir }),
+    ...glob.sync("knowledge-harvester/*.html", { cwd: rootDir }),
   ];
 
   describe.each(pages)("%s", (page) => {
@@ -95,6 +98,9 @@ describe("vercel.json redirects are sound", () => {
     [
       ...glob.sync("*.html", { cwd: rootDir }),
       ...glob.sync("enterprise-copilot/*.html", { cwd: rootDir }),
+      ...glob.sync("unified-commerce/*.html", { cwd: rootDir }),
+      ...glob.sync("role-play-agent/*.html", { cwd: rootDir }),
+      ...glob.sync("knowledge-harvester/*.html", { cwd: rootDir }),
     ].map((f) => (f === "index.html" ? "/" : `/${f.replace(/\.html$/, "")}`)),
   );
   const sources = new Set(redirects.map((r) => r.source));
@@ -144,6 +150,9 @@ describe("Redirect stubs stay out of the sitemap", () => {
   const stubs = [
     ...glob.sync("*.html", { cwd: rootDir }),
     ...glob.sync("enterprise-copilot/*.html", { cwd: rootDir }),
+    ...glob.sync("unified-commerce/*.html", { cwd: rootDir }),
+    ...glob.sync("role-play-agent/*.html", { cwd: rootDir }),
+    ...glob.sync("knowledge-harvester/*.html", { cwd: rootDir }),
   ]
     .filter((f) => /http-equiv=["']refresh["']/i.test(read(f)))
     .map((f) => f.replace(/\.html$/, ""));

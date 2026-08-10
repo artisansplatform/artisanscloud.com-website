@@ -119,7 +119,7 @@ All HTML pages follow a consistent structure:
 
 ### Navigation
 - **Clean URLs**: Pages accessible without `.html` extension
-- **Root-relative paths**: Use `/index`, `/nexus-unified-commerce`, etc.
+- **Root-relative paths**: Use `/index`, `/unified-commerce/nexus`, etc.
 - **Active states**: Manual `.active` class per page
 
 ## 🚢 Deployment

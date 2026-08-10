@@ -44,10 +44,14 @@ function devRoutingPlugin() {
   };
 }
 
-// Get all HTML files in the root directory, team/ subdirectory, and enterprise-copilot/ subdirectory
+// Get all HTML files in the root directory, team/ subdirectory, and other subdirectories
 const htmlFiles = glob.sync("*.html", { cwd: __dirname });
 const teamFiles = glob.sync("team/*.html", { cwd: __dirname });
 const enterpriseCopilotFiles = glob.sync("enterprise-copilot/*.html", { cwd: __dirname });
+const unifiedCommerceFiles = glob.sync("unified-commerce/*.html", { cwd: __dirname });
+const rolePlayAgentFiles = glob.sync("role-play-agent/*.html", { cwd: __dirname });
+const knowledgeHarvesterFiles = glob.sync("knowledge-harvester/*.html", { cwd: __dirname });
+
 const input = {};
 htmlFiles.forEach((file) => {
   const name = file.replace(".html", "");
@@ -58,6 +62,18 @@ teamFiles.forEach((file) => {
   input[name] = path.resolve(__dirname, file);
 });
 enterpriseCopilotFiles.forEach((file) => {
+  const name = file.replace(".html", "");
+  input[name] = path.resolve(__dirname, file);
+});
+unifiedCommerceFiles.forEach((file) => {
+  const name = file.replace(".html", "");
+  input[name] = path.resolve(__dirname, file);
+});
+rolePlayAgentFiles.forEach((file) => {
+  const name = file.replace(".html", "");
+  input[name] = path.resolve(__dirname, file);
+});
+knowledgeHarvesterFiles.forEach((file) => {
   const name = file.replace(".html", "");
   input[name] = path.resolve(__dirname, file);
 });
