@@ -1,26 +1,19 @@
 import fs from "fs";
-import { glob } from "glob";
 import path from "path";
 import { fileURLToPath } from "url";
 import { JSDOM } from "jsdom";
 import { beforeAll, describe, expect, it } from "vitest";
+import { allPages } from "../scripts/lib/site-files.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 const distDir = path.join(rootDir, "dist");
 
-// Auto-discover every built page (root + generated team cards) so new pages are
-// covered without touching this file. Mirrors the glob behavior in
-// vite.config.js and tests/build.test.js.
-const pages = [
-  ...glob.sync("*.html", { cwd: rootDir }),
-  ...glob.sync("team/*.html", { cwd: rootDir }),
-  ...glob.sync("enterprise-copilot/*.html", { cwd: rootDir }),
-  ...glob.sync("unified-commerce/*.html", { cwd: rootDir }),
-  ...glob.sync("role-play-agent/*.html", { cwd: rootDir }),
-  ...glob.sync("knowledge-harvester/*.html", { cwd: rootDir }),
-];
+// Every built page (root pages, generated team cards, and any subdirectory)
+// via the shared recursive discovery, so new pages are covered without
+// touching this file.
+const pages = allPages();
 
 // Parse a built page from dist/ (post-Handlebars) into a DOM document.
 function loadPage(page) {

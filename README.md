@@ -5,7 +5,7 @@ Static marketing website for **Artisans Cloud** - an enterprise intelligence pla
 ## 🚀 Tech Stack
 
 - **HTML/CSS/JavaScript** - Vanilla implementation, no frameworks
-- **Tailwind CSS v4** - Utility-first styling with custom configuration
+- **Tailwind CSS v4** - Utility-first styling; theme lives in the `@theme` block of `assets/style/input.css` (no `tailwind.config.js`)
 - **Handlebars** - Template partials for shared components (header/footer)
 - **Swiper.js** - Touch-enabled carousels and sliders
 - **Lenis** - Smooth scroll library
@@ -213,7 +213,7 @@ For complete template example, see [DEVELOPMENT.md](DEVELOPMENT.md).
 
 1. Modify HTML classes (Tailwind utilities)
 2. For new utilities, update [assets/style/input.css](assets/style/input.css)
-3. For theme changes, edit [tailwind.config.js](tailwind.config.js)
+3. For theme changes (colors, fonts, breakpoints), edit the `@theme` block in [assets/style/input.css](assets/style/input.css). There is intentionally no `tailwind.config.js`: Tailwind v4 ignores it unless the CSS opts in via `@config`, so a config file here would be silently dead.
 4. Dev server auto-compiles and reloads
 
 ## 📝 Notes

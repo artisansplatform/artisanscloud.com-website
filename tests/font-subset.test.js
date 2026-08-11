@@ -3,6 +3,7 @@ import { glob } from "glob";
 import path from "path";
 import { fileURLToPath } from "url";
 import { describe, expect, it } from "vitest";
+import { allPages, partialFiles } from "../scripts/lib/site-files.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -32,17 +33,16 @@ const PRELOAD_SOURCES = [
   "scripts/generate-team-cards.js",
 ];
 
-// Files whose markup decides which font variants the browser actually renders.
-const MARKUP_GLOBS = [
-  "*.html",
-  "partials/*.html",
-  "team/*.html",
-  "enterprise-copilot/*.html",
-  "unified-commerce/*.html",
-  "role-play-agent/*.html",
-  "knowledge-harvester/*.html",
-  "assets/script/**/*.js",
-];
+// Files whose markup decides which font variants the browser actually renders:
+// every page (shared recursive discovery), every partial, and the JS modules
+// that render markup at runtime.
+function markupFiles() {
+  return [
+    ...allPages(),
+    ...partialFiles(),
+    ...glob.sync("assets/script/**/*.js", { cwd: rootDir }),
+  ];
+}
 
 function read(rel) {
   return fs.readFileSync(path.join(rootDir, rel), "utf-8");
@@ -156,13 +156,9 @@ describe("Self-hosted font subset stays in sync with usage", () => {
   });
 
   it("declares every font weight/style the markup actually uses", () => {
-    const markupFiles = MARKUP_GLOBS.flatMap((g) =>
-      glob.sync(g, { cwd: rootDir }),
-    );
-
     // variant key -> example "file: class snippet" for actionable failures
     const missing = new Map();
-    for (const file of markupFiles) {
+    for (const file of markupFiles()) {
       const content = read(file);
       for (const m of content.matchAll(/class\s*=\s*["'`]([^"'`]*)["'`]/g)) {
         for (const variant of requiredFromClassValue(m[1])) {

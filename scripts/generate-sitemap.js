@@ -3,8 +3,9 @@
 /**
  * Build-time sitemap generator.
  *
- * Discovers all *.html files in the project root (same glob as vite.config.js),
- * excludes utility/non-indexable pages, and writes dist/sitemap.xml.
+ * Discovers every content page via scripts/lib/site-files.js (the same
+ * discovery the Vite build and the test suite use), excludes utility and
+ * non-indexable pages, and writes dist/sitemap.xml.
  *
  * Run automatically as part of `npm run build` via the build:sitemap script.
  * Must run AFTER build:html (Vite) so that dist/ already exists.
@@ -13,11 +14,11 @@
  *   node scripts/generate-sitemap.js [--base-url https://example.com]
  */
 
-import { glob } from "glob";
 import { writeFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { loadPages } from "./lib/page-meta.js";
+import { contentPages } from "./lib/site-files.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -52,15 +53,9 @@ function main() {
   const { baseUrl } = parseArgs();
   const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
 
-  const pages = [
-    ...glob.sync("*.html", { cwd: ROOT }),
-    ...glob.sync("enterprise-copilot/*.html", { cwd: ROOT }),
-    ...glob.sync("unified-commerce/*.html", { cwd: ROOT }),
-    ...glob.sync("role-play-agent/*.html", { cwd: ROOT }),
-    ...glob.sync("knowledge-harvester/*.html", { cwd: ROOT }),
-  ]
-    .filter((f) => PAGES_META[f.replace(".html", "")]?.sitemap !== false)
-    .sort();
+  const pages = contentPages().filter(
+    (f) => PAGES_META[f.replace(".html", "")]?.sitemap !== false,
+  );
 
   const urlEntries = pages.map((page) => {
     const { priority, changefreq } =

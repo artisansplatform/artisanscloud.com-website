@@ -1,99 +1,31 @@
 import { expect, test } from "@playwright/test";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import { contentPages } from "../../scripts/lib/site-files.js";
 
-// All pages to test - matches the pages in the repository
-const pages = [
-  { path: "/", title: "Artisans Cloud", name: "index.html" },
-  { path: "/about-us", title: "About Us", name: "about-us.html" },
-  { path: "/automation", title: "Automation", name: "automation.html" },
-  { path: "/blog-detail", title: "Blog Detail", name: "blog-detail.html" },
-  {
-    path: "/articles-and-resources",
-    title: "Articles and Resources",
-    name: "articles-and-resources.html",
-  },
-  { path: "/browser-pos", title: "Browser POS", name: "browser-pos.html" },
-  { path: "/contact-us", title: "Contact Us", name: "contact-us.html" },
-  {
-    path: "/chatbots-for-quick-support",
-    title: "Chatbots for Quick Support",
-    name: "chatbots-for-quick-support.html",
-  },
-  {
-    path: "/customer-feedback-insights",
-    title: "Customer Feedback Insights",
-    name: "customer-feedback-insights.html",
-  },
-  { path: "/demand-flow", title: "Demand Flow", name: "demand-flow.html" },
-  {
-    path: "/customer-experience-management",
-    title: "Customer Experience Management",
-    name: "customer-experience-management.html",
-  },
-  {
-    path: "/d2c-eCommerce",
-    title: "D2C eCommerce",
-    name: "d2c-eCommerce.html",
-  },
-  {
-    path: "/data-intelligence",
-    title: "Data Intelligence",
-    name: "data-intelligence.html",
-  },
-  {
-    path: "/distributed-order-management",
-    title: "Distributed Order Management",
-    name: "distributed-order-management.html",
-  },
-  {
-    path: "/enterprise-ai",
-    title: "Enterprise AI",
-    name: "enterprise-ai.html",
-  },
-  {
-    path: "/enterprise-copilot/lumen",
-    title: "Lumen",
-    name: "enterprise-copilot/lumen.html",
-  },
-  {
-    path: "/merchandise-and-assortment-planning",
-    title: "Merchandise & Assortment Planning",
-    name: "merchandise-and-assortment-planning.html",
-  },
-  { path: "/POS", title: "Point of Sale", name: "POS.html" },
-  { path: "/404", title: "404", name: "404.html" },
-  {
-    path: "/unified-commerce/nexus",
-    title: "Unified Commerce",
-    name: "unified-commerce/nexus.html",
-  },
-  { path: "/thank-you", title: "Thank You", name: "thank-you.html" },
-  { path: "/request-demo", title: "Request a Demo", name: "request-demo.html" },
-  {
-    path: "/role-play-agent/arena",
-    title: "Role Play Agent",
-    name: "role-play-agent/arena.html",
-  },
-  {
-    path: "/knowledge-harvester/vault",
-    title: "Knowledge Harvester",
-    name: "knowledge-harvester/vault.html",
-  },
-  {
-    path: "/smarter-inventory-alerts",
-    title: "Smarter Inventory Alerts",
-    name: "smarter-inventory-alerts.html",
-  },
-  {
-    path: "/dynamic-pricing",
-    title: "Dynamic Pricing",
-    name: "dynamic-pricing.html",
-  },
-  {
-    path: "/store-layout-optimization",
-    title: "Store Layout Optimization",
-    name: "store-layout-optimization.html",
-  },
-];
+const rootDir = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "..",
+  "..",
+);
+
+// Redirect stubs (meta refresh) immediately navigate away and render no
+// header/footer, so the layout checks below skip them.
+function isRedirectStub(file) {
+  return /http-equiv=["']refresh["']/i.test(
+    fs.readFileSync(path.join(rootDir, file), "utf-8"),
+  );
+}
+
+// Every content page, discovered from disk via scripts/lib/site-files.js, so
+// a new page gets smoke coverage without anyone editing this file. Team cards
+// are generated from one template and are covered by the unit test suite.
+const pages = contentPages().map((file) => ({
+  name: file,
+  path: file === "index.html" ? "/" : `/${file.replace(/\.html$/, "")}`,
+  stub: isRedirectStub(file),
+}));
 
 test.describe("Page Load Tests", () => {
   // Test each page loads correctly
@@ -136,8 +68,9 @@ test.describe("Page Load Tests", () => {
       expect(errors).toEqual([]);
     });
 
-    // Skip header/footer check for 404 page as it doesn't have them by design
-    if (page.path !== "/404") {
+    // The 404 page has no header/footer by design; redirect stubs navigate
+    // away before the layout can be asserted.
+    if (page.path !== "/404" && !page.stub) {
       test(`${page.name} should have header and footer visible`, async ({
         page: browserPage,
       }) => {

@@ -2,8 +2,8 @@ import { defineConfig } from "vite";
 import handlebars from "vite-plugin-handlebars";
 import path from "path";
 import fs from "fs";
-import { glob } from "glob";
 import { loadPages, headContext } from "./scripts/lib/page-meta.js";
+import { allPages } from "./scripts/lib/site-files.js";
 
 // Load vercel.json redirects for local simulation
 const vercelConfig = JSON.parse(
@@ -52,45 +52,14 @@ function devRoutingPlugin() {
   };
 }
 
-// Get all HTML files in the root directory, team/ subdirectory, and other subdirectories
-const htmlFiles = glob.sync("*.html", { cwd: __dirname });
-const teamFiles = glob.sync("team/*.html", { cwd: __dirname });
-const enterpriseCopilotFiles = glob.sync("enterprise-copilot/*.html", {
-  cwd: __dirname,
-});
-const unifiedCommerceFiles = glob.sync("unified-commerce/*.html", {
-  cwd: __dirname,
-});
-const rolePlayAgentFiles = glob.sync("role-play-agent/*.html", {
-  cwd: __dirname,
-});
-const knowledgeHarvesterFiles = glob.sync("knowledge-harvester/*.html", {
-  cwd: __dirname,
-});
-
+// Every source page becomes a Rollup input. Discovery is recursive (see
+// scripts/lib/site-files.js), so pages in a brand-new directory are built
+// without touching this file.
 const input = {};
-htmlFiles.forEach((file) => {
-  const name = file.replace(".html", "");
-  input[name] = path.resolve(__dirname, file);
-});
-teamFiles.forEach((file) => {
-  const name = file.replace(".html", "").replace("/", "-");
-  input[name] = path.resolve(__dirname, file);
-});
-enterpriseCopilotFiles.forEach((file) => {
-  const name = file.replace(".html", "");
-  input[name] = path.resolve(__dirname, file);
-});
-unifiedCommerceFiles.forEach((file) => {
-  const name = file.replace(".html", "");
-  input[name] = path.resolve(__dirname, file);
-});
-rolePlayAgentFiles.forEach((file) => {
-  const name = file.replace(".html", "");
-  input[name] = path.resolve(__dirname, file);
-});
-knowledgeHarvesterFiles.forEach((file) => {
-  const name = file.replace(".html", "");
+allPages().forEach((file) => {
+  const name = file.startsWith("team/")
+    ? file.replace(".html", "").replace("/", "-")
+    : file.replace(".html", "");
   input[name] = path.resolve(__dirname, file);
 });
 

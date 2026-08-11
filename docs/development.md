@@ -13,7 +13,7 @@ npm run dev
 
 ## Adding a New Page
 
-1. **Create HTML** in the repository root (e.g., `new-solution.html`) or inside a subdirectory (e.g., `enterprise-copilot/lumen.html`, `unified-commerce/nexus.html`)
+1. **Create HTML** in the repository root (e.g., `new-solution.html`) or inside a subdirectory (e.g., `enterprise-copilot/lumen.html`, `unified-commerce/nexus.html`). Page discovery is recursive and centralized in `scripts/lib/site-files.js`, so the build, the sitemap, the unit tests, and the e2e smoke tests all pick the page up automatically, even in a brand-new directory. Do not add per-directory globs anywhere; `tests/coverage-guard.test.js` fails the build if one appears.
 2. **Use template structure** with Handlebars partials. The whole `<head>` comes from the `head-meta` partial:
 
    ```html
@@ -269,7 +269,11 @@ Run just these checks with `npm run test:seo`. If you add a page that legitimate
 | Font subset      | `tests/font-subset.test.js`     | a font weight/style used in markup with no `@font-face`, a missing woff2 file, or a stray Google Fonts reference           |
 | Security headers | `tests/vercel-security.test.js` | missing security headers / cron config in `vercel.json`                                                                    |
 
-Per-area run scripts: `test:seo`, `test:meta`, `test:conventions`, `test:font`, `test:links`, `test:build`.
+| Coverage guard | `tests/coverage-guard.test.js` | drift between page discovery and git, sitemap gaps/ghosts, hardcoded page globs outside `site-files.js`, a resurrected (dead) `tailwind.config.js`, full pages saved into `partials/`, growth of the discovery exclusion list |
+
+Per-area run scripts: `test:seo`, `test:meta`, `test:conventions`, `test:font`, `test:links`, `test:build`, `test:guard`.
+
+The coverage guard exists because checks themselves can rot: PR #111 showed that hardcoded directory lists in configs and tests go stale silently when pages move into new directories. Discovery now lives in one file (`scripts/lib/site-files.js`) and the guard cross-checks it against independent ground truth (git, the built sitemap) in both directions. When you add a check that iterates pages, import `allPages()` / `contentPages()` / `partialFiles()` from `site-files.js` instead of writing a glob.
 
 Code style is pinned by `.prettierrc.json` / `.prettierignore`; format touched files with `npm run prettier` (a few legacy pages are not yet fully formatted and are out of scope for incremental changes).
 

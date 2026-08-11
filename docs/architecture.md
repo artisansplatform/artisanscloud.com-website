@@ -20,12 +20,12 @@ All HTML pages follow identical boilerplate:
 
 ## Styling Architecture
 
-- **Tailwind CSS v4** (`tailwind.config.js`) - utility-first CSS framework
+- **Tailwind CSS v4** - utility-first CSS framework. There is deliberately no `tailwind.config.js`: v4 auto-detects source files (everything not gitignored) and only loads a JS config through an explicit `@config` directive, which we do not use. Theme values live in the `@theme` block of `assets/style/input.css`. `tests/coverage-guard.test.js` fails if a config file reappears, because v4 would silently ignore it.
 - **Input/Output CSS**: `assets/style/input.css` (source) → `assets/style/output.css` (compiled, loaded by all pages)
 - **Fonts**: Poppins is self-hosted. woff2 subsets live in `assets/fonts/poppins/`, declared as `@font-face` in `input.css`; `partials/head-meta.html` and the team-card generator preload the 400/600 latin files. No runtime requests to Google Fonts. See [Development: Fonts](development.md#fonts).
 - **Build-time**: CSS compiled via `npm run dev:tailwind` (watch) or `npm run build:css` (production)
 - **Naming**: CSS classes use Tailwind conventions + custom utilities (`.ripple`, `.dropdown-toggle`, `.dropdown-menu`)
-- **Colors**: Custom color classes defined in config: `text-heading`, `text-primary`, `bg-primary`, `light-sky`
+- **Colors**: Custom color tokens defined in the `@theme` block of `assets/style/input.css`: `text-heading`, `text-primary`, `bg-primary`, `light-sky`
 - **Responsive**: Mobile-first approach using Tailwind breakpoints (`sm:` 640px, `md:` 768px, `lg:` 1024px, `xl:` 1280px)
 
 ## JavaScript Patterns
@@ -219,20 +219,21 @@ npm run generate:og    # Regenerate all OG images (requires network for font dow
 `sitemap.xml` and `robots.txt` are generated/copied automatically on every build - no manual maintenance required.
 
 ```
-Root + nested *.html files  ──(glob.sync)──>  scripts/generate-sitemap.js
-                                                        │
-                                                        ▼
-                                              dist/sitemap.xml  (37 URLs, YYYY-MM-DD lastmod)
+Root + nested *.html files  ──(scripts/lib/site-files.js)──>  scripts/generate-sitemap.js
+                                                                        │
+                                                                        ▼
+                                                              dist/sitemap.xml  (YYYY-MM-DD lastmod)
 
 public/robots.txt  ──(Vite passthrough)──>  dist/robots.txt
 ```
 
 ### Key files
 
-| File                          | Purpose                                                                                       |
-| ----------------------------- | --------------------------------------------------------------------------------------------- |
-| `scripts/generate-sitemap.js` | Build script: discovers all `*.html` pages, excludes utility pages, writes `dist/sitemap.xml` |
-| `public/robots.txt`           | Static file copied to `dist/robots.txt`; references the sitemap URL                           |
+| File                          | Purpose                                                                                                                        |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `scripts/lib/site-files.js`   | Single source of truth for page discovery (recursive, short exclusion list); shared by Vite, the sitemap script, and all tests |
+| `scripts/generate-sitemap.js` | Build script: takes content pages from `site-files.js`, excludes utility pages, writes `dist/sitemap.xml`                      |
+| `public/robots.txt`           | Static file copied to `dist/robots.txt`; references the sitemap URL                                                            |
 
 ### Excluded pages
 
