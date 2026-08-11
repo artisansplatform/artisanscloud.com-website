@@ -308,12 +308,12 @@
     }
   },
   "enterprise-copilot/lumen": {
-    "title": "Lumen Enterprise Copilot | AI Workflows & Operational Intelligence | Artisans Cloud",
+    "title": "Enterprise AI Copilot | Lumen | Artisans Cloud",
     "description": "Lumen unifies fragmented systems, workflows and operational knowledge into a connected intelligence layer designed for intelligent enterprise execution.",
     "keywords": "Lumen, enterprise intelligence layer, connected intelligence, enterprise execution, knowledge contextualization, workflow automation, enterprise AI, Artisans Cloud",
     "ogCard": {
-      "title": "Lumen",
-      "subtitle": "Enterprise intelligence layer for connected execution"
+      "title": "Enterprise AI\nCopilot",
+      "subtitle": "Lumen | Artisans Cloud"
     },
     "sitemap": {
       "priority": "0.8",
@@ -383,13 +383,13 @@
     "sitemap": false
   },
   "role-play-agent/arena": {
-    "title": "Arena RolePlay | AI Sales Coaching Platform | Artisans Cloud",
+    "title": "AI Role-Play Platform for Workforce Training | Arena | Artisans Cloud",
     "description": "Role Play Agent prepares your teams for real business situations before they happen. AI-powered simulations that build readiness, reduce response variability, and drive consistent execution across every role and team.",
     "keywords": "role play agent, AI readiness, enterprise simulation, sales readiness, customer service training, workforce execution, onboarding, consistent performance, Artisans Cloud",
     "ogDescription": "Role Play Agent prepares your teams for real situations before they happen. AI-powered simulations that build readiness, reduce variability, and drive consistent execution at scale.",
     "ogCard": {
-      "title": "Role Play Agent",
-      "subtitle": "AI-powered readiness simulations"
+      "title": "AI Role-Play\nPlatform",
+      "subtitle": "Workforce Training | Arena"
     },
     "sitemap": {
       "priority": "0.8",
@@ -465,13 +465,13 @@
     "description": "Thanks for reaching out to Artisans Cloud. Our team has received your message and will get back to you shortly."
   },
   "unified-commerce/nexus": {
-    "title": "Nexus Unified Commerce | Enterprise Retail & Omnichannel Platform | Artisans Cloud",
+    "title": "Unified Commerce Platform | Nexus | Artisans Cloud",
     "description": "Nexus Unified Commerce Platform connects stores, inventory, orders, and customer data across all retail channels into a single operational system for real-time execution.",
     "keywords": "Nexus unified commerce, unified commerce platform, omnichannel retail, enterprise retail platform, inventory management, order management, Artisans Cloud",
-    "ogTitle": "Nexus Unified Commerce | Enterprise Retail & Omnichannel Platform | Artisans Cloud",
+    "ogTitle": "Unified Commerce Platform | Nexus | Artisans Cloud",
     "ogCard": {
-      "title": "Nexus Unified\nCommerce",
-      "subtitle": "Platform for Modern Retail Enterprises"
+      "title": "Unified Commerce\nPlatform",
+      "subtitle": "Nexus | Artisans Cloud"
     },
     "sitemap": {
       "priority": "0.9",
@@ -479,14 +479,14 @@
     }
   },
   "knowledge-harvester/vault": {
-    "title": "Vault Knowledge Harvester | Enterprise Knowledge Intelligence Platform | Artisans Cloud",
+    "title": "AI Knowledge Management Platform | Vault | Artisans Cloud",
     "description": "Preserve organizational knowledge, scale expertise and strengthen continuity across the enterprise. Vault transforms fragmented enterprise knowledge into a connected organizational memory that supports workforce readiness, operational continuity and enterprise intelligence.",
     "keywords": "Vault, enterprise knowledge intelligence, knowledge management, knowledge continuity, organizational memory, digital experts, knowledge twins, workforce readiness, Artisans Cloud",
-    "ogTitle": "Vault Knowledge Harvester | Enterprise Knowledge Intelligence Platform | Artisans Cloud",
+    "ogTitle": "AI Knowledge Management Platform | Vault | Artisans Cloud",
     "ogDescription": "Preserve organizational knowledge, scale expertise and strengthen continuity across the enterprise. Vault transforms fragmented enterprise knowledge into a connected organizational memory.",
     "ogCard": {
-      "title": "Vault",
-      "subtitle": "Enterprise Knowledge Intelligence"
+      "title": "AI Knowledge\nManagement Platform",
+      "subtitle": "Vault | Artisans Cloud"
     }
   },
   "warehouse-management-system": {
