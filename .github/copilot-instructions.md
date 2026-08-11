@@ -35,6 +35,25 @@ npm run check:images     # Flag staged or all assets/ images that exceed size th
 npm run optimize:images  # Re-encode raster images in place via sharp (pass paths after --)
 ```
 
+## AI Agent Guardrails: The "Butterfly Effect" Check
+
+**Before completing ANY task**, you (the AI) MUST perform a global impact analysis to ensure no hidden dependencies or "tiny things" are missed. Whenever you make a change, always ask yourself: "What else does this break or affect?"
+
+1. **Did you add a new file or directory?** 
+   - Does Tailwind know about it? (Update `tailwind.config.js`)
+   - Do the test suites know about it? (Update glob patterns in `tests/seo.test.js` and `tests/font-subset.test.js`)
+2. **Did you rename a file or change a URL?**
+   - Did you add a 301 redirect? (Update `vercel.json`)
+   - Did you update its metadata? (Update `assets/data/pages.json`)
+   - Did you break internal links? (Search the codebase for the old URL)
+3. **Did you add external assets (images, fonts, scripts)?**
+   - Are images optimized? (Check size limits)
+   - Are fonts self-hosted? (No Google Fonts allowed)
+   - Is it allowed by the CSP? (Update `vercel.json` Content-Security-Policy if adding external scripts)
+
+If you skip these checks, you will break the production build or SEO metrics. Always run `npm test` before concluding your work.
+
+
 ## Gotchas & Landmines
 
 - **Header/Footer are Handlebars partials** - edit `partials/header.html` or `partials/footer.html` ONLY. Never duplicate header/footer HTML into individual pages. `{{> header}}` and `{{> footer}}` are replaced at build time.
@@ -55,6 +74,7 @@ npm run optimize:images  # Re-encode raster images in place via sharp (pass path
 - **Fonts are self-hosted** - Poppins woff2 subsets live in `assets/fonts/poppins/` with `@font-face` blocks in `assets/style/input.css`; nothing loads from Google Fonts at runtime. To use a new weight or style, download its latin + latin-ext woff2 files and add matching `@font-face` blocks first (see `docs/development.md`, Fonts), otherwise the browser synthesizes it. `tests/font-subset.test.js` fails if markup uses an undeclared variant, a declared font file is missing, or anything references `fonts.googleapis.com` again.
 - **URL Redirects on File Rename** - Every time an AI or user renames a file (changing an existing URL), a corresponding redirect rule from the old URL to the new URL MUST be added to the `redirects` list in `vercel.json`. `tests/conventions.test.js` checks that every redirect destination resolves, that a redirect never shadows a live content page, and that meta-refresh redirect stubs are marked `"sitemap": false` in `pages.json`.
 - **Content Security Policy** - `vercel.json` defines an enforced CSP (`Content-Security-Policy`; see `docs/architecture.md`). If you add a third-party script, style host, image host, or network call, add its origin to the matching `script-src`/`connect-src`/etc. directive, otherwise it is reported (and, once enforcement is on, blocked). Never add `'unsafe-inline'` to `script-src`; put JS in a module instead. `tests/vercel-security.test.js` guards the core directives.
+- **Nested Page Directories** - If you create a new nested directory for HTML pages (e.g., `/new-product/*.html`), you MUST add its glob pattern to three places: `tailwind.config.js` (so Tailwind doesn't purge its CSS classes), `tests/font-subset.test.js` (so font-weight usage is audited), and `tests/seo.test.js` (so SEO invariants like `<h1>` and `og:url` are checked). Failing to do this breaks production styles and silently bypasses SEO tests.
 
 ## Documentation Rule
 **After every code change, update the relevant docs.** This is mandatory, not optional.
