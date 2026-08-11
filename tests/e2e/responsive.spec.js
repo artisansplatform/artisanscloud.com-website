@@ -16,7 +16,7 @@ const pagesToTest = [
 ];
 
 async function waitForPageReady(page) {
-  await page.waitForLoadState('domcontentloaded');
+  await page.waitForLoadState("domcontentloaded");
   await expect(page.locator("body")).toBeVisible();
 }
 
@@ -31,7 +31,7 @@ test.describe("Responsive Layout Tests", () => {
         test(`${page.name} should have visible header at ${viewport.name}`, async ({
           page: browserPage,
         }) => {
-          await browserPage.goto(page.path, { waitUntil: 'domcontentloaded' });
+          await browserPage.goto(page.path, { waitUntil: "domcontentloaded" });
 
           const header = browserPage.locator("header");
           await expect(header).toBeVisible();
@@ -40,7 +40,7 @@ test.describe("Responsive Layout Tests", () => {
         test(`${page.name} should not have horizontal overflow at ${viewport.name}`, async ({
           page: browserPage,
         }) => {
-          await browserPage.goto(page.path, { waitUntil: 'domcontentloaded' });
+          await browserPage.goto(page.path, { waitUntil: "domcontentloaded" });
           await waitForPageReady(browserPage);
 
           // Check if page has horizontal scrollbar
@@ -57,7 +57,7 @@ test.describe("Responsive Layout Tests", () => {
         test(`${page.name} should render content correctly at ${viewport.name}`, async ({
           page: browserPage,
         }) => {
-          await browserPage.goto(page.path, { waitUntil: 'domcontentloaded' });
+          await browserPage.goto(page.path, { waitUntil: "domcontentloaded" });
 
           // Wait for page to be ready instead of relying on networkidle
           await waitForPageReady(browserPage);
@@ -79,7 +79,7 @@ test.describe("Responsive Layout Tests", () => {
     test("header navigation should be collapsed on mobile", async ({
       page,
     }) => {
-      await page.goto("/", { waitUntil: 'domcontentloaded' });
+      await page.goto("/", { waitUntil: "domcontentloaded" });
 
       // Desktop navigation should be hidden on mobile
       // Mobile menu button should be visible
@@ -93,7 +93,7 @@ test.describe("Responsive Layout Tests", () => {
     });
 
     test("content should stack vertically on mobile", async ({ page }) => {
-      await page.goto("/", { waitUntil: 'domcontentloaded' });
+      await page.goto("/", { waitUntil: "domcontentloaded" });
 
       // Page should not be too wide
       const bodyWidth = await page.evaluate(() => document.body.scrollWidth);
@@ -110,7 +110,7 @@ test.describe("Responsive Layout Tests", () => {
     test("header navigation should be expanded on desktop", async ({
       page,
     }) => {
-      await page.goto("/", { waitUntil: 'domcontentloaded' });
+      await page.goto("/", { waitUntil: "domcontentloaded" });
 
       // Desktop navigation links should be visible (using header-link class)
       const navLinks = page.locator("header .header-link").first();
@@ -118,7 +118,7 @@ test.describe("Responsive Layout Tests", () => {
     });
 
     test("content should have proper spacing on desktop", async ({ page }) => {
-      await page.goto("/", { waitUntil: 'domcontentloaded' });
+      await page.goto("/", { waitUntil: "domcontentloaded" });
 
       // Just verify the page renders without horizontal overflow
       const hasHorizontalScroll = await page.evaluate(() => {
@@ -136,7 +136,7 @@ test.describe("Responsive Layout Tests", () => {
     test.use({ viewport: { width: 768, height: 1024 } });
 
     test("tablet viewport should render properly", async ({ page }) => {
-      await page.goto("/", { waitUntil: 'domcontentloaded' });
+      await page.goto("/", { waitUntil: "domcontentloaded" });
 
       // Check header is visible
       const header = page.locator("header");
@@ -165,7 +165,7 @@ test.describe("Responsive Layout Tests", () => {
       });
       const newPage = await context.newPage();
 
-      await newPage.goto("/", { waitUntil: 'domcontentloaded' });
+      await newPage.goto("/", { waitUntil: "domcontentloaded" });
 
       // Check desktop layout
       let header = newPage.locator("header");

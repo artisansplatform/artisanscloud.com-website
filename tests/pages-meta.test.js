@@ -95,7 +95,9 @@ describe("pages.json / head-meta partial integrity", () => {
     for (const [slug, meta] of Object.entries(pagesJson)) {
       if (meta.og === false) continue;
       referenced.add(
-        meta.ogImage ? meta.ogImage.replace(/^\/?assets\/og\//, "") : `${slug}.png`,
+        meta.ogImage
+          ? meta.ogImage.replace(/^\/?assets\/og\//, "")
+          : `${slug}.png`,
       );
     }
     const onDisk = glob

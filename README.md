@@ -32,6 +32,7 @@ npm run dev
 ```
 
 This command starts:
+
 - **Vite dev server** at `http://localhost:3000/` (auto-reload on file changes)
 - **Tailwind CSS watch** (compiles CSS automatically)
 
@@ -44,6 +45,7 @@ npm run build
 ```
 
 This compiles:
+
 - **Tailwind CSS** (minified) → `assets/style/output.css`
 - **HTML templates** (with partials) → `dist/` directory
 
@@ -59,21 +61,21 @@ Starts a local server to preview the production build.
 
 ## 📦 Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start dev server + Tailwind watch (parallel) |
-| `npm run dev:tailwind` | Run Tailwind CSS watch only |
-| `npm run dev:server` | Run Vite dev server only |
-| `npm run build` | Build for production (CSS + HTML to `dist/`) |
-| `npm run build:css` | Compile Tailwind CSS only |
-| `npm run build:html` | Build HTML templates only |
-| `npm run preview` | Preview production build locally |
-| `npm test` | Build the site and run all unit tests |
-| `npm run test:build` | Run build verification tests |
-| `npm run test:links` | Run link validation tests |
-| `npm run test:e2e` | Run Playwright E2E tests (headless) |
-| `npm run test:e2e:ui` | Open Playwright UI for debugging tests |
-| `npm run test:e2e:headed` | Run E2E tests with visible browser |
+| Command                   | Description                                  |
+| ------------------------- | -------------------------------------------- |
+| `npm run dev`             | Start dev server + Tailwind watch (parallel) |
+| `npm run dev:tailwind`    | Run Tailwind CSS watch only                  |
+| `npm run dev:server`      | Run Vite dev server only                     |
+| `npm run build`           | Build for production (CSS + HTML to `dist/`) |
+| `npm run build:css`       | Compile Tailwind CSS only                    |
+| `npm run build:html`      | Build HTML templates only                    |
+| `npm run preview`         | Preview production build locally             |
+| `npm test`                | Build the site and run all unit tests        |
+| `npm run test:build`      | Run build verification tests                 |
+| `npm run test:links`      | Run link validation tests                    |
+| `npm run test:e2e`        | Run Playwright E2E tests (headless)          |
+| `npm run test:e2e:ui`     | Open Playwright UI for debugging tests       |
+| `npm run test:e2e:headed` | Run E2E tests with visible browser           |
 
 ## 🎨 Development Patterns
 
@@ -85,21 +87,27 @@ The site now uses **Handlebars partials** for shared components:
 - **Footer**: `partials/footer.html` (links, contact info, copyright)
 
 **Benefits**:
+
 - ✅ Edit header/footer once, updates all pages automatically
 - ✅ Guaranteed consistency across the site
 - ✅ No framework overhead - still generates static HTML
 
 **Usage in HTML files**:
+
 ```html
-{{> header}}  <!-- Includes partials/header.html -->
+{{> header}}
+<!-- Includes partials/header.html -->
 <!-- Your page content -->
-{{> footer}}  <!-- Includes partials/footer.html -->
+{{> footer}}
+<!-- Includes partials/footer.html -->
 ```
 
 For detailed instructions, see [DEVELOPMENT.md](DEVELOPMENT.md).
 
 ### Page Structure
+
 All HTML pages follow a consistent structure:
+
 1. **Head section** - Meta tags, title, stylesheets
 2. **Header partial** - `{{> header}}` placeholder
 3. **Main content** - Page-specific sections
@@ -107,17 +115,20 @@ All HTML pages follow a consistent structure:
 5. **Scripts** - Lenis, Swiper, analytics
 
 ### Styling Conventions
+
 - **Tailwind classes** for all styling (no custom CSS files)
 - **Custom utilities**: `.ripple`, `.dropdown-toggle`, `.dropdown-menu`
 - **Color scheme**: `text-heading`, `text-primary`, `bg-primary`, `light-sky`
 - **Mobile breakpoint**: `lg:` (1024px) for desktop/mobile layouts
 
 ### JavaScript Architecture
+
 - **Modular structure**: Feature code is split into `assets/script/modules/*.js`
 - **Entrypoint**: [assets/script/main.js](assets/script/main.js) imports modules and initializes them
 - **Initialization pattern**: Most modules run from `DOMContentLoaded`; `multi-select` initializes immediately
 
 ### Navigation
+
 - **Clean URLs**: Pages accessible without `.html` extension
 - **Root-relative paths**: Use `/index`, `/unified-commerce/nexus`, etc.
 - **Active states**: Manual `.active` class per page
@@ -129,15 +140,18 @@ All HTML pages follow a consistent structure:
 The site is automatically deployed to Vercel on every push to `main` branch.
 
 **Build Process**:
+
 1. Vercel runs `npm install`
 2. Executes `npm run build` (compiles CSS and processes HTML)
 3. Deploys the `dist/` directory
 
 **Configuration**: [vercel.json](vercel.json)
+
 - Build output directory: `dist`
 - Clean URLs enabled (no `.html` extensions)
 
 ### Deployment Checklist
+
 - [ ] Test locally: `npm run build && npm run preview`
 - [ ] Verify all pages work correctly
 - [ ] Check that header/footer changes appear on all pages
@@ -147,49 +161,56 @@ The site is automatically deployed to Vercel on every push to `main` branch.
 ## 🔧 Common Tasks
 
 ### Updating Header or Footer (NEW!)
+
 1. Edit `partials/header.html` or `partials/footer.html`
 2. Save - changes apply to ALL pages automatically
 3. No need to update individual HTML files!
 
 **Example**: Adding a new navigation link
+
 ```html
 <!-- In partials/header.html -->
 <a href="/new-page" class="header-link...">New Page</a>
 ```
 
 ### Adding a New Page
+
 1. Create new `.html` file in root directory (e.g., `new-page.html`)
 2. Use this structure:
+
 ```html
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <!-- Head content -->
-    <link rel="stylesheet" href="./assets/style/output.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./assets/style/output.css" />
+  </head>
+  <body>
     {{> header}}
-    
+
     <!-- Your page content here -->
-    
+
     {{> footer}}
-    
+
     <!-- Scripts -->
-</body>
+  </body>
 </html>
 ```
+
 3. The header and footer will be automatically included
 4. Run `npm run dev` to test with auto-reload
 
 For complete template example, see [DEVELOPMENT.md](DEVELOPMENT.md).
 
 ### Adding a Swiper Slider
+
 1. Add HTML structure (`.swiper`, `.swiper-wrapper`, `.swiper-slide`)
 2. Update [assets/script/main.js](assets/script/main.js) with new slider config
 3. Define unique class selector and breakpoint settings
 4. Test responsiveness across breakpoints
 
 ### Updating Styles
+
 1. Modify HTML classes (Tailwind utilities)
 2. For new utilities, update [assets/style/input.css](assets/style/input.css)
 3. For theme changes, edit [tailwind.config.js](tailwind.config.js)
@@ -207,23 +228,28 @@ For complete template example, see [DEVELOPMENT.md](DEVELOPMENT.md).
 ## 🐛 Troubleshooting
 
 **Styles not applying?**
+
 - Check if dev server is running (`npm run dev`)
 - Verify Tailwind classes are in `output.css`
 
 **Dev server not reloading?**
+
 - Clear browser cache
 - Restart dev server (`Ctrl+C`, then `npm run dev`)
 
 **Build fails?**
+
 - Ensure Node.js v18.19+ is installed
 - Delete `node_modules` and run `npm install`
 - Check that `partials/header.html` and `partials/footer.html` exist
 
 **Pages not loading correctly?**
+
 - Verify all HTML files have `{{> header}}` and `{{> footer}}` placeholders
 - Run `npm run build` to regenerate the `dist/` folder
 
 **E2E tests failing?**
+
 - Run `npm run build` first to generate production files
 - Ensure all dependencies are installed: `npm install`
 - Check that Playwright browsers are installed: `npx playwright install`
@@ -233,14 +259,17 @@ For complete template example, see [DEVELOPMENT.md](DEVELOPMENT.md).
 The project includes comprehensive testing infrastructure:
 
 ### Unit Tests (Vitest)
+
 - **Build verification**: Validates that all HTML pages are generated correctly
 - **Link validation**: Ensures all internal links point to existing pages
 - **Run**: `npm test` or `npm run test:build` / `npm run test:links`
 
 ### E2E Tests (Playwright)
+
 Comprehensive browser-based tests covering:
 
 **Test Coverage (226 tests)**:
+
 - ✅ Page load tests for all 15 pages (index, about-us, blog pages, solution pages, etc.)
 - ✅ Console error detection on each page
 - ✅ Resource loading validation (CSS, JavaScript)
@@ -251,10 +280,12 @@ Comprehensive browser-based tests covering:
 - ✅ Horizontal overflow detection
 
 **Test Projects**:
+
 - **Desktop Chrome**: 1280x800 viewport
 - **Mobile Chrome**: Pixel 5 viewport (393x851)
 
 **Commands**:
+
 ```bash
 npm run test:e2e          # Run all E2E tests headlessly
 npm run test:e2e:ui       # Open Playwright UI for debugging
@@ -262,6 +293,7 @@ npm run test:e2e:headed   # Run tests with visible browser
 ```
 
 **Test Structure**:
+
 ```
 tests/
 ├── build.test.js          # Build verification

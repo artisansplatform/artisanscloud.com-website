@@ -1,12 +1,12 @@
 export default {
   content: [
-    "./*.html",                    // All root HTML files
+    "./*.html", // All root HTML files
     "./enterprise-copilot/**/*.html", // Nested copilot pages
-    "./partials/**/*.html",        // All Handlebars partials
-    "./assets/**/*.{html,js}",     // Assets (JS files may contain class names)
+    "./partials/**/*.html", // All Handlebars partials
+    "./assets/**/*.{html,js}", // Assets (JS files may contain class names)
   ],
   theme: {
     extend: {},
   },
   plugins: [],
-}
+};

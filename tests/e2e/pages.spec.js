@@ -49,7 +49,11 @@ const pages = [
     title: "Enterprise AI",
     name: "enterprise-ai.html",
   },
-  { path: "/enterprise-copilot/lumen", title: "Lumen", name: "enterprise-copilot/lumen.html" },
+  {
+    path: "/enterprise-copilot/lumen",
+    title: "Lumen",
+    name: "enterprise-copilot/lumen.html",
+  },
   {
     path: "/merchandise-and-assortment-planning",
     title: "Merchandise & Assortment Planning",
@@ -97,7 +101,9 @@ test.describe("Page Load Tests", () => {
     test(`${page.name} should load with 200 status`, async ({
       page: browserPage,
     }) => {
-      const response = await browserPage.goto(page.path, { waitUntil: 'domcontentloaded' });
+      const response = await browserPage.goto(page.path, {
+        waitUntil: "domcontentloaded",
+      });
       expect(response?.status()).toBe(200);
     });
 
@@ -122,7 +128,7 @@ test.describe("Page Load Tests", () => {
         }
       });
 
-      await browserPage.goto(page.path, { waitUntil: 'domcontentloaded' });
+      await browserPage.goto(page.path, { waitUntil: "domcontentloaded" });
 
       // Wait a bit for any async errors
       await browserPage.waitForTimeout(1000);
@@ -135,7 +141,7 @@ test.describe("Page Load Tests", () => {
       test(`${page.name} should have header and footer visible`, async ({
         page: browserPage,
       }) => {
-        await browserPage.goto(page.path, { waitUntil: 'domcontentloaded' });
+        await browserPage.goto(page.path, { waitUntil: "domcontentloaded" });
 
         const header = browserPage.locator("header");
         const footer = browserPage.locator("footer");
@@ -148,7 +154,7 @@ test.describe("Page Load Tests", () => {
     test(`${page.name} should have correct title`, async ({
       page: browserPage,
     }) => {
-      await browserPage.goto(page.path, { waitUntil: 'domcontentloaded' });
+      await browserPage.goto(page.path, { waitUntil: "domcontentloaded" });
 
       const title = await browserPage.title();
 
@@ -179,7 +185,7 @@ test.describe("Resource Loading", () => {
       }
     });
 
-    await page.goto("/", { waitUntil: 'domcontentloaded' });
+    await page.goto("/", { waitUntil: "domcontentloaded" });
 
     expect(failedRequests).toEqual([]);
   });
@@ -202,7 +208,7 @@ test.describe("Resource Loading", () => {
       }
     });
 
-    await page.goto("/", { waitUntil: 'domcontentloaded' });
+    await page.goto("/", { waitUntil: "domcontentloaded" });
 
     expect(failedRequests).toEqual([]);
   });

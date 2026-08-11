@@ -5,7 +5,7 @@ test.describe("Navigation Tests", () => {
     test.use({ viewport: { width: 1280, height: 800 } });
 
     test("should have clickable navigation links", async ({ page }) => {
-      await page.goto("/", { waitUntil: 'domcontentloaded' });
+      await page.goto("/", { waitUntil: "domcontentloaded" });
 
       // Check that header exists and is visible
       const header = page.locator("header#siteHeader");
@@ -17,7 +17,7 @@ test.describe("Navigation Tests", () => {
     });
 
     test("solutions dropdown should open on click", async ({ page }) => {
-      await page.goto("/", { waitUntil: 'domcontentloaded' });
+      await page.goto("/", { waitUntil: "domcontentloaded" });
 
       // Find the Solutions dropdown toggle
       const solutionsToggle = page
@@ -47,7 +47,7 @@ test.describe("Navigation Tests", () => {
     });
 
     test("header should be sticky on page load", async ({ page }) => {
-      await page.goto("/", { waitUntil: 'domcontentloaded' });
+      await page.goto("/", { waitUntil: "domcontentloaded" });
 
       const header = page.locator("header#siteHeader");
       await expect(header).toBeVisible();
@@ -61,7 +61,7 @@ test.describe("Navigation Tests", () => {
     });
 
     test("header should change class on scroll", async ({ page }) => {
-      await page.goto("/", { waitUntil: 'domcontentloaded' });
+      await page.goto("/", { waitUntil: "domcontentloaded" });
 
       const header = page.locator("header#siteHeader");
 
@@ -89,7 +89,7 @@ test.describe("Navigation Tests", () => {
     test.use({ viewport: { width: 375, height: 667 } });
 
     test("mobile menu toggle should exist", async ({ page }) => {
-      await page.goto("/", { waitUntil: 'domcontentloaded' });
+      await page.goto("/", { waitUntil: "domcontentloaded" });
 
       // Check for mobile menu toggle button
       const menuToggle = page.locator("#menuToggle");
@@ -99,7 +99,7 @@ test.describe("Navigation Tests", () => {
     });
 
     test("mobile menu should open", async ({ page }) => {
-      await page.goto("/", { waitUntil: 'domcontentloaded' });
+      await page.goto("/", { waitUntil: "domcontentloaded" });
 
       // Find the menu toggle
       const menuToggle = page.locator("#menuToggle");
@@ -123,7 +123,7 @@ test.describe("Navigation Tests", () => {
     });
 
     test("mobile menu should close with close button", async ({ page }) => {
-      await page.goto("/", { waitUntil: 'domcontentloaded' });
+      await page.goto("/", { waitUntil: "domcontentloaded" });
 
       const menuToggle = page.locator("#menuToggle");
       const closeButton = page.locator("#menuClose");
@@ -145,7 +145,7 @@ test.describe("Navigation Tests", () => {
     });
 
     test("mobile menu should close on Escape key", async ({ page }) => {
-      await page.goto("/", { waitUntil: 'domcontentloaded' });
+      await page.goto("/", { waitUntil: "domcontentloaded" });
 
       const menuToggle = page.locator("#menuToggle");
 
@@ -170,7 +170,9 @@ test.describe("Navigation Tests", () => {
     test.use({ viewport: { width: 1280, height: 800 } });
 
     test("header link should be active on matching page", async ({ page }) => {
-      await page.goto("/unified-commerce/nexus", { waitUntil: 'domcontentloaded' });
+      await page.goto("/unified-commerce/nexus", {
+        waitUntil: "domcontentloaded",
+      });
 
       // The "Unified Commerce" header link should have the active class
       const activeLink = page.locator(
@@ -182,7 +184,7 @@ test.describe("Navigation Tests", () => {
     test("solutions dropdown toggle should be active on a solution sub-page", async ({
       page,
     }) => {
-      await page.goto("/image-editing", { waitUntil: 'domcontentloaded' });
+      await page.goto("/image-editing", { waitUntil: "domcontentloaded" });
 
       // The Solutions dropdown toggle should be active
       const toggle = page.locator("header .dropdown-toggle.active");
@@ -198,7 +200,9 @@ test.describe("Navigation Tests", () => {
     test("footer nav link should be active on matching page", async ({
       page,
     }) => {
-      await page.goto("/unified-commerce/nexus", { waitUntil: 'domcontentloaded' });
+      await page.goto("/unified-commerce/nexus", {
+        waitUntil: "domcontentloaded",
+      });
 
       // Footer "Unified Commerce" link should have the active class
       const footerActiveLink = page.locator(
@@ -210,7 +214,7 @@ test.describe("Navigation Tests", () => {
     test("no header links should be active on non-matching page", async ({
       page,
     }) => {
-      await page.goto("/about-us", { waitUntil: 'domcontentloaded' });
+      await page.goto("/about-us", { waitUntil: "domcontentloaded" });
 
       // Unified Commerce link should NOT be active
       const inactiveLink = page.locator(
@@ -230,7 +234,7 @@ test.describe("Navigation Tests", () => {
     test.use({ viewport: { width: 1280, height: 800 } });
 
     test("dropdown should close when clicking outside", async ({ page }) => {
-      await page.goto("/", { waitUntil: 'domcontentloaded' });
+      await page.goto("/", { waitUntil: "domcontentloaded" });
 
       const dropdownToggle = page.locator(".dropdown-toggle").first();
 
@@ -252,7 +256,7 @@ test.describe("Navigation Tests", () => {
     });
 
     test("dropdown should close on Escape key", async ({ page }) => {
-      await page.goto("/", { waitUntil: 'domcontentloaded' });
+      await page.goto("/", { waitUntil: "domcontentloaded" });
 
       const dropdownToggle = page.locator(".dropdown-toggle").first();
 
@@ -280,7 +284,7 @@ test.describe("Navigation Tests", () => {
     test("omni-channel tabs should switch content on click", async ({
       page,
     }) => {
-      await page.goto("/automation", { waitUntil: 'domcontentloaded' });
+      await page.goto("/automation", { waitUntil: "domcontentloaded" });
 
       // Find all tab buttons
       const tabButtons = page.locator("[data-tab-btn]");
@@ -321,7 +325,7 @@ test.describe("Navigation Tests", () => {
     test("omni-channel tabs should respond to keyboard navigation", async ({
       page,
     }) => {
-      await page.goto("/automation", { waitUntil: 'domcontentloaded' });
+      await page.goto("/automation", { waitUntil: "domcontentloaded" });
 
       // Focus on second tab
       const secondTab = page.locator('[data-tab-btn="interactive-ai"]');
@@ -343,7 +347,7 @@ test.describe("Navigation Tests", () => {
     test("omni-channel tabs should have correct ARIA attributes", async ({
       page,
     }) => {
-      await page.goto("/automation", { waitUntil: 'domcontentloaded' });
+      await page.goto("/automation", { waitUntil: "domcontentloaded" });
 
       // Check tablist role
       const tablist = page.locator('[role="tablist"]');
@@ -372,7 +376,7 @@ test.describe("Navigation Tests", () => {
     test("desktop dropdown should contain Personalized Promotions link", async ({
       page,
     }) => {
-      await page.goto("/", { waitUntil: 'domcontentloaded' });
+      await page.goto("/", { waitUntil: "domcontentloaded" });
 
       const link = page
         .locator('header .dropdown-menu a[href="/personalized-promotions"]')
@@ -384,7 +388,9 @@ test.describe("Navigation Tests", () => {
     test("Personalized Promotions page should load and show hero heading", async ({
       page,
     }) => {
-      await page.goto("/personalized-promotions", { waitUntil: 'domcontentloaded' });
+      await page.goto("/personalized-promotions", {
+        waitUntil: "domcontentloaded",
+      });
 
       const heading = page.locator("#heroHeading");
       await expect(heading).toBeVisible();
@@ -393,7 +399,9 @@ test.describe("Navigation Tests", () => {
     test("solutions dropdown toggle should be active on personalized-promotions page", async ({
       page,
     }) => {
-      await page.goto("/personalized-promotions", { waitUntil: 'domcontentloaded' });
+      await page.goto("/personalized-promotions", {
+        waitUntil: "domcontentloaded",
+      });
 
       const toggle = page.locator("header .dropdown-toggle.active");
       await expect(toggle).toHaveCount(1);
@@ -409,7 +417,7 @@ test.describe("Navigation Tests", () => {
     test("retail-platform should redirect to unified-commerce/nexus", async ({
       page,
     }) => {
-      await page.goto("/retail-platform", { waitUntil: 'domcontentloaded' });
+      await page.goto("/retail-platform", { waitUntil: "domcontentloaded" });
 
       // Wait for URL to change to /unified-commerce/nexus
       await expect(page).toHaveURL(/\/unified-commerce\/nexus/);
