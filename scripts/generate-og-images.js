@@ -13,27 +13,27 @@
  *   node scripts/generate-og-images.js
  */
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
-import { dirname, join } from 'path';
-import satori from 'satori';
-import sharp from 'sharp';
-import { fileURLToPath } from 'url';
-import { loadPages } from './lib/page-meta.js';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
+import { dirname, join } from "path";
+import satori from "satori";
+import sharp from "sharp";
+import { fileURLToPath } from "url";
+import { loadPages } from "./lib/page-meta.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = join(__dirname, '..');
-const OUT_DIR = join(ROOT, 'assets', 'og');
+const ROOT = join(__dirname, "..");
+const OUT_DIR = join(ROOT, "assets", "og");
 
 const WIDTH = 1200;
 const HEIGHT = 630;
 
 // Brand colors from input.css
 const COLORS = {
-  primary: '#8d68f6',
-  sky: '#13d9e4',
-  pink: '#fc4bda',
-  heading: '#222222',
-  description: '#686c71',
+  primary: "#8d68f6",
+  sky: "#13d9e4",
+  pink: "#fc4bda",
+  heading: "#222222",
+  description: "#686c71",
 };
 
 // Page og-card text comes from assets/data/pages.json (ogCard field).
@@ -48,22 +48,25 @@ const PAGES = Object.entries(loadPages())
   }));
 
 // Read the dark logo SVG (for light backgrounds) and encode as data URI
-const logoSvg = readFileSync(join(ROOT, 'assets', 'image', 'logo.svg'), 'utf-8');
-const logoDataUri = `data:image/svg+xml;base64,${Buffer.from(logoSvg).toString('base64')}`;
+const logoSvg = readFileSync(
+  join(ROOT, "assets", "image", "logo.svg"),
+  "utf-8",
+);
+const logoDataUri = `data:image/svg+xml;base64,${Buffer.from(logoSvg).toString("base64")}`;
 
 async function loadFonts() {
   // Fetch Poppins font files from Google Fonts for Satori
   // Poppins TTF files from Google Fonts GitHub repo (raw.githubusercontent.com)
   const fontUrls = [
     {
-      url: 'https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/Poppins-SemiBold.ttf',
+      url: "https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/Poppins-SemiBold.ttf",
       weight: 600,
-      name: 'Poppins SemiBold',
+      name: "Poppins SemiBold",
     },
     {
-      url: 'https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/Poppins-Regular.ttf',
+      url: "https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/Poppins-Regular.ttf",
       weight: 400,
-      name: 'Poppins Regular',
+      name: "Poppins Regular",
     },
   ];
 
@@ -73,7 +76,7 @@ async function loadFonts() {
       const res = await fetch(url);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const buffer = await res.arrayBuffer();
-      fonts.push({ name: 'Poppins', data: buffer, weight, style: 'normal' });
+      fonts.push({ name: "Poppins", data: buffer, weight, style: "normal" });
       console.log(`  Font loaded: ${name}`);
     } catch (err) {
       console.error(`  Failed to load font ${name}: ${err.message}`);
@@ -85,82 +88,85 @@ async function loadFonts() {
 
 function buildTemplate(page) {
   // Split title into lines for manual line breaks
-  const titleLines = page.title.split('\n');
+  const titleLines = page.title.split("\n");
 
   return {
-    type: 'div',
+    type: "div",
     props: {
       style: {
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        fontFamily: 'Poppins',
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        fontFamily: "Poppins",
         // Light lavender base matching website hero_bg
-        background: 'linear-gradient(135deg, #f5f0ff 0%, #ede6ff 40%, #f0f8ff 100%)',
+        background:
+          "linear-gradient(135deg, #f5f0ff 0%, #ede6ff 40%, #f0f8ff 100%)",
         color: COLORS.heading,
-        position: 'relative',
-        overflow: 'hidden',
+        position: "relative",
+        overflow: "hidden",
       },
       children: [
         // Decorative accent blob, top-right (purple, like website swirls)
         {
-          type: 'div',
+          type: "div",
           props: {
             style: {
-              position: 'absolute',
-              top: '-80px',
-              right: '-60px',
-              width: '360px',
-              height: '360px',
-              borderRadius: '50%',
-              background: 'linear-gradient(135deg, rgba(141, 104, 246, 0.12), rgba(252, 77, 218, 0.08))',
-              filter: 'blur(2px)',
+              position: "absolute",
+              top: "-80px",
+              right: "-60px",
+              width: "360px",
+              height: "360px",
+              borderRadius: "50%",
+              background:
+                "linear-gradient(135deg, rgba(141, 104, 246, 0.12), rgba(252, 77, 218, 0.08))",
+              filter: "blur(2px)",
             },
           },
         },
         // Decorative accent blob, bottom-left (cyan, like website swirls)
         {
-          type: 'div',
+          type: "div",
           props: {
             style: {
-              position: 'absolute',
-              bottom: '-100px',
-              left: '-80px',
-              width: '320px',
-              height: '320px',
-              borderRadius: '50%',
-              background: 'linear-gradient(135deg, rgba(19, 217, 228, 0.10), rgba(141, 104, 246, 0.08))',
-              filter: 'blur(2px)',
+              position: "absolute",
+              bottom: "-100px",
+              left: "-80px",
+              width: "320px",
+              height: "320px",
+              borderRadius: "50%",
+              background:
+                "linear-gradient(135deg, rgba(19, 217, 228, 0.10), rgba(141, 104, 246, 0.08))",
+              filter: "blur(2px)",
             },
           },
         },
         // Content container
         {
-          type: 'div',
+          type: "div",
           props: {
             style: {
-              width: '100%',
-              height: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              padding: '56px 70px',
-              position: 'relative',
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              padding: "56px 70px",
+              position: "relative",
             },
             children: [
               // Top section: logo
               {
-                type: 'div',
+                type: "div",
                 props: {
-                  style: { display: 'flex', alignItems: 'center' },
+                  style: { display: "flex", alignItems: "center" },
                   children: [
                     {
-                      type: 'img',
+                      type: "img",
                       props: {
                         src: logoDataUri,
                         width: 151,
                         height: 40,
-                        style: { objectFit: 'contain' },
+                        style: { objectFit: "contain" },
                       },
                     },
                   ],
@@ -168,51 +174,53 @@ function buildTemplate(page) {
               },
               // Middle section: title + subtitle
               {
-                type: 'div',
+                type: "div",
                 props: {
                   style: {
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '16px',
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "16px",
                     flex: 1,
-                    justifyContent: 'center',
+                    justifyContent: "center",
                   },
                   children: [
                     {
-                      type: 'div',
+                      type: "div",
                       props: {
                         style: {
-                          fontSize: titleLines.some(l => l.length > 20) ? '50px' : '56px',
+                          fontSize: titleLines.some((l) => l.length > 20)
+                            ? "50px"
+                            : "56px",
                           fontWeight: 600,
                           lineHeight: 1.15,
-                          letterSpacing: '-0.02em',
+                          letterSpacing: "-0.02em",
                           color: COLORS.heading,
-                          display: 'flex',
-                          flexDirection: 'column',
+                          display: "flex",
+                          flexDirection: "column",
                         },
-                        children: titleLines.map(line => ({
-                          type: 'span',
+                        children: titleLines.map((line) => ({
+                          type: "span",
                           props: { children: line },
                         })),
                       },
                     },
                     // Accent line: purple to cyan gradient
                     {
-                      type: 'div',
+                      type: "div",
                       props: {
                         style: {
-                          width: '80px',
-                          height: '4px',
-                          borderRadius: '2px',
+                          width: "80px",
+                          height: "4px",
+                          borderRadius: "2px",
                           background: `linear-gradient(90deg, ${COLORS.primary}, ${COLORS.sky})`,
                         },
                       },
                     },
                     {
-                      type: 'div',
+                      type: "div",
                       props: {
                         style: {
-                          fontSize: '22px',
+                          fontSize: "22px",
                           fontWeight: 400,
                           color: COLORS.description,
                           lineHeight: 1.4,
@@ -225,23 +233,23 @@ function buildTemplate(page) {
               },
               // Bottom section: URL
               {
-                type: 'div',
+                type: "div",
                 props: {
                   style: {
-                    display: 'flex',
-                    justifyContent: 'flex-end',
-                    alignItems: 'center',
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    alignItems: "center",
                   },
                   children: [
                     {
-                      type: 'span',
+                      type: "span",
                       props: {
                         style: {
-                          fontSize: '16px',
+                          fontSize: "16px",
                           fontWeight: 400,
                           color: COLORS.primary,
                         },
-                        children: 'artisanscloud.com',
+                        children: "artisanscloud.com",
                       },
                     },
                   ],
@@ -258,73 +266,91 @@ function buildTemplate(page) {
 // Team member OG image template: photo + name/title on brand gradient background
 function buildTeamTemplate(member, photoDataUri) {
   return {
-    type: 'div',
+    type: "div",
     props: {
       style: {
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        fontFamily: 'Poppins',
-        background: 'linear-gradient(135deg, #f5f0ff 0%, #ede6ff 40%, #f0f8ff 100%)',
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        fontFamily: "Poppins",
+        background:
+          "linear-gradient(135deg, #f5f0ff 0%, #ede6ff 40%, #f0f8ff 100%)",
         color: COLORS.heading,
-        position: 'relative',
-        overflow: 'hidden',
+        position: "relative",
+        overflow: "hidden",
       },
       children: [
         // Decorative blob, top-right
         {
-          type: 'div',
+          type: "div",
           props: {
             style: {
-              position: 'absolute', top: '-80px', right: '-60px',
-              width: '360px', height: '360px', borderRadius: '50%',
-              background: 'linear-gradient(135deg, rgba(141,104,246,0.15), rgba(252,77,218,0.08))',
-              filter: 'blur(2px)',
+              position: "absolute",
+              top: "-80px",
+              right: "-60px",
+              width: "360px",
+              height: "360px",
+              borderRadius: "50%",
+              background:
+                "linear-gradient(135deg, rgba(141,104,246,0.15), rgba(252,77,218,0.08))",
+              filter: "blur(2px)",
             },
           },
         },
         // Decorative blob, bottom-left
         {
-          type: 'div',
+          type: "div",
           props: {
             style: {
-              position: 'absolute', bottom: '-100px', left: '-80px',
-              width: '320px', height: '320px', borderRadius: '50%',
-              background: 'linear-gradient(135deg, rgba(19,217,228,0.10), rgba(141,104,246,0.08))',
-              filter: 'blur(2px)',
+              position: "absolute",
+              bottom: "-100px",
+              left: "-80px",
+              width: "320px",
+              height: "320px",
+              borderRadius: "50%",
+              background:
+                "linear-gradient(135deg, rgba(19,217,228,0.10), rgba(141,104,246,0.08))",
+              filter: "blur(2px)",
             },
           },
         },
         // Content container
         {
-          type: 'div',
+          type: "div",
           props: {
             style: {
-              width: '100%', height: '100%', display: 'flex',
-              padding: '56px 70px', position: 'relative',
-              alignItems: 'center', gap: '64px',
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              padding: "56px 70px",
+              position: "relative",
+              alignItems: "center",
+              gap: "64px",
             },
             children: [
               // Circular photo: pre-masked to a circle by Sharp, so no overflow/clip needed.
               // Purple outer div acts as the border ring; img is the masked photo inside.
               {
-                type: 'div',
+                type: "div",
                 props: {
                   style: {
-                    display: 'flex',
-                    width: '292px', height: '292px', borderRadius: '50%',
+                    display: "flex",
+                    width: "292px",
+                    height: "292px",
+                    borderRadius: "50%",
                     background: COLORS.primary,
-                    alignItems: 'center', justifyContent: 'center',
+                    alignItems: "center",
+                    justifyContent: "center",
                     flexShrink: 0,
                   },
                   children: [
                     {
-                      type: 'img',
+                      type: "img",
                       props: {
                         src: photoDataUri,
                         width: 280,
                         height: 280,
-                        style: { borderRadius: '50%' },
+                        style: { borderRadius: "50%" },
                       },
                     },
                   ],
@@ -332,60 +358,83 @@ function buildTeamTemplate(member, photoDataUri) {
               },
               // Right content
               {
-                type: 'div',
+                type: "div",
                 props: {
                   style: {
-                    display: 'flex', flexDirection: 'column',
-                    justifyContent: 'space-between', flex: 1,
-                    height: '100%', paddingTop: '8px', paddingBottom: '8px',
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    flex: 1,
+                    height: "100%",
+                    paddingTop: "8px",
+                    paddingBottom: "8px",
                   },
                   children: [
                     // Logo
                     {
-                      type: 'img',
+                      type: "img",
                       props: {
-                        src: logoDataUri, width: 151, height: 40,
-                        style: { objectFit: 'contain' },
+                        src: logoDataUri,
+                        width: 151,
+                        height: 40,
+                        style: { objectFit: "contain" },
                       },
                     },
                     // Name, accent bar, title, company
                     {
-                      type: 'div',
+                      type: "div",
                       props: {
-                        style: { display: 'flex', flexDirection: 'column', gap: '14px' },
+                        style: {
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "14px",
+                        },
                         children: [
                           {
-                            type: 'div',
+                            type: "div",
                             props: {
                               style: {
-                                fontSize: member.name.length > 16 ? '46px' : '52px',
-                                fontWeight: 600, lineHeight: 1.1,
-                                letterSpacing: '-0.02em', color: COLORS.heading,
+                                fontSize:
+                                  member.name.length > 16 ? "46px" : "52px",
+                                fontWeight: 600,
+                                lineHeight: 1.1,
+                                letterSpacing: "-0.02em",
+                                color: COLORS.heading,
                               },
                               children: member.name,
                             },
                           },
                           {
-                            type: 'div',
+                            type: "div",
                             props: {
                               style: {
-                                display: 'flex',
-                                width: '72px', height: '4px', borderRadius: '2px',
+                                display: "flex",
+                                width: "72px",
+                                height: "4px",
+                                borderRadius: "2px",
                                 background: `linear-gradient(90deg, ${COLORS.primary}, ${COLORS.sky})`,
                               },
                             },
                           },
                           {
-                            type: 'div',
+                            type: "div",
                             props: {
-                              style: { fontSize: '24px', fontWeight: 400, color: COLORS.description },
+                              style: {
+                                fontSize: "24px",
+                                fontWeight: 400,
+                                color: COLORS.description,
+                              },
                               children: member.title,
                             },
                           },
                           {
-                            type: 'div',
+                            type: "div",
                             props: {
-                              style: { fontSize: '18px', fontWeight: 400, color: COLORS.primary },
+                              style: {
+                                fontSize: "18px",
+                                fontWeight: 400,
+                                color: COLORS.primary,
+                              },
                               children: member.company,
                             },
                           },
@@ -394,10 +443,14 @@ function buildTeamTemplate(member, photoDataUri) {
                     },
                     // URL
                     {
-                      type: 'span',
+                      type: "span",
                       props: {
-                        style: { fontSize: '16px', fontWeight: 400, color: COLORS.primary },
-                        children: 'artisanscloud.com',
+                        style: {
+                          fontSize: "16px",
+                          fontWeight: 400,
+                          color: COLORS.primary,
+                        },
+                        children: "artisanscloud.com",
                       },
                     },
                   ],
@@ -412,7 +465,7 @@ function buildTeamTemplate(member, photoDataUri) {
 }
 
 async function main() {
-  console.log('Generating OG images...');
+  console.log("Generating OG images...");
 
   mkdirSync(OUT_DIR, { recursive: true });
 
@@ -427,22 +480,27 @@ async function main() {
     const png = await sharp(Buffer.from(svg)).png({ quality: 90 }).toBuffer();
 
     const outPath = join(OUT_DIR, `${page.file}.png`);
+    mkdirSync(dirname(outPath), { recursive: true });
     writeFileSync(outPath, png);
     generated++;
     console.log(`  ${page.file}.png (${(png.length / 1024).toFixed(1)} KB)`);
   }
 
   // Team member card OG images
-  const teamOutDir = join(OUT_DIR, 'team');
+  const teamOutDir = join(OUT_DIR, "team");
   mkdirSync(teamOutDir, { recursive: true });
 
-  const teamMembers = JSON.parse(readFileSync(join(ROOT, 'assets', 'data', 'team-members.json'), 'utf-8'));
+  const teamMembers = JSON.parse(
+    readFileSync(join(ROOT, "assets", "data", "team-members.json"), "utf-8"),
+  );
 
   for (const member of teamMembers) {
     // Resolve photo path from the member's photo field (e.g. /assets/image/team/gaurav-makhecha.png)
     const photoPath = join(ROOT, member.photo);
     if (!existsSync(photoPath)) {
-      console.warn(`  Skipping ${member.slug}: photo not found at ${photoPath}`);
+      console.warn(
+        `  Skipping ${member.slug}: photo not found at ${photoPath}`,
+      );
       continue;
     }
 
@@ -462,14 +520,19 @@ async function main() {
       const scale = Math.max(CIRCLE_SIZE / srcWidth, CIRCLE_SIZE / srcHeight);
       srcWidth = Math.round(srcWidth * scale);
       srcHeight = Math.round(srcHeight * scale);
-      srcSharp = srcSharp.resize(srcWidth, srcHeight, { fit: 'fill' });
+      srcSharp = srcSharp.resize(srcWidth, srcHeight, { fit: "fill" });
     }
 
     const cropLeft = Math.floor((srcWidth - CIRCLE_SIZE) / 2);
     const cropTop = member.photoCropTop ?? 0;
 
     const croppedBuffer = await srcSharp
-      .extract({ left: cropLeft, top: cropTop, width: CIRCLE_SIZE, height: CIRCLE_SIZE })
+      .extract({
+        left: cropLeft,
+        top: cropTop,
+        width: CIRCLE_SIZE,
+        height: CIRCLE_SIZE,
+      })
       .png()
       .toBuffer();
 
@@ -478,11 +541,11 @@ async function main() {
     const r = CIRCLE_SIZE / 2;
     const circleMaskSvg = `<svg width="${CIRCLE_SIZE}" height="${CIRCLE_SIZE}"><circle cx="${r}" cy="${r}" r="${r}" fill="white"/></svg>`;
     const circularPhotoBuffer = await sharp(croppedBuffer)
-      .composite([{ input: Buffer.from(circleMaskSvg), blend: 'dest-in' }])
+      .composite([{ input: Buffer.from(circleMaskSvg), blend: "dest-in" }])
       .png()
       .toBuffer();
 
-    const photoDataUri = `data:image/png;base64,${circularPhotoBuffer.toString('base64')}`;
+    const photoDataUri = `data:image/png;base64,${circularPhotoBuffer.toString("base64")}`;
 
     const template = buildTeamTemplate(member, photoDataUri);
     const svg = await satori(template, { width: WIDTH, height: HEIGHT, fonts });
@@ -491,13 +554,15 @@ async function main() {
     const outPath = join(teamOutDir, `${member.slug}.png`);
     writeFileSync(outPath, png);
     generated++;
-    console.log(`  team/${member.slug}.png (${(png.length / 1024).toFixed(1)} KB)`);
+    console.log(
+      `  team/${member.slug}.png (${(png.length / 1024).toFixed(1)} KB)`,
+    );
   }
 
   console.log(`OG images: ${generated} images generated → assets/og/`);
 }
 
-main().catch(err => {
-  console.error('OG image generation failed:', err);
+main().catch((err) => {
+  console.error("OG image generation failed:", err);
   process.exit(1);
 });

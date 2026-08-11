@@ -9,17 +9,17 @@
     },
     {
       "source": "/unified-commerce",
-      "destination": "/nexus-unified-commerce",
+      "destination": "/unified-commerce/nexus",
       "permanent": true
     },
     {
       "source": "/retail-platform",
-      "destination": "/nexus-unified-commerce",
+      "destination": "/unified-commerce/nexus",
       "permanent": true
     },
     {
       "source": "/overview",
-      "destination": "/nexus-unified-commerce",
+      "destination": "/unified-commerce/nexus",
       "permanent": true
     },
     {
@@ -74,17 +74,37 @@
     },
     {
       "source": "/solution",
-      "destination": "/nexus-unified-commerce",
+      "destination": "/unified-commerce/nexus",
       "permanent": true
     },
     {
       "source": "/artisans-commerce-cloud",
-      "destination": "/nexus-unified-commerce",
+      "destination": "/unified-commerce/nexus",
       "permanent": true
     },
     {
       "source": "/knowledge-harvester",
-      "destination": "/vault-knowledge-harvester",
+      "destination": "/knowledge-harvester/vault",
+      "permanent": true
+    },
+    {
+      "source": "/lumen",
+      "destination": "/enterprise-copilot/lumen",
+      "permanent": true
+    },
+    {
+      "source": "/nexus-unified-commerce",
+      "destination": "/unified-commerce/nexus",
+      "permanent": true
+    },
+    {
+      "source": "/role-play-agent",
+      "destination": "/role-play-agent/arena",
+      "permanent": true
+    },
+    {
+      "source": "/vault-knowledge-harvester",
+      "destination": "/knowledge-harvester/vault",
       "permanent": true
     }
   ],

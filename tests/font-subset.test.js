@@ -37,6 +37,10 @@ const MARKUP_GLOBS = [
   "*.html",
   "partials/*.html",
   "team/*.html",
+  "enterprise-copilot/*.html",
+  "unified-commerce/*.html",
+  "role-play-agent/*.html",
+  "knowledge-harvester/*.html",
   "assets/script/**/*.js",
 ];
 
