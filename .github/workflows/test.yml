@@ -13,10 +13,17 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
+      # Deliberately no `cache: 'npm'`. That routes ~/.npm through the Actions
+      # cache service, which wins on ephemeral hosted runners and loses on
+      # ours: this runner is persistent (node itself resolves from its local
+      # tool cache), so ~/.npm already survives between runs. Restoring it
+      # pulled a 2.1 GB archive for 20m21s in front of an `npm ci` that takes
+      # 3s, and the archive only grows -- it snapshots every package version
+      # the runner has ever downloaded. Keep `node-version:`; the tool cache is
+      # local and costs about a second.
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-          cache: 'npm'
       - run: npm ci
       - run: npm run build
       - run: npm test
