@@ -4,6 +4,7 @@ import path from "path";
 import sharp from "sharp";
 import { fileURLToPath } from "url";
 import { describe, expect, it } from "vitest";
+import { contentPages } from "../scripts/lib/site-files.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,18 +14,17 @@ const pagesJson = JSON.parse(
   fs.readFileSync(path.join(rootDir, "assets", "data", "pages.json"), "utf-8"),
 );
 
-// retail-platform.html is a meta-refresh redirect stub with a hand-written
-// head; every other root page must use the shared head-meta partial.
-const STUB_PAGES = new Set(["retail-platform.html"]);
+// Meta-refresh redirect stubs have a hand-written head; every other content
+// page must use the shared head-meta partial. Stubs are detected by content,
+// not by a hardcoded name, so a new stub cannot be missed here.
+function isRedirectStub(page) {
+  return /http-equiv=["']refresh["']/i.test(
+    fs.readFileSync(path.join(rootDir, page), "utf-8"),
+  );
+}
 
-const allPages = [
-  ...glob.sync("*.html", { cwd: rootDir }),
-  ...glob.sync("enterprise-copilot/*.html", { cwd: rootDir }),
-  ...glob.sync("unified-commerce/*.html", { cwd: rootDir }),
-  ...glob.sync("role-play-agent/*.html", { cwd: rootDir }),
-  ...glob.sync("knowledge-harvester/*.html", { cwd: rootDir }),
-];
-const partialPages = allPages.filter((p) => !STUB_PAGES.has(p));
+const allPages = contentPages();
+const partialPages = allPages.filter((p) => !isRedirectStub(p));
 
 describe("pages.json / head-meta partial integrity", () => {
   it("discovers pages", () => {
