@@ -1,4 +1,6 @@
+import { execFileSync } from "child_process";
 import fs from "fs";
+import { glob } from "glob";
 import path from "path";
 import { fileURLToPath } from "url";
 import { describe, expect, it } from "vitest";
@@ -129,6 +131,70 @@ describe("vercel.json redirects are sound", () => {
       shadowed.map((r) => r.source),
       "Redirect source shadows a real content page; rename/remove the page or the redirect",
     ).toEqual([]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Em dashes are banned repo-wide (writing rule in the agent instructions,
+// machine-enforced here so it never depends on anyone remembering it).
+// Replace with commas, colons, semicolons, or parentheses.
+// ---------------------------------------------------------------------------
+describe("No em dashes in tracked text files", () => {
+  // Escaped so this file's own source does not contain the character.
+  const EM_DASH = "\u2014";
+
+  it("git grep finds no em dash", () => {
+    let hits = [];
+    try {
+      hits = execFileSync(
+        "git",
+        // -I skips binary files. fallback-articles.json carries external
+        // LinkedIn content verbatim, so it is exempt from the writing rule.
+        [
+          "grep",
+          "-I",
+          "-l",
+          EM_DASH,
+          "--",
+          ":!assets/data/fallback-articles.json",
+        ],
+        { cwd: rootDir, encoding: "utf-8" },
+      )
+        .split("\n")
+        .filter(Boolean);
+    } catch (error) {
+      // git grep exits 1 when nothing matches; that is the passing case.
+      if (error.status !== 1) throw error;
+    }
+    expect(
+      hits,
+      "Files containing an em dash. Replace it with a comma, colon, " +
+        "semicolon, or parentheses (see the writing rules).",
+    ).toEqual([]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Child processes must not go through a shell string: quoting that works in
+// bash breaks in cmd.exe (a real Windows failure caught in the #113 review).
+// execFileSync with an args array behaves identically on every platform.
+// ---------------------------------------------------------------------------
+describe("No shell-string child processes", () => {
+  const files = [
+    "vite.config.js",
+    "playwright.config.js",
+    ...glob.sync("scripts/**/*.js", { cwd: rootDir }),
+    ...glob.sync("tests/**/*.js", { cwd: rootDir }),
+  ];
+  // Built by concatenation so this test file does not flag itself.
+  const banned = new RegExp("\\bexec" + "Sync\\b");
+
+  it.each(files)("%s", (file) => {
+    expect(
+      banned.test(read(file)),
+      `${file} spawns a child process through a shell string. Use ` +
+        "execFileSync(cmd, [args]) so quoting works on every platform.",
+    ).toBe(false);
   });
 });
 

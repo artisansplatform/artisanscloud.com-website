@@ -8,3 +8,4 @@ assets/style/output.css
 data/gsc/
 .env
 .notion-sync-result.json
+.claude/.stop-gate-last-green

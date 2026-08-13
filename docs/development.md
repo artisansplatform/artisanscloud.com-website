@@ -265,12 +265,20 @@ Run just these checks with `npm run test:seo`. If you add a page that legitimate
 | Internal links   | `tests/links.test.js`           | links and local assets that 404                                                                                                                                                                                               |
 | On-page SEO      | `tests/seo.test.js`             | missing lang / h1 / description / twitter card, og-canonical host mismatch, missing img alt, invalid JSON-LD                                                                                                                  |
 | Page metadata    | `tests/pages-meta.test.js`      | hand-written heads, missing/orphan `pages.json` entries, missing/orphan/wrong-size OG images, noindex page left in sitemap                                                                                                    |
-| Conventions      | `tests/conventions.test.js`     | inline executable scripts, duplicate Swiper selectors, broken/ shadowing redirects, redirect stubs left in the sitemap                                                                                                        |
+| Conventions      | `tests/conventions.test.js`     | inline executable scripts, duplicate Swiper selectors, broken/ shadowing redirects, redirect stubs left in the sitemap, em dashes in tracked files, shell-string child processes (`execSync`)                                 |
+| Docs integrity   | `tests/docs.test.js`            | broken markdown tables (lone rows, missing separator), doc references to files that do not exist (with a `PLANNED_FILES` list for documented future deliverables)                                                             |
+| Formatting       | `tests/format.test.js`          | files failing `prettier --check`; a `GRANDFATHERED` list holds the three legacy HTML pages and only shrinks                                                                                                                   |
 | Font subset      | `tests/font-subset.test.js`     | a font weight/style used in markup with no `@font-face`, a missing woff2 file, or a stray Google Fonts reference                                                                                                              |
 | Security headers | `tests/vercel-security.test.js` | missing security headers / cron config in `vercel.json`                                                                                                                                                                       |
 | Coverage guard   | `tests/coverage-guard.test.js`  | drift between page discovery and git, sitemap gaps/ghosts, hardcoded page globs outside `site-files.js`, a resurrected (dead) `tailwind.config.js`, full pages saved into `partials/`, growth of the discovery exclusion list |
 
-Per-area run scripts: `test:seo`, `test:meta`, `test:conventions`, `test:font`, `test:links`, `test:build`, `test:guard`.
+Per-area run scripts: `test:seo`, `test:meta`, `test:conventions`, `test:font`, `test:links`, `test:build`, `test:guard`, `test:docs`, `test:format`.
+
+Three enforcement surfaces run these checks, so none of them depends on anyone remembering:
+
+- **CI** (`.github/workflows/test.yml`): the full suite plus Playwright e2e on the self-hosted Linux runner, and the unit suite again on `windows-latest` (shell quoting and path-separator bugs only reproduce there; one shipped in the #113 review cycle).
+- **Claude Code Stop hook** (`.claude/settings.json` + `scripts/claude-stop-gate.sh`): every time the agent tries to finish a turn, the source-level suites run (a few seconds, tree-hash cached) and a failure blocks completion with the test output fed back. The full build-dependent suite still belongs to `npm test`.
+- **npm test** locally before pushing.
 
 The coverage guard exists because checks themselves can rot: PR #111 showed that hardcoded directory lists in configs and tests go stale silently when pages move into new directories. Discovery now lives in one file (`scripts/lib/site-files.js`) and the guard cross-checks it against independent ground truth (git, the built sitemap) in both directions. When you add a check that iterates pages, import `allPages()` / `contentPages()` / `partialFiles()` from `site-files.js` instead of writing a glob.
 

@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/claude-stop-gate.sh\"",
+            "timeout": 180,
+            "statusMessage": "Running fast quality gate (source-level tests)"
+          }
+        ]
+      }
+    ]
+  }
+}

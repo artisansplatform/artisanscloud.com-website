@@ -7,6 +7,24 @@ on:
     branches: [main]
 
 jobs:
+  # Unit suite on Windows: catches platform-specific breakage (shell quoting,
+  # path separators) that the self-hosted Linux runner cannot see. A real
+  # Windows-only bug slipped through review in #113 (execSync quoting).
+  # E2E stays Linux-only; the unit suite is where platform bugs have bitten.
+  test-windows:
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run build
+      - run: npx vitest run
+
   test:
     runs-on: self-hosted
     permissions:
@@ -23,7 +41,7 @@ jobs:
       # local and costs about a second.
       - uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: "24"
       - run: npm ci
       - run: npm run build
       - run: npm test
