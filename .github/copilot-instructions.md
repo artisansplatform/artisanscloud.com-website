@@ -22,6 +22,7 @@ Always replace em dashes with appropriate punctuation such as commas, periods, c
 - Write as an experienced developer, not as a generic assistant
 
 ## Commands
+
 ```bash
 npm run dev              # Dev server at http://localhost:3000/ (Vite + Tailwind watch)
 npm run build            # Production build (CSS + HTML to dist/)
@@ -57,21 +58,23 @@ npm run optimize:images  # Re-encode raster images in place via sharp (pass path
 - **Content Security Policy** - `vercel.json` defines an enforced CSP (`Content-Security-Policy`; see `docs/architecture.md`). If you add a third-party script, style host, image host, or network call, add its origin to the matching `script-src`/`connect-src`/etc. directive, otherwise it is reported (and, once enforcement is on, blocked). Never add `'unsafe-inline'` to `script-src`; put JS in a module instead. `tests/vercel-security.test.js` guards the core directives.
 
 ## Documentation Rule
+
 **After every code change, update the relevant docs.** This is mandatory, not optional.
 
-| What changed | What to update |
-|---|---|
-| New page added | `docs/development.md` (Adding a New Page), `docs/architecture.md` (Key files) |
-| New build script or `package.json` script | `docs/architecture.md` (Deployment / Build process), `docs/development.md` (Commands) |
-| New `scripts/` file | `docs/development.md` (describe purpose and usage) |
-| New API route or cron | `docs/architecture.md` (Dynamic Blog Articles or Deployment) |
-| New gotcha or footgun discovered | First add an automated check under `tests/` that fails the build (see `tests/coverage-guard.test.js` for the pattern) and document it in `docs/`. Add prose to Gotchas & Landmines only when the rule cannot be machine-enforced. |
-| SEO / sitemap changes | `docs/development.md` (Sitemap section) |
-| Architecture change | `docs/architecture.md` |
+| What changed                              | What to update                                                                                                                                                                                                                    |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| New page added                            | `docs/development.md` (Adding a New Page), `docs/architecture.md` (Key files)                                                                                                                                                     |
+| New build script or `package.json` script | `docs/architecture.md` (Deployment / Build process), `docs/development.md` (Commands)                                                                                                                                             |
+| New `scripts/` file                       | `docs/development.md` (describe purpose and usage)                                                                                                                                                                                |
+| New API route or cron                     | `docs/architecture.md` (Dynamic Blog Articles or Deployment)                                                                                                                                                                      |
+| New gotcha or footgun discovered          | First add an automated check under `tests/` that fails the build (see `tests/coverage-guard.test.js` for the pattern) and document it in `docs/`. Add prose to Gotchas & Landmines only when the rule cannot be machine-enforced. |
+| SEO / sitemap changes                     | `docs/development.md` (Sitemap section)                                                                                                                                                                                           |
+| Architecture change                       | `docs/architecture.md`                                                                                                                                                                                                            |
 
 If a doc section doesn't exist yet, add it. Never leave a feature undocumented.
 
 ## PR Checklist
+
 - Pages use `{{> header}}` and `{{> footer}}` partials
 - `npm run build` succeeds
 - `npm test` passes
@@ -81,6 +84,7 @@ If a doc section doesn't exist yet, add it. Never leave a feature undocumented.
 - Relevant docs updated (see Documentation Rule above)
 
 ## Detailed Docs
+
 - [`docs/architecture.md`](docs/architecture.md) - page structure, styling, JS patterns, component reuse, routing
 - [`docs/development.md`](docs/development.md) - adding pages, sliders, updating header/footer, blog articles, UI conventions
 - [`docs/coding-standards.md`](docs/coding-standards.md) - code quality, performance, accessibility, security

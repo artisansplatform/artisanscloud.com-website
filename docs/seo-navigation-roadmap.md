@@ -78,6 +78,7 @@ Notes:
 For one-off questions, paste the relevant slice into chat directly.
 
 Most useful reports for this roadmap:
+
 - Queries and Pages report covering `/nexus-unified-commerce` and `/retail-platform`, to confirm the redirect consolidates impressions cleanly.
 - Pages report sorted by clicks, to identify pages that must not be orphaned during Step 6.
 - Coverage report, to catch any unexpected de-indexing after URL changes.
@@ -117,36 +118,38 @@ Goal: map every existing HTML page to its destination under the locked IA. Outpu
 Pull GSC data first (Pages report, last 30 days, sorted by clicks). Pages that earn meaningful traffic must not be deleted or moved without a 301. The map should be informed by traffic, not just intuition.
 
 Tasks:
+
 1. Export GSC Pages report and place CSV in `data/gsc/YYYY-MM/`.
 2. Write the IA reference (the locked structure above plus rules for module nesting) into `docs/information-architecture.md`.
 3. Fill in the page-to-URL map below. Action options per page: keep at current URL, move with 301, fold into another page with 301, delete.
 
-| Current URL | New URL | Action |
-|---|---|---|
-| /retail-platform | /nexus-unified-commerce | done (PR #48) |
-| /overview | /nexus-unified-commerce | done (PR #50) |
-| /POS | TBD | |
-| /browser-pos | TBD | |
-| /warehouse-management-system | TBD | |
-| /distributed-order-management | TBD | |
-| /d2c-eCommerce | TBD | |
-| /customer-experience-management | TBD | |
-| /merchandise-and-assortment-planning | TBD | |
-| /automation | TBD | |
-| /image-editing | TBD | |
-| /smart-auto-completion | TBD | |
-| /smart-product-search | TBD | |
-| /personalized-recommendations | TBD | |
-| /chatbots-for-quick-support | TBD | |
-| /role-play-agent | TBD | |
-| /vault-knowledge-harvester | TBD | |
-| /demand-flow | TBD | |
-| /enterprise-ai | TBD | |
-| /data-intelligence | TBD | |
-| /dify-consulting | TBD | |
-| /integrations | TBD | |
+| Current URL                          | New URL                 | Action        |
+| ------------------------------------ | ----------------------- | ------------- |
+| /retail-platform                     | /nexus-unified-commerce | done (PR #48) |
+| /overview                            | /nexus-unified-commerce | done (PR #50) |
+| /POS                                 | TBD                     |               |
+| /browser-pos                         | TBD                     |               |
+| /warehouse-management-system         | TBD                     |               |
+| /distributed-order-management        | TBD                     |               |
+| /d2c-eCommerce                       | TBD                     |               |
+| /customer-experience-management      | TBD                     |               |
+| /merchandise-and-assortment-planning | TBD                     |               |
+| /automation                          | TBD                     |               |
+| /image-editing                       | TBD                     |               |
+| /smart-auto-completion               | TBD                     |               |
+| /smart-product-search                | TBD                     |               |
+| /personalized-recommendations        | TBD                     |               |
+| /chatbots-for-quick-support          | TBD                     |               |
+| /role-play-agent                     | TBD                     |               |
+| /vault-knowledge-harvester           | TBD                     |               |
+| /demand-flow                         | TBD                     |               |
+| /enterprise-ai                       | TBD                     |               |
+| /data-intelligence                   | TBD                     |               |
+| /dify-consulting                     | TBD                     |               |
+| /integrations                        | TBD                     |               |
 
 Done when:
+
 - `docs/information-architecture.md` exists with the locked IA and module nesting rules.
 - Every existing page has a row with a non-TBD action.
 - Decisions are informed by the GSC Pages report.
@@ -158,6 +161,7 @@ Goal: ship one substantive Solutions page before the nav rollout. The other Solu
 Why this one first: enterprise retailers are the primary ICP, so this Solutions page has the highest commercial intent and SEO leverage.
 
 Tasks:
+
 1. URL: `/solutions/retail-omnichannel` (locked nested pattern per IA).
 2. Keyword research:
    - Primary keyword must be different from `/nexus-unified-commerce` to avoid cannibalization.
@@ -177,6 +181,7 @@ Tasks:
 9. E2E test for the page.
 
 Done when:
+
 - Page lives at the chosen URL with full content.
 - `npm run build`, `npm test`, `npm run test:e2e` all pass.
 - Primary keyword for this page is documented and confirmed distinct from `/nexus-unified-commerce`.
@@ -188,6 +193,7 @@ Goal: ship a destination that matches the "Request Demo" promise so the new nav 
 Why before Step 4: the nav rollout will change the primary CTA from "Talk to us" to "Request Demo". A buyer clicking "Request Demo" and landing on a generic contact form is a credibility hit at the highest-intent moment on the site.
 
 Tasks:
+
 1. Create `/request-demo` (file: `request-demo.html`). Use `{{> header}}` and `{{> footer}}` partials.
 2. Form fields (enterprise-style, not a generic message box): name, work email, company, role/title, company size or revenue band, current systems (free text or multi-select), timeline, optional message.
 3. Form backend: post to Web3Forms (`https://api.web3forms.com/submit`), matching the existing `/contact-us` flow. Reuse the markup pattern from `contact-us.html` for consistency. Tradeoff to remember: submissions go to email, not into a CRM. If a CRM is adopted later, both `/contact-us` and `/request-demo` migrate together.
@@ -206,6 +212,7 @@ Tasks:
     - Thank-you state shows on success.
 
 Done when:
+
 - `/request-demo` is live, form submits to the chosen backend, thank-you state appears.
 - `noindex` confirmed via view source.
 - Not in sitemap.
@@ -218,6 +225,7 @@ Prerequisites: Steps 1, 2, and 3 are done. Shipping the nav before a Solutions p
 Scope is the nav copy and structure only.
 
 Tasks:
+
 1. Update `partials/header.html` (desktop and mobile) with the locked IA structure.
 2. Update `partials/footer.html` sitemap section to mirror the new IA. Omit Case Studies until that page exists.
 3. Replace the "Talk to us" CTA copy with "Request Demo" and route the link to `/request-demo`. Update the icon `alt` text accordingly.
@@ -231,6 +239,7 @@ Tasks:
    - The "Request Demo" CTA navigates to `/request-demo` from every breakpoint.
 
 Done when:
+
 - All breakpoints render the new nav correctly (393px, 768px, 1280px).
 - No 404s from any nav link.
 - E2E covers desktop and mobile nav paths.
@@ -245,6 +254,7 @@ Why after Step 4: shipping the new nav with a retail-anchored homepage looks dis
 **Status: blocked on content.** The user is drafting the new homepage content (hero, section structure, CTAs) and will share before this step starts. The audit findings below describe the problems to solve and remain useful as input to that draft. Do not start implementation until the new content is shared.
 
 Findings driving this step (from the audit of `index.html`):
+
 - Hero H1 is retail-and-supply-chain only ("Streamline, Optimize, and Align Retail Planning and Supply Chain Operations"), contradicting the meta title "Intelligent Enterprise Transformation".
 - Both hero CTAs link to `/nexus-unified-commerce`, forcing every interested visitor into the retail funnel.
 - Hero floating cards are three-of-four retail.
@@ -252,6 +262,7 @@ Findings driving this step (from the audit of `index.html`):
 - Our Core Verticals, Intelligent Enterprise Transformation, Strategic Impact Snapshot, and Insights sections are already sector-neutral. They do not need rework.
 
 Tasks (apply once the new content draft arrives):
+
 1. Rewrite hero H1 to support all three Platforms. Candidate phrasings to consider unless the new draft already has one:
    - "Engineer the Intelligent Enterprise"
    - "Unify Data, AI, and Commerce in a Single Platform"
@@ -277,6 +288,7 @@ Tasks (apply once the new content draft arrives):
     - No regressions in Core Verticals, Intelligent Enterprise, Strategic Impact, Insights sections.
 
 Done when:
+
 - Hero H1, CTAs, and floating cards no longer signal retail-only.
 - Drive Sales CTA section is sector-neutral or replaced.
 - Industries strip lists the locked sector list.
@@ -288,6 +300,7 @@ Done when:
 Goal: clean up every page that did not get a clear home in the new IA.
 
 Tasks:
+
 1. Re-read the page mapping from Step 1.
 2. For each "redirect" or "fold into" action, add the rule to `vercel.json`.
 3. For each "delete" action, remove the file and confirm no internal links remain (`grep -r "/page-slug" --include="*.html" --include="*.js" --include="*.json"`).
@@ -295,6 +308,7 @@ Tasks:
 5. Update tests to remove references to deleted pages.
 
 Done when:
+
 - Every existing HTML page has a defined disposition (kept, redirected, or deleted).
 - `vercel.json` contains all redirects.
 - `npm test` passes (link validation catches broken internal links).
@@ -302,6 +316,7 @@ Done when:
 ### Step 7: Build the remaining Solutions pages
 
 One page per PR. Order:
+
 1. Supply Chain and Planning at `/solutions/supply-chain-planning`
 2. Customer Experience at `/solutions/customer-experience`
 
@@ -312,10 +327,12 @@ Reuse the structure from Step 2.
 ### Step 8: Revisit PR #46 (blog SEO strategy)
 
 Reasons to defer until now:
+
 - Blog URL slug strategy depends on whether blog lives under `/blog/` or `/resources/blog/`, which is decided in Step 1.
 - Internal linking strategy depends on which Platform, Solutions, and Module pages exist.
 
 Tasks:
+
 1. Re-read PR #46 doc with the new IA in mind.
 2. Update the doc to reflect final URL structure.
 3. Plan the implementation PR (build-time Markdown to HTML, mirroring `generate-team-cards.js`).
