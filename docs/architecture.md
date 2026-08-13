@@ -109,7 +109,7 @@ Standalone card pages for team members at `/team/{slug}`. These pages do NOT use
 - Each card page embeds member data in a `<script type="application/json">` block
 - `digital-card.js` reads this data on page load to render QR codes and wire up sharing buttons
 - vCard (`.vcf`) files are generated client-side on demand - no build-time generation needed
-- `vite.config.js` globs `team/*.html` alongside root `*.html` for the build
+- `vite.config.js` builds card pages through the shared discovery in `scripts/lib/site-files.js`, so no per-directory glob is involved
 
 ## Analytics & Ad Attribution
 
@@ -241,7 +241,7 @@ Pages with `sitemap: false` in `assets/data/pages.json` are excluded: `404`, `th
 
 ### Adding a new page
 
-No action needed - `generate-sitemap.js` uses the same directory globs as `vite.config.js` to find root and nested pages. New pages are included automatically. To override the default `priority`/`changefreq`, set the `sitemap` field on the page's entry in `assets/data/pages.json`.
+No action needed - `generate-sitemap.js` and `vite.config.js` both discover pages through `scripts/lib/site-files.js`, which walks the project recursively. New pages, at any depth, are included automatically. To override the default `priority`/`changefreq`, set the `sitemap` field on the page's entry in `assets/data/pages.json`.
 
 ### Build order
 

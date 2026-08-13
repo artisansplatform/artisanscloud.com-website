@@ -17,7 +17,7 @@
 import { writeFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { loadPages } from "./lib/page-meta.js";
+import { BASE_URL, loadPages } from "./lib/page-meta.js";
 import { contentPages } from "./lib/site-files.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -25,7 +25,9 @@ const ROOT = join(__dirname, "..");
 
 function parseArgs() {
   const args = process.argv.slice(2);
-  const opts = { baseUrl: "https://www.artisanscloud.com" };
+  // Same constant the canonical/OG tags and tests/coverage-guard.test.js use,
+  // so a preview host is a deliberate --base-url override and never drift.
+  const opts = { baseUrl: BASE_URL };
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--base-url" && args[i + 1]) {
       opts.baseUrl = args[++i].replace(/\/$/, "");

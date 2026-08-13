@@ -11,11 +11,13 @@ const rootDir = path.resolve(
 );
 
 // Redirect stubs (meta refresh) immediately navigate away and render no
-// header/footer, so the layout checks below skip them.
-function isRedirectStub(file) {
-  return /http-equiv=["']refresh["']/i.test(
-    fs.readFileSync(path.join(rootDir, file), "utf-8"),
-  );
+// header/footer of their own. Returns the destination path, or null when the
+// file is a normal page.
+function redirectTarget(file) {
+  const src = fs.readFileSync(path.join(rootDir, file), "utf-8");
+  if (!/http-equiv=["']refresh["']/i.test(src)) return null;
+  const match = src.match(/content=["']\s*\d+\s*;\s*url=([^"']+)["']/i);
+  return match ? match[1].trim() : null;
 }
 
 // Every content page, discovered from disk via scripts/lib/site-files.js, so
@@ -24,7 +26,7 @@ function isRedirectStub(file) {
 const pages = contentPages().map((file) => ({
   name: file,
   path: file === "index.html" ? "/" : `/${file.replace(/\.html$/, "")}`,
-  stub: isRedirectStub(file),
+  redirectsTo: redirectTarget(file),
 }));
 
 test.describe("Page Load Tests", () => {
@@ -38,6 +40,20 @@ test.describe("Page Load Tests", () => {
       });
       expect(response?.status()).toBe(200);
     });
+
+    // A stub redirects instantly, so anything asserted after the goto belongs
+    // to the destination page (covered under its own name) and not to the
+    // stub: console errors would be double-reported and the title checked
+    // below would be the destination's. Assert the redirect itself instead.
+    if (page.redirectsTo) {
+      test(`${page.name} should redirect to ${page.redirectsTo}`, async ({
+        page: browserPage,
+      }) => {
+        await browserPage.goto(page.path, { waitUntil: "domcontentloaded" });
+        await browserPage.waitForURL(`**${page.redirectsTo}`);
+      });
+      continue;
+    }
 
     test(`${page.name} should have no console errors`, async ({
       page: browserPage,
@@ -68,9 +84,8 @@ test.describe("Page Load Tests", () => {
       expect(errors).toEqual([]);
     });
 
-    // The 404 page has no header/footer by design; redirect stubs navigate
-    // away before the layout can be asserted.
-    if (page.path !== "/404" && !page.stub) {
+    // The 404 page has no header/footer by design.
+    if (page.path !== "/404") {
       test(`${page.name} should have header and footer visible`, async ({
         page: browserPage,
       }) => {

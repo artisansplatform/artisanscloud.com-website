@@ -9,7 +9,7 @@
 //
 // Every check here fails with instructions, not just an assertion.
 
-import { execSync } from "child_process";
+import { execFileSync } from "child_process";
 import fs from "fs";
 import { glob } from "glob";
 import path from "path";
@@ -41,12 +41,19 @@ function read(rel) {
 describe("page discovery matches git", () => {
   let tracked = null;
   try {
-    tracked = execSync("git ls-files -z -- '*.html'", { cwd: rootDir })
+    // execFileSync, not a shell string: the *.html pathspec must reach git
+    // verbatim. A POSIX shell would expand it to root-level files only, and
+    // cmd.exe keeps the quotes so it matches nothing.
+    const files = execFileSync("git", ["ls-files", "-z", "--", "*.html"], {
+      cwd: rootDir,
+    })
       .toString()
       .split("\0")
       .filter(Boolean)
       .filter((f) => !f.startsWith("partials/"))
       .sort();
+    // Empty output is not ground truth, it means git told us nothing useful.
+    if (files.length > 0) tracked = files;
   } catch {
     // Not a git checkout (e.g. exported tarball); the other guards still run.
   }
@@ -97,13 +104,22 @@ describe("sitemap covers every indexable page exactly", () => {
       .map((m) => m[1])
       .sort();
 
+    // generate-sitemap.js defaults to BASE_URL but accepts --base-url for
+    // preview builds. Compare against whatever origin the file actually used,
+    // otherwise an override reports every URL as both missing and extra.
+    const origins = [...new Set(actual.map((u) => new URL(u).origin))];
+    expect(
+      origins.length,
+      `dist/sitemap.xml mixes origins (${origins.join(", ")}). ` +
+        "Every <loc> must share one host.",
+    ).toBeLessThanOrEqual(1);
+    const base = origins[0] ?? BASE_URL;
+
     const meta = loadPages();
     const expected = contentPages()
       .filter((f) => meta[f.replace(/\.html$/, "")]?.sitemap !== false)
       .map((f) =>
-        f === "index.html"
-          ? `${BASE_URL}/`
-          : `${BASE_URL}/${f.replace(/\.html$/, "")}`,
+        f === "index.html" ? `${base}/` : `${base}/${f.replace(/\.html$/, "")}`,
       )
       .sort();
 

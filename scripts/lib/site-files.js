@@ -21,8 +21,9 @@ export const SITE_ROOT = join(__dirname, "..", "..");
 // tests/coverage-guard.test.js cross-checks discovery against git, so a
 // tracked page accidentally excluded here still fails loudly.
 export const NON_PAGE_DIRS = [
-  "node_modules", // dependencies
+  "node_modules", // dependencies (including nested ones)
   "dist", // build output
+  "public", // Vite publicDir, copied verbatim; never a build input
   "partials", // Handlebars fragments, inlined at build time
   "playwright-report", // e2e tooling output
   "test-results", // e2e tooling output
@@ -35,7 +36,10 @@ export function allPages() {
   return glob
     .sync("**/*.html", {
       cwd: SITE_ROOT,
-      ignore: NON_PAGE_DIRS.map((dir) => `${dir}/**`),
+      // Match at any depth: a nested node_modules/ or dist/ (a workspace
+      // package, tooling installed under scripts/) ships .html files that
+      // would otherwise become build inputs and sitemap entries.
+      ignore: NON_PAGE_DIRS.map((dir) => `**/${dir}/**`),
     })
     .sort();
 }
