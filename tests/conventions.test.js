@@ -476,3 +476,37 @@ describe("Cross-platform npm scripts", () => {
     ).toBeGreaterThan(0);
   });
 });
+
+// ---------------------------------------------------------------------------
+// Claude Code Stop hook wiring. The hook is a local speed-up (fast test
+// suites run before the agent finishes a turn); if the settings file rots,
+// it silently becomes a no-op instead of failing loudly, so check it here.
+// ---------------------------------------------------------------------------
+describe("Claude Code Stop hook", () => {
+  const settingsPath = path.join(rootDir, ".claude/settings.json");
+
+  it("declares exactly one Stop hook command pointing at a file that exists", () => {
+    expect(
+      fs.existsSync(settingsPath),
+      ".claude/settings.json is missing",
+    ).toBe(true);
+    const settings = JSON.parse(fs.readFileSync(settingsPath, "utf-8"));
+    const stopGroups = settings.hooks?.Stop ?? [];
+    const commands = stopGroups.flatMap((group) => group.hooks ?? []);
+
+    expect(commands.length, "expected exactly one Stop hook command").toBe(1);
+
+    const command = commands[0].command;
+    const match = command.match(/"\$CLAUDE_PROJECT_DIR\/([^"]+)"/);
+    expect(
+      match,
+      `Stop hook command does not reference a $CLAUDE_PROJECT_DIR-relative script: ${command}`,
+    ).not.toBeNull();
+
+    const scriptPath = path.join(rootDir, match[1]);
+    expect(
+      fs.existsSync(scriptPath),
+      `Stop hook command points at ${match[1]}, which does not exist`,
+    ).toBe(true);
+  });
+});
