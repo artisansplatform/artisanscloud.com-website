@@ -32,3 +32,4 @@
 - **Form validation**: Validate on client side with HTML5 `required` / `type` attributes. Backend validation is handled by the form processor (web3forms).
 - **Dependency updates**: Keep npm packages updated to avoid known vulnerabilities
 - **No secrets in code**: Never commit API keys, tokens, or sensitive data (use environment variables)
+- **No shell-string child processes**: Never call `execSync(cmd)`, `spawnSync(cmd)`, `exec`, `spawn`, `fork`, or pass `shell: true`. A command string is re-parsed by a shell, and Windows `cmd.exe` quoting differs from POSIX, so a path with a space, glob character, or quote can break. Use `execFileSync(cmd, [args], { cwd, encoding })` instead. Enforced by `tests/conventions.test.js`.
