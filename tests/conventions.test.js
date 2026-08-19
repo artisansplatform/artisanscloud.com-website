@@ -284,3 +284,105 @@ fork("./worker.js");
     expect(offenders.some((o) => o.includes("shell: true"))).toBe(true);
   });
 });
+
+// ---------------------------------------------------------------------------
+// Cross-platform npm scripts.
+// package.json scripts run on Windows cmd.exe as well as POSIX shells (see
+// step 8's windows-latest CI job). Bare unix binaries, shell operators, and
+// single-quoted outer arguments to `node -e` are all POSIX-only.
+// ---------------------------------------------------------------------------
+describe("Cross-platform npm scripts", () => {
+  // Scripts that intentionally need an exemption, with a one-line reason.
+  // Expect this to stay empty; add an entry only when a script genuinely
+  // cannot be made cross-platform.
+  const CROSS_PLATFORM_EXEMPT = {};
+
+  const UNIX_BINARIES = [
+    "cp",
+    "rm",
+    "mv",
+    "mkdir -p",
+    "cat",
+    "touch",
+    "sed",
+    "grep",
+  ];
+  // Built by concatenation so this file's own scripts do not flag it.
+  const REDIRECT = "2" + ">";
+  const DEV_NULL = "/dev" + "/null";
+  const OR_OR = "|" + "|";
+  const PIPE = "|";
+  const BACKTICK = "`";
+  const DOLLAR_PAREN = "$" + "(";
+
+  function findScriptViolations(name, value) {
+    const offenders = [];
+
+    for (const bin of UNIX_BINARIES) {
+      const re = new RegExp(`(^|&&|\\|\\||;)\\s*${bin}(\\s|$)`);
+      if (re.test(value)) offenders.push(`uses unix binary \`${bin}\``);
+    }
+    if (/\becho\b.*>/.test(value))
+      offenders.push("uses `echo` with a redirect");
+    if (value.includes(REDIRECT))
+      offenders.push(`uses \`${REDIRECT}\` redirect`);
+    if (value.includes(DEV_NULL)) offenders.push(`references \`${DEV_NULL}\``);
+    if (value.includes(PIPE)) offenders.push(`uses \`${PIPE}\` pipe`);
+    if (value.includes(BACKTICK)) offenders.push("uses backtick substitution");
+    if (value.includes(DOLLAR_PAREN))
+      offenders.push(`uses \`${DOLLAR_PAREN}\` substitution`);
+    if (/\$\w/.test(value))
+      offenders.push("references a shell env var (`$VAR`)");
+    if (/node\s+-e\s+'/.test(value))
+      offenders.push(
+        "single-quoted outer argument to `node -e`; cmd.exe does not strip single quotes, use double-quotes outside and single-quotes inside",
+      );
+
+    return offenders;
+  }
+
+  const pkg = JSON.parse(read("package.json"));
+  const scripts = pkg.scripts ?? {};
+
+  it("has no POSIX-only construct in any npm script", () => {
+    const offenders = [];
+    for (const [name, value] of Object.entries(scripts)) {
+      if (CROSS_PLATFORM_EXEMPT[name]) continue;
+      for (const reason of findScriptViolations(name, value)) {
+        offenders.push(`scripts.${name}: ${reason} (\`${value}\`)`);
+      }
+    }
+    expect(offenders, offenders.join("\n")).toEqual([]);
+  });
+
+  it("keeps CROSS_PLATFORM_EXEMPT free of stale entries", () => {
+    const stale = Object.keys(CROSS_PLATFORM_EXEMPT).filter((name) => {
+      const value = scripts[name];
+      return (
+        value === undefined || findScriptViolations(name, value).length === 0
+      );
+    });
+    expect(
+      stale,
+      "CROSS_PLATFORM_EXEMPT entry no longer matches a POSIX-only script; remove it",
+    ).toEqual([]);
+  });
+
+  it("still detects each banned form (self-test against a fixture)", () => {
+    const fixtures = {
+      copy: "cp -r a b",
+      redirect: "x " + REDIRECT + DEV_NULL + " " + OR_OR + " true",
+      singleQuoteNodeE: "node -e 'y'",
+    };
+    expect(findScriptViolations("copy", fixtures.copy).length).toBeGreaterThan(
+      0,
+    );
+    expect(
+      findScriptViolations("redirect", fixtures.redirect).length,
+    ).toBeGreaterThan(0);
+    expect(
+      findScriptViolations("singleQuoteNodeE", fixtures.singleQuoteNodeE)
+        .length,
+    ).toBeGreaterThan(0);
+  });
+});

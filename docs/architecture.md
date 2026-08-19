@@ -282,3 +282,5 @@ Key directives and why each origin is allowed:
 - **Config**: `vercel.json` - specifies `dist/` as output directory, clean URLs, security headers (including CSP), cron jobs
 - **Build process**: `npm install` → `npm run build` (compiles CSS + processes Handlebars templates + generates sitemap + copies OG images) → deploys `dist/`
 - **Auto-deploy**: Main branch pushes trigger automatic deployment
+- **`build:static`**: a `node -e` one-liner (`fs.cpSync('assets/og','dist/assets/og',{recursive:true})`), not a shell `cp -r`, so it runs on Windows `cmd.exe` too
+- **`prepare`**: runs `scripts/setup-hooks.js`, which sets `core.hooksPath` to `.githooks` and never fails `npm install` even outside a git checkout
