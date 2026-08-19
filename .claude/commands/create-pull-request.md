@@ -6,25 +6,25 @@ Analyze all changes in the current branch compared to the base branch, then auto
 
 1. Check the current branch.
 2. If the current branch is `main`:
-    - Run `git pull origin main` to ensure it is up to date.
-    - Create a new feature branch from `main`.
-    - Switch to the new branch before making any PR-related actions.
+   - Run `git pull origin main` to ensure it is up to date.
+   - Create a new feature branch from `main`.
+   - Switch to the new branch before making any PR-related actions.
 3. Identify the base branch (usually `main`).
 4. Run `git log` and `git diff` to understand all changes in this branch.
 5. Understand the purpose and intent behind the changes.
 6. Generate a PR title and description following the rules below.
 7. Run code formatting checks before pushing:
-    ```bash
-    npm run prettier
-    ```
+   ```bash
+   npm run prettier
+   ```
 8. Run all tests before pushing:
-    ```bash
-    npm test
-    ```
+   ```bash
+   npm test
+   ```
 9. Push the branch if not already on remote using:
-    ```bash
-    git push -u origin HEAD
-    ```
+   ```bash
+   git push -u origin HEAD
+   ```
 10. Create the PR using:
     ```bash
     gh pr create --title "<generated title>" --body "<generated description>" --base <base-branch>
@@ -34,10 +34,10 @@ Analyze all changes in the current branch compared to the base branch, then auto
 
 - Never create a pull request directly from `main`.
 - If currently on `main`, always:
-    1. Pull the latest changes.
-    2. Create a new branch.
-    3. Switch to that branch.
-    4. Continue the PR workflow from there.
+  1. Pull the latest changes.
+  2. Create a new branch.
+  3. Switch to that branch.
+  4. Continue the PR workflow from there.
 
 - If already on a non-main branch, continue normally.
 
@@ -71,8 +71,8 @@ Examples:
 - Keep the description short, simple, and easy to scan.
 - Use bullet points, not paragraphs.
 - Write for a product manager, reviewer, or business stakeholder.
-Focus on what changed and why it matters.
-Never mention implementation details, file names, classes, methods, databases, APIs, migrations, or technical architecture.
-Each bullet should be one short sentence.
-Avoid unnecessary words and repetition.
-Keep the entire description under bullet points.
+  Focus on what changed and why it matters.
+  Never mention implementation details, file names, classes, methods, databases, APIs, migrations, or technical architecture.
+  Each bullet should be one short sentence.
+  Avoid unnecessary words and repetition.
+  Keep the entire description under bullet points.

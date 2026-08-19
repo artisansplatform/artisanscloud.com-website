@@ -269,7 +269,7 @@ Run just these checks with `npm run test:seo`. If you add a page that legitimate
 | Font subset      | `tests/font-subset.test.js`     | a font weight/style used in markup with no `@font-face`, a missing woff2 file, or a stray Google Fonts reference                                                                                                              |
 | Security headers | `tests/vercel-security.test.js` | missing security headers / cron config in `vercel.json`                                                                                                                                                                       |
 | Coverage guard   | `tests/coverage-guard.test.js`  | drift between page discovery and git, sitemap gaps/ghosts, hardcoded page globs outside `site-files.js`, a resurrected (dead) `tailwind.config.js`, full pages saved into `partials/`, growth of the discovery exclusion list |
-| Docs             | `tests/docs.test.js`            | broken markdown tables: a row split from its table by a blank line, or a table with no header separator row; backticked file paths that do not exist                                                                         |
+| Docs             | `tests/docs.test.js`            | broken markdown tables: a row split from its table by a blank line, or a table with no header separator row; backticked file paths that do not exist                                                                          |
 
 Per-area run scripts: `test:seo`, `test:meta`, `test:conventions`, `test:font`, `test:links`, `test:build`, `test:guard`, `test:docs`.
 

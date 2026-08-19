@@ -188,7 +188,8 @@ describe("Documented file references resolve", () => {
       } catch (err) {
         // exit code 1 means none of the paths are ignored; stdout still
         // holds whichever ones matched before the non-match
-        if (err.stdout) ignored = new Set(err.stdout.split("\n").filter(Boolean));
+        if (err.stdout)
+          ignored = new Set(err.stdout.split("\n").filter(Boolean));
       }
     }
 
@@ -196,10 +197,9 @@ describe("Documented file references resolve", () => {
       .filter(({ candidate }) => !ignored.has(candidate))
       .map(({ candidate, line }) => `line ${line}: ${candidate} (not found)`);
 
-    expect(
-      problems,
-      `${file} has file references that do not resolve`,
-    ).toEqual([]);
+    expect(problems, `${file} has file references that do not resolve`).toEqual(
+      [],
+    );
   });
 });
 

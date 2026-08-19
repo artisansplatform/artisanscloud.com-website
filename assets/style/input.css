@@ -1,315 +1,446 @@
 @import "tailwindcss";
 
 @theme {
-    --color-heading: #222222;
-    --color-white: #fff;
-    --color-description: #686c71;
+  --color-heading: #222222;
+  --color-white: #fff;
+  --color-description: #686c71;
 
-    --color-primary: #8d68f6;
-    --color-primary-light: #7e54f0;
+  --color-primary: #8d68f6;
+  --color-primary-light: #7e54f0;
 
-    --color-sky: #13d9e4;
-    --color-sky-2: #00cad5;
-    --color-pink: #fc4bda;
-    --color-grey: #686c71;
+  --color-sky: #13d9e4;
+  --color-sky-2: #00cad5;
+  --color-pink: #fc4bda;
+  --color-grey: #686c71;
 
-    --color-light-purple: #eae3ff;
-    --color-light-pink: #fff3fd;
-    --color-light-green: #eaf5f6;
-    --color-light-sky: #ddf1ff;
-    --color-light-green-box: #e7faf9;
-    --color-light-blue-box: #ecf4ff;
+  --color-light-purple: #eae3ff;
+  --color-light-pink: #fff3fd;
+  --color-light-green: #eaf5f6;
+  --color-light-sky: #ddf1ff;
+  --color-light-green-box: #e7faf9;
+  --color-light-blue-box: #ecf4ff;
 
-    --color-light-border: #bdd8ff;
+  --color-light-border: #bdd8ff;
 
-    --font-primary: "Poppins", sans-serif;
+  --font-primary: "Poppins", sans-serif;
 
-    --leading-heading: 1.2;
-    --leading-body: 1.5;
+  --leading-heading: 1.2;
+  --leading-body: 1.5;
 }
 
 /* Self-hosted Poppins (subset to the weights/styles the site uses).
    Files live in assets/fonts/poppins/; see docs/development.md (Fonts). */
 /* latin normal 400 */
 @font-face {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url("../fonts/poppins/poppins-400-latin.woff2") format("woff2");
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/poppins/poppins-400-latin.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext normal 400 */
 @font-face {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url("../fonts/poppins/poppins-400-latin-ext.woff2") format("woff2");
-    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/poppins/poppins-400-latin-ext.woff2") format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin normal 500 */
 @font-face {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: url("../fonts/poppins/poppins-500-latin.woff2") format("woff2");
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/poppins/poppins-500-latin.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext normal 500 */
 @font-face {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: url("../fonts/poppins/poppins-500-latin-ext.woff2") format("woff2");
-    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/poppins/poppins-500-latin-ext.woff2") format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin normal 600 */
 @font-face {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url("../fonts/poppins/poppins-600-latin.woff2") format("woff2");
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/poppins/poppins-600-latin.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext normal 600 */
 @font-face {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url("../fonts/poppins/poppins-600-latin-ext.woff2") format("woff2");
-    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/poppins/poppins-600-latin-ext.woff2") format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin normal 700 */
 @font-face {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url("../fonts/poppins/poppins-700-latin.woff2") format("woff2");
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/poppins/poppins-700-latin.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext normal 700 */
 @font-face {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url("../fonts/poppins/poppins-700-latin-ext.woff2") format("woff2");
-    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/poppins/poppins-700-latin-ext.woff2") format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin normal 800 */
 @font-face {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 800;
-    font-display: swap;
-    src: url("../fonts/poppins/poppins-800-latin.woff2") format("woff2");
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../fonts/poppins/poppins-800-latin.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext normal 800 */
 @font-face {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 800;
-    font-display: swap;
-    src: url("../fonts/poppins/poppins-800-latin-ext.woff2") format("woff2");
-    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../fonts/poppins/poppins-800-latin-ext.woff2") format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin italic 400 */
 @font-face {
-    font-family: "Poppins";
-    font-style: italic;
-    font-weight: 400;
-    font-display: swap;
-    src: url("../fonts/poppins/poppins-400-italic-latin.woff2") format("woff2");
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/poppins/poppins-400-italic-latin.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext italic 400 */
 @font-face {
-    font-family: "Poppins";
-    font-style: italic;
-    font-weight: 400;
-    font-display: swap;
-    src: url("../fonts/poppins/poppins-400-italic-latin-ext.woff2") format("woff2");
-    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/poppins/poppins-400-italic-latin-ext.woff2")
+    format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin italic 600 */
 @font-face {
-    font-family: "Poppins";
-    font-style: italic;
-    font-weight: 600;
-    font-display: swap;
-    src: url("../fonts/poppins/poppins-600-italic-latin.woff2") format("woff2");
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/poppins/poppins-600-italic-latin.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext italic 600 */
 @font-face {
-    font-family: "Poppins";
-    font-style: italic;
-    font-weight: 600;
-    font-display: swap;
-    src: url("../fonts/poppins/poppins-600-italic-latin-ext.woff2") format("woff2");
-    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/poppins/poppins-600-italic-latin-ext.woff2")
+    format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 body {
-    font-family: var(--font-primary);
-    color: var(--color-heading);
+  font-family: var(--font-primary);
+  color: var(--color-heading);
 }
 
 @layer components {
-    /* Typography scale (single source of truth) */
-    .t-display { @apply font-semibold leading-heading text-3xl sm:text-4xl lg:text-5xl xl:text-5xl text-primary; }
-    .t-h2      { @apply font-semibold leading-heading text-3xl md:text-4xl lg:text-5xl; }
-    .t-h2-sm   { @apply font-semibold leading-heading text-2xl lg:text-3xl; }
-    .t-h3      { @apply font-semibold leading-heading text-xl lg:text-2xl; }
-    .t-lead    { @apply font-normal leading-body text-lg lg:text-xl; }
-    .t-body    { @apply font-normal text-lg leading-body text-base; }
-    .t-body-sm { @apply font-normal leading-body text-sm; }
-    .t-caption { @apply font-normal leading-body; }
+  /* Typography scale (single source of truth) */
+  .t-display {
+    @apply font-semibold leading-heading text-3xl sm:text-4xl lg:text-5xl xl:text-5xl text-primary;
+  }
+  .t-h2 {
+    @apply font-semibold leading-heading text-3xl md:text-4xl lg:text-5xl;
+  }
+  .t-h2-sm {
+    @apply font-semibold leading-heading text-2xl lg:text-3xl;
+  }
+  .t-h3 {
+    @apply font-semibold leading-heading text-xl lg:text-2xl;
+  }
+  .t-lead {
+    @apply font-normal leading-body text-lg lg:text-xl;
+  }
+  .t-body {
+    @apply font-normal text-lg leading-body text-base;
+  }
+  .t-body-sm {
+    @apply font-normal leading-body text-sm;
+  }
+  .t-caption {
+    @apply font-normal leading-body;
+  }
 
-    /* Buttons style */
-    .ripple {
-        display: block;
-        position: absolute;
-        background: rgba(192, 192, 192, 0.4);
-        border-radius: 100%;
-        transform: scale(0);
-        animation: ripple 0.65s linear;
+  /* Buttons style */
+  .ripple {
+    display: block;
+    position: absolute;
+    background: rgba(192, 192, 192, 0.4);
+    border-radius: 100%;
+    transform: scale(0);
+    animation: ripple 0.65s linear;
+  }
+  @keyframes ripple {
+    100% {
+      opacity: 0;
+      transform: scale(2.5);
     }
-    @keyframes ripple { 100% { opacity: 0; transform: scale(2.5); } }
-    @-webkit-keyframes ripple { 100% { opacity: 0; transform: scale(2.5); } }
-
-
-    /* Header Link */
-    .header-link.active { @apply bg-pink/10! text-pink!; }
-    .header-scrolled { @apply !top-0 !p-0; }
-    .header-scrolled .header-inner { @apply !bg-white rounded-xl !px-0 !pt-0; }
-
-    /* Dropdown */
-    .tw-dropdown .dropdown-menu .dropdown-item.active { @apply text-pink; }
-    .tw-dropdown.show .dropdown-menu { @apply !opacity-100 !translate-y-0 !pointer-events-auto; }
-    .tw-dropdown.show .dropdown-icon { @apply rotate-180; }
-    .dropdown-item { @apply w-fit block text-heading font-primary hover:text-primary transition-colors; }
-    .dropdown-extra { overflow: hidden; max-height: 0; transition: max-height 0.45s ease-out; }
-
-    @media (max-width: 1024px) {
-        .tw-dropdown.show .dropdown-menu { @apply !opacity-100 !block !pointer-events-auto; }
+  }
+  @-webkit-keyframes ripple {
+    100% {
+      opacity: 0;
+      transform: scale(2.5);
     }
-    
-    /* Client logo marquee: CSS-only continuous scroll.
+  }
+
+  /* Header Link */
+  .header-link.active {
+    @apply bg-pink/10! text-pink!;
+  }
+  .header-scrolled {
+    @apply !top-0 !p-0;
+  }
+  .header-scrolled .header-inner {
+    @apply !bg-white rounded-xl !px-0 !pt-0;
+  }
+
+  /* Dropdown */
+  .tw-dropdown .dropdown-menu .dropdown-item.active {
+    @apply text-pink;
+  }
+  .tw-dropdown.show .dropdown-menu {
+    @apply !opacity-100 !translate-y-0 !pointer-events-auto;
+  }
+  .tw-dropdown.show .dropdown-icon {
+    @apply rotate-180;
+  }
+  .dropdown-item {
+    @apply w-fit block text-heading font-primary hover:text-primary transition-colors;
+  }
+  .dropdown-extra {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.45s ease-out;
+  }
+
+  @media (max-width: 1024px) {
+    .tw-dropdown.show .dropdown-menu {
+      @apply !opacity-100 !block !pointer-events-auto;
+    }
+  }
+
+  /* Client logo marquee: CSS-only continuous scroll.
        The track holds two identical logo groups, so shifting it by -50%
        lands exactly on the start of the duplicate and loops seamlessly. */
-    .logoMarquee { overflow: hidden; }
+  .logoMarquee {
+    overflow: hidden;
+  }
+  .logoMarquee-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    animation: logo-marquee 45s linear infinite;
+  }
+  .logoMarquee-group {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+  .logoMarquee:hover .logoMarquee-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes logo-marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
     .logoMarquee-track {
-        display: flex;
-        width: max-content;
-        will-change: transform;
-        animation: logo-marquee 45s linear infinite;
+      animation: none;
     }
-    .logoMarquee-group {
-        display: flex;
-        align-items: center;
-        flex: 0 0 auto;
+    .logoMarquee {
+      overflow-x: auto;
     }
-    .logoMarquee:hover .logoMarquee-track { animation-play-state: paused; }
+  }
 
-    @keyframes logo-marquee {
-        from { transform: translate3d(0, 0, 0); }
-        to { transform: translate3d(-50%, 0, 0); }
-    }
+  .unifiedCommerce_sec_imgBox::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: 20px;
+    background: linear-gradient(
+      180deg,
+      #eeeeee 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
 
-    @media (prefers-reduced-motion: reduce) {
-        .logoMarquee-track { animation: none; }
-        .logoMarquee { overflow-x: auto; }
-    }
-    
-    .unifiedCommerce_sec_imgBox::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        padding: 2px;
-        border-radius: 20px;
-        background: linear-gradient(180deg, #eeeeee 0%, rgba(255, 255, 255, 0) 100%);
-        -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        pointer-events: none;
-    }
+  .unifiedCommerce_sec_imgBox::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 16.14%,
+      #ffffff 68.66%,
+      #ffffff 100%
+    );
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+  }
 
-    .unifiedCommerce_sec_imgBox::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 40%;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 16.14%, #ffffff 68.66%, #ffffff 100%);
-        z-index: 1;
-        user-select: none;
-        pointer-events: none;
-    }
+  .unifiedCommerce_sec_imgBox.ourApproachImageBox::before {
+    background: linear-gradient(90deg, #eeeeee 0%, rgba(255, 255, 255, 0) 100%);
+  }
 
-    .unifiedCommerce_sec_imgBox.ourApproachImageBox::before {
-        background: linear-gradient(90deg, #eeeeee 0%, rgba(255, 255, 255, 0) 100%);
-    }
+  /* Footer nav link active state */
+  footer .flex.flex-col a.active {
+    @apply text-primary!;
+  }
 
-    /* Footer nav link active state */
-    footer .flex.flex-col a.active { @apply text-primary!; }
-
-    /* Footer */
+  /* Footer */
+  .ftrBottomTitle {
+    /* background-image: linear-gradient(91.22deg, #d8cbff 1.04%, #dacdff 48.55%, #a0f0f5 99.83%); background-size: 100% 100%; background-position: 50% 50%; -webkit-background-clip: text; background-clip: text; will-change: background-position;  */
+    background-image: linear-gradient(93.32deg, #d9ccff 1.4%, #a1eff5 101.99%);
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    will-change: background-position;
+  }
+  @media (max-width: 375px) {
     .ftrBottomTitle {
-        /* background-image: linear-gradient(91.22deg, #d8cbff 1.04%, #dacdff 48.55%, #a0f0f5 99.83%); background-size: 100% 100%; background-position: 50% 50%; -webkit-background-clip: text; background-clip: text; will-change: background-position;  */
-        background-image: linear-gradient(93.32deg, #D9CCFF 1.4%, #A1EFF5 101.99%); background-size: 100% 100%; background-position: 50% 50%; -webkit-background-clip: text; background-clip: text; will-change: background-position; 
+      font-size: 75px;
     }
-    @media (max-width: 375px) {.ftrBottomTitle {font-size: 75px;}}
+  }
 
-    @media (hover: none) and (pointer: coarse) {
-        .ftrBottomTitle {
-            background: linear-gradient(93.32deg, #D9CCFF 1.4%, #A1EFF5 101.99%) !important;
-            -webkit-background-clip: text !important;
-            background-clip: text !important;
-        }
+  @media (hover: none) and (pointer: coarse) {
+    .ftrBottomTitle {
+      background: linear-gradient(
+        93.32deg,
+        #d9ccff 1.4%,
+        #a1eff5 101.99%
+      ) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
     }
+  }
 
-    .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {@apply !border-0}
-    
-    /* Fix for custom navigation arrows - hide Swiper's injected SVG icons and center custom images */
-    .swiper-button-prev, .swiper-button-next {
-        @apply flex items-center justify-center;
-    }
-    .swiper-navigation-icon {
-        @apply hidden;
-    }
+  .swiper-button-next.swiper-button-disabled,
+  .swiper-button-prev.swiper-button-disabled {
+    @apply !border-0;
+  }
 
-    /* Floating keyframe animations for hero image cards */
-    @keyframes float-slow {
-        0%, 100% {
-            transform: translateY(0px) rotate(0deg);
-        }
-        50% {
-            transform: translateY(-8px) rotate(0.5deg);
-        }
+  /* Fix for custom navigation arrows - hide Swiper's injected SVG icons and center custom images */
+  .swiper-button-prev,
+  .swiper-button-next {
+    @apply flex items-center justify-center;
+  }
+  .swiper-navigation-icon {
+    @apply hidden;
+  }
+
+  /* Floating keyframe animations for hero image cards */
+  @keyframes float-slow {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
     }
-    @keyframes float-slower {
-        0%, 100% {
-            transform: translateY(0px) rotate(0deg);
-        }
-        50% {
-            transform: translateY(8px) rotate(-0.5deg);
-        }
+    50% {
+      transform: translateY(-8px) rotate(0.5deg);
     }
-    .animate-float-slow {
-        animation: float-slow 7s ease-in-out infinite;
+  }
+  @keyframes float-slower {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
     }
-    .animate-float-slower {
-        animation: float-slower 9s ease-in-out infinite;
+    50% {
+      transform: translateY(8px) rotate(-0.5deg);
     }
+  }
+  .animate-float-slow {
+    animation: float-slow 7s ease-in-out infinite;
+  }
+  .animate-float-slower {
+    animation: float-slower 9s ease-in-out infinite;
+  }
 }
