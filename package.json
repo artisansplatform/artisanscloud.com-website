@@ -26,6 +26,7 @@
     "test:meta": "vitest run tests/pages-meta.test.js",
     "test:font": "vitest run tests/font-subset.test.js",
     "test:conventions": "vitest run tests/conventions.test.js",
+    "test:format": "vitest run tests/format.test.js",
     "test:guard": "vitest run tests/coverage-guard.test.js",
     "test:docs": "vitest run tests/docs.test.js",
     "test:e2e": "playwright test",
