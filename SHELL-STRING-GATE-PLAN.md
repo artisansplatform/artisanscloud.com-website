@@ -17,15 +17,15 @@ This step is purely preventive: there are zero violations today.
 
 - Every child-process call site already uses `execFileSync` from
   `node:child_process` / `child_process`:
-  - `scripts/check-images.js:3,35` (`git cat-file -s`)
-  - `tests/conventions.test.js:3,166` (`git grep`)
-  - `tests/docs.test.js:3,12,114,182` (`git ls-files`, `git check-ignore`)
-  - `tests/coverage-guard.test.js:12,47` (`git ls-files`, with a comment
+  - `scripts/check-images.js` (`git cat-file -s`)
+  - `tests/conventions.test.js` (`git grep`)
+  - `tests/docs.test.js` (`git ls-files`, `git check-ignore`)
+  - `tests/coverage-guard.test.js` (`git ls-files`, with a comment
     already explaining why it is not a shell string)
-  - `tests/format.test.js:4,34` (the pinned prettier binary)
+  - `tests/format.test.js` (the pinned prettier binary)
 - Nothing in the repo passes `shell: true`, and nothing uses `exec`,
   `execSync`, `spawn`, `spawnSync`, or `fork`. The one `.exec(` hit in
-  `tests/docs.test.js:141` is `RegExp.prototype.exec`, which the regex below
+  `tests/docs.test.js` is `RegExp.prototype.exec`, which the regex below
   must not flag.
 - `api/` (Vercel serverless functions: `api/articles.js`, `api/cron/*`,
   `api/lib/*`) does no process spawning at all. It is `fetch` plus
@@ -82,7 +82,7 @@ member calls on that default binding.
 
 **Self-flagging trap.** The test file will itself contain the banned words in
 its regex source and in its failure message. Build the identifiers by string
-concatenation, the way the em dash test uses `"—"`:
+concatenation, the way the em dash test uses the U+2014 character itself:
 
 ```js
 const BANNED = ["exec" + "Sync", "spawn" + "Sync", "spawn", "exec", "fork"];
