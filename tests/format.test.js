@@ -21,7 +21,11 @@ const require = createRequire(import.meta.url);
 // Each entry left unformatted on purpose: reformatting shifts whitespace in
 // layouts built against the unformatted markup, so they need a visual pass
 // (393px / 768px / 1280px) before their entry can be deleted.
-const GRANDFATHERED = new Set();
+const GRANDFATHERED = new Set([
+  "POS.html",
+  "browser-pos.html",
+  "data-intelligence.html",
+]);
 
 function listDifferentFiles() {
   const prettierBin = require.resolve("prettier/bin/prettier.cjs");
