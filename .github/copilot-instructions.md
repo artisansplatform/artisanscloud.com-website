@@ -14,6 +14,8 @@ Static marketing website. Vanilla HTML/JS + Tailwind CSS v4 + Handlebars (build-
 
 Always replace em dashes with appropriate punctuation such as commas, periods, colons, or parentheses.
 
+This rule is enforced by `tests/conventions.test.js`, which fails `npm test` if an em dash (U+2014) appears in any tracked file (except `assets/data/fallback-articles.json`, which carries verbatim external copy).
+
 **Additional writing guidelines:**
 
 - Prefer simple, human-readable language over AI-style phrasing
