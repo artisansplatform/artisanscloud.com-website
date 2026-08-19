@@ -269,8 +269,9 @@ Run just these checks with `npm run test:seo`. If you add a page that legitimate
 | Font subset      | `tests/font-subset.test.js`     | a font weight/style used in markup with no `@font-face`, a missing woff2 file, or a stray Google Fonts reference                                                                                                              |
 | Security headers | `tests/vercel-security.test.js` | missing security headers / cron config in `vercel.json`                                                                                                                                                                       |
 | Coverage guard   | `tests/coverage-guard.test.js`  | drift between page discovery and git, sitemap gaps/ghosts, hardcoded page globs outside `site-files.js`, a resurrected (dead) `tailwind.config.js`, full pages saved into `partials/`, growth of the discovery exclusion list |
+| Docs             | `tests/docs.test.js`            | broken markdown tables: a row split from its table by a blank line, or a table with no header separator row                                                                                                                   |
 
-Per-area run scripts: `test:seo`, `test:meta`, `test:conventions`, `test:font`, `test:links`, `test:build`, `test:guard`.
+Per-area run scripts: `test:seo`, `test:meta`, `test:conventions`, `test:font`, `test:links`, `test:build`, `test:guard`, `test:docs`.
 
 The coverage guard exists because checks themselves can rot: PR #111 showed that hardcoded directory lists in configs and tests go stale silently when pages move into new directories. Discovery now lives in one file (`scripts/lib/site-files.js`) and the guard cross-checks it against independent ground truth (git, the built sitemap) in both directions. When you add a check that iterates pages, import `allPages()` / `contentPages()` / `partialFiles()` from `site-files.js` instead of writing a glob.
 
