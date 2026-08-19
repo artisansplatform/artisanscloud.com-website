@@ -41,6 +41,7 @@ export function allPages() {
       // would otherwise become build inputs and sitemap entries.
       ignore: NON_PAGE_DIRS.map((dir) => `**/${dir}/**`),
     })
+    .map((p) => p.split("\\").join("/"))
     .sort();
 }
 
@@ -53,5 +54,8 @@ export function contentPages() {
 
 // Handlebars partials (fragments, never served directly).
 export function partialFiles() {
-  return glob.sync("partials/**/*.html", { cwd: SITE_ROOT }).sort();
+  return glob
+    .sync("partials/**/*.html", { cwd: SITE_ROOT })
+    .map((p) => p.split("\\").join("/"))
+    .sort();
 }

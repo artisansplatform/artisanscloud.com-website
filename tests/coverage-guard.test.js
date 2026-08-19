@@ -15,6 +15,7 @@ import { glob } from "glob";
 import path from "path";
 import { fileURLToPath } from "url";
 import { describe, expect, it } from "vitest";
+import { toPosix } from "./lib/paths.js";
 import { BASE_URL, loadPages } from "../scripts/lib/page-meta.js";
 import {
   allPages,
@@ -147,8 +148,8 @@ describe("sitemap covers every indexable page exactly", () => {
 describe("no hardcoded page discovery outside site-files.js", () => {
   const scanned = [
     "vite.config.js",
-    ...glob.sync("scripts/**/*.js", { cwd: rootDir }),
-    ...glob.sync("tests/**/*.js", { cwd: rootDir }),
+    ...glob.sync("scripts/**/*.js", { cwd: rootDir }).map(toPosix),
+    ...glob.sync("tests/**/*.js", { cwd: rootDir }).map(toPosix),
   ].filter((f) => f !== "scripts/lib/site-files.js");
 
   it("no .html globs or root readdir page scans", () => {
@@ -179,9 +180,11 @@ describe("no hardcoded page discovery outside site-files.js", () => {
 // ---------------------------------------------------------------------------
 describe("no dead Tailwind config", () => {
   it("tailwind.config.* does not exist", () => {
-    const configs = glob.sync("tailwind.config.{js,cjs,mjs,ts}", {
-      cwd: rootDir,
-    });
+    const configs = glob
+      .sync("tailwind.config.{js,cjs,mjs,ts}", {
+        cwd: rootDir,
+      })
+      .map(toPosix);
     expect(
       configs,
       "Tailwind v4 ignores this file unless input.css opts in via @config, " +
