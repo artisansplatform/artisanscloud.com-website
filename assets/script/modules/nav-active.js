@@ -17,14 +17,14 @@ export function initNavActive() {
     let currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
     if (currentPath === '/index') currentPath = '/';
 
-    // Header nav links (desktop + mobile) – only <a> tags with href
+    // Header nav links (desktop + mobile): only <a> tags with href
     document.querySelectorAll('.header-link[href]').forEach(link => {
         if (normalizePath(link.href) === currentPath) {
             link.classList.add('active');
         }
     });
 
-    // Dropdown items – also highlight the parent dropdown toggle button
+    // Dropdown items: also highlight the parent dropdown toggle button
     document.querySelectorAll('.tw-dropdown .dropdown-item[href]').forEach(item => {
         if (normalizePath(item.href) === currentPath) {
             item.classList.add('active');

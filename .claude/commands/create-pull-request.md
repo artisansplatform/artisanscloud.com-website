@@ -1,6 +1,6 @@
 # Create Pull Request
 
-Analyze all changes in the current branch compared to the base branch, then automatically generate and raise a pull request with a clear, meaningful title and a description written for someone non-technical — like a product manager or a business stakeholder — who needs to understand what changed and why, not how it was implemented.
+Analyze all changes in the current branch compared to the base branch, then automatically generate and raise a pull request with a clear, meaningful title and a description written for someone non-technical, like a product manager or a business stakeholder, who needs to understand what changed and why, not how it was implemented.
 
 ## Steps
 
