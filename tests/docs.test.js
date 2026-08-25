@@ -8,11 +8,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 
-function trackedMarkdown() {
-  const out = execFileSync("git", ["ls-files", "-z", "*.md"], {
-    cwd: rootDir,
-    encoding: "utf-8",
-  });
+function findMarkdown() {
+  const out = execFileSync(
+    "git",
+    ["ls-files", "-z", "--cached", "--others", "--exclude-standard", "*.md"],
+    { cwd: rootDir, encoding: "utf-8" },
+  );
   return out.split("\0").filter(Boolean);
 }
 
@@ -39,7 +40,7 @@ function stripFences(lines) {
   return out;
 }
 
-const SEPARATOR = /^\|(\s*:?-{3,}:?\s*\|)+$/;
+const SEPARATOR = /^\|(\s*:?-+:?\s*\|)+$/;
 
 function tableProblems(text) {
   const lines = stripFences(text.split("\n"));
@@ -79,9 +80,9 @@ function tableProblems(text) {
 // catches it (PR #113 shipped exactly that).
 // ---------------------------------------------------------------------------
 describe("Markdown tables render", () => {
-  const files = trackedMarkdown();
+  const files = findMarkdown();
 
-  it("finds tracked markdown files", () => {
+  it("finds markdown files", () => {
     expect(files.length).toBeGreaterThan(0);
   });
 
