@@ -54,6 +54,10 @@
     "ogCard": {
       "title": "Point of Sale",
       "subtitle": "Unified offline & online retail"
+    },
+    "sitemap": {
+      "priority": "0.8",
+      "changefreq": "monthly"
     }
   },
   "about-us": {
@@ -67,7 +71,7 @@
       "subtitle": "Architects of the Intelligent Enterprise"
     },
     "sitemap": {
-      "priority": "0.8",
+      "priority": "0.5",
       "changefreq": "monthly"
     }
   },
@@ -78,7 +82,7 @@
       "subtitle": "Latest from Artisans Cloud"
     },
     "sitemap": {
-      "priority": "0.8",
+      "priority": "0.6",
       "changefreq": "weekly"
     },
     "description": "Browse articles, insights, and resources from Artisans Cloud covering unified commerce, retail operations, and enterprise AI."
@@ -113,6 +117,10 @@
     "ogCard": {
       "title": "TabsyPOS",
       "subtitle": "Free AI-Powered Browser POS"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
     }
   },
   "chatbots-for-quick-support": {
@@ -139,7 +147,7 @@
       "subtitle": "Let's build something together"
     },
     "sitemap": {
-      "priority": "0.7",
+      "priority": "0.6",
       "changefreq": "monthly"
     }
   },
@@ -150,6 +158,10 @@
     "ogCard": {
       "title": "Customer Experience\nManagement",
       "subtitle": "Omnichannel engagement at scale"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
     }
   },
   "customer-feedback-insights": {
@@ -173,6 +185,10 @@
     "ogCard": {
       "title": "D2C eCommerce",
       "subtitle": "Simplifying direct-to-consumer"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
     }
   },
   "data-intelligence": {
@@ -184,7 +200,7 @@
       "subtitle": "Connect Data. Create Context. Enable Intelligence."
     },
     "sitemap": {
-      "priority": "0.9",
+      "priority": "0.8",
       "changefreq": "monthly"
     }
   },
@@ -198,7 +214,7 @@
       "subtitle": "Strengthening local discovery for retail networks"
     },
     "sitemap": {
-      "priority": "0.9",
+      "priority": "0.8",
       "changefreq": "monthly"
     }
   },
@@ -212,7 +228,7 @@
       "subtitle": "Simplify, automate and optimise workflows"
     },
     "sitemap": {
-      "priority": "0.8",
+      "priority": "0.6",
       "changefreq": "monthly"
     }
   },
@@ -222,6 +238,10 @@
     "ogCard": {
       "title": "Distributed Order\nManagement",
       "subtitle": "Multi-channel fulfillment orchestration"
+    },
+    "sitemap": {
+      "priority": "0.8",
+      "changefreq": "monthly"
     }
   },
   "dynamic-pricing": {
@@ -249,7 +269,7 @@
       "subtitle": "Workforce readiness, knowledge and decision support"
     },
     "sitemap": {
-      "priority": "0.9",
+      "priority": "0.8",
       "changefreq": "monthly"
     }
   },
@@ -262,7 +282,7 @@
       "subtitle": "Make Payments Safer and Smarter"
     },
     "sitemap": {
-      "priority": "0.7",
+      "priority": "0.6",
       "changefreq": "monthly"
     }
   },
@@ -276,7 +296,7 @@
       "subtitle": "Professional visuals for retail & e-commerce"
     },
     "sitemap": {
-      "priority": "0.7",
+      "priority": "0.6",
       "changefreq": "monthly"
     }
   },
@@ -303,7 +323,7 @@
       "subtitle": "Seamless commerce connectivity"
     },
     "sitemap": {
-      "priority": "0.7",
+      "priority": "0.6",
       "changefreq": "monthly"
     }
   },
@@ -316,7 +336,7 @@
       "subtitle": "Lumen | Artisans Cloud"
     },
     "sitemap": {
-      "priority": "0.8",
+      "priority": "0.9",
       "changefreq": "monthly"
     }
   },
@@ -328,6 +348,10 @@
     "ogCard": {
       "title": "Merchandise &\nAssortment Planning",
       "subtitle": "Data-driven product mix optimization"
+    },
+    "sitemap": {
+      "priority": "0.8",
+      "changefreq": "monthly"
     }
   },
   "personalized-promotions": {
@@ -354,7 +378,7 @@
       "subtitle": "Show every shopper something they'll love"
     },
     "sitemap": {
-      "priority": "0.9",
+      "priority": "0.7",
       "changefreq": "monthly"
     }
   },
@@ -368,7 +392,7 @@
       "subtitle": "How we protect your data"
     },
     "sitemap": {
-      "priority": "0.3",
+      "priority": "0.2",
       "changefreq": "yearly"
     }
   },
@@ -392,7 +416,7 @@
       "subtitle": "Workforce Training | Arena"
     },
     "sitemap": {
-      "priority": "0.8",
+      "priority": "0.9",
       "changefreq": "monthly"
     }
   },
@@ -404,6 +428,10 @@
     "ogCard": {
       "title": "Smart Auto-Completion",
       "subtitle": "Find products before you finish typing"
+    },
+    "sitemap": {
+      "priority": "0.6",
+      "changefreq": "monthly"
     }
   },
   "smart-product-search": {
@@ -414,6 +442,10 @@
     "ogCard": {
       "title": "Smart Product Search",
       "subtitle": "Help shoppers find exactly what they want"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly"
     }
   },
   "smarter-inventory-alerts": {
@@ -440,7 +472,7 @@
       "subtitle": "Place products where they sell best"
     },
     "sitemap": {
-      "priority": "0.7",
+      "priority": "0.6",
       "changefreq": "monthly"
     }
   },
@@ -454,7 +486,7 @@
       "subtitle": "Platform usage terms"
     },
     "sitemap": {
-      "priority": "0.3",
+      "priority": "0.2",
       "changefreq": "yearly"
     }
   },
@@ -487,6 +519,10 @@
     "ogCard": {
       "title": "AI Knowledge\nManagement Platform",
       "subtitle": "Vault | Artisans Cloud"
+    },
+    "sitemap": {
+      "priority": "0.9",
+      "changefreq": "monthly"
     }
   },
   "warehouse-management-system": {
@@ -497,6 +533,10 @@
     "ogCard": {
       "title": "Warehouse Management",
       "subtitle": "Intelligent warehouse orchestration"
+    },
+    "sitemap": {
+      "priority": "0.8",
+      "changefreq": "monthly"
     }
   },
   "retail-platform": {

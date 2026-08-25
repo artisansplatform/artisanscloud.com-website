@@ -218,22 +218,23 @@ npm run update-fallback -- --url https://preview.example.com  # Fetch from custo
 
 - `scripts/generate-sitemap.js` runs as `build:sitemap` (after Vite's `build:html`)
 - It discovers both root `*.html` pages and nested subdirectory pages (e.g., `enterprise-copilot/*.html`, `unified-commerce/*.html`, `role-play-agent/*.html`, `knowledge-harvester/*.html`) so they are included automatically
-- Excluded pages: `404.html`, `thank-you.html`, `blog-detail.html`
+- Excluded pages (`"sitemap": false` in `pages.json`): `404.html`, `blog-detail.html`, `request-demo.html`, `thank-you.html`, `retail-platform.html`
+- Entries are written sorted by `priority` descending (alphabetical by URL within a tier), so the file itself reads as a crawl-priority ranking. `<url>` order carries no crawl weight on its own; this is purely for human readability
 - `public/robots.txt` is a static file (Vite passthrough); it references the sitemap URL and is deployed to `dist/robots.txt` unchanged
 
 ### Customising per-page SEO hints
 
-Set the `sitemap` field on the page's entry in `assets/data/pages.json`:
+Every indexable page carries an explicit `sitemap` block on its entry in `assets/data/pages.json`:
 
 ```jsonc
 "my-new-page": { ..., "sitemap": { "priority": "0.8", "changefreq": "weekly" } }
 ```
 
-Pages without a `sitemap` field get `{ priority: '0.6', changefreq: 'monthly' }`.
+`DEFAULT_META` (`{ priority: '0.6', changefreq: 'monthly' }`) in `scripts/generate-sitemap.js` is a fallback for pages that haven't been given their own entry yet; it is not meant to be relied on long-term. Priority tiers are set editorially, judged relative to the other pages in the sitemap. `tests/sitemap-meta.test.js` fails if an indexable page is missing its `sitemap` block, or if `dist/sitemap.xml` disagrees with `pages.json`.
 
 ### Adding a new page
 
-No sitemap action required. Just create the `*.html` file in the root - it will appear in the next build's sitemap automatically. To fine-tune its SEO weight, set its `sitemap` field in `pages.json`.
+Create the `*.html` file in the root - it will appear in the next build's sitemap automatically using `DEFAULT_META` until you set its own `sitemap` field in `pages.json` (required by `tests/sitemap-meta.test.js`).
 
 ### Excluding a page
 

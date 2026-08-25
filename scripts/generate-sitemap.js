@@ -5,7 +5,8 @@
  *
  * Discovers every content page via scripts/lib/site-files.js (the same
  * discovery the Vite build and the test suite use), excludes utility and
- * non-indexable pages, and writes dist/sitemap.xml.
+ * non-indexable pages, sorts by priority descending (alphabetical within a
+ * tier), and writes dist/sitemap.xml.
  *
  * Run automatically as part of `npm run build` via the build:sitemap script.
  * Must run AFTER build:html (Vite) so that dist/ already exists.
@@ -55,9 +56,15 @@ function main() {
   const { baseUrl } = parseArgs();
   const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
 
-  const pages = contentPages().filter(
-    (f) => PAGES_META[f.replace(".html", "")]?.sitemap !== false,
-  );
+  const pages = contentPages()
+    .filter((f) => PAGES_META[f.replace(".html", "")]?.sitemap !== false)
+    .sort((a, b) => {
+      const metaA = PAGES_META[a.replace(".html", "")]?.sitemap ?? DEFAULT_META;
+      const metaB = PAGES_META[b.replace(".html", "")]?.sitemap ?? DEFAULT_META;
+      const priorityDiff = parseFloat(metaB.priority) - parseFloat(metaA.priority);
+      if (priorityDiff !== 0) return priorityDiff;
+      return a.localeCompare(b);
+    });
 
   const urlEntries = pages.map((page) => {
     const { priority, changefreq } =
