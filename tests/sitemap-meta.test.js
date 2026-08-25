@@ -91,18 +91,21 @@ describe("dist/sitemap.xml matches pages.json", () => {
     },
   );
 
-  it.runIf(exists)("priorities are sorted non-increasing", () => {
+  it.runIf(exists)("entries appear in ascending sitemap.order", () => {
     const xml = fs.readFileSync(sitemapPath, "utf-8");
-    const priorities = [
-      ...xml.matchAll(/<priority>([^<]+)<\/priority>/g),
-    ].map((m) => parseFloat(m[1]));
+    const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+    const orders = locs.map((loc) => {
+      const slug = new URL(loc).pathname.replace(/^\//, "") || "index";
+      return meta[slug]?.sitemap?.order ?? Infinity;
+    });
 
-    for (let i = 1; i < priorities.length; i++) {
+    for (let i = 1; i < orders.length; i++) {
       expect(
-        priorities[i],
-        "dist/sitemap.xml priorities must be non-increasing (generate-sitemap.js " +
-          "sorts by priority descending); found an increase at index " + i,
-      ).toBeLessThanOrEqual(priorities[i - 1]);
+        orders[i],
+        "dist/sitemap.xml must list pages in ascending sitemap.order " +
+          "(assets/data/pages.json) - generator regression or a stale build; " +
+          "found a decrease at index " + i,
+      ).toBeGreaterThanOrEqual(orders[i - 1]);
     }
   });
 });

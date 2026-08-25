@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "404 Error - Artisans Cloud",
+    "og": false,
+    "sitemap": false,
+    "description": "The page you are looking for could not be found. Explore Artisans Cloud enterprise platforms and intelligence systems from the homepage."
+  },
   "personalized-customer-experience": {
     "title": "Personalized Customer Experience at Scale | Artisans Cloud",
     "description": "Multi-agent AI helps retailers personalize interactions, recommendations, promotions, and communications for every shopper automatically and at scale.",
@@ -10,7 +16,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 15
     }
   },
   "enterprise-data-search": {
@@ -24,7 +31,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 21
     }
   },
   "open-to-buy-planning": {
@@ -38,14 +46,9 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 24
     }
-  },
-  "404": {
-    "title": "404 Error - Artisans Cloud",
-    "og": false,
-    "sitemap": false,
-    "description": "The page you are looking for could not be found. Explore Artisans Cloud enterprise platforms and intelligence systems from the homepage."
   },
   "POS": {
     "title": "Point of Sale (POS) System | Artisans Cloud",
@@ -57,7 +60,8 @@
     },
     "sitemap": {
       "priority": "0.8",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 9
     }
   },
   "about-us": {
@@ -72,7 +76,8 @@
     },
     "sitemap": {
       "priority": "0.5",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 34
     }
   },
   "articles-and-resources": {
@@ -83,7 +88,8 @@
     },
     "sitemap": {
       "priority": "0.6",
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "order": 35
     },
     "description": "Browse articles, insights, and resources from Artisans Cloud covering unified commerce, retail operations, and enterprise AI."
   },
@@ -99,7 +105,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 23
     }
   },
   "blog-detail": {
@@ -120,7 +127,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 25
     }
   },
   "chatbots-for-quick-support": {
@@ -134,7 +142,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 22
     }
   },
   "contact-us": {
@@ -148,7 +157,8 @@
     },
     "sitemap": {
       "priority": "0.6",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 33
     }
   },
   "customer-experience-management": {
@@ -161,7 +171,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 13
     }
   },
   "customer-feedback-insights": {
@@ -175,7 +186,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 14
     }
   },
   "d2c-eCommerce": {
@@ -188,7 +200,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 26
     }
   },
   "data-intelligence": {
@@ -201,7 +214,8 @@
     },
     "sitemap": {
       "priority": "0.8",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 7
     }
   },
   "demand-flow": {
@@ -215,7 +229,8 @@
     },
     "sitemap": {
       "priority": "0.8",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 8
     }
   },
   "dify-consulting": {
@@ -229,7 +244,8 @@
     },
     "sitemap": {
       "priority": "0.6",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 32
     }
   },
   "distributed-order-management": {
@@ -241,7 +257,8 @@
     },
     "sitemap": {
       "priority": "0.8",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 11
     }
   },
   "dynamic-pricing": {
@@ -255,7 +272,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 18
     }
   },
   "enterprise-ai": {
@@ -270,7 +288,8 @@
     },
     "sitemap": {
       "priority": "0.8",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 6
     }
   },
   "fraud-detection": {
@@ -283,7 +302,8 @@
     },
     "sitemap": {
       "priority": "0.6",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 28
     }
   },
   "image-editing": {
@@ -297,7 +317,8 @@
     },
     "sitemap": {
       "priority": "0.6",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 29
     }
   },
   "index": {
@@ -311,7 +332,8 @@
     },
     "sitemap": {
       "priority": "1.0",
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "order": 1
     }
   },
   "integrations": {
@@ -324,7 +346,8 @@
     },
     "sitemap": {
       "priority": "0.6",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 31
     }
   },
   "enterprise-copilot/lumen": {
@@ -337,7 +360,8 @@
     },
     "sitemap": {
       "priority": "0.9",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 3
     }
   },
   "merchandise-and-assortment-planning": {
@@ -351,7 +375,8 @@
     },
     "sitemap": {
       "priority": "0.8",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 10
     }
   },
   "personalized-promotions": {
@@ -365,7 +390,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 17
     }
   },
   "personalized-recommendations": {
@@ -379,7 +405,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 16
     }
   },
   "privacy-policy": {
@@ -393,7 +420,8 @@
     },
     "sitemap": {
       "priority": "0.2",
-      "changefreq": "yearly"
+      "changefreq": "yearly",
+      "order": 36
     }
   },
   "request-demo": {
@@ -417,7 +445,8 @@
     },
     "sitemap": {
       "priority": "0.9",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 2
     }
   },
   "smart-auto-completion": {
@@ -431,7 +460,8 @@
     },
     "sitemap": {
       "priority": "0.6",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 30
     }
   },
   "smart-product-search": {
@@ -445,7 +475,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 19
     }
   },
   "smarter-inventory-alerts": {
@@ -459,7 +490,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 20
     }
   },
   "store-layout-optimization": {
@@ -473,7 +505,8 @@
     },
     "sitemap": {
       "priority": "0.6",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 27
     }
   },
   "terms-and-conditions": {
@@ -487,7 +520,8 @@
     },
     "sitemap": {
       "priority": "0.2",
-      "changefreq": "yearly"
+      "changefreq": "yearly",
+      "order": 37
     }
   },
   "thank-you": {
@@ -507,7 +541,8 @@
     },
     "sitemap": {
       "priority": "0.9",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 5
     }
   },
   "knowledge-harvester/vault": {
@@ -522,7 +557,8 @@
     },
     "sitemap": {
       "priority": "0.9",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 4
     }
   },
   "warehouse-management-system": {
@@ -536,7 +572,8 @@
     },
     "sitemap": {
       "priority": "0.8",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 12
     }
   },
   "retail-platform": {

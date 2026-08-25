@@ -241,7 +241,7 @@ Pages with `sitemap: false` in `assets/data/pages.json` are excluded: `404`, `th
 
 ### Priority tiers
 
-Every indexable page carries an explicit `sitemap: { priority, changefreq }` block, set editorially relative to the other pages in the sitemap (not derived from anything machine-checkable). `tests/sitemap-meta.test.js` enforces that the block exists, that the values are well-formed, and that `dist/sitemap.xml` matches `pages.json` exactly. Output is sorted by `priority` descending (alphabetical within a tier) purely for readability - `<url>` order carries no crawl weight.
+Every indexable page carries an explicit `sitemap: { priority, changefreq, order }` block, set editorially relative to the other pages in the sitemap (not derived from anything machine-checkable). `order` is the page's 1-based position in the output file and is independent of `priority` - it exists to reproduce a specific human-chosen sequence (see `task.md`), not a priority ranking; `<url>` order carries no crawl weight either way. `tests/sitemap-meta.test.js` enforces that the block exists, that the values are well-formed, and that `dist/sitemap.xml` matches `pages.json` on priority, changefreq, and order.
 
 ### Adding a new page
 
