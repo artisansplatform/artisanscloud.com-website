@@ -104,7 +104,8 @@ describe("dist/sitemap.xml matches pages.json", () => {
         orders[i],
         "dist/sitemap.xml must list pages in ascending sitemap.order " +
           "(assets/data/pages.json) - generator regression or a stale build; " +
-          "found a decrease at index " + i,
+          "found a decrease at index " +
+          i,
       ).toBeGreaterThanOrEqual(orders[i - 1]);
     }
   });

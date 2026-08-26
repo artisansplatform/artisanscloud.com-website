@@ -1,12 +1,14 @@
 # Coding Standards
 
 ## Code Organization
+
 - **Single responsibility**: Each JavaScript module in `assets/script/modules/` handles one feature
 - **Event delegation**: Use event delegation for dynamically created elements or repeated elements
 - **Vanilla JavaScript only**: No frameworks/libraries except for specific features (Swiper for sliders, Lenis for smooth scroll)
 - **Progressive enhancement**: Core content accessible without JavaScript, enhanced with JS for interactivity
 
 ## Performance
+
 - **Lazy loading**: Images should use `loading="lazy"` attribute where appropriate
 - **Asset ownership**: Copy required images into this repository under `assets/image/`; do not hotlink external domains
 - **CDN usage**: External libraries (Swiper, GSAP, Lenis) loaded from CDN to leverage browser caching
@@ -14,6 +16,7 @@
 - **Font subsetting**: Poppins is self-hosted from `assets/fonts/poppins/` and declared as `@font-face` blocks in `assets/style/input.css`, covering only the variants the site uses (normal 400/500/600/700/800, italic 400/600) in latin and latin-ext unicode-range subsets. Before adding a new weight or style to the markup, download its woff2 files and add matching `@font-face` blocks, otherwise the browser synthesizes it (see [Development: Fonts](development.md#fonts)). `tests/font-subset.test.js` (part of `npm test` / CI, or `npm run test:font`) fails the build if the markup uses a variant with no `@font-face`, if a declared woff2 file is missing, or if anything still points at Google Fonts.
 
 ## Accessibility
+
 - **Semantic HTML**: Use appropriate HTML5 elements (`<nav>`, `<main>`, `<article>`, `<section>`, etc.)
 - **ARIA labels**: Add `aria-label` to interactive elements without text (icon buttons, close buttons)
 - **Image alt text**: Every `<img>` needs an `alt` attribute (use `alt=""` for purely decorative images). Enforced by `tests/seo.test.js`.
@@ -22,6 +25,7 @@
 - **Color contrast**: Ensure text meets WCAG AA standards (4.5:1 for normal text)
 
 ## Security
+
 - **No inline scripts**: Avoid inline JavaScript for security. Use JS modules via `assets/script/main.js` instead.
 - **No inline event handlers**: Do not use `onclick=""`, `onload=""`, etc. in HTML - attach event listeners in JS modules instead.
 - **External links**: Add `rel="noopener noreferrer"` to external links opening in new tabs

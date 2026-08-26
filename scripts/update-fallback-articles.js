@@ -15,27 +15,27 @@
  *   --dry    Preview changes without writing files
  */
 
-import { writeFileSync, mkdirSync, existsSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { writeFileSync, mkdirSync, existsSync } from "fs";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = join(__dirname, '..');
-const FALLBACK_JSON = join(ROOT, 'assets', 'data', 'fallback-articles.json');
-const IMAGE_DIR = join(ROOT, 'public', 'assets', 'image', 'blog');
+const ROOT = join(__dirname, "..");
+const FALLBACK_JSON = join(ROOT, "assets", "data", "fallback-articles.json");
+const IMAGE_DIR = join(ROOT, "public", "assets", "image", "blog");
 const MAX_ARTICLES = 9;
 
 function parseArgs() {
   const args = process.argv.slice(2);
   const opts = {
-    url: 'https://www.artisanscloud.com',
+    url: "https://www.artisanscloud.com",
     dry: false,
   };
   for (let i = 0; i < args.length; i++) {
-    if (args[i] === '--url' && args[i + 1]) {
-      opts.url = args[++i].replace(/\/$/, '');
+    if (args[i] === "--url" && args[i + 1]) {
+      opts.url = args[++i].replace(/\/$/, "");
     }
-    if (args[i] === '--dry') {
+    if (args[i] === "--dry") {
       opts.dry = true;
     }
   }
@@ -46,11 +46,11 @@ async function downloadImage(imageUrl, localPath) {
   const res = await fetch(imageUrl);
   if (!res.ok) throw new Error(`Failed to download ${imageUrl}: ${res.status}`);
 
-  const contentType = res.headers.get('content-type') || '';
-  let ext = '.jpg';
-  if (contentType.includes('png')) ext = '.png';
-  else if (contentType.includes('webp')) ext = '.webp';
-  else if (contentType.includes('gif')) ext = '.gif';
+  const contentType = res.headers.get("content-type") || "";
+  let ext = ".jpg";
+  if (contentType.includes("png")) ext = ".png";
+  else if (contentType.includes("webp")) ext = ".webp";
+  else if (contentType.includes("gif")) ext = ".gif";
 
   const finalPath = localPath.replace(/\.[^.]+$/, ext);
   const buffer = Buffer.from(await res.arrayBuffer());
@@ -61,8 +61,8 @@ async function downloadImage(imageUrl, localPath) {
 function slugify(str) {
   return str
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '')
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")
     .slice(0, 60);
 }
 
@@ -79,7 +79,7 @@ async function main() {
 
   const articles = await res.json();
   if (!Array.isArray(articles) || articles.length === 0) {
-    console.error('No articles returned from API');
+    console.error("No articles returned from API");
     process.exit(1);
   }
 
@@ -97,7 +97,7 @@ async function main() {
     let localThumb = article.thumbnail;
 
     // Download external thumbnails locally
-    if (article.thumbnail && article.thumbnail.startsWith('http')) {
+    if (article.thumbnail && article.thumbnail.startsWith("http")) {
       const filename = `blog-${slug}.jpg`;
       const localPath = join(IMAGE_DIR, filename);
       const webPath = `/assets/image/blog/${filename}`;
@@ -109,11 +109,13 @@ async function main() {
       } else {
         try {
           const saved = await downloadImage(article.thumbnail, localPath);
-          const savedFilename = saved.split('/').pop();
+          const savedFilename = saved.split("/").pop();
           localThumb = `/assets/image/blog/${savedFilename}`;
           console.log(`  Downloaded: ${localThumb}`);
         } catch (err) {
-          console.warn(`  Warning: Could not download thumbnail for "${article.title}": ${err.message}`);
+          console.warn(
+            `  Warning: Could not download thumbnail for "${article.title}": ${err.message}`,
+          );
           // Keep the original URL as-is
         }
       }
@@ -126,28 +128,29 @@ async function main() {
       url: article.url,
       thumbnail: localThumb,
       publishedAt: article.publishedAt,
-      tags: article.tags || (article.category ? [article.category] : ['Retail']),
+      tags:
+        article.tags || (article.category ? [article.category] : ["Retail"]),
     });
   }
 
-  const json = JSON.stringify(updated, null, 2) + '\n';
+  const json = JSON.stringify(updated, null, 2) + "\n";
 
   if (opts.dry) {
-    console.log('\n--- Preview of fallback-articles.json ---');
+    console.log("\n--- Preview of fallback-articles.json ---");
     console.log(json);
-    console.log('--- End preview (no files written) ---');
+    console.log("--- End preview (no files written) ---");
   } else {
     writeFileSync(FALLBACK_JSON, json);
     console.log(`\nUpdated ${FALLBACK_JSON}`);
     console.log(`Written ${updated.length} articles`);
-    console.log('\nNext steps:');
-    console.log('  1. Review the changes: git diff assets/');
-    console.log('  2. Run: npm run build && npm test');
-    console.log('  3. Commit the updated fallback data and images');
+    console.log("\nNext steps:");
+    console.log("  1. Review the changes: git diff assets/");
+    console.log("  2. Run: npm run build && npm test");
+    console.log("  3. Commit the updated fallback data and images");
   }
 }
 
 main().catch((err) => {
-  console.error('Error:', err.message);
+  console.error("Error:", err.message);
   process.exit(1);
 });

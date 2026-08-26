@@ -12,9 +12,10 @@
  * To update fallback articles, edit assets/data/fallback-articles.json.
  */
 
-import fallbackArticles from '../../data/fallback-articles.json';
+import fallbackArticles from "../../data/fallback-articles.json";
 
-const FALLBACK_IMAGE = '/assets/image/artisanscloud-insightsLeadership-card-1.png';
+const FALLBACK_IMAGE =
+  "/assets/image/artisanscloud-insightsLeadership-card-1.png";
 const ARTICLES_PER_PAGE = 9;
 
 let visibleCount = ARTICLES_PER_PAGE;
@@ -22,15 +23,15 @@ let currentArticles = [];
 
 function formatDate(timestamp) {
   const date = new Date(timestamp);
-  return date.toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
+  return date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
   });
 }
 
 function escapeHTML(str) {
-  const div = document.createElement('div');
+  const div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
@@ -39,7 +40,9 @@ function createBlogCardHTML(article) {
   const thumbnail = article.thumbnail || FALLBACK_IMAGE;
   const safeTitle = escapeHTML(article.title);
   const safeDescription = escapeHTML(article.description);
-  const safeTags = (article.tags || [article.category || 'Retail']).map(escapeHTML);
+  const safeTags = (article.tags || [article.category || "Retail"]).map(
+    escapeHTML,
+  );
   const safeUrl = escapeHTML(article.url);
   const dateStr = formatDate(article.publishedAt);
 
@@ -49,7 +52,7 @@ function createBlogCardHTML(article) {
     </a>
     <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
         <div class="mb-2.5 sm:mb-3.5 flex flex-wrap gap-2 items-center">
-            ${safeTags.map(tag => `<div class="px-2.5 py-0.5 rounded-[50px] text-center w-fit h-fit bg-[#F5EEFE] text-[#9F7EFF] font-primary font-medium sm:text-base text-sm">${tag}</div>`).join('')}
+            ${safeTags.map((tag) => `<div class="px-2.5 py-0.5 rounded-[50px] text-center w-fit h-fit bg-[#F5EEFE] text-[#9F7EFF] font-primary font-medium sm:text-base text-sm">${tag}</div>`).join("")}
             <div class="relative ps-3 text-description/70 lg:text-base text-sm font-normal font-primary"><div class="absolute top-2.5 start-0 bg-description/70 h-1 w-1 rounded-full"></div>${dateStr}</div>
         </div>
         <a href="${safeUrl}" target="_blank" rel="noopener noreferrer" class="mb-2 block line-clamp-1 text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] hover:underline">${safeTitle}</a>
@@ -72,7 +75,9 @@ function createInsightsCardHTML(article) {
   const thumbnail = article.thumbnail || FALLBACK_IMAGE;
   const safeTitle = escapeHTML(article.title);
   const safeDescription = escapeHTML(article.description);
-  const safeTags = (article.tags || [article.category || 'Retail']).map(escapeHTML);
+  const safeTags = (article.tags || [article.category || "Retail"]).map(
+    escapeHTML,
+  );
   const safeUrl = escapeHTML(article.url);
   const dateStr = formatDate(article.publishedAt);
 
@@ -82,7 +87,7 @@ function createInsightsCardHTML(article) {
     </a>
     <div class="pt-4 sm:pt-[22px] px-[14px] pb-2.5">
         <div class="mb-2.5 sm:mb-3.5 flex flex-wrap gap-2 items-center">
-            ${safeTags.map(tag => `<div class="px-2.5 py-0.5 rounded-[50px] text-center w-fit h-fit bg-[#F5EEFE] text-[#9F7EFF] font-primary font-medium sm:text-base text-sm">${tag}</div>`).join('')}
+            ${safeTags.map((tag) => `<div class="px-2.5 py-0.5 rounded-[50px] text-center w-fit h-fit bg-[#F5EEFE] text-[#9F7EFF] font-primary font-medium sm:text-base text-sm">${tag}</div>`).join("")}
             <div class="relative ps-3 text-description/70 lg:text-base text-sm font-normal font-primary"><div class="absolute top-2.5 start-0 bg-description/70 h-1 w-1 rounded-full"></div>${dateStr}</div>
         </div>
         <a href="${safeUrl}" target="_blank" rel="noopener noreferrer" class="mb-3 block text-heading font-primary font-semibold sm:text-[22px] text-xl leading-[110%] hover:underline">${safeTitle}</a>
@@ -102,13 +107,16 @@ function createInsightsCardHTML(article) {
 }
 
 function updateLoadMoreBtn(articles) {
-  const btn = document.getElementById('load-more-btn');
+  const btn = document.getElementById("load-more-btn");
   if (!btn) return;
-  btn.style.display = visibleCount < articles.length ? '' : 'none';
+  btn.style.display = visibleCount < articles.length ? "" : "none";
 }
 
 function renderBlogGrid(articles, blogGrid) {
-  blogGrid.innerHTML = articles.slice(0, visibleCount).map(createBlogCardHTML).join('');
+  blogGrid.innerHTML = articles
+    .slice(0, visibleCount)
+    .map(createBlogCardHTML)
+    .join("");
   updateLoadMoreBtn(articles);
 }
 
@@ -118,13 +126,16 @@ function renderArticles(articles, blogGrid, insightsGrid) {
     renderBlogGrid(articles, blogGrid);
   }
   if (insightsGrid) {
-    insightsGrid.innerHTML = articles.slice(0, 3).map(createInsightsCardHTML).join('');
+    insightsGrid.innerHTML = articles
+      .slice(0, 3)
+      .map(createInsightsCardHTML)
+      .join("");
   }
 }
 
 export function initBlogArticles() {
-  const blogGrid = document.getElementById('blog-grid');
-  const insightsGrid = document.getElementById('insights-grid');
+  const blogGrid = document.getElementById("blog-grid");
+  const insightsGrid = document.getElementById("insights-grid");
 
   if (!blogGrid && !insightsGrid) return;
 
@@ -132,16 +143,16 @@ export function initBlogArticles() {
   renderArticles(fallbackArticles, blogGrid, insightsGrid);
 
   // Wire up Load More button
-  const loadMoreBtn = document.getElementById('load-more-btn');
+  const loadMoreBtn = document.getElementById("load-more-btn");
   if (loadMoreBtn && blogGrid) {
-    loadMoreBtn.addEventListener('click', () => {
+    loadMoreBtn.addEventListener("click", () => {
       visibleCount += ARTICLES_PER_PAGE;
       renderBlogGrid(currentArticles, blogGrid);
     });
   }
 
   // Then try to upgrade with live API data
-  fetch('/api/articles')
+  fetch("/api/articles")
     .then((res) => {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return res.json();
@@ -153,6 +164,6 @@ export function initBlogArticles() {
     })
     .catch((err) => {
       // Fallback data already rendered, nothing to do
-      console.warn('Failed to load dynamic blog articles:', err.message);
+      console.warn("Failed to load dynamic blog articles:", err.message);
     });
 }

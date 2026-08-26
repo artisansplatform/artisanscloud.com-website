@@ -29,6 +29,7 @@ npm run dev
 ```
 
 This command:
+
 - Starts the Vite dev server at http://localhost:3000
 - Watches for changes and auto-reloads the browser
 - Compiles Tailwind CSS
@@ -60,29 +61,32 @@ This change will appear on ALL pages immediately.
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     {{> head-meta}}
-</head>
-<body>
-    <div id="cursor" class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"></div>
-    
+  </head>
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
+
     {{> header}}
-    
+
     <!----- Your Page Content ----->
     <main>
-        <!-- Your content here -->
+      <!-- Your content here -->
     </main>
     <!----- End Your Page Content ----->
-    
+
     {{> footer}}
-    
+
     <!--+++++++ Script Start +++++++-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-    <script src='assets/script/main.js'></script>
-</body>
+    <script src="assets/script/main.js"></script>
+  </body>
 </html>
 ```
 
@@ -96,6 +100,7 @@ npm run build
 ```
 
 This command:
+
 - Compiles Tailwind CSS (minified)
 - Processes all HTML files with Handlebars partials
 - Outputs production-ready files to `dist/` directory
@@ -106,11 +111,13 @@ The `dist/` directory contains the final built website ready for deployment.
 ## Deployment (Vercel)
 
 The site is configured to deploy on Vercel with:
+
 - **Build command**: `npm run build` (automatically detected)
 - **Output directory**: `dist`
 - **Clean URLs**: Enabled (pages accessible without `.html` extension)
 
 When you push changes to the repository, Vercel will:
+
 1. Run `npm install`
 2. Run `npm run build`
 3. Deploy the `dist/` directory
@@ -123,6 +130,7 @@ When you push changes to the repository, Vercel will:
 The site uses [vite-plugin-handlebars](https://www.npmjs.com/package/vite-plugin-handlebars) to process HTML templates.
 
 **Syntax**:
+
 - `{{> header}}` - Includes `partials/header.html`
 - `{{> footer}}` - Includes `partials/footer.html`
 
@@ -131,11 +139,13 @@ During build/dev, these placeholders are replaced with the actual HTML content.
 ### Why This Approach?
 
 **Before**: Duplicate header/footer in every HTML file
+
 - ❌ Updating navigation required editing 15+ files
 - ❌ Easy to miss files or introduce inconsistencies
 - ❌ Difficult to maintain
 
 **After**: Single source of truth for shared components
+
 - ✅ Edit once, update everywhere
 - ✅ Guaranteed consistency across all pages
 - ✅ Easy to maintain and scale
@@ -144,23 +154,26 @@ During build/dev, these placeholders are replaced with the actual HTML content.
 ## Troubleshooting
 
 ### Dev server not updating after changes
+
 - Restart the dev server: `Ctrl+C` then `npm run dev`
 
 ### Build fails
+
 - Check that all HTML files have matching `{{> header}}` and `{{> footer}}` placeholders
 - Ensure `partials/header.html` and `partials/footer.html` exist
 
 ### Page not found in dev
+
 - Make sure the HTML file is in the root directory
 - Access pages without `.html` extension (e.g., `/about-us` not `/about-us.html`)
 
 ## Scripts Reference
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server with hot reload |
-| `npm run build` | Build for production (outputs to `dist/`) |
-| `npm run preview` | Preview production build locally |
+| Command           | Description                               |
+| ----------------- | ----------------------------------------- |
+| `npm run dev`     | Start development server with hot reload  |
+| `npm run build`   | Build for production (outputs to `dist/`) |
+| `npm run preview` | Preview production build locally          |
 
 ## Next Steps
 
