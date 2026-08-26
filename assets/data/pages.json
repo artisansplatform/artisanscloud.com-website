@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "404 Error - Artisans Cloud",
+    "og": false,
+    "sitemap": false,
+    "description": "The page you are looking for could not be found. Explore Artisans Cloud enterprise platforms and intelligence systems from the homepage."
+  },
   "personalized-customer-experience": {
     "title": "Personalized Customer Experience at Scale | Artisans Cloud",
     "description": "Multi-agent AI helps retailers personalize interactions, recommendations, promotions, and communications for every shopper automatically and at scale.",
@@ -10,7 +16,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 15
     }
   },
   "enterprise-data-search": {
@@ -24,7 +31,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 21
     }
   },
   "open-to-buy-planning": {
@@ -38,14 +46,9 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 24
     }
-  },
-  "404": {
-    "title": "404 Error - Artisans Cloud",
-    "og": false,
-    "sitemap": false,
-    "description": "The page you are looking for could not be found. Explore Artisans Cloud enterprise platforms and intelligence systems from the homepage."
   },
   "POS": {
     "title": "Point of Sale (POS) System | Artisans Cloud",
@@ -54,6 +57,11 @@
     "ogCard": {
       "title": "Point of Sale",
       "subtitle": "Unified offline & online retail"
+    },
+    "sitemap": {
+      "priority": "0.8",
+      "changefreq": "monthly",
+      "order": 9
     }
   },
   "about-us": {
@@ -67,8 +75,9 @@
       "subtitle": "Architects of the Intelligent Enterprise"
     },
     "sitemap": {
-      "priority": "0.8",
-      "changefreq": "monthly"
+      "priority": "0.5",
+      "changefreq": "monthly",
+      "order": 34
     }
   },
   "articles-and-resources": {
@@ -78,8 +87,9 @@
       "subtitle": "Latest from Artisans Cloud"
     },
     "sitemap": {
-      "priority": "0.8",
-      "changefreq": "weekly"
+      "priority": "0.6",
+      "changefreq": "weekly",
+      "order": 35
     },
     "description": "Browse articles, insights, and resources from Artisans Cloud covering unified commerce, retail operations, and enterprise AI."
   },
@@ -95,7 +105,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 23
     }
   },
   "blog-detail": {
@@ -113,6 +124,11 @@
     "ogCard": {
       "title": "TabsyPOS",
       "subtitle": "Free AI-Powered Browser POS"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly",
+      "order": 25
     }
   },
   "chatbots-for-quick-support": {
@@ -126,7 +142,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 22
     }
   },
   "contact-us": {
@@ -139,8 +156,9 @@
       "subtitle": "Let's build something together"
     },
     "sitemap": {
-      "priority": "0.7",
-      "changefreq": "monthly"
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "order": 33
     }
   },
   "customer-experience-management": {
@@ -150,6 +168,11 @@
     "ogCard": {
       "title": "Customer Experience\nManagement",
       "subtitle": "Omnichannel engagement at scale"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly",
+      "order": 13
     }
   },
   "customer-feedback-insights": {
@@ -163,7 +186,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 14
     }
   },
   "d2c-eCommerce": {
@@ -173,6 +197,11 @@
     "ogCard": {
       "title": "D2C eCommerce",
       "subtitle": "Simplifying direct-to-consumer"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly",
+      "order": 26
     }
   },
   "data-intelligence": {
@@ -184,8 +213,9 @@
       "subtitle": "Connect Data. Create Context. Enable Intelligence."
     },
     "sitemap": {
-      "priority": "0.9",
-      "changefreq": "monthly"
+      "priority": "0.8",
+      "changefreq": "monthly",
+      "order": 7
     }
   },
   "demand-flow": {
@@ -198,8 +228,9 @@
       "subtitle": "Strengthening local discovery for retail networks"
     },
     "sitemap": {
-      "priority": "0.9",
-      "changefreq": "monthly"
+      "priority": "0.8",
+      "changefreq": "monthly",
+      "order": 8
     }
   },
   "dify-consulting": {
@@ -212,8 +243,9 @@
       "subtitle": "Simplify, automate and optimise workflows"
     },
     "sitemap": {
-      "priority": "0.8",
-      "changefreq": "monthly"
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "order": 32
     }
   },
   "distributed-order-management": {
@@ -222,6 +254,11 @@
     "ogCard": {
       "title": "Distributed Order\nManagement",
       "subtitle": "Multi-channel fulfillment orchestration"
+    },
+    "sitemap": {
+      "priority": "0.8",
+      "changefreq": "monthly",
+      "order": 11
     }
   },
   "dynamic-pricing": {
@@ -235,7 +272,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 18
     }
   },
   "enterprise-ai": {
@@ -249,8 +287,9 @@
       "subtitle": "Workforce readiness, knowledge and decision support"
     },
     "sitemap": {
-      "priority": "0.9",
-      "changefreq": "monthly"
+      "priority": "0.8",
+      "changefreq": "monthly",
+      "order": 6
     }
   },
   "fraud-detection": {
@@ -262,8 +301,9 @@
       "subtitle": "Make Payments Safer and Smarter"
     },
     "sitemap": {
-      "priority": "0.7",
-      "changefreq": "monthly"
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "order": 28
     }
   },
   "image-editing": {
@@ -276,8 +316,9 @@
       "subtitle": "Professional visuals for retail & e-commerce"
     },
     "sitemap": {
-      "priority": "0.7",
-      "changefreq": "monthly"
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "order": 29
     }
   },
   "index": {
@@ -291,7 +332,8 @@
     },
     "sitemap": {
       "priority": "1.0",
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "order": 1
     }
   },
   "integrations": {
@@ -303,8 +345,9 @@
       "subtitle": "Seamless commerce connectivity"
     },
     "sitemap": {
-      "priority": "0.7",
-      "changefreq": "monthly"
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "order": 31
     }
   },
   "enterprise-copilot/lumen": {
@@ -316,8 +359,9 @@
       "subtitle": "Lumen | Artisans Cloud"
     },
     "sitemap": {
-      "priority": "0.8",
-      "changefreq": "monthly"
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "order": 3
     }
   },
   "merchandise-and-assortment-planning": {
@@ -328,6 +372,11 @@
     "ogCard": {
       "title": "Merchandise &\nAssortment Planning",
       "subtitle": "Data-driven product mix optimization"
+    },
+    "sitemap": {
+      "priority": "0.8",
+      "changefreq": "monthly",
+      "order": 10
     }
   },
   "personalized-promotions": {
@@ -341,7 +390,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 17
     }
   },
   "personalized-recommendations": {
@@ -354,8 +404,9 @@
       "subtitle": "Show every shopper something they'll love"
     },
     "sitemap": {
-      "priority": "0.9",
-      "changefreq": "monthly"
+      "priority": "0.7",
+      "changefreq": "monthly",
+      "order": 16
     }
   },
   "privacy-policy": {
@@ -368,8 +419,9 @@
       "subtitle": "How we protect your data"
     },
     "sitemap": {
-      "priority": "0.3",
-      "changefreq": "yearly"
+      "priority": "0.2",
+      "changefreq": "yearly",
+      "order": 36
     }
   },
   "request-demo": {
@@ -392,8 +444,9 @@
       "subtitle": "Workforce Training | Arena"
     },
     "sitemap": {
-      "priority": "0.8",
-      "changefreq": "monthly"
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "order": 2
     }
   },
   "smart-auto-completion": {
@@ -404,6 +457,11 @@
     "ogCard": {
       "title": "Smart Auto-Completion",
       "subtitle": "Find products before you finish typing"
+    },
+    "sitemap": {
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "order": 30
     }
   },
   "smart-product-search": {
@@ -414,6 +472,11 @@
     "ogCard": {
       "title": "Smart Product Search",
       "subtitle": "Help shoppers find exactly what they want"
+    },
+    "sitemap": {
+      "priority": "0.7",
+      "changefreq": "monthly",
+      "order": 19
     }
   },
   "smarter-inventory-alerts": {
@@ -427,7 +490,8 @@
     },
     "sitemap": {
       "priority": "0.7",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 20
     }
   },
   "store-layout-optimization": {
@@ -440,8 +504,9 @@
       "subtitle": "Place products where they sell best"
     },
     "sitemap": {
-      "priority": "0.7",
-      "changefreq": "monthly"
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "order": 27
     }
   },
   "terms-and-conditions": {
@@ -454,8 +519,9 @@
       "subtitle": "Platform usage terms"
     },
     "sitemap": {
-      "priority": "0.3",
-      "changefreq": "yearly"
+      "priority": "0.2",
+      "changefreq": "yearly",
+      "order": 37
     }
   },
   "thank-you": {
@@ -475,7 +541,8 @@
     },
     "sitemap": {
       "priority": "0.9",
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "order": 5
     }
   },
   "knowledge-harvester/vault": {
@@ -487,6 +554,11 @@
     "ogCard": {
       "title": "AI Knowledge\nManagement Platform",
       "subtitle": "Vault | Artisans Cloud"
+    },
+    "sitemap": {
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "order": 4
     }
   },
   "warehouse-management-system": {
@@ -497,6 +569,11 @@
     "ogCard": {
       "title": "Warehouse Management",
       "subtitle": "Intelligent warehouse orchestration"
+    },
+    "sitemap": {
+      "priority": "0.8",
+      "changefreq": "monthly",
+      "order": 12
     }
   },
   "retail-platform": {

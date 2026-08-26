@@ -5,7 +5,8 @@
  *
  * Discovers every content page via scripts/lib/site-files.js (the same
  * discovery the Vite build and the test suite use), excludes utility and
- * non-indexable pages, and writes dist/sitemap.xml.
+ * non-indexable pages, sorts by each page's editorial `sitemap.order` (see
+ * assets/data/pages.json), and writes dist/sitemap.xml.
  *
  * Run automatically as part of `npm run build` via the build:sitemap script.
  * Must run AFTER build:html (Vite) so that dist/ already exists.
@@ -38,8 +39,11 @@ function parseArgs() {
 
 // Per-page data lives in assets/data/pages.json (see scripts/lib/page-meta.js):
 //   sitemap: false           -> page excluded from the sitemap
-//   sitemap: { priority, changefreq } -> per-page override
-//   no sitemap field         -> DEFAULT_META
+//   sitemap: { priority, changefreq, order } -> per-page override; `order`
+//     is the page's position in the sitemap file (editorial, not derived
+//     from priority - two pages can share a priority tier in a different
+//     human-chosen order)
+//   no sitemap field         -> DEFAULT_META, sorted last (no `order`)
 const PAGES_META = loadPages();
 
 const DEFAULT_META = { priority: "0.6", changefreq: "monthly" };
@@ -55,9 +59,18 @@ function main() {
   const { baseUrl } = parseArgs();
   const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
 
-  const pages = contentPages().filter(
-    (f) => PAGES_META[f.replace(".html", "")]?.sitemap !== false,
-  );
+  const pages = contentPages()
+    .filter((f) => PAGES_META[f.replace(".html", "")]?.sitemap !== false)
+    .sort((a, b) => {
+      const metaA = PAGES_META[a.replace(".html", "")]?.sitemap ?? DEFAULT_META;
+      const metaB = PAGES_META[b.replace(".html", "")]?.sitemap ?? DEFAULT_META;
+      // Pages without an explicit `order` (new pages not yet reviewed
+      // editorially) sort after every page that has one.
+      const orderA = metaA.order ?? Infinity;
+      const orderB = metaB.order ?? Infinity;
+      if (orderA !== orderB) return orderA - orderB;
+      return a.localeCompare(b);
+    });
 
   const urlEntries = pages.map((page) => {
     const { priority, changefreq } =
