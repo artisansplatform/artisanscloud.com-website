@@ -218,22 +218,23 @@ npm run update-fallback -- --url https://preview.example.com  # Fetch from custo
 
 - `scripts/generate-sitemap.js` runs as `build:sitemap` (after Vite's `build:html`)
 - It discovers both root `*.html` pages and nested subdirectory pages (e.g., `enterprise-copilot/*.html`, `unified-commerce/*.html`, `role-play-agent/*.html`, `knowledge-harvester/*.html`) so they are included automatically
-- Excluded pages: `404.html`, `thank-you.html`, `blog-detail.html`
+- Excluded pages (`"sitemap": false` in `pages.json`): `404.html`, `blog-detail.html`, `request-demo.html`, `thank-you.html`, `retail-platform.html`
+- Entries are written in each page's editorial `sitemap.order` (see below), matching `task.md`'s reference sequence exactly. `<url>` order carries no crawl weight on its own; this is purely for human readability
 - `public/robots.txt` is a static file (Vite passthrough); it references the sitemap URL and is deployed to `dist/robots.txt` unchanged
 
 ### Customising per-page SEO hints
 
-Set the `sitemap` field on the page's entry in `assets/data/pages.json`:
+Every indexable page carries an explicit `sitemap` block on its entry in `assets/data/pages.json`:
 
 ```jsonc
-"my-new-page": { ..., "sitemap": { "priority": "0.8", "changefreq": "weekly" } }
+"my-new-page": { ..., "sitemap": { "priority": "0.8", "changefreq": "weekly", "order": 12 } }
 ```
 
-Pages without a `sitemap` field get `{ priority: '0.6', changefreq: 'monthly' }`.
+`priority`/`changefreq` are set editorially, judged relative to the other pages in the sitemap. `order` is the page's 1-based position in `dist/sitemap.xml` - also editorial, and independent of `priority`: two pages sharing a priority tier can still be ordered deliberately (`generate-sitemap.js` sorts by `order` ascending; a page with no `order` sorts last). `DEFAULT_META` (`{ priority: '0.6', changefreq: 'monthly' }`, no `order`) in `scripts/generate-sitemap.js` is a fallback for pages that haven't been given their own entry yet; it is not meant to be relied on long-term. `tests/sitemap-meta.test.js` fails if an indexable page is missing its `sitemap` block, or if `dist/sitemap.xml` disagrees with `pages.json` on priority, changefreq, or ordering.
 
 ### Adding a new page
 
-No sitemap action required. Just create the `*.html` file in the root - it will appear in the next build's sitemap automatically. To fine-tune its SEO weight, set its `sitemap` field in `pages.json`.
+Create the `*.html` file in the root - it will appear in the next build's sitemap automatically using `DEFAULT_META` (sorted last) until you set its own `sitemap` field, including `order`, in `pages.json` (required by `tests/sitemap-meta.test.js`).
 
 ### Excluding a page
 
@@ -265,15 +266,15 @@ Run just these checks with `npm run test:seo`. If you add a page that legitimate
 | Internal links   | `tests/links.test.js`           | links and local assets that 404                                                                                                                                                                                               |
 | On-page SEO      | `tests/seo.test.js`             | missing lang / h1 / description / twitter card, og-canonical host mismatch, missing img alt, invalid JSON-LD                                                                                                                  |
 | Page metadata    | `tests/pages-meta.test.js`      | hand-written heads, missing/orphan `pages.json` entries, missing/orphan/wrong-size OG images, noindex page left in sitemap                                                                                                    |
-| Conventions      | `tests/conventions.test.js`     | inline executable scripts, duplicate Swiper selectors, broken/ shadowing redirects, redirect stubs left in the sitemap, em dashes in tracked files                                                                            |
+| Conventions      | `tests/conventions.test.js`     | inline executable scripts, duplicate Swiper selectors, broken/ shadowing redirects, redirect stubs left in the sitemap, em dashes (literal, HTML entity, or spaced en dash) in tracked and untracked files                    |
 | Font subset      | `tests/font-subset.test.js`     | a font weight/style used in markup with no `@font-face`, a missing woff2 file, or a stray Google Fonts reference                                                                                                              |
 | Security headers | `tests/vercel-security.test.js` | missing security headers / cron config in `vercel.json`                                                                                                                                                                       |
 | Coverage guard   | `tests/coverage-guard.test.js`  | drift between page discovery and git, sitemap gaps/ghosts, hardcoded page globs outside `site-files.js`, a resurrected (dead) `tailwind.config.js`, full pages saved into `partials/`, growth of the discovery exclusion list |
-| Docs             | `tests/docs.test.js`            | broken markdown tables: a row split from its table by a blank line, or a table with no header separator row; backticked file paths that do not exist                                                                         |
+| Docs             | `tests/docs.test.js`            | broken markdown tables (tracked and untracked files): a row split from its table by a blank line, or a table with no header separator row; backticked file paths that do not exist                                            |
 
 Per-area run scripts: `test:seo`, `test:meta`, `test:conventions`, `test:font`, `test:links`, `test:build`, `test:guard`, `test:docs`.
 
-`tests/docs.test.js` also checks that every directory-qualified path written in single-backtick inline code inside a tracked `*.md` file points at something real. It strips fenced code blocks first, then for each single-line inline code span containing a `/`, it rejects shell commands (whitespace), URLs/protocols, site routes (leading `/`), globs/placeholders (`*`, `{`, `[`, `<`, `...`, or an all-caps path segment), MIME types, and `@scope` package names. A surviving candidate resolves if it exists on disk, is a suffix of a git-tracked path (so docs can write `modules/card-toggle.js` for `assets/script/modules/card-toggle.js`), or is gitignored (`git check-ignore`). If a doc needs to reference a real, planned-but-not-yet-created deliverable, add it to `PLANNED_FILES` in `tests/docs.test.js` with a short note on where it's promised; a second test fails if that entry ever lands on disk (drop the exemption) or stops being referenced by any doc (delete the entry), so the escape hatch can't go stale silently.
+`tests/docs.test.js` also checks that every directory-qualified path written in single-backtick inline code inside a markdown file (tracked or untracked) points at something real. It strips fenced code blocks first, then for each single-line inline code span containing a `/`, it rejects shell commands (whitespace), URLs/protocols, site routes (leading `/`), globs/placeholders (`*`, `{`, `[`, `<`, `...`, or an all-caps path segment), MIME types, and `@scope` package names. A surviving candidate resolves if it exists on disk, is a suffix of a git-tracked path (so docs can write `modules/card-toggle.js` for `assets/script/modules/card-toggle.js`), or is gitignored (`git check-ignore`). If a doc needs to reference a real, planned-but-not-yet-created deliverable, add it to `PLANNED_FILES` in `tests/docs.test.js` with a short note on where it's promised; a second test fails if that entry ever lands on disk (drop the exemption) or stops being referenced by any doc (delete the entry), so the escape hatch can't go stale silently.
 
 The coverage guard exists because checks themselves can rot: PR #111 showed that hardcoded directory lists in configs and tests go stale silently when pages move into new directories. Discovery now lives in one file (`scripts/lib/site-files.js`) and the guard cross-checks it against independent ground truth (git, the built sitemap) in both directions. When you add a check that iterates pages, import `allPages()` / `contentPages()` / `partialFiles()` from `site-files.js` instead of writing a glob.
 

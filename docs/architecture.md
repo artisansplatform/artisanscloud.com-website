@@ -237,11 +237,15 @@ public/robots.txt  ──(Vite passthrough)──>  dist/robots.txt
 
 ### Excluded pages
 
-Pages with `sitemap: false` in `assets/data/pages.json` are excluded: `404`, `thank-you`, `blog-detail`, `request-demo` (no indexable canonical URL).
+Pages with `sitemap: false` in `assets/data/pages.json` are excluded: `404`, `thank-you`, `blog-detail`, `request-demo`, `retail-platform` (no indexable canonical URL).
+
+### Priority tiers
+
+Every indexable page carries an explicit `sitemap: { priority, changefreq, order }` block, set editorially relative to the other pages in the sitemap (not derived from anything machine-checkable). `order` is the page's 1-based position in the output file and is independent of `priority` - it exists to reproduce a specific human-chosen sequence (see `task.md`), not a priority ranking; `<url>` order carries no crawl weight either way. `tests/sitemap-meta.test.js` enforces that the block exists, that the values are well-formed, and that `dist/sitemap.xml` matches `pages.json` on priority, changefreq, and order.
 
 ### Adding a new page
 
-No action needed - `generate-sitemap.js` and `vite.config.js` both discover pages through `scripts/lib/site-files.js`, which walks the project recursively. New pages, at any depth, are included automatically. To override the default `priority`/`changefreq`, set the `sitemap` field on the page's entry in `assets/data/pages.json`.
+`generate-sitemap.js` and `vite.config.js` both discover pages through `scripts/lib/site-files.js`, which walks the project recursively, so new pages at any depth are included automatically using `DEFAULT_META` (`0.6`/`monthly`). Set the page's own `sitemap` field in `assets/data/pages.json` before merging - `tests/sitemap-meta.test.js` requires it.
 
 ### Build order
 
