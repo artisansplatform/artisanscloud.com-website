@@ -164,6 +164,6 @@ During build/dev, these placeholders are replaced with the actual HTML content.
 
 ## Next Steps
 
-- Add more partials as needed (e.g., `partials/navigation.html`, `partials/cta.html`)
+- Add more partials as needed, following the pattern of `partials/header.html`, `partials/footer.html`, and `partials/head-meta.html`
 - Consider adding page-specific data injection via Handlebars context
 - Explore using Handlebars helpers for dynamic content
