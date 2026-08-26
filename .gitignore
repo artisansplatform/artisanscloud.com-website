@@ -8,3 +8,6 @@ assets/style/output.css
 data/gsc/
 .env
 .notion-sync-result.json
+
+# Serena MCP server workspace metadata
+.serena/

@@ -8,11 +8,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 
-function trackedMarkdown() {
-  const out = execFileSync("git", ["ls-files", "-z", "*.md"], {
-    cwd: rootDir,
-    encoding: "utf-8",
-  });
+function findMarkdown() {
+  const out = execFileSync(
+    "git",
+    ["ls-files", "-z", "--cached", "--others", "--exclude-standard", "*.md"],
+    { cwd: rootDir, encoding: "utf-8" },
+  );
   return out.split("\0").filter(Boolean);
 }
 
@@ -39,7 +40,7 @@ function stripFences(lines) {
   return out;
 }
 
-const SEPARATOR = /^\|(\s*:?-{3,}:?\s*\|)+$/;
+const SEPARATOR = /^\|(\s*:?-+:?\s*\|)+$/;
 
 function tableProblems(text) {
   const lines = stripFences(text.split("\n"));
@@ -79,9 +80,9 @@ function tableProblems(text) {
 // catches it (PR #113 shipped exactly that).
 // ---------------------------------------------------------------------------
 describe("Markdown tables render", () => {
-  const files = trackedMarkdown();
+  const files = findMarkdown();
 
-  it("finds tracked markdown files", () => {
+  it("finds markdown files", () => {
     expect(files.length).toBeGreaterThan(0);
   });
 
@@ -161,7 +162,7 @@ function extractCandidates(file, text) {
 }
 
 describe("Documented file references resolve", () => {
-  const files = trackedMarkdown();
+  const files = findMarkdown();
   const isTracked = buildTrackedSuffixIndex(trackedPaths());
 
   it.each(files)("%s", (file) => {
@@ -204,7 +205,7 @@ describe("Documented file references resolve", () => {
 });
 
 describe("PLANNED_FILES has no stale entries", () => {
-  const files = trackedMarkdown();
+  const files = findMarkdown();
   const fileTexts = files.map((file) => ({
     file,
     text: fs.readFileSync(path.join(rootDir, file), "utf-8"),
@@ -222,7 +223,7 @@ describe("PLANNED_FILES has no stale entries", () => {
     );
     expect(
       referenced,
-      `${plannedPath} is no longer referenced by any tracked markdown file, remove it from PLANNED_FILES`,
+      `${plannedPath} is no longer referenced by any markdown file, remove it from PLANNED_FILES`,
     ).toBe(true);
   });
 });
