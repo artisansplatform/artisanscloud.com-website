@@ -14,7 +14,13 @@ Static marketing website. Vanilla HTML/JS + Tailwind CSS v4 + Handlebars (build-
 
 Always replace em dashes with appropriate punctuation such as commas, periods, colons, or parentheses.
 
-This rule is enforced by `tests/conventions.test.js`, which fails `npm test` if an em dash (U+2014) appears in any tracked file (except `assets/data/fallback-articles.json`, which carries verbatim external copy).
+This rule is enforced by `tests/conventions.test.js`, which fails `npm test` and reports each offender as `file:line` when any of these appears:
+
+- the literal em dash character (U+2014)
+- the HTML entities that render as one: `mdash`, `#8212`, and `#x2014`, each written with a leading ampersand and a trailing semicolon (not spelled out here, since this file obeys its own rule)
+- an en dash (U+2013) used in an em dash's place, meaning one with a space or tag boundary on either side. Unspaced en dashes stay legal, since they are correct in ranges like `h1-h6`.
+
+The check covers untracked files too (anything `git ls-files --others --exclude-standard` sees), so a file an agent just wrote is caught before it is staged. `assets/data/fallback-articles.json` is exempt: it carries verbatim external copy.
 
 **Additional writing guidelines:**
 

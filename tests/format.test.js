@@ -12,7 +12,7 @@ const require = createRequire(import.meta.url);
 
 // ---------------------------------------------------------------------------
 // Formatting gate: the repo must stay prettier-clean.
-// Step 4 (commit 9cf8111) ran the pinned prettier over the whole repo once.
+// Step 4 (commit 46a263a) ran the pinned prettier over the whole repo once.
 // This test keeps it that way: any file prettier would still rewrite fails
 // the build, except the grandfathered pages below, and that list can only
 // shrink (test B).
@@ -37,7 +37,13 @@ function listDifferentFiles() {
       { cwd: rootDir, encoding: "utf-8" },
     );
   } catch (err) {
-    if (err.stdout == null) throw err;
+    // prettier exits 1 when files differ, which is the case this test reads.
+    // Any other status (2 = a file it could not parse) is a real failure, and
+    // stdout still holds a partial list, so it must not be treated as a result.
+    if (err.status !== 1) {
+      if (err.stderr) err.message += `\n${err.stderr}`;
+      throw err;
+    }
     stdout = err.stdout;
   }
   return stdout
