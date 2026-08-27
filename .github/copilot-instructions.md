@@ -14,7 +14,13 @@ Static marketing website. Vanilla HTML/JS + Tailwind CSS v4 + Handlebars (build-
 
 Always replace em dashes with appropriate punctuation such as commas, periods, colons, or parentheses.
 
-This rule is enforced by `tests/conventions.test.js`, which fails `npm test` if an em dash (U+2014) appears in any tracked file (except `assets/data/fallback-articles.json`, which carries verbatim external copy).
+This rule is enforced by `tests/conventions.test.js`, which fails `npm test` and reports each offender as `file:line` when any of these appears:
+
+- the literal em dash character (U+2014)
+- the HTML entities that render as one: `mdash`, `#8212`, and `#x2014`, each written with a leading ampersand and a trailing semicolon (not spelled out here, since this file obeys its own rule)
+- an en dash (U+2013) used in an em dash's place, meaning one with a space or tag boundary on either side. Unspaced en dashes stay legal, since they are correct in ranges like `h1-h6`.
+
+The check covers untracked files too (anything `git ls-files --others --exclude-standard` sees), so a file an agent just wrote is caught before it is staged. `assets/data/fallback-articles.json` is exempt: it carries verbatim external copy.
 
 **Additional writing guidelines:**
 
@@ -58,7 +64,7 @@ npm run optimize:images  # Re-encode raster images in place via sharp (pass path
 - **Fonts are self-hosted** - Poppins woff2 subsets live in `assets/fonts/poppins/` with `@font-face` blocks in `assets/style/input.css`; nothing loads from Google Fonts at runtime. To use a new weight or style, download its latin + latin-ext woff2 files and add matching `@font-face` blocks first (see `docs/development.md`, Fonts), otherwise the browser synthesizes it. `tests/font-subset.test.js` fails if markup uses an undeclared variant, a declared font file is missing, or anything references `fonts.googleapis.com` again.
 - **URL Redirects on File Rename** - Every time an AI or user renames a file (changing an existing URL), a corresponding redirect rule from the old URL to the new URL MUST be added to the `redirects` list in `vercel.json`. `tests/conventions.test.js` checks that every redirect destination resolves, that a redirect never shadows a live content page, and that meta-refresh redirect stubs are marked `"sitemap": false` in `pages.json`.
 - **Formatting is test-enforced** - `npm run prettier` before committing; `tests/format.test.js` fails the build on any file prettier would rewrite outside the grandfathered list. See `docs/development.md` (Automated guardrails).
-- **No shell-string child processes** - never `execSync(cmd)` / `spawnSync(cmd)` / `shell: true`; use `execFileSync(cmd, [args])`. Enforced by `tests/conventions.test.js`.
+- **No shell-string child processes** - never `exec(cmd)` / `execSync(cmd)` / `shell: true`; use `execFileSync(cmd, [args])`, or `spawn(cmd, [args])` for a streaming child. `spawn` / `spawnSync` / `fork` with an args array are fine: they never involve a shell. Enforced by `tests/conventions.test.js`.
 - **npm scripts must be cross-platform** - no unix binaries or POSIX shell redirects/operators (`cp`, `rm`, stderr redirects, `||`, pipes, command substitution) in a `package.json` script value; use `node -e "..."` (double quotes outside, single inside) or a `scripts/*.js` file instead. Enforced by `tests/conventions.test.js`.
 - **Content Security Policy** - `vercel.json` defines an enforced CSP (`Content-Security-Policy`; see `docs/architecture.md`). If you add a third-party script, style host, image host, or network call, add its origin to the matching `script-src`/`connect-src`/etc. directive, otherwise it is reported (and, once enforcement is on, blocked). Never add `'unsafe-inline'` to `script-src`; put JS in a module instead. `tests/vercel-security.test.js` guards the core directives.
 
