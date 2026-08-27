@@ -16,7 +16,7 @@ const UNTRACKED_HASH_LIMIT = 256 * 1024; // skip hashing content of large untrac
 // Source-level suites only. build.test.js and seo.test.js need a fresh
 // `npm run build` first, which is the slow part this gate exists to avoid;
 // CI still runs those.
-const BASE_SUITES = [
+export const BASE_SUITES = [
   "tests/conventions.test.js",
   "tests/docs.test.js",
   "tests/font-subset.test.js",
@@ -45,9 +45,12 @@ function tryGit(args) {
   return execFileSync("git", args, { cwd: rootDir, encoding: "utf-8" });
 }
 
-function computeTreeDigest() {
+export function computeTreeDigest() {
   const head = tryGit(["rev-parse", "HEAD"]);
-  const status = tryGit(["status", "--porcelain"]);
+  // --untracked-files=all, not the default `normal`: `normal` collapses a new
+  // directory to a single `?? dir/` line, so every file inside it is invisible
+  // to the digest and adding one leaves the cache looking green.
+  const status = tryGit(["status", "--porcelain", "--untracked-files=all"]);
   const diff = tryGit(["diff", "HEAD"]);
 
   const cacheRel = path.relative(rootDir, CACHE_FILE).replace(/\\/g, "/");
@@ -110,10 +113,13 @@ function runVitest(suites) {
       encoding: "utf-8",
       stdio: "pipe",
     });
-    return { passed: true, output: out };
+    return { passed: true, ranTests: true, output: out };
   } catch (err) {
     const output = `${err.stdout ?? ""}${err.stderr ?? ""}`;
-    return { passed: false, output };
+    // 1 = vitest ran and something failed. Anything else (a crash, a missing
+    // binary, a config parse error) is the runner never having reported, which
+    // must still block: a gate that cannot run is not a gate that passed.
+    return { passed: false, ranTests: err.status === 1, output };
   }
 }
 
@@ -145,15 +151,22 @@ function main() {
   try {
     result = runVitest(suites);
   } catch (err) {
-    log(`internal error, letting the session finish anyway: ${err.message}`);
-    exitOk();
+    // Almost always vitest missing from node_modules. Blocking rather than
+    // waving the turn through: a gate that silently no-ops is worse than no
+    // gate, because nobody notices it stopped working.
+    exitBlocked(
+      "claude-stop-gate: could not start the test runner, so nothing was checked.",
+      `${err.message}\nRun \`npm install\`, or set CLAUDE_STOP_GATE=off to bypass this hook deliberately.`,
+    );
     return;
   }
 
   if (!result.passed) {
     const tail = result.output.split("\n").slice(-40).join("\n");
     exitBlocked(
-      "claude-stop-gate: fast local test suites failed, fix before finishing.",
+      result.ranTests
+        ? "claude-stop-gate: fast local test suites failed, fix before finishing."
+        : "claude-stop-gate: the test runner exited without reporting, so nothing was checked.",
       tail,
     );
     return;
@@ -163,4 +176,8 @@ function main() {
   exitOk("fast local test suites passed");
 }
 
-main();
+// Only run when invoked as the hook command, so the tests can import
+// BASE_SUITES and computeTreeDigest without running the suite.
+if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
+  main();
+}
