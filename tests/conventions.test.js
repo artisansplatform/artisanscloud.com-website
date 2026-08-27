@@ -406,27 +406,66 @@ describe("Cross-platform npm scripts", () => {
   const BACKTICK = "`";
   const DOLLAR_PAREN = "$" + "(";
 
-  function findScriptViolations(name, value) {
+  // Everything a `node -e "..."` payload contains is JavaScript, not shell:
+  // `||`, a template-literal backtick and `${x}` are all legal there and mean
+  // nothing to cmd.exe. Scanning the payload as if it were shell rejects the
+  // exact escape hatch the rule tells people to use, and with the wrong
+  // reason. Blank the payload out before looking for shell constructs; the
+  // outer quoting style is checked against the raw value first.
+  const NODE_EVAL_DQ = /(-e|--eval|-p|--print)(\s+)"(?:[^"\\]|\\.)*"/g;
+  const NODE_EVAL_SQ = /(-e|--eval|-p|--print)(\s+)'[^']*'/g;
+
+  function stripNodeEval(value) {
+    return value
+      .replace(NODE_EVAL_DQ, '$1$2"<js>"')
+      .replace(NODE_EVAL_SQ, "$1$2'<js>'");
+  }
+
+  function findScriptViolations(name, rawValue) {
     const offenders = [];
 
-    for (const bin of UNIX_BINARIES) {
-      const re = new RegExp(`(^|&&|\\|\\||;)\\s*${bin}(\\s|$)`);
-      if (re.test(value)) offenders.push(`uses unix binary \`${bin}\``);
-    }
-    if (/\becho\b.*>/.test(value))
-      offenders.push("uses `echo` with a redirect");
-    if (value.includes(REDIRECT))
-      offenders.push(`uses \`${REDIRECT}\` redirect`);
-    if (value.includes(DEV_NULL)) offenders.push(`references \`${DEV_NULL}\``);
-    if (value.includes(PIPE)) offenders.push(`uses \`${PIPE}\` pipe`);
-    if (value.includes(BACKTICK)) offenders.push("uses backtick substitution");
-    if (value.includes(DOLLAR_PAREN))
-      offenders.push(`uses \`${DOLLAR_PAREN}\` substitution`);
-    if (/\$\w/.test(value))
-      offenders.push("references a shell env var (`$VAR`)");
-    if (/node\s+-e\s+'/.test(value))
+    // Checked on the raw value: this is about the quoting, not the payload.
+    if (/\bnode(\.exe)?\s+(-e|--eval|-p|--print)\s+'/.test(rawValue))
       offenders.push(
         "single-quoted outer argument to `node -e`; cmd.exe does not strip single quotes, use double-quotes outside and single-quotes inside",
+      );
+
+    const value = stripNodeEval(rawValue);
+
+    for (const bin of UNIX_BINARIES) {
+      // A command position is the start of the value or just after a
+      // separator, so `node scripts/rm-stale.js` is not a call to `rm`.
+      const re = new RegExp(`(^|&&|\\|\\||\\||;)\\s*${bin}(\\s|$)`);
+      if (re.test(value))
+        offenders.push(
+          `uses unix binary \`${bin}\`, which does not exist on Windows cmd.exe`,
+        );
+    }
+    if (/\becho\b.*>/.test(value))
+      offenders.push("uses `echo` with a redirect; quoting differs on cmd.exe");
+    if (value.includes(REDIRECT))
+      offenders.push(
+        `uses \`${REDIRECT}\` redirect; cmd.exe has no equivalent for the null device path`,
+      );
+    if (value.includes(DEV_NULL))
+      offenders.push(`references \`${DEV_NULL}\`, which is POSIX-only`);
+    if (value.includes(OR_OR))
+      offenders.push(
+        `uses \`${OR_OR}\`; the fallback it guards is shell-dependent, put the error handling in a \`scripts/*.js\` file instead`,
+      );
+    if (value.split(OR_OR).join("").includes(PIPE))
+      offenders.push(
+        `uses a \`${PIPE}\` pipe; the command on either side is almost always a unix binary`,
+      );
+    if (value.includes(BACKTICK))
+      offenders.push("uses backtick command substitution, which is POSIX-only");
+    if (value.includes(DOLLAR_PAREN))
+      offenders.push(
+        `uses \`${DOLLAR_PAREN}\` command substitution, which is POSIX-only`,
+      );
+    if (/\$\w/.test(value))
+      offenders.push(
+        "references a shell env var (`$VAR`); cmd.exe spells it `%VAR%`",
       );
 
     return offenders;
@@ -459,22 +498,59 @@ describe("Cross-platform npm scripts", () => {
     ).toEqual([]);
   });
 
-  it("still detects each banned form (self-test against a fixture)", () => {
-    const fixtures = {
-      copy: "cp -r a b",
-      redirect: "x " + REDIRECT + DEV_NULL + " " + OR_OR + " true",
-      singleQuoteNodeE: "node -e 'y'",
-    };
-    expect(findScriptViolations("copy", fixtures.copy).length).toBeGreaterThan(
-      0,
-    );
-    expect(
-      findScriptViolations("redirect", fixtures.redirect).length,
-    ).toBeGreaterThan(0);
-    expect(
-      findScriptViolations("singleQuoteNodeE", fixtures.singleQuoteNodeE)
-        .length,
-    ).toBeGreaterThan(0);
+  // Known-bad and known-good fixtures, asserted directly against the matcher.
+  // A gate that only says "the suite passes" cannot tell a rule that holds
+  // from a rule too narrow to notice, and it cannot tell a rule that holds
+  // from one so broad it rejects correct code. Both halves are required.
+  const BAD_FIXTURES = {
+    "unix copy": "cp -r assets/og dist/assets/og",
+    "unix remove": "rm -rf dist",
+    "binary after a separator": "node scripts/build.js && rm -rf tmp",
+    "binary after a pipe": "node scripts/list.js " + PIPE + " grep foo",
+    "stderr to the null device": "git config a b " + REDIRECT + DEV_NULL,
+    "or-fallback": "git config a b " + OR_OR + " true",
+    pipe: "node scripts/list.js " + PIPE + " node scripts/count.js",
+    "backtick substitution": "node scripts/x.js " + BACKTICK + "pwd" + BACKTICK,
+    "paren substitution": "node scripts/x.js " + DOLLAR_PAREN + "pwd)",
+    "shell env var": "node scripts/x.js $HOME",
+    "single-quoted node -e": 'node -e \'require("fs").rmSync("dist")\'',
+    "single-quoted node --eval": "node --eval 'process.exit(0)'",
+  };
+
+  // Every one of these is correct, portable code. If the matcher ever flags
+  // one, the rule has grown past the bug class it is meant to cover.
+  const GOOD_FIXTURES = {
+    "current build:static":
+      "node -e \"require('fs').cpSync('assets/og','dist/assets/og',{recursive:true})\"",
+    "logical or inside a node -e payload":
+      'node -e "const x = process.env.PORT || 3000; console.log(x)"',
+    "template literal inside a node -e payload":
+      'node -e "console.log(`built ${Date.now()}`)"',
+    "regex alternation inside a node -e payload":
+      'node -e "console.log(/a|b/.test(process.argv[2]))"',
+    "and chain": "npm run build && vitest run",
+    "npm-run-all glob": "npm-run-all --parallel dev:*",
+    "script file whose name contains a binary name":
+      "node scripts/grep-pages.js",
+    "flag that looks like a binary": "vite build --mode cp",
+    "plain node script": "node scripts/setup-hooks.js",
+  };
+
+  it("flags every known-bad script shape (self-test)", () => {
+    const missed = Object.entries(BAD_FIXTURES)
+      .filter(
+        ([, value]) => findScriptViolations("fixture", value).length === 0,
+      )
+      .map(([label]) => label);
+    expect(missed, `not flagged: ${missed.join(", ")}`).toEqual([]);
+  });
+
+  it("flags nothing in a known-good script shape (self-test)", () => {
+    const falsePositives = Object.entries(GOOD_FIXTURES)
+      .map(([label, value]) => [label, findScriptViolations("fixture", value)])
+      .filter(([, offenders]) => offenders.length > 0)
+      .map(([label, offenders]) => `${label}: ${offenders.join("; ")}`);
+    expect(falsePositives, falsePositives.join("\n")).toEqual([]);
   });
 });
 
