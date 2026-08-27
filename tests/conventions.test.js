@@ -237,3 +237,140 @@ describe("No em dashes in tracked files", () => {
     ).toEqual([]);
   });
 });
+
+// ---------------------------------------------------------------------------
+// No shell-string child processes.
+// exec/execSync take a command string that gets re-parsed by a shell
+// (cmd.exe on Windows, with different quoting rules than POSIX), so any
+// path with a space, glob character, or quote can break or be
+// reinterpreted. `shell: true` does the same to any other API.
+// spawn/spawnSync/fork/execFile* are NOT banned: they pass an args array
+// straight to the process and never involve a shell on their own. spawn is
+// the right tool for a streaming or long-running child, which execFileSync
+// cannot do.
+// ---------------------------------------------------------------------------
+describe("No shell-string child processes", () => {
+  // Built by concatenation so this file does not flag itself.
+  const BANNED = ["exec" + "Sync", "exec"];
+
+  function findViolations(filename, src) {
+    const offenders = [];
+    const lines = src.split("\n");
+
+    const importMatch = src.match(
+      /import\s+(?:\{([^}]+)\}|(\w+))\s+from\s+["'](?:node:)?child_process["']/,
+    );
+    const namedImports = importMatch?.[1]
+      ? importMatch[1].split(",").map((s) =>
+          s
+            .trim()
+            .split(/\s+as\s+/)
+            .pop(),
+        )
+      : [];
+    const defaultImport = importMatch?.[2];
+
+    const bannedBindings = BANNED.filter((name) => namedImports.includes(name));
+
+    lines.forEach((line, idx) => {
+      for (const name of bannedBindings) {
+        const re = new RegExp(`(^|[^.\\w])${name}\\s*\\(`);
+        if (re.test(line)) {
+          offenders.push(
+            `${filename}:${idx + 1}: shell-string call \`${name}(...)\`; a command string is re-parsed by a shell and breaks on paths with spaces or on Windows cmd.exe. Use execFileSync(cmd, [args]), or spawn(cmd, [args]) for a streaming child.`,
+          );
+        }
+      }
+      if (defaultImport) {
+        for (const name of BANNED) {
+          const re = new RegExp(`(^|[^.\\w])${defaultImport}\\.${name}\\s*\\(`);
+          if (re.test(line)) {
+            offenders.push(
+              `${filename}:${idx + 1}: shell-string call \`${defaultImport}.${name}(...)\`; a command string is re-parsed by a shell and breaks on paths with spaces or on Windows cmd.exe. Use execFileSync(cmd, [args]), or spawn(cmd, [args]) for a streaming child.`,
+            );
+          }
+        }
+      }
+      if (/shell\s*:\s*true/.test(line)) {
+        const shellOpt = "shell" + ": true";
+        offenders.push(
+          `${filename}:${idx + 1}: \`${shellOpt}\` option; a command string is re-parsed by the shell and breaks on paths with spaces or on Windows cmd.exe. Use execFileSync(cmd, [args]) instead.`,
+        );
+      }
+    });
+
+    return offenders;
+  }
+
+  it("has no shell-string child_process calls in scripts/, tests/, api/, or root config files (tracked and untracked)", () => {
+    const out = execFileSync(
+      "git",
+      [
+        "ls-files",
+        "-z",
+        "--cached",
+        "--others",
+        "--exclude-standard",
+        "--",
+        "scripts",
+        "tests",
+        "api",
+        "*.config.js",
+      ],
+      { cwd: rootDir, encoding: "utf-8" },
+    );
+    const tracked = out
+      .split("\0")
+      .filter(Boolean)
+      .filter((f) => /\.(js|mjs|cjs)$/.test(f))
+      // Contains this detector's own fixture, a string with fake banned
+      // calls used by the self-test below; it is not real source.
+      .filter((f) => f !== "tests/conventions.test.js");
+    const files = [...new Set(tracked)];
+
+    const offenders = files.flatMap((f) => findViolations(f, read(f)));
+
+    expect(offenders, offenders.join("\n")).toEqual([]);
+  });
+
+  it("still detects each banned form (self-test against a fixture)", () => {
+    const fixture = `
+import { exec, execSync, spawn, spawnSync } from "child_process";
+exec("ls -la");
+execSync("rm -rf " + dir);
+spawn("cmd", { shell: true });
+`;
+    const offenders = findViolations("fixture.js", fixture);
+    for (const name of BANNED) {
+      expect(
+        offenders.some((o) => o.includes(`\`${name}(`)),
+        `expected fixture self-test to catch ${name}(...)`,
+      ).toBe(true);
+    }
+    expect(offenders.some((o) => o.includes("shell: true"))).toBe(true);
+  });
+
+  // spawn/spawnSync/fork with an args array never involve a shell, so they
+  // are correct code, not the bug class. spawn is also the only option for a
+  // streaming or long-running child, which execFileSync cannot handle.
+  it("leaves shell-free array-args APIs alone (self-test against a fixture)", () => {
+    const fixture = `
+import { spawn, spawnSync, fork, execFileSync } from "child_process";
+spawnSync("git", ["ls-files", "-z"], { encoding: "utf-8" });
+spawn("node", ["server.js"]);
+fork("./worker.js", ["--flag"]);
+execFileSync("git", ["status"]);
+`;
+    expect(findViolations("fixture.js", fixture)).toEqual([]);
+  });
+
+  // A member call like regex.exec(...) must not be mistaken for child_process.
+  it("does not flag member calls such as regex.exec (self-test)", () => {
+    const fixture = `
+import { exec } from "child_process";
+const m = /a(b)/.exec(input);
+const n = matcher.exec(line);
+`;
+    expect(findViolations("fixture.js", fixture)).toEqual([]);
+  });
+});
