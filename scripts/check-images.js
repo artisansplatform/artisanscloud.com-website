@@ -24,7 +24,13 @@ const pathArgs = rawArgs.filter((a) => a !== "--staged");
 
 async function resolvePaths(args) {
   if (args.length > 0) return args.filter(isImage);
-  return glob("assets/**/*.{png,jpg,jpeg,webp,svg}", { nodir: true });
+  // glob returns native separators; `git cat-file -s :path` in --staged mode
+  // only understands forward slashes, and would silently size nothing on
+  // Windows.
+  const found = await glob("assets/**/*.{png,jpg,jpeg,webp,svg}", {
+    nodir: true,
+  });
+  return found.map((p) => p.split("\\").join("/"));
 }
 
 function getStagedSize(p) {
