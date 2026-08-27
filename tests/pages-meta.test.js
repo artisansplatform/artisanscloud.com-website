@@ -103,6 +103,7 @@ describe("pages.json / head-meta partial integrity", () => {
     }
     const onDisk = glob
       .sync("assets/og/**/*.png", { cwd: rootDir })
+      .map(toPosix)
       .map((f) => f.replace(/^assets\/og\//, ""))
       .filter((f) => !f.startsWith("team/"));
     const orphans = onDisk.filter((f) => !referenced.has(f));
