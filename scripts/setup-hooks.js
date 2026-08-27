@@ -7,7 +7,11 @@ try {
   execFileSync("git", ["config", "core.hooksPath", ".githooks"], {
     stdio: "ignore",
   });
-} catch {
-  console.error("setup-hooks: not a git checkout, skipping core.hooksPath");
+} catch (err) {
+  // Either git is not installed or this is not a checkout. Say which, rather
+  // than asserting a reason that may not be the real one.
+  const why =
+    err.code === "ENOENT" ? "git is not on PATH" : "not a git checkout";
+  console.error(`setup-hooks: ${why}, skipping core.hooksPath`);
 }
 process.exit(0);
