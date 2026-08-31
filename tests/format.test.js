@@ -4,6 +4,7 @@ import { createRequire } from "module";
 import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
 import { describe, expect, it } from "vitest";
+import prettier from "prettier";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -65,16 +66,22 @@ describe("Formatting gate", () => {
     ).toEqual([]);
   });
 
-  it("only shrinks the grandfathered list", () => {
+  it("only shrinks the grandfathered list", async () => {
+    // Checked via the prettier API (not the CLI) so .prettierignore, which
+    // deliberately excludes these files from "npm run prettier", doesn't
+    // hide a file that has actually become prettier-clean.
     for (const file of GRANDFATHERED) {
+      const abs = path.join(rootDir, file);
       expect(
-        fs.existsSync(path.join(rootDir, file)),
+        fs.existsSync(abs),
         `Grandfathered file ${file} no longer exists. Remove it from GRANDFATHERED in tests/format.test.js.`,
       ).toBe(true);
+      const source = fs.readFileSync(abs, "utf-8");
+      const isFormatted = await prettier.check(source, { filepath: abs });
       expect(
-        unformatted,
+        isFormatted,
         `${file} is now prettier-formatted. Remove it from GRANDFATHERED in tests/format.test.js.`,
-      ).toContain(file);
+      ).toBe(false);
     }
   });
 });

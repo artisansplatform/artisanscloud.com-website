@@ -288,6 +288,7 @@ Key directives and why each origin is allowed:
 - **Auto-deploy**: Main branch pushes trigger automatic deployment
 - **`build:static`**: a `node -e` one-liner (`fs.cpSync('assets/og','dist/assets/og',{recursive:true})`), not a shell `cp -r`, so it runs on Windows `cmd.exe` too
 - **`prepare`**: runs `scripts/setup-hooks.js`, which sets `core.hooksPath` to `.githooks` and never fails `npm install` even outside a git checkout
+- **`scripts/claude-stop-gate.js`**: local-only, runs via a Claude Code `Stop` hook (`.claude/settings.json`); see `docs/development.md` (Automated guardrails)
 
 ### CI jobs
 

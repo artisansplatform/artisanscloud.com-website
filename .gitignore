@@ -11,3 +11,5 @@ data/gsc/
 
 # Serena MCP server workspace metadata
 .serena/
+
+.claude/.stop-gate-last-green

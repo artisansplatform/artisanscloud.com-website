@@ -4,6 +4,7 @@ import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
 import { describe, expect, it } from "vitest";
 import { allPages } from "../scripts/lib/site-files.js";
+import { BASE_SUITES, computeTreeDigest } from "../scripts/claude-stop-gate.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -550,5 +551,86 @@ describe("Cross-platform npm scripts", () => {
       .filter(([, offenders]) => offenders.length > 0)
       .map(([label, offenders]) => `${label}: ${offenders.join("; ")}`);
     expect(falsePositives, falsePositives.join("\n")).toEqual([]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Claude Code Stop hook wiring. The hook is a local speed-up (fast test
+// suites run before the agent finishes a turn); if the settings file rots,
+// it silently becomes a no-op instead of failing loudly, so check it here.
+// ---------------------------------------------------------------------------
+describe("Claude Code Stop hook", () => {
+  const settingsPath = path.join(rootDir, ".claude/settings.json");
+
+  it("declares exactly one Stop hook command pointing at a file that exists", () => {
+    expect(
+      fs.existsSync(settingsPath),
+      ".claude/settings.json is missing",
+    ).toBe(true);
+    const settings = JSON.parse(fs.readFileSync(settingsPath, "utf-8"));
+    const stopGroups = settings.hooks?.Stop ?? [];
+    const commands = stopGroups.flatMap((group) => group.hooks ?? []);
+
+    expect(commands.length, "expected exactly one Stop hook command").toBe(1);
+
+    const command = commands[0].command;
+    const match = command.match(/"\$CLAUDE_PROJECT_DIR\/([^"]+)"/);
+    expect(
+      match,
+      `Stop hook command does not reference a $CLAUDE_PROJECT_DIR-relative script: ${command}`,
+    ).not.toBeNull();
+
+    const scriptPath = path.join(rootDir, match[1]);
+    expect(
+      fs.existsSync(scriptPath),
+      `Stop hook command points at ${match[1]}, which does not exist`,
+    ).toBe(true);
+  });
+
+  it("runs suites that all exist", () => {
+    const missing = BASE_SUITES.filter(
+      (suite) => !fs.existsSync(path.join(rootDir, suite)),
+    );
+    expect(missing, `Stop hook lists suites that do not exist`).toEqual([]);
+  });
+
+  it("keeps `npm run test:fast` in step with the hook's suite list", () => {
+    const pkg = JSON.parse(read("package.json"));
+    const fast = (pkg.scripts?.["test:fast"] ?? "")
+      .split(/\s+/)
+      .filter((arg) => arg.endsWith(".test.js"));
+    expect(
+      fast,
+      "test:fast and BASE_SUITES in scripts/claude-stop-gate.js have drifted; the documented by-hand equivalent must run the same suites",
+    ).toEqual(BASE_SUITES);
+  });
+
+  // The gate skips its own run when the tree digest matches the last green
+  // one, so a digest that cannot see a change is a gate that silently stops
+  // gating. `git status --porcelain` alone collapses a new directory to one
+  // `?? dir/` line, which hid every file inside it.
+  it("notices a file added inside an untracked directory", () => {
+    const probeDir = path.join(rootDir, "zz-stop-gate-probe");
+    fs.rmSync(probeDir, { recursive: true, force: true });
+    try {
+      fs.mkdirSync(probeDir, { recursive: true });
+      fs.writeFileSync(path.join(probeDir, "first.txt"), "one\n");
+      const before = computeTreeDigest();
+
+      fs.writeFileSync(path.join(probeDir, "second.txt"), "two\n");
+      const afterNewFile = computeTreeDigest();
+      expect(
+        afterNewFile,
+        "digest is blind to a new file inside an untracked directory",
+      ).not.toBe(before);
+
+      fs.writeFileSync(path.join(probeDir, "second.txt"), "two, edited\n");
+      expect(
+        computeTreeDigest(),
+        "digest is blind to an edit of an untracked file",
+      ).not.toBe(afterNewFile);
+    } finally {
+      fs.rmSync(probeDir, { recursive: true, force: true });
+    }
   });
 });
