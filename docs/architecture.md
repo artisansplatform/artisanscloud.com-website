@@ -288,3 +288,10 @@ Key directives and why each origin is allowed:
 - **Auto-deploy**: Main branch pushes trigger automatic deployment
 - **`build:static`**: a `node -e` one-liner (`fs.cpSync('assets/og','dist/assets/og',{recursive:true})`), not a shell `cp -r`, so it runs on Windows `cmd.exe` too
 - **`prepare`**: runs `scripts/setup-hooks.js`, which sets `core.hooksPath` to `.githooks` and never fails `npm install` even outside a git checkout
+
+### CI jobs
+
+`.github/workflows/test.yml` defines two independent jobs:
+
+- **`test`**: runs on the self-hosted Linux runner, on push to `main` and on pull requests. Does build, unit tests (`npm test`), and Playwright e2e.
+- **`windows`**: runs on GitHub-hosted `windows-latest`, on pull requests only. Does build plus the unit suite (`npx vitest run`), no Playwright. It exists to prove the cross-platform conventions the unit suite enforces (no shell-string child processes, no unix binaries in npm scripts) actually hold on a real Windows checkout, not just in theory. Scoped to pull requests because GitHub-hosted Windows minutes bill at double rate.

@@ -3,6 +3,7 @@ import { glob } from "glob";
 import path from "path";
 import { fileURLToPath } from "url";
 import { describe, expect, it } from "vitest";
+import { toPosix } from "./lib/paths.js";
 import { allPages, partialFiles } from "../scripts/lib/site-files.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -40,7 +41,7 @@ function markupFiles() {
   return [
     ...allPages(),
     ...partialFiles(),
-    ...glob.sync("assets/script/**/*.js", { cwd: rootDir }),
+    ...glob.sync("assets/script/**/*.js", { cwd: rootDir }).map(toPosix),
   ];
 }
 

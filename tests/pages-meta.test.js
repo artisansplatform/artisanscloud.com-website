@@ -3,6 +3,7 @@ import { glob } from "glob";
 import path from "path";
 import sharp from "sharp";
 import { fileURLToPath } from "url";
+import { toPosix } from "./lib/paths.js";
 import { describe, expect, it } from "vitest";
 import { contentPages } from "../scripts/lib/site-files.js";
 
@@ -102,6 +103,7 @@ describe("pages.json / head-meta partial integrity", () => {
     }
     const onDisk = glob
       .sync("assets/og/**/*.png", { cwd: rootDir })
+      .map(toPosix)
       .map((f) => f.replace(/^assets\/og\//, ""))
       .filter((f) => !f.startsWith("team/"));
     const orphans = onDisk.filter((f) => !referenced.has(f));
@@ -125,7 +127,9 @@ describe("pages.json / head-meta partial integrity", () => {
 
 // OG images must be exactly 1200x630 or social previews render cropped.
 describe("OG images have correct dimensions", () => {
-  const ogImages = glob.sync("assets/og/**/*.png", { cwd: rootDir });
+  const ogImages = glob
+    .sync("assets/og/**/*.png", { cwd: rootDir })
+    .map(toPosix);
 
   it("finds OG images", () => {
     expect(ogImages.length).toBeGreaterThan(0);

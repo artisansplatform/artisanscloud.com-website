@@ -38,3 +38,25 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+
+  # Proves the cross-platform rules the conventions suite enforces (no
+  # shell-string child processes, no unix binaries in npm scripts) actually
+  # hold on Windows. Unit suite only: e2e stays on the self-hosted Linux
+  # runner, which already has browsers. GitHub-hosted Windows minutes bill at
+  # 2x, so this is scoped to pull_request and does not run on every push.
+  windows:
+    if: github.event_name == 'pull_request'
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run build
+      # --no-install: fail loudly if npm ci did not provide vitest, rather
+      # than silently fetching an unpinned copy from the registry.
+      - run: npx --no-install vitest run
