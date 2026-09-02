@@ -33,8 +33,13 @@
       "permanent": true
     },
     {
-      "source": "/d2c-ecommerce",
-      "destination": "/d2c-eCommerce",
+      "source": "/d2c-eCommerce",
+      "destination": "/d2c-ecommerce",
+      "permanent": true
+    },
+    {
+      "source": "/POS",
+      "destination": "/pos",
       "permanent": true
     },
     {
@@ -69,7 +74,7 @@
     },
     {
       "source": "/headless-commerce",
-      "destination": "/d2c-eCommerce",
+      "destination": "/d2c-ecommerce",
       "permanent": true
     },
     {

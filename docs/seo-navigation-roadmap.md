@@ -127,11 +127,11 @@ Tasks:
 | ------------------------------------ | ----------------------- | ------------- |
 | /retail-platform                     | /nexus-unified-commerce | done (PR #48) |
 | /overview                            | /nexus-unified-commerce | done (PR #50) |
-| /POS                                 | TBD                     |               |
+| /pos                                 | TBD                     |               |
 | /browser-pos                         | TBD                     |               |
 | /warehouse-management-system         | TBD                     |               |
 | /distributed-order-management        | TBD                     |               |
-| /d2c-eCommerce                       | TBD                     |               |
+| /d2c-ecommerce                       | TBD                     |               |
 | /customer-experience-management      | TBD                     |               |
 | /merchandise-and-assortment-planning | TBD                     |               |
 | /automation                          | TBD                     |               |

@@ -8,6 +8,6 @@ public/
 # Grandfathered: reformatting shifts whitespace in layouts built against the
 # unformatted markup, so these need a visual pass before prettier touches
 # them. Keep in sync with GRANDFATHERED in tests/format.test.js.
-POS.html
+pos.html
 browser-pos.html
 data-intelligence.html
