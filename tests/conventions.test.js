@@ -634,3 +634,16 @@ describe("Claude Code Stop hook", () => {
     }
   });
 });
+
+// ---------------------------------------------------------------------------
+// Page filenames must be all-lowercase: URLs are case-sensitive on Vercel, so
+// a mixed-case filename means the lowercase URL people actually type 404s.
+// ---------------------------------------------------------------------------
+describe("Page paths are lowercase", () => {
+  it.each(allPages())("%s has no uppercase letters in its path", (page) => {
+    expect(
+      page,
+      `rename to ${page.toLowerCase()} and add a vercel.json redirect from the old casing`,
+    ).toBe(page.toLowerCase());
+  });
+});
