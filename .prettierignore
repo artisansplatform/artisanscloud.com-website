@@ -5,6 +5,10 @@ assets/style/output.css
 assets/og/
 public/
 
+# Scratch dir the stop-gate digest test creates and deletes mid-run; prettier
+# running in parallel would otherwise try to read a file that just vanished.
+zz-stop-gate-probe/
+
 # Grandfathered: reformatting shifts whitespace in layouts built against the
 # unformatted markup, so these need a visual pass before prettier touches
 # them. Keep in sync with GRANDFATHERED in tests/format.test.js.
