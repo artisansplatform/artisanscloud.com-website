@@ -23,7 +23,7 @@ const require = createRequire(import.meta.url);
 // layouts built against the unformatted markup, so they need a visual pass
 // (393px / 768px / 1280px) before their entry can be deleted.
 const GRANDFATHERED = new Set([
-  "POS.html",
+  "pos.html",
   "browser-pos.html",
   "data-intelligence.html",
 ]);

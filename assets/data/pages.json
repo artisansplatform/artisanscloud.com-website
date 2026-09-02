@@ -50,7 +50,7 @@
       "order": 24
     }
   },
-  "POS": {
+  "pos": {
     "title": "Point of Sale (POS) System | Artisans Cloud",
     "description": "Manage offline and online businesses from a unified retail platform. Our intelligent point of sale software helps retailers improve operational excellence and deliver a better customer experience.",
     "keywords": "POS system, point of sale, retail POS, offline POS, online POS, unified retail platform, inventory management, customer loyalty, omnichannel retailing",
@@ -190,7 +190,7 @@
       "order": 14
     }
   },
-  "d2c-eCommerce": {
+  "d2c-ecommerce": {
     "title": "Artisans Cloud | Simplifying D2C eCommerce",
     "description": "Discover Artisans Cloud, your solution for D2C eCommerce. Simplify operations, boost efficiency, and enhance customer experiences with our composable full-stack platform.",
     "ogDescription": "Transform your eCommerce strategy with Artisans Cloud. Achieve unparalleled flexibility and efficiency in D2C eCommerce with our innovative solutions.",
