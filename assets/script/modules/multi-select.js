@@ -63,14 +63,14 @@ export function initMultiSelect() {
           opt._order = selectOrder++;
           item.classList.add("selected");
 
-          checkbox.classList.add("bg-[#8D68F6]", "!border-[#8D68F6]");
+          checkbox.classList.add("bg-primary", "!border-primary");
           tick.classList.remove("hidden");
         } else {
           opt.selected = false;
           opt._order = null;
           item.classList.remove("selected");
 
-          checkbox.classList.remove("bg-[#8D68F6]", "!border-[#8D68F6]");
+          checkbox.classList.remove("bg-primary", "!border-primary");
           tick.classList.add("hidden");
         }
 
@@ -128,7 +128,7 @@ export function initMultiSelect() {
           const checkbox = item.querySelector(".checkbox");
           const tick = item.querySelector(".tick");
 
-          checkbox.classList.remove("bg-[#8D68F6]", "!border-[#8D68F6]");
+          checkbox.classList.remove("bg-primary", "!border-primary");
           tick.classList.add("hidden");
 
           renderSelected();
