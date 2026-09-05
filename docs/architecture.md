@@ -25,7 +25,7 @@ All HTML pages follow identical boilerplate:
 - **Fonts**: Poppins is self-hosted. woff2 subsets live in `assets/fonts/poppins/`, declared as `@font-face` in `input.css`; `partials/head-meta.html` and the team-card generator preload the 400/600 latin files. No runtime requests to Google Fonts. See [Development: Fonts](development.md#fonts).
 - **Build-time**: CSS compiled via `npm run dev:tailwind` (watch) or `npm run build:css` (production)
 - **Naming**: CSS classes use Tailwind conventions + custom utilities (`.ripple`, `.dropdown-toggle`, `.dropdown-menu`)
-- **Colors**: Custom color tokens defined in the `@theme` block of `assets/style/input.css`: `text-heading`, `text-primary`, `bg-primary`, `light-sky`
+- **Colors**: Custom color tokens defined in the `@theme` block of `assets/style/input.css`: `text-heading`, `text-primary`, `bg-primary`, `light-sky`. The brand values (Purple `#8d67f5`, Cyan `#12d9e3`, Pink `#f74ddd`) come from the master logo `assets/image/logo.svg` and are enforced by `tests/brand-colors.test.js`; see [Development: Brand palette](development.md#brand-palette).
 - **Responsive**: Mobile-first approach using Tailwind breakpoints (`sm:` 640px, `md:` 768px, `lg:` 1024px, `xl:` 1280px)
 
 ## JavaScript Patterns

@@ -196,7 +196,7 @@ function buildCardHtml(member) {
     <meta name="description"
         content="${description}">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#8d68f6">
+    <meta name="theme-color" content="#8d67f5">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:url" content="${canonicalUrl}">

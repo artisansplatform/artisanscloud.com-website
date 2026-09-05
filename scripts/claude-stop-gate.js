@@ -17,6 +17,7 @@ const UNTRACKED_HASH_LIMIT = 256 * 1024; // skip hashing content of large untrac
 // `npm run build` first, which is the slow part this gate exists to avoid;
 // CI still runs those.
 export const BASE_SUITES = [
+  "tests/brand-colors.test.js",
   "tests/conventions.test.js",
   "tests/docs.test.js",
   "tests/font-subset.test.js",

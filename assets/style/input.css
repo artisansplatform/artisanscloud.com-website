@@ -5,12 +5,16 @@
   --color-white: #fff;
   --color-description: #686c71;
 
-  --color-primary: #8d68f6;
+  /* Brand palette. The three values below are taken from the master logo
+     artwork (assets/image/logo.svg), which is the source of truth for the
+     brand hex codes. tests/brand-colors.test.js reads the SVG and fails if
+     they drift apart again. */
+  --color-primary: #8d67f5;
   --color-primary-light: #7e54f0;
 
-  --color-sky: #13d9e4;
+  --color-sky: #12d9e3;
   --color-sky-2: #00cad5;
-  --color-pink: #fc4bda;
+  --color-pink: #f74ddd;
   --color-grey: #686c71;
 
   --color-light-purple: #eae3ff;
