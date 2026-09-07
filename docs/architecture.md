@@ -25,7 +25,7 @@ All HTML pages follow identical boilerplate:
 - **Fonts**: Poppins is self-hosted. woff2 subsets live in `assets/fonts/poppins/`, declared as `@font-face` in `input.css`; `partials/head-meta.html` and the team-card generator preload the 400/600 latin files. No runtime requests to Google Fonts. See [Development: Fonts](development.md#fonts).
 - **Build-time**: CSS compiled via `npm run dev:tailwind` (watch) or `npm run build:css` (production)
 - **Naming**: CSS classes use Tailwind conventions + custom utilities (`.ripple`, `.dropdown-toggle`, `.dropdown-menu`)
-- **Colors**: Custom color tokens defined in the `@theme` block of `assets/style/input.css`: `text-heading`, `text-primary`, `bg-primary`, `light-sky`. The brand values (Purple `#8d67f5`, Cyan `#12d9e3`, Pink `#f74ddd`) come from the master logo `assets/image/logo.svg` and are enforced by `tests/brand-colors.test.js`; see [Development: Brand palette](development.md#brand-palette).
+- **Colors**: Custom color tokens defined in the `@theme` block of `assets/style/input.css`: `text-heading`, `text-primary`, `bg-primary`, `light-sky`. The brand values (Purple `#8d67f5`, Cyan `#12d9e3`, Pink `#f74ddd`) come from the master logo `assets/image/logo.svg`. Everything that needs one of them reads it from `scripts/lib/brand-tokens.js` (build scripts) or from the token itself (`text-primary` in markup, `var(--color-primary)` in inline SVG); only standalone `.svg` assets carry a baked-in copy, rewritten by `npm run recolor:svgs`. Enforced by `tests/brand-colors.test.js`; see [Development: Brand palette](development.md#brand-palette).
 - **Responsive**: Mobile-first approach using Tailwind breakpoints (`sm:` 640px, `md:` 768px, `lg:` 1024px, `xl:` 1280px)
 
 ## JavaScript Patterns
@@ -148,11 +148,12 @@ Per-page head metadata is data-driven. Every root page's `<head>` is rendered fr
 
 ### Key files
 
-| File                       | Purpose                                                                                                                |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `assets/data/pages.json`   | One entry per root page (keyed by slug): title, description, keywords, OG overrides, og-card text, sitemap hints       |
-| `partials/head-meta.html`  | Shared `<head>` template: title, canonical, description, Open Graph/Twitter block, fonts, stylesheet                   |
-| `scripts/lib/page-meta.js` | Loads `pages.json`, derives canonical/OG URLs; shared by `vite.config.js`, the sitemap script, and the OG image script |
+| File                          | Purpose                                                                                                                                                                          |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `assets/data/pages.json`      | One entry per root page (keyed by slug): title, description, keywords, OG overrides, og-card text, sitemap hints                                                                 |
+| `partials/head-meta.html`     | Shared `<head>` template: title, canonical, description, Open Graph/Twitter block, fonts, stylesheet                                                                             |
+| `scripts/lib/page-meta.js`    | Loads `pages.json`, derives canonical/OG URLs; shared by `vite.config.js`, the sitemap script, and the OG image script                                                           |
+| `scripts/lib/brand-tokens.js` | Single source of truth for the brand palette; parses the `@theme` block and is shared by the OG image script, the team card script, the recolor script, and the brand guard test |
 
 ### How it works
 
@@ -190,10 +191,11 @@ Each static page has an auto-generated OG image (1200x630 PNG) for social media 
 
 ### Key files
 
-| File                            | Purpose                                                |
-| ------------------------------- | ------------------------------------------------------ |
-| `scripts/generate-og-images.js` | Build script: generates OG images using Satori + Sharp |
-| `assets/og/*.png`               | Generated OG images (committed to repo)                |
+| File                            | Purpose                                                                                          |
+| ------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `scripts/generate-og-images.js` | Build script: generates OG images using Satori + Sharp                                           |
+| `scripts/recolor-svgs.js`       | Maintenance script: rewrites superseded brand hexes in standalone `.svg` assets from the palette |
+| `assets/og/*.png`               | Generated OG images (committed to repo)                                                          |
 
 ### How it works
 

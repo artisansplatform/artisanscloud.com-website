@@ -19,6 +19,7 @@ import satori from "satori";
 import sharp from "sharp";
 import { fileURLToPath } from "url";
 import { loadPages } from "./lib/page-meta.js";
+import { colors } from "./lib/brand-tokens.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -27,14 +28,10 @@ const OUT_DIR = join(ROOT, "assets", "og");
 const WIDTH = 1200;
 const HEIGHT = 630;
 
-// Brand colors from input.css
-const COLORS = {
-  primary: "#8d67f5",
-  sky: "#12d9e3",
-  pink: "#f74ddd",
-  heading: "#222222",
-  description: "#686c71",
-};
+// Brand colors come from the @theme block in assets/style/input.css via
+// scripts/lib/brand-tokens.js, so a palette change flows into the OG images
+// on the next `npm run generate:og` with no edit here.
+const COLORS = colors();
 
 // Page og-card text comes from assets/data/pages.json (ogCard field).
 // Titles are short display titles (not the full og:title with "| Artisans Cloud").

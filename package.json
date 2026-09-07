@@ -16,6 +16,7 @@
     "add:card": "npm run generate:cards && npm run generate:og",
     "check:images": "node scripts/check-images.js",
     "optimize:images": "node scripts/optimize-images.js",
+    "recolor:svgs": "node scripts/recolor-svgs.js",
     "prepare": "node scripts/setup-hooks.js",
     "preview": "vite preview",
     "test": "npm run build && vitest run",
