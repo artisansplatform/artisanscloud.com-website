@@ -29,9 +29,9 @@ const HEIGHT = 630;
 
 // Brand colors from input.css
 const COLORS = {
-  primary: "#8d68f6",
-  sky: "#13d9e4",
-  pink: "#fc4bda",
+  primary: "#8d67f5",
+  sky: "#12d9e3",
+  pink: "#f74ddd",
   heading: "#222222",
   description: "#686c71",
 };
