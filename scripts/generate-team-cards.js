@@ -18,9 +18,14 @@
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { brandColors } from "./lib/brand-tokens.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
+
+// Palette comes from the @theme block via scripts/lib/brand-tokens.js, so the
+// card meta follows a brand color change with no edit here.
+const BRAND_PRIMARY = brandColors().primary;
 
 // SVG icons (inlined for zero runtime dependency)
 const ICONS = {
@@ -196,7 +201,7 @@ function buildCardHtml(member) {
     <meta name="description"
         content="${description}">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#8d67f5">
+    <meta name="theme-color" content="${BRAND_PRIMARY}">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:url" content="${canonicalUrl}">
