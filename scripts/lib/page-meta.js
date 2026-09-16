@@ -61,10 +61,16 @@ export function pageUrl(slug) {
   return slug === "index" ? `${BASE_URL}/` : `${BASE_URL}/${slug}`;
 }
 
-// Human-readable page name for breadcrumbs: the <title> without the brand
-// suffix ("Dynamic Pricing | Artisans Cloud" -> "Dynamic Pricing").
+// Human-readable page name for breadcrumbs: the <title> with the brand and
+// anything after it dropped, wherever the brand sits.
+//   "Dynamic Pricing | Artisans Cloud"            -> "Dynamic Pricing"
+//   "Contact Us | Artisans Cloud - Your Partner"  -> "Contact Us"
+//   "Artisans Cloud | Simplifying D2C eCommerce"  -> "Simplifying D2C eCommerce"
 export function pageName(title) {
-  return title.replace(/\s*[|-]\s*Artisans Cloud\s*$/, "").trim();
+  return title
+    .replace(/^\s*Artisans Cloud\s*[|-]\s*/i, "")
+    .replace(/\s*[|-]\s*Artisans Cloud(\s*[|-].*)?$/i, "")
+    .trim();
 }
 
 // Structured data (JSON-LD) for a page, returned pre-serialized so the
