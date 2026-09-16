@@ -43,14 +43,14 @@ This is the table where articles are written.
 
 1. In Notion, click **+ New Database** in the sidebar, wherever you want the blog content to live. It can be a top-level page or tucked inside a team folder.
 2. Give the Database a title, for example `Blog Articles`.
-4. Notion starts you off with a column called **Name**. Click the **Name** header, choose **Edit property**, and rename it to **Title**. The exact word matters here, because the website looks for a column called `Title`.
-5. Now add the rest of the columns. Click the **+ Add property** to the right of the last column header and add each one below. Match the names and types exactly.
+3. Notion starts you off with a column called **Name**. Click the **Name** header, choose **Edit property**, and rename it to **Title**. The exact word matters here, because the website looks for a column called `Title`.
+4. Now add the rest of the columns. Click the **+ Add property** to the right of the last column header and add each one below. Match the names and types exactly.
 
 | Column name (exact) | Column type   | What to set up                                                                                                                                                             |
 | ------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Title`             | Title         | You already made this in step 4 by renaming `Name`.                                                                                                                        |
 | `Tags`              | Multi-select  | Add a few starter options like `AI`, `Retail`, `Commerce`. You can always add more while writing.                                                                          |
-| `Hero Image`    | Files & media | This lets writers either upload an image or paste a link to one.                                                                                                           |
+| `Hero Image`        | Files & media | This lets writers either upload an image or paste a link to one.                                                                                                           |
 | `Status`            | Select        | Add exactly these three options: `Draft`, `Ready to Publish`, `Published`. The spelling and capitalization have to match, because the website looks for these exact words. |
 
 A nice touch: color-code the `Status` options (grey for `Draft`, yellow for `Ready to Publish`, green for `Published`). It makes the table much easier to read at a glance.
@@ -136,12 +136,12 @@ To keep writing simple, the website fills in most of the behind-the-scenes detai
 
 **What you fill in:**
 
-| Field            | What it's for                                                                                                            |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `Title`          | The headline of the article.                                                                                             |
-| `Tags`           | Categories like AI, Retail, or Commerce.                                                                                 |
+| Field        | What it's for                                                                                                            |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `Title`      | The headline of the article.                                                                                             |
+| `Tags`       | Categories like AI, Retail, or Commerce.                                                                                 |
 | `Hero Image` | The main banner image. Upload a file or paste a link. The website downloads it, optimizes it, and stores it permanently. |
-| `Status`         | Set to `Ready to Publish` when you want it to go live.                                                                   |
+| `Status`     | Set to `Ready to Publish` when you want it to go live.                                                                   |
 
 **What the website works out on its own:**
 

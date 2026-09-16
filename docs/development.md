@@ -1,6 +1,7 @@
 # Development Guide
 
 ## Local Development
+
 ```bash
 npm run dev
 # Starts Vite dev server at http://localhost:3000/ with auto-reload
@@ -11,15 +12,17 @@ npm run dev
 ```
 
 ## Adding a New Page
-1. **Create HTML** (e.g., `new-solution.html`) in repository root
+
+1. **Create HTML** in the repository root (e.g., `new-solution.html`). **The filename must be all-lowercase**: URLs are case-sensitive on Vercel, so a `New-Solution.html` makes `/new-solution` a 404. If you rename an existing page's casing, add a `permanent: true` redirect from the old casing in `vercel.json`. `tests/conventions.test.js` ("Page paths are lowercase") fails the build otherwise. Pages can also live in a subdirectory (e.g., `enterprise-copilot/lumen.html`). Page discovery is recursive and centralized in `scripts/lib/site-files.js`, so the build, the sitemap, the unit tests, and the e2e smoke tests all pick the page up automatically, even in a brand-new directory. Do not add per-directory globs anywhere; `tests/coverage-guard.test.js` fails the build if one appears.
 2. **Use template structure** with Handlebars partials. The whole `<head>` comes from the `head-meta` partial:
+
    ```html
    <!DOCTYPE html>
    <html lang="en">
-   <head>
+     <head>
        {{> head-meta}}
-   </head>
-   <body>
+     </head>
+     <body>
        <div id="cursor" class="hidden lg:block..."></div>
        {{> header}}
 
@@ -28,10 +31,11 @@ npm run dev
        {{> footer}}
 
        <!-- Scripts: Swiper, GSAP, Lenis, main.js -->
-   </body>
+     </body>
    </html>
    ```
-3. **Add the metadata entry**: add a `new-solution` entry to `assets/data/pages.json` with at least `title` and `description` (see [Page metadata](#page-metadata-pagesjson) below). `tests/pages-meta.test.js` fails the build without it.
+
+3. **Add the metadata entry**: add an entry to `assets/data/pages.json` keyed by the file's path slug (e.g. `new-solution`, or the path without its `.html` extension for a page in a subdirectory such as `enterprise-copilot/lumen.html`) with at least `title` and `description` (see [Page metadata](#page-metadata-pagesjson) below). `tests/pages-meta.test.js` fails the build without it.
 4. **Update navigation**: Edit `partials/header.html` to add link to new page (applies to ALL pages)
 5. **Add OG image**: add `ogCard: { title, subtitle }` to the page's `pages.json` entry, run `npm run generate:og`, commit the PNG (see [Architecture: Open Graph Images](architecture.md#open-graph-images))
 6. **Meet the on-page SEO checks** (enforced by `tests/seo.test.js`, see below): the head-meta partial takes care of all of them except "exactly one `<h1>`", which is up to your page content.
@@ -84,7 +88,7 @@ Note: `npm run generate:og` still downloads Poppins TTFs at generation time beca
 
 ## Adding a Blog Article (Notion-Powered)
 
-Blog articles live as Markdown files in `blog/` and are converted to HTML pages at build time. 
+Blog articles live as Markdown files in `blog/` and are converted to HTML pages at build time.
 
 Writers typically author these in Notion, where a GitHub Action automatically syncs them to the repository. Developers can also author `.md` files manually.
 
@@ -107,6 +111,7 @@ Team members have standalone digital card pages at `/team/{slug}` with vCard dow
 5. **Commit**: `team/[slug].html`, `assets/og/team/[slug].png`, `assets/data/team-members.json`, and the photo
 
 To regenerate a single card (e.g. after editing their JSON entry):
+
 ```bash
 npm run generate:cards -- --slug dev-nair
 npm run generate:og
@@ -116,40 +121,42 @@ npm run generate:og
 
 ```json
 {
-  "slug": "first-last",           // URL slug, also used for filenames
+  "slug": "first-last", // URL slug, also used for filenames
   "name": "First Last",
   "firstName": "First",
   "lastName": "Last",
   "title": "Job Title",
   "company": "Artisans Cloud",
   "companyUrl": "https://www.artisanscloud.com",
-  "location": "City, Country",    // optional
+  "location": "City, Country", // optional
   "bio": "Short bio text.",
   "email": "first@artisanscloud.com",
-  "phone": "",                    // optional, include country code
+  "phone": "", // optional, include country code
   "photo": "/assets/image/team/first-last.jpg",
   "social": {
-    "linkedin": "https://www.linkedin.com/in/...",   // optional
-    "github": "https://github.com/...",              // optional
-    "twitter": "https://x.com/..."                  // optional - also sets twitter:creator
+    "linkedin": "https://www.linkedin.com/in/...", // optional
+    "github": "https://github.com/...", // optional
+    "twitter": "https://x.com/..." // optional - also sets twitter:creator
   },
-  "photoCropTop": 0               // optional - pixel offset from top for OG image crop
+  "photoCropTop": 0 // optional - pixel offset from top for OG image crop
 }
 ```
 
 > **Note**: `team/*.html` files are generated from JSON - don't hand-edit them. Re-run `npm run add:card` after any JSON change.
 
 ### Key files
-| File | Purpose |
-|------|---------|
-| `assets/data/team-members.json` | **Source of truth** for all team member data |
-| `scripts/generate-team-cards.js` | Generates `team/[slug].html` from JSON |
-| `scripts/generate-og-images.js` | Generates OG images (includes team cards) |
-| `team/*.html` | Generated card pages - do not hand-edit |
-| `assets/script/modules/digital-card.js` | vCard generation, QR code, sharing logic |
-| `assets/image/team/` | Profile photos |
+
+| File                                    | Purpose                                      |
+| --------------------------------------- | -------------------------------------------- |
+| `assets/data/team-members.json`         | **Source of truth** for all team member data |
+| `scripts/generate-team-cards.js`        | Generates `team/[slug].html` from JSON       |
+| `scripts/generate-og-images.js`         | Generates OG images (includes team cards)    |
+| `team/*.html`                           | Generated card pages - do not hand-edit      |
+| `assets/script/modules/digital-card.js` | vCard generation, QR code, sharing logic     |
+| `assets/image/team/`                    | Profile photos                               |
 
 ### Features
+
 - **Save Contact**: Downloads `.vcf` vCard file with embedded photo
 - **QR Code**: Rendered on-page via `qrcode` npm package (hidden on mobile)
 - **Share**: Native Web Share API (falls back to clipboard copy)
@@ -158,6 +165,7 @@ npm run generate:og
 - **Email**: Opens mailto with pre-filled subject/body
 
 ## Adding a Swiper Slider
+
 1. **HTML structure**: Use `.swiper`, `.swiper-wrapper`, `.swiper-slide`, navigation buttons
 2. **JavaScript**: Add config in `assets/script/main.js` (inside DOMContentLoaded)
    - Unique class selector (e.g., `.newSliderName`)
@@ -166,6 +174,7 @@ npm run generate:og
 3. **CSS**: Swiper CSS already imported globally
 
 ## Updating Header or Footer
+
 - **Edit once, applies everywhere**:
   - Header: Edit `partials/header.html` only
   - Footer: Edit `partials/footer.html` only
@@ -175,6 +184,7 @@ npm run generate:og
 - **Test changes**: Run `npm run dev` to see updates across all pages immediately
 
 ## Updating Blog Articles
+
 - **To change card design**: Edit the `createBlogCardHTML()` / `createInsightsCardHTML()` functions in `blog-articles.js`
 - **To update fallback articles from live data**: Run `npm run update-fallback` (fetches latest from deployed API, downloads images locally)
 - **To update fallback articles manually**: Edit `assets/data/fallback-articles.json` (one file, used by both frontend and backend). Fallback articles use a `tags` array (e.g. `["AI", "Retail"]`).
@@ -187,6 +197,7 @@ npm run generate:og
   - The extractor (`extractTags` in `api/lib/linkedin.js`) assigns up to 3 tags. If no matches are found, it defaults to `['Retail']`.
 
 ### Articles and Resources Pagination (Load More)
+
 The Articles and Resources page shows articles in pages of 9. The "Load More" button (`#load-more-btn`) is controlled entirely by JS - it starts hidden and appears only when there are more than 9 articles to show. Clicking it reveals the next 9, until all are shown.
 
 - **Batch size**: `ARTICLES_PER_PAGE = 9` constant in `blog-articles.js`
@@ -195,11 +206,13 @@ The Articles and Resources page shows articles in pages of 9. The "Load More" bu
 - **Insights grid** (homepage) is unaffected - always shows the latest 3
 
 ### Update Fallback Script
+
 ```bash
 npm run update-fallback                    # Fetch from production and update files
 npm run update-fallback -- --dry           # Preview changes without writing files
 npm run update-fallback -- --url https://preview.example.com  # Fetch from custom URL
 ```
+
 - Fetches articles from the deployed `/api/articles` endpoint
 - Downloads thumbnail images locally to `public/assets/image/blog/` (served as `/assets/image/blog/...` via Vite's public directory)
 - Updates `assets/data/fallback-articles.json` with the latest 9 articles
@@ -210,27 +223,33 @@ npm run update-fallback -- --url https://preview.example.com  # Fetch from custo
 `dist/sitemap.xml` is generated automatically as part of every `npm run build` - no manual editing required.
 
 ### How it works
+
 - `scripts/generate-sitemap.js` runs as `build:sitemap` (after Vite's `build:html`)
-- It uses `glob.sync('*.html')` - the same discovery pattern as `vite.config.js` - so every page in the root is included automatically
-- Excluded pages: `404.html`, `thank-you.html`, `blog-detail.html`
+- It discovers both root `*.html` pages and nested subdirectory pages (e.g., `enterprise-copilot/*.html`, `unified-commerce/*.html`, `role-play-agent/*.html`, `knowledge-harvester/*.html`) so they are included automatically
+- Excluded pages (`"sitemap": false` in `pages.json`): `404.html`, `blog-detail.html`, `request-demo.html`, `thank-you.html`, `retail-platform.html`
+- Entries are written in each page's editorial `sitemap.order` (see below), matching `task.md`'s reference sequence exactly. `<url>` order carries no crawl weight on its own; this is purely for human readability
 - `public/robots.txt` is a static file (Vite passthrough); it references the sitemap URL and is deployed to `dist/robots.txt` unchanged
 
 ### Customising per-page SEO hints
-Set the `sitemap` field on the page's entry in `assets/data/pages.json`:
+
+Every indexable page carries an explicit `sitemap` block on its entry in `assets/data/pages.json`:
 
 ```jsonc
-"my-new-page": { ..., "sitemap": { "priority": "0.8", "changefreq": "weekly" } }
+"my-new-page": { ..., "sitemap": { "priority": "0.8", "changefreq": "weekly", "order": 12 } }
 ```
 
-Pages without a `sitemap` field get `{ priority: '0.6', changefreq: 'monthly' }`.
+`priority`/`changefreq` are set editorially, judged relative to the other pages in the sitemap. `order` is the page's 1-based position in `dist/sitemap.xml` - also editorial, and independent of `priority`: two pages sharing a priority tier can still be ordered deliberately (`generate-sitemap.js` sorts by `order` ascending; a page with no `order` sorts last). `DEFAULT_META` (`{ priority: '0.6', changefreq: 'monthly' }`, no `order`) in `scripts/generate-sitemap.js` is a fallback for pages that haven't been given their own entry yet; it is not meant to be relied on long-term. `tests/sitemap-meta.test.js` fails if an indexable page is missing its `sitemap` block, or if `dist/sitemap.xml` disagrees with `pages.json` on priority, changefreq, or ordering.
 
 ### Adding a new page
-No sitemap action required. Just create the `*.html` file in the root - it will appear in the next build's sitemap automatically. To fine-tune its SEO weight, set its `sitemap` field in `pages.json`.
+
+Create the `*.html` file in the root - it will appear in the next build's sitemap automatically using `DEFAULT_META` (sorted last) until you set its own `sitemap` field, including `order`, in `pages.json` (required by `tests/sitemap-meta.test.js`).
 
 ### Excluding a page
+
 Set `"sitemap": false` on the page's entry in `assets/data/pages.json`.
 
 ### Submitting to Google
+
 After first deploying the sitemap, submit `https://www.artisanscloud.com/sitemap.xml` once in Google Search Console. Subsequent deploys are picked up automatically via recrawl.
 
 ## On-page SEO checks
@@ -249,41 +268,91 @@ Run just these checks with `npm run test:seo`. If you add a page that legitimate
 
 `npm test` runs every check below in CI (`.github/workflows/test.yml`). Each guards a documented footgun so a mistake fails the PR instead of shipping:
 
-| Check | File | What it catches |
-|-------|------|-----------------|
-| Build / partials | `tests/build.test.js` | pages build, partials resolved, blog containers/CSS/JS/sitemap/robots present |
-| Internal links | `tests/links.test.js` | links and local assets that 404 |
-| On-page SEO | `tests/seo.test.js` | missing lang / h1 / description / twitter card, og-canonical host mismatch, missing img alt, invalid JSON-LD |
-| Page metadata | `tests/pages-meta.test.js` | hand-written heads, missing/orphan `pages.json` entries, missing/orphan/wrong-size OG images, noindex page left in sitemap |
-| Conventions | `tests/conventions.test.js` | inline executable scripts, duplicate Swiper selectors, broken/ shadowing redirects, redirect stubs left in the sitemap |
-| Font subset | `tests/font-subset.test.js` | a font weight/style used in markup with no `@font-face`, a missing woff2 file, or a stray Google Fonts reference |
-| Security headers | `tests/vercel-security.test.js` | missing security headers / cron config in `vercel.json` |
+| Check            | File                            | What it catches                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ---------------- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Build / partials | `tests/build.test.js`           | pages build, partials resolved, blog containers/CSS/JS/sitemap/robots present                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Internal links   | `tests/links.test.js`           | links and local assets that 404                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| On-page SEO      | `tests/seo.test.js`             | missing lang / h1 / description / twitter card, og-canonical host mismatch, missing img alt, invalid JSON-LD                                                                                                                                                                                                                                                                                                                                                                                              |
+| Page metadata    | `tests/pages-meta.test.js`      | hand-written heads, missing/orphan `pages.json` entries, missing/orphan/wrong-size OG images, noindex page left in sitemap                                                                                                                                                                                                                                                                                                                                                                                |
+| Conventions      | `tests/conventions.test.js`     | inline executable scripts, duplicate Swiper selectors, broken/ shadowing redirects, redirect stubs left in the sitemap, mixed-case page filenames, em dashes (literal, HTML entity, or spaced en dash) in tracked and untracked files, shell-string child processes (tracked and untracked), POSIX-only npm scripts, a rotted Claude Code Stop hook (missing script, missing suite, a `test:fast` script that has drifted from the hook's suite list, or a tree digest that cannot see an untracked file) |
+| Font subset      | `tests/font-subset.test.js`     | a font weight/style used in markup with no `@font-face`, a missing woff2 file, or a stray Google Fonts reference                                                                                                                                                                                                                                                                                                                                                                                          |
+| Security headers | `tests/vercel-security.test.js` | missing security headers / cron config in `vercel.json`                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Brand colors     | `tests/brand-colors.test.js`    | theme tokens that no longer match a color the master logo paints with, any reappearance of a superseded hex, and brand hex literals restated in hand-edited markup or in `scripts/` instead of read from `scripts/lib/brand-tokens.js` (tracked and untracked files)                                                                                                                                                                                                                                      |
+| Coverage guard   | `tests/coverage-guard.test.js`  | drift between page discovery and git, sitemap gaps/ghosts, hardcoded page globs outside `site-files.js`, a resurrected (dead) `tailwind.config.js`, full pages saved into `partials/`, growth of the discovery exclusion list                                                                                                                                                                                                                                                                             |
+| Docs             | `tests/docs.test.js`            | broken markdown tables (tracked and untracked files): a row split from its table by a blank line, or a table with no header separator row; backticked file paths that do not exist                                                                                                                                                                                                                                                                                                                        |
+| Formatting       | `tests/format.test.js`          | files prettier would rewrite, and grandfathered entries that have become clean                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| Platform paths   | `tests/platform.test.js`        | missing `.gitattributes` LF rule, and a `glob` call under `tests/` or `scripts/` (tracked and untracked) that returns native path separators without being normalized                                                                                                                                                                                                                                                                                                                                     |
 
-Per-area run scripts: `test:seo`, `test:meta`, `test:conventions`, `test:font`, `test:links`, `test:build`.
+Per-area run scripts: `test:seo`, `test:meta`, `test:conventions`, `test:font`, `test:links`, `test:build`, `test:guard`, `test:brand`, `test:docs`, `test:format`, `test:fast`.
 
-Code style is pinned by `.prettierrc.json` / `.prettierignore`; format touched files with `npm run prettier` (a few legacy pages are not yet fully formatted and are out of scope for incremental changes).
+### Brand palette
+
+The three brand colors are Purple `#8d67f5`, Cyan `#12d9e3`, and Pink `#f74ddd`. The source of truth is the master logo artwork (`assets/image/logo.svg`), not the brand guidelines PDF, whose printed codes are garbled. They ship as the `--color-primary`, `--color-sky`, and `--color-pink` tokens in the `@theme` block of `assets/style/input.css`.
+
+`scripts/lib/brand-tokens.js` is the one place anything reads that palette from. It parses the `@theme` block and exposes `colors()` (every `--color-*` token by short name), `brandColors()` (the three brand values), `supersededMap()` (old hex to current value, used by both the ban list and the recolor script), and `logoColors()` (what the logo actually paints with). `scripts/generate-og-images.js` and `scripts/generate-team-cards.js` import from it, so regenerating picks up a palette change with no edit to either script.
+
+How to reference a brand color, in order of preference:
+
+1. A token utility (`text-primary`, `bg-pink`, `border-sky`, and so on) in normal markup.
+2. `var(--color-primary)` / `var(--color-sky)` / `var(--color-pink)` in inline SVG `fill` and `stroke` attributes. Tailwind emits the tokens on `:root`, and `var()` resolves in SVG presentation attributes in Chromium, Firefox, and WebKit.
+3. A literal hex only inside a standalone `.svg` asset. Those load through `<img>`, so they are their own document and never see the site's CSS variables. Do not hand-edit them; `npm run recolor:svgs` rewrites them from the token values.
+
+Changing a brand color is therefore four steps: edit the token in `assets/style/input.css`, move the outgoing hex into `superseded` in `scripts/lib/brand-tokens.js`, run `npm run recolor:svgs`, then regenerate derived assets.
+
+```bash
+npm run recolor:svgs             # Rewrite superseded hexes in assets/**/*.svg
+npm run recolor:svgs -- --check   # Report only, non-zero exit if any are stale
+npm run recolor:svgs -- path/to/icon.svg   # Limit to specific files or directories
+npm run generate:og              # Re-render OG cards with the new palette
+npm run generate:cards           # Re-render team cards (then npm run prettier)
+```
+
+`tests/brand-colors.test.js` holds that arrangement in place, and keeps no hex literals of its own so it cannot drift from what it guards. It requires each brand token to equal a color the logo still paints with, bans every superseded hex from tracked and untracked source, bans brand hex literals from hand-edited markup, and bans them from `scripts/` outside the registry. `team/*.html` is exempt from the markup ban because it is generated and `<meta name="theme-color">` cannot resolve `var()`. `--color-primary-light` and `--color-sky-2` are hover and secondary shades with no brand counterpart and are not checked.
+
+`tests/docs.test.js` also checks that every directory-qualified path written in single-backtick inline code inside a markdown file (tracked or untracked) points at something real. It strips fenced code blocks first, then for each single-line inline code span containing a `/`, it rejects shell commands (whitespace), URLs/protocols, site routes (leading `/`), globs/placeholders (`*`, `{`, `[`, `<`, `...`, or an all-caps path segment), MIME types, and `@scope` package names. A surviving candidate resolves if it exists on disk, is a suffix of a git-tracked path (so docs can write `modules/card-toggle.js` for `assets/script/modules/card-toggle.js`), or is gitignored (`git check-ignore`). If a doc needs to reference a real, planned-but-not-yet-created deliverable, add it to `PLANNED_FILES` in `tests/docs.test.js` with a short note on where it's promised; a second test fails if that entry ever lands on disk (drop the exemption) or stops being referenced by any doc (delete the entry), so the escape hatch can't go stale silently.
+
+The coverage guard exists because checks themselves can rot: PR #111 showed that hardcoded directory lists in configs and tests go stale silently when pages move into new directories. Discovery now lives in one file (`scripts/lib/site-files.js`) and the guard cross-checks it against independent ground truth (git, the built sitemap) in both directions. When you add a check that iterates pages, import `allPages()` / `contentPages()` / `partialFiles()` from `site-files.js` instead of writing a glob.
+
+Code style is pinned by `.prettierrc.json` / `.prettierignore`. Run `npm run prettier` before committing; `tests/format.test.js` checks the whole repo. The only exceptions are three legacy pages listed in `GRANDFATHERED` in that test file (`pos.html`, `browser-pos.html`, `data-intelligence.html`); formatting one means deleting its entry (the test enforces that) after a visual check at 393px / 768px / 1280px. Those same three pages are also listed in `.prettierignore` so `npm run prettier` doesn't auto-rewrite them out from under the pending visual check; `tests/format.test.js` verifies their formatting status directly through the prettier API (bypassing `.prettierignore`), so the two lists must stay in sync.
+
+Never start a child process from a command string (`exec(cmd)`, `execSync(cmd)`, or any call passing `shell: true`). A command string is re-parsed by a shell, and on Windows that shell is `cmd.exe` with different quoting rules than POSIX, so a path with a space, glob character, or quote can break or, worse, be reinterpreted. Use the array form instead: `execFileSync(cmd, [args], { cwd, encoding })`.
+
+`spawn`, `spawnSync`, `fork`, and `execFile*` are deliberately not banned. Called with an args array they never involve a shell, so they are already the fix rather than the problem, and `spawn` is the only reasonable choice for a streaming or long-running child, since `execFileSync` is synchronous and buffers all output.
+
+`tests/conventions.test.js` enforces this across `scripts/`, `tests/`, `api/`, and the root config files, covering untracked files as well as tracked ones so a freshly written script is caught before it is staged.
+
+The repo has a `.gitattributes` at the root forcing `* text=auto eol=lf`, so every text file checks out with LF regardless of platform or local git config (Git for Windows defaults to `core.autocrlf=true`, which would otherwise materialize CRLF files and fail `tests/format.test.js` since `.prettierrc` pins `endOfLine` to `lf`). Do not override this per-file, and do not let an editor auto-convert line endings on save.
+
+`glob.sync(...)` returns native path separators, so a call under `tests/` returns backslash-joined paths on Windows while git (`ls-files`, `grep`) always emits forward slashes. Any test comparing or joining glob output against a POSIX-style path must route it through `toPosix()` from `tests/lib/paths.js` (`.map(toPosix)` on the glob result). `tests/platform.test.js` scans every `.js` file under `tests/` and `scripts/` (tracked and untracked, so a file an agent just wrote is caught before it is staged) and fails the build if a new `glob` call site skips this. It matches the sync form, the awaited async form, and the wrapped shape prettier produces (`glob` on one line, `.sync(` on the next), and it carries a fixture of known-bad and known-good shapes so the check cannot quietly become narrower than the rule. Production code outside `tests/` (e.g. `scripts/lib/site-files.js`, `scripts/check-images.js`) cannot import from `tests/`, so it inlines the same backslash-to-forward-slash normalization instead.
+
+`package.json` scripts must run on Windows `cmd.exe` as well as POSIX shells (CI runs a `windows-latest` job). Do not use unix-only binaries (`cp`, `rm`, `mv`, `mkdir -p`, `cat`, `sed`, `grep`), POSIX stderr redirects to the null device, pipes, backticks, command substitution, or shell env-var expansion in a script value. For a one-off file operation, use `node -e "..."` with double quotes on the outside and single quotes inside (`cmd.exe` does not strip single quotes, so the reverse breaks there) - see `build:static`. For anything needing real error handling, write a small file under `scripts/` instead, like `scripts/setup-hooks.js` backing `prepare`. `tests/conventions.test.js` (`describe("Cross-platform npm scripts")`) enforces this; a script that genuinely cannot be made cross-platform can be added to `CROSS_PLATFORM_EXEMPT` in that file with a one-line reason, and a staleness test fails if that entry stops applying. The contents of a `node -e "..."` payload are JavaScript, not shell, so `||`, a backtick template literal and `${x}` are all fine inside one and the check blanks the payload out before looking for shell constructs. The matcher is pinned by two fixture tables in the same describe: known-bad shapes that must be flagged, and known-good shapes that must not be, so the rule cannot quietly drift narrower or broader than the bug class.
+
+Claude Code users get an additional local gate: a tracked `Stop` hook in `.claude/settings.json` runs `scripts/claude-stop-gate.js` after every agent turn in this repo. The script runs the source-level suites that do not need a build (`brand-colors`, `conventions`, `docs`, `font-subset`, `format`, `links`, `pages-meta`, `platform`, plus `coverage-guard` if `dist/` already exists) and blocks the turn from finishing (exit 2, with the last ~40 lines of vitest output) if any fail, so the agent fixes the problem in the same session instead of leaving a red branch behind. It skips `build.test.js` and `seo.test.js`, which need a fresh `npm run build`; CI still runs those. A tree-hash cache in `.claude/.stop-gate-last-green` (gitignored) makes a rerun on an unchanged tree instant. The digest hashes `HEAD`, the working diff, and the content of every untracked file via `git status --porcelain --untracked-files=all`; the `all` matters, because the default collapses a new directory to a single `?? dir/` line and every file inside it becomes invisible to the cache. If the runner cannot start at all (vitest missing from `node_modules`, for instance) the hook blocks with that reason rather than passing, since a gate that silently stops gating is worse than no gate. This is local-only and does not replace CI: everyone else's PRs are still gated by `.github/workflows/test.yml`. Activate it by opening `/hooks` once in an already-running session, or by restarting Claude Code after pulling, since a tracked settings file is not picked up mid-session. Set `CLAUDE_STOP_GATE=off` in the environment to bypass it entirely; run `npm run test:fast` to run the same suite list by hand without the hook.
 
 ## Image Optimization
 
 The repo ships oversized banners and SVGs occasionally, so a pre-commit hook checks staged images and refuses the commit if any exceed per-type size limits. The hook only warns: it does not rewrite files.
 
 ### Size thresholds
-| Type | Limit |
-|------|------|
+
+| Type           | Limit  |
+| -------------- | ------ |
 | PNG, JPG, JPEG | 300 KB |
-| WebP | 400 KB |
-| SVG | 50 KB |
+| WebP           | 400 KB |
+| SVG            | 50 KB  |
 
 These are conservative defaults intended for marketing imagery. Tune them in `scripts/check-images.js` if a legitimate asset needs more headroom.
 
 ### How it works
+
 - `.githooks/pre-commit` collects staged image paths and pipes them to `node scripts/check-images.js --staged`.
-- The check reads the size of the *staged blob* via `git cat-file -s :path`, not the working tree, so it always reflects what is actually about to be committed. After running `optimize:images`, you must `git add` the file again for the new version to be picked up.
+- The check reads the size of the _staged blob_ via `git cat-file -s :path`, not the working tree, so it always reflects what is actually about to be committed. After running `optimize:images`, you must `git add` the file again for the new version to be picked up.
 - IDE "commit all" flows (VSCode Stage All, JetBrains default commit) auto-stage modified tracked files before invoking commit, so the hook covers those too. Truly untracked files are ignored, but they aren't being committed either.
 - `npm install` runs the `prepare` script, which sets `core.hooksPath` to `.githooks`. New clones get the hook automatically; existing clones need to run `npm install` once after pulling.
 - A failed check prints the offending paths, the size, and an exact `npm run optimize:images` command to fix the raster files.
 
 ### Commands
+
 ```bash
 npm run check:images                          # Scan every asset under assets/ (no args)
 npm run check:images -- path/to/img.webp      # Scan specific files
@@ -293,15 +362,44 @@ npm run optimize:images -- path/to/img.webp   # Re-encode in place via sharp
 The optimizer writes a `.tmp` sibling, compares sizes, and only replaces the original if smaller. PNGs use palette + compression level 9, JPGs use mozjpeg at q=82, WebPs use q=80 + effort 6. SVGs are skipped; clean them up by hand (svgomg) or strip embedded raster data.
 
 ### Bypass
+
 For exceptional cases (e.g., a banner that genuinely needs to be large), commit with `git commit --no-verify`. Do not normalize the bypass into a habit.
+
+## Typography Scale
+
+All headings and body copy use a set of semantic classes defined once in `assets/style/input.css`. Use these instead of hand-writing font sizes or line-heights.
+
+| Class        | Role                   | Output                                                                       |
+| ------------ | ---------------------- | ---------------------------------------------------------------------------- |
+| `.t-display` | Hero / page `<h1>`     | `font-semibold leading-heading text-3xl sm:text-4xl lg:text-5xl xl:text-6xl` |
+| `.t-h2`      | Section title `<h2>`   | `font-semibold leading-heading text-3xl md:text-4xl lg:text-5xl`             |
+| `.t-h2-sm`   | Compact section title  | `font-semibold leading-heading text-2xl lg:text-3xl`                         |
+| `.t-h3`      | Card / sub-heading     | `font-semibold leading-heading text-xl lg:text-2xl`                          |
+| `.t-lead`    | Lead / intro paragraph | `font-normal leading-body text-lg lg:text-xl`                                |
+| `.t-body`    | Default paragraph      | `font-normal leading-body text-base`                                         |
+| `.t-body-sm` | Small / secondary text | `font-normal leading-body text-sm`                                           |
+| `.t-caption` | Captions / labels      | `font-normal leading-body text-xs`                                           |
+
+Usage pattern: the `.t-*` class owns only size, weight, and line-height. Add color and spacing as separate utilities:
+
+```html
+<h2 class="mb-5 text-heading t-h2">Section Title</h2>
+<h2 class="mb-5 text-white t-h2">Dark Section Title</h2>
+```
+
+Rules:
+
+- Never hand-write `text-[NNpx]` or `leading-[NN%]` in markup.
+- Never add `font-primary` to elements; `body` already sets Poppins globally.
+- To change the type scale globally, edit the class definitions in `assets/style/input.css`, not individual pages.
 
 ## Common UI Conventions
 
-| Convention | Pattern |
-|-----------|---------|
-| **Button styling** | `.py-3 .px-5 .rounded-[40px] .bg-heading .text-white` (primary CTA) |
-| **Spacing utility** | `gap-` prefix for flexbox gaps; margin/padding as `m-`/`p-` |
-| **Breakpoints** | `sm:` (640px), `md:` (768px), `lg:` (1024px), `xl:` (1280px) |
-| **Animation** | `.transition-all .duration-300 .ease-in-out` (standard); `.translate-x-full` for slides |
-| **Menu items** | `.dropdown-item` class on links inside `.dropdown-menu` |
-| **Swiper config** | `slidesPerView: 1` (mobile), scaling up at breakpoints |
+| Convention          | Pattern                                                                                 |
+| ------------------- | --------------------------------------------------------------------------------------- |
+| **Button styling**  | `.py-3 .px-5 .rounded-[40px] .bg-heading .text-white` (primary CTA)                     |
+| **Spacing utility** | `gap-` prefix for flexbox gaps; margin/padding as `m-`/`p-`                             |
+| **Breakpoints**     | `sm:` (640px), `md:` (768px), `lg:` (1024px), `xl:` (1280px)                            |
+| **Animation**       | `.transition-all .duration-300 .ease-in-out` (standard); `.translate-x-full` for slides |
+| **Menu items**      | `.dropdown-item` class on links inside `.dropdown-menu`                                 |
+| **Swiper config**   | `slidesPerView: 1` (mobile), scaling up at breakpoints                                  |

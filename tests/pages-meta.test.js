@@ -3,7 +3,9 @@ import { glob } from "glob";
 import path from "path";
 import sharp from "sharp";
 import { fileURLToPath } from "url";
+import { toPosix } from "./lib/paths.js";
 import { describe, expect, it } from "vitest";
+import { contentPages } from "../scripts/lib/site-files.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,12 +15,17 @@ const pagesJson = JSON.parse(
   fs.readFileSync(path.join(rootDir, "assets", "data", "pages.json"), "utf-8"),
 );
 
-// retail-platform.html is a meta-refresh redirect stub with a hand-written
-// head; every other root page must use the shared head-meta partial.
-const STUB_PAGES = new Set(["retail-platform.html"]);
+// Meta-refresh redirect stubs have a hand-written head; every other content
+// page must use the shared head-meta partial. Stubs are detected by content,
+// not by a hardcoded name, so a new stub cannot be missed here.
+function isRedirectStub(page) {
+  return /http-equiv=["']refresh["']/i.test(
+    fs.readFileSync(path.join(rootDir, page), "utf-8"),
+  );
+}
 
-const allPages = glob.sync("*.html", { cwd: rootDir });
-const partialPages = allPages.filter((p) => !STUB_PAGES.has(p));
+const allPages = contentPages();
+const partialPages = allPages.filter((p) => !isRedirectStub(p));
 
 describe("pages.json / head-meta partial integrity", () => {
   it("discovers pages", () => {
@@ -89,12 +96,16 @@ describe("pages.json / head-meta partial integrity", () => {
     for (const [slug, meta] of Object.entries(pagesJson)) {
       if (meta.og === false) continue;
       referenced.add(
-        meta.ogImage ? path.basename(meta.ogImage) : `${slug}.png`,
+        meta.ogImage
+          ? meta.ogImage.replace(/^\/?assets\/og\//, "")
+          : `${slug}.png`,
       );
     }
-    const onDisk = fs
-      .readdirSync(path.join(rootDir, "assets", "og"))
-      .filter((f) => f.endsWith(".png"));
+    const onDisk = glob
+      .sync("assets/og/**/*.png", { cwd: rootDir })
+      .map(toPosix)
+      .map((f) => f.replace(/^assets\/og\//, ""))
+      .filter((f) => !f.startsWith("team/"));
     const orphans = onDisk.filter((f) => !referenced.has(f));
     expect(
       orphans,
@@ -116,7 +127,9 @@ describe("pages.json / head-meta partial integrity", () => {
 
 // OG images must be exactly 1200x630 or social previews render cropped.
 describe("OG images have correct dimensions", () => {
-  const ogImages = glob.sync("assets/og/**/*.png", { cwd: rootDir });
+  const ogImages = glob
+    .sync("assets/og/**/*.png", { cwd: rootDir })
+    .map(toPosix);
 
   it("finds OG images", () => {
     expect(ogImages.length).toBeGreaterThan(0);

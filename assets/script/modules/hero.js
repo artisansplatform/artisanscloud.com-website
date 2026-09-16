@@ -1,35 +1,42 @@
-import { gsap } from 'gsap';
+import { gsap } from "gsap";
 
 // Hero Section ========================
 export function initHeroAnimation() {
+  const heroHeading = document.getElementById("heroHeading");
+  const heroDec = document.getElementById("heroDec");
+  const heroBtn = document.getElementById("heroBtn");
 
-    const heroHeading = document.getElementById('heroHeading');
-    const heroDec = document.getElementById('heroDec');
-    const heroBtn = document.getElementById('heroBtn');
+  if (!heroHeading && !heroDec && !heroBtn) return;
 
-    if (!heroHeading && !heroDec && !heroBtn) return;
+  const heroTl = gsap.timeline();
 
-    const heroTl = gsap.timeline();
+  const headingTargets = [heroHeading && "#heroHeading", heroDec && "#heroDec"]
+    .filter(Boolean)
+    .join(", ");
+  if (headingTargets) {
+    heroTl.from(
+      headingTargets,
+      {
+        y: 50,
+        opacity: 0,
+        duration: 0.5,
+        ease: "linear",
+        stagger: 0.3,
+      },
+      "hero",
+    );
+  }
 
-    const headingTargets = [heroHeading && '#heroHeading', heroDec && '#heroDec']
-        .filter(Boolean)
-        .join(', ');
-    if (headingTargets) {
-        heroTl.from(headingTargets, {
-            y: 50,
-            opacity: 0,
-            duration: 0.5,
-            ease: 'linear',
-            stagger: 0.3
-        }, 'hero');
-    }
-
-    if (heroBtn) {
-        heroTl.from('#heroBtn', {
-            y: 50,
-            scale: 0,
-            opacity: 0,
-            duration: 0.5
-        }, 'hero+=0.3');
-    }
+  if (heroBtn) {
+    heroTl.from(
+      "#heroBtn",
+      {
+        y: 50,
+        scale: 0,
+        opacity: 0,
+        duration: 0.5,
+      },
+      "hero+=0.3",
+    );
+  }
 }

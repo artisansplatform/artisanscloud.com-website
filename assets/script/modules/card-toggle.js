@@ -1,6 +1,6 @@
 // Progressive "View More / View Less" toggle for long card grids.
 // Activates only on pages that have a #toggleCards button (currently
-// d2c-eCommerce); shows the first `visibleCount` .feature-card items and
+// d2c-ecommerce); shows the first `visibleCount` .feature-card items and
 // toggles the rest. No-ops everywhere else.
 export function initCardToggle() {
   const toggleBtn = document.getElementById("toggleCards");

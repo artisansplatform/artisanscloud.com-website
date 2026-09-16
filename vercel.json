@@ -9,17 +9,17 @@
     },
     {
       "source": "/unified-commerce",
-      "destination": "/nexus-unified-commerce",
+      "destination": "/unified-commerce/nexus",
       "permanent": true
     },
     {
       "source": "/retail-platform",
-      "destination": "/nexus-unified-commerce",
+      "destination": "/unified-commerce/nexus",
       "permanent": true
     },
     {
       "source": "/overview",
-      "destination": "/nexus-unified-commerce",
+      "destination": "/unified-commerce/nexus",
       "permanent": true
     },
     {
@@ -33,8 +33,13 @@
       "permanent": true
     },
     {
-      "source": "/d2c-ecommerce",
-      "destination": "/d2c-eCommerce",
+      "source": "/d2c-eCommerce",
+      "destination": "/d2c-ecommerce",
+      "permanent": true
+    },
+    {
+      "source": "/POS",
+      "destination": "/pos",
       "permanent": true
     },
     {
@@ -69,22 +74,42 @@
     },
     {
       "source": "/headless-commerce",
-      "destination": "/d2c-eCommerce",
+      "destination": "/d2c-ecommerce",
       "permanent": true
     },
     {
       "source": "/solution",
-      "destination": "/nexus-unified-commerce",
+      "destination": "/unified-commerce/nexus",
       "permanent": true
     },
     {
       "source": "/artisans-commerce-cloud",
-      "destination": "/nexus-unified-commerce",
+      "destination": "/unified-commerce/nexus",
       "permanent": true
     },
     {
       "source": "/knowledge-harvester",
-      "destination": "/vault-knowledge-harvester",
+      "destination": "/knowledge-harvester/vault",
+      "permanent": true
+    },
+    {
+      "source": "/lumen",
+      "destination": "/enterprise-copilot/lumen",
+      "permanent": true
+    },
+    {
+      "source": "/nexus-unified-commerce",
+      "destination": "/unified-commerce/nexus",
+      "permanent": true
+    },
+    {
+      "source": "/role-play-agent",
+      "destination": "/role-play-agent/arena",
+      "permanent": true
+    },
+    {
+      "source": "/vault-knowledge-harvester",
+      "destination": "/knowledge-harvester/vault",
       "permanent": true
     }
   ],

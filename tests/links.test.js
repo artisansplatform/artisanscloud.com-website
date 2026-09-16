@@ -3,13 +3,15 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { JSDOM } from "jsdom";
+import { allPages } from "../scripts/lib/site-files.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 
+// Every source page, including subdirectory pages and generated team cards.
 function getHtmlFiles() {
-  return fs.readdirSync(rootDir).filter((file) => file.endsWith(".html"));
+  return allPages();
 }
 
 function stripHashAndQuery(value) {

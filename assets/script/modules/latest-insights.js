@@ -1,12 +1,12 @@
-import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
-import fallbackArticles from '../../data/fallback-articles.json';
-import localArticles from '../../data/local-articles.json';
+import Swiper from "swiper";
+import { Navigation } from "swiper/modules";
+import fallbackArticles from "../../data/fallback-articles.json";
+import localArticles from "../../data/local-articles.json";
 
-const FALLBACK_IMAGE = '/assets/image/insightsLeadership-card-1.png';
+const FALLBACK_IMAGE = "/assets/image/insightsLeadership-card-1.png";
 
 function escapeHTML(str) {
-  const div = document.createElement('div');
+  const div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
@@ -16,8 +16,10 @@ function createSlide(article) {
   const safeTitle = escapeHTML(article.title);
   const safeDescription = escapeHTML(article.description);
   const safeUrl = escapeHTML(article.url);
-  const isLocal = article.source === 'local';
-  const linkTarget = isLocal ? '' : ' target="_blank" rel="noopener noreferrer"';
+  const isLocal = article.source === "local";
+  const linkTarget = isLocal
+    ? ""
+    : ' target="_blank" rel="noopener noreferrer"';
 
   return `<div class="swiper-slide !h-auto">
   <div class="fade-in p-2.5 border border-[#f2f2f2] rounded-xl sm:rounded-[20px] h-full group">
@@ -43,10 +45,10 @@ function createSlide(article) {
 }
 
 export function initLatestInsights() {
-  const grid = document.getElementById('latest-insights-grid');
+  const grid = document.getElementById("latest-insights-grid");
   if (!grid) return;
 
-  const currentUrl = grid.dataset.currentUrl || '';
+  const currentUrl = grid.dataset.currentUrl || "";
 
   const sortedLocal = [...localArticles].sort((a, b) => {
     const da = new Date(a.publishedAt).getTime() || 0;
@@ -54,12 +56,14 @@ export function initLatestInsights() {
     return db - da;
   });
 
-  const candidates = [...sortedLocal, ...fallbackArticles].filter(a => a.url !== currentUrl);
+  const candidates = [...sortedLocal, ...fallbackArticles].filter(
+    (a) => a.url !== currentUrl,
+  );
   if (candidates.length === 0) return;
 
-  grid.innerHTML = candidates.slice(0, 6).map(createSlide).join('');
+  grid.innerHTML = candidates.slice(0, 6).map(createSlide).join("");
 
-  new Swiper('.latestInsightsSlider', {
+  new Swiper(".latestInsightsSlider", {
     modules: [Navigation],
     slidesPerView: 1,
     spaceBetween: 20,
@@ -69,8 +73,8 @@ export function initLatestInsights() {
       1024: { slidesPerView: 3, spaceBetween: 20 },
     },
     navigation: {
-      nextEl: '.swiper-button-next-latestInsightsSlider',
-      prevEl: '.swiper-button-prev-latestInsightsSlider',
+      nextEl: ".swiper-button-next-latestInsightsSlider",
+      prevEl: ".swiper-button-prev-latestInsightsSlider",
     },
   });
 }

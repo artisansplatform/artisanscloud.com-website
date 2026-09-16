@@ -3,8 +3,10 @@
 /**
  * Build-time sitemap generator.
  *
- * Discovers all *.html files in the project root (same glob as vite.config.js),
- * excludes utility/non-indexable pages, and writes dist/sitemap.xml.
+ * Discovers every content page via scripts/lib/site-files.js (the same
+ * discovery the Vite build and the test suite use), excludes utility and
+ * non-indexable pages, sorts by each page's editorial `sitemap.order` (see
+ * assets/data/pages.json), and writes dist/sitemap.xml.
  *
  * Run automatically as part of `npm run build` via the build:sitemap script.
  * Must run AFTER build:html (Vite) so that dist/ already exists.
@@ -13,21 +15,23 @@
  *   node scripts/generate-sitemap.js [--base-url https://example.com]
  */
 
-import { glob } from 'glob';
-import { writeFileSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
-import { loadPages } from './lib/page-meta.js';
+import { writeFileSync } from "fs";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
+import { BASE_URL, loadPages } from "./lib/page-meta.js";
+import { contentPages } from "./lib/site-files.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = join(__dirname, '..');
+const ROOT = join(__dirname, "..");
 
 function parseArgs() {
   const args = process.argv.slice(2);
-  const opts = { baseUrl: 'https://www.artisanscloud.com' };
+  // Same constant the canonical/OG tags and tests/coverage-guard.test.js use,
+  // so a preview host is a deliberate --base-url override and never drift.
+  const opts = { baseUrl: BASE_URL };
   for (let i = 0; i < args.length; i++) {
-    if (args[i] === '--base-url' && args[i + 1]) {
-      opts.baseUrl = args[++i].replace(/\/$/, '');
+    if (args[i] === "--base-url" && args[i + 1]) {
+      opts.baseUrl = args[++i].replace(/\/$/, "");
     }
   }
   return opts;
@@ -35,72 +39,70 @@ function parseArgs() {
 
 // Per-page data lives in assets/data/pages.json (see scripts/lib/page-meta.js):
 //   sitemap: false           -> page excluded from the sitemap
-//   sitemap: { priority, changefreq } -> per-page override
-//   no sitemap field         -> DEFAULT_META
+//   sitemap: { priority, changefreq, order } -> per-page override; `order`
+//     is the page's position in the sitemap file (editorial, not derived
+//     from priority - two pages can share a priority tier in a different
+//     human-chosen order)
+//   no sitemap field         -> DEFAULT_META, sorted last (no `order`)
 const PAGES_META = loadPages();
 
-const DEFAULT_META = { priority: '0.6', changefreq: 'monthly' };
+const DEFAULT_META = { priority: "0.6", changefreq: "monthly" };
+// Generated blog articles (blog/*.html) have no pages.json entry.
+const BLOG_META = { priority: "0.7", changefreq: "weekly" };
+
+function metaFor(page) {
+  if (page.startsWith("blog/")) return BLOG_META;
+  return PAGES_META[page.replace(".html", "")]?.sitemap ?? DEFAULT_META;
+}
 
 function pageToUrl(baseUrl, filename) {
-  if (filename === 'index.html') return `${baseUrl}/`;
+  if (filename === "index.html") return `${baseUrl}/`;
   // Vercel cleanUrls: true, omit .html extension
-  // Handles both root pages and blog/slug.html paths
-  const slug = filename.replace('.html', '');
+  const slug = filename.replace(".html", "");
   return `${baseUrl}/${slug}`;
 }
 
-const BLOG_META = { priority: '0.7', changefreq: 'weekly' };
-
 function main() {
   const { baseUrl } = parseArgs();
-  const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+  const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
 
-  const pages = glob
-    .sync('*.html', { cwd: ROOT })
-    .filter(f => PAGES_META[f.replace('.html', '')]?.sitemap !== false)
-    .sort();
+  const pages = contentPages()
+    .filter((f) => PAGES_META[f.replace(".html", "")]?.sitemap !== false)
+    .sort((a, b) => {
+      const metaA = metaFor(a);
+      const metaB = metaFor(b);
+      // Pages without an explicit `order` (new pages not yet reviewed
+      // editorially) sort after every page that has one.
+      const orderA = metaA.order ?? Infinity;
+      const orderB = metaB.order ?? Infinity;
+      if (orderA !== orderB) return orderA - orderB;
+      return a.localeCompare(b);
+    });
 
-  // Include generated blog article pages
-  const blogPages = glob
-    .sync('blog/*.html', { cwd: ROOT })
-    .sort();
-
-  function makeUrlEntry(loc, priority, changefreq) {
+  const urlEntries = pages.map((page) => {
+    const { priority, changefreq } = metaFor(page);
+    const loc = pageToUrl(baseUrl, page);
     return [
-      '  <url>',
+      "  <url>",
       `    <loc>${loc}</loc>`,
       `    <lastmod>${today}</lastmod>`,
       `    <changefreq>${changefreq}</changefreq>`,
       `    <priority>${priority}</priority>`,
-      '  </url>',
-    ].join('\n');
-  }
-
-  const urlEntries = pages.map(page => {
-    const { priority, changefreq } =
-      PAGES_META[page.replace('.html', '')]?.sitemap ?? DEFAULT_META;
-    const loc = pageToUrl(baseUrl, page);
-    return makeUrlEntry(loc, priority, changefreq);
+      "  </url>",
+    ].join("\n");
   });
-
-  const blogEntries = blogPages.map(page => {
-    const loc = pageToUrl(baseUrl, page);
-    return makeUrlEntry(loc, BLOG_META.priority, BLOG_META.changefreq);
-  });
-
-  const allEntries = [...urlEntries, ...blogEntries];
 
   const xml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    allEntries.join('\n'),
-    '</urlset>',
-    '', // trailing newline
-  ].join('\n');
+    urlEntries.join("\n"),
+    "</urlset>",
+    "", // trailing newline
+  ].join("\n");
 
-  const outPath = join(ROOT, 'dist', 'sitemap.xml');
-  writeFileSync(outPath, xml, 'utf-8');
-  console.log(`sitemap.xml: ${pages.length + blogPages.length} URLs written → dist/sitemap.xml`);
+  const outPath = join(ROOT, "dist", "sitemap.xml");
+  writeFileSync(outPath, xml, "utf-8");
+  console.log(`sitemap.xml: ${pages.length} URLs written → dist/sitemap.xml`);
 }
 
 main();

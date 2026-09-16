@@ -21,10 +21,10 @@
 
 function escapeHtml(str) {
   return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 
 function inlineToHtml(text) {
@@ -34,18 +34,18 @@ function inlineToHtml(text) {
   });
   // Links ([text](url))
   text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
-    return '<a href="' + href + '">' + label + '</a>';
+    return '<a href="' + href + '">' + label + "</a>";
   });
   // Bold (**text**)
-  text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  text = text.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
   // Strikethrough (~~text~~)
-  text = text.replace(/~~(.+?)~~/g, '<del>$1</del>');
+  text = text.replace(/~~(.+?)~~/g, "<del>$1</del>");
   // Italic (*text* or _text_), but not inside words for _
-  text = text.replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
-  text = text.replace(/(?<!\w)_([^_\n]+)_(?!\w)/g, '<em>$1</em>');
+  text = text.replace(/\*([^*\n]+)\*/g, "<em>$1</em>");
+  text = text.replace(/(?<!\w)_([^_\n]+)_(?!\w)/g, "<em>$1</em>");
   // Inline code (`code`)
   text = text.replace(/`([^`\n]+)`/g, (_, code) => {
-    return '<code>' + escapeHtml(code) + '</code>';
+    return "<code>" + escapeHtml(code) + "</code>";
   });
   return text;
 }
@@ -57,7 +57,7 @@ function inlineToHtml(text) {
  * @returns {string} HTML string
  */
 export function markdownToHtml(markdown) {
-  const lines = markdown.split('\n');
+  const lines = markdown.split("\n");
   const output = [];
   let i = 0;
 
@@ -70,19 +70,21 @@ export function markdownToHtml(markdown) {
       const lang = fenceMatch[1];
       const codeLines = [];
       i++;
-      while (i < lines.length && !lines[i].startsWith('```')) {
+      while (i < lines.length && !lines[i].startsWith("```")) {
         codeLines.push(escapeHtml(lines[i]));
         i++;
       }
       i++; // skip closing ```
-      const langAttr = lang ? ' class="language-' + lang + '"' : '';
-      output.push('<pre><code' + langAttr + '>' + codeLines.join('\n') + '</code></pre>');
+      const langAttr = lang ? ' class="language-' + lang + '"' : "";
+      output.push(
+        "<pre><code" + langAttr + ">" + codeLines.join("\n") + "</code></pre>",
+      );
       continue;
     }
 
     // Horizontal rule (---, ***, ___)
     if (/^(---|\*\*\*|___)$/.test(line.trim())) {
-      output.push('<hr>');
+      output.push("<hr>");
       i++;
       continue;
     }
@@ -92,19 +94,21 @@ export function markdownToHtml(markdown) {
     if (headingMatch) {
       const level = headingMatch[1].length;
       const text = inlineToHtml(headingMatch[2].trim());
-      output.push('<h' + level + '>' + text + '</h' + level + '>');
+      output.push("<h" + level + ">" + text + "</h" + level + ">");
       i++;
       continue;
     }
 
     // Blockquote
-    if (line.startsWith('> ')) {
+    if (line.startsWith("> ")) {
       const quoteLines = [];
-      while (i < lines.length && lines[i].startsWith('> ')) {
+      while (i < lines.length && lines[i].startsWith("> ")) {
         quoteLines.push(inlineToHtml(lines[i].slice(2)));
         i++;
       }
-      output.push('<blockquote><p>' + quoteLines.join('<br>') + '</p></blockquote>');
+      output.push(
+        "<blockquote><p>" + quoteLines.join("<br>") + "</p></blockquote>",
+      );
       continue;
     }
 
@@ -112,10 +116,10 @@ export function markdownToHtml(markdown) {
     if (/^[-*+] /.test(line)) {
       const items = [];
       while (i < lines.length && /^[-*+] /.test(lines[i])) {
-        items.push('<li>' + inlineToHtml(lines[i].slice(2)) + '</li>');
+        items.push("<li>" + inlineToHtml(lines[i].slice(2)) + "</li>");
         i++;
       }
-      output.push('<ul>' + items.join('') + '</ul>');
+      output.push("<ul>" + items.join("") + "</ul>");
       continue;
     }
 
@@ -123,16 +127,16 @@ export function markdownToHtml(markdown) {
     if (/^\d+\. /.test(line)) {
       const items = [];
       while (i < lines.length && /^\d+\. /.test(lines[i])) {
-        const text = lines[i].replace(/^\d+\. /, '');
-        items.push('<li>' + inlineToHtml(text) + '</li>');
+        const text = lines[i].replace(/^\d+\. /, "");
+        items.push("<li>" + inlineToHtml(text) + "</li>");
         i++;
       }
-      output.push('<ol>' + items.join('') + '</ol>');
+      output.push("<ol>" + items.join("") + "</ol>");
       continue;
     }
 
     // Blank line (skip)
-    if (line.trim() === '') {
+    if (line.trim() === "") {
       i++;
       continue;
     }
@@ -141,7 +145,7 @@ export function markdownToHtml(markdown) {
     const paraLines = [];
     while (
       i < lines.length &&
-      lines[i].trim() !== '' &&
+      lines[i].trim() !== "" &&
       !/^#{1,6} /.test(lines[i]) &&
       !/^```/.test(lines[i]) &&
       !/^> /.test(lines[i]) &&
@@ -153,9 +157,9 @@ export function markdownToHtml(markdown) {
       i++;
     }
     if (paraLines.length > 0) {
-      output.push('<p>' + paraLines.join(' ') + '</p>');
+      output.push("<p>" + paraLines.join(" ") + "</p>");
     }
   }
 
-  return output.join('\n');
+  return output.join("\n");
 }

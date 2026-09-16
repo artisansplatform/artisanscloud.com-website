@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import 'dotenv/config';
+import "dotenv/config";
 
 // Fetches "Ready to Publish" articles from Notion, converts to Markdown,
 // and writes them to the blog/ folder.
@@ -16,7 +16,7 @@ import { Client } from "@notionhq/client";
 import { writeFileSync, mkdirSync, existsSync } from "fs";
 import { join, dirname, extname } from "path";
 import { fileURLToPath } from "url";
-import { execSync } from "child_process";
+import { execFileSync } from "child_process";
 import { blocksToMarkdown } from "./lib/notion-to-markdown.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -30,21 +30,24 @@ const BLOG_DIR = join(ROOT, "blog");
 const SYNC_RESULT_PATH = join(ROOT, ".notion-sync-result.json");
 
 function writeSyncResult(titles) {
-  writeFileSync(SYNC_RESULT_PATH, JSON.stringify({ count: titles.length, titles }, null, 2));
+  writeFileSync(
+    SYNC_RESULT_PATH,
+    JSON.stringify({ count: titles.length, titles }, null, 2),
+  );
 }
 
-const notion = new Client({ 
+const notion = new Client({
   auth: process.env.NOTION_TOKEN,
   fetch: (url, init) => {
     init = init || {};
     init.headers = init.headers || {};
-    if (typeof init.headers.set === 'function') {
-      init.headers.set('Connection', 'close');
+    if (typeof init.headers.set === "function") {
+      init.headers.set("Connection", "close");
     } else {
-      init.headers['Connection'] = 'close';
+      init.headers["Connection"] = "close";
     }
     return fetch(url, init);
-  }
+  },
 });
 const DATABASE_ID = process.env.NOTION_DATABASE_ID;
 
@@ -52,27 +55,42 @@ function getProp(page, name, type) {
   const prop = page.properties[name];
   if (!prop) return null;
   switch (type) {
-    case "title":    return prop.title?.map((t) => t.plain_text).join("") || "";
-    case "text":     return prop.rich_text?.map((t) => t.plain_text).join("") || "";
-    case "select":   return prop.select?.name || "";
+    case "title":
+      return prop.title?.map((t) => t.plain_text).join("") || "";
+    case "text":
+      return prop.rich_text?.map((t) => t.plain_text).join("") || "";
+    case "select":
+      return prop.select?.name || "";
     case "multi":
-      if (prop.type === "multi_select") return prop.multi_select?.map((s) => s.name) || [];
+      if (prop.type === "multi_select")
+        return prop.multi_select?.map((s) => s.name) || [];
       if (prop.type === "rich_text") {
         const text = prop.rich_text?.map((t) => t.plain_text).join("") || "";
-        return text ? text.split(",").map(t => t.trim()).filter(Boolean) : [];
+        return text
+          ? text
+              .split(",")
+              .map((t) => t.trim())
+              .filter(Boolean)
+          : [];
       }
       return [];
-    case "date":     return prop.date?.start || "";
-    case "url":      return prop.url || "";
-    case "checkbox": return prop.checkbox || false;
+    case "date":
+      return prop.date?.start || "";
+    case "url":
+      return prop.url || "";
+    case "checkbox":
+      return prop.checkbox || false;
     case "files": {
       if (prop.files?.length > 0) {
         const f = prop.files[0];
-        return f.type === "external" ? (f.external?.url || "") : (f.file?.url || "");
+        return f.type === "external"
+          ? f.external?.url || ""
+          : f.file?.url || "";
       }
       return "";
     }
-    default:         return null;
+    default:
+      return null;
   }
 }
 
@@ -80,12 +98,15 @@ function buildFrontmatter(meta) {
   const lines = ["---"];
   lines.push(`title: "${meta.title.replace(/"/g, '\\"')}"`);
   lines.push(`slug: ${meta.slug}`);
-  const safeDesc = (meta.description || "").replace(/"/g, '\\"').replace(/\n/g, ' ');
+  const safeDesc = (meta.description || "")
+    .replace(/"/g, '\\"')
+    .replace(/\n/g, " ");
   lines.push(`description: "${safeDesc}"`);
   lines.push(`publishedAt: "${meta.publishedAt}"`);
-  if (meta.tags?.length) lines.push(`tags: [${meta.tags.map((t) => `"${t}"`).join(", ")}]`);
-  if (meta.hero)         lines.push(`hero: ${meta.hero}`);
-  if (meta.heroAlt)      lines.push(`heroAlt: "${meta.heroAlt}"`);
+  if (meta.tags?.length)
+    lines.push(`tags: [${meta.tags.map((t) => `"${t}"`).join(", ")}]`);
+  if (meta.hero) lines.push(`hero: ${meta.hero}`);
+  if (meta.heroAlt) lines.push(`heroAlt: "${meta.heroAlt}"`);
   lines.push(`draft: false`);
   lines.push(`notionId: ${meta.notionId}`);
   lines.push("---");
@@ -116,7 +137,10 @@ async function downloadHeroImage(url, slug) {
 
   try {
     console.log(`Optimizing image ${filename}...`);
-    execSync(`npm run optimize:images -- "${destPath}"`, { stdio: "inherit", cwd: ROOT });
+    execFileSync("npm", ["run", "optimize:images", "--", destPath], {
+      stdio: "inherit",
+      cwd: ROOT,
+    });
   } catch (err) {
     console.warn(`Failed to optimize image ${filename}: ${err.message}`);
   }
@@ -168,16 +192,22 @@ async function run() {
   const syncedTitles = [];
   try {
     for (const page of response.results) {
-      const title       = getProp(page, "Title", "title");
-      const rawSlug     = title;
-      const slug        = rawSlug ? rawSlug.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") : null;
-      const tags        = getProp(page, "Tags", "multi");
+      const title = getProp(page, "Title", "title");
+      const rawSlug = title;
+      const slug = rawSlug
+        ? rawSlug
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-+|-+$/g, "")
+        : null;
+      const tags = getProp(page, "Tags", "multi");
       const publishedAt = new Date().toISOString().split("T")[0];
-      const heroProp    = page.properties["Hero Image"];
-      const heroRawUrl  = heroProp?.type === "files"
-        ? getProp(page, "Hero Image", "files")
-        : getProp(page, "Hero Image", "url");
-      const heroAlt     = title;
+      const heroProp = page.properties["Hero Image"];
+      const heroRawUrl =
+        heroProp?.type === "files"
+          ? getProp(page, "Hero Image", "files")
+          : getProp(page, "Hero Image", "url");
+      const heroAlt = title;
 
       if (!slug) {
         console.warn(`Skipping "${title}": no slug set.`);
@@ -191,19 +221,25 @@ async function run() {
           hero = await downloadHeroImage(heroRawUrl, slug);
           console.log(`Hero image saved: ${hero}`);
         } catch (err) {
-          console.warn(`Could not download hero image for "${title}": ${err.message}`);
+          console.warn(
+            `Could not download hero image for "${title}": ${err.message}`,
+          );
           hero = "";
         }
       }
 
       const blocks = await fetchBlocks(page.id);
-      let body     = blocksToMarkdown(blocks);
+      let body = blocksToMarkdown(blocks);
 
       // Extract description from the first text paragraph
       let description = "";
-      const firstParagraphBlock = blocks.find(b => b.type === "paragraph" && b.paragraph?.rich_text?.length > 0);
+      const firstParagraphBlock = blocks.find(
+        (b) => b.type === "paragraph" && b.paragraph?.rich_text?.length > 0,
+      );
       if (firstParagraphBlock) {
-        description = firstParagraphBlock.paragraph.rich_text.map(rt => rt.plain_text).join("");
+        description = firstParagraphBlock.paragraph.rich_text
+          .map((rt) => rt.plain_text)
+          .join("");
       }
 
       if (!body.trim() && description) {
@@ -211,9 +247,13 @@ async function run() {
       }
 
       const frontmatter = buildFrontmatter({
-        title, slug, description, tags,
+        title,
+        slug,
+        description,
+        tags,
         publishedAt,
-        hero, heroAlt,
+        hero,
+        heroAlt,
         notionId: page.id,
       });
 
@@ -227,7 +267,9 @@ async function run() {
         await markPagePublished(page.id);
         console.log(`Marked as Published in Notion: "${title}"`);
       } catch (err) {
-        console.warn(`Could not mark "${title}" as published in Notion: ${err.message}`);
+        console.warn(
+          `Could not mark "${title}" as published in Notion: ${err.message}`,
+        );
       }
     }
   } finally {

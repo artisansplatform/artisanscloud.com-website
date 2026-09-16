@@ -1,10 +1,15 @@
 node_modules/
 dist/
-.env
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
 assets/style/output.css
 data/gsc/
+.env
 .notion-sync-result.json
+
+# Serena MCP server workspace metadata
+.serena/
+
+.claude/.stop-gate-last-green

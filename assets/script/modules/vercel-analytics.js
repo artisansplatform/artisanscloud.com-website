@@ -3,8 +3,8 @@
 // Requires Web Analytics to be enabled in the Vercel project dashboard.
 // https://vercel.com/docs/analytics
 
-import { inject } from '@vercel/analytics';
+import { inject } from "@vercel/analytics";
 
 export function initVercelAnalytics() {
-    inject();
+  inject();
 }

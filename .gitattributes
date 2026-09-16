@@ -1,0 +1,14 @@
+# Every text file checks out with LF on every platform. .prettierrc pins
+# endOfLine to "lf", so a CRLF working tree would fail the formatting gate
+# on Windows runners. Binary types are listed explicitly so git never tries
+# to translate them.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.pdf binary

@@ -55,7 +55,8 @@ function readSyncResult() {
 }
 
 function deriveStatus(articlesSynced) {
-  const syncOutcome = process.env.SYNC_OUTCOME || (IS_CI ? undefined : "success");
+  const syncOutcome =
+    process.env.SYNC_OUTCOME || (IS_CI ? undefined : "success");
   if (syncOutcome !== "success") return "Failed";
   const changed = IS_CI ? process.env.CHANGED === "true" : articlesSynced > 0;
   return changed ? "Success" : "No changes";
@@ -74,7 +75,7 @@ function formatRunDate(date) {
 async function run() {
   if (!NOTION_TOKEN || !DATABASE_ID) {
     console.warn(
-      "Skipping sync history log: NOTION_TOKEN or NOTION_HISTORY_DATABASE_ID is not set."
+      "Skipping sync history log: NOTION_TOKEN or NOTION_HISTORY_DATABASE_ID is not set.",
     );
     return;
   }

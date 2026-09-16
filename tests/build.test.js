@@ -1,20 +1,17 @@
 import fs from "fs";
-import { glob } from "glob";
 import path from "path";
 import { fileURLToPath } from "url";
 import { beforeAll, describe, expect, it } from "vitest";
+import { allPages } from "../scripts/lib/site-files.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 const distDir = path.join(rootDir, "dist");
 
-// Dynamically get all HTML pages from the root directory
-// This ensures tests automatically discover new pages without manual updates.
-// Note: This matches the behavior of vite.config.js (line 8) which also uses
-// glob.sync('*.html') to build all HTML files in the root directory.
-// Any HTML file in the root will be built and tested - this is intentional.
-const expectedPages = glob.sync("*.html", { cwd: rootDir });
+// Every source page (shared discovery with vite.config.js) must come out of
+// the build. If Vite ever skips a page, this is the test that says so.
+const expectedPages = allPages();
 
 describe("Build Verification Tests", () => {
   beforeAll(() => {
@@ -69,10 +66,13 @@ describe("Build Verification Tests", () => {
     it("should contain actual <header> and <footer> HTML elements", () => {
       const pagesWithoutElements = [];
 
-      // The 404 page doesn't have header/footer by design, so we skip it
-      const pagesToCheck = expectedPages.filter(
-        (page) => page !== "404.html" && page !== "retail-platform.html",
-      );
+      // Skipped by design: the 404 page has no site chrome, redirect stubs
+      // navigate away immediately, and team cards are standalone share pages.
+      const pagesToCheck = expectedPages.filter((page) => {
+        if (page === "404.html" || page.startsWith("team/")) return false;
+        const source = fs.readFileSync(path.join(rootDir, page), "utf-8");
+        return !/http-equiv=["']refresh["']/i.test(source);
+      });
 
       pagesToCheck.forEach((page) => {
         const pagePath = path.join(distDir, page);
@@ -167,7 +167,7 @@ describe("Build Verification Tests", () => {
       const sitemapPath = path.join(distDir, "sitemap.xml");
       const content = fs.readFileSync(sitemapPath, "utf-8");
       expect(content).toContain(
-        "<loc>https://www.artisanscloud.com/nexus-unified-commerce</loc>",
+        "<loc>https://www.artisanscloud.com/unified-commerce/nexus</loc>",
       );
     });
 

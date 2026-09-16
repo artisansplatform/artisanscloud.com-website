@@ -35,7 +35,7 @@ const ORGANIZATION = {
   name: "Artisans Cloud",
   url: `${BASE_URL}/`,
   logo: `${BASE_URL}/assets/image/logo.svg`,
-  sameAs: ["https://www.linkedin.com/company/artisanscommercecloud/"],
+  sameAs: ["https://www.linkedin.com/company/artisanscloud/"],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer support",

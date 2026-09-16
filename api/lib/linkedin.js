@@ -1,7 +1,7 @@
-import { put, list } from '@vercel/blob';
+import { put, list } from "@vercel/blob";
 
-const LINKEDIN_API_BASE = 'https://api.linkedin.com';
-const TOKEN_BLOB_KEY = 'token-meta.json';
+const LINKEDIN_API_BASE = "https://api.linkedin.com";
+const TOKEN_BLOB_KEY = "token-meta.json";
 
 /**
  * Read stored token metadata from Vercel Blob.
@@ -24,7 +24,7 @@ async function readTokenMeta() {
  */
 async function writeTokenMeta(meta) {
   await put(TOKEN_BLOB_KEY, JSON.stringify(meta), {
-    access: 'public',
+    access: "public",
     addRandomSuffix: false,
   });
 }
@@ -35,15 +35,15 @@ async function writeTokenMeta(meta) {
  */
 async function refreshAccessToken(refreshToken) {
   const params = new URLSearchParams({
-    grant_type: 'refresh_token',
+    grant_type: "refresh_token",
     refresh_token: refreshToken,
     client_id: process.env.LINKEDIN_CLIENT_ID,
     client_secret: process.env.LINKEDIN_CLIENT_SECRET,
   });
 
   const res = await fetch(`${LINKEDIN_API_BASE}/oauth/v2/accessToken`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: params.toString(),
   });
 
@@ -60,7 +60,7 @@ async function refreshAccessToken(refreshToken) {
   };
 
   await writeTokenMeta(meta);
-  console.log('LinkedIn access token refreshed and stored in Blob');
+  console.log("LinkedIn access token refreshed and stored in Blob");
   return meta.accessToken;
 }
 
@@ -81,7 +81,7 @@ export async function getValidAccessToken() {
       try {
         return await refreshAccessToken(meta.refreshToken);
       } catch (err) {
-        console.warn('Token refresh from Blob meta failed:', err.message);
+        console.warn("Token refresh from Blob meta failed:", err.message);
       }
     }
   }
@@ -89,7 +89,7 @@ export async function getValidAccessToken() {
   // Fall back to env var
   const envToken = process.env.LINKEDIN_ACCESS_TOKEN;
   if (!envToken) {
-    throw new Error('No LinkedIn access token available');
+    throw new Error("No LinkedIn access token available");
   }
   return envToken;
 }
@@ -102,7 +102,7 @@ export async function getValidAccessToken() {
  */
 export async function fetchLinkedInArticles(accessToken) {
   const orgId = process.env.LINKEDIN_ORG_ID;
-  if (!orgId) throw new Error('LINKEDIN_ORG_ID not configured');
+  if (!orgId) throw new Error("LINKEDIN_ORG_ID not configured");
 
   const authorUrn = encodeURIComponent(`urn:li:organization:${orgId}`);
   const url = `${LINKEDIN_API_BASE}/rest/dmaOriginalArticles?q=author&author=${authorUrn}&start=0&count=50&state=(value:PUBLISHED)`;
@@ -110,8 +110,8 @@ export async function fetchLinkedInArticles(accessToken) {
   const res = await fetch(url, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
-      'LinkedIn-Version': '202511',
-      'X-Restli-Protocol-Version': '2.0.0',
+      "LinkedIn-Version": "202511",
+      "X-Restli-Protocol-Version": "2.0.0",
     },
   });
 
@@ -119,11 +119,13 @@ export async function fetchLinkedInArticles(accessToken) {
     // Token expired, try refresh from env
     const refreshToken = process.env.LINKEDIN_REFRESH_TOKEN;
     if (refreshToken) {
-      console.warn('Access token expired, attempting refresh...');
+      console.warn("Access token expired, attempting refresh...");
       const newToken = await refreshAccessToken(refreshToken);
       return fetchLinkedInArticles(newToken);
     }
-    throw new Error('LinkedIn access token expired and no refresh token available');
+    throw new Error(
+      "LinkedIn access token expired and no refresh token available",
+    );
   }
 
   if (!res.ok) {
@@ -136,31 +138,39 @@ export async function fetchLinkedInArticles(accessToken) {
 
   // Normalize DMA OriginalArticles response to our standard format
   return articles
-    .filter((article) => article.state === 'PUBLISHED')
+    .filter((article) => article.state === "PUBLISHED")
     .map((article) => {
       // Build the LinkedIn article URL from the permlink
       const articleUrl = article.permlink
         ? `https://www.linkedin.com/pulse/${article.permlink}`
-        : '';
+        : "";
 
       // Extract thumbnail from coverImage or displayImage
       const thumbnail =
-        (article.coverImage && article.coverImage.originalImage && article.coverImage.originalImage.downloadUrl) ||
+        (article.coverImage &&
+          article.coverImage.originalImage &&
+          article.coverImage.originalImage.downloadUrl) ||
         (article.displayImage && article.displayImage.downloadUrl) ||
         null;
 
       // Extract stripped content text from contentHtml
-      const contentText = (article.contentHtml || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-      const description = extractDescriptionFromText(contentText, article.title || '');
+      const contentText = (article.contentHtml || "")
+        .replace(/<[^>]*>/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+      const description = extractDescriptionFromText(
+        contentText,
+        article.title || "",
+      );
 
       return {
-        id: article.linkedInArticleUrn || '',
-        title: article.title || '',
+        id: article.linkedInArticleUrn || "",
+        title: article.title || "",
         description,
         url: articleUrl,
         thumbnail,
         publishedAt: article.publishedAt || article.createdAt || Date.now(),
-        tags: extractTags(article.title || '', contentText),
+        tags: extractTags(article.title || "", contentText),
       };
     })
     .sort((a, b) => b.publishedAt - a.publishedAt);
@@ -172,29 +182,66 @@ export async function fetchLinkedInArticles(accessToken) {
  */
 function extractDescriptionFromText(text, title) {
   // Skip if it's just the title repeated
-  const cleaned = text.startsWith(title) ? text.slice(title.length).trim() : text;
-  if (!cleaned) return '';
-  return cleaned.length > 200 ? cleaned.slice(0, 200) + '...' : cleaned;
+  const cleaned = text.startsWith(title)
+    ? text.slice(title.length).trim()
+    : text;
+  if (!cleaned) return "";
+  return cleaned.length > 200 ? cleaned.slice(0, 200) + "..." : cleaned;
 }
 
 /**
  * Extract up to 3 tags based on keyword matching in both title and content.
  */
 function extractTags(title, contentText) {
-  const textToSearch = (title + ' ' + contentText).toLowerCase();
+  const textToSearch = (title + " " + contentText).toLowerCase();
 
   const tagDefinitions = [
-    { label: 'AI', keywords: ['ai', 'artificial intelligence', 'machine learning', 'agentic', 'llm', 'deep learning', 'neural', 'generative'] },
-    { label: 'Data', keywords: ['data analytics', 'data lake', 'data engineering', 'etl', 'data pipeline', 'data warehouse', 'analytics platform', 'business intelligence'] },
-    { label: 'Retail', keywords: ['retail', 'store', 'omnichannel', 'merchandise', 'pos', 'point of sale', 'commerce'] }
+    {
+      label: "AI",
+      keywords: [
+        "ai",
+        "artificial intelligence",
+        "machine learning",
+        "agentic",
+        "llm",
+        "deep learning",
+        "neural",
+        "generative",
+      ],
+    },
+    {
+      label: "Data",
+      keywords: [
+        "data analytics",
+        "data lake",
+        "data engineering",
+        "etl",
+        "data pipeline",
+        "data warehouse",
+        "analytics platform",
+        "business intelligence",
+      ],
+    },
+    {
+      label: "Retail",
+      keywords: [
+        "retail",
+        "store",
+        "omnichannel",
+        "merchandise",
+        "pos",
+        "point of sale",
+        "commerce",
+      ],
+    },
   ];
 
   const matchedTags = [];
 
   for (const def of tagDefinitions) {
-    const isMatch = def.keywords.some(kw => {
+    const isMatch = def.keywords.some((kw) => {
       // Create a regex for the keyword with word boundaries
-      const regex = new RegExp(`\\b${kw}\\b`, 'i');
+      const regex = new RegExp(`\\b${kw}\\b`, "i");
       return regex.test(textToSearch);
     });
 
@@ -204,7 +251,7 @@ function extractTags(title, contentText) {
   }
 
   if (matchedTags.length === 0) {
-    return ['Retail'];
+    return ["Retail"];
   }
 
   return matchedTags;

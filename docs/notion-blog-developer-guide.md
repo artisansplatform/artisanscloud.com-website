@@ -18,10 +18,10 @@ The articles go live once that PR is merged and Vercel deploys.
 
 ## Environment variables
 
-| Variable | Used by | Purpose |
-|---|---|---|
-| `NOTION_TOKEN` | sync + history | Internal integration secret. Same token for both databases. |
-| `NOTION_DATABASE_ID` | `sync-notion.js` | The Blog Articles database ID. |
+| Variable                     | Used by                 | Purpose                                                                       |
+| ---------------------------- | ----------------------- | ----------------------------------------------------------------------------- |
+| `NOTION_TOKEN`               | sync + history          | Internal integration secret. Same token for both databases.                   |
+| `NOTION_DATABASE_ID`         | `sync-notion.js`        | The Blog Articles database ID.                                                |
 | `NOTION_HISTORY_DATABASE_ID` | `log-notion-history.js` | The Sync History database ID. Optional; if unset, history logging is skipped. |
 
 In CI these are GitHub Actions repository secrets. Locally they come from a `.env` file in the project root. All three are listed in `.env.example`.
@@ -66,10 +66,10 @@ node scripts/generate-blog-articles.js --slug your-article-slug
 
 ## Related files
 
-| File | Role |
-|---|---|
-| `.github/workflows/notion-sync.yml` | Manual workflow that runs the whole pipeline and opens the PR. |
-| `scripts/sync-notion.js` | Fetches articles from Notion, writes Markdown, downloads images, updates Status. |
-| `scripts/generate-blog-articles.js` | Renders Markdown into static blog HTML. |
-| `scripts/log-notion-history.js` | Logs each run to the Sync History database. |
-| `.env.example` | Lists the three Notion environment variables. |
+| File                                | Role                                                                             |
+| ----------------------------------- | -------------------------------------------------------------------------------- |
+| `.github/workflows/notion-sync.yml` | Manual workflow that runs the whole pipeline and opens the PR.                   |
+| `scripts/sync-notion.js`            | Fetches articles from Notion, writes Markdown, downloads images, updates Status. |
+| `scripts/generate-blog-articles.js` | Renders Markdown into static blog HTML.                                          |
+| `scripts/log-notion-history.js`     | Logs each run to the Sync History database.                                      |
+| `.env.example`                      | Lists the three Notion environment variables.                                    |

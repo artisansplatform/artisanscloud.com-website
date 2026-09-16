@@ -1,12 +1,14 @@
 # Coding Standards
 
 ## Code Organization
+
 - **Single responsibility**: Each JavaScript module in `assets/script/modules/` handles one feature
 - **Event delegation**: Use event delegation for dynamically created elements or repeated elements
 - **Vanilla JavaScript only**: No frameworks/libraries except for specific features (Swiper for sliders, Lenis for smooth scroll)
 - **Progressive enhancement**: Core content accessible without JavaScript, enhanced with JS for interactivity
 
 ## Performance
+
 - **Lazy loading**: Images should use `loading="lazy"` attribute where appropriate
 - **Asset ownership**: Copy required images into this repository under `assets/image/`; do not hotlink external domains
 - **CDN usage**: External libraries (Swiper, GSAP, Lenis) loaded from CDN to leverage browser caching
@@ -14,6 +16,7 @@
 - **Font subsetting**: Poppins is self-hosted from `assets/fonts/poppins/` and declared as `@font-face` blocks in `assets/style/input.css`, covering only the variants the site uses (normal 400/500/600/700/800, italic 400/600) in latin and latin-ext unicode-range subsets. Before adding a new weight or style to the markup, download its woff2 files and add matching `@font-face` blocks, otherwise the browser synthesizes it (see [Development: Fonts](development.md#fonts)). `tests/font-subset.test.js` (part of `npm test` / CI, or `npm run test:font`) fails the build if the markup uses a variant with no `@font-face`, if a declared woff2 file is missing, or if anything still points at Google Fonts.
 
 ## Accessibility
+
 - **Semantic HTML**: Use appropriate HTML5 elements (`<nav>`, `<main>`, `<article>`, `<section>`, etc.)
 - **ARIA labels**: Add `aria-label` to interactive elements without text (icon buttons, close buttons)
 - **Image alt text**: Every `<img>` needs an `alt` attribute (use `alt=""` for purely decorative images). Enforced by `tests/seo.test.js`.
@@ -22,9 +25,11 @@
 - **Color contrast**: Ensure text meets WCAG AA standards (4.5:1 for normal text)
 
 ## Security
+
 - **No inline scripts**: Avoid inline JavaScript for security. Use JS modules via `assets/script/main.js` instead.
 - **No inline event handlers**: Do not use `onclick=""`, `onload=""`, etc. in HTML - attach event listeners in JS modules instead.
 - **External links**: Add `rel="noopener noreferrer"` to external links opening in new tabs
 - **Form validation**: Validate on client side with HTML5 `required` / `type` attributes. Backend validation is handled by the form processor (web3forms).
 - **Dependency updates**: Keep npm packages updated to avoid known vulnerabilities
 - **No secrets in code**: Never commit API keys, tokens, or sensitive data (use environment variables)
+- **No shell-string child processes**: Never call `exec(cmd)` or `execSync(cmd)`, and never pass `shell: true`. A command string is re-parsed by a shell, and Windows `cmd.exe` quoting differs from POSIX, so a path with a space, glob character, or quote can break or be reinterpreted. Use `execFileSync(cmd, [args], { cwd, encoding })` instead, or `spawn(cmd, [args])` when you need a streaming or long-running child. `spawn`, `spawnSync`, `fork`, and `execFile*` called with an args array are not banned: they pass arguments straight to the process and never involve a shell. Enforced by `tests/conventions.test.js`.

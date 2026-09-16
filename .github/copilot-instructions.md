@@ -14,6 +14,14 @@ Static marketing website. Vanilla HTML/JS + Tailwind CSS v4 + Handlebars (build-
 
 Always replace em dashes with appropriate punctuation such as commas, periods, colons, or parentheses.
 
+This rule is enforced by `tests/conventions.test.js`, which fails `npm test` and reports each offender as `file:line` when any of these appears:
+
+- the literal em dash character (U+2014)
+- the HTML entities that render as one: `mdash`, `#8212`, and `#x2014`, each written with a leading ampersand and a trailing semicolon (not spelled out here, since this file obeys its own rule)
+- an en dash (U+2013) used in an em dash's place, meaning one with a space or tag boundary on either side. Unspaced en dashes stay legal, since they are correct in ranges like `h1-h6`.
+
+The check covers untracked files too (anything `git ls-files --others --exclude-standard` sees), so a file an agent just wrote is caught before it is staged. `assets/data/fallback-articles.json` is exempt: it carries verbatim external copy.
+
 **Additional writing guidelines:**
 
 - Prefer simple, human-readable language over AI-style phrasing
@@ -22,6 +30,7 @@ Always replace em dashes with appropriate punctuation such as commas, periods, c
 - Write as an experienced developer, not as a generic assistant
 
 ## Commands
+
 ```bash
 npm run dev              # Dev server at http://localhost:3000/ (Vite + Tailwind watch)
 npm run build            # Production build (CSS + HTML to dist/)
@@ -33,6 +42,7 @@ npm run generate:cards   # Regenerate all team card HTML pages from team-members
 npm run add:card         # Add/update a team card: generates HTML + OG image (run after editing JSON)
 npm run check:images     # Flag staged or all assets/ images that exceed size thresholds
 npm run optimize:images  # Re-encode raster images in place via sharp (pass paths after --)
+npm run recolor:svgs     # Rewrite superseded brand hexes in assets/**/*.svg (--check to report only)
 npm run generate:blog    # Generate blog HTML pages from blog/*.md (also runs as build:blog)
 npm run sync:notion      # Fetch "Ready to Publish" articles from Notion and write blog/*.md
 ```
@@ -40,7 +50,7 @@ npm run sync:notion      # Fetch "Ready to Publish" articles from Notion and wri
 ## Gotchas & Landmines
 
 - **Header/Footer are Handlebars partials** - edit `partials/header.html` or `partials/footer.html` ONLY. Never duplicate header/footer HTML into individual pages. `{{> header}}` and `{{> footer}}` are replaced at build time.
-- **Clean URLs** - Vercel serves pages without `.html`. Use root-relative paths in links: `/nexus-unified-commerce`, not `/nexus-unified-commerce.html`.
+- **Clean URLs** - Vercel serves pages without `.html`. Use root-relative paths in links: `/unified-commerce/nexus`, not `/unified-commerce/nexus.html`.
 - **Blog cards are JS-rendered** - `articles-and-resources.html` and `index.html` have empty `#blog-grid` / `#insights-grid` containers. Card HTML lives ONLY in `assets/script/modules/blog-articles.js`. Do NOT put card markup in HTML pages.
 - **Fallback articles** - `assets/data/fallback-articles.json` is the single source shared by both frontend JS and backend API (`api/lib/fallback-articles.js`). Keep them in sync.
 - **No inline scripts** - all JS goes through `assets/script/main.js` modules for CSP compatibility. Put page behavior in an `assets/script/modules/*.js` file that no-ops when its target element is absent (see `modules/card-toggle.js`) and import it in `main.js`. Enforced by `tests/conventions.test.js` (data blocks `application/ld+json` / `application/json` and redirect stubs are exempt).
@@ -49,30 +59,39 @@ npm run sync:notion      # Fetch "Ready to Publish" articles from Notion and wri
 - **OG images use absolute URLs** - `og:image` meta tags use `https://www.artisanscloud.com/assets/og/{page}.png`. Images are in `assets/og/` and copied to `dist/assets/og/` during build. When adding a new page, add `ogCard` text to its `pages.json` entry, run `npm run generate:og`, and commit the PNG; `tests/pages-meta.test.js` fails if the image is missing or not exactly 1200x630.
 - **Team card HTML is generated** - `team/*.html` files are produced by `scripts/generate-team-cards.js` from `assets/data/team-members.json`. Do NOT hand-edit them. To add a new team member: add photo + JSON entry, then run `npm run add:card` (generates HTML + OG image). Re-run after any JSON change.
 - **Centering 5-card grids** - standard Tailwind `grid` doesn't easily center the last 2 cards in a 3-column layout. Use `flex flex-wrap justify-center` with calculated widths (`w-[calc(50%-10px)]` for 2-column on tablet, `w-[calc(33.333%-20px)]` for 3-column on desktop) combined with a matching `gap-` to center remaining items in the last row.
+- **Typography is centralized** - Use `.t-display` / `.t-h2` / `.t-h2-sm` / `.t-h3` / `.t-lead` / `.t-body` / `.t-body-sm` / `.t-caption` for all headings and body copy (defined in `assets/style/input.css`). Do not hand-code font sizes (`text-[NNpx]`) or line-heights (`leading-[NN%]`), and do not add `font-primary` to any element (`body` already sets Poppins globally). See `docs/development.md` (Typography Scale).
+- **Brand colors come from the logo, and nothing restates them** - Purple `#8d67f5`, Cyan `#12d9e3`, Pink `#f74ddd`, taken from `assets/image/logo.svg` (the brand PDF prints garbled codes). They live as `--color-primary` / `--color-sky` / `--color-pink` in the `@theme` block of `assets/style/input.css`, and `scripts/lib/brand-tokens.js` is the single place any script reads them from. Use a token utility (`text-primary`, `bg-pink`) in markup, `var(--color-primary)` in inline SVG `fill`/`stroke`, and never a hex literal in either. Standalone `.svg` assets are the one exception (they cannot see CSS variables): fix those with `npm run recolor:svgs`, do not hand-edit. To change a brand color: edit the token, move the old hex into `superseded` in `scripts/lib/brand-tokens.js`, run `npm run recolor:svgs`, then `npm run generate:og` and `npm run generate:cards`. `tests/brand-colors.test.js` fails if a token drifts from the logo, if a superseded hex reappears, or if a brand hex is restated in markup or `scripts/`. See `docs/development.md` (Brand palette).
 - **Image size limits enforced at commit** - a pre-commit hook (`.githooks/pre-commit`) flags staged images over per-type thresholds: PNG/JPG 300 KB, WebP 400 KB, SVG 50 KB. It only warns; nothing is modified. Run `npm run optimize:images -- <path>` to fix rasters via `sharp`. SVGs need manual cleanup (svgomg). Hook is wired up by `npm install` (the `prepare` script sets `core.hooksPath` to `.githooks`); if a clone predates this, run `npm install` again. Bypass with `git commit --no-verify` only when intentional.
 - **On-page SEO is test-enforced** - `tests/seo.test.js` (part of `npm test` / CI) checks every built page for `<html lang>`, exactly one `<h1>`, a non-empty meta description, an `og:url` whose host matches the canonical link (always use the `www.` host), and `<meta name="twitter:card" content="summary_large_image">` in the OG block. New pages must satisfy these. See `docs/development.md` (On-page SEO checks).
 - **Page heads are generated from pages.json** - every root page's `<head>` is just `{{> head-meta}}`; title, description, canonical, and OG/Twitter tags come from `assets/data/pages.json` via the partial. Do NOT hand-write `<title>`/`<meta>`/`<link>` tags in a page head (page-specific JSON-LD `<script>` or `<style>` after the partial is fine). Edit `partials/head-meta.html` to change head conventions, `pages.json` to change a page's metadata. `team/*.html` heads come from the `scripts/generate-team-cards.js` template instead. Enforced by `tests/pages-meta.test.js`.
 - **JSON-LD structured data is auto-generated** - `buildJsonLd()` in `scripts/lib/page-meta.js` emits Organization + WebSite on the homepage and a BreadcrumbList on every other indexable page; team cards get Person schema from the generator. Site-wide identity (name, logo, social `sameAs`, support email) lives in the `ORGANIZATION`/`WEBSITE` constants there. For richer per-page schema (Product, Article, extra FAQs) add an inline `<script type="application/ld+json">` after `{{> head-meta}}` in the page. Enforced by `tests/seo.test.js`.
 - **Fonts are self-hosted** - Poppins woff2 subsets live in `assets/fonts/poppins/` with `@font-face` blocks in `assets/style/input.css`; nothing loads from Google Fonts at runtime. To use a new weight or style, download its latin + latin-ext woff2 files and add matching `@font-face` blocks first (see `docs/development.md`, Fonts), otherwise the browser synthesizes it. `tests/font-subset.test.js` fails if markup uses an undeclared variant, a declared font file is missing, or anything references `fonts.googleapis.com` again.
+- **URLs are case-sensitive on Vercel** - `/pos` and `/POS` are different URLs, and a mixed-case filename means the lowercase form 404s. Every page filename must be all-lowercase. The two legacy mixed-case pages (`POS.html`, `d2c-eCommerce.html`) were renamed to lowercase with `permanent: true` redirects from the old casing in `vercel.json`; keep those redirects. Enforced by `tests/conventions.test.js` ("Page paths are lowercase").
 - **URL Redirects on File Rename** - Every time an AI or user renames a file (changing an existing URL), a corresponding redirect rule from the old URL to the new URL MUST be added to the `redirects` list in `vercel.json`. `tests/conventions.test.js` checks that every redirect destination resolves, that a redirect never shadows a live content page, and that meta-refresh redirect stubs are marked `"sitemap": false` in `pages.json`.
+- **Formatting is test-enforced** - `npm run prettier` before committing; `tests/format.test.js` fails the build on any file prettier would rewrite outside the grandfathered list. See `docs/development.md` (Automated guardrails).
+- **No shell-string child processes** - never `exec(cmd)` / `execSync(cmd)` / `shell: true`; use `execFileSync(cmd, [args])`, or `spawn(cmd, [args])` for a streaming child. `spawn` / `spawnSync` / `fork` with an args array are fine: they never involve a shell. Enforced by `tests/conventions.test.js`.
+- **npm scripts must be cross-platform** - no unix binaries or POSIX shell redirects/operators (`cp`, `rm`, stderr redirects, `||`, pipes, command substitution) in a `package.json` script value; use `node -e "..."` (double quotes outside, single inside) or a `scripts/*.js` file instead. Enforced by `tests/conventions.test.js`.
+- **Claude Code Stop hook** - `.claude/settings.json` runs `scripts/claude-stop-gate.js` after each agent turn, running the fast source-level test suites and blocking finish (exit 2) on failure. It is local-only; activate with `/hooks` or a restart after pulling. Bypass with `CLAUDE_STOP_GATE=off`. See `docs/development.md` (Automated guardrails).
 - **Content Security Policy** - `vercel.json` defines an enforced CSP (`Content-Security-Policy`; see `docs/architecture.md`). If you add a third-party script, style host, image host, or network call, add its origin to the matching `script-src`/`connect-src`/etc. directive, otherwise it is reported (and, once enforcement is on, blocked). Never add `'unsafe-inline'` to `script-src`; put JS in a module instead. `tests/vercel-security.test.js` guards the core directives.
 
 ## Documentation Rule
+
 **After every code change, update the relevant docs.** This is mandatory, not optional.
 
-| What changed | What to update |
-|---|---|
-| New page added | `docs/development.md` (Adding a New Page), `docs/architecture.md` (Key files) |
-| New build script or `package.json` script | `docs/architecture.md` (Deployment / Build process), `docs/development.md` (Commands) |
-| New `scripts/` file | `docs/development.md` (describe purpose and usage) |
-| New API route or cron | `docs/architecture.md` (Dynamic Blog Articles or Deployment) |
-| New gotcha or footgun discovered | `AGENTS.md` and `CLAUDE.md` (Gotchas & Landmines) - keep both files in sync |
-| SEO / sitemap changes | `docs/development.md` (Sitemap section) |
-| Architecture change | `docs/architecture.md` |
+| What changed                              | What to update                                                                                                                                                                                                                    |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| New page added                            | `docs/development.md` (Adding a New Page), `docs/architecture.md` (Key files)                                                                                                                                                     |
+| New build script or `package.json` script | `docs/architecture.md` (Deployment / Build process), `docs/development.md` (Commands)                                                                                                                                             |
+| New `scripts/` file                       | `docs/development.md` (describe purpose and usage)                                                                                                                                                                                |
+| New API route or cron                     | `docs/architecture.md` (Dynamic Blog Articles or Deployment)                                                                                                                                                                      |
+| New gotcha or footgun discovered          | First add an automated check under `tests/` that fails the build (see `tests/coverage-guard.test.js` for the pattern) and document it in `docs/`. Add prose to Gotchas & Landmines only when the rule cannot be machine-enforced. |
+| SEO / sitemap changes                     | `docs/development.md` (Sitemap section)                                                                                                                                                                                           |
+| Architecture change                       | `docs/architecture.md`                                                                                                                                                                                                            |
 
 If a doc section doesn't exist yet, add it. Never leave a feature undocumented.
 
 ## PR Checklist
+
 - Pages use `{{> header}}` and `{{> footer}}` partials
 - `npm run build` succeeds
 - `npm test` passes
@@ -82,6 +101,7 @@ If a doc section doesn't exist yet, add it. Never leave a feature undocumented.
 - Relevant docs updated (see Documentation Rule above)
 
 ## Detailed Docs
+
 - [`docs/architecture.md`](docs/architecture.md) - page structure, styling, JS patterns, component reuse, routing
 - [`docs/development.md`](docs/development.md) - adding pages, sliders, updating header/footer, blog articles, UI conventions
 - [`docs/coding-standards.md`](docs/coding-standards.md) - code quality, performance, accessibility, security

@@ -13,10 +13,17 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
+      # Deliberately no `cache: 'npm'`. That routes ~/.npm through the Actions
+      # cache service, which wins on ephemeral hosted runners and loses on
+      # ours: this runner is persistent (node itself resolves from its local
+      # tool cache), so ~/.npm already survives between runs. Restoring it
+      # pulled a 2.1 GB archive for 20m21s in front of an `npm ci` that takes
+      # 3s, and the archive only grows -- it snapshots every package version
+      # the runner has ever downloaded. Keep `node-version:`; the tool cache is
+      # local and costs about a second.
       - uses: actions/setup-node@v4
         with:
-          node-version: '24'
-          cache: 'npm'
+          node-version: "24"
       - run: npm ci
       - run: npm run build
       - run: npm test
@@ -31,3 +38,25 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+
+  # Proves the cross-platform rules the conventions suite enforces (no
+  # shell-string child processes, no unix binaries in npm scripts) actually
+  # hold on Windows. Unit suite only: e2e stays on the self-hosted Linux
+  # runner, which already has browsers. GitHub-hosted Windows minutes bill at
+  # 2x, so this is scoped to pull_request and does not run on every push.
+  windows:
+    if: github.event_name == 'pull_request'
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run build
+      # --no-install: fail loudly if npm ci did not provide vitest, rather
+      # than silently fetching an unpinned copy from the registry.
+      - run: npx --no-install vitest run
