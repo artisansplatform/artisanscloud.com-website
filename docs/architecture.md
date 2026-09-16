@@ -56,6 +56,7 @@ All HTML pages follow identical boilerplate:
 ## Navigation & Routing
 
 - **Clean URLs**: Vercel config sets `"cleanUrls": true` → pages accessible without `.html`
+- **Redirects**: `vercel.json` `redirects` are simulated by `devRoutingPlugin` in `vite.config.js` for both `npm run dev` and `npm run preview`, so `tests/e2e/redirects.spec.js` can request every source and assert the 301 and its destination for real
 - **Links**: Use root-relative paths: `/index`, `/unified-commerce/nexus`, `/data-intelligence`
 - **Active states**: Pages mark their nav link with `.active` class (manual per page)
 

@@ -14,6 +14,21 @@ const devRedirects = vercelConfig.redirects || [];
 function devRoutingPlugin() {
   return {
     name: "dev-routing",
+    // Preview serves the built dist/, so only the redirects are simulated
+    // there; clean URLs already exist as files. Lets the e2e suite request
+    // a vercel.json redirect and see the 301 it would get in production.
+    configurePreviewServer(server) {
+      server.middlewares.use((req, res, next) => {
+        const pathname = new URL(req.url, "http://localhost").pathname;
+        const redirect = devRedirects.find(
+          (r) =>
+            r.source === pathname || r.source === pathname.replace(/\/$/, ""),
+        );
+        if (!redirect) return next();
+        res.writeHead(301, { Location: redirect.destination });
+        res.end();
+      });
+    },
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         const url = new URL(

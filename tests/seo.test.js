@@ -142,5 +142,24 @@ describe("SEO invariants (per page)", () => {
             : "BreadcrumbList";
       expect(types, `${page} should declare a ${expected}`).toContain(expected);
     });
+
+    // pageName() strips the brand from the <title>; a breadcrumb still
+    // carrying it means a title shape the regex does not cover.
+    it("keeps the brand name out of breadcrumb page names", () => {
+      const { doc } = loadPage(page);
+      const leaked = [];
+      for (const block of doc.querySelectorAll(
+        'script[type="application/ld+json"]',
+      )) {
+        const parsed = JSON.parse(block.textContent);
+        for (const node of parsed["@graph"] ?? [parsed]) {
+          if (node["@type"] !== "BreadcrumbList") continue;
+          for (const item of node.itemListElement) {
+            if (/artisans cloud/i.test(item.name)) leaked.push(item.name);
+          }
+        }
+      }
+      expect(leaked, `${page} breadcrumb leaks the brand name`).toEqual([]);
+    });
   });
 });

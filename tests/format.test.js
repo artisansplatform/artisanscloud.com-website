@@ -66,6 +66,25 @@ describe("Formatting gate", () => {
     ).toEqual([]);
   });
 
+  it("keeps .prettierignore in sync with GRANDFATHERED", () => {
+    // .prettierignore lists the same files after its "Grandfathered" comment
+    // so "npm run prettier" leaves them alone. The two lists are maintained
+    // by hand; this is the check that they did not drift apart.
+    const ignore = fs.readFileSync(
+      path.join(rootDir, ".prettierignore"),
+      "utf-8",
+    );
+    const lines = ignore.split("\n").map((line) => line.trim());
+    const start = lines.findIndex((line) => line.startsWith("# Grandfathered"));
+    expect(start, ".prettierignore has no '# Grandfathered' section").not.toBe(
+      -1,
+    );
+    const ignored = lines
+      .slice(start)
+      .filter((line) => line && !line.startsWith("#"));
+    expect(ignored.sort()).toEqual([...GRANDFATHERED].sort());
+  });
+
   it("only shrinks the grandfathered list", async () => {
     // Checked via the prettier API (not the CLI) so .prettierignore, which
     // deliberately excludes these files from "npm run prettier", doesn't
