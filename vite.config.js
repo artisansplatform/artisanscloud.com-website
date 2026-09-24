@@ -11,9 +11,35 @@ const vercelConfig = JSON.parse(
 );
 const devRedirects = vercelConfig.redirects || [];
 
+// Answers a vercel.json redirect the way Vercel does: 308 for permanent
+// (Vercel's default), 307 otherwise, keeping the query string. Returns false
+// when no rule matches.
+function sendRedirect(req, res) {
+  const url = new URL(req.url, "http://localhost");
+  const pathname = url.pathname;
+  const redirect = devRedirects.find(
+    (r) => r.source === pathname || r.source === pathname.replace(/\/$/, ""),
+  );
+  if (!redirect) return false;
+  res.writeHead(redirect.permanent === false ? 307 : 308, {
+    Location: redirect.destination + url.search,
+  });
+  res.end();
+  return true;
+}
+
 function devRoutingPlugin() {
   return {
     name: "dev-routing",
+    // Preview serves the built dist/, so only the redirects are simulated
+    // there. Clean URLs need no rewrite: Vite's default MPA mode already maps
+    // /pos to dist/pos.html. Lets the e2e suite request a vercel.json
+    // redirect and see the status Vercel would send in production.
+    configurePreviewServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (!sendRedirect(req, res)) next();
+      });
+    },
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         const url = new URL(
@@ -23,15 +49,7 @@ function devRoutingPlugin() {
         const pathname = url.pathname;
 
         // 1. Simulate vercel.json redirects
-        const redirect = devRedirects.find(
-          (r) =>
-            r.source === pathname || r.source === pathname.replace(/\/$/, ""),
-        );
-        if (redirect) {
-          res.writeHead(301, { Location: redirect.destination });
-          res.end();
-          return;
-        }
+        if (sendRedirect(req, res)) return;
 
         // 2. Clean URLs: rewrite /path to /path.html if on disk
         if (
