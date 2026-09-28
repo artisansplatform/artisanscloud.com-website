@@ -578,20 +578,5 @@
   },
   "retail-platform": {
     "sitemap": false
-  },
-  "qms": {
-    "title": "QMS | Artisans Cloud",
-    "description": "Artisans QMS brings manufacturing quality management into one connected platform. Manage documents, inspections, FMEA, control plans, calibration, nonconformance and corrective actions as connected work.",
-    "keywords": "QMS, quality management system, manufacturing quality, APQP, FMEA, control plan, PPAP, inspection management, calibration, SPC, nonconformance, CAPA, 8D, Artisans Cloud",
-    "ogDescription": "One manufacturing quality management platform connecting requirements, risks, controls, evidence, people and decisions from planning to production.",
-    "ogCard": {
-      "title": "Artisans QMS",
-      "subtitle": "Manufacturing quality management as connected work"
-    },
-    "sitemap": {
-      "priority": "0.8",
-      "changefreq": "monthly",
-      "order": 25
-    }
   }
 }
