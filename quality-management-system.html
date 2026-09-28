@@ -110,64 +110,54 @@
               Keep the current requirement and the evidence together
             </h2>
           </div>
-          <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
-            <div
-              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full"
-            >
-              <div
-                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
-              >
-                <img
-                  src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg"
-                  class="h-1/2 transition-all ease-linear duration-300"
-                  alt="Document and record management icon"
-                  width="40"
-                  height="40"
-                  loading="lazy"
-                />
-              </div>
-              <div>
-                <div class="mb-2 text-heading t-h3">
-                  Document and record management
-                </div>
-                <p class="text-description t-body">
-                  Manage the review, approval, revision and distribution of
-                  quality documents, including drawings, specifications,
-                  procedures, work instructions, forms and customer
-                  requirements. Retain the records that show what was done, by
-                  whom and against which approved revision.
-                </p>
-              </div>
-            </div>
-            <div
-              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full"
-            >
-              <div
-                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
-              >
-                <img
-                  src="assets/image/icon/DataQuality-Trust-icon.svg"
-                  class="h-1/2 transition-all ease-linear duration-300"
-                  alt="Quality training and competence icon"
-                  width="40"
-                  height="40"
-                  loading="lazy"
-                />
-              </div>
-              <div>
-                <div class="mb-2 text-heading t-h3">
-                  Quality training and competence
-                </div>
-                <p class="text-description t-body">
-                  Assign role and process training, assess understanding and
-                  practical ability, and maintain an organisational skill
-                  matrix. See where employees are trained, assessed and
-                  qualified for specific operations, inspections and quality
-                  responsibilities. Completion of training and demonstrated
-                  competence remain distinct.
-                </p>
-              </div>
-            </div>
+          <div
+            class="fade-in overflow-x-auto rounded-2xl lg:rounded-[20px] border border-[#f2f2f2]"
+          >
+            <table class="w-full min-w-[600px]">
+              <thead>
+                <tr class="bg-heading">
+                  <th
+                    class="py-5 px-6 lg:px-8 text-left font-semibold text-white t-lead"
+                  >
+                    Current requirement
+                  </th>
+                  <th
+                    class="py-5 px-6 lg:px-8 text-left font-semibold text-white t-lead"
+                  >
+                    Evidence retained
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-[#f2f2f2]">
+                  <td class="py-4 px-6 lg:px-8 text-description t-body">
+                    <strong class="text-heading">Document control:</strong>
+                    Review, approve, revise and distribute drawings,
+                    specifications, procedures, work instructions, forms and
+                    customer requirements.
+                  </td>
+                  <td class="py-4 px-6 lg:px-8 text-description t-body">
+                    Retain records showing what was done, by whom and against
+                    which approved revision.
+                  </td>
+                </tr>
+                <tr class="bg-[#f6f8fb]">
+                  <td class="py-4 px-6 lg:px-8 text-description t-body">
+                    <strong class="text-heading"
+                      >Training and competence:</strong
+                    >
+                    Assign role and process training, with qualifications for
+                    specific operations, inspections and quality
+                    responsibilities.
+                  </td>
+                  <td class="py-4 px-6 lg:px-8 text-description t-body">
+                    Assess understanding and practical ability, and maintain an
+                    organisational skill matrix. Keep training completion
+                    distinct from demonstrated competence.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -318,11 +308,13 @@
           </h2>
 
           <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-[30px] gap-5 mt-10 lg:mt-16"
+            class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5 mt-10 lg:mt-16"
           >
-            <div class="fade-in text-center">
+            <div
+              class="fade-in flex items-start gap-4 rounded-2xl bg-[#f6f8fb] p-5 sm:p-6"
+            >
               <div
-                class="mb-5 mx-auto w-32 h-32 sm:w-36 sm:h-36 grid place-items-center rounded-2xl bg-light-sky"
+                class="w-16 h-16 sm:w-20 sm:h-20 shrink-0 grid place-items-center rounded-xl bg-light-sky"
               >
                 <img
                   src="assets/image/icon/target-icon.svg"
@@ -333,19 +325,21 @@
                   loading="lazy"
                 />
               </div>
-              <h3 class="mb-3 text-heading font-semibold text-lg lg:text-xl">
-                Inspection
-              </h3>
-              <p class="text-description t-body">
-                Plan and record incoming, in-process and final inspections
-                against defined requirements. Review results, exceptions and
-                reports with the relevant drawing and process context.
-              </p>
+              <div>
+                <h3 class="mb-2 text-heading t-h3">Inspection</h3>
+                <p class="text-description t-body">
+                  Plan and record incoming, in-process and final inspections
+                  against defined requirements. Review results, exceptions and
+                  reports with the relevant drawing and process context.
+                </p>
+              </div>
             </div>
 
-            <div class="fade-in text-center">
+            <div
+              class="fade-in flex items-start gap-4 rounded-2xl bg-[#f6f8fb] p-5 sm:p-6"
+            >
               <div
-                class="mb-5 mx-auto w-32 h-32 sm:w-36 sm:h-36 grid place-items-center rounded-2xl bg-light-green-box"
+                class="w-16 h-16 sm:w-20 sm:h-20 shrink-0 grid place-items-center rounded-xl bg-light-green-box"
               >
                 <img
                   src="assets/image/icon/DataQuality-Trust-icon.svg"
@@ -356,20 +350,24 @@
                   loading="lazy"
                 />
               </div>
-              <h3 class="mb-3 text-heading font-semibold text-lg lg:text-xl">
-                Calibration and MSA
-              </h3>
-              <p class="text-description t-body">
-                Manage equipment and gauge registers, calibration schedules,
-                internal and external calibration records, reminders and
-                reports. Use Measurement System Analysis to evaluate whether a
-                measurement process is suitable for its intended use.
-              </p>
+              <div>
+                <h3 class="mb-2 text-heading t-h3">Calibration and MSA</h3>
+                <p class="text-description t-body">
+                  Manage equipment and gauge registers, calibration schedules,
+                  internal and external calibration records, reminders and
+                  reports. Use Measurement System Analysis to evaluate whether a
+                  measurement process is suitable for its intended use.
+                  Calibration status and measurement system capability answer
+                  different questions; both matter.
+                </p>
+              </div>
             </div>
 
-            <div class="fade-in text-center">
+            <div
+              class="fade-in flex items-start gap-4 rounded-2xl bg-[#f6f8fb] p-5 sm:p-6"
+            >
               <div
-                class="mb-5 mx-auto w-32 h-32 sm:w-36 sm:h-36 grid place-items-center rounded-2xl bg-light-pink"
+                class="w-16 h-16 sm:w-20 sm:h-20 shrink-0 grid place-items-center rounded-xl bg-light-pink"
               >
                 <img
                   src="assets/image/icon/Predictive-icon.svg"
@@ -380,20 +378,22 @@
                   loading="lazy"
                 />
               </div>
-              <h3 class="mb-3 text-heading font-semibold text-lg lg:text-xl">
-                SPC
-              </h3>
-              <p class="text-description t-body">
-                Monitor process measurements over time to identify signals that
-                require investigation. Give quality and production teams the
-                information needed to respond before variation becomes a
-                repeated defect.
-              </p>
+              <div>
+                <h3 class="mb-2 text-heading t-h3">SPC</h3>
+                <p class="text-description t-body">
+                  Monitor process measurements over time to identify signals
+                  that require investigation. Give quality and production teams
+                  the information needed to respond before variation becomes a
+                  repeated defect.
+                </p>
+              </div>
             </div>
 
-            <div class="fade-in text-center">
+            <div
+              class="fade-in flex items-start gap-4 rounded-2xl bg-[#f6f8fb] p-5 sm:p-6"
+            >
               <div
-                class="mb-5 mx-auto w-32 h-32 sm:w-36 sm:h-36 grid place-items-center rounded-2xl bg-light-purple"
+                class="w-16 h-16 sm:w-20 sm:h-20 shrink-0 grid place-items-center rounded-xl bg-light-purple"
               >
                 <img
                   src="assets/image/icon/artchitecHeightlight-card-securityCompliance.svg"
@@ -404,14 +404,16 @@
                   loading="lazy"
                 />
               </div>
-              <h3 class="mb-3 text-heading font-semibold text-lg lg:text-xl">
-                Supplier quality and audits
-              </h3>
-              <p class="text-description t-body">
-                Plan supplier audits, document findings and track actions. Keep
-                supplier quality evidence accessible to the teams making
-                sourcing, incoming inspection and production decisions.
-              </p>
+              <div>
+                <h3 class="mb-2 text-heading t-h3">
+                  Supplier quality and audits
+                </h3>
+                <p class="text-description t-body">
+                  Plan supplier audits, document findings and track actions.
+                  Keep supplier quality evidence accessible to the teams making
+                  sourcing, incoming inspection and production decisions.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -558,7 +560,7 @@
             <div class="lg:gap-10 gap-8 text-center w-10/12">
               <div class="fade-in">
                 <div class="lg:mb-8 mb-5 text-white t-h2">
-                  Start with the work that <br />needs attention now
+                  Start with the work <br />that needs attention now
                 </div>
               </div>
               <div class="fade-in">
