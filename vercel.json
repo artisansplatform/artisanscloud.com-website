@@ -108,6 +108,11 @@
       "permanent": true
     },
     {
+      "source": "/qms",
+      "destination": "/quality-management-system",
+      "permanent": true
+    },
+    {
       "source": "/vault-knowledge-harvester",
       "destination": "/knowledge-harvester/vault",
       "permanent": true
