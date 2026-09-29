@@ -43,6 +43,8 @@ npm run add:card         # Add/update a team card: generates HTML + OG image (ru
 npm run check:images     # Flag staged or all assets/ images that exceed size thresholds
 npm run optimize:images  # Re-encode raster images in place via sharp (pass paths after --)
 npm run recolor:svgs     # Rewrite superseded brand hexes in assets/**/*.svg (--check to report only)
+npm run generate:blog    # Generate blog HTML pages from blog/*.md (also runs as build:blog)
+npm run sync:notion      # Fetch "Ready to Publish" articles from Notion and write blog/*.md
 ```
 
 ## Gotchas & Landmines

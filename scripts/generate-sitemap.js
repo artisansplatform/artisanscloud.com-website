@@ -47,6 +47,13 @@ function parseArgs() {
 const PAGES_META = loadPages();
 
 const DEFAULT_META = { priority: "0.6", changefreq: "monthly" };
+// Generated blog articles (blog/*.html) have no pages.json entry.
+const BLOG_META = { priority: "0.7", changefreq: "weekly" };
+
+function metaFor(page) {
+  if (page.startsWith("blog/")) return BLOG_META;
+  return PAGES_META[page.replace(".html", "")]?.sitemap ?? DEFAULT_META;
+}
 
 function pageToUrl(baseUrl, filename) {
   if (filename === "index.html") return `${baseUrl}/`;
@@ -62,8 +69,8 @@ function main() {
   const pages = contentPages()
     .filter((f) => PAGES_META[f.replace(".html", "")]?.sitemap !== false)
     .sort((a, b) => {
-      const metaA = PAGES_META[a.replace(".html", "")]?.sitemap ?? DEFAULT_META;
-      const metaB = PAGES_META[b.replace(".html", "")]?.sitemap ?? DEFAULT_META;
+      const metaA = metaFor(a);
+      const metaB = metaFor(b);
       // Pages without an explicit `order` (new pages not yet reviewed
       // editorially) sort after every page that has one.
       const orderA = metaA.order ?? Infinity;
@@ -73,8 +80,7 @@ function main() {
     });
 
   const urlEntries = pages.map((page) => {
-    const { priority, changefreq } =
-      PAGES_META[page.replace(".html", "")]?.sitemap ?? DEFAULT_META;
+    const { priority, changefreq } = metaFor(page);
     const loc = pageToUrl(baseUrl, page);
     return [
       "  <url>",
