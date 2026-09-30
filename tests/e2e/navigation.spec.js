@@ -200,13 +200,13 @@ test.describe("Navigation Tests", () => {
     test("footer nav link should be active on matching page", async ({
       page,
     }) => {
-      await page.goto("/unified-commerce/nexus", {
+      await page.goto("/about-us", {
         waitUntil: "domcontentloaded",
       });
 
-      // Footer "Unified Commerce" link should have the active class
+      // Footer "About Us" link should have the active class
       const footerActiveLink = page.locator(
-        'footer .flex.flex-col a.active[href="/unified-commerce/nexus"]',
+        'footer .flex.flex-col a.active[href="/about-us"]',
       );
       await expect(footerActiveLink).toHaveCount(1);
     });
