@@ -217,7 +217,7 @@ npm run update-fallback -- --url https://preview.example.com  # Fetch from custo
 ### How it works
 
 - `scripts/generate-sitemap.js` runs as `build:sitemap` (after Vite's `build:html`)
-- It discovers both root `*.html` pages and nested subdirectory pages (e.g., `enterprise-copilot/*.html`, `unified-commerce/*.html`, `role-play-agent/*.html`, `knowledge-harvester/*.html`) so they are included automatically
+- It discovers both root `*.html` pages and nested subdirectory pages (e.g., `enterprise-copilot/*.html`, `unified-commerce/*.html`, `role-play-agent/*.html`, `knowledge-management/*.html`) so they are included automatically
 - Excluded pages (`"sitemap": false` in `pages.json`): `404.html`, `blog-detail.html`, `request-demo.html`, `thank-you.html`, `retail-platform.html`
 - Entries are written in each page's editorial `sitemap.order` (see below), matching `task.md`'s reference sequence exactly. `<url>` order carries no crawl weight on its own; this is purely for human readability
 - `public/robots.txt` is a static file (Vite passthrough); it references the sitemap URL and is deployed to `dist/robots.txt` unchanged
