@@ -181,22 +181,6 @@ test.describe("Navigation Tests", () => {
       await expect(activeLink).toHaveCount(1);
     });
 
-    test("solutions dropdown toggle should be active on a solution sub-page", async ({
-      page,
-    }) => {
-      await page.goto("/image-editing", { waitUntil: "domcontentloaded" });
-
-      // The Solutions dropdown toggle should be active
-      const toggle = page.locator("header .dropdown-toggle.active");
-      await expect(toggle).toHaveCount(1);
-
-      // The matching dropdown item should also be active
-      const dropdownItem = page.locator(
-        'header .dropdown-item.active[href="/image-editing"]',
-      );
-      await expect(dropdownItem).toHaveCount(1);
-    });
-
     test("footer nav link should be active on matching page", async ({
       page,
     }) => {
@@ -370,20 +354,10 @@ test.describe("Navigation Tests", () => {
     });
   });
 
+  // The Solutions dropdown is commented out in partials/header.html, so its
+  // active-state and link tests were removed. Restore them with the dropdown.
   test.describe("Retail AI Dropdown Links", () => {
     test.use({ viewport: { width: 1280, height: 800 } });
-
-    test("desktop dropdown should contain Personalized Promotions link", async ({
-      page,
-    }) => {
-      await page.goto("/", { waitUntil: "domcontentloaded" });
-
-      const link = page
-        .locator('header .dropdown-menu a[href="/personalized-promotions"]')
-        .first();
-      await expect(link).toHaveCount(1);
-      await expect(link).toHaveText("Personalized Promotions");
-    });
 
     test("Personalized Promotions page should load and show hero heading", async ({
       page,
@@ -394,22 +368,6 @@ test.describe("Navigation Tests", () => {
 
       const heading = page.locator("#heroHeading");
       await expect(heading).toBeVisible();
-    });
-
-    test("solutions dropdown toggle should be active on personalized-promotions page", async ({
-      page,
-    }) => {
-      await page.goto("/personalized-promotions", {
-        waitUntil: "domcontentloaded",
-      });
-
-      const toggle = page.locator("header .dropdown-toggle.active");
-      await expect(toggle).toHaveCount(1);
-
-      const dropdownItem = page.locator(
-        'header .dropdown-item.active[href="/personalized-promotions"]',
-      );
-      await expect(dropdownItem).toHaveCount(1);
     });
   });
 
