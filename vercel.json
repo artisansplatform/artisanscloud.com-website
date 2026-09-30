@@ -88,8 +88,13 @@
       "permanent": true
     },
     {
+      "source": "/knowledge-harvester/vault",
+      "destination": "/knowledge-management/vault",
+      "permanent": true
+    },
+    {
       "source": "/knowledge-harvester",
-      "destination": "/knowledge-harvester/vault",
+      "destination": "/knowledge-management/vault",
       "permanent": true
     },
     {
@@ -114,7 +119,7 @@
     },
     {
       "source": "/vault-knowledge-harvester",
-      "destination": "/knowledge-harvester/vault",
+      "destination": "/knowledge-management/vault",
       "permanent": true
     }
   ],
