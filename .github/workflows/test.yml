@@ -19,11 +19,11 @@ jobs:
       # tool cache), so ~/.npm already survives between runs. Restoring it
       # pulled a 2.1 GB archive for 20m21s in front of an `npm ci` that takes
       # 3s, and the archive only grows -- it snapshots every package version
-      # the runner has ever downloaded. Keep `node-version:`; the tool cache is
+      # the runner has ever downloaded. Keep `node-version-file:`; the tool cache is
       # local and costs about a second.
       - uses: actions/setup-node@v4
         with:
-          node-version: "24"
+          node-version-file: "package.json"
       - run: npm ci
       - run: npm run build
       - run: npm test
@@ -53,7 +53,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "24"
+          node-version-file: "package.json"
           cache: "npm"
       - run: npm ci
       - run: npm run build

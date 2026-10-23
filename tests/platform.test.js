@@ -165,3 +165,32 @@ describe("Glob call sites", () => {
     }
   });
 });
+
+// package.json "engines" is the single place the Node version lives: Vercel
+// and npm read it directly, and CI loads it via node-version-file. The
+// lockfile copy is written by npm, so it only drifts if someone hand-edits it.
+describe("Node version pin", () => {
+  const read = (file) =>
+    JSON.parse(fs.readFileSync(path.join(rootDir, file), "utf-8"));
+  const engine = read("package.json").engines?.node;
+
+  it("package.json pins engines.node to a major", () => {
+    expect(engine).toMatch(/^\d+\.x$/);
+  });
+
+  it("the lockfile matches package.json", () => {
+    expect(read("package-lock.json").packages[""].engines?.node).toBe(engine);
+  });
+
+  it("every CI setup-node step reads package.json instead of hardcoding a version", () => {
+    const workflow = fs.readFileSync(
+      path.join(rootDir, ".github/workflows/test.yml"),
+      "utf-8",
+    );
+    expect(workflow).not.toMatch(/^\s*node-version:/m);
+    const setups = workflow.match(/uses: actions\/setup-node/g) ?? [];
+    const pins = workflow.match(/node-version-file: "package\.json"/g) ?? [];
+    expect(setups.length).toBeGreaterThan(0);
+    expect(pins.length).toBe(setups.length);
+  });
+});

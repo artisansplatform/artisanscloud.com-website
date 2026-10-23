@@ -286,6 +286,7 @@ Key directives and why each origin is allowed:
 ## Deployment
 
 - **Platform**: Vercel
+- **Node version**: 24, from `engines.node` (`24.x`) in `package.json`, which takes precedence over the Vercel dashboard setting. CI reads the same field. See `docs/development.md` (Local Development)
 - **Config**: `vercel.json` - specifies `dist/` as output directory, clean URLs, security headers (including CSP), cron jobs
 - **Build process**: `npm install` → `npm run build` (compiles CSS + processes Handlebars templates + generates sitemap + copies OG images) → deploys `dist/`
 - **Auto-deploy**: Main branch pushes trigger automatic deployment
