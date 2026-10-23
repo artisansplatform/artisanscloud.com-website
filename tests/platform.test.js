@@ -165,3 +165,20 @@ describe("Glob call sites", () => {
     }
   });
 });
+
+// package.json "engines" is the single place the Node version lives: Vercel
+// and npm read it directly. The lockfile copy is written by npm, so it only
+// drifts if someone hand-edits it.
+describe("Node version pin", () => {
+  const read = (file) =>
+    JSON.parse(fs.readFileSync(path.join(rootDir, file), "utf-8"));
+  const engine = read("package.json").engines?.node;
+
+  it("package.json pins engines.node to a major", () => {
+    expect(engine).toMatch(/^\d+\.x$/);
+  });
+
+  it("the lockfile matches package.json", () => {
+    expect(read("package-lock.json").packages[""].engines?.node).toBe(engine);
+  });
+});
