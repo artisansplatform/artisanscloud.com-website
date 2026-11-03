@@ -56,7 +56,7 @@
             >
               <a
                 href="/enterprise-ai"
-                class="w-fit rounded-[40px] px-6 py-3.5 flex items-center justify-center gap-2 font-semibold text-base md:text-base leading-[100%] bg-primary text-white transition-all duration-300 ease-in-out hover:bg-primary-light active:scale-95"
+                class="w-fit rounded-[40px] px-6 py-3.5 flex items-center justify-center gap-2 font-bold text-sm md:text-base leading-[100%] bg-primary text-white transition-all duration-300 ease-in-out hover:bg-primary-light active:scale-95"
               >
                 Explore the Platform
                 <svg
@@ -77,7 +77,7 @@
               </a>
               <a
                 href="#our-offerings"
-                class="w-fit rounded-[40px] px-6 py-3.5 flex items-center justify-center gap-2 font-semibold text-base md:text-base leading-[100%] text-heading bg-white border border-[#e2e8f0] transition-all duration-300 ease-in-out hover:bg-heading hover:text-white active:scale-95"
+                class="w-fit rounded-[40px] px-6 py-3.5 flex items-center justify-center gap-2 font-bold text-sm md:text-base leading-[100%] text-heading bg-white border border-[#e2e8f0] transition-all duration-300 ease-in-out hover:bg-heading hover:text-white active:scale-95"
               >
                 Explore Our Solutions
                 <svg
@@ -535,7 +535,7 @@
           </ul>
           <a
             href="/knowledge-management/vault"
-            class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-semibold text-base leading-[100%] transition-all duration-300 ease-in-out active:scale-95 bg-primary text-white hover:bg-primary-light"
+            class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-[100%] transition-all duration-300 ease-in-out active:scale-95 bg-primary text-white hover:bg-primary-light"
             >Explore the Platform &rarr;</a
           >
         </div>
@@ -545,7 +545,7 @@
           <div class="flex flex-col gap-4">
             <div class="p-4 lg:p-5 rounded-3xl bg-white">
               <p
-                class="mb-1 text-description font-semibold uppercase tracking-wider t-caption"
+                class="mb-1 text-description uppercase tracking-wider t-caption"
               >
                 Documents record
               </p>
@@ -553,7 +553,7 @@
             </div>
             <div class="p-4 lg:p-5 rounded-3xl bg-white">
               <p
-                class="mb-1 text-description font-semibold uppercase tracking-wider t-caption"
+                class="mb-1 text-description uppercase tracking-wider t-caption"
               >
                 People hold
               </p>
@@ -727,39 +727,62 @@
       </div>
     </section>
 
-    <!----- Deployment and Demo Sec ----->
-    <section class="lg:py-[70px] md:py-16 py-10">
+    <!----- Built around your environment (What We Believe design) ----->
+    <section class="lg:py-20 sm:py-16 py-10">
       <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-[30px]">
-          <div
-            class="fade-in p-6 lg:p-10 rounded-2xl lg:rounded-[30px] bg-[#f6f8fb] border border-[#f2f2f2]"
+        <div class="text-center mb-10 lg:mb-[50px]">
+          <h2 class="mb-3 text-heading t-h2">Built around your environment</h2>
+        </div>
+        <div class="fade-in max-w-[860px] w-full mx-auto">
+          <blockquote
+            class="relative p-6 lg:p-10 rounded-2xl lg:rounded-[30px] bg-[#f6f8fb] border-s-4 border-primary"
           >
-            <h2 class="mb-4 text-heading t-h2-sm">
-              Built around your environment
-            </h2>
-            <p class="text-description t-body">
+            <p class="text-heading t-lead">
               Cloud and private deployment options with integrations and access
               requirements agreed for the selected offering.
             </p>
-          </div>
-          <div
-            class="fade-in flex flex-col items-start p-6 lg:p-10 rounded-2xl lg:rounded-[30px] bg-heading"
-          >
-            <h2 class="mb-4 text-white t-h2-sm">
-              See the right product for your team
-            </h2>
-            <p class="mb-6 text-white/70 t-body">
-              Tell us what you need to improve. We will demonstrate the relevant
-              product and discuss where to start.
-            </p>
-            <a
-              href="/request-demo"
-              class="mt-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-semibold text-base leading-[100%] transition-all duration-300 ease-in-out active:scale-95 bg-primary text-white hover:bg-primary-light"
-              >Request a Demo</a
-            >
-          </div>
+          </blockquote>
         </div>
       </div>
+    </section>
+
+    <!----- See the right product for your team (CTA banner design) ----->
+    <section
+      class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/artisanscloud-cta-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover"
+    >
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+        <div class="fade-in flex flex-col items-center text-center">
+          <h2 class="lg:mb-4 mb-3 t-h2 text-white max-w-[760px]">
+            See the right product for your team
+          </h2>
+          <p class="text-white/70 t-body max-w-[620px]">
+            Tell us what you need to improve. We will demonstrate the relevant
+            product and discuss where to start.
+          </p>
+          <a
+            href="/request-demo"
+            class="lg:mt-[20px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+            >Request a Demo</a
+          >
+        </div>
+      </div>
+
+      <img
+        src="assets/image/icon/ctaBanner-shape.png"
+        class="animate-pulse absolute start-0 bottom-0 pointer-none select-none"
+        alt=""
+        width="150"
+        height="150"
+        loading="lazy"
+      />
+      <img
+        src="assets/image/icon/ctaBanner-shape2.png"
+        class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
+        alt=""
+        width="150"
+        height="150"
+        loading="lazy"
+      />
     </section>
 
     <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
@@ -783,7 +806,7 @@
 
           <a
             href="/articles-and-resources"
-            class="mt-4 lg:mt-0 lg:ms-auto w-fit h-fit rounded-[40px] justify-center text-center font-bold text-base md:text-base leading-[100%] text-heading relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 bg-white border border-[#d8d8d8] flex items-center gap-2 py-[13px] ps-6 pe-4 group hover:bg-heading hover:text-white"
+            class="mt-4 lg:mt-0 lg:ms-auto w-fit h-fit rounded-[40px] justify-center text-center font-bold text-sm md:text-base leading-[100%] text-heading relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 bg-white border border-[#d8d8d8] flex items-center gap-2 py-[13px] ps-6 pe-4 group hover:bg-heading hover:text-white"
           >
             All Insights
             <svg
