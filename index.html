@@ -727,62 +727,83 @@
       </div>
     </section>
 
-    <!----- Built around your environment (What We Believe design) ----->
+    <!----- Built around your environment ----->
     <section class="lg:py-20 sm:py-16 py-10">
       <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="text-center mb-10 lg:mb-[50px]">
-          <h2 class="mb-3 text-heading t-h2">Built around your environment</h2>
-        </div>
-        <div class="fade-in max-w-[860px] w-full mx-auto">
-          <blockquote
-            class="relative p-6 lg:p-10 rounded-2xl lg:rounded-[30px] bg-[#f6f8fb] border-s-4 border-primary"
-          >
-            <p class="text-heading t-lead">
+        <div
+          class="fade-in grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center gap-8 lg:gap-12 p-6 sm:p-8 lg:p-11 rounded-3xl lg:rounded-[30px] bg-[#15122b]"
+        >
+          <div class="max-w-[520px]">
+            <h2 class="mb-4 text-white t-h2">Built around your environment</h2>
+            <p class="text-white/70 t-body">
               Cloud and private deployment options with integrations and access
               requirements agreed for the selected offering.
             </p>
-          </blockquote>
+          </div>
+          <div class="grid grid-cols-2 gap-4 lg:w-[340px]">
+            <div
+              class="flex flex-col justify-between gap-6 min-h-[100px] p-4 rounded-2xl bg-primary/20 border border-primary/30"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+                class="text-primary"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6.5 19a4.5 4.5 0 01-.4-8.98A6 6 0 0117.6 8.5 5 5 0 0117 19H6.5z"
+                />
+              </svg>
+              <p class="text-white font-semibold t-body">Cloud</p>
+            </div>
+            <div
+              class="flex flex-col justify-between gap-6 min-h-[100px] p-4 rounded-2xl bg-primary/20 border border-primary/30"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+                class="text-primary"
+                aria-hidden="true"
+              >
+                <rect x="5" y="11" width="14" height="9" rx="2" />
+                <path stroke-linecap="round" d="M8 11V8a4 4 0 118 0v3" />
+              </svg>
+              <p class="text-white font-semibold t-body">Private deployment</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!----- See the right product for your team (CTA banner design) ----->
-    <section
-      class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/artisanscloud-cta-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover"
-    >
-      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
-        <div class="fade-in flex flex-col items-center text-center">
-          <h2 class="lg:mb-4 mb-3 t-h2 text-white max-w-[760px]">
-            See the right product for your team
-          </h2>
-          <p class="text-white/70 t-body max-w-[620px]">
+    <!----- See the right product for your team (centered text CTA, from about-us) ----->
+    <section class="lg:py-[100px] sm:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in text-center max-w-[820px] mx-auto">
+          <h2 class="lg:mb-8 mb-5 t-h2">See the right product for your team</h2>
+          <p class="lg:mb-4 mb-3 text-description t-body">
             Tell us what you need to improve. We will demonstrate the relevant
             product and discuss where to start.
           </p>
           <a
             href="/request-demo"
-            class="lg:mt-[20px] sm:mt-6 mt-4 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
-            >Request a Demo</a
+            class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light mx-auto mt-6"
           >
+            Request a Demo
+          </a>
         </div>
       </div>
-
-      <img
-        src="assets/image/icon/ctaBanner-shape.png"
-        class="animate-pulse absolute start-0 bottom-0 pointer-none select-none"
-        alt=""
-        width="150"
-        height="150"
-        loading="lazy"
-      />
-      <img
-        src="assets/image/icon/ctaBanner-shape2.png"
-        class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
-        alt=""
-        width="150"
-        height="150"
-        loading="lazy"
-      />
     </section>
 
     <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
