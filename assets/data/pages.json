@@ -67,10 +67,10 @@
   "about-us": {
     "title": "About Artisans Cloud | Enterprise AI Platform Company",
     "breadcrumb": "About Us",
-    "description": "Meet Artisans Cloud, the company behind Vault, Arena, Forge, and Nexus. Learn about our founders and our purpose of helping organizations learn from experience.",
+    "description": "Meet Artisans Cloud, the company behind Vault, Arena, Forge, and Nexus. Learn about our founders and our purpose of helping organisations learn from experience.",
     "keywords": "About Artisans Cloud, Intelligent Enterprise, Enterprise Platform, Workforce Readiness, Knowledge Intelligence, Decision Support, Enterprise Execution, Artisans Cloud",
     "ogTitle": "About Artisans Cloud | Enterprise AI Platform Company",
-    "ogDescription": "Meet Artisans Cloud, the company behind Vault, Arena, Forge, and Nexus. Learn about our founders and our purpose of helping organizations learn from experience.",
+    "ogDescription": "Meet Artisans Cloud, the company behind Vault, Arena, Forge, and Nexus. Learn about our founders and our purpose of helping organisations learn from experience.",
     "ogCard": {
       "title": "About Artisans Cloud",
       "subtitle": "Enterprise AI Platform Company"
@@ -207,7 +207,7 @@
   },
   "data-intelligence": {
     "title": "Data Intelligence | Artisans Cloud",
-    "description": "Connect fragmented enterprise data into a unified intelligence foundation. Artisans Cloud helps organizations link systems, create context and enable better decisions, operational visibility and enterprise AI.",
+    "description": "Connect fragmented enterprise data into a unified intelligence foundation. Artisans Cloud helps organisations link systems, create context and enable better decisions, operational visibility and enterprise AI.",
     "keywords": "data intelligence, enterprise AI, business intelligence, connected intelligence, enterprise data foundation, data analytics, knowledge discovery, Artisans Cloud",
     "ogCard": {
       "title": "Data Intelligence",
@@ -279,10 +279,10 @@
   },
   "enterprise-ai": {
     "title": "Enterprise AI | Artisans Cloud",
-    "description": "Purpose-built AI solutions that help organizations improve workforce readiness, enterprise knowledge and operational decision support. Practical systems for how work gets done, every day.",
+    "description": "Purpose-built AI solutions that help organisations improve workforce readiness, enterprise knowledge and operational decision support. Practical systems for how work gets done, every day.",
     "keywords": "Enterprise AI, Workforce Readiness, Knowledge Intelligence, Decision Support, Arena, Vault, Lumen, Artisans Cloud",
     "ogTitle": "Enterprise AI Systems for Modern Enterprise Operations | Artisans Cloud",
-    "ogDescription": "Purpose-built solutions that help organizations improve workforce readiness, enterprise knowledge and operational decision support.",
+    "ogDescription": "Purpose-built solutions that help organisations improve workforce readiness, enterprise knowledge and operational decision support.",
     "ogCard": {
       "title": "Enterprise AI",
       "subtitle": "Workforce readiness, knowledge and decision support"
@@ -323,12 +323,12 @@
     }
   },
   "index": {
-    "title": "Artisans Cloud | Enterprise AI and Organizational Memory",
+    "title": "Artisans Cloud | Enterprise AI and Organisational Memory",
     "description": "Capture employee experience with Vault. Explore Artisans Cloud applications for AI role-play, manufacturing quality, and unified commerce.",
     "keywords": "Intelligent Enterprise, Digital Transformation, AI in Business, Enterprise Automation, Predictive Analytics, Unified Data Platform, Cloud Intelligence, Artisans Cloud",
     "ogDescription": "Transform your enterprise into an intelligent, adaptive system with Artisans Cloud. Accelerate growth through AI, automation, and unified business intelligence.",
     "ogCard": {
-      "title": "Organizations That Get\nSmarter With Experience",
+      "title": "Organisations That Get\nSmarter With Experience",
       "subtitle": "Enterprise AI Platform | Artisans Cloud"
     },
     "sitemap": {
@@ -549,11 +549,11 @@
   "knowledge-management/vault": {
     "title": "Vault | Enterprise Knowledge Management | Artisans Cloud",
     "description": "Capture employee expertise and connect it with business knowledge. Vault preserves experience for handovers, onboarding, and everyday work.",
-    "keywords": "Vault, enterprise knowledge intelligence, knowledge management, knowledge continuity, organizational memory, digital experts, knowledge twins, workforce readiness, Artisans Cloud",
+    "keywords": "Vault, enterprise knowledge intelligence, knowledge management, knowledge continuity, organisational memory, digital experts, knowledge twins, workforce readiness, Artisans Cloud",
     "ogTitle": "Vault | Enterprise Knowledge Management | Artisans Cloud",
     "ogDescription": "Capture employee expertise and connect it with business knowledge. Vault preserves experience for handovers, onboarding, and everyday work.",
     "ogCard": {
-      "title": "Vault\nOrganizational Brain",
+      "title": "Vault\nOrganisational Memory",
       "subtitle": "Keep the experience behind your business"
     },
     "sitemap": {
