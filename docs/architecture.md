@@ -38,6 +38,7 @@ All HTML pages follow identical boilerplate:
 - **Dropdown menus**: `.tw-dropdown` + `.dropdown-toggle` + `.dropdown-menu` with click-outside closing
 - **Mobile nav**: Menu toggle with overlay (uses `translate-x-full`, `overflow-hidden` states)
 - **Button ripple**: Click animation on `.btn` elements
+- **Homepage hero core**: `assets/script/modules/hero-core.js` renders the dark-theme WebGL memory core in `#heroGL` (index.html) with `three` (npm, lazy `import()` so only the homepage downloads it). Satellite labels link to Nexus, Arena and Forge; colors come from the brand CSS tokens. Falls back to the CSS gradient when WebGL is unavailable
 - **Swiper sliders**: Multiple instances (`.keyCapabilitySlider`, `.ModulesBusinessImpactSlider`, `.useCasesSlider`, etc.)
 - **Lenis smooth scroll**: Auto-initialized if library available
 - **Blog articles**: Dynamic rendering from API/fallback data (`blog-articles.js`)

@@ -11,6 +11,7 @@ import { initCounters } from "./modules/counter.js";
 import { initScrollAnimations } from "./modules/animations.js";
 import { initCursorEffects } from "./modules/cursor.js";
 import { initHeroAnimation } from "./modules/hero.js";
+import { initHeroCore } from "./modules/hero-core.js";
 import { initFooterEffects } from "./modules/footer.js";
 import { initMultiSelect } from "./modules/multi-select.js";
 import { initTabs } from "./modules/tabs.js";
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initScrollAnimations();
   initCursorEffects();
   initHeroAnimation();
+  initHeroCore();
   initFooterEffects();
   initTabs();
   initCardToggle();

@@ -448,3 +448,89 @@ body {
     animation: float-slower 9s ease-in-out infinite;
   }
 }
+
+/* Homepage hero: WebGL memory core (assets/script/modules/hero-core.js) */
+@layer components {
+  .heroCore {
+    height: clamp(680px, 92vh, 880px);
+    background:
+      radial-gradient(
+        900px 600px at 70% 50%,
+        rgb(124 92 255 / 0.22),
+        transparent 65%
+      ),
+      radial-gradient(
+        700px 500px at 10% 90%,
+        rgb(46 211 230 / 0.08),
+        transparent 60%
+      ),
+      #06051a;
+  }
+  .heroCore-copy {
+    position: absolute;
+    left: 50%;
+    bottom: 48px;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+  }
+  @media (min-width: 1024px) {
+    .heroCore-copy {
+      left: max(48px, calc(50% - 560px));
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-46%);
+      width: auto;
+    }
+  }
+  .heroCore-grad {
+    background: linear-gradient(
+      100deg,
+      var(--color-sky),
+      var(--color-primary) 45%,
+      var(--color-pink)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .heroCore-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9px;
+  }
+  .hero-sat {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 13px 7px 8px;
+    border-radius: 99px;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    color: #efebff;
+    background: rgb(14 11 44 / 0.72);
+    border: 1px solid rgb(167 139 250 / 0.16);
+    backdrop-filter: blur(8px);
+    pointer-events: auto;
+    transition:
+      border-color 0.2s,
+      background 0.2s;
+  }
+  .hero-sat:hover {
+    border-color: var(--c);
+    background: rgb(30 24 80 / 0.85);
+  }
+  .hero-sat i {
+    width: 10px;
+    height: 10px;
+    border-radius: 9px;
+    background: var(--c);
+    box-shadow: 0 0 12px var(--c);
+  }
+  .hero-sat small {
+    color: #a49fc6;
+    font-size: 11.5px;
+  }
+}
