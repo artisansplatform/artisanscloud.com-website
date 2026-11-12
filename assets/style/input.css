@@ -441,6 +441,176 @@ body {
       transform: translateY(8px) rotate(-0.5deg);
     }
   }
+  /* Forge hero: quality lifecycle loop. Pure CSS: the dashes flow around the
+     ring and each stage lights up in turn (4 stages x 2s). */
+  .forgeHero {
+    container-type: inline-size;
+  }
+  .forgeHero-text {
+    font-size: max(2cqw, 10px);
+    line-height: 1.3;
+  }
+  .forgeHero-stage b,
+  .forgeHero-title {
+    font-size: max(2.6cqw, 12px);
+  }
+  .forgeHero-flow {
+    animation: forge-flow 1.6s linear infinite;
+  }
+  @keyframes forge-flow {
+    to {
+      stroke-dashoffset: -8;
+    }
+  }
+  .forgeHero-core {
+    animation: forge-core 3s ease-in-out infinite;
+  }
+  @keyframes forge-core {
+    0%,
+    100% {
+      box-shadow: 0 0 40px -10px rgb(245 158 11 / 0.35);
+    }
+    50% {
+      box-shadow: 0 0 70px 0 rgb(245 158 11 / 0.55);
+    }
+  }
+  .forgeHero-stage {
+    animation: forge-stage 8s ease-in-out infinite;
+  }
+  .forgeHero-s2 {
+    animation-delay: 2s;
+  }
+  .forgeHero-s3 {
+    animation-delay: 4s;
+  }
+  .forgeHero-s4 {
+    animation-delay: 6s;
+  }
+  @keyframes forge-stage {
+    0%,
+    25%,
+    100% {
+      border-color: rgb(255 255 255 / 0.1);
+      box-shadow: none;
+      scale: 1;
+    }
+    8%,
+    17% {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 40px -6px var(--color-primary);
+      scale: 1.06;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .forgeHero-flow,
+    .forgeHero-core,
+    .forgeHero-stage {
+      animation: none;
+    }
+  }
+
+  /* Nexus hero: reuses the .forgeHero ring styles. Channels light up in
+     turn (6 x 1.5s) and the Nexus rows flash as each one syncs. */
+  .nexusHero-node {
+    animation: forge-stage 9s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 1.5s);
+  }
+  .nexusHero-row b {
+    animation: nexus-sync 6s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 1.5s);
+  }
+  @keyframes nexus-sync {
+    0%,
+    30%,
+    100% {
+      color: var(--color-primary);
+    }
+    10%,
+    20% {
+      color: var(--color-sky);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nexusHero-node,
+    .nexusHero-row b {
+      animation: none;
+    }
+  }
+
+  /* Arena hero: live role-play scene. assets/script/modules/arena-hero.js
+     toggles .is-on on messages and .is-scored on #arenaHero to play it. */
+  .arenaHero-float {
+    animation: float-slow 7s ease-in-out infinite;
+  }
+  .arenaHero-float-alt {
+    animation-name: float-slower;
+  }
+  .arenaHero-orb {
+    animation: arena-orb 2.4s ease-in-out infinite;
+  }
+  @keyframes arena-orb {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgb(247 77 221 / 0.45);
+    }
+    50% {
+      box-shadow: 0 0 0 14px rgb(247 77 221 / 0);
+    }
+  }
+  .arenaHero-msg {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+  .arenaHero-msg.is-on {
+    opacity: 1;
+    transform: none;
+  }
+  .arenaHero-ring {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    transition: stroke-dashoffset 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .arenaHero-bar {
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .is-scored .arenaHero-ring {
+    stroke-dashoffset: 22;
+  }
+  .is-scored .arenaHero-bar {
+    width: var(--w);
+  }
+  .arenaHero-typing::after {
+    content: "...";
+    animation: arena-typing 1.2s steps(4) infinite;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    width: 0;
+  }
+  @keyframes arena-typing {
+    to {
+      width: 1.2em;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .arenaHero-float,
+    .arenaHero-orb,
+    .arenaHero-typing::after {
+      animation: none;
+    }
+  }
+  .animate-float-hero {
+    animation: float-slow 6s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float-hero {
+      animation: none;
+    }
+  }
   .animate-float-slow {
     animation: float-slow 7s ease-in-out infinite;
   }
@@ -453,6 +623,10 @@ body {
 @layer components {
   .heroCore {
     height: clamp(680px, 92vh, 880px);
+  }
+  /* Dark hero background, shared by the homepage, Vault and Arena heroes */
+  .heroCore,
+  .heroDark {
     background:
       radial-gradient(
         900px 600px at 70% 50%,

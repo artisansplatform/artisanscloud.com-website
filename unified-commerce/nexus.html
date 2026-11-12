@@ -62,114 +62,296 @@
     {{> header}}
 
     <!----- Hero Banner ----->
-    <section class="w-full h-full p-4 lg:p-5">
+    <section class="w-full p-4 lg:p-5">
       <div
-        class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] flex items-center justify-center h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/retail-plateform/artisanscloud-banner-bg.webp')] bg-no-repeat bg-cover"
+        class="heroDark rounded-2xl lg:rounded-[30px] overflow-hidden pt-[clamp(7rem,16.667vw-5rem,7.5rem)] pb-10 lg:pb-16 lg:min-h-[768px] flex items-center"
       >
-        <div class="pt-5 lg:pt-[70px] pb-10 lg:pb-[62px] w-full">
-          <div class="fade-in max-w-[1400px] w-full mx-auto">
+        <div
+          class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto grid lg:grid-cols-[5fr_7fr] gap-8 lg:gap-10 items-center"
+        >
+          <div class="text-center lg:text-left">
             <div
-              class="fade-in flex flex-col lg:flex-row justify-center w-full lg:gap-x-6 xl:gap-x-12"
+              class="mb-3 sm:mb-5 font-semibold t-caption uppercase text-primary"
             >
-              <div
-                class="flex lg:flex-col justify-between gap-x-4 w-full lg:w-fit"
+              Nexus | Enterprise Commerce Cloud
+            </div>
+            <h1 id="heroHeading" class="mb-4 text-white t-display">
+              Run stores and online channels from one platform
+            </h1>
+            <div id="heroDec" class="flex flex-col items-center lg:items-start">
+              <p class="mb-3 max-w-[560px] text-[#a49fc6] t-lead">
+                Nexus connects inventory, orders, customers and promotions
+                across your retail business.
+              </p>
+              <p class="max-w-[560px] text-[#a49fc6] t-lead">
+                This unified commerce foundation supports our move toward
+                AI-assisted decisions and autonomous operations.
+              </p>
+              <a
+                href="/request-demo"
+                class="mt-6 lg:mt-8 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 bg-primary text-white hover:bg-primary-light"
+                >Book a Nexus Demo</a
               >
-                <div class="w-fit h-fit lg:ms-[clamp(24px,4.9vw,125px)]">
-                  <img
-                    src="/assets/image/retail-plateform/artisanscloud-banner-subg-1.webp"
-                    alt="Retail platform dashboard"
-                    width="200"
-                    height="150"
-                    class="rounded-[10px] lg:rounded-[20px] shadow-[-10px_14px_94px_0px_#CBD4F6]"
-                  />
-                </div>
-                <div
-                  class="w-fit h-fit lg:me-[clamp(24px,4.9vw,125px)] lg:hidden"
-                >
-                  <img
-                    src="/assets/image/retail-plateform/artisanscloud-banner-subg-2.webp"
-                    alt="Omnichannel operations interface"
-                    width="200"
-                    height="150"
-                    class="rounded-[10px] lg:rounded-[20px] shadow-[-10px_14px_94px_0px_#CBD4F6]"
-                  />
-                </div>
-                <div class="w-fit h-fit hidden lg:block lg:me-5">
-                  <img
-                    src="/assets/image/retail-plateform/artisanscloud-banner-subg-3.webp"
-                    alt="Inventory management view"
-                    width="200"
-                    height="150"
-                    class="rounded-[10px] lg:rounded-[20px] shadow-[0px_14px_124px_0px_#C3D9EA99]"
-                  />
-                </div>
-              </div>
+            </div>
+          </div>
 
-              <div class="max-w-fit mx-auto lg:mx-0">
-                <div class="text-center mt-7.5">
-                  <div
-                    class="mb-3 sm:mb-5 font-semibold t-caption uppercase text-primary"
-                  >
-                    Nexus | Enterprise Commerce Cloud
-                  </div>
-                  <h1 id="heroHeading" class="mb-3 t-display">
-                    Run stores and online channels from one platform
-                  </h1>
-                </div>
-                <div class="flex flex-col items-center mb-7.5 lg:mb-12">
-                  <p
-                    class="mb-3 px-2.5 lg:px-0 max-w-[639px] text-description text-center t-body mb-3"
-                  >
-                    Nexus connects inventory, orders, customers and promotions
-                    across your retail business.
-                  </p>
-                  <p
-                    class="px-2.5 lg:px-0 max-w-[639px] text-description text-center t-body"
-                  >
-                    This unified commerce foundation supports our move toward
-                    AI-assisted decisions and autonomous operations.
-                  </p>
-                  <a
-                    href="/request-demo"
-                    class="lg:mt-[25px] mt-4 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
-                    >Book a Nexus Demo</a
-                  >
-                </div>
-              </div>
-
-              <div
-                class="flex lg:flex-col items-end justify-between w-full gap-x-4 lg:w-fit"
-              >
-                <div
-                  class="w-fit h-fit lg:me-[clamp(24px,4.9vw,125px)] hidden lg:block"
+          <div
+            class="forgeHero relative w-full aspect-[16/10] text-white"
+            role="img"
+            aria-label="Nexus at the centre of stores, warehouses, website, marketplaces, social commerce and POS, keeping inventory, orders, customers and promotions in sync"
+          >
+            <svg
+              viewBox="0 0 160 100"
+              class="absolute inset-0 w-full h-full"
+              fill="none"
+              aria-hidden="true"
+            >
+              <line
+                x1="80"
+                y1="50"
+                x2="80"
+                y2="13"
+                class="forgeHero-flow stroke-sky"
+                stroke-width="0.5"
+                stroke-dasharray="1.2 1.8"
+              />
+              <line
+                x1="80"
+                y1="50"
+                x2="138"
+                y2="30"
+                class="forgeHero-flow stroke-pink"
+                stroke-width="0.5"
+                stroke-dasharray="1.2 1.8"
+              />
+              <line
+                x1="80"
+                y1="50"
+                x2="138"
+                y2="70"
+                class="forgeHero-flow stroke-amber-500"
+                stroke-width="0.5"
+                stroke-dasharray="1.2 1.8"
+              />
+              <line
+                x1="80"
+                y1="50"
+                x2="80"
+                y2="87"
+                class="forgeHero-flow stroke-sky"
+                stroke-width="0.5"
+                stroke-dasharray="1.2 1.8"
+              />
+              <line
+                x1="80"
+                y1="50"
+                x2="22"
+                y2="70"
+                class="forgeHero-flow stroke-primary"
+                stroke-width="0.5"
+                stroke-dasharray="1.2 1.8"
+              />
+              <line
+                x1="80"
+                y1="50"
+                x2="22"
+                y2="30"
+                class="forgeHero-flow stroke-primary"
+                stroke-width="0.5"
+                stroke-dasharray="1.2 1.8"
+              />
+            </svg>
+            <div
+              class="forgeHero-core absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] px-[2.6cqw] py-[2cqw] rounded-[2cqw] border border-primary/50 bg-[#0d0a24]/95"
+            >
+              <div class="flex items-center justify-between mb-[1cqw]">
+                <span class="flex items-center gap-[1.2cqw]">
+                  <span
+                    class="grid place-items-center w-[5cqw] h-[5cqw] rounded-[1cqw] bg-primary"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      class="w-1/2 h-1/2"
+                      fill="none"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5M3 17l9 5 9-5"
+                      /></svg
+                  ></span>
+                  <b class="forgeHero-title">Nexus</b>
+                </span>
+                <span
+                  class="forgeHero-text flex items-center gap-1 px-[1.2cqw] rounded-full bg-emerald-500/15 text-emerald-400"
+                  ><i
+                    class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"
+                  ></i
+                  >Live</span
                 >
-                  <img
-                    src="/assets/image/retail-plateform/artisanscloud-banner-subg-2.webp"
-                    alt="Omnichannel operations interface"
-                    width="200"
-                    height="150"
-                    class="rounded-[10px] lg:rounded-[20px] shadow-[-10px_14px_94px_0px_#CBD4F6]"
-                  />
-                </div>
-                <div class="w-fit h-fit lg:hidden">
-                  <img
-                    src="/assets/image/retail-plateform/artisanscloud-banner-subg-3.webp"
-                    alt="Inventory management view"
-                    width="200"
-                    height="150"
-                    class="rounded-[10px] lg:rounded-[20px] shadow-[0px_14px_124px_0px_#C3D9EA99]"
-                  />
-                </div>
-                <div class="w-fit h-fit lg:ms-5">
-                  <img
-                    src="/assets/image/retail-plateform/artisanscloud-banner-subg-4.webp"
-                    alt="Supply chain coordination dashboard"
-                    width="200"
-                    height="150"
-                    class="rounded-[10px] lg:rounded-[20px] shadow-[0px_14px_124px_0px_#C3D9EA99]"
-                  />
-                </div>
               </div>
+              <ul class="forgeHero-text">
+                <li
+                  class="nexusHero-row flex justify-between gap-[3cqw] py-[0.9cqw] border-t border-white/10"
+                  style="--i: 0"
+                >
+                  <span class="text-white/70">Inventory</span
+                  ><b class="text-primary">In sync</b>
+                </li>
+                <li
+                  class="nexusHero-row flex justify-between gap-[3cqw] py-[0.9cqw] border-t border-white/10"
+                  style="--i: 1"
+                >
+                  <span class="text-white/70">Orders</span
+                  ><b class="text-primary">One queue</b>
+                </li>
+                <li
+                  class="nexusHero-row flex justify-between gap-[3cqw] py-[0.9cqw] border-t border-white/10"
+                  style="--i: 2"
+                >
+                  <span class="text-white/70">Customers &amp; loyalty</span
+                  ><b class="text-primary">Shared</b>
+                </li>
+                <li
+                  class="nexusHero-row flex justify-between gap-[3cqw] py-[0.9cqw] border-t border-white/10"
+                  style="--i: 3"
+                >
+                  <span class="text-white/70">Promotions</span
+                  ><b class="text-primary">Everywhere</b>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="nexusHero-node absolute left-1/2 top-[13%] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap flex flex-col items-center gap-[1cqw] px-[2.4cqw] py-[1.6cqw] rounded-[1.6cqw] border border-white/10 bg-[#0d0a24]/90"
+              style="--i: 0"
+            >
+              <span
+                class="grid place-items-center w-[5.5cqw] h-[5.5cqw] rounded-[1.2cqw] bg-sky"
+                ><svg
+                  viewBox="0 0 24 24"
+                  class="w-1/2 h-1/2"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path
+                    d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"
+                  /></svg
+              ></span>
+              <b class="forgeHero-text">Website</b>
+            </div>
+            <div
+              class="nexusHero-node absolute left-[86%] top-[30%] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap flex flex-col items-center gap-[1cqw] px-[2.4cqw] py-[1.6cqw] rounded-[1.6cqw] border border-white/10 bg-[#0d0a24]/90"
+              style="--i: 1"
+            >
+              <span
+                class="grid place-items-center w-[5.5cqw] h-[5.5cqw] rounded-[1.2cqw] bg-pink"
+                ><svg
+                  viewBox="0 0 24 24"
+                  class="w-1/2 h-1/2"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M6 7h12l-1 13H7zM9 7a3 3 0 0 1 6 0" /></svg
+              ></span>
+              <b class="forgeHero-text">Marketplaces</b>
+            </div>
+            <div
+              class="nexusHero-node absolute left-[86%] top-[70%] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap flex flex-col items-center gap-[1cqw] px-[2.4cqw] py-[1.6cqw] rounded-[1.6cqw] border border-white/10 bg-[#0d0a24]/90"
+              style="--i: 2"
+            >
+              <span
+                class="grid place-items-center w-[5.5cqw] h-[5.5cqw] rounded-[1.2cqw] bg-amber-500"
+                ><svg
+                  viewBox="0 0 24 24"
+                  class="w-1/2 h-1/2"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="6" cy="12" r="2.5" />
+                  <circle cx="18" cy="6" r="2.5" />
+                  <circle cx="18" cy="18" r="2.5" />
+                  <path d="M8.2 11l7.6-4M8.2 13l7.6 4" /></svg
+              ></span>
+              <b class="forgeHero-text">Social commerce</b>
+            </div>
+            <div
+              class="nexusHero-node absolute left-1/2 top-[87%] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap flex flex-col items-center gap-[1cqw] px-[2.4cqw] py-[1.6cqw] rounded-[1.6cqw] border border-white/10 bg-[#0d0a24]/90"
+              style="--i: 3"
+            >
+              <span
+                class="grid place-items-center w-[5.5cqw] h-[5.5cqw] rounded-[1.2cqw] bg-sky"
+                ><svg
+                  viewBox="0 0 24 24"
+                  class="w-1/2 h-1/2"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3M8 12h8"
+                  /></svg
+              ></span>
+              <b class="forgeHero-text">POS online + offline</b>
+            </div>
+            <div
+              class="nexusHero-node absolute left-[14%] top-[70%] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap flex flex-col items-center gap-[1cqw] px-[2.4cqw] py-[1.6cqw] rounded-[1.6cqw] border border-white/10 bg-[#0d0a24]/90"
+              style="--i: 4"
+            >
+              <span
+                class="grid place-items-center w-[5.5cqw] h-[5.5cqw] rounded-[1.2cqw] bg-primary"
+                ><svg
+                  viewBox="0 0 24 24"
+                  class="w-1/2 h-1/2"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M3 21V9l9-5 9 5v12M7 21v-8h10v8M7 17h10" /></svg
+              ></span>
+              <b class="forgeHero-text">Warehouses</b>
+            </div>
+            <div
+              class="nexusHero-node absolute left-[14%] top-[30%] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap flex flex-col items-center gap-[1cqw] px-[2.4cqw] py-[1.6cqw] rounded-[1.6cqw] border border-white/10 bg-[#0d0a24]/90"
+              style="--i: 5"
+            >
+              <span
+                class="grid place-items-center w-[5.5cqw] h-[5.5cqw] rounded-[1.2cqw] bg-primary"
+                ><svg
+                  viewBox="0 0 24 24"
+                  class="w-1/2 h-1/2"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 9l1-5h14l1 5M4 9v11h16V9M4 9h16M9 20v-6h6v6"
+                  /></svg
+              ></span>
+              <b class="forgeHero-text">Stores</b>
             </div>
           </div>
         </div>
@@ -178,213 +360,193 @@
 
     <!----- Single View Sec ----->
     <section class="lg:py-[100px] sm:py-16 py-10">
-      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <h2 class="fade-in mb-10 md:mb-16 text-heading text-center t-h2">
-          Begin with one view of the retail business
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:gap-[30px] gap-5">
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+      <div
+        class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto grid lg:grid-cols-[4fr_8fr] gap-8 lg:gap-16"
+      >
+        <div class="fade-in lg:sticky lg:top-32 self-start">
+          <div class="mb-3 font-semibold t-caption uppercase text-primary">
+            What Nexus covers
+          </div>
+          <h2 class="text-heading t-h2">
+            Begin with one view of the retail business
+          </h2>
+        </div>
+        <ul class="grid md:grid-cols-2 md:gap-x-10 border-t border-grey/20">
+          <li
+            class="fade-in group flex items-start gap-4 py-5 lg:py-6 border-b border-grey/20"
           >
-            <div
-              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            <span class="t-caption font-semibold text-primary pt-1 min-w-[2ch]"
+              >01</span
             >
-              <img
-                src="/assets/image/icon/layers-icon.svg"
-                class="h-1/2 transition-all ease-linear duration-300"
-                alt=""
-                width="40"
-                height="40"
-                loading="lazy"
-              />
-            </div>
-            <div class="text-heading t-h3">
+            <img
+              src="/assets/image/icon/layers-icon.svg"
+              class="w-7 h-7 shrink-0 transition-transform duration-300 group-hover:scale-110"
+              alt=""
+              width="28"
+              height="28"
+              loading="lazy"
+            />
+            <p class="text-heading t-body">
               Unified Backoffice for Product, Inventory, Promotions, Customers
               &amp; orders
-            </div>
-          </div>
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            </p>
+          </li>
+          <li
+            class="fade-in group flex items-start gap-4 py-5 lg:py-6 border-b border-grey/20"
           >
-            <div
-              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            <span class="t-caption font-semibold text-primary pt-1 min-w-[2ch]"
+              >02</span
             >
-              <img
-                src="/assets/image/icon/moduleCard-productMgmt.svg"
-                class="h-1/2 transition-all ease-linear duration-300"
-                alt=""
-                width="40"
-                height="40"
-                loading="lazy"
-              />
-            </div>
-            <div class="text-heading t-h3">
+            <img
+              src="/assets/image/icon/moduleCard-productMgmt.svg"
+              class="w-7 h-7 shrink-0 transition-transform duration-300 group-hover:scale-110"
+              alt=""
+              width="28"
+              height="28"
+              loading="lazy"
+            />
+            <p class="text-heading t-body">
               Multi Location &amp; Multi Brand Operations
-            </div>
-          </div>
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            </p>
+          </li>
+          <li
+            class="fade-in group flex items-start gap-4 py-5 lg:py-6 border-b border-grey/20"
           >
-            <div
-              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            <span class="t-caption font-semibold text-primary pt-1 min-w-[2ch]"
+              >03</span
             >
-              <img
-                src="/assets/image/icon/target-icon.svg"
-                class="h-1/2 transition-all ease-linear duration-300"
-                alt=""
-                width="40"
-                height="40"
-                loading="lazy"
-              />
-            </div>
-            <div class="text-heading t-h3">
+            <img
+              src="/assets/image/icon/target-icon.svg"
+              class="w-7 h-7 shrink-0 transition-transform duration-300 group-hover:scale-110"
+              alt=""
+              width="28"
+              height="28"
+              loading="lazy"
+            />
+            <p class="text-heading t-body">
               Inventory receipts, transfers, adjustments and stock counts.
-            </div>
-          </div>
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+            </p>
+          </li>
+          <li
+            class="fade-in group flex items-start gap-4 py-5 lg:py-6 border-b border-grey/20"
           >
-            <div
-              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            <span class="t-caption font-semibold text-primary pt-1 min-w-[2ch]"
+              >04</span
             >
-              <img
-                src="/assets/image/icon/customer-copilots-icon.svg"
-                class="h-1/2 transition-all ease-linear duration-300"
-                alt=""
-                width="40"
-                height="40"
-                loading="lazy"
-              />
-            </div>
-            <div class="text-heading t-h3">
+            <img
+              src="/assets/image/icon/customer-copilots-icon.svg"
+              class="w-7 h-7 shrink-0 transition-transform duration-300 group-hover:scale-110"
+              alt=""
+              width="28"
+              height="28"
+              loading="lazy"
+            />
+            <p class="text-heading t-body">
               Order management across stores, websites, marketplaces and social
               commerce.
-            </div>
-          </div>
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            </p>
+          </li>
+          <li
+            class="fade-in group flex items-start gap-4 py-5 lg:py-6 border-b border-grey/20"
           >
-            <div
-              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            <span class="t-caption font-semibold text-primary pt-1 min-w-[2ch]"
+              >05</span
             >
-              <img
-                src="/assets/image/icon/artchitecHeightlight-card-unifiedData.svg"
-                class="h-1/2 transition-all ease-linear duration-300"
-                alt=""
-                width="40"
-                height="40"
-                loading="lazy"
-              />
-            </div>
-            <div class="text-heading t-h3">
+            <img
+              src="/assets/image/icon/artchitecHeightlight-card-unifiedData.svg"
+              class="w-7 h-7 shrink-0 transition-transform duration-300 group-hover:scale-110"
+              alt=""
+              width="28"
+              height="28"
+              loading="lazy"
+            />
+            <p class="text-heading t-body">
               Shared customer profiles, loyalty, and promotions.
-            </div>
-          </div>
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            </p>
+          </li>
+          <li
+            class="fade-in group flex items-start gap-4 py-5 lg:py-6 border-b border-grey/20"
           >
-            <div
-              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            <span class="t-caption font-semibold text-primary pt-1 min-w-[2ch]"
+              >06</span
             >
-              <img
-                src="/assets/image/icon/Cloud-hybridDeployments-icon.svg"
-                class="h-1/2 transition-all ease-linear duration-300"
-                alt=""
-                width="40"
-                height="40"
-                loading="lazy"
-              />
-            </div>
-            <div class="text-heading t-h3">
+            <img
+              src="/assets/image/icon/Cloud-hybridDeployments-icon.svg"
+              class="w-7 h-7 shrink-0 transition-transform duration-300 group-hover:scale-110"
+              alt=""
+              width="28"
+              height="28"
+              loading="lazy"
+            />
+            <p class="text-heading t-body">
               Point of sale with online and offline operation.
-            </div>
-          </div>
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
+            </p>
+          </li>
+          <li
+            class="fade-in group flex items-start gap-4 py-5 lg:py-6 border-b border-grey/20"
           >
-            <div
-              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            <span class="t-caption font-semibold text-primary pt-1 min-w-[2ch]"
+              >07</span
             >
-              <img
-                src="/assets/image/icon/moduleCard-retailPLanning.svg"
-                class="h-1/2 transition-all ease-linear duration-300"
-                alt=""
-                width="40"
-                height="40"
-                loading="lazy"
-              />
-            </div>
-            <div class="text-heading t-h3">Build Online Store in minutes</div>
-          </div>
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
+            <img
+              src="/assets/image/icon/moduleCard-retailPLanning.svg"
+              class="w-7 h-7 shrink-0 transition-transform duration-300 group-hover:scale-110"
+              alt=""
+              width="28"
+              height="28"
+              loading="lazy"
+            />
+            <p class="text-heading t-body">Build Online Store in minutes</p>
+          </li>
+          <li
+            class="fade-in group flex items-start gap-4 py-5 lg:py-6 border-b border-grey/20"
           >
-            <div
-              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            <span class="t-caption font-semibold text-primary pt-1 min-w-[2ch]"
+              >08</span
             >
-              <img
-                src="/assets/image/icon/Predictive-icon.svg"
-                class="h-1/2 transition-all ease-linear duration-300"
-                alt=""
-                width="40"
-                height="40"
-                loading="lazy"
-              />
-            </div>
-            <div class="text-heading t-h3">
+            <img
+              src="/assets/image/icon/Predictive-icon.svg"
+              class="w-7 h-7 shrink-0 transition-transform duration-300 group-hover:scale-110"
+              alt=""
+              width="28"
+              height="28"
+              loading="lazy"
+            />
+            <p class="text-heading t-body">
               Reporting across sales and operations.
-            </div>
-          </div>
-          <div
-            class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
+            </p>
+          </li>
+          <li
+            class="fade-in group flex items-start gap-4 py-5 lg:py-6 border-b border-grey/20"
           >
-            <div
-              class="mb-4 sm:mb-6 lg:mb-[30px] max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
+            <span class="t-caption font-semibold text-primary pt-1 min-w-[2ch]"
+              >09</span
             >
-              <img
-                src="/assets/image/icon/artchitecHeightlight-card-setting.svg"
-                class="h-1/2 transition-all ease-linear duration-300"
-                alt=""
-                width="40"
-                height="40"
-                loading="lazy"
-              />
-            </div>
-            <div class="text-heading t-h3">
+            <img
+              src="/assets/image/icon/artchitecHeightlight-card-setting.svg"
+              class="w-7 h-7 shrink-0 transition-transform duration-300 group-hover:scale-110"
+              alt=""
+              width="28"
+              height="28"
+              loading="lazy"
+            />
+            <p class="text-heading t-body">
               Integrations with ERP, payments, marketplaces and delivery
               systems.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!----- One Platform for Retail Operations ----->
-    <section class="lg:py-[90px] sm:py-16 py-10">
-      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="fade-in flex justify-center w-full">
-          <img
-            src="/assets/image/retail-plateform/artisanscloud-nexus-visual-1.webp"
-            alt="Nexus unified commerce platform overview"
-            class="w-full h-auto mx-auto rounded-2xl"
-            width="full"
-            loading="lazy"
-          />
-        </div>
+            </p>
+          </li>
+        </ul>
       </div>
     </section>
 
     <!----- AI Assistance Sec ----->
-    <section class="py-10 md:py-20">
+    <section class="py-10 md:py-20 bg-[#f6f8fb]">
       <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="grid lg:grid-cols-2 lg:gap-16 gap-8 items-start">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-[60px] items-center">
           <div class="fade-in">
-            <h2 class="text-heading t-h2">
+            <h2 class="mb-4 text-heading t-h2">
               From connected operations to AI assistance
             </h2>
-          </div>
-          <div class="fade-in">
             <p class="text-description t-body mb-4">
               A shared view of the business gives teams the context to act. A
               stock shortage can be checked against demand, open orders and
@@ -395,6 +557,14 @@
               and identify actions that need attention.
             </p>
           </div>
+          <img
+            src="/assets/image/retail-plateform/artisanscloud-nexus-ai-assistance.webp"
+            alt="A stock shortage checked against demand, open orders and availability in other locations"
+            width="1400"
+            height="788"
+            loading="lazy"
+            class="fade-in w-full h-auto rounded-[10px] lg:rounded-[20px] border border-[#f2f2f2]"
+          />
         </div>
       </div>
     </section>
@@ -406,22 +576,30 @@
     <!----- Autonomous Commerce Sec ----->
     <section class="lg:py-[80px] sm:py-16 py-10">
       <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="fade-in text-center max-w-[820px] mx-auto">
-          <h2 class="lg:mb-8 mb-5 t-h2">
+        <div class="fade-in text-center">
+          <h2 class="lg:mb-8 mb-5 t-h2 max-w-[820px] mx-auto">
             The next step is autonomous commerce
           </h2>
-          <p class="lg:mb-4 mb-3 text-description t-body">
+          <p class="lg:mb-4 mb-3 max-w-[820px] mx-auto text-description t-body">
             We are building toward agents that carry out defined retail tasks
             within permissions and business rules. For example, a planned
             replenishment agent could assess a shortage and propose a stock
             transfer. Retailers would set approval limits and decide which
             actions may proceed automatically.
           </p>
-          <p class="lg:mb-6 mb-4 text-description t-body">
+          <p class="max-w-[820px] mx-auto text-description t-body">
             Future connections with Vault will add operating experience, such as
             why a store keeps extra stock or how teams handle recurring
             exceptions.
           </p>
+          <img
+            src="/assets/image/retail-plateform/artisanscloud-nexus-autonomous-commerce.webp"
+            alt="A planned replenishment agent proposes a stock transfer within approval limits set by the retailer"
+            width="1400"
+            height="788"
+            loading="lazy"
+            class="fade-in w-full max-w-[1000px] h-auto mx-auto my-6 lg:my-[50px] rounded-[10px] lg:rounded-[20px] border border-[#f2f2f2]"
+          />
           <a
             href="/knowledge-management/vault"
             class="mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"

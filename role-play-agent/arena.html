@@ -13,115 +13,178 @@
     {{> header}}
 
     <!----- Banner Sec ----->
-    <section class="w-full h-full p-4 lg:p-5">
+    <section class="w-full p-4 lg:p-5">
       <div
-        class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] flex items-center justify-center h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/enterprise-ai/artisanscloud-enterprise-ai-bannerBG.webp')] bg-no-repeat bg-cover"
+        class="heroDark rounded-2xl lg:rounded-[30px] overflow-hidden pt-[clamp(7rem,16.667vw-5rem,7.5rem)] pb-10 lg:pb-16 lg:min-h-[768px] flex items-center"
       >
-        <div class="pt-5 lg:pt-[64px] pb-[40px] lg:pb-[65px] w-full">
-          <div class="fade-in max-w-[1400px] w-full mx-auto my-auto">
+        <div
+          class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto grid lg:grid-cols-[5fr_7fr] gap-8 lg:gap-10 items-center"
+        >
+          <div class="text-center lg:text-left">
             <div
-              class="fade-in flex flex-col lg:flex-row justify-center w-full"
+              class="mb-3 sm:mb-5 font-semibold t-caption uppercase text-primary"
+            >
+              Arena | AI Role-Play for Employee Training
+            </div>
+            <h1 class="mb-4 text-white t-display" id="heroHeading">
+              Practice before it matters
+            </h1>
+            <div id="heroDec" class="flex flex-col items-center lg:items-start">
+              <p class="max-w-[560px] text-[#a49fc6] t-lead">
+                Arena helps employees rehearse workplace conversations with AI
+                personas. Each session provides feedback, while previous
+                responses shape the practice that follows.
+              </p>
+              <a
+                href="/request-demo"
+                class="mt-6 lg:mt-8 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 bg-primary text-white hover:bg-primary-light"
+              >
+                Book an Arena Demo
+              </a>
+            </div>
+          </div>
+          <div
+            id="arenaHero"
+            class="relative flex items-center justify-center gap-3 xl:gap-4 text-white"
+            role="img"
+            aria-label="An AI persona conversation with live feedback scores"
+          >
+            <div
+              class="arenaHero-float hidden sm:flex flex-col items-center gap-3 w-[24%] p-4 rounded-2xl border border-white/10 bg-[#0d0a24]/90 shadow-[0_30px_80px_-30px_rgba(141,103,245,.7)]"
             >
               <div
-                class="flex lg:flex-col items-center lg:items-start justify-between gap-x-4 w-full lg:w-fit mb-5 lg:mb-0 lg:me-8 xl:me-12"
+                class="arenaHero-orb grid place-items-center w-16 h-16 xl:w-20 xl:h-20 rounded-full bg-gradient-to-br from-pink to-primary"
               >
-                <div class="w-fit h-fit md:ms-[clamp(12px,5.7vw,20px)]">
-                  <img
-                    src="/assets/image/role-play-agent/artisanscloud-rp-subg-1.webp"
-                    alt="Scenario Comprehension dashboard"
-                    width="200"
-                    height="150"
-                    class="rounded-[10px] lg:rounded-[20px] shadow-[-10px_14px_94px_0px_#CBD4F6]"
-                  />
-                </div>
-                <div
-                  class="w-fit h-fit md:ms-[clamp(12px,2.7vw,95px)] mb-2 hidden lg:block"
+                <svg
+                  viewBox="0 0 24 24"
+                  class="w-8 h-8 stroke-[#0d0a24]"
+                  fill="none"
+                  stroke-width="1.8"
+                  aria-hidden="true"
                 >
-                  <img
-                    src="/assets/image/role-play-agent/artisanscloud-rp-subg-3.webp"
-                    alt="Customer Satisfaction metric"
-                    width="200"
-                    height="150"
-                    class="rounded-[10px] lg:rounded-[20px] shadow-[0px_14px_124px_0px_#C3D9EA99]"
-                  />
-                </div>
-                <div
-                  class="w-fit h-fit md:me-[clamp(12px,2.7vw,66px)] block lg:hidden"
-                >
-                  <img
-                    src="/assets/image/role-play-agent/artisanscloud-rp-subg-2.webp"
-                    alt="Case Handling Proficiency dashboard"
-                    width="200"
-                    height="150"
-                    class="rounded-[10px] lg:rounded-[20px] shadow-[-10px_14px_94px_0px_#CBD4F6]"
-                  />
-                </div>
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" />
+                </svg>
               </div>
-
-              <div class="max-w-fit mx-auto lg:mx-0">
-                <div class="text-center mt-7.5 lg:mt-[48px]">
-                  <div
-                    class="mb-3 sm:mb-5 font-semibold t-caption uppercase text-primary"
-                  >
-                    Arena | AI Role-Play for Employee Training
-                  </div>
-                  <h1 class="mb-3 t-display" id="heroHeading">
-                    Practice before it matters
-                  </h1>
-                </div>
-                <div
-                  id="heroDec"
-                  class="flex flex-col items-center mb-7.5 lg:mb-12 w-full lg:w-auto"
+              <b class="text-sm">AI persona</b>
+              <div class="flex gap-1.5 text-xs text-pink">
+                <span class="px-2 py-0.5 rounded-full bg-pink/15"
+                  >Sceptical</span
                 >
-                  <p
-                    class="px-2.5 lg:px-0 max-w-[639px] text-description text-center t-body"
-                  >
-                    Arena helps employees rehearse workplace conversations with
-                    AI personas. Each session provides feedback, while previous
-                    responses shape the practice that follows.
-                  </p>
-                  <a
-                    href="/request-demo"
-                    class="lg:mt-[25px] mt-4 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
-                  >
-                    Book an Arena Demo
-                  </a>
-                </div>
+                <span class="px-2 py-0.5 rounded-full bg-pink/15">Busy</span>
               </div>
+            </div>
 
+            <div
+              class="w-full sm:w-[50%] p-4 rounded-2xl border border-white/10 bg-[#0d0a24]/90 shadow-[0_30px_80px_-30px_rgba(141,103,245,.7)]"
+            >
               <div
-                class="flex lg:flex-col items-center lg:items-end justify-between w-full gap-x-4 lg:w-fit mt-5 lg:mt-0 lg:ms-8 xl:ms-12"
+                class="flex justify-between items-center gap-2 mb-3 text-xs font-semibold tracking-wider uppercase text-pink whitespace-nowrap"
               >
-                <div
-                  class="w-fit h-fit md:me-[clamp(12px,2.7vw,66px)] hidden lg:block"
+                <span>Scenario · Price objection</span>
+                <span
+                  class="flex items-center gap-1 normal-case tracking-normal px-2 py-0.5 rounded-full bg-pink/15"
+                  ><i class="w-1.5 h-1.5 rounded-full bg-pink animate-pulse"></i
+                  >Live</span
                 >
-                  <img
-                    src="/assets/image/role-play-agent/artisanscloud-rp-subg-2.webp"
-                    alt="Case Handling Proficiency dashboard"
-                    width="200"
-                    height="150"
-                    class="rounded-[10px] lg:rounded-[20px] shadow-[-10px_14px_94px_0px_#CBD4F6]"
-                  />
-                </div>
-                <div
-                  class="w-fit h-fit md:ms-[clamp(12px,2.7vw,95px)] block lg:hidden"
+              </div>
+              <div class="flex flex-col gap-2 min-h-[200px] text-xs xl:text-sm">
+                <p
+                  class="arenaHero-msg self-start max-w-[85%] px-3 py-2 rounded-xl border border-pink/20 bg-pink/10"
                 >
-                  <img
-                    src="/assets/image/role-play-agent/artisanscloud-rp-subg-3.webp"
-                    alt="Customer Satisfaction metric"
-                    width="200"
-                    height="150"
-                    class="rounded-[10px] lg:rounded-[20px] shadow-[0px_14px_124px_0px_#C3D9EA99]"
+                  Your competitor is 12% cheaper. Convince me.
+                </p>
+                <p
+                  class="arenaHero-msg self-end max-w-[85%] px-3 py-2 rounded-xl border border-primary/30 bg-primary/15"
+                >
+                  What did downtime cost you last year?
+                </p>
+                <p
+                  class="arenaHero-msg self-start max-w-[85%] px-3 py-2 rounded-xl border border-pink/20 bg-pink/10"
+                >
+                  About two days of production.
+                </p>
+                <p
+                  class="arenaHero-msg self-end max-w-[85%] px-3 py-2 rounded-xl border border-primary/30 bg-primary/15"
+                >
+                  That&rsquo;s more than the price gap over three years.
+                </p>
+              </div>
+              <div
+                class="mt-3 px-3 py-2 rounded-xl border border-white/10 text-xs text-white/40"
+              >
+                <span class="arenaHero-typing">Your turn</span>
+              </div>
+            </div>
+
+            <div
+              class="arenaHero-float arenaHero-float-alt hidden sm:block w-[26%] p-4 rounded-2xl border border-white/10 bg-[#0d0a24]/90 shadow-[0_30px_80px_-30px_rgba(141,103,245,.7)]"
+            >
+              <div
+                class="mb-2 text-center text-xs font-semibold tracking-widest uppercase text-primary"
+              >
+                Feedback
+              </div>
+              <div class="relative w-20 h-20 xl:w-24 xl:h-24 mx-auto mb-3">
+                <svg viewBox="0 0 120 120" class="w-full h-full -rotate-90">
+                  <circle
+                    cx="60"
+                    cy="60"
+                    r="50"
+                    fill="none"
+                    stroke-width="10"
+                    class="stroke-white/10"
                   />
+                  <circle
+                    cx="60"
+                    cy="60"
+                    r="50"
+                    fill="none"
+                    stroke-width="10"
+                    stroke-linecap="round"
+                    pathLength="100"
+                    class="arenaHero-ring stroke-pink"
+                  />
+                </svg>
+                <b
+                  class="arenaHero-score absolute inset-0 grid place-items-center text-2xl"
+                  data-to="78"
+                  >78</b
+                >
+              </div>
+              <div class="flex flex-col gap-2 text-xs">
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span>Discovery</span><b>86</b>
+                  </div>
+                  <div class="h-1.5 rounded-full bg-white/10">
+                    <i
+                      class="arenaHero-bar block h-full rounded-full bg-emerald-500"
+                      style="--w: 86%"
+                    ></i>
+                  </div>
                 </div>
-                <div class="w-fit h-fit md:me-[clamp(12px,2.7vw,89px)]">
-                  <img
-                    src="/assets/image/role-play-agent/artisanscloud-rp-subg-4.webp"
-                    alt="Collaboration Skills dashboard"
-                    width="200"
-                    height="150"
-                    class="rounded-[10px] lg:rounded-[20px] shadow-[0px_14px_124px_0px_#C3D9EA99]"
-                  />
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span>Objections</span><b>64</b>
+                  </div>
+                  <div class="h-1.5 rounded-full bg-white/10">
+                    <i
+                      class="arenaHero-bar block h-full rounded-full bg-amber-500"
+                      style="--w: 64%"
+                    ></i>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span>Value</span><b>79</b>
+                  </div>
+                  <div class="h-1.5 rounded-full bg-white/10">
+                    <i
+                      class="arenaHero-bar block h-full rounded-full bg-primary"
+                      style="--w: 79%"
+                    ></i>
+                  </div>
                 </div>
               </div>
             </div>
@@ -133,7 +196,7 @@
     <!----- Practice Built Around the Role Sec ----->
     <section class="py-10 md:py-20 bg-[#f6f8fb]">
       <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="fade-in text-center mb-8 lg:mb-[60px]">
+        <div class="fade-in text-center mb-8 lg:mb-[50px]">
           <h2 class="text-heading t-h2">Practice built around the role</h2>
           <p class="mt-4 text-description t-body max-w-[700px] mx-auto">
             Configure scenarios around your processes and the situations
@@ -141,95 +204,115 @@
             conversation develops.
           </p>
         </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5">
-          <div
-            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full"
-          >
-            <div
-              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
-            >
-              <img
-                src="/assets/image/icon/bulb-icon.svg"
-                class="h-1/2 transition-all ease-linear duration-300"
-                alt="Onboarding icon"
-                width="40"
-                height="40"
-                loading="lazy"
-              />
+        <div class="swiper arenaRoleSlider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide !h-auto">
+              <div
+                class="h-full rounded-2xl lg:rounded-[20px] bg-white overflow-hidden border border-[#f2f2f2] flex flex-col"
+              >
+                <img
+                  src="/assets/image/role-play-agent/artisanscloud-arena-sales.webp"
+                  alt="Sales practice handling a price objection"
+                  width="1400"
+                  height="875"
+                  loading="lazy"
+                  class="w-full h-auto"
+                />
+                <div class="p-5 lg:p-6">
+                  <h3 class="mb-2 text-heading t-h3">Sales</h3>
+                  <p class="text-description t-body">
+                    Rehearse discovery, objections, and customer conversations.
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="my-auto">
-              <div class="mb-2 text-heading t-h3">Onboarding</div>
-              <p class="text-description t-body">
-                Practise explaining procedures and responding to unfamiliar
-                requests.
-              </p>
+            <div class="swiper-slide !h-auto">
+              <div
+                class="h-full rounded-2xl lg:rounded-[20px] bg-white overflow-hidden border border-[#f2f2f2] flex flex-col"
+              >
+                <img
+                  src="/assets/image/role-play-agent/artisanscloud-arena-leadership.webp"
+                  alt="Leadership practice for a difficult conversation"
+                  width="1400"
+                  height="875"
+                  loading="lazy"
+                  class="w-full h-auto"
+                />
+                <div class="p-5 lg:p-6">
+                  <h3 class="mb-2 text-heading t-h3">Leadership</h3>
+                  <p class="text-description t-body">
+                    Prepare for feedback, coaching, and difficult conversations.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide !h-auto">
+              <div
+                class="h-full rounded-2xl lg:rounded-[20px] bg-white overflow-hidden border border-[#f2f2f2] flex flex-col"
+              >
+                <img
+                  src="/assets/image/role-play-agent/artisanscloud-arena-onboarding.webp"
+                  alt="Onboarding practice with an AI persona"
+                  width="1400"
+                  height="875"
+                  loading="lazy"
+                  class="w-full h-auto"
+                />
+                <div class="p-5 lg:p-6">
+                  <h3 class="mb-2 text-heading t-h3">Onboarding</h3>
+                  <p class="text-description t-body">
+                    Practise explaining procedures and responding to unfamiliar
+                    requests.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide !h-auto">
+              <div
+                class="h-full rounded-2xl lg:rounded-[20px] bg-white overflow-hidden border border-[#f2f2f2] flex flex-col"
+              >
+                <img
+                  src="/assets/image/role-play-agent/artisanscloud-arena-customer-service.webp"
+                  alt="Customer service practice with a frustrated customer"
+                  width="1400"
+                  height="875"
+                  loading="lazy"
+                  class="w-full h-auto"
+                />
+                <div class="p-5 lg:p-6">
+                  <h3 class="mb-2 text-heading t-h3">Customer service</h3>
+                  <p class="text-description t-body">
+                    Work through complaints and escalations.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+        <div class="flex items-center justify-center gap-4 mt-8">
           <div
-            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full"
+            class="swiper-button-prev swiper-button-prev-arenaRoleSlider after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer"
           >
-            <div
-              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
-            >
-              <img
-                src="/assets/image/icon/target-icon.svg"
-                class="h-1/2 transition-all ease-linear duration-300"
-                alt="Sales icon"
-                width="40"
-                height="40"
-                loading="lazy"
-              />
-            </div>
-            <div class="my-auto">
-              <div class="mb-2 text-heading t-h3">Sales</div>
-              <p class="text-description t-body">
-                Rehearse discovery, objections, and customer conversations.
-              </p>
-            </div>
+            <img
+              src="/assets/image/icon/rightArrowSwiper.svg"
+              alt="Previous slide navigation arrow"
+              class="h-[70%] select-none rotate-180"
+              width="24"
+              height="24"
+              loading="lazy"
+            />
           </div>
           <div
-            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full"
+            class="swiper-button-next swiper-button-next-arenaRoleSlider after:hidden !static border border-heading rounded-full !w-8 !h-8 !m-0 transition-all duration-200 ease-linear cursor-pointer"
           >
-            <div
-              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
-            >
-              <img
-                src="/assets/image/icon/customer-copilots-icon.svg"
-                class="h-1/2 transition-all ease-linear duration-300"
-                alt="Customer service icon"
-                width="40"
-                height="40"
-                loading="lazy"
-              />
-            </div>
-            <div class="my-auto">
-              <div class="mb-2 text-heading t-h3">Customer service</div>
-              <p class="text-description t-body">
-                Work through complaints and escalations.
-              </p>
-            </div>
-          </div>
-          <div
-            class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-white flex lg:gap-6 gap-4 w-full h-full"
-          >
-            <div
-              class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
-            >
-              <img
-                src="/assets/image/icon/vision-icon.svg"
-                class="h-1/2 transition-all ease-linear duration-300"
-                alt="Leadership icon"
-                width="40"
-                height="40"
-                loading="lazy"
-              />
-            </div>
-            <div class="my-auto">
-              <div class="mb-2 text-heading t-h3">Leadership</div>
-              <p class="text-description t-body">
-                Prepare for feedback, coaching, and difficult conversations.
-              </p>
-            </div>
+            <img
+              src="/assets/image/icon/rightArrowSwiper.svg"
+              alt="Next slide navigation arrow"
+              class="h-[70%] select-none"
+              width="24"
+              height="24"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
@@ -274,12 +357,12 @@
           </div>
           <div>
             <img
-              src="/assets/image/role-play-agent/artisanscloud-role-play-solution.webp"
-              alt="AI agent preparing teams for real-world execution"
-              width="540"
-              height="360"
+              src="/assets/image/role-play-agent/artisanscloud-arena-feedback.webp"
+              alt="Session scores by criteria, progress across sessions and a manager view"
+              width="1400"
+              height="875"
               loading="lazy"
-              class="max-w-full h-auto mx-auto lg:mx-0 rounded-[10px] lg:rounded-[20px] border border-[#f2f2f2]"
+              class="w-full h-auto rounded-[10px] lg:rounded-[20px] border border-[#f2f2f2]"
             />
           </div>
         </div>
@@ -291,23 +374,30 @@
     </div>
 
     <!----- Organisational Experience CTA Sec ----->
-    <section
-      class="w-[95%] mx-auto px-5 py-10 lg:py-16 relative overflow-hidden rounded-3xl md:rounded-[30px]"
-    >
-      <div
-        class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10 text-center"
-      >
-        <h2 class="mb-4 lg:mb-6 t-h2 max-w-[700px] mx-auto">
-          Bring organisational experience into onboarding
-        </h2>
-        <p class="mb-6 t-body max-w-[600px] mx-auto">
-          We are developing digital buddies that draw on Vault to explain
-          procedures and lessons from earlier incidents. The planned connection
-          with Arena will help employees practise applying that knowledge.
-        </p>
+    <section class="lg:py-[100px] sm:py-16 py-10">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto text-center">
+        <div class="fade-in max-w-[800px] mx-auto lg:mb-[50px] sm:mb-9 mb-6">
+          <h2 class="mb-4 text-heading t-h2">
+            Bring organisational experience into onboarding
+          </h2>
+          <p class="text-description t-body">
+            We are developing digital buddies that draw on Vault to explain
+            procedures and lessons from earlier incidents. The planned
+            connection with Arena will help employees practise applying that
+            knowledge.
+          </p>
+        </div>
+        <img
+          src="/assets/image/role-play-agent/artisanscloud-arena-digital-buddy.webp"
+          alt="A digital buddy, in development, explains procedures from Vault before practice in Arena"
+          width="1400"
+          height="788"
+          loading="lazy"
+          class="fade-in w-full max-w-[1000px] h-auto mx-auto rounded-[10px] lg:rounded-[20px] border border-[#f2f2f2]"
+        />
         <a
           href="/knowledge-management/vault"
-          class="mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+          class="fade-in mx-auto lg:mt-[50px] sm:mt-9 mt-6 w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 bg-primary text-white hover:bg-primary-light"
           >Explore Vault</a
         >
       </div>
