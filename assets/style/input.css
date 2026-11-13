@@ -656,6 +656,24 @@ body {
       width: auto;
     }
   }
+  /* Below lg the copy sits in flow under the 3D core, so the hero grows with
+     its text instead of the text overflowing the top edge. The text comes first and the core sits in the bottom padding. */
+  @media (max-width: 1023px) {
+    .heroCore {
+      height: auto;
+      min-height: 680px;
+      padding: 112px 20px clamp(340px, 90vw, 440px);
+    }
+    .heroCore-copy {
+      position: relative;
+      left: auto;
+      bottom: auto;
+      transform: none;
+      width: 100%;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+  }
   .heroCore-grad {
     background: linear-gradient(
       100deg,

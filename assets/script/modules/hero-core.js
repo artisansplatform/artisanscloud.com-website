@@ -373,8 +373,20 @@ export async function initHeroCore() {
     renderer.setSize(W, H, false);
     camera.aspect = W / H;
     camera.updateProjectionMatrix();
-    core.position.set(mobile ? 0 : 2.7, mobile ? 1.9 : 0, 0);
-    core.scale.setScalar(mobile ? 0.6 : 1);
+    if (mobile) {
+      // The hero grows with its copy below lg, so size and place the core in
+      // pixels (inside the bottom padding, under the text) instead of world
+      // units that would scale with the hero height.
+      const room = parseFloat(getComputedStyle(hero).paddingBottom);
+      const d = Math.min(0.55 * W, room * 0.7, 340);
+      const scale = d / (0.389 * H);
+      const centerPx = H - room / 2;
+      core.position.set(0, 0.6 + (0.5 - centerPx / H) * 7.68, 0);
+      core.scale.setScalar(scale);
+    } else {
+      core.position.set(2.7, 0, 0);
+      core.scale.setScalar(1);
+    }
   }
   addEventListener("resize", resize);
   resize();
