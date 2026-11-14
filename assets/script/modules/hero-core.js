@@ -378,7 +378,7 @@ export async function initHeroCore() {
       // pixels (inside the bottom padding, under the text) instead of world
       // units that would scale with the hero height.
       const room = parseFloat(getComputedStyle(hero).paddingBottom);
-      const d = Math.min(0.55 * W, room * 0.7, 340);
+      const d = Math.min(0.38 * W, room * 0.5, 260);
       const scale = d / (0.389 * H);
       const centerPx = H - room / 2;
       core.position.set(0, 0.6 + (0.5 - centerPx / H) * 7.68, 0);
