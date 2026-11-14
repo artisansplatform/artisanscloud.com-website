@@ -370,6 +370,7 @@ export async function initHeroCore() {
     W = hero.clientWidth;
     H = hero.clientHeight;
     mobile = W < 1024;
+    APPS.forEach((A) => (A.w = undefined));
     renderer.setSize(W, H, false);
     camera.aspect = W / H;
     camera.updateProjectionMatrix();
@@ -496,7 +497,10 @@ export async function initHeroCore() {
         A.pkt.position.copy(tmp2).multiplyScalar(A.pt);
         const camD = tmp.distanceTo(camera.position);
         const v = tmp.project(camera);
-        A.el.style.left = ((v.x + 1) / 2) * W + "px";
+        // keep the label fully inside the hero so it is never clipped
+        const half = (A.w ??= A.el.offsetWidth) / 2 + 8;
+        const sx = ((v.x + 1) / 2) * W;
+        A.el.style.left = Math.min(Math.max(sx, half), W - half) + "px";
         A.el.style.top = ((1 - v.y) / 2) * H - 24 + "px";
         A.el.style.opacity = camD > cD + 0.6 ? 0.35 : 1;
         A.el.style.zIndex = camD > cD ? 1 : 3;
