@@ -14,6 +14,7 @@
 //   robots         meta robots (e.g. "noindex")
 //   og             false to omit the whole Open Graph/Twitter block
 //   ogTitle        override for og:title
+//   breadcrumb     breadcrumb name, for titles pageName() cannot reduce
 //   ogDescription  override for og:description
 //   ogImage        site-relative override for og:image (default /assets/og/{slug}.png)
 //   ogCard         { title, subtitle } text baked into the generated OG image
@@ -99,7 +100,7 @@ export function buildJsonLd(slug, meta) {
         {
           "@type": "ListItem",
           position: 2,
-          name: pageName(meta.title),
+          name: meta.breadcrumb || pageName(meta.title),
           item: pageUrl(slug),
         },
       ],

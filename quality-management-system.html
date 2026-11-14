@@ -13,143 +13,482 @@
 
     <main class="w-full">
       <!----- Banner Sec ----->
-      <section class="w-full h-full p-4 lg:p-5">
+      <section class="w-full p-4 lg:p-5">
         <div
-          class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden bg-[url('../image/solutions/distributed-order-management/artisanscloud-bannerBG.webp')] bg-no-repeat bg-cover bg-bottom-right"
+          class="heroDark rounded-2xl lg:rounded-[30px] overflow-hidden pt-[clamp(7rem,16.667vw-5rem,7.5rem)] pb-10 lg:pb-16 lg:min-h-[768px] flex items-center"
         >
           <div
-            class="pt-5 lg:pt-[100px] pb-20 2xl:pb-[200px] xl:pb-44 lg:pb-36 sm:pb-24"
+            class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto grid lg:grid-cols-[5fr_7fr] gap-8 lg:gap-10 items-center"
           >
-            <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-              <div class="text-center lg:max-w-[900px] mx-auto">
-                <div
-                  class="mb-3 sm:mb-5 font-semibold t-caption uppercase text-primary"
+            <div class="text-center lg:text-left">
+              <div
+                class="mb-3 sm:mb-5 font-semibold t-caption uppercase text-primary"
+              >
+                Forge | Agentic Quality Management
+              </div>
+              <h1 id="heroHeading" class="mb-4 text-white t-display">
+                Manufacturing quality that builds on experience
+              </h1>
+              <div
+                id="heroDec"
+                class="flex flex-col items-center lg:items-start"
+              >
+                <p class="max-w-[560px] text-[#a49fc6] t-lead">
+                  Forge brings manufacturing quality work together, from
+                  planning and inspection to resolving issues and improving
+                  processes. We are developing AI agents to help teams
+                  investigate problems, coordinate actions, and apply lessons
+                  from earlier work.
+                </p>
+                <a
+                  href="/request-demo"
+                  class="mt-6 lg:mt-8 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 bg-primary text-white hover:bg-primary-light"
+                  >Book a Forge Demo</a
                 >
-                  Quality Management System
-                </div>
-                <h1 id="heroHeading" class="mb-3 t-display">
-                  Quality work should not lose its context
-                </h1>
-                <div
-                  id="heroDec"
-                  class="flex flex-col items-center mb-7.5 lg:mb-12"
+              </div>
+            </div>
+
+            <div
+              class="forgeHero relative w-full aspect-[16/10] text-white"
+              role="img"
+              aria-label="The quality lifecycle around Forge: plan, inspect, resolve and improve"
+            >
+              <svg
+                viewBox="0 0 160 100"
+                class="absolute inset-0 w-full h-full"
+                fill="none"
+                aria-hidden="true"
+              >
+                <ellipse
+                  cx="80"
+                  cy="50"
+                  rx="58"
+                  ry="31"
+                  class="stroke-primary/25"
+                  stroke-width="5"
+                />
+                <ellipse
+                  cx="80"
+                  cy="50"
+                  rx="58"
+                  ry="31"
+                  class="forgeHero-flow stroke-primary"
+                  stroke-width="0.8"
+                  stroke-dasharray="1.6 2.4"
+                />
+              </svg>
+              <div
+                class="forgeHero-core absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-[1.2cqw] px-[4cqw] py-[2.6cqw] rounded-[2cqw] border border-amber-400/60 bg-[#0d0a24]/95"
+              >
+                <span
+                  class="grid place-items-center w-[8cqw] h-[8cqw] rounded-[1.6cqw] bg-amber-500"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    class="w-1/2 h-1/2"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 21V10l6 4V10l6 4V6l6 3v12zM8 18h1M12 18h1M16 18h1"
+                    /></svg
+                ></span>
+                <b class="forgeHero-title">Forge</b>
+                <small class="forgeHero-text text-primary"
+                  >Builds on experience</small
                 >
-                  <p
-                    class="t-body px-2.5 lg:px-0 max-w-[700px] text-description text-center mb-3"
+              </div>
+              <div
+                class="forgeHero-stage absolute left-1/2 top-[19%] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap flex items-center gap-[2cqw] px-[2cqw] py-[1.6cqw] rounded-[1.6cqw] border border-white/10 bg-[#0d0a24]/90"
+              >
+                <span
+                  class="grid place-items-center w-[6cqw] h-[6cqw] rounded-[1.2cqw] bg-primary"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    class="w-1/2 h-1/2"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
                   >
-                    A drawing defines a requirement. A process turns it into a
-                    product. People, equipment and controls determine whether
-                    that product meets the requirement every time. Artisans QMS
-                    brings the work behind those decisions into one
-                    manufacturing quality management platform.
-                  </p>
-                  <p
-                    class="t-body px-2.5 lg:px-0 max-w-[700px] text-description text-center mb-7.5 lg:mb-10"
+                    <rect x="6" y="4" width="12" height="17" rx="2" />
+                    <path d="M9 4h6v3H9zM9 12h6M9 16h4" /></svg
+                ></span>
+                <span class="forgeHero-text">
+                  <b class="block">Plan</b>
+                  <small class="block text-white/50">APQP · FMEA</small>
+                </span>
+              </div>
+              <div
+                class="forgeHero-stage forgeHero-s2 absolute left-[86%] top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap flex items-center gap-[2cqw] px-[2cqw] py-[1.6cqw] rounded-[1.6cqw] border border-white/10 bg-[#0d0a24]/90"
+              >
+                <span
+                  class="grid place-items-center w-[6cqw] h-[6cqw] rounded-[1.2cqw] bg-sky"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    class="w-1/2 h-1/2"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
                   >
-                    From planning and production readiness to inspection,
-                    problem solving and improvement, teams can manage quality as
-                    connected work instead of a collection of disconnected
-                    files.
-                  </p>
-                  <div class="flex flex-wrap items-center justify-center gap-3">
-                    <a
-                      href="/request-demo"
-                      class="w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 bg-primary text-white hover:bg-primary-light"
-                      >Request a demo</a
-                    >
-                  </div>
-                </div>
+                    <path
+                      d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3M8 12h8"
+                    /></svg
+                ></span>
+                <span class="forgeHero-text">
+                  <b class="block">Inspect</b>
+                  <small class="block text-white/50">Inspection · SPC</small>
+                </span>
+              </div>
+              <div
+                class="forgeHero-stage forgeHero-s3 absolute left-1/2 top-[81%] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap flex items-center gap-[2cqw] px-[2cqw] py-[1.6cqw] rounded-[1.6cqw] border border-white/10 bg-[#0d0a24]/90"
+              >
+                <span
+                  class="grid place-items-center w-[6cqw] h-[6cqw] rounded-[1.2cqw] bg-amber-500"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    class="w-1/2 h-1/2"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"
+                    /></svg
+                ></span>
+                <span class="forgeHero-text">
+                  <b class="block">Resolve</b>
+                  <small class="block text-white/50">CAPA · 8D</small>
+                </span>
+              </div>
+              <div
+                class="forgeHero-stage forgeHero-s4 absolute left-[14%] top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap flex items-center gap-[2cqw] px-[2cqw] py-[1.6cqw] rounded-[1.6cqw] border border-white/10 bg-[#0d0a24]/90"
+              >
+                <span
+                  class="grid place-items-center w-[6cqw] h-[6cqw] rounded-[1.2cqw] bg-emerald-500"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    class="w-1/2 h-1/2"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M4 17l6-6 4 4 6-7M14 8h6v6" /></svg
+                ></span>
+                <span class="forgeHero-text">
+                  <b class="block">Improve</b>
+                  <small class="block text-white/50">Kaizen · change</small>
+                </span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!----- The Problem Sec ----->
-      <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-          <div class="text-center mb-8 lg:mb-[50px]">
-            <h2 class="fade-in lg:mb-5 mb-4 text-heading t-h2">
-              When a result changes, the whole story matters
-            </h2>
-          </div>
-          <div class="fade-in max-w-[860px] w-full mx-auto">
-            <blockquote
-              class="relative p-6 lg:p-10 rounded-2xl lg:rounded-[30px] bg-[#f6f8fb] border-s-4 border-primary"
-            >
-              <p class="text-description t-body">
-                An inspection result can point back to a drawing revision, a
-                measuring system, a process change or an operator qualification.
-                A supplier finding can affect an approved material. A corrective
-                action can require a new control or work instruction. When that
-                context sits across separate spreadsheets and folders, quality
-                teams spend valuable time reconstructing what happened before
-                they can decide what to do next.
-              </p>
-              <p class="mt-4 text-heading font-semibold t-body">
-                Artisans QMS is organised around the relationships between
-                requirements, risks, controls, evidence, people and decisions.
-              </p>
-            </blockquote>
-          </div>
-        </div>
-      </section>
-
-      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
-      </div>
-
-      <!----- System Foundation Sec ----->
-      <section
-        id="quality-management-system-capabilities"
-        class="lg:py-[100px] sm:py-16 py-10"
-      >
+      <!----- Roadmap Sec ----->
+      <section class="lg:py-20 sm:py-16 py-10">
         <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-          <div class="fade-in text-center mb-8 lg:mb-[60px]">
-            <h2 class="text-heading t-h2">
-              Keep the current requirement and the evidence together
+          <div class="fade-in lg:mb-[50px] sm:mb-9 mb-5 text-center">
+            <h2 class="mb-2.5 text-heading t-h2">
+              A roadmap across the quality lifecycle
             </h2>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-[30px]">
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-[30px] gap-5"
+          >
             <div
-              class="fade-in w-full h-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col"
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
             >
-              <div class="mb-3 text-heading t-h3">
-                Document and record management
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/target-icon.svg"
+                  class="h-1/2"
+                  alt=""
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
               </div>
-              <p class="text-description t-body">
-                Manage the review, approval, revision and distribution of
-                quality documents, including drawings, specifications,
-                procedures, work instructions, forms and customer requirements.
-                Retain the records that show what was done, by whom and against
-                which approved revision.
-              </p>
+              <div>
+                <div class="mb-2 text-heading t-h3">Inspection</div>
+                <p class="text-description t-body">
+                  Plan checks, record results, and review exceptions.
+                </p>
+              </div>
             </div>
             <div
-              class="fade-in w-full h-full p-5 md:p-[30px] rounded-3xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col"
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
             >
-              <div class="mb-3 text-heading t-h3">
-                Quality training and competence
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/Cloud-hybridDeployments-icon.svg"
+                  class="h-1/2"
+                  alt=""
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
               </div>
-              <p class="text-description t-body">
-                Assign role and process training, assess understanding and
-                practical ability, and maintain an organisational skill matrix.
-                See where employees are trained, assessed and qualified for
-                specific operations, inspections and quality responsibilities.
-                Completion of training and demonstrated competence remain
-                distinct.
-              </p>
+              <div>
+                <div class="mb-2 text-heading t-h3">Calibration</div>
+                <p class="text-description t-body">
+                  Manage gauges, schedules, certificates, and calibration
+                  history.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/layers-icon.svg"
+                  class="h-1/2"
+                  alt=""
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div class="mb-2 text-heading t-h3">Drawing ballooning</div>
+                <p class="text-description t-body">
+                  Number drawing characteristics and link them to inspection
+                  requirements.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/DataQuality-Trust-icon.svg"
+                  class="h-1/2"
+                  alt=""
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div class="mb-2 text-heading t-h3">Supplier audits</div>
+                <p class="text-description t-body">
+                  Record findings, retain evidence, and track assigned actions.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/moduleCard-productMgmt.svg"
+                  class="h-1/2"
+                  alt=""
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div class="mb-2 text-heading t-h3">Quality planning</div>
+                <p class="text-description t-body">
+                  APQP, FMEA, Control Plans, PPAP and Risk Assessment.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/Predictive-icon.svg"
+                  class="h-1/2"
+                  alt=""
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div class="mb-2 text-heading t-h3">
+                  Measurement and process control
+                </div>
+                <p class="text-description t-body">MSA and SPC.</p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-congitiveIntelligent.svg"
+                  class="h-1/2"
+                  alt=""
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div class="mb-2 text-heading t-h3">Problem resolution</div>
+                <p class="text-description t-body">
+                  Complaints, nonconformities, CAPA, 8D, Warranty, Cost of
+                  Quality, and Kaizen.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-setting.svg"
+                  class="h-1/2"
+                  alt=""
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div class="mb-2 text-heading t-h3">Standards and change</div>
+                <p class="text-description t-body">
+                  Document Management, Audit Management, Management Review,
+                  Engineering Change Notices, and 4M Change.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-unifiedData.svg"
+                  class="h-1/2"
+                  alt=""
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div class="mb-2 text-heading t-h3">Supplier quality</div>
+                <p class="text-description t-body">
+                  Supplier Management, Vendor Quality, and RFQ.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/moduleCard-retailPLanning.svg"
+                  class="h-1/2"
+                  alt=""
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div class="mb-2 text-heading t-h3">Plant operations</div>
+                <p class="text-description t-body">
+                  Tools Management, Inventory, Production Planning, and
+                  Maintenance.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/artchitecHeightlight-card-securityCompliance.svg"
+                  class="h-1/2"
+                  alt=""
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div class="mb-2 text-heading t-h3">Environment and safety</div>
+                <p class="text-description t-body">
+                  Environmental Management, Work Permits, Incident Management,
+                  and Legal Compliance.
+                </p>
+              </div>
+            </div>
+            <div
+              class="fade-in lg:py-6 py-5 lg:pe-14 pe-8 lg:ps-[30px] ps-4 lg:rounded-[20px] rounded-2xl bg-[#f6f8fb] flex lg:gap-6 gap-4 w-full h-full"
+            >
+              <div
+                class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white flex-shrink-0"
+              >
+                <img
+                  src="assets/image/icon/customer-copilots-icon.svg"
+                  class="h-1/2"
+                  alt=""
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <div class="mb-2 text-heading t-h3">Employee capability</div>
+                <p class="text-description t-body">
+                  Training, Quality Assessments, and Skill Matrix.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
-      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
-      </div>
 
       <!----- Modular Capability Map ----->
-      <div class="fade-in mt-8 lg:mt-12 w-full max-w-[1200px] mx-auto">
+      <div
+        class="fade-in lg:py-20 sm:py-16 py-10 w-full max-w-[1200px] mx-auto"
+      >
         <div
           class="hidden lg:block relative w-full overflow-hidden rounded-xl shadow-lg bg-[#0c2547] [container-type:inline-size] aspect-[1200/675]"
         >
@@ -538,510 +877,80 @@
         <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
       </div>
 
-      <!----- Product and Process Planning Sec ----->
-      <section class="lg:py-[100px] sm:py-16 py-10">
+      <!----- Vault Connection Sec ----->
+      <section class="lg:py-[80px] sm:py-16 py-10">
         <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-          <div class="fade-in text-center mb-8 lg:mb-[60px]">
-            <h2 class="text-heading t-h2">Build quality into the plan</h2>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 lg:gap-[30px] gap-5">
-            <div
-              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-pink border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-1.png)] bg-no-repeat bg-bottom-right"
-            >
-              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                <div
-                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
-                >
-                  <img
-                    src="assets/image/icon/moduleCard-retailPLanning.svg"
-                    class="h-1/2 transition-all ease-linear duration-300"
-                    alt="APQP and risk assessment icon"
-                    width="40"
-                    height="40"
-                    loading="lazy"
-                  />
-                </div>
-                <div
-                  class="text-3xl lg:text-4xl font-extrabold text-primary/20 leading-none select-none"
-                >
-                  01
-                </div>
-              </div>
-              <div>
-                <div class="mb-2.5 text-heading t-h3">
-                  APQP and risk assessment
-                </div>
-                <p class="text-description t-body">
-                  Coordinate the activities, responsibilities and evidence
-                  needed for product and process readiness. Document product and
-                  process risks through FMEA and track the actions needed to
-                  address them.
-                </p>
-              </div>
-            </div>
-            <div
-              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-green-box border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-2.svg)] bg-no-repeat bg-bottom-right"
-            >
-              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                <div
-                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
-                >
-                  <img
-                    src="assets/image/icon/target-icon.svg"
-                    class="h-1/2 transition-all ease-linear duration-300"
-                    alt="Control Plan and drawing ballooning icon"
-                    width="40"
-                    height="40"
-                    loading="lazy"
-                  />
-                </div>
-                <div
-                  class="text-3xl lg:text-4xl font-extrabold text-primary/20 leading-none select-none"
-                >
-                  02
-                </div>
-              </div>
-              <div>
-                <div class="mb-2.5 text-heading t-h3">
-                  Control Plan and drawing ballooning
-                </div>
-                <p class="text-description t-body">
-                  Define product and process characteristics, control methods,
-                  sampling frequency and reaction plans. Identify and number
-                  drawing characteristics so requirements can be carried into
-                  inspection planning and reviewed for coverage.
-                </p>
-              </div>
-            </div>
-            <div
-              class="fade-in w-full h-full p-5 md:p-[30px] rounded-2xl md:rounded-[30px] bg-light-purple border border-[#f2f2f2] flex flex-col bg-[url(../../assets/image/icon/stratagic-significantCost-BG-3.svg)] bg-no-repeat bg-bottom-left bg-contain"
-            >
-              <div class="mb-4 sm:mb-6 lg:mb-[30px] flex items-center gap-4">
-                <div
-                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-white"
-                >
-                  <img
-                    src="assets/image/icon/artchitecHeightlight-card-interoperabilityScale.svg"
-                    class="h-1/2 transition-all ease-linear duration-300"
-                    alt="PPAP icon"
-                    width="40"
-                    height="40"
-                    loading="lazy"
-                  />
-                </div>
-                <div
-                  class="text-3xl lg:text-4xl font-extrabold text-primary/20 leading-none select-none"
-                >
-                  03
-                </div>
-              </div>
-              <div>
-                <div class="mb-2.5 text-heading t-h3">PPAP</div>
-                <p class="text-description t-body">
-                  Organise the required submission elements and supporting
-                  evidence for customer review of production part approval. Give
-                  teams a clear view of what is ready, what needs review and
-                  what is still outstanding.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
-      </div>
-
-      <!----- Measurement and Production Sec ----->
-      <section class="lg:py-[90px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-          <h2 class="fade-in mb-5 md:mb-10 text-heading text-center t-h2">
-            Know what was checked and whether the process is holding
-          </h2>
-
-          <div
-            class="grid grid-cols-1 lg:grid-cols-2 lg:gap-[30px] gap-5 mt-10 lg:mt-16"
-          >
-            <div
-              class="fade-in flex items-start gap-4 rounded-2xl bg-[#f6f8fb] p-5 sm:p-6"
-            >
-              <div
-                class="w-16 h-16 sm:w-20 sm:h-20 shrink-0 grid place-items-center rounded-xl bg-light-sky"
-              >
-                <img
-                  src="assets/image/icon/target-icon.svg"
-                  class="h-1/2"
-                  alt="Inspection management icon"
-                  width="60"
-                  height="60"
-                  loading="lazy"
-                />
-              </div>
-              <div>
-                <h3 class="mb-2 text-heading t-h3">Inspection management</h3>
-                <p class="text-description t-body">
-                  Plan and record incoming, in-process and final inspections
-                  against defined requirements. Review results, exceptions and
-                  reports with the relevant drawing and process context.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="fade-in flex items-start gap-4 rounded-2xl bg-[#f6f8fb] p-5 sm:p-6"
-            >
-              <div
-                class="w-16 h-16 sm:w-20 sm:h-20 shrink-0 grid place-items-center rounded-xl bg-light-green-box"
-              >
-                <img
-                  src="assets/image/icon/DataQuality-Trust-icon.svg"
-                  class="h-1/2"
-                  alt="Calibration and MSA icon"
-                  width="60"
-                  height="60"
-                  loading="lazy"
-                />
-              </div>
-              <div>
-                <h3 class="mb-2 text-heading t-h3">Calibration and MSA</h3>
-                <p class="text-description t-body">
-                  Manage equipment and gauge registers, calibration schedules,
-                  internal and external calibration records, reminders and
-                  reports. Use Measurement System Analysis to evaluate whether a
-                  measurement process is suitable for its intended use.
-                  Calibration status and measurement system capability answer
-                  different questions; both matter.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="fade-in flex items-start gap-4 rounded-2xl bg-[#f6f8fb] p-5 sm:p-6"
-            >
-              <div
-                class="w-16 h-16 sm:w-20 sm:h-20 shrink-0 grid place-items-center rounded-xl bg-light-pink"
-              >
-                <img
-                  src="assets/image/icon/Predictive-icon.svg"
-                  class="h-1/2"
-                  alt="SPC icon"
-                  width="60"
-                  height="60"
-                  loading="lazy"
-                />
-              </div>
-              <div>
-                <h3 class="mb-2 text-heading t-h3">SPC</h3>
-                <p class="text-description t-body">
-                  Monitor process measurements over time to identify signals
-                  that require investigation. Give quality and production teams
-                  the information needed to respond before variation becomes a
-                  repeated defect.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="fade-in flex items-start gap-4 rounded-2xl bg-[#f6f8fb] p-5 sm:p-6"
-            >
-              <div
-                class="w-16 h-16 sm:w-20 sm:h-20 shrink-0 grid place-items-center rounded-xl bg-light-purple"
-              >
-                <img
-                  src="assets/image/icon/artchitecHeightlight-card-securityCompliance.svg"
-                  class="h-1/2"
-                  alt="Supplier quality and audits icon"
-                  width="60"
-                  height="60"
-                  loading="lazy"
-                />
-              </div>
-              <div>
-                <h3 class="mb-2 text-heading t-h3">
-                  Supplier quality and audits
-                </h3>
-                <p class="text-description t-body">
-                  Plan supplier audits, document findings and track actions.
-                  Keep supplier quality evidence accessible to the teams making
-                  sourcing, incoming inspection and production decisions.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
-      </div>
-
-      <!----- Response and Improvement Sec ----->
-      <section class="lg:py-[90px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-          <div class="fade-in text-center mb-8 lg:mb-[50px]">
-            <h2 class="text-heading t-h2">
-              Close the issue and examine what must change
+          <div class="fade-in text-center">
+            <h2 class="lg:mb-8 mb-5 t-h2 max-w-[820px] mx-auto">
+              Use earlier experience in the next investigation
             </h2>
-          </div>
-
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-[30px] gap-5"
-          >
-            <div
-              class="fade-in p-5 md:p-[30px] rounded-2xl md:rounded-[30px] border border-[#e8e8e8] bg-white flex flex-col"
+            <p class="max-w-[820px] mx-auto text-description t-body">
+              Our planned Vault connection will bring procedures, earlier
+              investigations, and employees&rsquo; experience into Forge. Agents
+              could gather relevant evidence, prepare investigation summaries,
+              and coordinate follow-up. Quality teams will review the evidence
+              and approve decisions and changes.
+            </p>
+            <img
+              src="/assets/image/quality-management/artisanscloud-forge-next-investigation.webp"
+              alt="An agent prepares a nonconformity case from Vault knowledge for the quality team to review and approve"
+              width="1400"
+              height="788"
+              loading="lazy"
+              class="fade-in w-full max-w-[1000px] h-auto mx-auto my-6 lg:my-[50px] rounded-[10px] lg:rounded-[20px] border border-[#f2f2f2]"
+            />
+            <a
+              href="/knowledge-management/vault"
+              class="mx-auto w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-semibold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+              >Explore Vault</a
             >
-              <div class="flex items-center gap-4 mb-4">
-                <div
-                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
-                >
-                  <img
-                    src="assets/image/icon/intelligentAutomation-icon.svg"
-                    class="h-1/2"
-                    alt="Nonconformance, CAPA and 8D icon"
-                    width="40"
-                    height="40"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="text-heading t-h3">Nonconformance, CAPA and 8D</div>
-              </div>
-              <p class="text-description t-body">
-                Record nonconformities, containment and disposition. Investigate
-                causes, assign corrective or preventive actions and verify their
-                effectiveness. Use 8D when a structured, cross-functional
-                problem-solving response is needed.
-              </p>
-            </div>
-
-            <div
-              class="fade-in p-5 md:p-[30px] rounded-2xl md:rounded-[30px] border border-[#e8e8e8] bg-white flex flex-col"
-            >
-              <div class="flex items-center gap-4 mb-4">
-                <div
-                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
-                >
-                  <img
-                    src="assets/image/icon/artchitecHeightlight-card-congitiveIntelligent.svg"
-                    class="h-1/2"
-                    alt="4M change management icon"
-                    width="40"
-                    height="40"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="text-heading t-h3">4M change management</div>
-              </div>
-              <p class="text-description t-body">
-                Assess changes to people, machines, materials and methods before
-                implementation. Review the possible effect on process risks,
-                controls, inspection, training and customer requirements, then
-                retain the approval and validation evidence.
-              </p>
-            </div>
-
-            <div
-              class="fade-in p-5 md:p-[30px] rounded-2xl md:rounded-[30px] border border-[#e8e8e8] bg-white flex flex-col"
-            >
-              <div class="flex items-center gap-4 mb-4">
-                <div
-                  class="max-w-16 sm:max-w-20 min-w-16 sm:min-w-20 h-16 sm:h-20 grid place-items-center rounded-[10px] bg-[#f6f8fb] flex-shrink-0"
-                >
-                  <img
-                    src="assets/image/icon/metadata-LineageManagement-icon.svg"
-                    class="h-1/2"
-                    alt="Internal audits and management review icon"
-                    width="40"
-                    height="40"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="text-heading t-h3">
-                  Internal audits and management review
-                </div>
-              </div>
-              <p class="text-description t-body">
-                Plan and record internal audits, findings and follow-up. Bring
-                quality performance, recurring issues and open actions into
-                management review so improvement is guided by evidence.
-              </p>
-            </div>
           </div>
         </div>
+      </section>
+
+      <!----- Demo CTA Sec ----->
+      <section
+        class="CTA_sec max-w-[1400px] w-[95%] mx-auto px-5 py-10 lg:py-20 mb-10 lg:mb-20 relative overflow-hidden rounded-3xl md:rounded-[30px] bg-[url(../../assets/image/artisanscloud-cta-bg-driveSale.png)] bg-no-repeat bg-top-left bg-cover"
+      >
+        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10">
+          <div class="fade-in text-center max-w-[800px] mx-auto">
+            <h2 class="mb-4 lg:mb-6 text-white t-h2">
+              See Forge with your quality workflow
+            </h2>
+            <p class="mb-6 lg:mb-8 text-white/80 t-lead">
+              Choose an inspection, calibration, drawing, or supplier audit
+              requirement. See the available module and discuss the scope your
+              team needs.
+            </p>
+            <a
+              href="/request-demo"
+              class="w-fit h-fit rounded-[40px] sm:px-8 px-6 sm:py-4 py-3 inline-flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-none relative overflow-hidden transition-all duration-300 ease-in-out active:bg-white active:text-heading active:scale-95 focus-visible:bg-white focus-visible:text-heading bg-primary text-white hover:bg-white hover:text-heading"
+              >Book a Forge Demo</a
+            >
+          </div>
+        </div>
+
+        <img
+          src="assets/image/icon/ctaBanner-shape.png"
+          class="animate-pulse absolute start-0 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <img
+          src="assets/image/icon/ctaBanner-shape2.png"
+          class="animate-pulse absolute top-4 start-[58%] -translate-x-1/2 bottom-0 pointer-none select-none"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
       </section>
 
       <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
         <div class="bg-grey/20 mx-auto w-full h-[1px]"></div>
       </div>
-
-      <!----- Connected Workflow Sec ----->
-      <section class="lg:py-[90px] sm:py-16 py-10">
-        <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-          <div class="grid lg:grid-cols-2 lg:gap-16 gap-8 items-start">
-            <div class="fade-in">
-              <h2 class="text-heading t-h2">
-                One change can touch many parts of the system
-              </h2>
-            </div>
-            <div class="fade-in">
-              <p class="text-description t-body mb-4">
-                Consider a revised work instruction. The new document needs
-                approval. The change may affect the FMEA, Control Plan or
-                inspection method. The people performing the work may need
-                training and reassessment. Later, an audit or customer question
-                may require the organisation to show which revision applied and
-                when.
-              </p>
-              <p class="text-description t-body">
-                Artisans QMS is designed to make those relationships visible, so
-                teams can follow a requirement from planning to production
-                evidence and from an issue to a verified action.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!----- Modular Adoption Sec ----->
-      <section class="lg:py-[100px] sm:py-16 py-10">
-        <div
-          class="max-w-[1400px] w-[98%] mx-auto overflow-hidden relative rounded-3xl lg:rounded-[30px] bg-heading py-[clamp(2.5rem,6.528vw+0.542rem,5.438rem)] px-[20px]"
-        >
-          <div
-            class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto relative z-10 flex justify-center"
-          >
-            <div class="lg:gap-10 gap-8 text-center w-10/12">
-              <div class="fade-in">
-                <div class="lg:mb-8 mb-5 text-white t-h2">
-                  Start with the work <br />that needs attention now
-                </div>
-              </div>
-              <div class="fade-in">
-                <p class="text-white/80 t-body">
-                  A manufacturer may begin with calibration and inspection.
-                  Another may begin with drawing ballooning, supplier audits or
-                  quality training. The modular structure lets teams establish
-                  the workflows they need first and extend the system across
-                  planning, production and improvement over time.
-                </p>
-              </div>
-            </div>
-          </div>
-          <img
-            src="assets/image/icon/strategicOutcomeBanner-shape-1.svg"
-            class="absolute select-none pointer-events-none start-0 bottom-0"
-            alt=""
-            width="150"
-            height="150"
-            loading="lazy"
-          />
-          <img
-            src="assets/image/icon/strategicOutcomeBanner-shape-2.svg"
-            class="absolute select-none pointer-events-none end-0 top-0"
-            alt=""
-            width="150"
-            height="150"
-            loading="lazy"
-          />
-        </div>
-      </section>
-
-      <!----- Closing Action CTA Sec ----->
-      <section class="lg:py-[100px] sm:py-16 py-10">
-        <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-          <div
-            class="fade-in grid lg:grid-cols-2 gap-8 lg:gap-[66px] items-center"
-          >
-            <div>
-              <h2 class="mb-5 md:mb-[30px] text-heading t-h2">
-                Bring us a real quality workflow
-              </h2>
-              <p class="lg:pe-10 text-description t-body">
-                Show us a drawing, a control plan, a calibration process or an
-                issue your team is working through. We will walk through the
-                relevant QMS capabilities and how they fit your operation.
-              </p>
-              <div class="mt-5 lg:mt-10 flex flex-wrap gap-3">
-                <a
-                  href="/request-demo"
-                  class="w-fit h-fit rounded-[40px] sm:px-6 px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-semibold text-sm md:text-base leading-none relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
-                >
-                  Schedule a QMS walkthrough
-                </a>
-              </div>
-            </div>
-
-            <div
-              class="rounded-2xl md:rounded-[20px] bg-[#f6f8fb] p-6 sm:p-8 space-y-5"
-            >
-              <div class="flex flex-col gap-4">
-                <div class="flex items-start gap-4">
-                  <img
-                    src="assets/image/icon/forward-arrow.svg"
-                    class="flex-shrink-0 mt-1 select-none pointer-events-none sm:h-4 h-3"
-                    alt=""
-                    width="16"
-                    height="16"
-                    loading="lazy"
-                  />
-                  <p class="text-description t-body">
-                    <strong class="text-heading"
-                      >Document and record management</strong
-                    >
-                    for drawings, specifications and quality records
-                  </p>
-                </div>
-                <div class="flex items-start gap-4">
-                  <img
-                    src="assets/image/icon/forward-arrow.svg"
-                    class="flex-shrink-0 mt-1 select-none pointer-events-none sm:h-4 h-3"
-                    alt=""
-                    width="16"
-                    height="16"
-                    loading="lazy"
-                  />
-                  <p class="text-description t-body">
-                    <strong class="text-heading">Control plans and FMEA</strong>
-                    linked to inspection planning and drawing requirements
-                  </p>
-                </div>
-                <div class="flex items-start gap-4">
-                  <img
-                    src="assets/image/icon/forward-arrow.svg"
-                    class="flex-shrink-0 mt-1 select-none pointer-events-none sm:h-4 h-3"
-                    alt=""
-                    width="16"
-                    height="16"
-                    loading="lazy"
-                  />
-                  <p class="text-description t-body">
-                    <strong class="text-heading"
-                      >Inspection and calibration</strong
-                    >
-                    with equipment registers and measurement system analysis
-                  </p>
-                </div>
-                <div class="flex items-start gap-4">
-                  <img
-                    src="assets/image/icon/forward-arrow.svg"
-                    class="flex-shrink-0 mt-1 select-none pointer-events-none sm:h-4 h-3"
-                    alt=""
-                    width="16"
-                    height="16"
-                    loading="lazy"
-                  />
-                  <p class="text-description t-body">
-                    <strong class="text-heading"
-                      >Corrective actions and 8D</strong
-                    >
-                    with verified root cause and effectiveness review
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
 
     {{> footer}}

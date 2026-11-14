@@ -441,10 +441,294 @@ body {
       transform: translateY(8px) rotate(-0.5deg);
     }
   }
+  /* Forge hero: quality lifecycle loop. Pure CSS: the dashes flow around the
+     ring and each stage lights up in turn (4 stages x 2s). */
+  .forgeHero {
+    container-type: inline-size;
+  }
+  .forgeHero-text {
+    font-size: max(2cqw, 10px);
+    line-height: 1.3;
+  }
+  .forgeHero-stage b,
+  .forgeHero-title {
+    font-size: max(2.6cqw, 12px);
+  }
+  .forgeHero-flow {
+    animation: forge-flow 1.6s linear infinite;
+  }
+  @keyframes forge-flow {
+    to {
+      stroke-dashoffset: -8;
+    }
+  }
+  .forgeHero-core {
+    animation: forge-core 3s ease-in-out infinite;
+  }
+  @keyframes forge-core {
+    0%,
+    100% {
+      box-shadow: 0 0 40px -10px rgb(245 158 11 / 0.35);
+    }
+    50% {
+      box-shadow: 0 0 70px 0 rgb(245 158 11 / 0.55);
+    }
+  }
+  .forgeHero-stage {
+    animation: forge-stage 8s ease-in-out infinite;
+  }
+  .forgeHero-s2 {
+    animation-delay: 2s;
+  }
+  .forgeHero-s3 {
+    animation-delay: 4s;
+  }
+  .forgeHero-s4 {
+    animation-delay: 6s;
+  }
+  @keyframes forge-stage {
+    0%,
+    25%,
+    100% {
+      border-color: rgb(255 255 255 / 0.1);
+      box-shadow: none;
+      scale: 1;
+    }
+    8%,
+    17% {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 40px -6px var(--color-primary);
+      scale: 1.06;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .forgeHero-flow,
+    .forgeHero-core,
+    .forgeHero-stage {
+      animation: none;
+    }
+  }
+
+  /* Nexus hero: reuses the .forgeHero ring styles. Channels light up in
+     turn (6 x 1.5s) and the Nexus rows flash as each one syncs. */
+  .nexusHero-node {
+    animation: forge-stage 9s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 1.5s);
+  }
+  .nexusHero-row b {
+    animation: nexus-sync 6s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 1.5s);
+  }
+  @keyframes nexus-sync {
+    0%,
+    30%,
+    100% {
+      color: var(--color-primary);
+    }
+    10%,
+    20% {
+      color: var(--color-sky);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nexusHero-node,
+    .nexusHero-row b {
+      animation: none;
+    }
+  }
+
+  /* Arena hero: live role-play scene. assets/script/modules/arena-hero.js
+     toggles .is-on on messages and .is-scored on #arenaHero to play it. */
+  .arenaHero-float {
+    animation: float-slow 7s ease-in-out infinite;
+  }
+  .arenaHero-float-alt {
+    animation-name: float-slower;
+  }
+  .arenaHero-orb {
+    animation: arena-orb 2.4s ease-in-out infinite;
+  }
+  @keyframes arena-orb {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgb(247 77 221 / 0.45);
+    }
+    50% {
+      box-shadow: 0 0 0 14px rgb(247 77 221 / 0);
+    }
+  }
+  .arenaHero-msg {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+  .arenaHero-msg.is-on {
+    opacity: 1;
+    transform: none;
+  }
+  .arenaHero-ring {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    transition: stroke-dashoffset 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .arenaHero-bar {
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .is-scored .arenaHero-ring {
+    stroke-dashoffset: 22;
+  }
+  .is-scored .arenaHero-bar {
+    width: var(--w);
+  }
+  .arenaHero-typing::after {
+    content: "...";
+    animation: arena-typing 1.2s steps(4) infinite;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    width: 0;
+  }
+  @keyframes arena-typing {
+    to {
+      width: 1.2em;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .arenaHero-float,
+    .arenaHero-orb,
+    .arenaHero-typing::after {
+      animation: none;
+    }
+  }
+  .animate-float-hero {
+    animation: float-slow 6s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float-hero {
+      animation: none;
+    }
+  }
   .animate-float-slow {
     animation: float-slow 7s ease-in-out infinite;
   }
   .animate-float-slower {
     animation: float-slower 9s ease-in-out infinite;
+  }
+}
+
+/* Homepage hero: WebGL memory core (assets/script/modules/hero-core.js) */
+@layer components {
+  .heroCore {
+    height: clamp(680px, 92vh, 880px);
+  }
+  /* Dark hero background, shared by the homepage, Vault and Arena heroes */
+  .heroCore,
+  .heroDark {
+    background:
+      radial-gradient(
+        900px 600px at 70% 50%,
+        rgb(124 92 255 / 0.22),
+        transparent 65%
+      ),
+      radial-gradient(
+        700px 500px at 10% 90%,
+        rgb(46 211 230 / 0.08),
+        transparent 60%
+      ),
+      #06051a;
+  }
+  .heroCore-copy {
+    position: absolute;
+    left: 50%;
+    bottom: 48px;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+  }
+  @media (min-width: 1024px) {
+    .heroCore-copy {
+      left: max(48px, calc(50% - 560px));
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-46%);
+      width: auto;
+    }
+  }
+  /* Below lg the copy sits in flow under the 3D core, so the hero grows with
+     its text instead of the text overflowing the top edge. The text comes first and the core sits in the bottom padding. */
+  @media (max-width: 1023px) {
+    .heroCore {
+      height: auto;
+      min-height: 680px;
+      padding: 112px 20px clamp(280px, 72vw, 380px);
+    }
+    .heroCore-copy {
+      position: relative;
+      left: auto;
+      bottom: auto;
+      transform: none;
+      width: 100%;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+  }
+  .heroCore-grad {
+    background: linear-gradient(
+      100deg,
+      var(--color-sky),
+      var(--color-primary) 45%,
+      var(--color-pink)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .heroCore-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9px;
+  }
+  .hero-sat {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 13px 7px 8px;
+    border-radius: 99px;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    color: #efebff;
+    background: rgb(14 11 44 / 0.72);
+    border: 1px solid rgb(167 139 250 / 0.16);
+    backdrop-filter: blur(8px);
+    pointer-events: auto;
+    transition:
+      border-color 0.2s,
+      background 0.2s;
+  }
+  .hero-sat:hover {
+    border-color: var(--c);
+    background: rgb(30 24 80 / 0.85);
+  }
+  .hero-sat i {
+    width: 10px;
+    height: 10px;
+    border-radius: 9px;
+    background: var(--c);
+    box-shadow: 0 0 12px var(--c);
+  }
+  .hero-sat small {
+    color: #a49fc6;
+    font-size: 11.5px;
+  }
+  /* Short labels on phones so they fit inside the hero (see hero-core.js) */
+  @media (max-width: 639px) {
+    .hero-sat small {
+      display: none;
+    }
   }
 }
