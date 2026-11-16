@@ -83,6 +83,22 @@ export function initVaultGraph() {
     n.vx = n.vy = 0;
   });
 
+  // Box covering a node plus its label, so labels push each other apart too.
+  const fontOf = (n) =>
+    `${n.isHub ? 600 : 500} ${Math.round((n.isHub ? 13 : 11) * Math.max(S, 0.8))}px Poppins`;
+  function box(n) {
+    if (n.core) return [n.x - n.r, n.x + n.r, n.y - n.r, n.y + n.r];
+    g.font = fontOf(n);
+    const lw = g.measureText(n.n).width + n.r + 8;
+    const right = n.x >= W / 2;
+    return [
+      n.x - n.r - (right ? 0 : lw - n.r),
+      n.x + n.r + (right ? lw - n.r : 0),
+      n.y - Math.max(n.r, 9),
+      n.y + Math.max(n.r, 9),
+    ];
+  }
+
   function step() {
     const cx = W / 2,
       cy = H / 2;
@@ -127,8 +143,43 @@ export function initVaultGraph() {
       if (i === drag) return;
       n.vx *= 0.82;
       n.vy *= 0.82;
-      n.x = Math.max(n.r + 10, Math.min(W - n.r - 10, n.x + n.vx));
-      n.y = Math.max(n.r + 16, Math.min(H - n.r - 16, n.y + n.vy));
+      n.x += n.vx;
+      n.y += n.vy;
+    });
+    // Separate overlapping label boxes (push apart along the shallower axis).
+    const B = N.map(box);
+    for (let i = 0; i < N.length; i++) {
+      for (let j = i + 1; j < N.length; j++) {
+        const a = B[i],
+          b = B[j];
+        const ox = Math.min(a[1], b[1]) - Math.max(a[0], b[0]) + 4,
+          oy = Math.min(a[3], b[3]) - Math.max(a[2], b[2]) + 4;
+        if (ox <= 0 || oy <= 0) continue;
+        const A = N[i],
+          C = N[j];
+        const wa = i === drag || A.core ? 0 : 1,
+          wc = j === drag || C.core ? 0 : 1;
+        if (!wa && !wc) continue;
+        const t = wa + wc;
+        if (oy <= ox) {
+          const d = A.y <= C.y ? 1 : -1;
+          A.y -= (d * oy * wa) / t;
+          C.y += (d * oy * wc) / t;
+        } else {
+          const d = A.x <= C.x ? 1 : -1;
+          A.x -= (d * ox * wa) / t;
+          C.x += (d * ox * wc) / t;
+        }
+      }
+    }
+    // Keep each node and its whole label inside the canvas.
+    N.forEach((n, i) => {
+      if (i === drag) return;
+      const [l, r, t, b] = box(n);
+      if (l < 6) n.x += 6 - l;
+      else if (r > W - 6) n.x -= r - (W - 6);
+      if (t < 6) n.y += 6 - t;
+      else if (b > H - 6) n.y -= b - (H - 6);
     });
   }
 
@@ -234,8 +285,7 @@ export function initVaultGraph() {
           g.arc(n.x, n.y, 5, 0, 6.28);
           g.fill();
         }
-        const fs = Math.round((n.isHub ? 13 : 11) * Math.max(S, 0.8));
-        g.font = `${n.isHub ? 600 : 500} ${fs}px Poppins`;
+        g.font = fontOf(n);
         g.fillStyle = n.isHub ? "#efebff" : "#c9c4e6";
         const right = n.x >= W / 2;
         g.textAlign = right ? "left" : "right";
