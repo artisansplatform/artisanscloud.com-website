@@ -379,7 +379,8 @@ export async function initHeroCore() {
       // pixels (inside the bottom padding, under the text) instead of world
       // units that would scale with the hero height.
       const room = parseFloat(getComputedStyle(hero).paddingBottom);
-      const d = Math.min(0.38 * W, room * 0.5, 260);
+      // Orbit rings reach ~2.9x the core diameter, so keep that inside the width.
+      const d = Math.min(0.3 * W, room * 0.44, 230);
       const scale = d / (0.389 * H);
       const centerPx = H - room / 2;
       core.position.set(0, 0.6 + (0.5 - centerPx / H) * 7.68, 0);
@@ -441,7 +442,8 @@ export async function initHeroCore() {
       // camera: parallax plus a small dolly on scroll
       camera.position.x += (mx * 0.9 - camera.position.x) * 0.04;
       camera.position.y += (-my * 0.6 - camera.position.y) * 0.04;
-      camera.position.z = 10 - sp * 2.5;
+      // The mobile core is sized in pixels for z = 10, so no dolly there.
+      camera.position.z = mobile ? 10 : 10 - sp * 2.5;
       camera.lookAt(mobile ? 0 : 1.2, mobile ? 0.6 : 0, 0);
 
       // streams: quadratic bezier from each source, spiralling into the core

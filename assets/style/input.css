@@ -662,7 +662,7 @@ body {
     .heroCore {
       height: auto;
       min-height: 680px;
-      padding: 112px 20px clamp(280px, 72vw, 380px);
+      padding: 112px 20px clamp(320px, 82vw, 400px);
     }
     .heroCore-copy {
       position: relative;
