@@ -11,6 +11,7 @@ const viewports = [
 const pagesToTest = [
   { path: "/", name: "Home" },
   { path: "/unified-commerce/nexus", name: "Unified Commerce" },
+  { path: "/quality-management-system", name: "Forge QMS" },
   { path: "/data-intelligence", name: "Data Intelligence" },
   { path: "/about-us", name: "About Us" },
 ];
