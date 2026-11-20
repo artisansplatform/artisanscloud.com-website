@@ -571,8 +571,10 @@ export function initNexusHero() {
   }
   function frame(now) {
     // Reduced motion: one static frame, then redraw only while a user-tapped
-    // order is in flight (plus one clean-up frame).
-    if (visible && (!reduce || needs)) draw(now);
+    // order is in flight (plus one clean-up frame). The parts/sparks check is
+    // what starts the redraw: a tap adds a particle while needs is false.
+    if (visible && (!reduce || needs || parts.length || sparks.length))
+      draw(now);
     else last = now;
     requestAnimationFrame(frame);
   }
