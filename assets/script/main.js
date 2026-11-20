@@ -21,6 +21,7 @@ import { initTabs } from "./modules/tabs.js";
 import { initCardToggle } from "./modules/card-toggle.js";
 import { initForgeLifecycle } from "./modules/forge-lifecycle.js";
 import { initForgeRoadmap } from "./modules/forge-roadmap.js";
+import { initNexusHero } from "./modules/nexus-hero.js";
 import { initNavActive } from "./modules/nav-active.js";
 import { initBlogArticles } from "./modules/blog-articles.js";
 import { initDigitalCard } from "./modules/digital-card.js";
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initNavActive();
   initForgeLifecycle();
   initForgeRoadmap();
+  initNexusHero();
   initBlogArticles();
   initDigitalCard();
   initSmoothScroll();
