@@ -12409,6 +12409,7 @@ body {
     font-size: 16px;
   }
   .nx .nx-stage .toasts {
+    left: 790px;
     width: 560px;
   }
   .nx .nx-stage .toast {

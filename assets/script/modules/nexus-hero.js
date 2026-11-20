@@ -40,19 +40,44 @@ export function initNexusHero() {
   var wrap = document.getElementById("nx-wrap"),
     cv = document.getElementById("nx-cv"),
     ctx = cv.getContext("2d");
-  var DPR = Math.min(3, window.devicePixelRatio || 1),
-    scale = 1;
+  var DPR = Math.min(2, window.devicePixelRatio || 1),
+    fitW = 0,
+    needs = true;
+  // Size the backing store from the displayed width (the stage is scaled to
+  // wrap width / 1490 by CSS) and only when that width really changes, so
+  // height-only resizes (mobile toolbar) do not reallocate the canvas.
   function fit() {
-    scale = wrap.clientWidth / 1440;
-    var d = DPR * Math.max(1, scale);
-    cv.width = 1440 * d;
-    cv.height = 810 * d;
+    var w = wrap.clientWidth;
+    if (!w || w === fitW) return;
+    fitW = w;
+    var d = Math.max(0.25, (DPR * w) / 1490);
+    cv.width = Math.round(1440 * d);
+    cv.height = Math.round(810 * d);
     ctx.setTransform(d, 0, 0, d, 0, 0);
+    needs = true;
   }
   window.addEventListener("resize", fit);
   fit();
   var reduce =
     window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Below xl the result panel is hidden, so the stage is a picture: inert (no
+  // Tab stops on the channel buttons) and exposed as one labelled image.
+  var xl = matchMedia("(min-width: 1280px)");
+  function syncA11y() {
+    document.getElementById("nx-stage").inert = !xl.matches;
+    if (xl.matches) {
+      wrap.removeAttribute("role");
+      wrap.removeAttribute("aria-label");
+    } else {
+      wrap.setAttribute("role", "img");
+      wrap.setAttribute(
+        "aria-label",
+        "Orders from five sales channels flow through Nexus to four fulfilment locations",
+      );
+    }
+  }
+  xl.addEventListener("change", syncA11y);
+  syncA11y();
   function ctrl(a, b, bend) {
     var mx = (a.x + b.x) / 2,
       my = (a.y + b.y) / 2;
@@ -404,8 +429,10 @@ export function initNexusHero() {
   function draw(now) {
     var dt = Math.min(0.05, (now - last) / 1000);
     last = now;
-    var T = (now - t0) / 1000;
+    var T = reduce ? 1 : (now - t0) / 1000;
+    var had = parts.length > 0 || sparks.length > 0;
     if (
+      !reduce &&
       !guided &&
       now - lastUser > 9000 &&
       Math.floor(T) % 9 === 4 &&
@@ -419,7 +446,7 @@ export function initNexusHero() {
       }, 1500);
     }
     if (Math.floor(T) % 9 !== 4) frame.ag = false;
-    if (Math.random() < rate * dt * (reduce ? 0.3 : 1)) {
+    if (!reduce && Math.random() < rate * dt) {
       spawn(CH[Math.floor(Math.random() * CH.length)], false);
     }
     ctx.clearRect(0, 0, 1440, 810);
@@ -540,9 +567,12 @@ export function initNexusHero() {
       ctx.fill();
     }
     ctx.globalAlpha = 1;
+    needs = had;
   }
   function frame(now) {
-    if (visible) draw(now);
+    // Reduced motion: one static frame, then redraw only while a user-tapped
+    // order is in flight (plus one clean-up frame).
+    if (visible && (!reduce || needs)) draw(now);
     else last = now;
     requestAnimationFrame(frame);
   }

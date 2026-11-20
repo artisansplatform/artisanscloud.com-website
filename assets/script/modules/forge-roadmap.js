@@ -27,18 +27,20 @@ export function initForgeRoadmap() {
 
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  let paused = false;
+  let hovered = false;
+  let focused = false;
   let visible = false;
   let showBack = true;
-  const pause = (v) => () => (paused = v);
-  grid.addEventListener("pointerenter", pause(true));
-  grid.addEventListener("pointerleave", pause(false));
-  grid.addEventListener("focusin", pause(true));
-  grid.addEventListener("focusout", pause(false));
+  grid.addEventListener("pointerenter", () => (hovered = true));
+  grid.addEventListener("pointerleave", () => (hovered = false));
+  grid.addEventListener("focusin", () => (focused = true));
+  grid.addEventListener("focusout", (e) => {
+    if (!grid.contains(e.relatedTarget)) focused = false;
+  });
   new IntersectionObserver(([e]) => (visible = e.isIntersecting)).observe(grid);
 
   setInterval(() => {
-    if (paused || !visible || document.hidden) return;
+    if (hovered || focused || !visible || document.hidden) return;
     cards.forEach((card, i) =>
       setTimeout(() => flip(card, showBack), i * STAGGER_MS),
     );
