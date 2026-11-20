@@ -64,296 +64,378 @@
     <!----- Hero Banner ----->
     <section class="w-full p-4 lg:p-5">
       <div
-        class="heroDark rounded-2xl lg:rounded-[30px] overflow-hidden pt-[clamp(7rem,16.667vw-5rem,7.5rem)] pb-10 lg:pb-16 lg:min-h-[768px] flex items-center"
+        class="nx rounded-2xl lg:rounded-[30px] overflow-hidden"
+        id="nx-hero"
       >
-        <div
-          class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto grid lg:grid-cols-[5fr_7fr] gap-8 lg:gap-10 items-center"
-        >
-          <div class="text-center lg:text-left">
-            <div
-              class="mb-3 sm:mb-5 font-semibold t-caption uppercase text-primary"
+        <div class="nx-wrap">
+          <div class="nx-head">
+            <div class="eb">NEXUS · AUTONOMOUS COMMERCE</div>
+            <h1>Commerce that <em>runs itself</em></h1>
+            <p>
+              Every order, from every channel, routed in a split second. Stock,
+              loyalty and offers stay in sync while AI agents handle the rest.
+            </p>
+            <a
+              href="/request-demo"
+              class="nx-cta mt-2 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 bg-primary text-white hover:bg-primary-light"
+              >Book a Nexus Demo</a
             >
-              Nexus | Enterprise Commerce Cloud
-            </div>
-            <h1 id="heroHeading" class="mb-4 text-white t-display">
-              Run stores and online channels from one platform
-            </h1>
-            <div id="heroDec" class="flex flex-col items-center lg:items-start">
-              <p class="mb-3 max-w-[560px] text-[#a49fc6] t-lead">
-                Nexus connects inventory, orders, customers and promotions
-                across your retail business.
-              </p>
-              <p class="max-w-[560px] text-[#a49fc6] t-lead">
-                This unified commerce foundation supports our move toward
-                AI-assisted decisions and autonomous operations.
-              </p>
-              <a
-                href="/request-demo"
-                class="mt-6 lg:mt-8 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 bg-primary text-white hover:bg-primary-light"
-                >Book a Nexus Demo</a
-              >
-            </div>
           </div>
-
-          <div
-            class="forgeHero relative w-full aspect-[4/5] sm:aspect-[16/10] text-white"
-            role="img"
-            aria-label="Nexus at the centre of stores, warehouses, website, marketplaces, social commerce and POS, keeping inventory, orders, customers and promotions in sync"
-          >
-            <svg
-              viewBox="0 0 160 100"
-              preserveAspectRatio="none"
-              class="absolute inset-0 w-full h-full"
-              fill="none"
-              aria-hidden="true"
-            >
-              <line
-                x1="80"
-                y1="50"
-                x2="80"
-                y2="13"
-                class="forgeHero-flow stroke-sky"
-                stroke-width="0.5"
-                stroke-dasharray="1.2 1.8"
-              />
-              <line
-                x1="80"
-                y1="50"
-                x2="138"
-                y2="30"
-                class="forgeHero-flow stroke-pink"
-                stroke-width="0.5"
-                stroke-dasharray="1.2 1.8"
-              />
-              <line
-                x1="80"
-                y1="50"
-                x2="138"
-                y2="70"
-                class="forgeHero-flow stroke-amber-500"
-                stroke-width="0.5"
-                stroke-dasharray="1.2 1.8"
-              />
-              <line
-                x1="80"
-                y1="50"
-                x2="80"
-                y2="87"
-                class="forgeHero-flow stroke-sky"
-                stroke-width="0.5"
-                stroke-dasharray="1.2 1.8"
-              />
-              <line
-                x1="80"
-                y1="50"
-                x2="22"
-                y2="70"
-                class="forgeHero-flow stroke-primary"
-                stroke-width="0.5"
-                stroke-dasharray="1.2 1.8"
-              />
-              <line
-                x1="80"
-                y1="50"
-                x2="22"
-                y2="30"
-                class="forgeHero-flow stroke-primary"
-                stroke-width="0.5"
-                stroke-dasharray="1.2 1.8"
-              />
-            </svg>
-            <div
-              class="forgeHero-core absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] max-sm:w-[60%] px-[2.6cqw] py-[2cqw] rounded-[2cqw] border border-primary/50 bg-[#0d0a24]/95"
-            >
-              <div class="flex items-center justify-between mb-[1cqw]">
-                <span class="flex items-center gap-[1.2cqw]">
-                  <span
-                    class="grid place-items-center w-[5cqw] h-[5cqw] rounded-[1cqw] bg-primary"
-                    ><svg
+          <div class="nx-frame" id="nx-wrap" data-stage-w="1440">
+            <div class="nx-stage" id="nx-stage">
+              <canvas id="nx-cv"></canvas>
+              <div class="abs kpis nx-xl">
+                <div class="kpi">
+                  <b id="nx-k1">12,480</b><span>Orders routed today</span>
+                </div>
+                <div class="kpi">
+                  <b id="nx-k2">0.3 s</b><span>Avg routing time</span>
+                </div>
+                <div class="kpi">
+                  <b id="nx-k3">5 / 5</b><span>Channels in sync</span>
+                </div>
+              </div>
+              <div class="sim nx-xl">LIVE SIMULATION</div>
+              <div class="abs lbl nx-xl" style="left: 120px; top: 176px">
+                TAP A CHANNEL TO PLACE AN ORDER
+              </div>
+              <div class="abs lbl nx-xl" style="left: 1112px; top: 206px">
+                FULFILMENT · LIVE STOCK
+              </div>
+              <button
+                class="ch"
+                id="nx-ch-web"
+                style="left: 300px; top: 238px; --c: #22d3ee"
+                aria-label="Place a test order from Website"
+              >
+                <span class="tap"></span
+                ><span class="o">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                    <path d="M2 12h20" />
+                  </svg> </span
+                ><span class="t"
+                  ><b>Website</b><i>Tap to order</i></span
+                ></button
+              ><button
+                class="ch"
+                id="nx-ch-mkt"
+                style="left: 222px; top: 360px; --c: #f472b6"
+                aria-label="Place a test order from Marketplaces"
+              >
+                <span class="tap"></span
+                ><span class="o">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M16 10a4 4 0 0 1-8 0" />
+                    <path d="M3.103 6.034h17.794" />
+                    <path
+                      d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"
+                    />
+                  </svg> </span
+                ><span class="t"
+                  ><b>Marketplaces</b><i>Tap to order</i></span
+                ></button
+              ><button
+                class="ch"
+                id="nx-ch-soc"
+                style="left: 206px; top: 486px; --c: #fb923c"
+                aria-label="Place a test order from Social commerce"
+              >
+                <span class="tap"></span
+                ><span class="o">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="18" cy="5" r="3" />
+                    <circle cx="6" cy="12" r="3" />
+                    <circle cx="18" cy="19" r="3" />
+                    <line x1="8.59" x2="15.42" y1="13.51" y2="17.49" />
+                    <line x1="15.41" x2="8.59" y1="6.51" y2="10.49" />
+                  </svg> </span
+                ><span class="t"
+                  ><b>Social commerce</b><i>Tap to order</i></span
+                ></button
+              ><button
+                class="ch"
+                id="nx-ch-pos"
+                style="left: 236px; top: 612px; --c: #a78bfa"
+                aria-label="Place a test order from Stores and POS"
+              >
+                <span class="tap"></span
+                ><span class="o">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5" />
+                    <path
+                      d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"
+                    />
+                    <path
+                      d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"
+                    />
+                  </svg> </span
+                ><span class="t"
+                  ><b>Stores and POS</b><i>Tap to order</i></span
+                ></button
+              ><button
+                class="ch"
+                id="nx-ch-app"
+                style="left: 318px; top: 728px; --c: #34d399"
+                aria-label="Place a test order from Mobile app"
+              >
+                <span class="tap"></span
+                ><span class="o">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                    <path d="M12 18h.01" />
+                  </svg> </span
+                ><span class="t"><b>Mobile app</b><i>Tap to order</i></span>
+              </button>
+              <div class="fu" id="nx-fu-wh" style="left: 1089px; top: 262px">
+                <span class="o">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11" />
+                    <path
+                      d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"
+                    />
+                    <path d="M6 13h12" />
+                    <path d="M6 17h12" />
+                  </svg> </span
+                ><span
+                  ><b>Central warehouse</b
+                  ><span class="bar"><i style="width: 88%"></i></span
+                  ><small
+                    ><span class="sv">88</span> units · size M</small
+                  ></span
+                >
+              </div>
+              <div class="fu" id="nx-fu-sa" style="left: 1153px; top: 392px">
+                <span class="o">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5" />
+                    <path
+                      d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"
+                    />
+                    <path
+                      d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"
+                    />
+                  </svg> </span
+                ><span
+                  ><b>Store A · Mid Valley</b
+                  ><span class="bar"><i style="width: 46%"></i></span
+                  ><small
+                    ><span class="sv">46</span> units · size M</small
+                  ></span
+                >
+              </div>
+              <div class="fu" id="nx-fu-sb" style="left: 1153px; top: 522px">
+                <span class="o">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5" />
+                    <path
+                      d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"
+                    />
+                    <path
+                      d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"
+                    />
+                  </svg> </span
+                ><span
+                  ><b>Store B · Bangsar</b
+                  ><span class="bar"><i style="width: 34%"></i></span
+                  ><small
+                    ><span class="sv">34</span> units · size M</small
+                  ></span
+                >
+              </div>
+              <div class="fu" id="nx-fu-dh" style="left: 1089px; top: 652px">
+                <span class="o">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"
+                    />
+                    <path d="M15 18H9" />
+                    <path
+                      d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"
+                    />
+                    <circle cx="17" cy="18" r="2" />
+                    <circle cx="7" cy="18" r="2" />
+                  </svg> </span
+                ><span
+                  ><b>Delivery hub</b
+                  ><span class="bar"><i style="width: 60%"></i></span
+                  ><small
+                    ><span class="sv">60</span> units · size M</small
+                  ></span
+                >
+              </div>
+              <div class="abs core"><b>Nexus</b></div>
+              <div class="abs toasts nx-xl" id="nx-toasts"></div>
+              <div class="abs panel nx-xl" id="nx-panel">
+                <div id="nx-pBody">
+                  <div class="prompt">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
                       viewBox="0 0 24 24"
-                      class="w-1/2 h-1/2"
                       fill="none"
-                      stroke="white"
+                      stroke="currentColor"
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      aria-hidden="true"
                     >
+                      <path d="M14 4.1 12 6" />
+                      <path d="m5.1 8-2.9-.8" />
+                      <path d="m6 12-1.9 2" />
+                      <path d="M7.2 2.2 8 5.1" />
                       <path
-                        d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5M3 17l9 5 9-5"
-                      /></svg
-                  ></span>
-                  <b class="forgeHero-title">Nexus</b>
-                </span>
-                <span
-                  class="forgeHero-text flex items-center gap-1 px-[1.2cqw] rounded-full bg-emerald-500/15 text-emerald-400"
-                  ><i
-                    class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"
-                  ></i
-                  >Live</span
+                        d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z"
+                      />
+                    </svg>
+                    <span
+                      ><b style="color: #fff">Try it:</b> tap any channel to
+                      send a test order and watch Nexus handle it.</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="abs ctas nx-xl">
+                <button class="btn surge" id="nx-surge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"
+                    />
+                  </svg>
+                  <span>Simulate 11.11 peak</span></button
+                ><a
+                  class="btn demo"
+                  id="nx-demo"
+                  href="/request-demo"
+                  data-cta="nexus-demo"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M8 2v3" />
+                    <path d="M16 2v3" />
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M3 9h18" />
+                    <path d="m9 15 2 2 4-4" />
+                  </svg>
+                  Book a Nexus demo</a
                 >
               </div>
-              <ul class="forgeHero-text">
-                <li
-                  class="nexusHero-row flex justify-between gap-[3cqw] py-[0.9cqw] border-t border-white/10"
-                  style="--i: 0"
-                >
-                  <span class="text-white/70">Inventory</span
-                  ><b class="text-primary">In sync</b>
-                </li>
-                <li
-                  class="nexusHero-row flex justify-between gap-[3cqw] py-[0.9cqw] border-t border-white/10"
-                  style="--i: 1"
-                >
-                  <span class="text-white/70">Orders</span
-                  ><b class="text-primary">One queue</b>
-                </li>
-                <li
-                  class="nexusHero-row flex justify-between gap-[3cqw] py-[0.9cqw] border-t border-white/10"
-                  style="--i: 2"
-                >
-                  <span class="text-white/70">Customers &amp; loyalty</span
-                  ><b class="text-primary">Shared</b>
-                </li>
-                <li
-                  class="nexusHero-row flex justify-between gap-[3cqw] py-[0.9cqw] border-t border-white/10"
-                  style="--i: 3"
-                >
-                  <span class="text-white/70">Promotions</span
-                  ><b class="text-primary">Everywhere</b>
-                </li>
-              </ul>
             </div>
-            <div
-              class="nexusHero-node absolute left-1/2 top-[13%] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap flex flex-col items-center gap-[1cqw] px-[2.4cqw] py-[1.6cqw] rounded-[1.6cqw] border border-white/10 bg-[#0d0a24]/90"
-              style="--i: 0"
-            >
-              <span
-                class="grid place-items-center w-[5.5cqw] h-[5.5cqw] rounded-[1.2cqw] bg-sky"
-                ><svg
-                  viewBox="0 0 24 24"
-                  class="w-1/2 h-1/2"
-                  fill="none"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <circle cx="12" cy="12" r="9" />
-                  <path
-                    d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"
-                  /></svg
-              ></span>
-              <b class="forgeHero-text">Website</b>
-            </div>
-            <div
-              class="nexusHero-node absolute left-[86%] top-[30%] max-sm:left-[80%] max-sm:top-[25%] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap flex flex-col items-center gap-[1cqw] px-[2.4cqw] py-[1.6cqw] rounded-[1.6cqw] border border-white/10 bg-[#0d0a24]/90"
-              style="--i: 1"
-            >
-              <span
-                class="grid place-items-center w-[5.5cqw] h-[5.5cqw] rounded-[1.2cqw] bg-pink"
-                ><svg
-                  viewBox="0 0 24 24"
-                  class="w-1/2 h-1/2"
-                  fill="none"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M6 7h12l-1 13H7zM9 7a3 3 0 0 1 6 0" /></svg
-              ></span>
-              <b class="forgeHero-text">Marketplaces</b>
-            </div>
-            <div
-              class="nexusHero-node absolute left-[86%] top-[70%] max-sm:left-[80%] max-sm:top-[75%] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap flex flex-col items-center gap-[1cqw] px-[2.4cqw] py-[1.6cqw] rounded-[1.6cqw] border border-white/10 bg-[#0d0a24]/90"
-              style="--i: 2"
-            >
-              <span
-                class="grid place-items-center w-[5.5cqw] h-[5.5cqw] rounded-[1.2cqw] bg-amber-500"
-                ><svg
-                  viewBox="0 0 24 24"
-                  class="w-1/2 h-1/2"
-                  fill="none"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <circle cx="6" cy="12" r="2.5" />
-                  <circle cx="18" cy="6" r="2.5" />
-                  <circle cx="18" cy="18" r="2.5" />
-                  <path d="M8.2 11l7.6-4M8.2 13l7.6 4" /></svg
-              ></span>
-              <b class="forgeHero-text">Social commerce</b>
-            </div>
-            <div
-              class="nexusHero-node absolute left-1/2 top-[87%] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap flex flex-col items-center gap-[1cqw] px-[2.4cqw] py-[1.6cqw] rounded-[1.6cqw] border border-white/10 bg-[#0d0a24]/90"
-              style="--i: 3"
-            >
-              <span
-                class="grid place-items-center w-[5.5cqw] h-[5.5cqw] rounded-[1.2cqw] bg-sky"
-                ><svg
-                  viewBox="0 0 24 24"
-                  class="w-1/2 h-1/2"
-                  fill="none"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3M8 12h8"
-                  /></svg
-              ></span>
-              <b class="forgeHero-text">POS online + offline</b>
-            </div>
-            <div
-              class="nexusHero-node absolute left-[14%] top-[70%] max-sm:left-[20%] max-sm:top-[75%] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap flex flex-col items-center gap-[1cqw] px-[2.4cqw] py-[1.6cqw] rounded-[1.6cqw] border border-white/10 bg-[#0d0a24]/90"
-              style="--i: 4"
-            >
-              <span
-                class="grid place-items-center w-[5.5cqw] h-[5.5cqw] rounded-[1.2cqw] bg-primary"
-                ><svg
-                  viewBox="0 0 24 24"
-                  class="w-1/2 h-1/2"
-                  fill="none"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M3 21V9l9-5 9 5v12M7 21v-8h10v8M7 17h10" /></svg
-              ></span>
-              <b class="forgeHero-text">Warehouses</b>
-            </div>
-            <div
-              class="nexusHero-node absolute left-[14%] top-[30%] max-sm:left-[20%] max-sm:top-[25%] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap flex flex-col items-center gap-[1cqw] px-[2.4cqw] py-[1.6cqw] rounded-[1.6cqw] border border-white/10 bg-[#0d0a24]/90"
-              style="--i: 5"
-            >
-              <span
-                class="grid place-items-center w-[5.5cqw] h-[5.5cqw] rounded-[1.2cqw] bg-primary"
-                ><svg
-                  viewBox="0 0 24 24"
-                  class="w-1/2 h-1/2"
-                  fill="none"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M4 9l1-5h14l1 5M4 9v11h16V9M4 9h16M9 20v-6h6v6"
-                  /></svg
-              ></span>
-              <b class="forgeHero-text">Stores</b>
-            </div>
+          </div>
+          <div class="nx-kpis">
+            <div class="kpi"><b>12,480</b><span>Orders routed today</span></div>
+            <div class="kpi"><b>0.3 s</b><span>Avg routing time</span></div>
+            <div class="kpi"><b>5 / 5</b><span>Channels in sync</span></div>
           </div>
         </div>
       </div>
