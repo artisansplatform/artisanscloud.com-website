@@ -1,8 +1,8 @@
 import Swiper from "swiper";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 
 // Configure Swiper to use modules
-Swiper.use([Navigation]);
+Swiper.use([Navigation, Autoplay]);
 
 // Swiper Sliders ==========================================
 export function initSwipers() {
@@ -94,6 +94,28 @@ export function initSwipers() {
       navigation: {
         nextEl: ".swiper-button-next-nexusCapability",
         prevEl: ".swiper-button-prev-nexusCapability",
+      },
+    });
+  }
+
+  // Arena Role Slider ========================
+  if (document.querySelector(".arenaRoleSlider")) {
+    new Swiper(".arenaRoleSlider", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      breakpoints: {
+        768: { slidesPerView: 2, spaceBetween: 20 },
+        1024: { slidesPerView: 3, spaceBetween: 30 },
+      },
+      navigation: {
+        nextEl: ".swiper-button-next-arenaRoleSlider",
+        prevEl: ".swiper-button-prev-arenaRoleSlider",
       },
     });
   }

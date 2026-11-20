@@ -62,6 +62,7 @@ npm run dev
   "robots": "noindex",                               // optional (request-demo uses this)
   "og": false,                                       // optional: omit the whole OG/Twitter block
   "ogTitle": "...", "ogDescription": "...",          // optional overrides
+  "breadcrumb": "...",                                 // optional breadcrumb name (when the title still contains the brand after pageName())
   "ogImage": "/assets/og/custom.png",                // optional override (default /assets/og/{slug}.png)
   "ogCard": { "title": "New\nSolution", "subtitle": "..." },  // text baked into the generated og image
   "sitemap": { "priority": "0.8", "changefreq": "weekly" }    // optional; false excludes the page
