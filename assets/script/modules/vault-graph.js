@@ -212,6 +212,7 @@ export function initVaultGraph() {
     cv.style.cursor = drag >= 0 ? "grabbing" : hover >= 0 ? "grab" : "default";
   });
   cv.addEventListener("pointerup", () => (drag = -1));
+  cv.addEventListener("pointercancel", () => (drag = -1));
   cv.addEventListener("pointerleave", () => (hover = -1));
 
   for (let k = 0; k < 300; k++) step();
