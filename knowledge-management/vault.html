@@ -46,7 +46,7 @@
           </div>
           <canvas
             id="vaultGraph"
-            class="w-full h-[360px] sm:h-[460px] lg:h-[560px] touch-none"
+            class="w-full h-[360px] sm:h-[460px] lg:h-[560px] touch-pan-y"
             aria-label="Animated knowledge graph linking people, processes, systems, projects, decisions and policies to Vault"
           ></canvas>
         </div>
@@ -101,7 +101,21 @@
     <!----- How Vault Works Sec ----->
     <section class="py-10 md:py-20 bg-[#f6f8fb]">
       <div class="fade-in max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
-        <div class="hv fade-in w-full mt-8">
+        <div class="lg:hidden text-center">
+          <div
+            class="mb-3 t-caption font-semibold uppercase tracking-[.14em] text-primary"
+          >
+            How Vault works
+          </div>
+          <h2 class="mb-4 text-heading t-h2">
+            From scattered know-how to answers in minutes
+          </h2>
+          <p class="text-description t-body">
+            Vault captures what your organisation knows, connects it and puts it
+            to work, so nothing is lost when people move on.
+          </p>
+        </div>
+        <div class="hv fade-in w-full mt-8 max-lg:hidden">
           <div class="hv-frame">
             <div class="st">
               <div class="grid"></div>

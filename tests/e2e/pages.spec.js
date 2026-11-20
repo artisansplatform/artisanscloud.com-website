@@ -59,6 +59,8 @@ test.describe("Page Load Tests", () => {
       page: browserPage,
     }) => {
       const errors = [];
+      // Uncaught exceptions (a throw in one main.js init skips the rest)
+      browserPage.on("pageerror", (err) => errors.push(err.message));
       browserPage.on("console", (msg) => {
         if (msg.type() === "error") {
           const text = msg.text();

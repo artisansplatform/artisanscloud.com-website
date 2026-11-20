@@ -5,6 +5,7 @@ export function initArenaHero() {
   if (!root) return;
   const msgs = [...root.querySelectorAll(".arenaHero-msg")];
   const score = root.querySelector(".arenaHero-score");
+  if (!score) return;
   const to = Number(score.dataset.to);
 
   const showAll = () => {

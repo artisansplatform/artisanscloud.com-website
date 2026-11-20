@@ -8111,7 +8111,9 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rd .scene * {
+  .rd .scene *,
+  .fq *,
+  .hv * {
     animation: none !important;
   }
   .rd .in {
