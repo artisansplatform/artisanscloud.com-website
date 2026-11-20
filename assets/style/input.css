@@ -839,13 +839,13 @@ body {
   border: 1px solid rgba(139, 108, 246, 0.45);
   color: #d9cfff;
 }
-#rp0,
-#rp1,
-#rp2,
-#rp3 {
+.fq #rp0,
+.fq #rp1,
+.fq #rp2,
+.fq #rp3 {
   transform-origin: left center;
 }
-#tdots {
+.fq #tdots {
   animation: td 1s linear infinite;
 }
 @keyframes td {
@@ -885,7 +885,7 @@ body {
     box-shadow: 0 24px 48px -30px rgba(0, 0, 0, 0.8);
   }
 }
-#sc0 {
+.fq #sc0 {
   animation: k0 16s linear infinite;
 }
 @keyframes k1 {
@@ -922,7 +922,7 @@ body {
     filter: none;
   }
 }
-#ag0 {
+.fq #ag0 {
   animation: k1 16s linear infinite;
 }
 @keyframes k2 {
@@ -945,7 +945,7 @@ body {
     transform: scale(1);
   }
 }
-#nd0 {
+.fq #nd0 {
   animation: k2 16s linear infinite;
 }
 @keyframes k3 {
@@ -974,7 +974,7 @@ body {
     opacity: 0.55;
   }
 }
-#nm0 {
+.fq #nm0 {
   animation: k3 16s linear infinite;
 }
 @keyframes k4 {
@@ -1027,7 +1027,7 @@ body {
     box-shadow: none;
   }
 }
-#m0_0 {
+.fq #m0_0 {
   animation: k4 16s linear infinite;
 }
 @keyframes k5 {
@@ -1080,7 +1080,7 @@ body {
     box-shadow: none;
   }
 }
-#m0_1 {
+.fq #m0_1 {
   animation: k5 16s linear infinite;
 }
 @keyframes k6 {
@@ -1133,7 +1133,7 @@ body {
     box-shadow: none;
   }
 }
-#m0_2 {
+.fq #m0_2 {
   animation: k6 16s linear infinite;
 }
 @keyframes k7 {
@@ -1186,7 +1186,7 @@ body {
     box-shadow: none;
   }
 }
-#m0_3 {
+.fq #m0_3 {
   animation: k7 16s linear infinite;
 }
 @keyframes k8 {
@@ -1215,7 +1215,7 @@ body {
     opacity: 0;
   }
 }
-#p8x0 {
+.fq #p8x0 {
   animation: k8 16s linear infinite;
 }
 @keyframes k9 {
@@ -1244,7 +1244,7 @@ body {
     opacity: 0;
   }
 }
-#p9x1 {
+.fq #p9x1 {
   animation: k9 16s linear infinite;
 }
 @keyframes k10 {
@@ -1273,7 +1273,7 @@ body {
     opacity: 0;
   }
 }
-#p10x2 {
+.fq #p10x2 {
   animation: k10 16s linear infinite;
 }
 @keyframes k11 {
@@ -1308,7 +1308,7 @@ body {
     box-shadow: 0 24px 48px -30px rgba(0, 0, 0, 0.8);
   }
 }
-#sc1 {
+.fq #sc1 {
   animation: k11 16s linear infinite;
 }
 @keyframes k12 {
@@ -1345,7 +1345,7 @@ body {
     filter: none;
   }
 }
-#ag1 {
+.fq #ag1 {
   animation: k12 16s linear infinite;
 }
 @keyframes k13 {
@@ -1368,7 +1368,7 @@ body {
     transform: scale(1);
   }
 }
-#nd1 {
+.fq #nd1 {
   animation: k13 16s linear infinite;
 }
 @keyframes k14 {
@@ -1397,7 +1397,7 @@ body {
     opacity: 0.55;
   }
 }
-#nm1 {
+.fq #nm1 {
   animation: k14 16s linear infinite;
 }
 @keyframes k15 {
@@ -1450,7 +1450,7 @@ body {
     box-shadow: none;
   }
 }
-#m1_0 {
+.fq #m1_0 {
   animation: k15 16s linear infinite;
 }
 @keyframes k16 {
@@ -1503,7 +1503,7 @@ body {
     box-shadow: none;
   }
 }
-#m1_1 {
+.fq #m1_1 {
   animation: k16 16s linear infinite;
 }
 @keyframes k17 {
@@ -1556,7 +1556,7 @@ body {
     box-shadow: none;
   }
 }
-#m1_2 {
+.fq #m1_2 {
   animation: k17 16s linear infinite;
 }
 @keyframes k18 {
@@ -1609,7 +1609,7 @@ body {
     box-shadow: none;
   }
 }
-#m1_3 {
+.fq #m1_3 {
   animation: k18 16s linear infinite;
 }
 @keyframes k19 {
@@ -1638,7 +1638,7 @@ body {
     opacity: 0;
   }
 }
-#p19x0 {
+.fq #p19x0 {
   animation: k19 16s linear infinite;
 }
 @keyframes k20 {
@@ -1667,7 +1667,7 @@ body {
     opacity: 0;
   }
 }
-#p20x1 {
+.fq #p20x1 {
   animation: k20 16s linear infinite;
 }
 @keyframes k21 {
@@ -1696,7 +1696,7 @@ body {
     opacity: 0;
   }
 }
-#p21x2 {
+.fq #p21x2 {
   animation: k21 16s linear infinite;
 }
 @keyframes k22 {
@@ -1731,7 +1731,7 @@ body {
     box-shadow: 0 24px 48px -30px rgba(0, 0, 0, 0.8);
   }
 }
-#sc2 {
+.fq #sc2 {
   animation: k22 16s linear infinite;
 }
 @keyframes k23 {
@@ -1768,7 +1768,7 @@ body {
     filter: none;
   }
 }
-#ag2 {
+.fq #ag2 {
   animation: k23 16s linear infinite;
 }
 @keyframes k24 {
@@ -1791,7 +1791,7 @@ body {
     transform: scale(1);
   }
 }
-#nd2 {
+.fq #nd2 {
   animation: k24 16s linear infinite;
 }
 @keyframes k25 {
@@ -1820,7 +1820,7 @@ body {
     opacity: 0.55;
   }
 }
-#nm2 {
+.fq #nm2 {
   animation: k25 16s linear infinite;
 }
 @keyframes k26 {
@@ -1873,7 +1873,7 @@ body {
     box-shadow: none;
   }
 }
-#m2_0 {
+.fq #m2_0 {
   animation: k26 16s linear infinite;
 }
 @keyframes k27 {
@@ -1926,7 +1926,7 @@ body {
     box-shadow: none;
   }
 }
-#m2_1 {
+.fq #m2_1 {
   animation: k27 16s linear infinite;
 }
 @keyframes k28 {
@@ -1979,7 +1979,7 @@ body {
     box-shadow: none;
   }
 }
-#m2_2 {
+.fq #m2_2 {
   animation: k28 16s linear infinite;
 }
 @keyframes k29 {
@@ -2008,7 +2008,7 @@ body {
     opacity: 0;
   }
 }
-#p29x0 {
+.fq #p29x0 {
   animation: k29 16s linear infinite;
 }
 @keyframes k30 {
@@ -2037,7 +2037,7 @@ body {
     opacity: 0;
   }
 }
-#p30x1 {
+.fq #p30x1 {
   animation: k30 16s linear infinite;
 }
 @keyframes k31 {
@@ -2066,7 +2066,7 @@ body {
     opacity: 0;
   }
 }
-#p31x2 {
+.fq #p31x2 {
   animation: k31 16s linear infinite;
 }
 @keyframes k32 {
@@ -2101,7 +2101,7 @@ body {
     box-shadow: 0 24px 48px -30px rgba(0, 0, 0, 0.8);
   }
 }
-#sc3 {
+.fq #sc3 {
   animation: k32 16s linear infinite;
 }
 @keyframes k33 {
@@ -2138,7 +2138,7 @@ body {
     filter: none;
   }
 }
-#ag3 {
+.fq #ag3 {
   animation: k33 16s linear infinite;
 }
 @keyframes k34 {
@@ -2161,7 +2161,7 @@ body {
     transform: scale(1);
   }
 }
-#nd3 {
+.fq #nd3 {
   animation: k34 16s linear infinite;
 }
 @keyframes k35 {
@@ -2190,7 +2190,7 @@ body {
     opacity: 0.55;
   }
 }
-#nm3 {
+.fq #nm3 {
   animation: k35 16s linear infinite;
 }
 @keyframes k36 {
@@ -2243,7 +2243,7 @@ body {
     box-shadow: none;
   }
 }
-#m3_0 {
+.fq #m3_0 {
   animation: k36 16s linear infinite;
 }
 @keyframes k37 {
@@ -2296,7 +2296,7 @@ body {
     box-shadow: none;
   }
 }
-#m3_1 {
+.fq #m3_1 {
   animation: k37 16s linear infinite;
 }
 @keyframes k38 {
@@ -2349,7 +2349,7 @@ body {
     box-shadow: none;
   }
 }
-#m3_2 {
+.fq #m3_2 {
   animation: k38 16s linear infinite;
 }
 @keyframes k39 {
@@ -2402,7 +2402,7 @@ body {
     box-shadow: none;
   }
 }
-#m3_3 {
+.fq #m3_3 {
   animation: k39 16s linear infinite;
 }
 @keyframes k40 {
@@ -2439,7 +2439,7 @@ body {
     transform: scale(0.4);
   }
 }
-#bl1 {
+.fq #bl1 {
   animation: k40 16s linear infinite;
 }
 @keyframes k41 {
@@ -2476,7 +2476,7 @@ body {
     transform: scale(0.4);
   }
 }
-#bl2 {
+.fq #bl2 {
   animation: k41 16s linear infinite;
 }
 @keyframes k42 {
@@ -2513,7 +2513,7 @@ body {
     transform: scale(0.4);
   }
 }
-#bl3 {
+.fq #bl3 {
   animation: k42 16s linear infinite;
 }
 @keyframes k43 {
@@ -2550,7 +2550,7 @@ body {
     transform: scale(0.4);
   }
 }
-#bl4 {
+.fq #bl4 {
   animation: k43 16s linear infinite;
 }
 @keyframes k44 {
@@ -2573,7 +2573,7 @@ body {
     transform: scaleX(0);
   }
 }
-#rp0 {
+.fq #rp0 {
   animation: k44 16s linear infinite;
 }
 @keyframes k45 {
@@ -2596,7 +2596,7 @@ body {
     transform: scaleX(0);
   }
 }
-#rp1 {
+.fq #rp1 {
   animation: k45 16s linear infinite;
 }
 @keyframes k46 {
@@ -2619,7 +2619,7 @@ body {
     transform: scaleX(0);
   }
 }
-#rp2 {
+.fq #rp2 {
   animation: k46 16s linear infinite;
 }
 @keyframes k47 {
@@ -2642,7 +2642,7 @@ body {
     transform: scaleX(0);
   }
 }
-#rp3 {
+.fq #rp3 {
   animation: k47 16s linear infinite;
 }
 @keyframes k48 {
@@ -2665,7 +2665,7 @@ body {
     stroke-dashoffset: 100;
   }
 }
-#spl {
+.fq #spl {
   animation: k48 16s linear infinite;
 }
 @keyframes k49 {
@@ -2688,7 +2688,7 @@ body {
     opacity: 0;
   }
 }
-#spp {
+.fq #spp {
   animation: k49 16s linear infinite;
 }
 @keyframes k50 {
@@ -2729,7 +2729,7 @@ body {
     transform: scale(1);
   }
 }
-#spr {
+.fq #spr {
   animation: k50 16s linear infinite;
 }
 @keyframes k51 {
@@ -2766,7 +2766,7 @@ body {
     transform: scale(0.9);
   }
 }
-#pc0 {
+.fq #pc0 {
   animation: k51 16s linear infinite;
 }
 @keyframes k52 {
@@ -2803,7 +2803,7 @@ body {
     transform: scale(0.9);
   }
 }
-#pc1 {
+.fq #pc1 {
   animation: k52 16s linear infinite;
 }
 @keyframes k53 {
@@ -2840,7 +2840,7 @@ body {
     transform: scale(0.9);
   }
 }
-#pc2 {
+.fq #pc2 {
   animation: k53 16s linear infinite;
 }
 @keyframes k54 {
@@ -2877,7 +2877,7 @@ body {
     transform: scale(0.9);
   }
 }
-#pc3 {
+.fq #pc3 {
   animation: k54 16s linear infinite;
 }
 @keyframes k55 {
@@ -2910,7 +2910,7 @@ body {
     transform: scale(1.8);
   }
 }
-#stamp {
+.fq #stamp {
   animation: k55 16s linear infinite;
 }
 @keyframes k56 {
@@ -2939,7 +2939,7 @@ body {
     opacity: 0.2;
   }
 }
-#d8_0 {
+.fq #d8_0 {
   animation: k56 16s linear infinite;
 }
 @keyframes k57 {
@@ -2968,7 +2968,7 @@ body {
     opacity: 0.2;
   }
 }
-#d8_1 {
+.fq #d8_1 {
   animation: k57 16s linear infinite;
 }
 @keyframes k58 {
@@ -2997,7 +2997,7 @@ body {
     opacity: 0.2;
   }
 }
-#d8_2 {
+.fq #d8_2 {
   animation: k58 16s linear infinite;
 }
 @keyframes k59 {
@@ -3026,7 +3026,7 @@ body {
     opacity: 0.2;
   }
 }
-#d8_3 {
+.fq #d8_3 {
   animation: k59 16s linear infinite;
 }
 @keyframes k60 {
@@ -3055,7 +3055,7 @@ body {
     opacity: 0.2;
   }
 }
-#d8_4 {
+.fq #d8_4 {
   animation: k60 16s linear infinite;
 }
 @keyframes k61 {
@@ -3084,7 +3084,7 @@ body {
     opacity: 0;
   }
 }
-#p61x0 {
+.fq #p61x0 {
   animation: k61 16s linear infinite;
 }
 @keyframes k62 {
@@ -3113,7 +3113,7 @@ body {
     opacity: 0;
   }
 }
-#p62x1 {
+.fq #p62x1 {
   animation: k62 16s linear infinite;
 }
 @keyframes k63 {
@@ -3142,7 +3142,7 @@ body {
     opacity: 0;
   }
 }
-#p63x2 {
+.fq #p63x2 {
   animation: k63 16s linear infinite;
 }
 @keyframes k64 {
@@ -3179,7 +3179,7 @@ body {
     filter: none;
   }
 }
-#retL {
+.fq #retL {
   animation: k64 16s linear infinite;
 }
 @keyframes k65 {
@@ -3224,7 +3224,7 @@ body {
     box-shadow: none;
   }
 }
-#f0 {
+.fq #f0 {
   animation: k65 16s linear infinite;
 }
 @keyframes k66 {
@@ -3269,7 +3269,7 @@ body {
     box-shadow: none;
   }
 }
-#f1 {
+.fq #f1 {
   animation: k66 16s linear infinite;
 }
 @keyframes k67 {
@@ -3314,7 +3314,7 @@ body {
     box-shadow: none;
   }
 }
-#f2 {
+.fq #f2 {
   animation: k67 16s linear infinite;
 }
 .fq .pt {
@@ -3436,7 +3436,7 @@ body {
     border-color 0.3s;
 }
 .rd .fc:hover .face,
-.rd .fc:focus-visible .face {
+.rd .fc:has(.fc-toggle:focus-visible) .face {
   border-color: color-mix(in srgb, var(--c) 45%, #ece6fb);
   box-shadow: 0 28px 52px -26px color-mix(in srgb, var(--c) 55%, transparent);
 }
@@ -3446,7 +3446,17 @@ body {
 .rd .fc.flip:hover .in {
   transform: rotateY(180deg) translateY(-4px);
 }
-.rd .fc:focus-visible {
+.rd .fc-toggle {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  background: none;
+  border: 0;
+  border-radius: 22px;
+  cursor: pointer;
+}
+.rd .fc:has(.fc-toggle:focus-visible) {
   outline: 3px solid color-mix(in srgb, var(--c) 50%, transparent);
   outline-offset: 4px;
   border-radius: 22px;
