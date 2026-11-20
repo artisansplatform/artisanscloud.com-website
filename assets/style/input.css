@@ -578,17 +578,6 @@ body {
       margin: 0 auto;
     }
   }
-  .heroCore-grad {
-    background: linear-gradient(
-      100deg,
-      var(--color-sky),
-      var(--color-primary) 45%,
-      var(--color-pink)
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
   .heroCore-dot {
     width: 8px;
     height: 8px;
@@ -10535,17 +10524,13 @@ body {
 }
 
 /* Forge hero loop (quality-management-system). Scoped under .fl; keyframes prefixed fl-.
-   Fixed 1600x1200 stage scaled by forge-lifecycle.js (--fq-s). */
-.fl .fl-wrap {
-  background: #0a0817;
-  padding-top: clamp(7rem, 16.667vw - 5rem, 7.5rem);
-  container-type: inline-size;
-  position: relative;
-}
+   Fixed 1600x1200 stage scaled by forge-lifecycle.js (--fq-s), cropped to the loops
+   and shown in the right column of the hero. */
 .fl-frame {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 1600/1200;
+  aspect-ratio: 1440/800;
+  border-radius: 24px;
 }
 .fl {
   font-family: inherit;
@@ -10558,21 +10543,17 @@ body {
 }
 .fl .fl-frame > .st {
   position: absolute;
-  left: 0;
+  left: calc(-90px * var(--fq-s, 0.75));
   top: 0;
   width: 1600px;
   height: 1200px;
+  top: calc(-185px * var(--fq-s, 0.75));
   transform-origin: 0 0;
   transform: scale(var(--fq-s, 0.75));
 }
 .fl .st {
   overflow: hidden;
-  background: radial-gradient(
-    900px 700px at 50% 58%,
-    #2a1a5e 0%,
-    #160f33 45%,
-    #0a0817 100%
-  );
+  background: transparent;
 }
 .fl .stars {
   position: absolute;
@@ -10636,79 +10617,8 @@ body {
   border-radius: 99px;
   white-space: nowrap;
 }
-/* heading lives outside the scaled stage so it stays readable */
-.fl .fl-head {
-  display: grid;
-  gap: 12px;
-  padding: 0 20px 24px;
-  text-align: center;
-  justify-items: center;
-}
-.fl .fl-head h1 {
-  font-size: clamp(28px, 7vw, 44px);
-  text-wrap: balance;
-}
-.fl .fl-head .sub {
-  font-size: 16px;
-  max-width: 640px;
-}
-.fl .fl-steps {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  padding: 20px 20px 0;
-}
-.fl .fl-steps .card {
-  min-width: 0;
-}
-.fl .fl-note {
-  padding: 20px 20px 32px;
-  text-align: center;
-  font-size: 14px;
-  color: #a39fc4;
-}
-@media (min-width: 640px) {
-  .fl .fl-steps {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media (max-width: 1279px) {
-  .fl-frame {
-    aspect-ratio: 1600/830;
-  }
-  .fl .fl-frame > .st {
-    top: calc(-170px * var(--fq-s, 0.75));
-  }
-  .fl .fl-xl {
-    display: none;
-  }
-}
-@media (min-width: 1280px) {
-  .fl .fl-head {
-    position: absolute;
-    left: 6cqw;
-    top: calc(clamp(7rem, 16.667vw - 5rem, 7.5rem) + 4.375cqw);
-    width: 62cqw;
-    padding: 0;
-    text-align: left;
-    justify-items: start;
-    gap: 0.625cqw;
-    z-index: 7;
-  }
-  .fl .fl-head h1 {
-    font-size: 2.75cqw;
-  }
-  .fl .fl-head .eb {
-    font-size: max(0.875cqw, 11px);
-  }
-  .fl .fl-head .sub {
-    font-size: 1.0625cqw;
-    max-width: none;
-  }
-  .fl .fl-steps,
-  .fl .fl-note {
-    display: none;
-  }
+.fl .fl-xl {
+  display: none;
 }
 @media (prefers-reduced-motion: reduce) {
   /* freeze on the finished frame instead of the dimmed start state */
@@ -12430,18 +12340,16 @@ body {
 }
 
 /* Nexus hero (unified-commerce/nexus). Scoped under .nx; keyframes prefixed nx-.
-   Fixed 1440x810 stage scaled by forge-lifecycle.js (--fq-s); logic in modules/nexus-hero.js. */
-.nx .nx-wrap {
-  background: #05040d;
+   Fixed 1440x810 stage scaled by forge-lifecycle.js (--fq-s, stage width 1490 via
+   data-stage-w), cropped to the channels and shown in the right column of the hero.
+   Logic in modules/nexus-hero.js. Interactive from xl; below that the text is hidden. */
+.nx {
   color: #f4f2ff;
-  padding-top: clamp(7rem, 16.667vw - 5rem, 7.5rem);
-  container-type: inline-size;
-  position: relative;
 }
 .nx .nx-frame {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 1440/610;
+  aspect-ratio: 1490/590;
 }
 .nx .nx-stage {
   position: absolute;
@@ -12453,63 +12361,6 @@ body {
   transform: scale(var(--fq-s, 0.75));
   pointer-events: none;
 }
-.nx .nx-stage canvas {
-  position: absolute;
-  inset: 0;
-  width: 1440px;
-  height: 810px;
-}
-.nx .nx-head {
-  display: grid;
-  gap: 12px;
-  justify-items: center;
-  text-align: center;
-  padding: 0 20px 24px;
-  color: #f4f2ff;
-}
-.nx .nx-head .eb {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  color: #67e8f9;
-}
-.nx .nx-head h1 {
-  font-size: clamp(28px, 7vw, 44px);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-  text-wrap: balance;
-}
-.nx .nx-head h1 em {
-  font-style: normal;
-  background: linear-gradient(90deg, #22d3ee, #a78bfa 50%, #f472b6);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.nx .nx-head p {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #b4b0d6;
-  max-width: 640px;
-}
-.nx .nx-kpis {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 20px 20px 32px;
-  color: #f4f2ff;
-}
-.nx .nx-kpis .kpi {
-  min-width: 0;
-  padding: 10px 12px;
-}
-.nx .nx-kpis .kpi b {
-  font-size: 18px;
-}
-.nx .nx-kpis .kpi span {
-  font-size: 11px;
-}
 @media (max-width: 1279px) {
   .nx .nx-xl,
   .nx .ch .t,
@@ -12519,44 +12370,67 @@ body {
 }
 @media (min-width: 1280px) {
   .nx .nx-frame {
-    aspect-ratio: 1440/810;
+    aspect-ratio: 1490/660;
   }
   .nx .nx-stage {
-    top: 0;
+    top: calc(-150px * var(--fq-s, 0.75));
     pointer-events: auto;
   }
-  .nx .nx-head {
-    position: absolute;
-    left: 3.056cqw;
-    top: calc(clamp(7rem, 16.667vw - 5rem, 7.5rem) + 2.361cqw);
-    width: 38.9cqw;
-    padding: 0;
-    text-align: left;
-    justify-items: start;
-    gap: 0.5cqw;
-    z-index: 7;
-  }
-  .nx .nx-head .eb {
-    font-size: max(0.868cqw, 11px);
-    letter-spacing: 0.26em;
-  }
-  .nx .nx-head h1 {
-    font-size: 2.778cqw;
-    line-height: 1.08;
-  }
-  .nx .nx-head p {
-    font-size: 1.007cqw;
-    max-width: none;
-  }
-  .nx .nx-kpis,
-  .nx .nx-cta {
+  .nx .kpis,
+  .nx .sim {
     display: none;
   }
-}
-.nx body {
-  font-family: Poppins, system-ui, sans-serif;
-  color: #f4f2ff;
-  -webkit-font-smoothing: antialiased;
+  /* the stage is scaled to about half size in the column, so enlarge the text
+     and put channel labels under their orbs to make room */
+  .nx .nx-stage .ch .t {
+    right: auto;
+    left: 50%;
+    top: 64px;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  .nx .nx-stage .ch .t b {
+    font-size: 26px;
+  }
+  .nx .nx-stage .ch .t i {
+    display: none;
+  }
+  .nx .nx-stage .fu b {
+    font-size: 24px;
+  }
+  .nx .nx-stage .fu small {
+    font-size: 18px;
+  }
+  .nx .nx-stage .fu .bar {
+    width: 190px;
+    height: 9px;
+  }
+  .nx .nx-stage .lbl {
+    font-size: 16px;
+  }
+  .nx .nx-stage .toasts {
+    width: 560px;
+  }
+  .nx .nx-stage .toast {
+    font-size: 20px;
+  }
+  .nx .nx-stage .panel {
+    left: 430px;
+    width: 580px;
+  }
+  .nx .nx-stage .panel h4 {
+    font-size: 20px;
+  }
+  .nx .nx-stage .st,
+  .nx .nx-stage .prompt {
+    font-size: 20px;
+  }
+  .nx .nx-stage .btn {
+    font-size: 19px;
+  }
+  .nx .nx-stage .core b {
+    font-size: 32px;
+  }
 }
 .nx canvas {
   position: absolute;

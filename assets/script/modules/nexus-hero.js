@@ -354,12 +354,7 @@ export function initNexusHero() {
     bg.height = 810 * 2;
     var g = bg.getContext("2d");
     g.scale(2, 2);
-    var r = g.createRadialGradient(720, 430, 40, 720, 430, 760);
-    r.addColorStop(0, "#2A1660");
-    r.addColorStop(0.45, "#120B2E");
-    r.addColorStop(1, "#05040D");
-    g.fillStyle = r;
-    g.fillRect(0, 0, 1440, 810);
+
     g.strokeStyle = "rgba(139,92,246,.10)";
     g.lineWidth = 1;
     var hz = 560;

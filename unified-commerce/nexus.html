@@ -64,302 +64,69 @@
     <!----- Hero Banner ----->
     <section class="w-full p-4 lg:p-5">
       <div
-        class="nx rounded-2xl lg:rounded-[30px] overflow-hidden"
-        id="nx-hero"
+        class="heroDark rounded-2xl lg:rounded-[30px] overflow-hidden pt-[clamp(7rem,16.667vw-5rem,7.5rem)] pb-10 lg:pb-16 lg:min-h-[768px] flex items-center"
       >
-        <div class="nx-wrap">
-          <div class="nx-head">
-            <div class="eb">NEXUS · AUTONOMOUS COMMERCE</div>
-            <h1>Commerce that <em>runs itself</em></h1>
-            <p>
-              Every order, from every channel, routed in a split second. Stock,
-              loyalty and offers stay in sync while AI agents handle the rest.
-            </p>
-            <a
-              href="/request-demo"
-              class="nx-cta mt-2 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 bg-primary text-white hover:bg-primary-light"
-              >Book a Nexus Demo</a
+        <div
+          class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto grid lg:grid-cols-[5fr_7fr] gap-8 lg:gap-10 items-center"
+        >
+          <div class="text-center lg:text-left">
+            <div
+              class="mb-3 sm:mb-5 font-semibold t-caption uppercase text-primary"
             >
+              Nexus | Enterprise Commerce Cloud
+            </div>
+            <h1 id="heroHeading" class="mb-4 text-white t-display">
+              Run stores and online channels from one platform
+            </h1>
+            <div id="heroDec" class="flex flex-col items-center lg:items-start">
+              <p class="mb-3 max-w-[560px] text-[#a49fc6] t-lead">
+                Nexus connects inventory, orders, customers and promotions
+                across your retail business.
+              </p>
+              <p class="max-w-[560px] text-[#a49fc6] t-lead">
+                This unified commerce foundation supports our move toward
+                AI-assisted decisions and autonomous operations.
+              </p>
+              <a
+                href="/request-demo"
+                class="mt-6 lg:mt-8 w-fit h-fit rounded-[40px] md:px-6 px-4 md:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:scale-95 bg-primary text-white hover:bg-primary-light"
+                >Book a Nexus Demo</a
+              >
+            </div>
           </div>
-          <div class="nx-frame" id="nx-wrap" data-stage-w="1440">
-            <div class="nx-stage" id="nx-stage">
-              <canvas id="nx-cv"></canvas>
-              <div class="abs kpis nx-xl">
-                <div class="kpi">
-                  <b id="nx-k1">12,480</b><span>Orders routed today</span>
+          <div
+            class="nx lg:w-[calc(100%+3rem)] xl:w-[calc(100%+6rem)]"
+            id="nx-hero"
+          >
+            <div class="nx-frame" id="nx-wrap" data-stage-w="1490">
+              <div class="nx-stage" id="nx-stage">
+                <canvas id="nx-cv"></canvas>
+                <div class="abs kpis nx-xl">
+                  <div class="kpi">
+                    <b id="nx-k1">12,480</b><span>Orders routed today</span>
+                  </div>
+                  <div class="kpi">
+                    <b id="nx-k2">0.3 s</b><span>Avg routing time</span>
+                  </div>
+                  <div class="kpi">
+                    <b id="nx-k3">5 / 5</b><span>Channels in sync</span>
+                  </div>
                 </div>
-                <div class="kpi">
-                  <b id="nx-k2">0.3 s</b><span>Avg routing time</span>
+                <div class="sim nx-xl">LIVE SIMULATION</div>
+                <div class="abs lbl nx-xl" style="left: 120px; top: 176px">
+                  TAP A CHANNEL TO PLACE AN ORDER
                 </div>
-                <div class="kpi">
-                  <b id="nx-k3">5 / 5</b><span>Channels in sync</span>
+                <div class="abs lbl nx-xl" style="left: 1112px; top: 206px">
+                  FULFILMENT · LIVE STOCK
                 </div>
-              </div>
-              <div class="sim nx-xl">LIVE SIMULATION</div>
-              <div class="abs lbl nx-xl" style="left: 120px; top: 176px">
-                TAP A CHANNEL TO PLACE AN ORDER
-              </div>
-              <div class="abs lbl nx-xl" style="left: 1112px; top: 206px">
-                FULFILMENT · LIVE STOCK
-              </div>
-              <button
-                class="ch"
-                id="nx-ch-web"
-                style="left: 300px; top: 238px; --c: #22d3ee"
-                aria-label="Place a test order from Website"
-              >
-                <span class="tap"></span
-                ><span class="o">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-                    <path d="M2 12h20" />
-                  </svg> </span
-                ><span class="t"
-                  ><b>Website</b><i>Tap to order</i></span
-                ></button
-              ><button
-                class="ch"
-                id="nx-ch-mkt"
-                style="left: 222px; top: 360px; --c: #f472b6"
-                aria-label="Place a test order from Marketplaces"
-              >
-                <span class="tap"></span
-                ><span class="o">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M16 10a4 4 0 0 1-8 0" />
-                    <path d="M3.103 6.034h17.794" />
-                    <path
-                      d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"
-                    />
-                  </svg> </span
-                ><span class="t"
-                  ><b>Marketplaces</b><i>Tap to order</i></span
-                ></button
-              ><button
-                class="ch"
-                id="nx-ch-soc"
-                style="left: 206px; top: 486px; --c: #fb923c"
-                aria-label="Place a test order from Social commerce"
-              >
-                <span class="tap"></span
-                ><span class="o">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <circle cx="18" cy="5" r="3" />
-                    <circle cx="6" cy="12" r="3" />
-                    <circle cx="18" cy="19" r="3" />
-                    <line x1="8.59" x2="15.42" y1="13.51" y2="17.49" />
-                    <line x1="15.41" x2="8.59" y1="6.51" y2="10.49" />
-                  </svg> </span
-                ><span class="t"
-                  ><b>Social commerce</b><i>Tap to order</i></span
-                ></button
-              ><button
-                class="ch"
-                id="nx-ch-pos"
-                style="left: 236px; top: 612px; --c: #a78bfa"
-                aria-label="Place a test order from Stores and POS"
-              >
-                <span class="tap"></span
-                ><span class="o">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5" />
-                    <path
-                      d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"
-                    />
-                    <path
-                      d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"
-                    />
-                  </svg> </span
-                ><span class="t"
-                  ><b>Stores and POS</b><i>Tap to order</i></span
-                ></button
-              ><button
-                class="ch"
-                id="nx-ch-app"
-                style="left: 318px; top: 728px; --c: #34d399"
-                aria-label="Place a test order from Mobile app"
-              >
-                <span class="tap"></span
-                ><span class="o">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
-                    <path d="M12 18h.01" />
-                  </svg> </span
-                ><span class="t"><b>Mobile app</b><i>Tap to order</i></span>
-              </button>
-              <div class="fu" id="nx-fu-wh" style="left: 1089px; top: 262px">
-                <span class="o">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11" />
-                    <path
-                      d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"
-                    />
-                    <path d="M6 13h12" />
-                    <path d="M6 17h12" />
-                  </svg> </span
-                ><span
-                  ><b>Central warehouse</b
-                  ><span class="bar"><i style="width: 88%"></i></span
-                  ><small
-                    ><span class="sv">88</span> units · size M</small
-                  ></span
+                <button
+                  class="ch"
+                  id="nx-ch-web"
+                  style="left: 300px; top: 238px; --c: #22d3ee"
+                  aria-label="Place a test order from Website"
                 >
-              </div>
-              <div class="fu" id="nx-fu-sa" style="left: 1153px; top: 392px">
-                <span class="o">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5" />
-                    <path
-                      d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"
-                    />
-                    <path
-                      d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"
-                    />
-                  </svg> </span
-                ><span
-                  ><b>Store A · Mid Valley</b
-                  ><span class="bar"><i style="width: 46%"></i></span
-                  ><small
-                    ><span class="sv">46</span> units · size M</small
-                  ></span
-                >
-              </div>
-              <div class="fu" id="nx-fu-sb" style="left: 1153px; top: 522px">
-                <span class="o">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5" />
-                    <path
-                      d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"
-                    />
-                    <path
-                      d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"
-                    />
-                  </svg> </span
-                ><span
-                  ><b>Store B · Bangsar</b
-                  ><span class="bar"><i style="width: 34%"></i></span
-                  ><small
-                    ><span class="sv">34</span> units · size M</small
-                  ></span
-                >
-              </div>
-              <div class="fu" id="nx-fu-dh" style="left: 1089px; top: 652px">
-                <span class="o">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"
-                    />
-                    <path d="M15 18H9" />
-                    <path
-                      d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"
-                    />
-                    <circle cx="17" cy="18" r="2" />
-                    <circle cx="7" cy="18" r="2" />
-                  </svg> </span
-                ><span
-                  ><b>Delivery hub</b
-                  ><span class="bar"><i style="width: 60%"></i></span
-                  ><small
-                    ><span class="sv">60</span> units · size M</small
-                  ></span
-                >
-              </div>
-              <div class="abs core"><b>Nexus</b></div>
-              <div class="abs toasts nx-xl" id="nx-toasts"></div>
-              <div class="abs panel nx-xl" id="nx-panel">
-                <div id="nx-pBody">
-                  <div class="prompt">
+                  <span class="tap"></span
+                  ><span class="o">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -371,71 +138,295 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     >
-                      <path d="M14 4.1 12 6" />
-                      <path d="m5.1 8-2.9-.8" />
-                      <path d="m6 12-1.9 2" />
-                      <path d="M7.2 2.2 8 5.1" />
+                      <circle cx="12" cy="12" r="10" />
                       <path
-                        d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z"
+                        d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"
                       />
-                    </svg>
-                    <span
-                      ><b style="color: #fff">Try it:</b> tap any channel to
-                      send a test order and watch Nexus handle it.</span
+                      <path d="M2 12h20" />
+                    </svg> </span
+                  ><span class="t"
+                    ><b>Website</b><i>Tap to order</i></span
+                  ></button
+                ><button
+                  class="ch"
+                  id="nx-ch-mkt"
+                  style="left: 222px; top: 360px; --c: #f472b6"
+                  aria-label="Place a test order from Marketplaces"
+                >
+                  <span class="tap"></span
+                  ><span class="o">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
                     >
+                      <path d="M16 10a4 4 0 0 1-8 0" />
+                      <path d="M3.103 6.034h17.794" />
+                      <path
+                        d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"
+                      />
+                    </svg> </span
+                  ><span class="t"
+                    ><b>Marketplaces</b><i>Tap to order</i></span
+                  ></button
+                ><button
+                  class="ch"
+                  id="nx-ch-soc"
+                  style="left: 206px; top: 486px; --c: #fb923c"
+                  aria-label="Place a test order from Social commerce"
+                >
+                  <span class="tap"></span
+                  ><span class="o">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="18" cy="5" r="3" />
+                      <circle cx="6" cy="12" r="3" />
+                      <circle cx="18" cy="19" r="3" />
+                      <line x1="8.59" x2="15.42" y1="13.51" y2="17.49" />
+                      <line x1="15.41" x2="8.59" y1="6.51" y2="10.49" />
+                    </svg> </span
+                  ><span class="t"
+                    ><b>Social commerce</b><i>Tap to order</i></span
+                  ></button
+                ><button
+                  class="ch"
+                  id="nx-ch-pos"
+                  style="left: 236px; top: 612px; --c: #a78bfa"
+                  aria-label="Place a test order from Stores and POS"
+                >
+                  <span class="tap"></span
+                  ><span class="o">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5" />
+                      <path
+                        d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"
+                      />
+                      <path
+                        d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"
+                      />
+                    </svg> </span
+                  ><span class="t"
+                    ><b>Stores and POS</b><i>Tap to order</i></span
+                  ></button
+                ><button
+                  class="ch"
+                  id="nx-ch-app"
+                  style="left: 318px; top: 728px; --c: #34d399"
+                  aria-label="Place a test order from Mobile app"
+                >
+                  <span class="tap"></span
+                  ><span class="o">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                      <path d="M12 18h.01" />
+                    </svg> </span
+                  ><span class="t"><b>Mobile app</b><i>Tap to order</i></span>
+                </button>
+                <div class="fu" id="nx-fu-wh" style="left: 1089px; top: 262px">
+                  <span class="o">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11" />
+                      <path
+                        d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"
+                      />
+                      <path d="M6 13h12" />
+                      <path d="M6 17h12" />
+                    </svg> </span
+                  ><span
+                    ><b>Central warehouse</b
+                    ><span class="bar"><i style="width: 88%"></i></span
+                    ><small
+                      ><span class="sv">88</span> units · size M</small
+                    ></span
+                  >
+                </div>
+                <div class="fu" id="nx-fu-sa" style="left: 1153px; top: 392px">
+                  <span class="o">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5" />
+                      <path
+                        d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"
+                      />
+                      <path
+                        d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"
+                      />
+                    </svg> </span
+                  ><span
+                    ><b>Store A · Mid Valley</b
+                    ><span class="bar"><i style="width: 46%"></i></span
+                    ><small
+                      ><span class="sv">46</span> units · size M</small
+                    ></span
+                  >
+                </div>
+                <div class="fu" id="nx-fu-sb" style="left: 1153px; top: 522px">
+                  <span class="o">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5" />
+                      <path
+                        d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"
+                      />
+                      <path
+                        d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"
+                      />
+                    </svg> </span
+                  ><span
+                    ><b>Store B · Bangsar</b
+                    ><span class="bar"><i style="width: 34%"></i></span
+                    ><small
+                      ><span class="sv">34</span> units · size M</small
+                    ></span
+                  >
+                </div>
+                <div class="fu" id="nx-fu-dh" style="left: 1089px; top: 652px">
+                  <span class="o">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"
+                      />
+                      <path d="M15 18H9" />
+                      <path
+                        d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"
+                      />
+                      <circle cx="17" cy="18" r="2" />
+                      <circle cx="7" cy="18" r="2" />
+                    </svg> </span
+                  ><span
+                    ><b>Delivery hub</b
+                    ><span class="bar"><i style="width: 60%"></i></span
+                    ><small
+                      ><span class="sv">60</span> units · size M</small
+                    ></span
+                  >
+                </div>
+                <div class="abs core"><b>Nexus</b></div>
+                <div class="abs toasts nx-xl" id="nx-toasts"></div>
+                <div class="abs panel nx-xl" id="nx-panel">
+                  <div id="nx-pBody">
+                    <div class="prompt">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M14 4.1 12 6" />
+                        <path d="m5.1 8-2.9-.8" />
+                        <path d="m6 12-1.9 2" />
+                        <path d="M7.2 2.2 8 5.1" />
+                        <path
+                          d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z"
+                        />
+                      </svg>
+                      <span
+                        ><b style="color: #fff">Try it:</b> tap any channel to
+                        send a test order and watch Nexus handle it.</span
+                      >
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="abs ctas nx-xl">
-                <button class="btn surge" id="nx-surge">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"
-                    />
-                  </svg>
-                  <span>Simulate 11.11 peak</span></button
-                ><a
-                  class="btn demo"
-                  id="nx-demo"
-                  href="/request-demo"
-                  data-cta="nexus-demo"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M8 2v3" />
-                    <path d="M16 2v3" />
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <path d="M3 9h18" />
-                    <path d="m9 15 2 2 4-4" />
-                  </svg>
-                  Book a Nexus demo</a
-                >
+                <div class="abs ctas nx-xl">
+                  <button class="btn surge" id="nx-surge">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"
+                      />
+                    </svg>
+                    <span>Simulate 11.11 peak</span>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="nx-kpis">
-            <div class="kpi"><b>12,480</b><span>Orders routed today</span></div>
-            <div class="kpi"><b>0.3 s</b><span>Avg routing time</span></div>
-            <div class="kpi"><b>5 / 5</b><span>Channels in sync</span></div>
           </div>
         </div>
       </div>
