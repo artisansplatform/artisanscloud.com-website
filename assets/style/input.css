@@ -12871,7 +12871,6 @@ body {
   .rd.arena-rd .grid {
     grid-template-columns: repeat(4, 1fr);
     max-width: none;
-    gap: 20px;
   }
   .rd.arena-rd .arenaChat .ac-b {
     font-size: 3.2cqw;
@@ -12892,22 +12891,6 @@ body {
   .rd.arena-rd .grid {
     grid-template-columns: 1fr;
   }
-}
-.rd.arena-rd .card {
-  aspect-ratio: auto;
-  display: flex;
-}
-.rd.arena-rd .in,
-.rd.arena-rd .face {
-  position: relative;
-  inset: auto;
-  flex: 1;
-}
-.rd.arena-rd .in {
-  display: flex;
-}
-.rd.arena-rd .bd {
-  padding-bottom: 6cqw;
 }
 .rd.arena-rd .ill {
   top: 3cqw;
@@ -13317,14 +13300,4 @@ body {
   100% {
     color: #d9d4e6;
   }
-}
-
-/* Arena role cards: use the site type scale (t-h3 / t-body) instead of the cqw sizes the roadmap cards use. */
-.rd.arena-rd .bd h3 {
-  @apply font-semibold leading-heading text-xl lg:text-2xl;
-  letter-spacing: normal;
-  margin: 0 0 0.5rem;
-}
-.rd.arena-rd .bd p {
-  @apply font-normal leading-body text-base;
 }
