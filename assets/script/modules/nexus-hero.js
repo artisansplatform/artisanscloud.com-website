@@ -430,6 +430,8 @@ export function initNexusHero() {
     var dt = Math.min(0.05, (now - last) / 1000);
     last = now;
     var T = reduce ? 1 : (now - t0) / 1000;
+    // Clear first so a needs = true set while drawing is not lost below.
+    needs = false;
     var had = parts.length > 0 || sparks.length > 0;
     if (
       !reduce &&
@@ -567,12 +569,14 @@ export function initNexusHero() {
       ctx.fill();
     }
     ctx.globalAlpha = 1;
-    needs = had;
+    needs = needs || had;
   }
   function frame(now) {
     // Reduced motion: one static frame, then redraw only while a user-tapped
-    // order is in flight (plus one clean-up frame).
-    if (visible && (!reduce || needs)) draw(now);
+    // order is in flight (plus one clean-up frame). The parts/sparks check is
+    // what starts the redraw: a tap adds a particle while needs is false.
+    if (visible && (!reduce || needs || parts.length || sparks.length))
+      draw(now);
     else last = now;
     requestAnimationFrame(frame);
   }
