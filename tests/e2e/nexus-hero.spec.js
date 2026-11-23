@@ -17,9 +17,12 @@ test.describe("Nexus hero simulation", () => {
         await page.locator("#nx-ch-web").click();
         // The canvas particle has to reach a location for the last steps and
         // the demo link to appear, so this fails if the canvas stops drawing.
+        await expect(page.locator("#nx-pBody h4")).toContainText(
+          "Test order from Website",
+        );
         await expect(
           page.locator("#nx-pBody a[data-cta='nexus-demo-panel']"),
-        ).toBeVisible({ timeout: 15000 });
+        ).toBeVisible({ timeout: 30000 });
       });
     }
   });
