@@ -12856,3 +12856,452 @@ body {
     animation: none;
   }
 }
+
+/* Arena role cards: reuse the .rd card look (art panel, badge, title) with a live chat scene in the art slot.
+   Pure CSS loop, no JS. It always plays, like the standalone chat demos it came from. */
+.rd.arena-rd {
+  background: none;
+}
+.rd.arena-rd .grid {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 980px;
+  margin-inline: auto;
+}
+@media (max-width: 640px) {
+  .rd.arena-rd .grid {
+    grid-template-columns: 1fr;
+  }
+}
+.rd.arena-rd .card {
+  aspect-ratio: auto;
+  display: flex;
+}
+.rd.arena-rd .in,
+.rd.arena-rd .face {
+  position: relative;
+  inset: auto;
+  flex: 1;
+}
+.rd.arena-rd .in {
+  display: flex;
+}
+.rd.arena-rd .bd {
+  padding-bottom: 6cqw;
+}
+.rd.arena-rd .ill {
+  top: 3cqw;
+  bottom: 7cqw;
+}
+.arenaChat {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 3cqw;
+  border-radius: 3cqw;
+  background: #fff;
+  border: 1px solid #ece6fb;
+  box-shadow: 0 2cqw 5cqw -2.5cqw color-mix(in srgb, var(--c) 45%, transparent);
+}
+.arenaChat .ac-head {
+  display: flex;
+  align-items: center;
+  gap: 2cqw;
+  margin-bottom: 1.5cqw;
+}
+.arenaChat .ac-av {
+  width: 6.5cqw;
+  height: 6.5cqw;
+  border-radius: 50%;
+  flex: none;
+  background: linear-gradient(135deg, var(--color-pink), var(--color-primary));
+}
+.arenaChat .ac-head b {
+  display: block;
+  font-size: 3cqw;
+  line-height: 1.2;
+}
+.arenaChat .ac-head small {
+  display: block;
+  font-size: 2.5cqw;
+  line-height: 1.2;
+  color: #6b6880;
+}
+.arenaChat .ac-thread {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent, #000 5cqw);
+}
+.arenaChat .ac-b {
+  max-width: 90%;
+  margin-top: 1.5cqw;
+  padding: 1.4cqw 2.4cqw;
+  border-radius: 2.4cqw;
+  font-size: 2.55cqw;
+  line-height: 1.35;
+  max-height: 14cqw;
+}
+.arenaChat .ac-b.l {
+  align-self: flex-start;
+  background: color-mix(in srgb, var(--color-pink) 10%, #fff);
+  border: 1px solid color-mix(in srgb, var(--color-pink) 25%, #fff);
+}
+.arenaChat .ac-b.r {
+  align-self: flex-end;
+  background: color-mix(in srgb, var(--color-primary) 10%, #fff);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 25%, #fff);
+}
+.arenaChat .ac-b.b1 {
+  display: none;
+}
+.arenaChat .ac-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5cqw;
+  padding-top: 1.5cqw;
+  border-top: 1px dashed #e4dcf5;
+  font-size: 2.4cqw;
+  color: #6b6880;
+}
+.arenaChat .ac-stars {
+  display: flex;
+  gap: 0.6cqw;
+  font-size: 3.4cqw;
+  line-height: 1;
+}
+.arenaChat .ac-stars i {
+  font-style: normal;
+  color: #f2b544;
+}
+.arenaChat .ac-stars i:last-child {
+  color: #d9d4e6;
+}
+@media all {
+  .arenaChat .ac-b,
+  .arenaChat .ac-stars i {
+    animation: 12s infinite both;
+  }
+  .arenaChat .ac-b.b1 {
+    display: block;
+    animation-name: ac-b1;
+  }
+  .arenaChat .ac-b.b2 {
+    animation-name: ac-b2;
+  }
+  .arenaChat .ac-b.b3 {
+    animation-name: ac-b3;
+  }
+  .arenaChat .ac-b.b4 {
+    animation-name: ac-b4;
+  }
+  .arenaChat .ac-stars i:nth-child(1) {
+    animation-name: ac-s1;
+  }
+  .arenaChat .ac-stars i:nth-child(2) {
+    animation-name: ac-s2;
+  }
+  .arenaChat .ac-stars i:nth-child(3) {
+    animation-name: ac-s3;
+  }
+  .arenaChat .ac-stars i:nth-child(4) {
+    animation-name: ac-s4;
+  }
+  .arenaChat .ac-stars i:nth-child(5) {
+    animation: none;
+  }
+}
+@keyframes ac-b1 {
+  0% {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: translateY(6px);
+  }
+  4% {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: translateY(6px);
+  }
+  8% {
+    opacity: 1;
+    max-height: 14cqw;
+    margin-top: 1.5cqw;
+    padding-top: 1.4cqw;
+    padding-bottom: 1.4cqw;
+    transform: none;
+  }
+  52% {
+    opacity: 1;
+    max-height: 14cqw;
+    margin-top: 1.5cqw;
+    padding-top: 1.4cqw;
+    padding-bottom: 1.4cqw;
+    transform: none;
+  }
+  56% {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: translateY(6px);
+  }
+}
+@keyframes ac-b2 {
+  0% {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: translateY(6px);
+  }
+  20% {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: translateY(6px);
+  }
+  24% {
+    opacity: 1;
+    max-height: 14cqw;
+    margin-top: 1.5cqw;
+    padding-top: 1.4cqw;
+    padding-bottom: 1.4cqw;
+    transform: none;
+  }
+  92% {
+    opacity: 1;
+    max-height: 14cqw;
+    margin-top: 1.5cqw;
+    padding-top: 1.4cqw;
+    padding-bottom: 1.4cqw;
+    transform: none;
+  }
+  96% {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: translateY(6px);
+  }
+}
+@keyframes ac-b3 {
+  0% {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: translateY(6px);
+  }
+  36% {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: translateY(6px);
+  }
+  40% {
+    opacity: 1;
+    max-height: 14cqw;
+    margin-top: 1.5cqw;
+    padding-top: 1.4cqw;
+    padding-bottom: 1.4cqw;
+    transform: none;
+  }
+  92% {
+    opacity: 1;
+    max-height: 14cqw;
+    margin-top: 1.5cqw;
+    padding-top: 1.4cqw;
+    padding-bottom: 1.4cqw;
+    transform: none;
+  }
+  96% {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: translateY(6px);
+  }
+}
+@keyframes ac-b4 {
+  0% {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: translateY(6px);
+  }
+  52% {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: translateY(6px);
+  }
+  56% {
+    opacity: 1;
+    max-height: 14cqw;
+    margin-top: 1.5cqw;
+    padding-top: 1.4cqw;
+    padding-bottom: 1.4cqw;
+    transform: none;
+  }
+  92% {
+    opacity: 1;
+    max-height: 14cqw;
+    margin-top: 1.5cqw;
+    padding-top: 1.4cqw;
+    padding-bottom: 1.4cqw;
+    transform: none;
+  }
+  96% {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: translateY(6px);
+  }
+}
+@keyframes ac-s1 {
+  0% {
+    color: #d9d4e6;
+  }
+  70% {
+    color: #d9d4e6;
+  }
+  72% {
+    color: #f2b544;
+  }
+  92% {
+    color: #f2b544;
+  }
+  96% {
+    color: #d9d4e6;
+  }
+  100% {
+    color: #d9d4e6;
+  }
+}
+@keyframes ac-s2 {
+  0% {
+    color: #d9d4e6;
+  }
+  76% {
+    color: #d9d4e6;
+  }
+  78% {
+    color: #f2b544;
+  }
+  92% {
+    color: #f2b544;
+  }
+  96% {
+    color: #d9d4e6;
+  }
+  100% {
+    color: #d9d4e6;
+  }
+}
+@keyframes ac-s3 {
+  0% {
+    color: #d9d4e6;
+  }
+  82% {
+    color: #d9d4e6;
+  }
+  84% {
+    color: #f2b544;
+  }
+  92% {
+    color: #f2b544;
+  }
+  96% {
+    color: #d9d4e6;
+  }
+  100% {
+    color: #d9d4e6;
+  }
+}
+@keyframes ac-s4 {
+  0% {
+    color: #d9d4e6;
+  }
+  88% {
+    color: #d9d4e6;
+  }
+  90% {
+    color: #f2b544;
+  }
+  92% {
+    color: #f2b544;
+  }
+  96% {
+    color: #d9d4e6;
+  }
+  100% {
+    color: #d9d4e6;
+  }
+}
+
+/* Arena role cards: use the site type scale (t-h3 / t-body) instead of the cqw sizes the roadmap cards use. */
+.rd.arena-rd .bd h3 {
+  @apply font-semibold leading-heading text-xl lg:text-2xl;
+  letter-spacing: normal;
+  margin: 0 0 0.5rem;
+}
+.rd.arena-rd .bd p {
+  @apply font-normal leading-body text-base;
+}
