@@ -12867,6 +12867,27 @@ body {
   max-width: 980px;
   margin-inline: auto;
 }
+@media (min-width: 1024px) {
+  .rd.arena-rd .grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: none;
+    gap: 20px;
+  }
+  .rd.arena-rd .arenaChat .ac-b {
+    font-size: 3.2cqw;
+    padding: 1.2cqw 2.2cqw;
+  }
+  .rd.arena-rd .arenaChat .ac-head b {
+    font-size: 3.6cqw;
+  }
+  .rd.arena-rd .arenaChat .ac-head small,
+  .rd.arena-rd .arenaChat .ac-foot {
+    font-size: 3cqw;
+  }
+  .rd.arena-rd .arenaChat .ac-stars {
+    font-size: 4cqw;
+  }
+}
 @media (max-width: 640px) {
   .rd.arena-rd .grid {
     grid-template-columns: 1fr;
