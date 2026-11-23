@@ -225,13 +225,25 @@ export function initNexusHero() {
   }
   // Screen reader result for an order the user started. Auto demo orders and
   // ambient toasts stay silent, otherwise they would announce every few seconds.
+  // The region is cleared first so identical text (same channel, same store)
+  // still counts as a change and is announced again.
   function say(text) {
     var live = document.getElementById("nx-live");
-    if (live) live.textContent = text;
+    if (!live) return;
+    live.textContent = "";
+    setTimeout(function () {
+      live.textContent = text;
+    }, 50);
   }
   function userOrder(ch, isAuto) {
-    if (guided) return;
-    if (!isAuto) lastUser = performance.now();
+    if (guided) {
+      if (!isAuto) say("An order is already running. Try again in a moment.");
+      return;
+    }
+    if (!isAuto) {
+      lastUser = performance.now();
+      say("Test order from " + ch.n + " started.");
+    }
     root.querySelectorAll(".ch").forEach(function (e) {
       e.classList.remove("hint");
     });
@@ -255,6 +267,8 @@ export function initNexusHero() {
   document.getElementById("nx-surge").addEventListener("click", function () {
     surge = !surge;
     this.classList.toggle("on", surge);
+    // The accessible name stays fixed (aria-label in the markup); only
+    // aria-pressed carries the state, so it is not announced twice.
     this.setAttribute("aria-pressed", surge);
     this.querySelector("span").textContent = surge
       ? "11.11 peak running"

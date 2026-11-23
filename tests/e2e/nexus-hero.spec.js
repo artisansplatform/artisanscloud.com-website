@@ -24,11 +24,14 @@ test.describe("Nexus hero simulation", () => {
     }
 
     test("a tapped order is announced to screen readers", async ({ page }) => {
+      // Reduced motion turns the auto demo off, so it cannot swallow the tap.
+      await page.emulateMedia({ reducedMotion: "reduce" });
       await page.goto(NEXUS);
       const live = page.locator("#nx-live");
       await expect(live).toHaveAttribute("aria-live", "polite");
       await expect(live).toBeEmpty();
       await page.locator("#nx-ch-web").click();
+      await expect(live).toContainText("Test order from Website started");
       await expect(live).toContainText("Test order from Website routed to", {
         timeout: 15000,
       });
