@@ -25,6 +25,31 @@ test.describe("Nexus hero simulation", () => {
         ).toBeVisible({ timeout: 30000 });
       });
     }
+
+    test("a tapped order is announced to screen readers", async ({ page }) => {
+      // Reduced motion turns the auto demo off, so it cannot swallow the tap.
+      await page.emulateMedia({ reducedMotion: "reduce" });
+      await page.goto(NEXUS);
+      const live = page.locator("#nx-live");
+      await expect(live).toHaveAttribute("aria-live", "polite");
+      await expect(live).toBeEmpty();
+      await page.locator("#nx-ch-web").click();
+      await expect(live).toContainText("Test order from Website started");
+      await expect(live).toContainText("Test order from Website routed to", {
+        timeout: 15000,
+      });
+    });
+
+    test("the peak toggle exposes its pressed state", async ({ page }) => {
+      await page.goto(NEXUS);
+      const surge = page.locator("#nx-surge");
+      await expect(surge).toHaveAttribute("aria-pressed", "false");
+      await surge.click();
+      await expect(surge).toHaveAttribute("aria-pressed", "true");
+      await expect(surge).toContainText("11.11 peak running");
+      await surge.click();
+      await expect(surge).toHaveAttribute("aria-pressed", "false");
+    });
   });
 
   test.describe("below xl", () => {

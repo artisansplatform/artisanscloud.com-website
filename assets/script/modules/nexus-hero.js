@@ -223,9 +223,27 @@ export function initNexusHero() {
       "Book a demo</a>";
     pBody.appendChild(d);
   }
+  // Screen reader result for an order the user started. Auto demo orders and
+  // ambient toasts stay silent, otherwise they would announce every few seconds.
+  // The region is cleared first so identical text (same channel, same store)
+  // still counts as a change and is announced again.
+  function say(text) {
+    var live = document.getElementById("nx-live");
+    if (!live) return;
+    live.textContent = "";
+    setTimeout(function () {
+      live.textContent = text;
+    }, 50);
+  }
   function userOrder(ch, isAuto) {
-    if (guided) return;
-    if (!isAuto) lastUser = performance.now();
+    if (guided) {
+      if (!isAuto) say("An order is already running. Try again in a moment.");
+      return;
+    }
+    if (!isAuto) {
+      lastUser = performance.now();
+      say("Test order from " + ch.n + " started.");
+    }
     root.querySelectorAll(".ch").forEach(function (e) {
       e.classList.remove("hint");
     });
@@ -234,7 +252,7 @@ export function initNexusHero() {
     setTimeout(function () {
       el.classList.remove("on");
     }, 700);
-    guided = { ch: ch };
+    guided = { ch: ch, auto: !!isAuto };
     steps(ch);
     stepOn(0);
     spawn(ch, true);
@@ -249,6 +267,9 @@ export function initNexusHero() {
   document.getElementById("nx-surge").addEventListener("click", function () {
     surge = !surge;
     this.classList.toggle("on", surge);
+    // The accessible name stays fixed (aria-label in the markup); only
+    // aria-pressed carries the state, so it is not announced twice.
+    this.setAttribute("aria-pressed", surge);
     this.querySelector("span").textContent = surge
       ? "11.11 peak running"
       : "Simulate 11.11 peak";
@@ -315,6 +336,14 @@ export function initNexusHero() {
           "Loyalty <em style='font-style:normal;color:#67E8F9'>+120 pts</em> and 11.11 offer applied",
         );
         finish();
+        if (guided && !guided.auto)
+          say(
+            "Test order from " +
+              p.ch.n +
+              " routed to " +
+              f.n +
+              ". Loyalty points and the 11.11 offer applied. Done in under a second.",
+          );
         toast(
           "Routed " +
             p.ch.n +

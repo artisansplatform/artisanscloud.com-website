@@ -98,6 +98,7 @@
             class="nx lg:w-[calc(100%+3rem)] xl:w-[calc(100%+6rem)]"
             id="nx-hero"
           >
+            <div id="nx-live" class="sr-only" aria-live="polite"></div>
             <div class="nx-frame" id="nx-wrap" data-stage-w="1490">
               <div class="nx-stage" id="nx-stage">
                 <canvas id="nx-cv"></canvas>
@@ -406,7 +407,12 @@
                   </div>
                 </div>
                 <div class="abs ctas nx-xl">
-                  <button class="btn surge" id="nx-surge">
+                  <button
+                    class="btn surge"
+                    id="nx-surge"
+                    aria-label="Simulate 11.11 peak"
+                    aria-pressed="false"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
