@@ -12984,7 +12984,9 @@ body {
 @media all {
   .arenaChat .ac-b,
   .arenaChat .ac-stars i {
-    animation: 12s infinite both;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
   }
   .arenaChat .ac-b.b1 {
     display: block;
