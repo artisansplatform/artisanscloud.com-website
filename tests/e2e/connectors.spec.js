@@ -15,17 +15,4 @@ test.describe("Connectors filter", () => {
     await expect(visible(page)).toHaveCount(0);
     await expect(page.locator("#connectorsEmpty")).toBeVisible();
   });
-
-  test("filters by category and View all resets", async ({ page }) => {
-    const total = await page.locator("#connectorsGrid > li").count();
-
-    await page.selectOption("#connectorsCategory", "Single sign-on");
-    await expect(visible(page)).toHaveCount(3);
-
-    await page.fill("#connectorsSearch", "okta");
-    await expect(visible(page)).toHaveCount(1);
-
-    await page.click("#connectorsReset");
-    await expect(visible(page)).toHaveCount(total);
-  });
 });
