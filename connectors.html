@@ -1,0 +1,943 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
+
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
+
+    {{> header}}
+
+    <section class="w-full h-full p-4 lg:p-5">
+      <div
+        class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full rounded-2xl lg:rounded-[30px] px-5 xl:px-8 overflow-hidden heroDark"
+      >
+        <div class="max-w-[1240px] w-full mx-auto py-10 lg:py-[70px]">
+          <div class="fade-in text-center">
+            <div
+              class="mb-3 sm:mb-5 font-semibold text-xs sm:text-sm leading-heading uppercase text-primary"
+            >
+              Connectors
+            </div>
+            <h1 class="text-white t-display max-w-[980px] mx-auto">
+              AI that understands your business
+            </h1>
+            <p
+              class="t-lead px-2.5 lg:px-0 max-w-[639px] text-[#a49fc6] text-center mt-4 mx-auto"
+            >
+              Connect the tools your teams already use, and keep every
+              permission and access rule intact.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!----- Connectors Sec ----->
+    <section id="connectors-and-actions" class="bg-[#f8f8f8] py-16 lg:py-24">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in">
+          <form id="connectorsFilter" class="flex flex-col gap-4">
+            <div class="flex items-center gap-4">
+              <select
+                id="connectorsCategory"
+                aria-label="Category"
+                class="h-11 w-full sm:w-60 rounded-3xl border border-black/10 bg-white px-6 t-body-sm"
+              >
+                <option value="">Category</option>
+                <option value="Calendar">Calendar</option>
+                <option value="Communication">Communication</option>
+                <option value="Documents">Documents</option>
+                <option value="Engineering &amp; Analytics">
+                  Engineering &amp; Analytics
+                </option>
+                <option value="HR">HR</option>
+                <option value="Learning &amp; Enablement">
+                  Learning &amp; Enablement
+                </option>
+                <option value="Project Management">Project Management</option>
+                <option value="Sales &amp; Marketing">
+                  Sales &amp; Marketing
+                </option>
+                <option value="Single sign-on">Single sign-on</option>
+              </select>
+              <button
+                type="button"
+                id="connectorsReset"
+                class="t-body-sm text-heading underline underline-offset-4 hover:text-primary cursor-pointer"
+              >
+                View all
+              </button>
+            </div>
+            <input
+              id="connectorsSearch"
+              type="search"
+              placeholder="Search for a connector"
+              aria-label="Search for a connector"
+              class="h-12 w-full rounded-3xl border border-black/10 bg-white px-6 t-body-sm"
+            />
+          </form>
+
+          <ul
+            id="connectorsGrid"
+            class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          >
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Sales &amp; Marketing"
+              data-name="airops"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/airops.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">AirOPS</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >MCP</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Project Management"
+              data-name="airtable"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/airtable.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">Airtable</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Documents"
+              data-name="amazon s3"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/amazon-s3.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading"
+                  >Amazon S3</span
+                >
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="HR"
+              data-name="workday"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/workday.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">Workday</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Sales &amp; Marketing"
+              data-name="zoho"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/zoho.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">Zoho</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Communication"
+              data-name="zoom v2"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/zoom.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">Zoom V2</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >MCP</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Engineering &amp; Analytics"
+              data-name="github"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/github.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">GitHub</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Engineering &amp; Analytics"
+              data-name="github enterprise"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/github.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading"
+                  >GitHub Enterprise</span
+                >
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Project Management"
+              data-name="github issues"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/github.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading"
+                  >GitHub Issues</span
+                >
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Engineering &amp; Analytics"
+              data-name="github on premise"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/github.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading"
+                  >GitHub On Premise</span
+                >
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Engineering &amp; Analytics"
+              data-name="gitlab"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/gitlab.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">GitLab</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Communication"
+              data-name="gmail"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/gmail.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">Gmail</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Calendar"
+              data-name="google calendar"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/googlecalendar.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading"
+                  >Google Calendar</span
+                >
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Communication"
+              data-name="google chat"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/googlechat.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading"
+                  >Google Chat</span
+                >
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Engineering &amp; Analytics"
+              data-name="google cloud platform"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/googlecloud.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading"
+                  >Google Cloud Platform</span
+                >
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Documents"
+              data-name="microsoft 365"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/microsoft-365.webp"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading"
+                  >Microsoft 365</span
+                >
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Sales &amp; Marketing"
+              data-name="microsoft dynamics 365"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/microsoft-dynamics-365.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading"
+                  >Microsoft Dynamics 365</span
+                >
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Single sign-on"
+              data-name="microsoft entra id"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/microsoft-entra-id.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading"
+                  >Microsoft Entra ID</span
+                >
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Learning &amp; Enablement"
+              data-name="microsoft learn"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/microsoft-learn.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading"
+                  >Microsoft Learn</span
+                >
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >MCP</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Documents"
+              data-name="microsoft onedrive"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/microsoft-onedrive.webp"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading"
+                  >Microsoft OneDrive</span
+                >
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Documents"
+              data-name="microsoft onenote"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/microsoft-onenote.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading"
+                  >Microsoft OneNote</span
+                >
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Communication"
+              data-name="microsoft outlook"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/microsoft-outlook.webp"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading"
+                  >Microsoft Outlook</span
+                >
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Documents"
+              data-name="microsoft sharepoint"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/microsoft-sharepoint.webp"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading"
+                  >Microsoft SharePoint</span
+                >
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Communication"
+              data-name="microsoft teams"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/microsoft-teams.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading"
+                  >Microsoft Teams</span
+                >
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Sales &amp; Marketing"
+              data-name="netsuite"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/netsuite.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">NetSuite</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Documents"
+              data-name="notion"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/notion.webp"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">Notion</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >MCP</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Single sign-on"
+              data-name="okta"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/okta.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">Okta</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Single sign-on"
+              data-name="onelogin"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/onelogin.webp"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">OneLogin</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Communication"
+              data-name="otter.ai"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/otter-ai.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">Otter.ai</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Engineering &amp; Analytics"
+              data-name="postman"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/postman.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">Postman</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >MCP</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Sales &amp; Marketing"
+              data-name="salesforce"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/salesforce.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading"
+                  >Salesforce</span
+                >
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Communication"
+              data-name="slack"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/slack.webp"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">Slack</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Project Management"
+              data-name="trello"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/trello.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">Trello</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Documents"
+              data-name="url"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/url.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">URL</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >Native</span
+                >
+              </div>
+            </li>
+            <li
+              class="connector-card flex flex-col items-start gap-4 min-h-[120px] rounded-xl bg-white p-4 pr-3 pl-6 border border-[#E6EAF2]"
+              data-category="Engineering &amp; Analytics"
+              data-name="vercel"
+            >
+              <span
+                class="flex items-center justify-center size-12 rounded-xl bg-white border border-[#E6EAF2]"
+                ><img
+                  src="assets/image/connectors/vercel.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                  class="size-7"
+                  loading="lazy"
+              /></span>
+              <div class="flex w-full items-end justify-between gap-2">
+                <span class="t-body-sm font-medium text-heading">Vercel</span>
+                <span
+                  class="shrink-0 rounded-full bg-[#f2f0fe] px-3 py-1 t-caption text-primary"
+                  >MCP</span
+                >
+              </div>
+            </li>
+          </ul>
+          <p
+            id="connectorsEmpty"
+            class="hidden mt-10 text-center t-body text-heading"
+          >
+            No connectors found.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {{> footer}}
+
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
+</html>

@@ -234,6 +234,17 @@
       "order": 8
     }
   },
+  "ai-consulting": {
+    "title": "AI Consulting | Coming Soon | Artisans Cloud",
+    "description": "AI Consulting from Artisans Cloud is coming soon. Get in touch to hear more about how we help organisations plan and adopt enterprise AI.",
+    "keywords": "AI consulting, enterprise AI consulting, AI strategy, Artisans Cloud",
+    "ogTitle": "AI Consulting | Artisans Cloud",
+    "ogCard": {
+      "title": "AI Consulting",
+      "subtitle": "Coming soon"
+    },
+    "sitemap": false
+  },
   "dify-consulting": {
     "title": "Dify Consulting Services to Simplify, Automate and Optimise Workflows | Artisans Cloud",
     "description": "Our team helps you plan, implement and optimise Dify to create smarter workflows, reduce manual tasks and accelerate business performance.",
@@ -335,6 +346,20 @@
       "priority": "1.0",
       "changefreq": "weekly",
       "order": 1
+    }
+  },
+  "connectors": {
+    "title": "Connectors | Connect Your Apps to Enterprise AI | Artisans Cloud",
+    "description": "Browse Artisans Cloud connectors for communication, documents, project management, sales, support and HR tools, with permissions kept intact.",
+    "keywords": "enterprise AI connectors, app integrations, MCP connectors, permissions-aware AI, Artisans Cloud",
+    "ogCard": {
+      "title": "Connectors",
+      "subtitle": "Connect every app your teams use"
+    },
+    "sitemap": {
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "order": 38
     }
   },
   "integrations": {

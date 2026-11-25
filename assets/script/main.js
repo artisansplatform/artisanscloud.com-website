@@ -19,6 +19,8 @@ import { initFooterEffects } from "./modules/footer.js";
 import { initMultiSelect } from "./modules/multi-select.js";
 import { initTabs } from "./modules/tabs.js";
 import { initCardToggle } from "./modules/card-toggle.js";
+import { initConnectorsFilter } from "./modules/connectors-filter.js";
+import { initConsentForm } from "./modules/consent-form.js";
 import { initForgeLifecycle } from "./modules/forge-lifecycle.js";
 import { initForgeRoadmap } from "./modules/forge-roadmap.js";
 import { initNexusHero } from "./modules/nexus-hero.js";
@@ -53,6 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initFooterEffects();
   initTabs();
   initCardToggle();
+  initConnectorsFilter();
+  initConsentForm();
   initVercelAnalytics();
   initLinkedInInsight();
   initUmami();

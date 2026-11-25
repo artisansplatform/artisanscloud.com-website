@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
+
+    {{> header}}
+
+    <!----- Banner Sec ----->
+    <section class="w-full h-full p-4 lg:p-5">
+      <div
+        class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full lg:min-h-[768px] flex items-center justify-center h-full rounded-2xl lg:rounded-[30px] px-3 overflow-hidden heroDark"
+      >
+        <div class="pt-5 pb-20 sm:pb-24 md:pb-24 w-full">
+          <div class="fade-in max-w-[1240px] w-full px-4 xl:px-0 mx-auto">
+            <div class="text-center lg:max-w-[850px] mx-auto">
+              <h1
+                class="mb-6 lg:mb-[37px] text-white t-display"
+                id="heroHeading"
+              >
+                AI Consulting
+              </h1>
+              <div id="heroDec">
+                <p class="text-[#a49fc6] t-lead">Coming soon</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {{> footer}}
+
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
+</html>

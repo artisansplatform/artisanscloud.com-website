@@ -138,6 +138,7 @@
               class="bg-white md:border-2 border border-light-border lg:p-10 sm:p-7 p-5 md:rounded-[20px] rounded-xl"
             >
               <form
+                data-consent-form
                 action="https://api.web3forms.com/submit"
                 method="POST"
                 class="w-full m-0"
@@ -305,23 +306,38 @@
                 <div
                   class="mt-4 flex flex-wrap lg:flex-nowrap justify-between gap-6"
                 >
-                  <p class="text-description t-body-sm">
-                    By submitting your information you agree with our
-                    <a
-                      href="/terms-and-conditions"
-                      class="font-semibold inline-block underline"
-                      >Terms of Use</a
+                  <label
+                    class="flex items-start gap-2.5 text-description t-body-sm cursor-pointer"
+                  >
+                    <input
+                      type="checkbox"
+                      name="privacy_consent"
+                      required
+                      class="mt-1 size-4 shrink-0 cursor-pointer accent-primary"
+                    />
+                    <span
+                      >I have read and agree to the
+                      <a
+                        href="/privacy-policy"
+                        target="_blank"
+                        rel="noopener"
+                        class="font-semibold inline-block underline"
+                        >Privacy Policy</a
+                      >
+                      and
+                      <a
+                        href="/terms-and-conditions"
+                        target="_blank"
+                        rel="noopener"
+                        class="font-semibold inline-block underline"
+                        >Terms of Use</a
+                      >.</span
                     >
-                    and
-                    <a
-                      href="/privacy-policy"
-                      class="font-semibold inline-block underline"
-                      >Privacy Policy</a
-                    >.
-                  </p>
+                  </label>
                   <button
                     type="submit"
-                    class="cursor-pointer w-fit h-fit rounded-[40px] sm:px-[40px] px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light"
+                    disabled
+                    class="cursor-pointer w-fit h-fit rounded-[40px] sm:px-[40px] px-4 sm:py-4 py-3 flex items-center justify-center text-center gap-2.5 font-bold text-sm md:text-base leading-[100%] relative overflow-hidden transition-all duration-300 ease-in-out active:bg-primary active:text-white active:scale-95 focus-visible:bg-primary focus-visible:text-white bg-primary text-white hover:bg-primary-light disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-primary"
                   >
                     Send Message
                   </button>
