@@ -395,6 +395,10 @@ Rules:
 - Never add `font-primary` to elements; `body` already sets Poppins globally.
 - To change the type scale globally, edit the class definitions in `assets/style/input.css`, not individual pages.
 
+## Consent checkbox on forms
+
+Forms with `data-consent-form` (contact-us, request-demo) keep their submit button disabled until the `privacy_consent` checkbox is ticked. Logic lives in `assets/script/modules/consent-form.js`. To use it on another form, add the attribute, a `required` checkbox named `privacy_consent`, and a `disabled` submit button.
+
 ## Common UI Conventions
 
 | Convention          | Pattern                                                                                 |

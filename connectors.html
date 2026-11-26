@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head-meta}}
+  </head>
+
+  <body>
+    <div
+      id="cursor"
+      class="hidden lg:block fixed z-[1] w-36 h-36 rounded-full bg-primary blur-3xl pointer-events-none opacity-0"
+    ></div>
+
+    {{> header}}
+
+    <section class="w-full h-full p-4 lg:p-5">
+      <div
+        class="pt-[clamp(7rem,16.667vw-5rem,7.5rem)] min-h-full rounded-2xl lg:rounded-[30px] px-5 xl:px-8 overflow-hidden heroDark"
+      >
+        <div class="max-w-[1240px] w-full mx-auto py-10 lg:py-[70px]">
+          <div class="fade-in text-center">
+            <div
+              class="mb-3 sm:mb-5 font-semibold text-xs sm:text-sm leading-heading uppercase text-primary"
+            >
+              Connectors
+            </div>
+            <h1 class="text-white t-display max-w-[980px] mx-auto">
+              AI that understands your business
+            </h1>
+            <p
+              class="t-lead px-2.5 lg:px-0 max-w-[639px] text-[#a49fc6] text-center mt-4 mx-auto"
+            >
+              Connect the tools your teams already use, and keep every
+              permission and access rule intact.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!----- Connectors Sec ----->
+    <section id="connectors-and-actions" class="bg-[#f8f8f8] py-16 lg:py-24">
+      <div class="max-w-[1240px] w-full px-5 xl:px-3 mx-auto">
+        <div class="fade-in">
+          <form id="connectorsFilter">
+            <input
+              id="connectorsSearch"
+              type="search"
+              placeholder="Search for a connector"
+              aria-label="Search for a connector"
+              class="h-12 w-full rounded-3xl border border-black/10 bg-white px-6 t-body-sm"
+            />
+          </form>
+
+          <ul
+            id="connectorsGrid"
+            class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          >
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Sales &amp; Marketing"
+              data-name="airops"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/airops.png"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >AirOPS</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >MCP</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Project Management"
+              data-name="airtable"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/airtable.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Airtable</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Documents"
+              data-name="amazon s3"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/amazon-s3.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Amazon S3</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="HR"
+              data-name="workday"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/workday.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Workday</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Sales &amp; Marketing"
+              data-name="zoho"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/zoho.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Zoho</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Communication"
+              data-name="zoom v2"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/zoom.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Zoom V2</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >MCP</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Engineering &amp; Analytics"
+              data-name="github"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/github.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >GitHub</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Engineering &amp; Analytics"
+              data-name="github enterprise"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/github.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >GitHub Enterprise</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Project Management"
+              data-name="github issues"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/github.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >GitHub Issues</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Engineering &amp; Analytics"
+              data-name="github on premise"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/github.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >GitHub On Premise</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Engineering &amp; Analytics"
+              data-name="gitlab"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/gitlab.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >GitLab</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Communication"
+              data-name="gmail"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/gmail.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Gmail</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Calendar"
+              data-name="google calendar"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/googlecalendar.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Google Calendar</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Communication"
+              data-name="google chat"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/googlechat.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Google Chat</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Engineering &amp; Analytics"
+              data-name="google cloud platform"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/googlecloud.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Google Cloud Platform</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Documents"
+              data-name="microsoft 365"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/microsoft-365.webp"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Microsoft 365</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Sales &amp; Marketing"
+              data-name="microsoft dynamics 365"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/microsoft-dynamics-365.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Microsoft Dynamics 365</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Single sign-on"
+              data-name="microsoft entra id"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/microsoft-entra-id.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Microsoft Entra ID</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Learning &amp; Enablement"
+              data-name="microsoft learn"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/microsoft-learn.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Microsoft Learn</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >MCP</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Documents"
+              data-name="microsoft onedrive"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/microsoft-onedrive.webp"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Microsoft OneDrive</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Documents"
+              data-name="microsoft onenote"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/microsoft-onenote.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Microsoft OneNote</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Communication"
+              data-name="microsoft outlook"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/microsoft-outlook.webp"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Microsoft Outlook</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Documents"
+              data-name="microsoft sharepoint"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/microsoft-sharepoint.webp"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Microsoft SharePoint</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Communication"
+              data-name="microsoft teams"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/microsoft-teams.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Microsoft Teams</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Sales &amp; Marketing"
+              data-name="netsuite"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/netsuite.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >NetSuite</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Documents"
+              data-name="notion"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/notion.webp"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Notion</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >MCP</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Single sign-on"
+              data-name="okta"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/okta.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Okta</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Single sign-on"
+              data-name="onelogin"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/onelogin.webp"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >OneLogin</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Communication"
+              data-name="otter.ai"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/otter-ai.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Otter.ai</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Engineering &amp; Analytics"
+              data-name="postman"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/postman.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Postman</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >MCP</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Sales &amp; Marketing"
+              data-name="salesforce"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/salesforce.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Salesforce</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Communication"
+              data-name="slack"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/slack.webp"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Slack</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Project Management"
+              data-name="trello"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/trello.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Trello</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Documents"
+              data-name="url"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/url.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >URL</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >Native</span
+              >
+            </li>
+            <li
+              class="connector-card flex flex-col justify-between gap-4 min-h-[120px] rounded-xl bg-white py-5 pr-3 pl-6 pb-3"
+              data-category="Engineering &amp; Analytics"
+              data-name="vercel"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  src="assets/image/connectors/vercel.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="size-12 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <span class="text-2xl font-medium leading-tight text-[#333]"
+                  >Vercel</span
+                >
+              </div>
+              <span
+                class="self-end rounded bg-black/5 px-2 py-1 t-caption leading-none text-[#333]/80"
+                >MCP</span
+              >
+            </li>
+          </ul>
+          <p
+            id="connectorsEmpty"
+            class="hidden mt-10 text-center t-body text-heading"
+          >
+            No connectors found.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {{> footer}}
+
+    <script type="module" src="assets/script/main.js"></script>
+  </body>
+</html>
